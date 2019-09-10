@@ -365,6 +365,10 @@ msgstr ""
 "көмектесетін жылдам тәсілдер бар."
 
 #: account_setup/index.html
+msgid "{{$root.user.first_name}}, let's give you a display name"
+msgstr "{{$root.user.first_name}}, сізге дисплей атау берейік"
+
+#: account_setup/index.html
 msgid "{{$root.user.first_name}}, let's upload your first photo"
 msgstr "{{$root.user.first_name}}, басында өз фотоңызды жүктеңіз"
 
@@ -756,14 +760,6 @@ msgstr ""
 
 #: settings/index.html
 msgid ""
-"<i class=\"fa fa-question-circle mr-2\" aria-hidden=\"true\">Use This Name</"
-"i>"
-msgstr ""
-"<i class=\"fa fa-question-circle mr-2\" aria-hidden=\"true\">Осы Есімді "
-"Қолдану</i>"
-
-#: settings/index.html
-msgid ""
 "<i class=\"fa fa-question-circle mr-2\" aria-hidden=\"true\">Use This Phone</"
 "i>"
 msgstr ""
@@ -1112,24 +1108,6 @@ msgstr ""
 "\t\t\t\t\t\t\t\t<span class=\"custom-control-label\" translate><i class=\"fa "
 "fa-question-circle mr-2\" aria-hidden=\"true\">Осы Телефонды Пайдалану</i></"
 "span><i class=\"fa fa-question-circle mr-2\" aria-hidden=\"true\">\n"
-"\t\t\t\t\t\t\t</i>"
-
-#: settings/index.html
-msgid ""
-"<input type=\"checkbox\" class=\"custom-control-input\" id=\"nickname_primary"
-"\" ng-true-value=\"'true'\" ng-model=\"user.nickname_primary\" ng-change="
-"\"formChange()\">\n"
-"\t\t\t\t\t\t\t\t<span class=\"custom-control-label\" translate><i class=\"fa "
-"fa-question-circle mr-2\" aria-hidden=\"true\">Use This Name</i></span><i "
-"class=\"fa fa-question-circle mr-2\" aria-hidden=\"true\">\t\n"
-"\t\t\t\t\t\t\t</i>"
-msgstr ""
-"<input type=\"checkbox\" class=\"custom-control-input\" id=\"nickname_primary"
-"\" ng-true-value=\"'true'\" ng-model=\"user.nickname_primary\" ng-change="
-"\"formChange()\">\n"
-"\t\t\t\t\t\t\t\t<span class=\"custom-control-label\" translate><i class=\"fa "
-"fa-question-circle mr-2\" aria-hidden=\"true\">Осы Есімді Қолдану</i></"
-"span><i class=\"fa fa-question-circle mr-2\" aria-hidden=\"true\">\t\n"
 "\t\t\t\t\t\t\t</i>"
 
 #: upgrade/index.html
@@ -1663,7 +1641,8 @@ msgstr "ACH банктік аударымдарының деректері"
 msgid "Action"
 msgstr "Әрекет"
 
-#: contacts/index.html pay_bonus/index.html power_reports/index.html
+#: certificates/index.html certificates/view.html contacts/index.html
+#: pay_bonus/index.html power_reports/index.html
 msgid "Actions"
 msgstr "Әрекеттер"
 
@@ -3083,7 +3062,7 @@ msgstr "Ақшалай төлем"
 msgid "Category Type"
 msgstr "Санат түрі"
 
-#: power_reports/index.html
+#: certificates/index.html certificates/view.html power_reports/index.html
 msgid "Certificate"
 msgstr "Сертификат"
 
@@ -4047,7 +4026,8 @@ msgstr "Тікелей Тіркелгендер"
 msgid "Discounted Fare"
 msgstr "Жеңілдетілген тариф"
 
-#: settings/index.html
+#: cards/index.html certificates/index.html certificates/view.html
+#: contacts/modal.html settings/index.html
 msgid "Display Name"
 msgstr "Дисплей Атауы"
 
@@ -4149,6 +4129,18 @@ msgstr "Төменгі линиядағылардың Есімі"
 
 #: booking_documents/view.html
 msgid "Download"
+msgstr "Жүктеу"
+
+#: certificates/index.html certificates/view.html
+#, fuzzy
+#| msgid "Download"
+msgid "Download as JPG"
+msgstr "Жүктеу"
+
+#: certificates/index.html certificates/view.html
+#, fuzzy
+#| msgid "Download"
+msgid "Download as PDF"
 msgstr "Жүктеу"
 
 #: cards/index.html
@@ -4421,6 +4413,12 @@ msgstr ""
 "мүшесін немесе Клуб Мүше-серіктесін жеке тіркеуіңіз қажет. Әрбір серіктес - "
 "1 ұпай, әрбір мүше - 1 ұпай және әрбір мүше-серіктесі - 2 ұпай."
 
+#: certificates/index.html certificates/view.html
+#, fuzzy
+#| msgid "Rank Certificate"
+msgid "Earned Certificates"
+msgstr "Ранг Сертификаты"
+
 #: compensation/index.html
 msgid "Earned Compensation"
 msgstr "Сіздің өтемақы"
@@ -4516,12 +4514,14 @@ msgid "English Press Releases"
 msgstr "Баспасөз хабарламалары"
 
 #: settings/index.html
-msgid "Enter your email here"
-msgstr "Электрондық поштаңызды осы жерге енгізіңіз"
+#, fuzzy
+#| msgid "Enter your nickname here"
+msgid "Enter your Display Name here"
+msgstr "Өзіңіздің лақап атыңызды осында енгізіңіз"
 
 #: settings/index.html
-msgid "Enter your nickname here"
-msgstr "Өзіңіздің лақап атыңызды осында енгізіңіз"
+msgid "Enter your email here"
+msgstr "Электрондық поштаңызды осы жерге енгізіңіз"
 
 #: settings/index.html
 msgid "Enter your phone here"
@@ -4887,18 +4887,11 @@ msgstr "Айдан бастап"
 msgid "Full Legal Name"
 msgstr "Толық Заңды Есімі"
 
-#: billing/modal.html cards/index.html compensation/index.html
-#: contacts/modal.html former_compensation/index.html import/index.html
+#: billing/modal.html cards/index.html certificates/index.html
+#: certificates/view.html compensation/index.html contacts/modal.html
+#: former_compensation/index.html import/index.html
 msgid "Full Name"
 msgstr "Толық Аты-жөні"
-
-#: contacts/modal.html
-msgid "Full Name + Nickname"
-msgstr "Толық аты-жөні + лақап аты"
-
-#: cards/index.html
-msgid "Full Name with Nickname"
-msgstr "Лақап аты бар Толық Аты-жөні"
 
 #: values/index.html
 msgid "FUN AND HUMOR"
@@ -5058,6 +5051,13 @@ msgstr ""
 "саяхаттау клубы, ол Сізді ең төмен бағамен круиздік саяхатқа жібереді және "
 "отбасыңыздың демалысын жоспарлауға және үнемдеуге қатысты ойыңызды толығымен "
 "өзгертеді ."
+
+#: account_setup/index.html
+msgid ""
+"Having a display name will let you create a name with whatever characters."
+msgstr ""
+"Дисплей атаудың болуы сізге кез келген таңбамен есім құрауға мүмкіндік "
+"береді."
 
 #: account_setup/index.html
 msgid ""
@@ -7365,6 +7365,12 @@ msgstr "Кемуі бойынша Аты"
 msgid "Name format has successfully been changed."
 msgstr "Формат атауы сәтті өзгертілді."
 
+#: certificates/index.html certificates/view.html
+#, fuzzy
+#| msgid "Rank Certificate"
+msgid "Name Options on Certificate"
+msgstr "Ранг Сертификаты"
+
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
 #: agreements/ukrainian_addendum_agreement.html booking/view.html
@@ -7518,10 +7524,6 @@ msgstr "Келесі Қадам"
 msgid "Next Year"
 msgstr "Келесі Жыл"
 
-#: cards/index.html contacts/modal.html
-msgid "Nickname"
-msgstr "Лақап аты"
-
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
 #: agreements/ukrainian_addendum_agreement.html track_results/index.html
@@ -7540,13 +7542,15 @@ msgstr "Пікір жоқ."
 msgid "No Contacts Found"
 msgstr "Контактілер табылған жоқ"
 
+#: contacts/modal.html
+#, fuzzy
+#| msgid "No Nickname available."
+msgid "No Display Name available."
+msgstr "Лақап ат қажет емес."
+
 #: team_rankings/index.html
 msgid "No Leaderboard Available"
 msgstr "Көшбасшылар жоқ"
-
-#: contacts/modal.html
-msgid "No Nickname available."
-msgstr "Лақап ат қажет емес."
 
 #: Membership Plans
 msgid "No Plan"
@@ -9721,7 +9725,11 @@ msgid "Set as Default Payment Method"
 msgstr "Әдепкі Төлем Әдісі ретінде Орнатыңыз"
 
 #: contacts/modal.html
-msgid "Set up your nickname <a href=\"/settings\" target=\"_blank\">here</a>."
+#, fuzzy
+#| msgid ""
+#| "Set up your nickname <a href=\"/settings\" target=\"_blank\">here</a>."
+msgid ""
+"Set up your display name<a href=\"/settings\" target=\"_blank\">here</a>."
 msgstr ""
 "Өз лақап атыңызды  <a href=\"/settings\" target=\"_blank\">осында</a> "
 "орнатыңыз."
@@ -9963,7 +9971,8 @@ msgstr "Көшені Жазыңыз:"
 msgid "Subject"
 msgstr "Тақырып"
 
-#: billing/modal.html payout/create.html
+#: billing/modal.html certificates/index.html certificates/view.html
+#: payout/create.html
 msgid "Submit"
 msgstr "Жіберу"
 
@@ -11338,8 +11347,7 @@ msgstr "Әмиян"
 msgid "Wallet Balance"
 msgstr "Әмиян Балансы"
 
-#: payout/index.html refund_protocol/remove_instantbonus_modal.html
-#: refund_protocol/remove_weeklybonus_modal.html
+#: payout/index.html refund_protocol/remove_weeklybonus_modal.html
 msgid "Wallet Transfer Logs"
 msgstr "Әмиян Операциялары"
 
@@ -12032,9 +12040,13 @@ msgid "You do not have any pending invoices at this time."
 msgstr "Қазіргі уақытта сізде күтудегі шот-фактураларыңыз жоқ."
 
 #: cards/index.html
+#, fuzzy
+#| msgid ""
+#| "You don't have a nickname! Set it up <a href=\"/settings\" target=\"_blank"
+#| "\" translate>here</a>."
 msgid ""
-"You don't have a nickname! Set it up <a href=\"/settings\" target=\"_blank\" "
-"translate>here</a>."
+"You don't have a display name! Set it up <a href=\"/settings\" target="
+"\"_blank\" translate>here</a>."
 msgstr ""
 "Сізде лақап ат жоқ! <a href=\"/settings\" target=\"_blank\" translate> "
 "осында </a> орнатыңыз."
@@ -14403,6 +14415,39 @@ msgstr ""
 "Жеңіске жету үшін сізге 11 ұпай керек. Ең көп ұпайға ие TOP 5 көшбасшы GoPro "
 "билетін ұтып алады."
 
+#~ msgid ""
+#~ "<i class=\"fa fa-question-circle mr-2\" aria-hidden=\"true\">Use This "
+#~ "Name</i>"
+#~ msgstr ""
+#~ "<i class=\"fa fa-question-circle mr-2\" aria-hidden=\"true\">Осы Есімді "
+#~ "Қолдану</i>"
+
+#~ msgid ""
+#~ "<input type=\"checkbox\" class=\"custom-control-input\" id="
+#~ "\"nickname_primary\" ng-true-value=\"'true'\" ng-model=\"user."
+#~ "nickname_primary\" ng-change=\"formChange()\">\n"
+#~ "\t\t\t\t\t\t\t\t<span class=\"custom-control-label\" translate><i class="
+#~ "\"fa fa-question-circle mr-2\" aria-hidden=\"true\">Use This Name</i></"
+#~ "span><i class=\"fa fa-question-circle mr-2\" aria-hidden=\"true\">\t\n"
+#~ "\t\t\t\t\t\t\t</i>"
+#~ msgstr ""
+#~ "<input type=\"checkbox\" class=\"custom-control-input\" id="
+#~ "\"nickname_primary\" ng-true-value=\"'true'\" ng-model=\"user."
+#~ "nickname_primary\" ng-change=\"formChange()\">\n"
+#~ "\t\t\t\t\t\t\t\t<span class=\"custom-control-label\" translate><i class="
+#~ "\"fa fa-question-circle mr-2\" aria-hidden=\"true\">Осы Есімді Қолдану</"
+#~ "i></span><i class=\"fa fa-question-circle mr-2\" aria-hidden=\"true\">\t\n"
+#~ "\t\t\t\t\t\t\t</i>"
+
+#~ msgid "Full Name + Nickname"
+#~ msgstr "Толық аты-жөні + лақап аты"
+
+#~ msgid "Full Name with Nickname"
+#~ msgstr "Лақап аты бар Толық Аты-жөні"
+
+#~ msgid "Nickname"
+#~ msgstr "Лақап аты"
+
 #~ msgid "Account Id"
 #~ msgstr "Аккаунт Идентификаторы"
 
@@ -14411,15 +14456,6 @@ msgstr ""
 
 #~ msgid "Modified"
 #~ msgstr "Өзгертілді"
-
-#~ msgid "{{$root.user.first_name}}, let's give you a display name"
-#~ msgstr "{{$root.user.first_name}}, сізге дисплей атау берейік"
-
-#~ msgid ""
-#~ "Having a display name will let you create a name with whatever characters."
-#~ msgstr ""
-#~ "Дисплей атаудың болуы сізге кез келген таңбамен есім құрауға мүмкіндік "
-#~ "береді."
 
 #~ msgid "Reach Upgrade"
 #~ msgstr "Жаңартуға қол жеткізу"
