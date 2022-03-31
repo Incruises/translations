@@ -370,9 +370,22 @@ msgstr "{{ agreement.name }}"
 msgid "{{ box.box }}"
 msgstr "{{ box.box }}"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Sent: {{ formatDate(invite.lastInvitationCreationDate) }}"
+msgid "{{ formatDate(cancellation.from) }}"
+msgstr "已發送: {{ formatDate(invite.lastInvitationCreationDate) }}"
+
 #: components/support/TicketList.vue
 msgid "{{ header }}"
 msgstr "{{ header }}"
+
+#: pages/hotels_booking.vue
+msgid ""
+"{{ hotel.address.content }}, {{ hotel.zone.name }}, {{ hotel.destination."
+"name.content }}, {{ hotel.state.name }}, {{ hotel.country.description."
+"content }}"
+msgstr ""
 
 #: pages/book.vue
 msgid "{{ night }} Nights"
@@ -381,10 +394,6 @@ msgstr "{{ night }} 晚"
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
 msgstr "{{ tips[cruise.lineId].note }}."
-
-#: pages/booking.vue
-msgid "{{ user.eligible_cd }} Available CD"
-msgstr "{{ user.eligible_cd }} 可用CD"
 
 #: compensation/index.html
 msgid ""
@@ -425,6 +434,12 @@ msgstr "{{agreement.name}}"
 #: courses/view.html
 msgid "{{correct}} out of {{examQuestions}} questions answered correctly"
 msgstr "{{examQuestions}}問題中正確回答了{{correct}}個"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "{{data.data.data.depart}}"
+msgid "{{data.data.data.check_in}}"
+msgstr "{{data.data.data.depart}}"
 
 #: receipts/booking_receipt.html
 msgid "{{data.data.data.depart}}"
@@ -490,12 +505,28 @@ msgstr "*直接是指個人讚助。"
 msgid "*Price does not include taxes"
 msgstr "*價格不含稅"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "View your Cruise Credits and availability."
+msgid "*Price may vary based on availability."
+msgstr "查看您的郵輪信用可使用數量。"
+
 #: pages/book.vue
 msgid ""
 "*Price may vary based on availability. You will receive accurate pricing "
 "when choosing a cabin category."
 msgstr ""
 "*價格可能會根據供應情況而有所不同。 選擇機艙類別時，您將獲得準確的價格。"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Light"
+msgid "/ night"
+msgstr "淺色"
+
+#: pages/hotels_booking.vue
+msgid "/ per night"
+msgstr ""
 
 #: pages/admin_user.vue
 msgid "#"
@@ -525,7 +556,7 @@ msgstr "關閉票數#"
 msgid "# of tickets First Responded to"
 msgstr "第一次響應的票數#"
 
-#: pages/book.vue
+#: pages/book.vue pages/hotels.vue
 msgid "%{ length } results match your criteria."
 msgstr "%{ length } 結果符合您的條件。"
 
@@ -722,9 +753,48 @@ msgstr ""
 "<a target=\"_blank\" style=\"color:white;\" href=\"/sot\" translate>旅行賣家"
 "</a>"
 
-#: receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid ""
+#| "<b style=\"color: red\">IMPORTANT NOTICE:</b> All cruise lines now "
+#| "require online web check-in prior to embarkation. Failure to complete in "
+#| "advance can result in denied boarding. Please see online check-in link "
+#| "below your booking receipt data. You must click to access and enter all "
+#| "required personal information\n"
+#| "\t\t\t\tno later than 48-72 hours prior to departure depending on the "
+#| "cruise line. Web check-in opens 45-60 days prior depending on the cruise "
+#| "line. Completed check-in for ALL passengers in the cabin is REQUIRED to "
+#| "issue boarding pass."
 msgid ""
-"<b style=\"color: red\">IMPORTANT NOTICE:</b> All cruise lines now require "
+"<b style=\"color: red\">IMPORTANT NOTICE:</b>\n"
+"\t\t\t\tAll cruise lines now require online web check-in prior to "
+"embarkation. Failure to complete in advance can result in denied boarding. "
+"Please see online check-in link below your booking receipt data. You must "
+"click to access and enter all required personal information no later than\n"
+"\t\t\t\t48-72 hours prior to departure depending on the cruise line. Web "
+"check-in opens 45-60 days prior depending on the cruise line. Completed "
+"check-in for ALL passengers in the cabin is REQUIRED to issue boarding pass."
+msgstr ""
+"<b style=\"color: red\">重要提示：</b> 現在，所有郵輪公司都需要在登機前在線進"
+"行網上登機手續。 未能提前完成可能會導致登機被拒絕。 請查看您的預訂收據數據下"
+"方的在線值機鏈接。 您必須單擊以訪問並輸入所有必需的個人信息\n"
+"     視航程而定，最晚在出發前48-72小時到達。 根據登船路線的不同，網上辦理登機"
+"手續可提前45至60天開放。 必須為機艙中的所有乘客辦理登機手續才能簽發登機牌。"
+
+#: receipts/booking_receipt.html
+#, fuzzy
+#| msgid ""
+#| "<b style=\"color: red\">IMPORTANT NOTICE:</b> All cruise lines now "
+#| "require online web check-in prior to embarkation. Failure to complete in "
+#| "advance can result in denied boarding. Please see online check-in link "
+#| "below your booking receipt data. You must click to access and enter all "
+#| "required personal information\n"
+#| "\t\t\t\tno later than 48-72 hours prior to departure depending on the "
+#| "cruise line. Web check-in opens 45-60 days prior depending on the cruise "
+#| "line. Completed check-in for ALL passengers in the cabin is REQUIRED to "
+#| "issue boarding pass."
+msgid ""
+"<b style=\"color: red\">IMPORTANT NOTICE:</b>  All cruise lines now require "
 "online web check-in prior to embarkation. Failure to complete in advance can "
 "result in denied boarding. Please see online check-in link below your "
 "booking receipt data. You must click to access and enter all required "
@@ -997,9 +1067,13 @@ msgstr ""
 "\t\t\t\t\t沒有存儲"
 
 #: reach/index.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fa fa-video-camera\"></i> Click here to view a video "
+#| "explaining more."
 msgid ""
-"<i class=\"fa fa-video-camera\"></i> Click here to view a video explaining "
-"more."
+"<i class=\"fa fa-video-camera\"></i>\n"
+"\t\t\t\t\tClick here to view a video explaining more."
 msgstr "<i class=\"fa fa-video-camera\"></i> 點擊此處觀看視頻以了解更多信息."
 
 #: webinar_recordings/index.html
@@ -1071,10 +1145,84 @@ msgstr ""
 "<i class=\"far fa-exclamation-circle\"></i>\n"
 "\t\t\t\t\t失敗"
 
+#: layouts/booking.html layouts/hotels.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fas fa-check pr-1\"></i>\n"
+#| "\t\t\t\t\tBooked"
+msgid ""
+"<i class=\"far fa-home mr-1\"></i>\n"
+"\t\t\t\t\t\t\tDashboard"
+msgstr ""
+"<i class=\"fas fa-check pr-1\"></i>\n"
+"\t\t\t\t\t已預訂"
+
+#: layouts/booking.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fas fa-check pr-1\"></i>\n"
+#| "\t\t\t\t\tBooked"
+msgid ""
+"<i class=\"far fa-hotel mr-1\"></i>\n"
+"\t\t\t\t\t\t\tHotels"
+msgstr ""
+"<i class=\"fas fa-check pr-1\"></i>\n"
+"\t\t\t\t\t已預訂"
+
+#: layouts/hotels.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fe fe-x mr-1\"></i>\n"
+#| "\t\t\t\t\t\t\tExit"
+msgid ""
+"<i class=\"far fa-ship mr-1\"></i>\n"
+"\t\t\t\t\t\t\tCruises"
+msgstr ""
+"<i class=\"fe fe-x mr-1\"></i>\n"
+"\t\t\t\t\t\t\t退出"
+
 #: pages/reservations.vue
 msgid ""
 "<i class=\"fas fa-check pr-1\"></i>\n"
 "\t\t\t\t\tBooked"
+msgstr ""
+"<i class=\"fas fa-check pr-1\"></i>\n"
+"\t\t\t\t\t已預訂"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fas fa-check pr-1\"></i>\n"
+#| "\t\t\t\t\tBooked"
+msgid ""
+"<i class=\"fas fa-hotel mr-1\"></i>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\tHotels"
+msgstr ""
+"<i class=\"fas fa-check pr-1\"></i>\n"
+"\t\t\t\t\t已預訂"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-route mr-1\"></i>\n"
+#| "\n"
+#| "\t\t\t\t\t\t\t\t\t<span>Cruise Destination:</span>"
+msgid ""
+"<i class=\"fas fa-map mr-1\"></i>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\tDestinations"
+msgstr ""
+"<i class=\"far fa-route mr-1\"></i>\n"
+"\n"
+"\t\t\t\t\t\t\t\t\t<span>郵輪目的地:</span>"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fas fa-check pr-1\"></i>\n"
+#| "\t\t\t\t\tBooked"
+msgid ""
+"<i class=\"fas fa-map-pin mr-1\"></i>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\tZones"
 msgstr ""
 "<i class=\"fas fa-check pr-1\"></i>\n"
 "\t\t\t\t\t已預訂"
@@ -1195,14 +1343,6 @@ msgstr ""
 "<i class=\"fe fe-paperclip\"></i>\n"
 "\t\t\t\t\t每週激勵PDF"
 
-#: layouts/booking.html
-msgid ""
-"<i class=\"fe fe-search mr-1\"></i>\n"
-"\t\t\t\t\t\t\tNew Search"
-msgstr ""
-"<i class=\"fe fe-search mr-1\"></i>\n"
-"\t\t\t\t\t\t\t新搜尋"
-
 #: components/confirm-recurring.vue
 msgid ""
 "<i class=\"fe fe-trash-2\"></i>\n"
@@ -1247,14 +1387,6 @@ msgstr ""
 "<i class=\"fe fe-upload mr-2\"></i>\n"
 "\t\t\t\t\t\t\t\t\t上傳新照片"
 
-#: layouts/booking.html
-msgid ""
-"<i class=\"fe fe-x mr-1\"></i>\n"
-"\t\t\t\t\t\t\tExit"
-msgstr ""
-"<i class=\"fe fe-x mr-1\"></i>\n"
-"\t\t\t\t\t\t\t退出"
-
 #: pages/book.vue
 msgid ""
 "<i class=\"fe fe-x-square\"></i>\n"
@@ -1285,13 +1417,40 @@ msgstr ""
 "\t\t\t\t\t\t<span v-translate>驗證郵件已發送，請查閱您的收件箱並按照提供的鏈"
 "接進行操作.</span>"
 
-#: upgrade/index.html
+#: pages/booking.vue
 msgid ""
-"<small>By proceeding to checkout you are agreeing to our <a style=\"color:"
-"gray;\" ng-href=\"{{member_agreement}}\" target=\"_blank\">Cruise Membership "
-"Agreement</a>, our <a style=\"color:gray;\" ng-href="
-"\"{{partner_agreement}}\" target=\"_blank\">Independent Business Partner "
-"Agreement</a>, and the recurring billing explained above.</small>"
+"<p class=\"m-0\">\n"
+"\t\t\t\t\t\t\t\t\t\t{{ user.oneForOneBalance }}\n"
+"\t\t\t\t\t\t\t\t\t\t<sub style=\"font-weight: 500\">1 For 1</sub>\n"
+"\t\t\t\t\t\t\t\t\t</p>"
+msgstr ""
+
+#: pages/booking.vue
+msgid ""
+"<p class=\"m-0\">\n"
+"\t\t\t\t\t\t\t\t\t\t{{ user.twoForOneBalance }}\n"
+"\t\t\t\t\t\t\t\t\t\t<sub style=\"font-weight: 500\">2 For 1</sub>\n"
+"\t\t\t\t\t\t\t\t\t</p>"
+msgstr ""
+
+#: upgrade/index.html
+#, fuzzy
+#| msgid ""
+#| "<small>By proceeding to checkout you are agreeing to our <a style=\"color:"
+#| "gray;\" ng-href=\"{{member_agreement}}\" target=\"_blank\">Cruise "
+#| "Membership Agreement</a>, our <a style=\"color:gray;\" ng-href="
+#| "\"{{partner_agreement}}\" target=\"_blank\">Independent Business Partner "
+#| "Agreement</a>, and the recurring billing explained above.</small>"
+msgid ""
+"<small>\n"
+"\t\t\t\t\t\t\t\t\tBy proceeding to checkout you are agreeing to our\n"
+"\t\t\t\t\t\t\t\t\t<a style=\"color:gray;\" ng-href=\"{{member_agreement}}\" "
+"target=\"_blank\">Cruise Membership Agreement</a>\n"
+"\t\t\t\t\t\t\t\t\t, our\n"
+"\t\t\t\t\t\t\t\t\t<a style=\"color:gray;\" ng-href=\"{{partner_agreement}}\" "
+"target=\"_blank\">Independent Business Partner Agreement</a>\n"
+"\t\t\t\t\t\t\t\t\t, and the recurring billing explained above.\n"
+"\t\t\t\t\t\t\t\t</small>"
 msgstr ""
 "<small>繼續結賬即表示您同意我們的<a style=\"color:gray;\" ng-href="
 "\"{{member_agreement}}\" target=\"_blank\">郵輪會員協議</a>, 我們的<a style="
@@ -1466,6 +1625,12 @@ msgstr ""
 "<span class=\"emphasize\">無限制的</span>\n"
 "\t\t\t\t\t會議時間"
 
+#: pages/hotels.vue
+msgid ""
+"<span class=\"h3\">${{ calculateNightlyRate(hotel.sellingRate) }}</span>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t<sub v-translate>/ night</sub>"
+msgstr ""
+
 #: pages/email.vue
 msgid ""
 "<span class=\"mr-3\">\n"
@@ -1477,6 +1642,12 @@ msgstr ""
 "\t\t\t\t\t\t\t<i class=\"fe fe-edit\"></i>\n"
 "\t\t\t\t\t\t</span>\n"
 "\t\t\t\t\t\t撰寫新電子郵件"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "<span class=\"ng-scope\">Login</span>"
+msgid "<span class=\"ng-scope\">Search</span>"
+msgstr "<span class=\"ng-scope\">登錄</span>"
 
 #: pages/booking.vue
 msgid ""
@@ -1640,6 +1811,14 @@ msgstr ""
 "<span translate>歡迎,</span>\n"
 "\t\t\t\t\t\t\t{{$root.user.first_name + ' ' + $root.user.last_name}}"
 
+#: pages/hotels_booking.vue
+msgid ""
+"<span v-for=\"(phone, index) in hotel.phones\" :key=\"index\">\n"
+"\t\t\t\t\t\t\t\t\t{{ phone.phoneType }}: {{ phone.phoneNumber }}\n"
+"\t\t\t\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\t\t\t</span>"
+msgstr ""
+
 #: pages/public/membership.vue
 msgid ""
 "<strong style=\"color: white;\">FOR</strong>\n"
@@ -1695,11 +1874,17 @@ msgstr ""
 "己充電。"
 
 #: pages/public/mission.vue
+#, fuzzy
+#| msgid ""
+#| "<strong style=\"font-size: 36px;\">R</strong>\n"
+#| "\t\t\t\t\teward you in exchange for your member fees with innovative "
+#| "Cruise Credits. Cruise Credits double the purchasing power of your "
+#| "vacations savings to help create memorable cruising experiences."
 msgid ""
 "<strong style=\"font-size: 36px;\">R</strong>\n"
-"\t\t\t\t\teward you in exchange for your member fees with innovative Cruise "
-"Credits. Cruise Credits double the purchasing power of your vacations "
-"savings to help create memorable cruising experiences."
+"\t\t\t\t\teward you in exchange for your member fees with innovative Reward "
+"Points. Reward Points double the purchasing power of your vacations savings "
+"to help create memorable cruising experiences."
 msgstr ""
 "<strong style=\"font-size: 36px;\">R</strong>\n"
 "\t\t\t\t\t通過創新的郵輪信用來補償您的會員費。郵輪信用將您的假期儲蓄購買力提"
@@ -1886,11 +2071,60 @@ msgstr "<strong>開放式酒吧和特色餐飲小費：</strong>"
 msgid "<strong>Total:</strong>"
 msgstr "<strong>全部：</strong>"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid ""
+#| "<b>\n"
+#| "\t\t\t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon"
+#| "\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" stroke-width=\"2\" "
+#| "stroke=\"currentColor\" fill=\"none\" stroke-linecap=\"round\" stroke-"
+#| "linejoin=\"round\">\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill="
+#| "\"none\"/>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"9\"/>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/>\n"
+#| "\t\t\t\t\t\t\t\t\t\t</svg>\n"
+#| "\t\t\t\t\t\t\t\t\t\t<span v-translate>Pre-cruise & Onboard Protocols</"
+#| "span>\n"
+#| "\t\t\t\t\t\t\t\t\t</b>"
+msgid ""
+"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+"stroke-linejoin=\"round\">\n"
+"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
+"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+"\t\t\t\t\t\t\t</svg>\n"
+"\t\t\t\t\t\t\tGo Back"
+msgstr ""
+"<b>\n"
+"\t\t\t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon\" "
+"width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" stroke-width=\"2\" stroke="
+"\"currentColor\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin="
+"\"round\">\n"
+"\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none"
+"\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"9\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t</svg>\n"
+"\t\t\t\t\t\t\t\t\t\t<span v-translate>巡航前和船上協議</span>\n"
+"\t\t\t\t\t\t\t\t\t</b>"
+
 #: email_notifications/index.html
 msgid ""
 "| Page: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
 msgstr ""
 "|頁：{{pageNumber}}（{{pageStartEmail 1}}  -  {{pageStartEmail 100}}）|"
+
+#: pages/hotels_details.vue
+msgid "${{ cancellation.amount }} For cancellations made after"
+msgstr ""
+
+#: pages/hotels_booking.vue
+msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+msgstr ""
 
 #: refund_protocol/remove_weeklybonus_modal.html
 msgid "${{statement.data.amount}}"
@@ -1913,6 +2147,18 @@ msgid ""
 msgstr ""
 "在任何給定的月份中，團隊的總生產額為100,000美元。 <br> <br>International "
 "Directors會自動從保持合格的每個人中每月獲得10,000美元的自由獎金。"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "per month. No contracts. You can cancel anytime."
+msgid "$100.00 per month. No contracts. You can cancel anytime."
+msgstr "每月。沒有合同。您可以隨時取消。"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Activation fee"
+msgid "$195.00 Activation fee"
+msgstr "啟動費"
 
 #: pages/connect.vue power_tools_upgrade/index.html
 msgid "$20/month value ($240 annually)"
@@ -1984,6 +2230,24 @@ msgstr "2022 年 6 月 5 日 - 2022 年 6 月 12 日"
 msgid "1 Day"
 msgstr "1天"
 
+#: pages/booking.vue pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Balance"
+msgid "1 For 1 Balance"
+msgstr "餘額"
+
+#: pages/reward_points.vue
+msgid "1 for 1 Reward Balance"
+msgstr ""
+
+#: pages/reward_points.vue
+msgid "1 for 1 Reward Points Balance"
+msgstr ""
+
+#: pages/reward_points.vue
+msgid "1 for 1 Reward Points Logs"
+msgstr ""
+
 #: pages/admin_support_analytics.vue
 msgid "1 Month"
 msgstr "1月"
@@ -2004,8 +2268,12 @@ msgid "1. Definitions"
 msgstr "1. 定義"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "1. Review how many Cruise Credits you have received in total since you "
+#| "began your inCruises Membership."
 msgid ""
-"1. Review how many Cruise Credits you have received in total since you began "
+"1. Review how many Reward Points you have received in total since you began "
 "your inCruises Membership."
 msgstr "1.查看自您開始inCruises會員資格以來，您收到的郵輪信用總數。"
 
@@ -2020,6 +2288,24 @@ msgstr "15800 Pines Blvd Suite # 334"
 #: pages/global_convention.vue
 msgid "1st Global Convention"
 msgstr "第一屆全球公約"
+
+#: pages/booking.vue pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Balance"
+msgid "2 For 1 Balance"
+msgstr "餘額"
+
+#: pages/reward_points.vue
+msgid "2 for 1 Reward Balance"
+msgstr ""
+
+#: pages/reward_points.vue
+msgid "2 for 1 Reward Points Balance"
+msgstr ""
+
+#: pages/reward_points.vue
+msgid "2 for 1 Reward Points Logs"
+msgstr ""
 
 #: agreements/national_director_agreement.html
 msgid "2. Advancement to National Director."
@@ -2053,8 +2339,12 @@ msgid ""
 msgstr "3.從上個月到這個月，您的新團隊合作夥伴總數增加15％"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "3. Subtract the number of Cruise Credits you have already used towards "
+#| "previous reservations from the maximum total found in step 2."
 msgid ""
-"3. Subtract the number of Cruise Credits you have already used towards "
+"3. Subtract the number of Reward Points you have already used towards "
 "previous reservations from the maximum total found in step 2."
 msgstr "3.從步驟2中找到的最大總數中減去您之前預訂的郵輪信用時所使用的數量。"
 
@@ -2090,7 +2380,7 @@ msgstr ""
 "入。<br> <br>除了與董事會每月獲得相同的報酬外，大使們每月還獲得$ 100,000.00 "
 "USD的獎金。"
 
-#: pages/book.vue
+#: pages/book.vue pages/hotels.vue
 msgid "5,000+ Global Destinations are Waiting for You!"
 msgstr "全球5,000多個目的地正等著您！"
 
@@ -2146,6 +2436,12 @@ msgid ""
 "the cruise cabin search. Child's age: %s, expecting %s"
 msgstr ""
 "兒童乘客的年齡與最開始郵輪搜索時輸入的年齡不匹配。孩子的年齡：％s，預期為％s"
+
+#: pages/booking.vue pages/hotels_booking.vue
+msgid ""
+"A member added to this booking has a pending invoice. The type of booking is "
+"locked to Max Amount."
+msgstr ""
 
 #: components/public/Faq.vue
 msgid ""
@@ -2363,8 +2659,14 @@ msgstr "管理員支持"
 msgid "Admin View"
 msgstr "管理員視圖"
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Adults"
+msgstr "成年人"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Adults"
+msgid "Adults:"
 msgstr "成年人"
 
 #: components/public/Faq.vue
@@ -2377,16 +2679,28 @@ msgstr ""
 "多信息，請查看我們的合作夥伴頁面。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "After making 49 Membership payments, the percentage of Cruise Credits "
+#| "that can be used to book cruises increases to 100%, per cruise."
 msgid ""
-"After making 49 Membership payments, the percentage of Cruise Credits that "
+"After making 49 Membership payments, the percentage of Reward Points that "
 "can be used to book cruises increases to 100%, per cruise."
 msgstr "在完成49次會員付款後，每次可用於預訂郵輪的郵輪信用百分比增加到100％。"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "After making 49 Membership payments, the percentage of Cruise Credits "
+#| "that can be used to book cruises increases to 100%."
 msgid ""
-"After making 49 Membership payments, the percentage of Cruise Credits that "
+"After making 49 Membership payments, the percentage of Reward Points that "
 "can be used to book cruises increases to 100%."
 msgstr "在完成49次會員付款後，可用於預訂郵輪的郵輪信用百分比增加到100％。"
+
+#: receipts/hotel_booking_receipt.html
+msgid "Agency Reference"
+msgstr ""
 
 #: Menu
 msgid "Agreements"
@@ -2497,6 +2811,18 @@ msgstr "字母升序"
 msgid "Alphabetical Desc"
 msgstr "字母降序"
 
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Expired Member"
+msgid "Already Member"
+msgstr "已過期會員"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "All Team Partners"
+msgid "Already Partner"
+msgstr "所有團隊合作夥伴"
+
 #: pages/public/contact.vue
 msgid "Already, a registered Member of inCruises?"
 msgstr "已經是inCruises的註冊會員？"
@@ -2510,10 +2836,15 @@ msgid "Alternate Phone"
 msgstr "備用電話號碼"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "Alternatively Partner Members that have either achieved the rank of "
+#| "Marketing Directors or above OR have been Membership FREE for at least 3 "
+#| "months can use 100% of their Cruise Credits®."
 msgid ""
 "Alternatively Partner Members that have either achieved the rank of "
 "Marketing Directors or above OR have been Membership FREE for at least 3 "
-"months can use 100% of their Cruise Credits®."
+"months can use 100% of their Reward Points®."
 msgstr ""
 "另外，已達到Marketing Director或以上職級，或已成為3個月免費會員資格的合作夥伴"
 "會員可以使用100％的郵輪信用。"
@@ -2707,23 +3038,33 @@ msgid "April"
 msgstr "四月"
 
 #: components/public/Faq.vue
-msgid ""
-"Are Cruise Credits considered taxable income due to the 200 Cruise Credits "
-"for every $100 USD paid in Membership dues?"
-msgstr "每支付$100的會員費而獲得的200郵輪信用是否被看作需要交稅的收入呢？"
-
-#: components/public/Faq.vue
 msgid "Are cruises considered business expenses for inCruises Partners?"
 msgstr "郵輪費用是否會被視為Incruse合夥人的商業成本？"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Are Cruise Credits considered taxable income due to the 200 Cruise "
+#| "Credits for every $100 USD paid in Membership dues?"
 msgid ""
-"Are the Cruise Credits applicable to just one passenger, or the total cost "
-"of the booking for all passengers in the cabin?"
+"Are Reward Points considered taxable income due to the 200 Reward Points for "
+"every $100 USD paid in Membership dues?"
+msgstr "每支付$100的會員費而獲得的200郵輪信用是否被看作需要交稅的收入呢？"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Are the Cruise Credits applicable to just one passenger, or the total "
+#| "cost of the booking for all passengers in the cabin?"
+msgid ""
+"Are the Reward Points applicable to just one passenger, or the total cost of "
+"the booking for all passengers in the cabin?"
 msgstr "郵輪信用是僅適用於壹名乘客，還是可用於艙內所有乘客的預訂總費用？"
 
 #: components/public/Faq.vue
-msgid "Are the Cruise Credits transferable to another person?"
+#, fuzzy
+#| msgid "Are the Cruise Credits transferable to another person?"
+msgid "Are the Reward Points transferable to another person?"
 msgstr "郵輪信用可以轉讓給另壹個人嗎？"
 
 #: upgrade/index.html
@@ -2832,8 +3173,9 @@ msgstr ""
 "作為一個患有先天性畸形的孩子的父母，我一家的夢想是加入一個可以幫助像我們這樣"
 "需要幫助的特殊孩子的組織。"
 
-#: pages/public/pricing.vue cruising_dollars/index.html info_center/index.html
-#: menu_page/index.html reach/index.html upgrade/index.html
+#: pages/reward_points.vue pages/upgrade.vue pages/public/pricing.vue
+#: cruising_dollars/index.html info_center/index.html menu_page/index.html
+#: reach/index.html upgrade/index.html
 msgid ""
 "As a Partner you get the opportunity to earn compensation from spreading the "
 "word about inCruises®!"
@@ -2932,13 +3274,19 @@ msgid ""
 msgstr "目前，我們提供從世界上幾乎每個港口城市出發的超過5,000個郵輪航線。"
 
 #: upgrade/index.html
+#, fuzzy
+#| msgid ""
+#| "At this moment it is not possible to pay via Credit Card on the EDGE "
+#| "browser.\n"
+#| "\t\t\tPlease pay with PayPal or login using another Browser; preferably "
+#| "Chrome. Safari, Firefox, Internet Explorer\n"
+#| "\t\t\tall work well to pay with Credit Cards and PayPal. Thank you and "
+#| "sorry for the inconvenience."
 msgid ""
 "At this moment it is not possible to pay via Credit Card on the EDGE "
-"browser.\n"
-"\t\t\tPlease pay with PayPal or login using another Browser; preferably "
-"Chrome. Safari, Firefox, Internet Explorer\n"
-"\t\t\tall work well to pay with Credit Cards and PayPal. Thank you and sorry "
-"for the inconvenience."
+"browser. Please pay with PayPal or login using another Browser; preferably "
+"Chrome. Safari, Firefox, Internet Explorer all work well to pay with Credit "
+"Cards and PayPal. Thank you and sorry for the inconvenience."
 msgstr ""
 "目前無法在EDGE瀏覽器上用信用卡進行支付。\n"
 "\t\t\t請使用PayPal付款或使用其他瀏覽器登錄; 最好是Chrome. Safari, Firefox, "
@@ -2954,6 +3302,12 @@ msgstr "在此潛在職位上，您還將有資格獲得5％的新業務生產�
 #: pages/email.vue
 msgid "Attachments:"
 msgstr "附件："
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Senior Marketing Director Bonus"
+msgid "Attain the rank of Marketing Director or higher"
+msgstr "Senior Marketing Director 獎金"
 
 #: pages/global_convention.vue
 msgid "Attending"
@@ -2982,6 +3336,12 @@ msgstr "可用激勵餘額"
 #: reach/index.html
 msgid "Available Invitations"
 msgstr "可用邀請"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Available Balance"
+msgid "Available Rewards"
+msgstr "可用餘額"
 
 #: agreements/national_director_agreement.html
 msgid "b. Confidentiality."
@@ -3027,8 +3387,9 @@ msgstr "返回亮點"
 msgid "BACK UP"
 msgstr "備份"
 
-#: components/payout/wallet-transfers.vue cruising_dollars/index.html
-#: layouts/default.html negative_balances/index.html
+#: pages/reward_points.vue components/payout/wallet-transfers.vue
+#: cruising_dollars/index.html layouts/default.html
+#: negative_balances/index.html
 msgid "Balance"
 msgstr "餘額"
 
@@ -3068,7 +3429,7 @@ msgstr ""
 "\t\t\t\t\t\t親自觀察他們在inCruises的體驗。人們對inCruises的評論是他們真正喜"
 "歡這家公司以及它能為家人和他們的銀行賬戶做些貢獻。"
 
-#: pages/welcome.vue
+#: pages/reward_points.vue pages/welcome.vue
 msgid "Become a Member"
 msgstr "成為會員"
 
@@ -3078,8 +3439,9 @@ msgid ""
 "access to our select Incentive Cruises and Global Destination Offers."
 msgstr "成為會員並享受我們的獨家優惠，比如精選獎勵郵輪和全球目的地優惠。"
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html upgrade/index.html
+#: pages/reward_points.vue pages/upgrade.vue cruising_dollars/index.html
+#: info_center/index.html menu_page/index.html reach/index.html
+#: upgrade/index.html
 msgid ""
 "Become a Member and enjoy the benefits of our exclusive membership with "
 "access to our select Incentive Dream Cruises and Global Destination Offers."
@@ -3162,6 +3524,12 @@ msgstr "您的網絡成員的生日"
 msgid "birthdays in your network today. Click below to see who they are!"
 msgstr "今天是您的網絡成員的生日。點擊下面查看他們是誰！"
 
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Select a Card"
+msgid "Black Reward Card"
+msgstr "選擇一張卡"
+
 #: pages/admin_restricted_paybonus.vue
 msgid "Blocked"
 msgstr "被封鎖"
@@ -3170,6 +3538,12 @@ msgstr "被封鎖"
 #: layouts/default.html layouts/default_no_nav.html
 msgid "Blog"
 msgstr "博客"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Select a Card"
+msgid "Blue Reward Card"
+msgstr "選擇一張卡"
 
 #: certificates/board-of-directors.html
 msgid "BOARD OF DIRECTORS"
@@ -3263,8 +3637,14 @@ msgstr "預訂您的下一個假期"
 msgid "Booking"
 msgstr "預定"
 
-#: receipts/booking_receipt.html
+#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Booking Receipt"
+msgstr "預定收據"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Booking Receipt"
+msgid "Booking Reference"
 msgstr "預定收據"
 
 #: pages/booking.vue
@@ -3517,8 +3897,12 @@ msgid "Can I be successful selling online only?"
 msgstr "我能在只在網上銷售並取得成功嗎？"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Can I book a cruise using my Cruise Credits and then change the name on "
+#| "the reservation?"
 msgid ""
-"Can I book a cruise using my Cruise Credits and then change the name on the "
+"Can I book a cruise using my Reward Points and then change the name on the "
 "reservation?"
 msgstr "我可以使用我的郵輪信用預訂郵輪，然後在預訂時更改姓名嗎？"
 
@@ -3652,6 +4036,12 @@ msgstr "現金支付"
 msgid "Catalan"
 msgstr "加泰羅尼亞語"
 
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Category Type"
+msgid "Category"
+msgstr "類別類型"
+
 #: receipts/booking_receipt.html
 msgid "Category Type"
 msgstr "類別類型"
@@ -3691,11 +4081,27 @@ msgstr "證書"
 msgid "Change"
 msgstr "改變"
 
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Checkout"
+msgid "Check In"
+msgstr "結賬"
+
+#: pages/hotels_booking.vue
+msgid "Check in:"
+msgstr ""
+
 #: pages/booking.vue
 msgid ""
 "Check our Book and Cruise with Confidence page for access to the most up-to-"
 "date requeriments."
 msgstr "查看我們的“充滿信心地預訂和巡航”頁面，了解最新要求。"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Checkout"
+msgid "Check Out"
+msgstr "結賬"
 
 #: pages/welcome.vue controllers/menu_page.js
 msgid ""
@@ -3712,6 +4118,12 @@ msgstr "查看從市場總監到董事會的最新新排名成就"
 #: connect/index.html
 msgid "Check out this video to learn more."
 msgstr "觀看此視頻了解詳情。"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Checkout"
+msgid "Check out:"
+msgstr "結賬"
 
 #: controllers/checking_emails.js
 msgid "Checking Emails And Fraud"
@@ -3741,7 +4153,7 @@ msgstr "首席技術官 (CTO)"
 msgid "Child #{{ index + 1 }} Age"
 msgstr "兒童 #{{$index + 1}} 年齡"
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Children"
 msgstr "兒童"
 
@@ -3758,6 +4170,12 @@ msgstr "選擇"
 #: import/index.html
 msgid "Choose a local CSV file"
 msgstr "選擇一個本地CSV文件"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Quick Reports"
+msgid "Choose a Quick Report"
+msgstr "快速報告"
 
 #: components/booking/category.vue
 msgid "Choose Different Category"
@@ -3817,7 +4235,7 @@ msgstr "請求Power Tools"
 msgid "Classic"
 msgstr "經典的"
 
-#: pages/book.vue
+#: pages/book.vue pages/hotels.vue
 msgid "Clear All Filters"
 msgstr "清除所有篩選"
 
@@ -3844,7 +4262,7 @@ msgstr "單擊此處過濾郵輪航線"
 msgid "Click here to filter nights"
 msgstr "點擊這裡過濾天數"
 
-#: cruising_dollars/index.html
+#: pages/reward_points.vue
 msgid ""
 "Click here to learn more about our Membership and how you can use your "
 "Cruise Dollars (Cruise Credits) to book Global Cruises."
@@ -3852,13 +4270,29 @@ msgstr ""
 "點擊此處了解有關我們會員資格的更多信息以及如何使用郵輪美元（郵輪信用） 預訂環"
 "球郵輪的方法。"
 
-#: menu_page/index.html
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "Click here to learn more about our Membership and how you can use your "
+#| "Cruise Dollars to book Global Cruises."
 msgid ""
 "Click here to learn more about our Membership and how you can use your "
-"Cruise Dollars® (Cruise Credits) to book Global Cruises."
+"Reward Points (Reward Points) to book Global Cruises."
 msgstr ""
-"點擊此處了解有關我們會員資格的更多信息以及如何使用郵輪美元®（郵輪信用） 預訂"
-"環球郵輪的方法。"
+"點擊此處了解有關我們會員資格的更多信息以及如何使用郵輪美元預訂環球郵輪的方"
+"法。"
+
+#: menu_page/index.html
+#, fuzzy
+#| msgid ""
+#| "Click here to learn more about our Membership and how you can use your "
+#| "Cruise Dollars to book Global Cruises."
+msgid ""
+"Click here to learn more about our Membership and how you can use your "
+"Reward Points® (Reward Points) to book Global Cruises."
+msgstr ""
+"點擊此處了解有關我們會員資格的更多信息以及如何使用郵輪美元預訂環球郵輪的方"
+"法。"
 
 #: info_center/index.html
 msgid "Click here to see all Rank Achievement levels."
@@ -3895,7 +4329,8 @@ msgstr "客戶端配置"
 
 #: components/global-summit-reminder.vue components/weekly-competition.vue
 #: pages/booking.vue pages/connect.vue pages/convention_manager.vue
-#: pages/cruises.vue pages/global_summit_tracking.vue pages/invoices.vue
+#: pages/cruises.vue pages/global_summit_tracking.vue pages/hotels_details.vue
+#: pages/invoices.vue pages/reward_points.vue
 #: components/global_convention/event_info.vue
 #: components/public/FooterLinks.vue components/public/JoinModal.vue
 #: pages/public/biz.vue pages/public/index.vue pages/public/leadership.vue
@@ -4132,6 +4567,12 @@ msgstr "Connect 計劃"
 msgid "Contact by Mail:"
 msgstr "通過郵件聯繫："
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Additional Information"
+msgid "Contact Information"
+msgstr "額外信息"
+
 #: components/public/FooterLinks.vue pages/public/contact.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "Contact Us"
@@ -4279,10 +4720,6 @@ msgstr "創建Payoneer賬號"
 msgid "Created Date"
 msgstr "創建日期"
 
-#: controllers/upgrade.js
-msgid "Credit Card"
-msgstr "信用卡"
-
 #: components/checkout/ProcessorSafechargeEur.vue
 msgid "Credit or debit card"
 msgstr "信用卡或借記卡"
@@ -4300,63 +4737,13 @@ msgstr "郵輪手冊"
 msgid "Cruise Confirmation"
 msgstr "郵輪確認"
 
-#: Menu
-msgid "Cruise Credits"
-msgstr "郵輪信用"
-
-#: components/public/Faq.vue
-msgid ""
-"Cruise Credits are credits or points our Members can use towards booking "
-"cruise vacations on our site. Cruise Credits accumulate and rollover month-"
-"after-month and they never expire as long as you remain an active Member. "
-"Cruise Credits® are not a currency and have no cash value. Cruise Credits "
-"are not an investment. INCRUISES is not a bank, depository or financial "
-"company of any type. Cruise Credits cannot be redeemed for cash under any "
-"circumstance. Credits can only be used to book cruises on our Website. For "
-"complete details please read our <a href=\"{{memberAgreement}}\" target="
-"\"_blank\">Membership Agreement</a>"
-msgstr ""
-"郵輪信用是會員可用於預訂我們網站上的郵輪的積分。郵輪信用會逐月累積，只要您仍"
-"然是活躍會員，它們就永不過期。郵輪信用不是貨幣，也沒有現金價值。郵輪信用不是"
-"投資。 INCRUISES不是任何類型的銀行，存管機構或金融公司。在任何情況下，郵輪信"
-"用都不能兌換現金。積分只能用於在我們的網站上預訂郵輪。有關詳細信息，請閱讀我"
-"們的<a href=\"{{memberAgreement}}\" target=\"_blank\">會員協議</a>"
-
-#: cruising_dollars/index.html
-msgid "Cruise Credits Balance"
-msgstr "郵輪信用餘額"
-
-#: pages/my_cruise_savings.vue receipts/booking_receipt.html
-msgid "Cruise Credits Used"
-msgstr "已使用的郵輪信用"
-
 #: pages/welcome.vue
 msgid "Cruise Credits:"
 msgstr "郵輪信用:"
 
-#: components/public/Faq.vue
-msgid ""
-"Cruise Credits® can only be used for cruise fare(s) quoted and confirmed at "
-"booking on our website, including port charges and applicable government "
-"taxes and fees. Cruise Credits® may not be used to pay for flights, "
-"stateroom upgrades after a confirmed booking, travel insurance, processing "
-"fees, cancellation fees, name change fees or fees of any kind related to the "
-"cruise, pre-paid gratuities, tours and excursions, specialty meals and "
-"beverage packages and/or personal expenditures once on onboard (including "
-"medical expenses and/or gratuities)."
-msgstr ""
-"郵輪信用僅可用於在我們網站上預訂時指明和確認的郵輪票價，包括港口費用和政府稅"
-"費。郵輪信用不得用於支付航班，確認預訂後的客艙升級，旅行保險，手續費，取消"
-"費，更改名稱或與郵輪相關的額外費用, 船上的特色餐飲和飲料套餐和/或個人支出（包"
-"括醫療費用和/或小費)"
-
 #: pages/book.vue
 msgid "Cruise Destination:"
 msgstr "郵輪目的地:"
-
-#: controllers/cruising_dollars.js
-msgid "Cruise Dollars"
-msgstr "郵輪美元"
 
 #: pages/welcome.vue controllers/menu_page.js
 msgid ""
@@ -4527,9 +4914,10 @@ msgstr ""
 "破折號，下劃線和句號不能放在開頭，結尾或連續。 （例如，ex--ample, ex__ample, "
 "ex..ample, ex_-ample, ex-.ample, 或 ex-_ample）。"
 
-#: pages/contacts.vue pages/email.vue components/payout/wallet-transfers.vue
-#: cruising_dollars/index.html email_notifications/index.html
-#: layouts/default.html negative_balances/index.html
+#: pages/contacts.vue pages/email.vue pages/reward_points.vue
+#: components/payout/wallet-transfers.vue cruising_dollars/index.html
+#: email_notifications/index.html layouts/default.html
+#: negative_balances/index.html
 msgid "Date"
 msgstr "日期"
 
@@ -4589,6 +4977,12 @@ msgstr "日期：11月6日"
 msgid "Dates"
 msgstr "日期"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Dates"
+msgid "Dates:"
+msgstr "日期"
+
 #: pages/booking.vue pages/my_cruise_savings.vue receipts/booking_receipt.html
 msgid "Day"
 msgstr "天"
@@ -4628,8 +5022,8 @@ msgstr "甲板："
 msgid "Decks:"
 msgstr "甲板："
 
-#: components/payout/wallet-transfers.vue cruising_dollars/index.html
-#: layouts/default.html
+#: pages/reward_points.vue components/payout/wallet-transfers.vue
+#: cruising_dollars/index.html layouts/default.html
 msgid "Deductions"
 msgstr "扣除"
 
@@ -4702,7 +5096,7 @@ msgstr ""
 "根據您的國籍，您可能需要簽證才能參加這次巡航和訪問一些停靠港。請查看我們的旅"
 "行證件文件了解更多詳情。"
 
-#: pages/convention_manager.vue pages/email_address.vue
+#: pages/convention_manager.vue pages/email_address.vue pages/reward_points.vue
 #: components/payout/wallet-transfers.vue cruising_dollars/index.html
 #: layouts/default.html negative_balances/index.html
 #: receipts/italian_commission.html receipts/italian_receipt.html
@@ -5056,59 +5450,91 @@ msgid ""
 msgstr "Duplicator適用於移動設備和任何類型的計算機，平板電腦和操作系統。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "During the 13th to the 24th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 70%, per cruise."
 msgid ""
-"During the 13th to the 24th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 70%, per cruise."
+"During the 13th to the 24th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 70%, per cruise."
 msgstr ""
 "在第13次至第24次會員付款期間，每次可用於預訂的郵輪的郵輪信用百分比增加至"
 "70％。"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "During the 13th to the 24th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 70%."
 msgid ""
-"During the 13th to the 24th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 70%."
+"During the 13th to the 24th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 70%."
 msgstr ""
 "在第13次至第24次會員付款期間，可用於預訂郵輪的郵輪信用百分比增加到70％。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "During the 25th to the 36th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 80%, per cruise."
 msgid ""
-"During the 25th to the 36th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 80%, per cruise."
+"During the 25th to the 36th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 80%, per cruise."
 msgstr ""
 "在第25次至第36次會員付款期間，每次可用於預訂郵輪的郵輪信用的百分比增加到"
 "80％。"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "During the 25th to the 36th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 80%."
 msgid ""
-"During the 25th to the 36th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 80%."
+"During the 25th to the 36th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 80%."
 msgstr ""
 "在第25次至第36次會員付款期間，可用於預訂郵輪的郵輪信用百分比增加到80％。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "During the 37th to the 48th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 90%, per cruise."
 msgid ""
-"During the 37th to the 48th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 90%, per cruise."
+"During the 37th to the 48th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 90%, per cruise."
 msgstr ""
 "在第37次至第48次會員付款期間，每次可用於預訂郵輪的郵輪信用百分比增加到90％。"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "During the 37th to the 48th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 90%."
 msgid ""
-"During the 37th to the 48th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 90%."
+"During the 37th to the 48th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 90%."
 msgstr ""
 "在第37次至第48次會員付款期間，可用於預訂郵輪的郵輪信用百分比增加到90％。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "During the first 12 Membership payments, Members can use up to 60% of "
+#| "their Cruise Credits, per cruise."
 msgid ""
 "During the first 12 Membership payments, Members can use up to 60% of their "
-"Cruise Credits, per cruise."
+"Reward Points, per cruise."
 msgstr "在前12次會員付款期間，會員每次最多可使用其60％的郵輪信用。"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "During the first 12 Membership payments, Members can use up to 60% of "
+#| "their Cruise Credits."
 msgid ""
 "During the first 12 Membership payments, Members can use up to 60% of their "
-"Cruise Credits."
+"Reward Points."
 msgstr "在前12次會員付款期間，會員最多可使用其60％的郵輪信用。"
 
 #: agreements/national_director_agreement.html
@@ -5197,8 +5623,8 @@ msgstr "獲取的日期"
 msgid "Earned Points"
 msgstr "獲取的分數"
 
-#: components/payout/wallet-transfers.vue cruising_dollars/index.html
-#: layouts/default.html
+#: pages/reward_points.vue components/payout/wallet-transfers.vue
+#: cruising_dollars/index.html layouts/default.html
 msgid "Earnings"
 msgstr "收益"
 
@@ -5426,14 +5852,6 @@ msgid "Expired Member"
 msgstr "已過期會員"
 
 #: reports/index.html
-msgid "Expired Members"
-msgstr "已過期會員"
-
-#: reports/index.html
-msgid "Expired Members with Pending Invoices"
-msgstr "有待處理賬單的過期會員"
-
-#: reports/index.html
 msgid "Expired Partners"
 msgstr "已過期的合作夥伴"
 
@@ -5482,6 +5900,10 @@ msgstr "Facebook營銷"
 #: pages/facebook_marketing.vue
 msgid "Facebook Pixel"
 msgstr "Facebook像素"
+
+#: pages/hotels_details.vue
+msgid "Facilities"
+msgstr ""
 
 #: receipts/booking_receipt.html
 msgid "FAQ"
@@ -5599,8 +6021,14 @@ msgstr "佛羅里達州註冊號"
 msgid "Follow these simple steps to set up your inCruises account."
 msgstr "按照以下簡單步驟設置您的inCruise帳戶。"
 
+#: pages/hotels.vue
+msgid "for {{ daysApart }} nights"
+msgstr ""
+
 #: components/public/Faq.vue
-msgid "For each $100 USD payment, our Members receive 200 Cruise Credits."
+#, fuzzy
+#| msgid "For each $100 USD payment, our Members receive 200 Cruise Credits."
+msgid "For each $100 USD payment, our Members receive 200 Reward Points."
 msgstr "每支付100美元的款項，我們的會員將獲得200郵輪信用。"
 
 #: pages/public/about.vue pages/public/biz.vue pages/public/index.vue
@@ -5876,6 +6304,10 @@ msgstr "查看賬單頁面"
 msgid "Go to settings"
 msgstr "轉到設置"
 
+#: pages/reward_points.vue
+msgid "Gold Reward Card"
+msgstr ""
+
 #: pages/public/leadership.vue
 msgid "Graduated from Georgetown University in Washington, D.C."
 msgstr "畢業於華盛頓特區的喬治城大學。"
@@ -5971,6 +6403,18 @@ msgstr ""
 "想要遊覽世界，卻害怕花費壹大筆錢嗎？ inCruises能幫您節約旅行成本，甚至在這個"
 "過程中掙錢。這聽起來好得令人難以置信，但請不要擔心- 這是真的。"
 
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Team Inactive Members"
+msgid "Have an Active Membership Plan"
+msgstr "團隊不活躍會員"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "You’re an Active Partner, Congratulations!"
+msgid "Have an Active Partnership Plan"
+msgstr "您是活跃的合作伙伴，恭喜！"
+
 #: components/info-reminder.vue
 msgid ""
 "Have you ever vacationed on a cruise (MSC, Costa, Carnival, etc.) before?"
@@ -6006,6 +6450,18 @@ msgstr "階層"
 msgid "Host:"
 msgstr "主持人："
 
+#: receipts/index.html
+#, fuzzy
+#| msgid "Continue Booking"
+msgid "Hotel Booking"
+msgstr "繼續預定"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "More Info"
+msgid "Hotel Info"
+msgstr "更多信息"
+
 #: components/countdown.vue components/membership_countdown.vue
 #: compensation/index.html info_center/index.html reach/index.html
 msgid "hours"
@@ -6016,11 +6472,16 @@ msgid "How can I be successful?"
 msgstr "我如何才能成功？"
 
 #: components/public/Faq.vue
-msgid "How can I use my Cruise Credits?"
+#, fuzzy
+#| msgid "How can I use my Cruise Credits?"
+msgid "How can I use my Reward Points?"
 msgstr "我該怎樣使用我的郵輪信用？"
 
 #: components/public/Faq.vue
-msgid "How can inCruises afford to offer 2 Cruise Credits for every $1 paid?"
+#, fuzzy
+#| msgid ""
+#| "How can inCruises afford to offer 2 Cruise Credits for every $1 paid?"
+msgid "How can inCruises afford to offer 2 Reward Points for every $1 paid?"
 msgstr "inCruises如何做到每消費1美元，就可以提供2郵輪信用？"
 
 #: pages/global_summit_tracking.vue
@@ -6040,16 +6501,18 @@ msgid "How easily can I cancel my Membership?"
 msgstr "我可以輕鬆取消會員資格嗎？"
 
 #: components/public/Faq.vue
-msgid "How many Cruise Credits can I use per cruise?"
-msgstr "每次巡航我可以使用多少郵輪信用？"
-
-#: components/public/Faq.vue
 msgid "How many cruises can we take in one year?"
 msgstr "一年可以乘坐多少次郵輪？"
 
 #: components/public/Faq.vue
 msgid "How many Global Cruises are there available on the site?"
 msgstr "該網站有多少全球郵輪？"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid "How many Cruise Credits can I use per cruise?"
+msgid "How many Reward Points can I use per cruise?"
+msgstr "每次巡航我可以使用多少郵輪信用？"
 
 #: components/info-reminder.vue
 msgid "How many total cruises have you done?"
@@ -6379,10 +6842,16 @@ msgstr ""
 "我的郵輪被取消"
 
 #: agreements/leadership_agreement.html
+#, fuzzy
+#| msgid ""
+#| "I understand that if I promote any group cruise or make improper "
+#| "advertising claims or do not adhere to this agreement/commitment, I can "
+#| "lose all of my awarded Cruise Dollars and Cruise Dollars earned via our "
+#| "Free Membership program."
 msgid ""
 "I understand that if I promote any group cruise or make improper advertising "
 "claims or do not adhere to this agreement/commitment, I can lose all of my "
-"awarded Cruise Dollars and Cruise Dollars earned via our Free Membership "
+"awarded Reward Points and Reward Points earned via our Free Membership "
 "program."
 msgstr ""
 "我理解，如果我宣傳任何團體郵輪或進行不正當的廣告宣傳或不遵守此協議/承諾，我將"
@@ -6452,10 +6921,16 @@ msgstr ""
 "明某人可以："
 
 #: agreements/leadership_agreement.html
+#, fuzzy
+#| msgid ""
+#| "I will not sell our Membership in order for someone to go on any specific "
+#| "cruise. I clearly tell all Members and potential Member that they first "
+#| "must accumulate their Cruise Dollars and then book a cruise that’s "
+#| "available on our website."
 msgid ""
 "I will not sell our Membership in order for someone to go on any specific "
 "cruise. I clearly tell all Members and potential Member that they first must "
-"accumulate their Cruise Dollars and then book a cruise that’s available on "
+"accumulate their Reward Points and then book a cruise that’s available on "
 "our website."
 msgstr ""
 "我不會出售我們的會員資格，以便有人可以乘坐任何特定的郵輪。我清楚地告訴所有會"
@@ -6587,27 +7062,45 @@ msgid "Identification"
 msgstr "身份證明"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If a couple are both inCruises Members, can they combine their Cruise "
+#| "Credits on one cruise booking?"
 msgid ""
-"If a couple are both inCruises Members, can they combine their Cruise "
-"Credits on one cruise booking?"
+"If a couple are both inCruises Members, can they combine their Reward Points "
+"on one cruise booking?"
 msgstr ""
 "如果壹對夫婦都是inCruises會員，他們可以在壹次郵輪預訂中結合他們的郵輪信用嗎？"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If a Member wants to change the name of the passengers on any cruise "
+#| "booked through our Website for which Cruise Credits were deducted to book "
+#| "the cruise, the new person must also be an active paying Member and have "
+#| "enough Cruise Credits to process the name change requested. In the event "
+#| "the name change involves removing from the reservation someone who used "
+#| "their Cruise Credits to book the stateroom with someone who is not an "
+#| "active paying Member or is a Member who does not have enough Cruise "
+#| "Credits to make the exchange, then the only available possibility to "
+#| "execute the name change, is for inCruises to refund the Cruise Credits "
+#| "from the Member being removed, adding those Cruise Credits back to their "
+#| "account and charging the new person taking their place the entire amount "
+#| "by credit card or any payment method allowed by inCruises. Member agrees "
+#| "that certain name change fees may also apply."
 msgid ""
 "If a Member wants to change the name of the passengers on any cruise booked "
-"through our Website for which Cruise Credits were deducted to book the "
+"through our Website for which Reward Points were deducted to book the "
 "cruise, the new person must also be an active paying Member and have enough "
-"Cruise Credits to process the name change requested. In the event the name "
-"change involves removing from the reservation someone who used their Cruise "
-"Credits to book the stateroom with someone who is not an active paying "
-"Member or is a Member who does not have enough Cruise Credits to make the "
-"exchange, then the only available possibility to execute the name change, is "
-"for inCruises to refund the Cruise Credits from the Member being removed, "
-"adding those Cruise Credits back to their account and charging the new "
-"person taking their place the entire amount by credit card or any payment "
-"method allowed by inCruises. Member agrees that certain name change fees may "
-"also apply."
+"Reward Points to process the name change requested. In the event the name "
+"change involves removing from the reservation someone who used their Reward "
+"Points to book the stateroom with someone who is not an active paying Member "
+"or is a Member who does not have enough Reward Points to make the exchange, "
+"then the only available possibility to execute the name change, is for "
+"inCruises to refund the Reward Points from the Member being removed, adding "
+"those Reward Points back to their account and charging the new person taking "
+"their place the entire amount by credit card or any payment method allowed "
+"by inCruises. Member agrees that certain name change fees may also apply."
 msgstr ""
 "當會員想要更改通過我們網站預定的郵輪的乘客姓名，如果預定的時候使用了郵輪信"
 "用，那麼新的乘客必須是會員並且擁有足夠多的郵輪信用來進行姓名更改。如果即將被"
@@ -6674,13 +7167,22 @@ msgstr ""
 "後通知您。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If you discontinue being a member, we will give you up to 1 year to "
+#| "reactivate your account. To reactivate your account, you will need to pay "
+#| "each Membership month you missed. You will still earn double Cruise "
+#| "Credits for each month you pay to reactivate your account, and those "
+#| "Cruise Credits will be added to your previous balance. After 12 months of "
+#| "inactivity, your account is closed and your Cruise Credits expire and are "
+#| "forfeited."
 msgid ""
 "If you discontinue being a member, we will give you up to 1 year to "
 "reactivate your account. To reactivate your account, you will need to pay "
-"each Membership month you missed. You will still earn double Cruise Credits "
-"for each month you pay to reactivate your account, and those Cruise Credits "
+"each Membership month you missed. You will still earn double Reward Points "
+"for each month you pay to reactivate your account, and those Reward Points "
 "will be added to your previous balance. After 12 months of inactivity, your "
-"account is closed and your Cruise Credits expire and are forfeited."
+"account is closed and your Reward Points expire and are forfeited."
 msgstr ""
 "如果您停止成為會員，我們將為您提供最長1年的時間來重新啟動您的帳戶。要重新啟動"
 "您的帳戶，您需要支付錯過的每個月的會員費。您為恢復帳戶而支付的每月會員費仍然"
@@ -6720,9 +7222,14 @@ msgstr ""
 "我們的網站，只有重新啟動您的帳戶才能恢復正常。"
 
 #: upgrade/index.html
+#, fuzzy
+#| msgid ""
+#| "If you think this is an error, please contact our support staff. <a href="
+#| "\"https://incruises.com/support\">https://incruises.com/support</a>"
 msgid ""
-"If you think this is an error, please contact our support staff. <a href="
-"\"https://incruises.com/support\">https://incruises.com/support</a>"
+"If you think this is an error, please contact our support staff.\n"
+"\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"support</a>"
 msgstr ""
 "如果您認為這是壹個錯誤，請通過 <a href=\"https://incruises.com/support"
 "\">https://incruises.com/support</a>繫我們的技術支持團隊"
@@ -6966,13 +7473,39 @@ msgstr ""
 "INCRUISE終止本附錄後並未終止合作夥伴的IBP協議，則合作夥伴將恢復為Regional "
 "Director級別。"
 
-#: cruising_dollars/index.html
-msgid "Incentive Cruise Credits Balance"
-msgstr "激勵郵輪信用餘額"
+#: reports/index.html
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "Inactive Date"
+msgstr "發票日期"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Active Member"
+msgid "Inactive Direct Members"
+msgstr "活躍會員"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Active Member"
+msgid "Inactive Members"
+msgstr "活躍會員"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Active Team Members"
+msgid "Inactive Team Members"
+msgstr "活躍的團隊成員"
 
 #: components/public/FooterDocs.vue
 msgid "Incentive Program Overview"
 msgstr "獎勵計劃概述"
+
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid "Incentive Cruise Credits Balance"
+msgid "Incentive Reward Points Balance"
+msgstr "激勵郵輪信用餘額"
 
 #: reports/index.html
 msgid "Include"
@@ -7057,13 +7590,21 @@ msgid "Incruises LLC"
 msgstr "Incruises LLC"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "InCruises Members can book any of our over 5,000 Global Cruises directly "
+#| "on our site, by clicking on Global Cruises on our “Cruises” menu, then "
+#| "following the steps all the way through the payment process. At checkout, "
+#| "you will be given the option to pay for your cruise using all of your "
+#| "available Cruise Credits and/or other payment methods to complete the "
+#| "booking process."
 msgid ""
 "InCruises Members can book any of our over 5,000 Global Cruises directly on "
 "our site, by clicking on Global Cruises on our “Cruises” menu, then "
 "following the steps all the way through the payment process. At checkout, "
 "you will be given the option to pay for your cruise using all of your "
-"available Cruise Credits and/or other payment methods to complete the "
-"booking process."
+"available Reward Points and/or other payment methods to complete the booking "
+"process."
 msgstr ""
 "InCruises會員可以直接在我們的網站上預訂多達5,000多條全球郵輪線路，點擊“郵"
 "輪”菜單上的環球遊輪選項即可，然後按照步驟完成整個付款流程。在結賬時，您可以選"
@@ -7280,6 +7821,12 @@ msgstr "邀請詳情"
 #: pages/contacts.vue pages/invite.vue
 msgid "Invite"
 msgstr "邀請"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Invited Top"
+msgid "Invite and grow!"
+msgstr "頂級邀請"
 
 #: import/create.html
 msgid "Invite as Member"
@@ -7776,10 +8323,17 @@ msgstr "加載"
 msgid "Load Level"
 msgstr "等級"
 
-#: components/payout/wallet-transfers.vue compensation/index.html
-#: receipts/index.html reports/index.html track_results/index.html
+#: pages/hotels.vue components/payout/wallet-transfers.vue
+#: compensation/index.html receipts/index.html reports/index.html
+#: track_results/index.html
 msgid "Load More"
 msgstr "加載更多"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "All Locations"
+msgid "Location"
+msgstr "所有地點"
 
 #: components/blog/navbar.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
@@ -7955,9 +8509,15 @@ msgid "Members"
 msgstr "會員"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Members can book any cruise available on our Website and we will "
+#| "automatically use their available Cruise Credits® to reduce the cost in "
+#| "full or partially pay for the booking subject to maximum percentage "
+#| "amounts as described below:"
 msgid ""
 "Members can book any cruise available on our Website and we will "
-"automatically use their available Cruise Credits® to reduce the cost in full "
+"automatically use their available Reward Points® to reduce the cost in full "
 "or partially pay for the booking subject to maximum percentage amounts as "
 "described below:"
 msgstr ""
@@ -7971,14 +8531,26 @@ msgid ""
 msgstr "會員可以使用inCruises錢包中的餘額支付郵輪預訂費用。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Members must be active (no unpaid monthly invoices) to book a cruise. "
+#| "Once a booking is confirmed, the Member must remain as an active paying "
+#| "Member through the embarkation process of the cruise for which Cruise "
+#| "Credits were used to book. If a Member fails to make Monthly Membership "
+#| "payments after booking the cruise and before embarkation, and "
+#| "consequently their account goes into an Inactive status, inCruises has "
+#| "the right to cancel the cruise, and reimburse/refund all Cruise Credits "
+#| "and payments made for the booking. Any fees associated with the "
+#| "cancellation, will be the responsibility of the Member and deducted from "
+#| "the Member's account."
 msgid ""
 "Members must be active (no unpaid monthly invoices) to book a cruise. Once a "
 "booking is confirmed, the Member must remain as an active paying Member "
-"through the embarkation process of the cruise for which Cruise Credits were "
+"through the embarkation process of the cruise for which Reward Points were "
 "used to book. If a Member fails to make Monthly Membership payments after "
 "booking the cruise and before embarkation, and consequently their account "
 "goes into an Inactive status, inCruises has the right to cancel the cruise, "
-"and reimburse/refund all Cruise Credits and payments made for the booking. "
+"and reimburse/refund all Reward Points and payments made for the booking. "
 "Any fees associated with the cancellation, will be the responsibility of the "
 "Member and deducted from the Member's account."
 msgstr ""
@@ -7992,7 +8564,7 @@ msgstr ""
 msgid "Members must be at least 18 years old."
 msgstr "會員必須年滿18周歲。"
 
-#: pages/welcome.vue components/public/Header.vue
+#: pages/upgrade.vue pages/welcome.vue components/public/Header.vue
 msgid "Membership"
 msgstr "會員資格"
 
@@ -8366,8 +8938,9 @@ msgstr ""
 #: competition/index.html invoices/invoice_statement.html
 #: negative_balances/index.html pay_bonus/index.html reach/index.html
 #: receipts/booking_receipt.html receipts/commission_statement.html
-#: receipts/instant_bonus_statement.html receipts/invoice.html
-#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
+#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
+#: receipts/invoice.html receipts/italian_receipt.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
@@ -8397,11 +8970,19 @@ msgid ""
 msgstr "不允許更改名稱。 對於某些可能更改名稱的例外情況，請聯繫"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Name changes to your Membership is simply NOT allowed. Membership is "
+#| "personal to you as a Member and you may not transfer, assign, change or "
+#| "otherwise dispose any of your rights or obligations and/or benefits, "
+#| "including Cruise Credits. Upon death of a Member, if all Membership fees "
+#| "are up to date, the Membership can be transferred to their spouse or "
+#| "legal heirs."
 msgid ""
 "Name changes to your Membership is simply NOT allowed. Membership is "
 "personal to you as a Member and you may not transfer, assign, change or "
 "otherwise dispose any of your rights or obligations and/or benefits, "
-"including Cruise Credits. Upon death of a Member, if all Membership fees are "
+"including Reward Points. Upon death of a Member, if all Membership fees are "
 "up to date, the Membership can be transferred to their spouse or legal heirs."
 msgstr ""
 "您不能進行會員更名。您不得轉讓，分配，更改或以其他方式處置您的任何權利或義務"
@@ -8613,7 +9194,7 @@ msgstr "下個月"
 msgid "Next Step"
 msgstr "下一步"
 
-#: cruising_dollars/index.html
+#: pages/reward_points.vue cruising_dollars/index.html
 msgid "Next Year"
 msgstr "明年"
 
@@ -8663,31 +9244,59 @@ msgstr "找不到視頻。"
 msgid "No, Cancel and keep current email"
 msgstr "不，取消並保留當前的電子郵件"
 
+#: pages/checkout.vue
+msgid "No, I do not live in Puerto Rico"
+msgstr "不，我不住在波多黎各"
+
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No, Cruise Credits are not a currency so there is no tax implication. "
+#| "Redeeming Cruise Credits is comparable to booking a Cruise as a result of "
+#| "a promotion or incentive. No one gets taxed more because the true value "
+#| "is higher. We also suggest you confirm with your accountant."
 msgid ""
-"No, Cruise Credits are not a currency so there is no tax implication. "
-"Redeeming Cruise Credits is comparable to booking a Cruise as a result of a "
+"No, Reward Points are not a currency so there is no tax implication. "
+"Redeeming Reward Points is comparable to booking a Cruise as a result of a "
 "promotion or incentive. No one gets taxed more because the true value is "
 "higher. We also suggest you confirm with your accountant."
 msgstr ""
 "不，郵輪信用不是貨幣，因此沒有稅收影響。郵輪信用的兌換相當於通過促銷和獎勵預"
 "訂郵輪。真正的價值很高，沒有人被徵稅。但我們還是建議您諮詢您的會計師。"
 
-#: pages/checkout.vue
-msgid "No, I do not live in Puerto Rico"
-msgstr "不，我不住在波多黎各"
-
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No, they are not. This is strictly prohibited in our <a href="
+#| "\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>. "
+#| "Cruise Credits are never transferable, and change of ownership of the "
+#| "account is not allowed."
 msgid ""
 "No, they are not. This is strictly prohibited in our <a href="
-"\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>. Cruise "
-"Credits are never transferable, and change of ownership of the account is "
-"not allowed."
+"\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>. Reward "
+"Points are never transferable, and change of ownership of the account is not "
+"allowed."
 msgstr ""
 "不，他們不是。我們的 <a href=\"{{memberAgreement}}\" target=\"_blank\">會員協"
 "議</a>嚴格禁止這種做法。郵輪信用永遠不可轉讓，不允許更改帳戶的所有權。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No, we are all at risk. To mitigate risk, we have Seller of Travel "
+#| "Registrations in every state required and are bonded when required to do "
+#| "so. Please see our <a href='{{corporateDueDiligence}}' "
+#| "target='_blank'>Due Diligence Document</a> to learn more about the "
+#| "company. Bottom line: we are built to last and are here for the long "
+#| "haul, and like anything in life, there are no guarantees. To further "
+#| "mitigate risk, we also have a relationship with Trust My Travel (TMT). "
+#| "TMT provides consumer protection for every Membership payment. Your "
+#| "payments to INCRUISES® are covered (your out-of-pocket amount, not the "
+#| "Cruise Dollars® (Cruise Credits) value) if, in the unlikely event "
+#| "INCRUISES were to stop doing business. Please click here for more "
+#| "information on your financial protection: <a "
+#| "href='{{tmtFinancialProtection}}' target='_blank'>TMT Financial "
+#| "Protection</a>."
 msgid ""
 "No, we are all at risk. To mitigate risk, we have Seller of Travel "
 "Registrations in every state required and are bonded when required to do so. "
@@ -8697,7 +9306,7 @@ msgid ""
 "there are no guarantees. To further mitigate risk, we also have a "
 "relationship with Trust My Travel (TMT). TMT provides consumer protection "
 "for every Membership payment. Your payments to INCRUISES® are covered (your "
-"out-of-pocket amount, not the Cruise Dollars® (Cruise Credits) value) if, in "
+"out-of-pocket amount, not the Reward Points® (Reward Points) value) if, in "
 "the unlikely event INCRUISES were to stop doing business. Please click here "
 "for more information on your financial protection: <a "
 "href='{{tmtFinancialProtection}}' target='_blank'>TMT Financial Protection</"
@@ -8731,10 +9340,16 @@ msgstr ""
 "金。我們只為會員銷售支付佣金和獎金。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No. It's a $100 USD maximum per member. However, if you plan to cruise "
+#| "with another person, your spouse for example, that person can also be a "
+#| "member and both will be able to apply their Cruise Credits to the same "
+#| "cruise you will be booking together."
 msgid ""
 "No. It's a $100 USD maximum per member. However, if you plan to cruise with "
 "another person, your spouse for example, that person can also be a member "
-"and both will be able to apply their Cruise Credits to the same cruise you "
+"and both will be able to apply their Reward Points to the same cruise you "
 "will be booking together."
 msgstr ""
 "不。每個會員最多100美元。但是，如果您打算與另一個人一起航行，例如和您的配偶，"
@@ -8801,13 +9416,13 @@ msgstr ""
 "獲得退款。 在航行前7天，更名將產生75美元的罰款。 在航行7天之內更改姓名將被視"
 "為取消，不符合退款資格。"
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue cruising_dollars/index.html info_center/index.html
+#: menu_page/index.html reach/index.html
 msgid "Not a Member"
 msgstr "不是會員"
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue cruising_dollars/index.html info_center/index.html
+#: menu_page/index.html reach/index.html
 msgid "Not a Partner"
 msgstr "不是合作夥伴"
 
@@ -8846,6 +9461,12 @@ msgstr "不是合作夥伴/會員"
 #: pages/duplicator.vue
 msgid "Not Reminded"
 msgstr "不提醒"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Not Completed"
+msgid "Not Selected"
+msgstr "沒有完成"
 
 #: receipts/italian_receipt.html
 msgid "Notes:"
@@ -9077,6 +9698,12 @@ msgstr "我們的價值"
 #: pages/public/mission.vue
 msgid "OUR VISION"
 msgstr "我們的願景"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Total Out Of Pocket"
+msgid "Out of Pocket"
+msgstr "總支出"
 
 #: pages/my_cruise_savings.vue
 msgid "Out-of-Pocket Paid"
@@ -9396,7 +10023,7 @@ msgstr "還沒有更新的合作夥伴"
 msgid "Partners That Will Be Renewing Next Month"
 msgstr "將在下個月更新的合作夥伴"
 
-#: components/public/Header.vue
+#: pages/upgrade.vue components/public/Header.vue
 msgid "Partnership"
 msgstr "合作夥伴資格"
 
@@ -9448,6 +10075,12 @@ msgstr "支付獎金"
 #: pay_bonus/index.html controllers/pay_bonus.js
 msgid "Pay Bonus"
 msgstr "支付獎金"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Pending Invoices"
+msgid "Pay Pending Invoices"
+msgstr "待定賬單"
 
 #: components/checkout/ProcessorWallet.vue
 msgid "Pay using inCruises® Wallet"
@@ -9537,6 +10170,18 @@ msgstr "待定賬單："
 #: compensation/index.html
 msgid "Pending Member Bonus"
 msgstr "待定會員獎金"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Pending Member Bonus"
+msgid "Pending Members"
+msgstr "待定會員獎金"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Expired Members with Pending Invoices"
+msgid "Pending Members with Pending Invoices"
+msgstr "有待處理賬單的過期會員"
 
 #: compensation/index.html
 msgid "Pending Partner/Member Bonus"
@@ -9631,7 +10276,15 @@ msgid "Please add the inCruises members that will be a part of this booking:"
 msgstr "請添加將加入此預訂的inCruises成員："
 
 #: pages/booking.vue
-msgid "Please allocate the corresponding Cruise Credits for each member:"
+#, fuzzy
+#| msgid "Please allocate the corresponding Cruise Credits for each member:"
+msgid "Please allocate the corresponding Reward Points for each member:"
+msgstr "請為每位會員分配相應的郵輪信用："
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Please allocate the corresponding Cruise Credits for each member:"
+msgid "Please allocate the corresponding Rewards Points for each member:"
 msgstr "請為每位會員分配相應的郵輪信用："
 
 #: pages/payout.vue
@@ -9662,6 +10315,10 @@ msgid ""
 "Please choose the currency of this Payment Method. Incorrect currency can "
 "lead to failed payment."
 msgstr "請選擇此付款方式的貨幣。貨幣不正確可能導致付款失敗。"
+
+#: pages/booking.vue pages/hotels_booking.vue
+msgid "Please choose the type of booking you wish to do:"
+msgstr ""
 
 #: layouts/default.html layouts/default_no_nav.html
 msgid ""
@@ -9938,6 +10595,12 @@ msgstr "請稍等，我們在完成結賬流程"
 msgid "Please wait while we gather all available cruises..."
 msgstr "請稍等，我們正在收集所有可用的郵輪..."
 
+#: pages/hotels.vue pages/hotels_details.vue
+#, fuzzy
+#| msgid "Please wait while we gather all available cruises..."
+msgid "Please wait while we gather all available hotels..."
+msgstr "請稍等，我們正在收集所有可用的郵輪..."
+
 #: pages/cruise.vue
 msgid "Please wait while we gather cruise trip information..."
 msgstr "請稍等，我們正在收集郵輪旅行信息..."
@@ -9959,6 +10622,12 @@ msgstr "分數"
 #: pages/public/leadership.vue
 msgid "Ponce, Puerto Rico"
 msgstr "龐塞，波多黎各"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Cruise Destination:"
+msgid "Popular Destinations"
+msgstr "郵輪目的地:"
 
 #: pages/booking.vue pages/cruise.vue pages/my_cruise_savings.vue
 msgid "Port"
@@ -10013,6 +10682,12 @@ msgstr "潛在的會員"
 #: compensation/index.html
 msgid "Potential Points"
 msgstr "潛在的分數"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Potential Members"
+msgid "Potential Rewards"
+msgstr "潛在的會員"
 
 #: pages/my_cruise_savings.vue
 msgid ""
@@ -10105,11 +10780,12 @@ msgstr "上個月的總計"
 msgid "Previous Step"
 msgstr "前一步"
 
-#: cruising_dollars/index.html
+#: pages/reward_points.vue cruising_dollars/index.html
 msgid "Previous Year"
 msgstr "前一年"
 
-#: components/booking/category.vue receipts/receipt.html
+#: components/booking/category.vue receipts/hotel_booking_receipt.html
+#: receipts/receipt.html
 msgid "Price"
 msgstr "價格"
 
@@ -10117,9 +10793,27 @@ msgstr "價格"
 msgid "Price does not include Taxes and Fees"
 msgstr "價格不包括稅費"
 
-#: receipts/booking_receipt.html
+#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Price Information"
 msgstr "價格信息"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Price"
+msgid "Price Max."
+msgstr "價格"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Pricing"
+msgid "Price Min."
+msgstr "價格"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Price per Ticket"
+msgid "Price per night:"
+msgstr "每張票價"
 
 #: pages/convention_manager.vue
 msgid "Price per Ticket"
@@ -10150,8 +10844,8 @@ msgstr "優先登陸和離場，專用娛樂座位等等。"
 msgid "Privacy Policy"
 msgstr "隱私政策"
 
-#: pages/booking.vue pages/checkout.vue pages/invoices.vue
-#: components/booking/agreements.vue upgrade/index.html
+#: pages/booking.vue pages/checkout.vue pages/hotels_booking.vue
+#: pages/invoices.vue components/booking/agreements.vue upgrade/index.html
 msgid "Proceed"
 msgstr "繼續"
 
@@ -10160,11 +10854,21 @@ msgid "Proceed to Checkout"
 msgstr "繼續結算"
 
 #: upgrade/index.html
-msgid "Proceed to Checkout <i class=\"fa fa-check\"></i>"
+#, fuzzy
+#| msgid "Proceed to Checkout <i class=\"fa fa-check\"></i>"
+msgid ""
+"Proceed to Checkout\n"
+"\t\t\t\t\t\t\t<i class=\"fa fa-check\"></i>"
 msgstr "繼續結算<i class=\"fa fa-check\"></i>"
 
 #: components/checkout/CardStep.vue
 msgid "Process Payment"
+msgstr "處理付款流程"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Process Payment"
+msgid "Processing Fee"
 msgstr "處理付款流程"
 
 #: receipts/new_producer_bonus_statement.html
@@ -10380,8 +11084,9 @@ msgstr ""
 "準備好了解如何通過inCruise獲得巨大成功的秘訣了嗎？ 請查看我們的網絡研討會錄音"
 "庫。"
 
-#: components/payout/wallet-transfers.vue cruising_dollars/index.html
-#: layouts/default.html negative_balances/index.html
+#: pages/reward_points.vue components/payout/wallet-transfers.vue
+#: cruising_dollars/index.html layouts/default.html
+#: negative_balances/index.html
 msgid "Reason"
 msgstr "原因"
 
@@ -10618,7 +11323,7 @@ msgstr "需要身份驗證："
 msgid "Resend Code"
 msgstr "重新發送驗證碼"
 
-#: receipts/booking_receipt.html
+#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Reservation Details"
 msgstr "預定詳情"
 
@@ -10695,13 +11400,95 @@ msgid "Return to Welcome Page"
 msgstr "返回歡迎頁面"
 
 #: info_center/index.html
-msgid "Review your Cruise Credits balance."
+#, fuzzy
+#| msgid "Review your Cruise Credits balance."
+msgid "Review your Reward Points balance."
 msgstr "查看您的郵輪信用®餘額。"
 
 #: components/weekly-competition.vue pages/competition.vue
 #: competition/index.html
 msgid "Reward"
 msgstr "獎勵"
+
+#: pages/reward_points.vue pages/welcome.vue compensation/index.html
+#: info_center/index.html controllers/cruising_dollars.js
+#: controllers/menu_page.js
+#, fuzzy
+#| msgid "Earned Points"
+msgid "Reward Points"
+msgstr "獲取的分數"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Cruise Credits are credits or points our Members can use towards booking "
+#| "cruise vacations on our site. Cruise Credits accumulate and rollover "
+#| "month-after-month and they never expire as long as you remain an active "
+#| "Member. Cruise Credits® are not a currency and have no cash value. Cruise "
+#| "Credits are not an investment. INCRUISES is not a bank, depository or "
+#| "financial company of any type. Cruise Credits cannot be redeemed for cash "
+#| "under any circumstance. Credits can only be used to book cruises on our "
+#| "Website. For complete details please read our <a href="
+#| "\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>"
+msgid ""
+"Reward Points are credits or points our Members can use towards booking "
+"cruise vacations on our site. Reward Points accumulate and rollover month-"
+"after-month and they never expire as long as you remain an active Member. "
+"Reward Points® are not a currency and have no cash value. Reward Points are "
+"not an investment. INCRUISES is not a bank, depository or financial company "
+"of any type. Reward Points cannot be redeemed for cash under any "
+"circumstance. Credits can only be used to book cruises on our Website. For "
+"complete details please read our <a href=\"{{memberAgreement}}\" target="
+"\"_blank\">Membership Agreement</a>"
+msgstr ""
+"郵輪信用是會員可用於預訂我們網站上的郵輪的積分。郵輪信用會逐月累積，只要您仍"
+"然是活躍會員，它們就永不過期。郵輪信用不是貨幣，也沒有現金價值。郵輪信用不是"
+"投資。 INCRUISES不是任何類型的銀行，存管機構或金融公司。在任何情況下，郵輪信"
+"用都不能兌換現金。積分只能用於在我們的網站上預訂郵輪。有關詳細信息，請閱讀我"
+"們的<a href=\"{{memberAgreement}}\" target=\"_blank\">會員協議</a>"
+
+#: pages/booking.vue pages/hotels_booking.vue
+msgid "Reward Points Available"
+msgstr ""
+
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid "Cruise Credits Balance"
+msgid "Reward Points Balance"
+msgstr "郵輪信用餘額"
+
+#: pages/my_cruise_savings.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Earned Points"
+msgid "Reward Points Used"
+msgstr "獲取的分數"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Cruise Credits® can only be used for cruise fare(s) quoted and confirmed "
+#| "at booking on our website, including port charges and applicable "
+#| "government taxes and fees. Cruise Credits® may not be used to pay for "
+#| "flights, stateroom upgrades after a confirmed booking, travel insurance, "
+#| "processing fees, cancellation fees, name change fees or fees of any kind "
+#| "related to the cruise, pre-paid gratuities, tours and excursions, "
+#| "specialty meals and beverage packages and/or personal expenditures once "
+#| "on onboard (including medical expenses and/or gratuities)."
+msgid ""
+"Reward Points® can only be used for cruise fare(s) quoted and confirmed at "
+"booking on our website, including port charges and applicable government "
+"taxes and fees. Reward Points® may not be used to pay for flights, stateroom "
+"upgrades after a confirmed booking, travel insurance, processing fees, "
+"cancellation fees, name change fees or fees of any kind related to the "
+"cruise, pre-paid gratuities, tours and excursions, specialty meals and "
+"beverage packages and/or personal expenditures once on onboard (including "
+"medical expenses and/or gratuities)."
+msgstr ""
+"郵輪信用僅可用於在我們網站上預訂時指明和確認的郵輪票價，包括港口費用和政府稅"
+"費。郵輪信用不得用於支付航班，確認預訂後的客艙升級，旅行保險，手續費，取消"
+"費，更改名稱或與郵輪相關的額外費用, 船上的特色餐飲和飲料套餐和/或個人支出（包"
+"括醫療費用和/或小費)"
 
 #: compensation/index.html
 msgid "Rewards"
@@ -10713,13 +11500,49 @@ msgstr "獎勵"
 msgid "Romanian"
 msgstr "羅馬尼亞"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Room Num:"
+msgid "Room"
+msgstr "房間號："
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Room Num:"
+msgid "Room name:"
+msgstr "房間號："
+
 #: pages/booking.vue
 msgid "Room Num:"
+msgstr "房間號："
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Email Type"
+msgid "Room Type"
+msgstr "電郵類型"
+
+#: pages/hotels.vue pages/hotels_details.vue
+#, fuzzy
+#| msgid "View Rooms"
+msgid "Rooms"
+msgstr "查看房間"
+
+#: pages/hotels.vue pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Room Num:"
+msgid "Rooms:"
 msgstr "房間號："
 
 #: pages/global_summit_tracking.vue
 msgid "Rules to Qualify:"
 msgstr "資格規則："
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Quick Reports"
+msgid "Run Quick Report"
+msgstr "快速報告"
 
 #: reports/index.html
 msgid "Run Report"
@@ -10771,9 +11594,10 @@ msgstr ""
 "節省展示時間！有了這個強大的工具，您可以立即將潛在客戶轉換為合作夥伴和/或會"
 "員。"
 
-#: pages/book.vue communications/index.html communications/view.html
-#: compensation/index.html email_notifications/index.html
-#: track_growth/index.html webinar_recordings/index.html
+#: pages/book.vue pages/hotels.vue communications/index.html
+#: communications/view.html compensation/index.html
+#: email_notifications/index.html track_growth/index.html
+#: webinar_recordings/index.html
 msgid "Search"
 msgstr "搜索"
 
@@ -10792,6 +11616,10 @@ msgstr "搜索船艙"
 #: components/translations/placeholders.vue
 msgid "Search for Names or Emails"
 msgstr "搜索姓名或電子郵件."
+
+#: pages/hotels.vue
+msgid "Search Hotels and Cities:"
+msgstr ""
 
 #: components/translations/placeholders.vue
 msgid "Search Name or Email"
@@ -10897,6 +11725,18 @@ msgstr "選擇您的名稱格式："
 #: pages/growth_calculator.vue
 msgid "Select Your Potential Growth"
 msgstr "選擇您的潛在增長"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Select Deck:"
+msgid "Selected"
+msgstr "選擇甲板："
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Meeting Room"
+msgid "Selected Room"
+msgstr "會議室"
 
 #: components/public/FooterLinks.vue layouts/blank_angular.html
 #: layouts/default.html layouts/default_no_nav.html
@@ -11112,7 +11952,7 @@ msgstr "顯示總產量"
 msgid "Showing All Teams"
 msgstr "顯示所有團隊"
 
-#: pages/book.vue
+#: pages/book.vue pages/hotels.vue
 msgid "Showing results for {{ describeSearch() }}"
 msgstr "顯示{{ describeSearch() }}的結果"
 
@@ -11183,7 +12023,7 @@ msgstr "社交媒體營銷經理"
 msgid "Social Security Number"
 msgstr "社會安全號碼"
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels_booking.vue
 msgid "Some passenger fields are missing."
 msgstr "一些客運領域失踪了。"
 
@@ -11203,20 +12043,28 @@ msgstr ""
 #: upgrade/index.html
 msgid ""
 "Some upgrade options are not available until payment is completed. If you "
-"have any questions please contact <a href=\"https://incruises.com/support"
-"\">https://incruises.com/support</a>."
+"have any questions please contact\n"
+"\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"support</a>\n"
+"\t\t\t\t\t\t."
 msgstr ""
-"支付完成前，部分升級方式無法使用。如果您有任何疑問，請聯繫<a href=\"https://"
-"support.incruises.com\">https://support.incruises.com</a> ."
+"付款完成前，部分升級方式無法使用。如果您有任何疑問，請聯繫\n"
+"\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"support</a>\n"
+"\t\t\t\t\t\t."
 
 #: upgrade/index.html
 msgid ""
 "Some upgrade options are not available until transfer is completed. If you "
-"have any questions please contact <a href=\"https://incruises.com/support"
-"\">https://incruises.com/support</a>."
+"have any questions please contact\n"
+"\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"support</a>\n"
+"\t\t\t\t\t\t."
 msgstr ""
-"轉賬完成前，部分升級方式無法使用。如果您有任何疑問，請聯繫<a href=\"https://"
-"support.incruises.com\">https://support.incruises.com</a> ."
+"某些付款升級選項在轉賬完成之前不可用。如果您有任何疑問，請聯繫\n"
+"\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"support</a>\n"
+"\t\t\t\t\t\t."
 
 #: controllers/agreements.js
 msgid "Something was wrong"
@@ -11226,7 +12074,7 @@ msgstr "出了點問題"
 msgid "Sorting"
 msgstr "排序中"
 
-#: pages/admin_support_analytics.vue pages/book.vue
+#: pages/admin_support_analytics.vue pages/book.vue pages/hotels.vue
 msgid "Sorting:"
 msgstr "排序中:"
 
@@ -11317,8 +12165,8 @@ msgid "State/Region"
 msgstr "國家/地區"
 
 #: receipts/booking_receipt.html receipts/commission_statement.html
-#: receipts/instant_bonus_statement.html receipts/invoice.html
-#: receipts/kickstart_bonus_statement.html
+#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
+#: receipts/invoice.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
@@ -11844,6 +12692,10 @@ msgid ""
 "Start Awards."
 msgstr "上面的計時器表示您還有多少時間可以解鎖快速啟動獎勵。"
 
+#: pages/hotels_details.vue
+msgid "The use of the facility will issue a voucher."
+msgstr ""
+
 #: components/public/Faq.vue
 msgid ""
 "There are many ways to earn income as a Partner with inCruises. There are "
@@ -11855,6 +12707,12 @@ msgstr ""
 "作為inCruises的合作夥伴，有很多方法可以賺取收入。根據整個下線組織的收入和銷售"
 "量以及其他一些激勵措施，可以獲得即時支付獎金，生產者獎金，剩餘薪酬，免費會員"
 "資格和獎金。請查看我們的薪酬計劃了解更多詳情。"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "There was no results for your search."
+msgid "There are no results for this search."
+msgstr "沒有搜索結果。"
 
 #: pages/booking.vue
 msgid ""
@@ -12110,7 +12968,7 @@ msgstr ""
 "本附錄將按照第2.a節的規定生效，除非事先按本協議規定終止，否則在IBP協議和/或政"
 "策和程序中規定的合作夥伴IBP協議終止或取消之前，該附錄仍然有效。"
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels_booking.vue pages/hotels_details.vue
 msgid "This booking is non-refundable."
 msgstr "此預訂不可退款。"
 
@@ -12166,6 +13024,10 @@ msgid ""
 "the maximum number of cabins we can book for this cruise."
 msgstr ""
 "此郵輪不再對inCruises會員開放。它已經超出了我們可以預訂此遊輪的最大客艙數量。"
+
+#: pages/hotels_details.vue
+msgid "This facility has cost."
+msgstr ""
 
 #: pages/additional_info.vue
 msgid ""
@@ -12260,7 +13122,7 @@ msgid ""
 msgstr ""
 "這是您在本月內可能獲得的製作人和輔導獎金。點擊此處查看實際薪酬的詳細情況。"
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels_booking.vue
 msgid "This member is already added."
 msgstr "該成員已被添加。"
 
@@ -12311,6 +13173,12 @@ msgstr "此次銷售是最終的"
 #: pages/team_rankings.vue compensation/index.html track_results/index.html
 msgid "This user does not have an active membership"
 msgstr "該用戶沒有有效會員資格"
+
+#: components/booking/add-cd-user.vue
+msgid ""
+"This user has a pending invoice, therefore they may only be added to a Max "
+"Amount booking."
+msgstr ""
 
 #: pages/team_rankings.vue compensation/index.html track_results/index.html
 msgid "This user has an active member membership"
@@ -12610,13 +13478,21 @@ msgstr "實現的總會員節省"
 msgid "Total Number of Members"
 msgstr "會員總數"
 
-#: receipts/booking_receipt.html
+#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Total Out Of Pocket"
 msgstr "總支出"
 
 #: pages/my_cruise_savings.vue
 msgid "Total Passengers Cruised"
 msgstr "乘船總人數"
+
+#: pages/hotels_booking.vue
+msgid "Total Price"
+msgstr "總價"
+
+#: pages/hotels_booking.vue
+msgid "Total price per 6 nights:"
+msgstr ""
 
 #: pages/leadership_academy.vue
 msgid "Total quiz corrects"
@@ -12625,6 +13501,12 @@ msgstr "測驗正確總數"
 #: pages/leadership_academy.vue
 msgid "Total quiz incorrects"
 msgstr "測驗不正確總數"
+
+#: pages/booking.vue pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Potential Points"
+msgid "Total Reward Points"
+msgstr "潛在的分數"
 
 #: invoices/invoice_statement.html receipts/commission_statement.html
 #: receipts/instant_bonus_statement.html receipts/invoice.html
@@ -12823,7 +13705,7 @@ msgstr "烏克蘭救濟捐助者"
 msgid "Ukrainian"
 msgstr "烏克蘭"
 
-#: pages/settings.vue cruising_dollars/index.html
+#: pages/reward_points.vue pages/settings.vue cruising_dollars/index.html
 msgid "Unique Membership Code"
 msgstr "唯一會員代碼"
 
@@ -12843,8 +13725,8 @@ msgid ""
 msgstr ""
 "除非如下所示提前終止，否則本附錄將在合作夥伴的IBP協議終止或取消後自動終止。"
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue cruising_dollars/index.html info_center/index.html
+#: menu_page/index.html reach/index.html
 msgid "Unpaid Invoice"
 msgstr "未支付發票"
 
@@ -12876,16 +13758,22 @@ msgstr "更新循環資料"
 msgid "Update your browser"
 msgstr "更新您的瀏覽器"
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue pages/upgrade.vue cruising_dollars/index.html
+#: info_center/index.html menu_page/index.html reach/index.html
 msgid "Upgrade"
 msgstr "升級"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Upgrade now!"
+msgid "Upgrade now"
+msgstr "現在升級！"
 
 #: pages/connect.vue power_tools_upgrade/index.html
 msgid "Upgrade Now"
 msgstr "現在升級"
 
-#: pages/welcome.vue
+#: pages/reward_points.vue pages/welcome.vue
 msgid "Upgrade now!"
 msgstr "現在升級！"
 
@@ -12900,10 +13788,6 @@ msgstr "升級成會員"
 #: pages/connect.vue power_tools_upgrade/index.html
 msgid "Upgrade to Partner"
 msgstr "升級為合作夥伴"
-
-#: controllers/upgrade.js
-msgid "Upgrade Your Account"
-msgstr "升級您的帳戶"
 
 #: pages/team_rankings.vue
 msgid "Upline"
@@ -13095,12 +13979,18 @@ msgstr "查看快速入門指南"
 msgid "View Guest List"
 msgstr "查看來賓清單"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "View Details"
+msgid "View Hotel Details"
+msgstr "查看詳情"
+
 #: pages/global_convention.vue
 msgid "View Info"
 msgstr "查看信息"
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue cruising_dollars/index.html info_center/index.html
+#: menu_page/index.html reach/index.html
 msgid "View Invoices"
 msgstr "查看賬單"
 
@@ -13129,7 +14019,7 @@ msgstr "查看我們8個等級的成就頭銜"
 msgid "View our Membership Agreement"
 msgstr "查看我們的會員協議"
 
-#: cruising_dollars/index.html menu_page/index.html
+#: pages/reward_points.vue cruising_dollars/index.html menu_page/index.html
 msgid "View Our Membership Agreement"
 msgstr "查看我們的會員協議"
 
@@ -13190,10 +14080,6 @@ msgstr "查看錢包"
 msgid "View your contacts"
 msgstr "查看您的聯繫人"
 
-#: pages/welcome.vue
-msgid "View your Cruise Credits and availability."
-msgstr "查看您的郵輪信用可使用數量。"
-
 #: pages/welcome.vue controllers/menu_page.js
 msgid "View your past cruises, savings, and potential future savings as well."
 msgstr "查看您過去的航行，節省的費用以及將來可能節省的費用。"
@@ -13206,8 +14092,16 @@ msgstr "查看過去的購買情況。"
 msgid "View your pending and paid Invoices."
 msgstr "查看待處理和已付款的賬單。"
 
+#: pages/welcome.vue
+#, fuzzy
+#| msgid "View your Cruise Credits and availability."
+msgid "View your Reward Points and availability."
+msgstr "查看您的郵輪信用可使用數量。"
+
 #: controllers/menu_page.js
-msgid "View your total and available Cruise Credits balance."
+#, fuzzy
+#| msgid "View your total and available Cruise Credits balance."
+msgid "View your total and available Reward Points balance."
 msgstr "查看您的可用郵輪信用餘額。"
 
 #: pages/referral_links.vue
@@ -13351,9 +14245,14 @@ msgid "We did not find any contacts to display, please try another account."
 msgstr "我們沒有找到任何联係人，請嘗試其他帳戶。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "We do not offer partial bookings or bookings done with an initial "
+#| "deposit. You can use all of your available Cruise Credits when you're "
+#| "ready to book a cruise."
 msgid ""
 "We do not offer partial bookings or bookings done with an initial deposit. "
-"You can use all of your available Cruise Credits when you're ready to book a "
+"You can use all of your available Reward Points when you're ready to book a "
 "cruise."
 msgstr ""
 "我們不提供以押金或部分預訂的方式進行預定。當您準備預訂郵輪時，您可以使用所有"
@@ -13468,8 +14367,12 @@ msgid "WE VALUE"
 msgstr "我們珍視"
 
 #: pages/public/about.vue
+#, fuzzy
+#| msgid ""
+#| "We were created to make cruising more accessible, affordable and even "
+#| "profitable for millions of people worldwide."
 msgid ""
-"We were created to make cruising more accessible, affordable and even "
+"We were created to make travel more accessible, affordable and even "
 "profitable for millions of people worldwide."
 msgstr "我們的成立是為全球數百萬人提供更便利，更實惠的休閒遊輪旅行。"
 
@@ -13561,7 +14464,9 @@ msgid "Welcome,"
 msgstr "歡迎，"
 
 #: components/public/Faq.vue
-msgid "What are Cruise Credits?"
+#, fuzzy
+#| msgid "What are Cruise Credits?"
+msgid "What are Reward Points?"
 msgstr "什麼是郵輪信用？"
 
 #: components/public/Faq.vue
@@ -13609,9 +14514,13 @@ msgid "What is the inCruises Duplicator?"
 msgstr "什麼是inCruises Duplicator？"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "When can you book or reserve a cruise prior to accumulating all the "
+#| "needed Cruise Credits and then finalize the booking later?"
 msgid ""
 "When can you book or reserve a cruise prior to accumulating all the needed "
-"Cruise Credits and then finalize the booking later?"
+"Reward Points and then finalize the booking later?"
 msgstr ""
 "什麼時候可以預訂郵輪？我可以在累積必要的郵輪信用之前進行預訂，之後再完成預訂"
 "嗎？"
@@ -13804,12 +14713,19 @@ msgstr ""
 "夠支付SOLO票價的費用。但是，大多數郵輪需要雙人入住。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Yes you can. While you cannot gift a cruise to others using your "
+#| "Membership and Cruise Credits, you can certainly gift our Membership to "
+#| "others and pay for them as long as they are at least 18 years old. Their "
+#| "Cruise Credits can only be used if they will be booked on the cabin for "
+#| "which the Cruise Credits are being used."
 msgid ""
 "Yes you can. While you cannot gift a cruise to others using your Membership "
-"and Cruise Credits, you can certainly gift our Membership to others and pay "
-"for them as long as they are at least 18 years old. Their Cruise Credits can "
-"only be used if they will be booked on the cabin for which the Cruise "
-"Credits are being used."
+"and Reward Points, you can certainly gift our Membership to others and pay "
+"for them as long as they are at least 18 years old. Their Reward Points can "
+"only be used if they will be booked on the cabin for which the Reward Points "
+"are being used."
 msgstr ""
 "是的，您可以。雖然您不能使用您的會員資格和郵輪信用向其他人贈送郵輪航行，但您"
 "可以贈送會員資格給其他人，只要他們年滿18歲就可以。他們的郵輪美元只能用於預定"
@@ -13840,9 +14756,13 @@ msgid "Yes."
 msgstr "是的。"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Yes. If a couple are both inCruises Members, they can combine their "
+#| "Cruise Credits to cover the total cost of booking a cabin on a cruise."
 msgid ""
-"Yes. If a couple are both inCruises Members, they can combine their Cruise "
-"Credits to cover the total cost of booking a cabin on a cruise."
+"Yes. If a couple are both inCruises Members, they can combine their Reward "
+"Points to cover the total cost of booking a cabin on a cruise."
 msgstr ""
 "是的。如果一對夫婦都是inCruises會員，那麼他們可以結合他們的郵輪信用來支付預訂"
 "郵輪的總費用。"
@@ -13880,6 +14800,23 @@ msgid ""
 "You applied Senior Discounts, but no passenger on this trip is 55+ years old."
 msgstr "您應用了年長折扣，但這次旅行沒有乘客年齡超過55歲。"
 
+#: pages/booking.vue pages/hotels_booking.vue
+msgid ""
+"You are able to use your 1 for 1 balance to cover a portion of the booking "
+"price."
+msgstr ""
+
+#: pages/booking.vue
+msgid ""
+"You are able to use your 2 for 1 balance for up to 50% of the booking price."
+msgstr ""
+
+#: pages/hotels_booking.vue
+msgid ""
+"You are able to use your 2 for 1 balance to cover a portion of the booking "
+"price."
+msgstr ""
+
 #: components/booking/agreements.vue
 msgid ""
 "You are aware of visa requirements and have secured them before booking."
@@ -13901,10 +14838,16 @@ msgid ""
 msgstr "您在{{os}}上使用{{currentBrowser.brand}} {{currentBrowser.version}}"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "You can apply Cruise Credits to any cabin booking, including bookings "
+#| "where multiple passengers are booked in the cabin, as long as there's at "
+#| "least ONE Member booked in that cabin and their Cruise Credits are being "
+#| "used for that booking."
 msgid ""
-"You can apply Cruise Credits to any cabin booking, including bookings where "
+"You can apply Reward Points to any cabin booking, including bookings where "
 "multiple passengers are booked in the cabin, as long as there's at least ONE "
-"Member booked in that cabin and their Cruise Credits are being used for that "
+"Member booked in that cabin and their Reward Points are being used for that "
 "booking."
 msgstr ""
 "您可以在任何預訂中使用郵輪信用，包括在一個客艙中為多名乘客進行預訂，只要在預"
@@ -14006,16 +14949,27 @@ msgstr "您目前沒有任何潛在的即時獎金。"
 msgid "You dont have permision"
 msgstr "您沒有權限"
 
+#: upgrade/index.html
+#, fuzzy
+#| msgid "You earn $200 Cruise Dollars® for every membership payment."
+msgid "You earn $200 Reward Points for every membership payment."
+msgstr "您每次支付會員費都可獲得200郵輪美元。"
+
 #: pages/public/pricing.vue
+#, fuzzy
+#| msgid ""
+#| "You earn $200 Cruise Dollars® (Cruise Credits) for every $100 you pay for "
+#| "membership."
 msgid ""
-"You earn $200 Cruise Dollars® (Cruise Credits) for every $100 you pay for "
+"You earn $200 Reward Points® (Reward Points) for every $100 you pay for "
 "membership."
 msgstr "每支付 100 美元會員費，即可賺取 200 美元郵輪美元®(郵輪信用)。"
 
-#: upgrade/index.html
-msgid ""
-"You earn $200 Cruise Dollars® (Cruise Credits) for every membership payment."
-msgstr "您每次支付會員費都可獲得200郵輪美元®（郵輪信用）。"
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "You earn $200 Cruise Dollars® for every membership payment."
+msgid "You earn 200 Reward Points (2 for 1) for every membership payment."
+msgstr "您每次支付會員費都可獲得200郵輪美元。"
 
 #: pages/agreements.vue
 msgid "You electronically agreed to be bound by this agreement on"
@@ -14043,36 +14997,55 @@ msgstr "您已經請求了快速啟動獎勵。"
 msgid "You have already requested your Weekly Bonus."
 msgstr "您已經申請了每週獎金。"
 
+#: pages/booking.vue
+msgid ""
+"You have an active sailing already booked in the future on "
+"%{hasActiveSailing}. You will be able to book a new reservation after "
+"%{hasActiveSailing}."
+msgstr ""
+
 #: pages/welcome.vue
 msgid "You have an unpaid invoice:"
 msgstr "您有未支付的賬單："
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue cruising_dollars/index.html info_center/index.html
+#: menu_page/index.html reach/index.html
 msgid ""
 "You have an unpaid invoice. Click below to review your pending invoices."
 msgstr "你有一張未付的賬單。點擊下方查看待處理的賬單。"
 
 #: cruising_dollars/index.html
-msgid ""
-"You have been a member for {{user_months}} month(s). Your available cruise "
-"credits are\n"
-"\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
-"\t\t\t\t\t\t\t."
-msgstr ""
-"您已經成為會員{{user_months}}個月了。您可用的郵輪信用是\n"
-"\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
-"\t\t\t\t\t\t\t."
-
-#: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "You have been a member for {{user_months}} month(s). Your available "
+#| "incentive cruise dollars are\n"
+#| "\t\t\t\t\t\t\t<span class=\"text-green\">{{incentiveBalance}}</span>\n"
+#| "\t\t\t\t\t\t\t."
 msgid ""
 "You have been a member for {{user_months}} month(s). Your available "
-"incentive cruise dollars are\n"
+"incentive reward points are\n"
 "\t\t\t\t\t\t\t<span class=\"text-green\">{{incentiveBalance}}</span>\n"
 "\t\t\t\t\t\t\t."
 msgstr ""
 "您已經是會員{{user_months}}個月了。您可用的郵輪美元是\n"
 "\t\t\t\t\t\t<span class=\"text-green\">{{incentiveBalance}}</span>\n"
+"\t\t\t\t\t\t\t."
+
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "You have been a member for {{user_months}} month(s). Your available "
+#| "cruise credits are\n"
+#| "\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
+#| "\t\t\t\t\t\t\t."
+msgid ""
+"You have been a member for {{user_months}} month(s). Your available Reward "
+"Points are\n"
+"\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
+"\t\t\t\t\t\t\t."
+msgstr ""
+"您已經成為會員{{user_months}}個月了。您可用的郵輪信用是\n"
+"\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
 "\t\t\t\t\t\t\t."
 
 #: upgrade/index.html
@@ -14093,7 +15066,7 @@ msgstr "您已經獲得了更多的獎金。"
 msgid "You have no payments to approve"
 msgstr "您沒有等待批準的付款"
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels_booking.vue
 msgid "You have not specified a user to be added."
 msgstr "您尚未指定要添加的用戶。"
 
@@ -14200,7 +15173,7 @@ msgstr ""
 msgid "You need to donate more than $0."
 msgstr "您需要捐款超過$ 0。"
 
-#: pages/public/pricing.vue upgrade/index.html
+#: pages/upgrade.vue pages/public/pricing.vue upgrade/index.html
 msgid ""
 "You will also get access to world class marketing tools, live and recorded "
 "training, mobile applications, downloadable business cards, and much more."
@@ -14301,6 +15274,29 @@ msgstr "您已收到inCruises的製作人獎金"
 msgid "Your Active Levels ({{active_levels}} levels)"
 msgstr "您的有效級別为（{{active_levels}}級別）"
 
+#: pages/reward_points.vue
+msgid ""
+"Your balance equals the amount of payments you have made out of pocket to "
+"inCruises for your Membership and / or any additional Reward Points earned "
+"with promotions offered from time to time, minus any Reward Points used."
+msgstr ""
+
+#: pages/reward_points.vue
+msgid ""
+"Your balance equals your membership payments multiplied by 2, minus any "
+"Reward Points used. With your Black Card you can use 100% of your Reward "
+"Points Balance up to 100% of your cruise booking total price. Membership has "
+"its rewards!"
+msgstr ""
+
+#: pages/reward_points.vue
+msgid ""
+"Your balance equals your membership payments multiplied by 2, minus any "
+"Reward Points used. With your Gold Card you can use 100% of your Reward "
+"Points Balance up to 50% of your cruise booking total price. Your available "
+"balance is 0 during the first 14 days of Membership."
+msgstr ""
+
 #: pages/invoices.vue
 msgid ""
 "Your bank transfer has initiated and should be completed within a few days."
@@ -14368,9 +15364,14 @@ msgid "Your contribution cannot be greater than your balance."
 msgstr "您的捐款不能超過餘額。"
 
 #: pages/booking.vue
+#, fuzzy
+#| msgid ""
+#| "Your cruise booking has a $0 out of pocket cost, therefore if you "
+#| "proceed, you will be automatically booked and your Cruise Credits will be "
+#| "deducted."
 msgid ""
 "Your cruise booking has a $0 out of pocket cost, therefore if you proceed, "
-"you will be automatically booked and your Cruise Credits will be deducted."
+"you will be automatically booked and your Reward Points will be deducted."
 msgstr ""
 "您的郵輪預訂有$ 0的自付費用，因此，如果繼續進行，您將被自動預訂，並從您的郵輪"
 "信用中扣除。"
@@ -14485,6 +15486,10 @@ msgstr "您的慈善船捐款已成功收到。"
 msgid "Your Name"
 msgstr "您的名字"
 
+#: pages/reward_points.vue
+msgid "YOUR NAME HERE"
+msgstr ""
+
 #: pages/italian_onboarding.vue
 msgid ""
 "Your partner onboarding is now complete. An admin will review your "
@@ -14572,6 +15577,10 @@ msgstr ""
 msgid "Your Referrer has not upgraded"
 msgstr "您的推薦人尚未升級"
 
+#: reports/index.html
+msgid "Your report results will appear in this area."
+msgstr ""
+
 #: pages/settings.vue
 msgid "Your Sponsors"
 msgstr "您的讚助商"
@@ -14639,6 +15648,10 @@ msgstr "郵輪"
 #: Menu
 msgid "Leadership Titles"
 msgstr "領導頭銜"
+
+#: Menu
+msgid "Cruise Credits"
+msgstr "郵輪信用"
 
 #: Menu
 msgid "Email Blast Tracking"
@@ -21242,6 +22255,59 @@ msgid ""
 "GoPro Ticket."
 msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門票。"
 
+#~ msgid "{{ user.eligible_cd }} Available CD"
+#~ msgstr "{{ user.eligible_cd }} 可用CD"
+
+#~ msgid ""
+#~ "<i class=\"fe fe-search mr-1\"></i>\n"
+#~ "\t\t\t\t\t\t\tNew Search"
+#~ msgstr ""
+#~ "<i class=\"fe fe-search mr-1\"></i>\n"
+#~ "\t\t\t\t\t\t\t新搜尋"
+
+#~ msgid ""
+#~ "Click here to learn more about our Membership and how you can use your "
+#~ "Cruise Dollars® (Cruise Credits) to book Global Cruises."
+#~ msgstr ""
+#~ "點擊此處了解有關我們會員資格的更多信息以及如何使用郵輪美元®（郵輪信用） 預"
+#~ "訂環球郵輪的方法。"
+
+#~ msgid "Credit Card"
+#~ msgstr "信用卡"
+
+#~ msgid "Cruise Credits Used"
+#~ msgstr "已使用的郵輪信用"
+
+#~ msgid "Cruise Dollars"
+#~ msgstr "郵輪美元"
+
+#~ msgid "Expired Members"
+#~ msgstr "已過期會員"
+
+#~ msgid ""
+#~ "Some upgrade options are not available until payment is completed. If you "
+#~ "have any questions please contact <a href=\"https://incruises.com/support"
+#~ "\">https://incruises.com/support</a>."
+#~ msgstr ""
+#~ "支付完成前，部分升級方式無法使用。如果您有任何疑問，請聯繫<a href="
+#~ "\"https://support.incruises.com\">https://support.incruises.com</a> ."
+
+#~ msgid ""
+#~ "Some upgrade options are not available until transfer is completed. If "
+#~ "you have any questions please contact <a href=\"https://incruises.com/"
+#~ "support\">https://incruises.com/support</a>."
+#~ msgstr ""
+#~ "轉賬完成前，部分升級方式無法使用。如果您有任何疑問，請聯繫<a href="
+#~ "\"https://support.incruises.com\">https://support.incruises.com</a> ."
+
+#~ msgid "Upgrade Your Account"
+#~ msgstr "升級您的帳戶"
+
+#~ msgid ""
+#~ "You earn $200 Cruise Dollars® (Cruise Credits) for every membership "
+#~ "payment."
+#~ msgstr "您每次支付會員費都可獲得200郵輪美元®（郵輪信用）。"
+
 #~ msgid ""
 #~ "You cannot change your country. Please contact support\n"
 #~ "\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
@@ -21773,9 +22839,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ msgid "Card Details"
 #~ msgstr "卡的詳細信息"
 
-#~ msgid "Checkout"
-#~ msgstr "結賬"
-
 #~ msgid "Continue with payment"
 #~ msgstr "繼續付款"
 
@@ -22075,13 +23138,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 
 #~ msgid ""
 #~ "Click here to learn more about our Membership and how you can use your "
-#~ "Cruise Dollars to book Global Cruises."
-#~ msgstr ""
-#~ "點擊此處了解有關我們會員資格的更多信息以及如何使用郵輪美元預訂環球郵輪的方"
-#~ "法。"
-
-#~ msgid ""
-#~ "Click here to learn more about our Membership and how you can use your "
 #~ "Cruise Dollars® to book Global Cruises."
 #~ msgstr ""
 #~ "點擊此處了解有關我們會員資格的更多信息以及如何使用郵輪美元®預訂環球郵輪的"
@@ -22119,9 +23175,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ "我們不提供以押金或部分預訂的方式進行預定。當您準備預訂郵輪時，您可以使用所"
 #~ "有可用的郵輪美元。"
 
-#~ msgid "You earn $200 Cruise Dollars® for every membership payment."
-#~ msgstr "您每次支付會員費都可獲得200郵輪美元。"
-
 #~ msgid ""
 #~ "For your financial protection (INCRUISES INTERNATIONAL LLC) is a member "
 #~ "of Trust My Travel and our membership number is (TMT56252). All client "
@@ -22156,30 +23209,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ "排名每30分鐘更新一次. 查看規則\n"
 #~ "\t\t\t\t<a href=\"{{incentivePDF}}\" target=\"_blank\">這裡</a>\n"
 #~ "\t\t\t\t."
-
-#~ msgid ""
-#~ "Some upgrade options are not available until payment is completed. If you "
-#~ "have any questions please contact\n"
-#~ "\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises."
-#~ "com/support</a>\n"
-#~ "\t\t\t\t\t\t."
-#~ msgstr ""
-#~ "付款完成前，部分升級方式無法使用。如果您有任何疑問，請聯繫\n"
-#~ "\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises."
-#~ "com/support</a>\n"
-#~ "\t\t\t\t\t\t."
-
-#~ msgid ""
-#~ "Some upgrade options are not available until transfer is completed. If "
-#~ "you have any questions please contact\n"
-#~ "\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises."
-#~ "com/support</a>\n"
-#~ "\t\t\t\t\t\t."
-#~ msgstr ""
-#~ "某些付款升級選項在轉賬完成之前不可用。如果您有任何疑問，請聯繫\n"
-#~ "\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises."
-#~ "com/support</a>\n"
-#~ "\t\t\t\t\t\t."
 
 #~ msgid "Total Cruise Credits Balance"
 #~ msgstr "總郵輪信用餘額"
@@ -22313,15 +23342,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ msgstr ""
 #~ "<i class=\"far fa-moon-stars\"></i>\n"
 #~ "\t\t\t\t\t\t\t\t\t<span>晚:</span>"
-
-#~ msgid ""
-#~ "<i class=\"far fa-route mr-1\"></i>\n"
-#~ "\n"
-#~ "\t\t\t\t\t\t\t\t\t<span>Cruise Destination:</span>"
-#~ msgstr ""
-#~ "<i class=\"far fa-route mr-1\"></i>\n"
-#~ "\n"
-#~ "\t\t\t\t\t\t\t\t\t<span>郵輪目的地:</span>"
 
 #~ msgid ""
 #~ "<i class=\"far fa-sort-amount-down\"></i>\n"
@@ -23829,9 +24849,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ msgid "SEE THE WORLD"
 #~ msgstr "看世界"
 
-#~ msgid "Select a Card"
-#~ msgstr "選擇一張卡"
-
 #~ msgid "Select email language:"
 #~ msgstr "選擇電子郵件語言："
 
@@ -24110,9 +25127,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ msgid "Your Spanish Direct Referral Link is:"
 #~ msgstr "您的西班牙語直接推薦鏈接是："
 
-#~ msgid "Active Team Members"
-#~ msgstr "活躍的團隊成員"
-
 #~ msgid ""
 #~ "inCruises® is an invitation-only exclusive membership travel\n"
 #~ "\t\t\t\t\tclub."
@@ -24384,9 +25398,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ msgid "All Dates"
 #~ msgstr "所有日期"
 
-#~ msgid "All Locations"
-#~ msgstr "所有地點"
-
 #~ msgid "Any Length"
 #~ msgstr "任何長度"
 
@@ -24442,9 +25453,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 
 #~ msgid "Click here to view Cancellation Policy"
 #~ msgstr "點擊此處查看取消政策"
-
-#~ msgid "Continue Booking"
-#~ msgstr "繼續預定"
 
 #~ msgid "Conversation"
 #~ msgstr "會話"
@@ -24575,9 +25583,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ msgid "Recreation"
 #~ msgstr "娛樂"
 
-#~ msgid "Select Deck:"
-#~ msgstr "選擇甲板："
-
 #~ msgid "Selected Cabin Category:"
 #~ msgstr "精選客艙類別："
 
@@ -24705,9 +25710,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 
 #~ msgid "Out-of-pocket Cost"
 #~ msgstr "自付費用"
-
-#~ msgid "Total Price"
-#~ msgstr "總價"
 
 #~ msgid ""
 #~ "Have a dream of seeing the world but think it’s going to cost a fortune? "
@@ -25615,9 +26617,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ "support.incruises.com\" target=\"_blank\">https://support.incruises.com</"
 #~ "a>聯繫我們解答網站，薪酬和法律問題，並聯繫您的讚助商解決營銷和領導力問題。"
 
-#~ msgid "Invited Top"
-#~ msgstr "頂級邀請"
-
 #~ msgid "Map Contacts"
 #~ msgstr "聯繫人地圖"
 
@@ -25817,9 +26816,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 
 #~ msgid "Network Marketing"
 #~ msgstr "網絡營銷"
-
-#~ msgid "<span class=\"ng-scope\">Login</span>"
-#~ msgstr "<span class=\"ng-scope\">登錄</span>"
 
 #, fuzzy
 #~| msgid ""
@@ -26186,9 +27182,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ "membership counts."
 #~ msgstr ""
 #~ "您还不是活跃的合作伙伴。注册3名直接会员。您自己的会员资格也算在其中。"
-
-#~ msgid "You’re an Active Partner, Congratulations!"
-#~ msgstr "您是活跃的合作伙伴，恭喜！"
 
 #~ msgid ""
 #~ "<i class=\"fe fe-arrow-up-right\"></i>\n"

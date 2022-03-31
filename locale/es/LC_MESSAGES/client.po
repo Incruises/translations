@@ -406,9 +406,22 @@ msgstr "{{ agreement.name }}"
 msgid "{{ box.box }}"
 msgstr "{{ box.box }}"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Sent: {{ formatDate(invite.lastInvitationCreationDate) }}"
+msgid "{{ formatDate(cancellation.from) }}"
+msgstr "Enviado: {{ formatDate(invite.lastInvitationCreationDate) }}"
+
 #: components/support/TicketList.vue
 msgid "{{ header }}"
 msgstr "{{ header }}"
+
+#: pages/hotels_booking.vue
+msgid ""
+"{{ hotel.address.content }}, {{ hotel.zone.name }}, {{ hotel.destination."
+"name.content }}, {{ hotel.state.name }}, {{ hotel.country.description."
+"content }}"
+msgstr ""
 
 #: pages/book.vue
 msgid "{{ night }} Nights"
@@ -417,10 +430,6 @@ msgstr "{{ night }} Noches"
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
 msgstr "{{ tips[cruise.lineId].note }}."
-
-#: pages/booking.vue
-msgid "{{ user.eligible_cd }} Available CD"
-msgstr "{{ user.eligible_cd }} CD Disponibles"
 
 #: compensation/index.html
 msgid ""
@@ -461,6 +470,12 @@ msgstr "{{agreement.name}}"
 #: courses/view.html
 msgid "{{correct}} out of {{examQuestions}} questions answered correctly"
 msgstr "{{correct}} de {{examQuestions}} preguntas contestadas correctamente"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "{{data.data.data.depart}}"
+msgid "{{data.data.data.check_in}}"
+msgstr "{{data.data.data.depart}}"
 
 #: receipts/booking_receipt.html
 msgid "{{data.data.data.depart}}"
@@ -530,6 +545,12 @@ msgstr "*Directo significa patrocinados personalmente."
 msgid "*Price does not include taxes"
 msgstr "*El precio no incluye impuestos"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "View your Cruise Credits and availability."
+msgid "*Price may vary based on availability."
+msgstr "Checa tus Créditos de Crucero y disponibilidad."
+
 #: pages/book.vue
 msgid ""
 "*Price may vary based on availability. You will receive accurate pricing "
@@ -537,6 +558,16 @@ msgid ""
 msgstr ""
 "*El precio puede variar según disponibilidad. Recibirás precios precisos al "
 "elegir una categoría de camarote."
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Light"
+msgid "/ night"
+msgstr "Ligero"
+
+#: pages/hotels_booking.vue
+msgid "/ per night"
+msgstr ""
 
 #: pages/admin_user.vue
 msgid "#"
@@ -566,7 +597,7 @@ msgstr "# de boletos Cerrados"
 msgid "# of tickets First Responded to"
 msgstr "# de boletos con Primera Respuesta"
 
-#: pages/book.vue
+#: pages/book.vue pages/hotels.vue
 msgid "%{ length } results match your criteria."
 msgstr "%{ length } los resultados coinciden con sus criterios."
 
@@ -768,9 +799,53 @@ msgstr ""
 "<a target=\"_blank\" style=\"color:white;\" href=\"/sot\" translate>Vendedor "
 "de Viajes</a>"
 
-#: receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid ""
+#| "<b style=\"color: red\">IMPORTANT NOTICE:</b> All cruise lines now "
+#| "require online web check-in prior to embarkation. Failure to complete in "
+#| "advance can result in denied boarding. Please see online check-in link "
+#| "below your booking receipt data. You must click to access and enter all "
+#| "required personal information\n"
+#| "\t\t\t\tno later than 48-72 hours prior to departure depending on the "
+#| "cruise line. Web check-in opens 45-60 days prior depending on the cruise "
+#| "line. Completed check-in for ALL passengers in the cabin is REQUIRED to "
+#| "issue boarding pass."
 msgid ""
-"<b style=\"color: red\">IMPORTANT NOTICE:</b> All cruise lines now require "
+"<b style=\"color: red\">IMPORTANT NOTICE:</b>\n"
+"\t\t\t\tAll cruise lines now require online web check-in prior to "
+"embarkation. Failure to complete in advance can result in denied boarding. "
+"Please see online check-in link below your booking receipt data. You must "
+"click to access and enter all required personal information no later than\n"
+"\t\t\t\t48-72 hours prior to departure depending on the cruise line. Web "
+"check-in opens 45-60 days prior depending on the cruise line. Completed "
+"check-in for ALL passengers in the cabin is REQUIRED to issue boarding pass."
+msgstr ""
+"<b style=\"color: red\">AVISO IMPORTANTE:</b> Todas las líneas de cruceros "
+"ahora requieren el registro web en línea antes del embarque. No completarlo "
+"con anticipación puede resultar en la denegación de embarque. Consulta el "
+"enlace de check-in en línea abajo de la información de recibo de reserva. "
+"Debes hacer clic para acceder e ingresar toda la información personal "
+"requerida\n"
+"\t\t\t\ta más tardar 48-72 horas antes de la salida, según la línea de "
+"cruceros. El check-in en línea se abre entre 45 y 60 días antes, según la "
+"línea de cruceros. Se REQUIERE el check-in completo para TODOS los pasajeros "
+"del camarote para emitir el pase de embarque."
+
+#: receipts/booking_receipt.html
+#, fuzzy
+#| msgid ""
+#| "<b style=\"color: red\">IMPORTANT NOTICE:</b> All cruise lines now "
+#| "require online web check-in prior to embarkation. Failure to complete in "
+#| "advance can result in denied boarding. Please see online check-in link "
+#| "below your booking receipt data. You must click to access and enter all "
+#| "required personal information\n"
+#| "\t\t\t\tno later than 48-72 hours prior to departure depending on the "
+#| "cruise line. Web check-in opens 45-60 days prior depending on the cruise "
+#| "line. Completed check-in for ALL passengers in the cabin is REQUIRED to "
+#| "issue boarding pass."
+msgid ""
+"<b style=\"color: red\">IMPORTANT NOTICE:</b>  All cruise lines now require "
 "online web check-in prior to embarkation. Failure to complete in advance can "
 "result in denied boarding. Please see online check-in link below your "
 "booking receipt data. You must click to access and enter all required "
@@ -1050,9 +1125,13 @@ msgstr ""
 "     No incluye Almacenamiento"
 
 #: reach/index.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fa fa-video-camera\"></i> Click here to view a video "
+#| "explaining more."
 msgid ""
-"<i class=\"fa fa-video-camera\"></i> Click here to view a video explaining "
-"more."
+"<i class=\"fa fa-video-camera\"></i>\n"
+"\t\t\t\t\tClick here to view a video explaining more."
 msgstr ""
 "<i class=\"fa fa-video-camera\"></i> Haz clic aquí para ver un vídeo con más "
 "detalles."
@@ -1129,10 +1208,84 @@ msgstr ""
 "<i class=\"far fa-exclamation-circle\"></i>\n"
 "\t\t\t\t\tError"
 
+#: layouts/booking.html layouts/hotels.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fas fa-check pr-1\"></i>\n"
+#| "\t\t\t\t\tBooked"
+msgid ""
+"<i class=\"far fa-home mr-1\"></i>\n"
+"\t\t\t\t\t\t\tDashboard"
+msgstr ""
+"<i class=\"fas fa-check pr-1\"></i>\n"
+"\t\t\t\t\tReservado"
+
+#: layouts/booking.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fas fa-check pr-1\"></i>\n"
+#| "\t\t\t\t\tBooked"
+msgid ""
+"<i class=\"far fa-hotel mr-1\"></i>\n"
+"\t\t\t\t\t\t\tHotels"
+msgstr ""
+"<i class=\"fas fa-check pr-1\"></i>\n"
+"\t\t\t\t\tReservado"
+
+#: layouts/hotels.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fe fe-x mr-1\"></i>\n"
+#| "\t\t\t\t\t\t\tExit"
+msgid ""
+"<i class=\"far fa-ship mr-1\"></i>\n"
+"\t\t\t\t\t\t\tCruises"
+msgstr ""
+"<i class=\"fe fe-x mr-1\"></i>\n"
+"\t\t\t\t\t\t\tSalir"
+
 #: pages/reservations.vue
 msgid ""
 "<i class=\"fas fa-check pr-1\"></i>\n"
 "\t\t\t\t\tBooked"
+msgstr ""
+"<i class=\"fas fa-check pr-1\"></i>\n"
+"\t\t\t\t\tReservado"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fas fa-check pr-1\"></i>\n"
+#| "\t\t\t\t\tBooked"
+msgid ""
+"<i class=\"fas fa-hotel mr-1\"></i>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\tHotels"
+msgstr ""
+"<i class=\"fas fa-check pr-1\"></i>\n"
+"\t\t\t\t\tReservado"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-route mr-1\"></i>\n"
+#| "\n"
+#| "\t\t\t\t\t\t\t\t\t<span>Cruise Destination:</span>"
+msgid ""
+"<i class=\"fas fa-map mr-1\"></i>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\tDestinations"
+msgstr ""
+"<i class=\"far fa-route mr-1\"></i>\n"
+"\n"
+"\t\t\t\t\t\t\t\t\t<span>Destino de Crucero:</span>"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fas fa-check pr-1\"></i>\n"
+#| "\t\t\t\t\tBooked"
+msgid ""
+"<i class=\"fas fa-map-pin mr-1\"></i>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\tZones"
 msgstr ""
 "<i class=\"fas fa-check pr-1\"></i>\n"
 "\t\t\t\t\tReservado"
@@ -1253,14 +1406,6 @@ msgstr ""
 "<i class=\"fe fe-paperclip\"></i>\n"
 "\t\t\t\t\tPDF de Incentivo Semanal"
 
-#: layouts/booking.html
-msgid ""
-"<i class=\"fe fe-search mr-1\"></i>\n"
-"\t\t\t\t\t\t\tNew Search"
-msgstr ""
-"<i class=\"fe fe-search mr-1\"></i>\n"
-"\t\t\t\t\t\t\tNueva Búsqueda"
-
 #: components/confirm-recurring.vue
 msgid ""
 "<i class=\"fe fe-trash-2\"></i>\n"
@@ -1305,14 +1450,6 @@ msgstr ""
 "<i class=\"fe fe-upload mr-2\"></i>\n"
 "          Cargar ID de Foto"
 
-#: layouts/booking.html
-msgid ""
-"<i class=\"fe fe-x mr-1\"></i>\n"
-"\t\t\t\t\t\t\tExit"
-msgstr ""
-"<i class=\"fe fe-x mr-1\"></i>\n"
-"\t\t\t\t\t\t\tSalir"
-
 #: pages/book.vue
 msgid ""
 "<i class=\"fe fe-x-square\"></i>\n"
@@ -1343,13 +1480,40 @@ msgstr ""
 "\t\t\t\t\t\t<span v-translate>Se envió email de verificación. Por favor "
 "revisa tu buzón y sigue el enlace proporcionado.</span>"
 
-#: upgrade/index.html
+#: pages/booking.vue
 msgid ""
-"<small>By proceeding to checkout you are agreeing to our <a style=\"color:"
-"gray;\" ng-href=\"{{member_agreement}}\" target=\"_blank\">Cruise Membership "
-"Agreement</a>, our <a style=\"color:gray;\" ng-href="
-"\"{{partner_agreement}}\" target=\"_blank\">Independent Business Partner "
-"Agreement</a>, and the recurring billing explained above.</small>"
+"<p class=\"m-0\">\n"
+"\t\t\t\t\t\t\t\t\t\t{{ user.oneForOneBalance }}\n"
+"\t\t\t\t\t\t\t\t\t\t<sub style=\"font-weight: 500\">1 For 1</sub>\n"
+"\t\t\t\t\t\t\t\t\t</p>"
+msgstr ""
+
+#: pages/booking.vue
+msgid ""
+"<p class=\"m-0\">\n"
+"\t\t\t\t\t\t\t\t\t\t{{ user.twoForOneBalance }}\n"
+"\t\t\t\t\t\t\t\t\t\t<sub style=\"font-weight: 500\">2 For 1</sub>\n"
+"\t\t\t\t\t\t\t\t\t</p>"
+msgstr ""
+
+#: upgrade/index.html
+#, fuzzy
+#| msgid ""
+#| "<small>By proceeding to checkout you are agreeing to our <a style=\"color:"
+#| "gray;\" ng-href=\"{{member_agreement}}\" target=\"_blank\">Cruise "
+#| "Membership Agreement</a>, our <a style=\"color:gray;\" ng-href="
+#| "\"{{partner_agreement}}\" target=\"_blank\">Independent Business Partner "
+#| "Agreement</a>, and the recurring billing explained above.</small>"
+msgid ""
+"<small>\n"
+"\t\t\t\t\t\t\t\t\tBy proceeding to checkout you are agreeing to our\n"
+"\t\t\t\t\t\t\t\t\t<a style=\"color:gray;\" ng-href=\"{{member_agreement}}\" "
+"target=\"_blank\">Cruise Membership Agreement</a>\n"
+"\t\t\t\t\t\t\t\t\t, our\n"
+"\t\t\t\t\t\t\t\t\t<a style=\"color:gray;\" ng-href=\"{{partner_agreement}}\" "
+"target=\"_blank\">Independent Business Partner Agreement</a>\n"
+"\t\t\t\t\t\t\t\t\t, and the recurring billing explained above.\n"
+"\t\t\t\t\t\t\t\t</small>"
 msgstr ""
 "<small>Al proceder, estarás aceptando nuestro <a style=\"color:gray;\" ng-"
 "href=\"{{member_agreement}}\" target=\"_blank\">Acuerdo de Membresía de "
@@ -1525,6 +1689,12 @@ msgstr ""
 "<span class=\"emphasize\">Reuniones </span>\n"
 "     ilimitadas"
 
+#: pages/hotels.vue
+msgid ""
+"<span class=\"h3\">${{ calculateNightlyRate(hotel.sellingRate) }}</span>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t<sub v-translate>/ night</sub>"
+msgstr ""
+
 #: pages/email.vue
 msgid ""
 "<span class=\"mr-3\">\n"
@@ -1536,6 +1706,12 @@ msgstr ""
 "\t\t\t\t\t\t\t<i class=\"fe fe-edit\"></i>\n"
 "\t\t\t\t\t\t</span>\n"
 "\t\t\t\t\t\tRedactar nuevo Correo electrónico"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "<span class=\"ng-scope\">Login</span>"
+msgid "<span class=\"ng-scope\">Search</span>"
+msgstr "<span class=\"ng-scope\">Iniciar Sesión</span>"
 
 #: pages/booking.vue
 msgid ""
@@ -1699,6 +1875,14 @@ msgstr ""
 "<span translate>Bienvenido,</span>\n"
 "\t\t\t\t\t\t\t{{$root.user.first_name + ' ' + $root.user.last_name}}"
 
+#: pages/hotels_booking.vue
+msgid ""
+"<span v-for=\"(phone, index) in hotel.phones\" :key=\"index\">\n"
+"\t\t\t\t\t\t\t\t\t{{ phone.phoneType }}: {{ phone.phoneNumber }}\n"
+"\t\t\t\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\t\t\t</span>"
+msgstr ""
+
 #: pages/public/membership.vue
 msgid ""
 "<strong style=\"color: white;\">FOR</strong>\n"
@@ -1756,11 +1940,17 @@ msgstr ""
 "recargar pila mientras descubres el mundo y sus increíbles destinos."
 
 #: pages/public/mission.vue
+#, fuzzy
+#| msgid ""
+#| "<strong style=\"font-size: 36px;\">R</strong>\n"
+#| "\t\t\t\t\teward you in exchange for your member fees with innovative "
+#| "Cruise Credits. Cruise Credits double the purchasing power of your "
+#| "vacations savings to help create memorable cruising experiences."
 msgid ""
 "<strong style=\"font-size: 36px;\">R</strong>\n"
-"\t\t\t\t\teward you in exchange for your member fees with innovative Cruise "
-"Credits. Cruise Credits double the purchasing power of your vacations "
-"savings to help create memorable cruising experiences."
+"\t\t\t\t\teward you in exchange for your member fees with innovative Reward "
+"Points. Reward Points double the purchasing power of your vacations savings "
+"to help create memorable cruising experiences."
 msgstr ""
 "<strong style=\"font-size: 36px;\">R</strong>\n"
 "Recompensarte a cambio de tus cuotas, mediante nuestros innovadores Créditos "
@@ -1956,11 +2146,61 @@ msgstr ""
 msgid "<strong>Total:</strong>"
 msgstr "<strong>Total:</strong>"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid ""
+#| "<b>\n"
+#| "\t\t\t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon"
+#| "\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" stroke-width=\"2\" "
+#| "stroke=\"currentColor\" fill=\"none\" stroke-linecap=\"round\" stroke-"
+#| "linejoin=\"round\">\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill="
+#| "\"none\"/>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"9\"/>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/>\n"
+#| "\t\t\t\t\t\t\t\t\t\t</svg>\n"
+#| "\t\t\t\t\t\t\t\t\t\t<span v-translate>Pre-cruise & Onboard Protocols</"
+#| "span>\n"
+#| "\t\t\t\t\t\t\t\t\t</b>"
+msgid ""
+"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+"stroke-linejoin=\"round\">\n"
+"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
+"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+"\t\t\t\t\t\t\t</svg>\n"
+"\t\t\t\t\t\t\tGo Back"
+msgstr ""
+"<b>\n"
+"\t\t\t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon\" "
+"width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" stroke-width=\"2\" stroke="
+"\"currentColor\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin="
+"\"round\">\n"
+"\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none"
+"\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"9\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t</svg>\n"
+"\t\t\t\t\t\t\t\t\t\t<span v-translate>Protocolos previos al crucero y a "
+"bordo</span>\n"
+"\t\t\t\t\t\t\t\t\t</b>"
+
 #: email_notifications/index.html
 msgid ""
 "| Page: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
 msgstr ""
 "| Página: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
+
+#: pages/hotels_details.vue
+msgid "${{ cancellation.amount }} For cancellations made after"
+msgstr ""
+
+#: pages/hotels_booking.vue
+msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+msgstr ""
 
 #: refund_protocol/remove_weeklybonus_modal.html
 msgid "${{statement.data.amount}}"
@@ -1985,6 +2225,18 @@ msgstr ""
 "$100,000 en producción total de equipo en un mes determinado.<br><br> Los "
 "INTERNATIONAL DIRECTORS ganan automáticamente nuestro BONO HACIA LA LIBERTAD "
 "de $10,000 cada mes que se mantienen calificando."
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "per month. No contracts. You can cancel anytime."
+msgid "$100.00 per month. No contracts. You can cancel anytime."
+msgstr "al mes. Sin contratos. Podrás cancelar en cualquier momento"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Activation fee"
+msgid "$195.00 Activation fee"
+msgstr "Tarifa de activación"
 
 #: pages/connect.vue power_tools_upgrade/index.html
 msgid "$20/month value ($240 annually)"
@@ -2062,6 +2314,24 @@ msgstr "05 Junio 2022 - 12 Junio 2022"
 msgid "1 Day"
 msgstr "1 Día"
 
+#: pages/booking.vue pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Balance"
+msgid "1 For 1 Balance"
+msgstr "Saldo"
+
+#: pages/reward_points.vue
+msgid "1 for 1 Reward Balance"
+msgstr ""
+
+#: pages/reward_points.vue
+msgid "1 for 1 Reward Points Balance"
+msgstr ""
+
+#: pages/reward_points.vue
+msgid "1 for 1 Reward Points Logs"
+msgstr ""
+
 #: pages/admin_support_analytics.vue
 msgid "1 Month"
 msgstr "1 Mes"
@@ -2083,8 +2353,12 @@ msgid "1. Definitions"
 msgstr "1. Definiciones"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "1. Review how many Cruise Credits you have received in total since you "
+#| "began your inCruises Membership."
 msgid ""
-"1. Review how many Cruise Credits you have received in total since you began "
+"1. Review how many Reward Points you have received in total since you began "
 "your inCruises Membership."
 msgstr ""
 "1. Consulta cuántos Créditos de Crucero has recibido en total desde que "
@@ -2101,6 +2375,24 @@ msgstr "15800 Pines Blvd Suite # 334"
 #: pages/global_convention.vue
 msgid "1st Global Convention"
 msgstr "1a. Convención Global"
+
+#: pages/booking.vue pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Balance"
+msgid "2 For 1 Balance"
+msgstr "Saldo"
+
+#: pages/reward_points.vue
+msgid "2 for 1 Reward Balance"
+msgstr ""
+
+#: pages/reward_points.vue
+msgid "2 for 1 Reward Points Balance"
+msgstr ""
+
+#: pages/reward_points.vue
+msgid "2 for 1 Reward Points Logs"
+msgstr ""
 
 #: agreements/national_director_agreement.html
 msgid "2. Advancement to National Director."
@@ -2137,8 +2429,12 @@ msgstr ""
 "15% del mes pasado a este"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "3. Subtract the number of Cruise Credits you have already used towards "
+#| "previous reservations from the maximum total found in step 2."
 msgid ""
-"3. Subtract the number of Cruise Credits you have already used towards "
+"3. Subtract the number of Reward Points you have already used towards "
 "previous reservations from the maximum total found in step 2."
 msgstr ""
 "3. Resta la cantidad de Créditos de Crucero que ya has utilizado en reservas "
@@ -2180,7 +2476,7 @@ msgstr ""
 "compensación que los Board of Directors ganan cada mes, los Ambassadors "
 "también ganan un bono mensual de $ 100,000.00 USD."
 
-#: pages/book.vue
+#: pages/book.vue pages/hotels.vue
 msgid "5,000+ Global Destinations are Waiting for You!"
 msgstr "¡Más de 5,000 Destinos Globales están esperándote!"
 
@@ -2237,6 +2533,12 @@ msgid ""
 msgstr ""
 "La edad de un infante no coincide con la edad ingresada al comienzo de la "
 "búsqueda de camarote de crucero. Edad del infante %s, esperando  %s"
+
+#: pages/booking.vue pages/hotels_booking.vue
+msgid ""
+"A member added to this booking has a pending invoice. The type of booking is "
+"locked to Max Amount."
+msgstr ""
 
 #: components/public/Faq.vue
 msgid ""
@@ -2463,8 +2765,14 @@ msgstr "Soporte de Admin"
 msgid "Admin View"
 msgstr "Panel de Admin"
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Adults"
+msgstr "Adultos"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Adults"
+msgid "Adults:"
 msgstr "Adultos"
 
 #: components/public/Faq.vue
@@ -2478,20 +2786,32 @@ msgstr ""
 "página de Socios (Partnership)."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "After making 49 Membership payments, the percentage of Cruise Credits "
+#| "that can be used to book cruises increases to 100%, per cruise."
 msgid ""
-"After making 49 Membership payments, the percentage of Cruise Credits that "
+"After making 49 Membership payments, the percentage of Reward Points that "
 "can be used to book cruises increases to 100%, per cruise."
 msgstr ""
 "Después de hacer 49 pagos mensuales como Miembro, el porcentaje de Créditos "
 "de Crucero que puedes usar aumenta al 100%, por cada crucero que realices."
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "After making 49 Membership payments, the percentage of Cruise Credits "
+#| "that can be used to book cruises increases to 100%."
 msgid ""
-"After making 49 Membership payments, the percentage of Cruise Credits that "
+"After making 49 Membership payments, the percentage of Reward Points that "
 "can be used to book cruises increases to 100%."
 msgstr ""
 "Después de haber pagado 49 meses de Membresía, el porcentaje de Créditos de "
 "Crucero que pueden ser utilizados se incrementa hasta el 100%. "
+
+#: receipts/hotel_booking_receipt.html
+msgid "Agency Reference"
+msgstr ""
 
 #: Menu
 msgid "Agreements"
@@ -2615,6 +2935,18 @@ msgstr "Alfabético Ascendente"
 msgid "Alphabetical Desc"
 msgstr "Alfabético Descendente"
 
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Expired Member"
+msgid "Already Member"
+msgstr "Miembro Caducado"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "All Team Partners"
+msgid "Already Partner"
+msgstr "Todos los Socios de Equipo"
+
 #: pages/public/contact.vue
 msgid "Already, a registered Member of inCruises?"
 msgstr "¿Ya eres un miembro registrado de inCruises?"
@@ -2628,10 +2960,15 @@ msgid "Alternate Phone"
 msgstr "Teléfono Alternativo"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "Alternatively Partner Members that have either achieved the rank of "
+#| "Marketing Directors or above OR have been Membership FREE for at least 3 "
+#| "months can use 100% of their Cruise Credits®."
 msgid ""
 "Alternatively Partner Members that have either achieved the rank of "
 "Marketing Directors or above OR have been Membership FREE for at least 3 "
-"months can use 100% of their Cruise Credits®."
+"months can use 100% of their Reward Points®."
 msgstr ""
 "Además, los Socios-Miembros que hayan logrado el rango de Marketing Director "
 "o superior, o que hayan conseguido su Membresía GRATIS durante al menos 3 "
@@ -2845,31 +3182,41 @@ msgid "April"
 msgstr "Abril"
 
 #: components/public/Faq.vue
-msgid ""
-"Are Cruise Credits considered taxable income due to the 200 Cruise Credits "
-"for every $100 USD paid in Membership dues?"
-msgstr ""
-"¿Los Créditos de Crucero pueden considerarse un ingreso sujeto a impuestos, "
-"ya que se obtienen 200 Créditos de Crucero por cada $100 pagados de "
-"Membresía?"
-
-#: components/public/Faq.vue
 msgid "Are cruises considered business expenses for inCruises Partners?"
 msgstr ""
 "¿Los cruceros se pueden considerar como gastos de negocio para los Socios de "
 "inCruises?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Are Cruise Credits considered taxable income due to the 200 Cruise "
+#| "Credits for every $100 USD paid in Membership dues?"
 msgid ""
-"Are the Cruise Credits applicable to just one passenger, or the total cost "
-"of the booking for all passengers in the cabin?"
+"Are Reward Points considered taxable income due to the 200 Reward Points for "
+"every $100 USD paid in Membership dues?"
+msgstr ""
+"¿Los Créditos de Crucero pueden considerarse un ingreso sujeto a impuestos, "
+"ya que se obtienen 200 Créditos de Crucero por cada $100 pagados de "
+"Membresía?"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Are the Cruise Credits applicable to just one passenger, or the total "
+#| "cost of the booking for all passengers in the cabin?"
+msgid ""
+"Are the Reward Points applicable to just one passenger, or the total cost of "
+"the booking for all passengers in the cabin?"
 msgstr ""
 "¿Los Créditos de Crucero solo se pueden utilizar para un pasajero, o pueden "
 "usarse para el coste total de la reserva, con todos los pasajeros del "
 "camarote?"
 
 #: components/public/Faq.vue
-msgid "Are the Cruise Credits transferable to another person?"
+#, fuzzy
+#| msgid "Are the Cruise Credits transferable to another person?"
+msgid "Are the Reward Points transferable to another person?"
 msgstr "¿Son transferibles los Créditos de Crucero a otra persona?"
 
 #: upgrade/index.html
@@ -2984,8 +3331,9 @@ msgstr ""
 "mi familia era involucrarse con una organización que pudiera ayudar a niños "
 "especiales necesitados como el nuestro."
 
-#: pages/public/pricing.vue cruising_dollars/index.html info_center/index.html
-#: menu_page/index.html reach/index.html upgrade/index.html
+#: pages/reward_points.vue pages/upgrade.vue pages/public/pricing.vue
+#: cruising_dollars/index.html info_center/index.html menu_page/index.html
+#: reach/index.html upgrade/index.html
 msgid ""
 "As a Partner you get the opportunity to earn compensation from spreading the "
 "word about inCruises®!"
@@ -3100,13 +3448,19 @@ msgstr ""
 "desde cualquier ciudad portuaria del mundo."
 
 #: upgrade/index.html
+#, fuzzy
+#| msgid ""
+#| "At this moment it is not possible to pay via Credit Card on the EDGE "
+#| "browser.\n"
+#| "\t\t\tPlease pay with PayPal or login using another Browser; preferably "
+#| "Chrome. Safari, Firefox, Internet Explorer\n"
+#| "\t\t\tall work well to pay with Credit Cards and PayPal. Thank you and "
+#| "sorry for the inconvenience."
 msgid ""
 "At this moment it is not possible to pay via Credit Card on the EDGE "
-"browser.\n"
-"\t\t\tPlease pay with PayPal or login using another Browser; preferably "
-"Chrome. Safari, Firefox, Internet Explorer\n"
-"\t\t\tall work well to pay with Credit Cards and PayPal. Thank you and sorry "
-"for the inconvenience."
+"browser. Please pay with PayPal or login using another Browser; preferably "
+"Chrome. Safari, Firefox, Internet Explorer all work well to pay with Credit "
+"Cards and PayPal. Thank you and sorry for the inconvenience."
 msgstr ""
 "En este momento no es posible pagar con tarjeta de crédito accediendo con el "
 "navegador EDGE.\n"
@@ -3126,6 +3480,12 @@ msgstr ""
 #: pages/email.vue
 msgid "Attachments:"
 msgstr "Anexos:"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Senior Marketing Director Bonus"
+msgid "Attain the rank of Marketing Director or higher"
+msgstr "Bono de Director Senior de Marketing"
 
 #: pages/global_convention.vue
 msgid "Attending"
@@ -3154,6 +3514,12 @@ msgstr "Saldo de Incentivos Disponible"
 #: reach/index.html
 msgid "Available Invitations"
 msgstr "Invitaciones Disponibles"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Available Balance"
+msgid "Available Rewards"
+msgstr "Saldo Disponible"
 
 #: agreements/national_director_agreement.html
 msgid "b. Confidentiality."
@@ -3200,8 +3566,9 @@ msgstr "Regresar a Puntos Destacados"
 msgid "BACK UP"
 msgstr "RESPALDO"
 
-#: components/payout/wallet-transfers.vue cruising_dollars/index.html
-#: layouts/default.html negative_balances/index.html
+#: pages/reward_points.vue components/payout/wallet-transfers.vue
+#: cruising_dollars/index.html layouts/default.html
+#: negative_balances/index.html
 msgid "Balance"
 msgstr "Saldo"
 
@@ -3244,7 +3611,7 @@ msgstr ""
 "realmente ama a esta compañía y lo que puede hacer por sus familias y sus "
 "cuentas bancarias."
 
-#: pages/welcome.vue
+#: pages/reward_points.vue pages/welcome.vue
 msgid "Become a Member"
 msgstr "Conviértete en Miembro"
 
@@ -3257,8 +3624,9 @@ msgstr ""
 "Membresía exclusiva, con acceso a nuestros selectos cruceros de Incentivos y "
 "a nuestra oferta de Global Destinations."
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html upgrade/index.html
+#: pages/reward_points.vue pages/upgrade.vue cruising_dollars/index.html
+#: info_center/index.html menu_page/index.html reach/index.html
+#: upgrade/index.html
 msgid ""
 "Become a Member and enjoy the benefits of our exclusive membership with "
 "access to our select Incentive Dream Cruises and Global Destination Offers."
@@ -3351,6 +3719,12 @@ msgid "birthdays in your network today. Click below to see who they are!"
 msgstr ""
 "cumpleaños de hoy en tu red. ¡Da clic abajo para ver quién cumple años hoy!"
 
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Select a Card"
+msgid "Black Reward Card"
+msgstr "Selecciona una Tarjeta"
+
 #: pages/admin_restricted_paybonus.vue
 msgid "Blocked"
 msgstr "Bloqueado"
@@ -3359,6 +3733,12 @@ msgstr "Bloqueado"
 #: layouts/default.html layouts/default_no_nav.html
 msgid "Blog"
 msgstr "Blog"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Select a Card"
+msgid "Blue Reward Card"
+msgstr "Selecciona una Tarjeta"
 
 #: certificates/board-of-directors.html
 msgid "BOARD OF DIRECTORS"
@@ -3453,8 +3833,14 @@ msgstr "Reserva tus siguientes vacaciones"
 msgid "Booking"
 msgstr "Reserva"
 
-#: receipts/booking_receipt.html
+#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Booking Receipt"
+msgstr "Documentos de la Reserva"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Booking Receipt"
+msgid "Booking Reference"
 msgstr "Documentos de la Reserva"
 
 #: pages/booking.vue
@@ -3733,8 +4119,12 @@ msgid "Can I be successful selling online only?"
 msgstr "¿Puedo tener éxito vendiendo solamente online? "
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Can I book a cruise using my Cruise Credits and then change the name on "
+#| "the reservation?"
 msgid ""
-"Can I book a cruise using my Cruise Credits and then change the name on the "
+"Can I book a cruise using my Reward Points and then change the name on the "
 "reservation?"
 msgstr ""
 "¿Puedo reservar un crucero utilizando mis Créditos de Crucero y después "
@@ -3879,6 +4269,12 @@ msgstr "Pago en Efectivo"
 msgid "Catalan"
 msgstr "Catalán"
 
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Category Type"
+msgid "Category"
+msgstr "Tipo de Categoría"
+
 #: receipts/booking_receipt.html
 msgid "Category Type"
 msgstr "Tipo de Categoría"
@@ -3918,6 +4314,16 @@ msgstr "Certificados"
 msgid "Change"
 msgstr "Cambiar"
 
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Checkout"
+msgid "Check In"
+msgstr "Salida"
+
+#: pages/hotels_booking.vue
+msgid "Check in:"
+msgstr ""
+
 #: pages/booking.vue
 msgid ""
 "Check our Book and Cruise with Confidence page for access to the most up-to-"
@@ -3925,6 +4331,12 @@ msgid ""
 msgstr ""
 "Consulta nuestra página Reserva y Navegua con Confianza para acceder a los "
 "requisitos más actualizados."
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Checkout"
+msgid "Check Out"
+msgstr "Salida"
 
 #: pages/welcome.vue controllers/menu_page.js
 msgid ""
@@ -3945,6 +4357,12 @@ msgstr ""
 #: connect/index.html
 msgid "Check out this video to learn more."
 msgstr "Mira este vídeo para obtener más información."
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Checkout"
+msgid "Check out:"
+msgstr "Salida"
 
 #: controllers/checking_emails.js
 msgid "Checking Emails And Fraud"
@@ -3974,7 +4392,7 @@ msgstr "Director de Tecnología (CTO)"
 msgid "Child #{{ index + 1 }} Age"
 msgstr "Infante #{{ index + 1 }} Edad"
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Children"
 msgstr "Niños"
 
@@ -3991,6 +4409,12 @@ msgstr "Elegir"
 #: import/index.html
 msgid "Choose a local CSV file"
 msgstr "Elije un archivo CSV local"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Quick Reports"
+msgid "Choose a Quick Report"
+msgstr "Reportes Rápidos"
 
 #: components/booking/category.vue
 msgid "Choose Different Category"
@@ -4050,7 +4474,7 @@ msgstr "Consigue tus Power Tools"
 msgid "Classic"
 msgstr "Clásico"
 
-#: pages/book.vue
+#: pages/book.vue pages/hotels.vue
 msgid "Clear All Filters"
 msgstr "Eliminar todos los Filtros"
 
@@ -4077,7 +4501,7 @@ msgstr "Da clic aquí para filtrar Líneas de Cruceros"
 msgid "Click here to filter nights"
 msgstr "Da clic aquí para filtrar las noches"
 
-#: cruising_dollars/index.html
+#: pages/reward_points.vue
 msgid ""
 "Click here to learn more about our Membership and how you can use your "
 "Cruise Dollars (Cruise Credits) to book Global Cruises."
@@ -4086,14 +4510,29 @@ msgstr ""
 "utilizar tus Créditos de Crucero para reservar uno de nuestros Cruceros "
 "Globales."
 
-#: menu_page/index.html
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "Click here to learn more about our Membership and how you can use your "
+#| "Cruise Dollars to book Global Cruises."
 msgid ""
 "Click here to learn more about our Membership and how you can use your "
-"Cruise Dollars® (Cruise Credits) to book Global Cruises."
+"Reward Points (Reward Points) to book Global Cruises."
 msgstr ""
 "Haz clic aquí para saber más acerca de nuestra Membresía y de cómo puedes "
-"utilizar tus Cruise Dollars® (Créditos de Crucero) para reservar uno de "
-"nuestros Cruceros Globales."
+"utilizar tus Cruise Dollars para reservar uno de nuestros Cruceros."
+
+#: menu_page/index.html
+#, fuzzy
+#| msgid ""
+#| "Click here to learn more about our Membership and how you can use your "
+#| "Cruise Dollars to book Global Cruises."
+msgid ""
+"Click here to learn more about our Membership and how you can use your "
+"Reward Points® (Reward Points) to book Global Cruises."
+msgstr ""
+"Haz clic aquí para saber más acerca de nuestra Membresía y de cómo puedes "
+"utilizar tus Cruise Dollars para reservar uno de nuestros Cruceros."
 
 #: info_center/index.html
 msgid "Click here to see all Rank Achievement levels."
@@ -4132,7 +4571,8 @@ msgstr "Configuración de Cliente"
 
 #: components/global-summit-reminder.vue components/weekly-competition.vue
 #: pages/booking.vue pages/connect.vue pages/convention_manager.vue
-#: pages/cruises.vue pages/global_summit_tracking.vue pages/invoices.vue
+#: pages/cruises.vue pages/global_summit_tracking.vue pages/hotels_details.vue
+#: pages/invoices.vue pages/reward_points.vue
 #: components/global_convention/event_info.vue
 #: components/public/FooterLinks.vue components/public/JoinModal.vue
 #: pages/public/biz.vue pages/public/index.vue pages/public/leadership.vue
@@ -4378,6 +4818,12 @@ msgstr "Planes de Connect"
 msgid "Contact by Mail:"
 msgstr "Contáctanos por Correo:"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Additional Information"
+msgid "Contact Information"
+msgstr "Información Adicional"
+
 #: components/public/FooterLinks.vue pages/public/contact.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "Contact Us"
@@ -4525,10 +4971,6 @@ msgstr "Crea tu Cuenta de Payoneer"
 msgid "Created Date"
 msgstr "Fecha de Creación"
 
-#: controllers/upgrade.js
-msgid "Credit Card"
-msgstr "Tarjeta de Crédito"
-
 #: components/checkout/ProcessorSafechargeEur.vue
 msgid "Credit or debit card"
 msgstr "Tarjeta de Crédito o débito"
@@ -4546,74 +4988,13 @@ msgstr "Folleto de Crucero"
 msgid "Cruise Confirmation"
 msgstr "Confirmación del Crucero"
 
-#: Menu
-msgid "Cruise Credits"
-msgstr "Créditos de Crucero"
-
-#: components/public/Faq.vue
-msgid ""
-"Cruise Credits are credits or points our Members can use towards booking "
-"cruise vacations on our site. Cruise Credits accumulate and rollover month-"
-"after-month and they never expire as long as you remain an active Member. "
-"Cruise Credits® are not a currency and have no cash value. Cruise Credits "
-"are not an investment. INCRUISES is not a bank, depository or financial "
-"company of any type. Cruise Credits cannot be redeemed for cash under any "
-"circumstance. Credits can only be used to book cruises on our Website. For "
-"complete details please read our <a href=\"{{memberAgreement}}\" target="
-"\"_blank\">Membership Agreement</a>"
-msgstr ""
-"Los Créditos de Crucero son créditos o puntos que nuestros Miembros pueden "
-"utilizar para reservar sus vacaciones a través de nuestra página web. Los "
-"Créditos de Crucero se acumulan y van creciendo mes a mes; nunca expiran "
-"mientras permanezcas como un Miembro activo. Los Créditos de Crucero no son "
-"una moneda, no tienen ningún valor monetario y no son una inversión. "
-"INCRUISES no es un banco, depositaria o compañía financiera de ningún tipo. "
-"Así mismo, los Cruise Dollars no pueden ser canjeados por dinero bajo "
-"ninguna circunstancia. Estos créditos pueden ser utilizados únicamente para "
-"reservar cruceros en nuestra página web. Para más detalles, por favor lee "
-"nuestro <a href=\"{{memberAgreement}}\" target=\"_blank\">Acuerdo de "
-"Membresía</a>"
-
-#: cruising_dollars/index.html
-msgid "Cruise Credits Balance"
-msgstr "Saldo de Créditos de Crucero"
-
-#: pages/my_cruise_savings.vue receipts/booking_receipt.html
-msgid "Cruise Credits Used"
-msgstr "Créditos de Crucero Utilizados"
-
 #: pages/welcome.vue
 msgid "Cruise Credits:"
 msgstr "Créditos de Crucero:"
 
-#: components/public/Faq.vue
-msgid ""
-"Cruise Credits® can only be used for cruise fare(s) quoted and confirmed at "
-"booking on our website, including port charges and applicable government "
-"taxes and fees. Cruise Credits® may not be used to pay for flights, "
-"stateroom upgrades after a confirmed booking, travel insurance, processing "
-"fees, cancellation fees, name change fees or fees of any kind related to the "
-"cruise, pre-paid gratuities, tours and excursions, specialty meals and "
-"beverage packages and/or personal expenditures once on onboard (including "
-"medical expenses and/or gratuities)."
-msgstr ""
-"Los Créditos de Crucero solo pueden ser utilizados para reservar crucero(s) "
-"con tarifa y confirmados en nuestra página web, y donde se incluyen las "
-"tasas portuarias e impuestos gubernamentales. Los Créditos de Crucero no "
-"pueden ser utilizados para pagar vuelos, mejoras de camarote después de "
-"haberse confirmado la reserva, seguros de viajes, gastos de procesamiento, "
-"por cancelaciones o gastos por cambios de nombre en la reserva, o cualquier "
-"otro gasto relacionado con los cruceros, como también pago de propinas, "
-"tours o excursiones, comidas especiales y paquetes de bebidas y/o gastos "
-"personales una vez que se esté a bordo (incluyendo gastos médicos)"
-
 #: pages/book.vue
 msgid "Cruise Destination:"
 msgstr "Destino de Crucero:"
-
-#: controllers/cruising_dollars.js
-msgid "Cruise Dollars"
-msgstr "Cruise Dollars"
 
 #: pages/welcome.vue controllers/menu_page.js
 msgid ""
@@ -4793,9 +5174,10 @@ msgstr ""
 "final, ni de forma consecutiva. (ejemplo:  --ejemplo, __ejemplo, _-ejemplo, "
 "o -_ejemplo)."
 
-#: pages/contacts.vue pages/email.vue components/payout/wallet-transfers.vue
-#: cruising_dollars/index.html email_notifications/index.html
-#: layouts/default.html negative_balances/index.html
+#: pages/contacts.vue pages/email.vue pages/reward_points.vue
+#: components/payout/wallet-transfers.vue cruising_dollars/index.html
+#: email_notifications/index.html layouts/default.html
+#: negative_balances/index.html
 msgid "Date"
 msgstr "Fecha"
 
@@ -4855,6 +5237,12 @@ msgstr "Fecha: Noviembre 6"
 msgid "Dates"
 msgstr "Fechas"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Dates"
+msgid "Dates:"
+msgstr "Fechas"
+
 #: pages/booking.vue pages/my_cruise_savings.vue receipts/booking_receipt.html
 msgid "Day"
 msgstr "Día"
@@ -4894,8 +5282,8 @@ msgstr "Cubierta:"
 msgid "Decks:"
 msgstr "Cubiertas:"
 
-#: components/payout/wallet-transfers.vue cruising_dollars/index.html
-#: layouts/default.html
+#: pages/reward_points.vue components/payout/wallet-transfers.vue
+#: cruising_dollars/index.html layouts/default.html
 msgid "Deductions"
 msgstr "Deducciones"
 
@@ -4970,7 +5358,7 @@ msgstr ""
 "favor, revisa nuestro documento sobre la Documentación de Viaje para más "
 "detalles."
 
-#: pages/convention_manager.vue pages/email_address.vue
+#: pages/convention_manager.vue pages/email_address.vue pages/reward_points.vue
 #: components/payout/wallet-transfers.vue cruising_dollars/index.html
 #: layouts/default.html negative_balances/index.html
 #: receipts/italian_commission.html receipts/italian_receipt.html
@@ -5346,65 +5734,97 @@ msgstr ""
 "ordenador, computadora, tableta y sistema operativo."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "During the 13th to the 24th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 70%, per cruise."
 msgid ""
-"During the 13th to the 24th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 70%, per cruise."
+"During the 13th to the 24th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 70%, per cruise."
 msgstr ""
 "Desde el mes 13 al mes 24 de pagos de Membresía, el porcentaje de Créditos "
 "de Crucero que pueden ser utilizados se incrementan hasta el 70%"
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "During the 13th to the 24th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 70%."
 msgid ""
-"During the 13th to the 24th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 70%."
+"During the 13th to the 24th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 70%."
 msgstr ""
 "Desde el mes 13 al mes 24 de pagos de Membresía, el porcentaje de Créditos "
 "de Crucero que pueden ser utilizados se incrementan hasta el 70%."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "During the 25th to the 36th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 80%, per cruise."
 msgid ""
-"During the 25th to the 36th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 80%, per cruise."
+"During the 25th to the 36th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 80%, per cruise."
 msgstr ""
 "Desde el mes 25 al mes 36 de pagos de Membresía, el porcentaje de Créditos "
 "de Crucero que pueden ser utilizados se incrementan hasta el 80%."
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "During the 25th to the 36th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 80%."
 msgid ""
-"During the 25th to the 36th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 80%."
+"During the 25th to the 36th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 80%."
 msgstr ""
 "Desde el mes 25 al mes 36 de pagos de Membresía, el porcentaje de Créditos "
 "de Crucero que pueden ser utilizados se incrementan hasta el 80%."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "During the 37th to the 48th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 90%, per cruise."
 msgid ""
-"During the 37th to the 48th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 90%, per cruise."
+"During the 37th to the 48th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 90%, per cruise."
 msgstr ""
 "Desde el mes 37 al mes 48 de pagos de Membresía, el porcentaje de Créditos "
 "de Crucero que pueden ser utilizados se incrementan hasta el 90%."
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "During the 37th to the 48th Membership payment, the percentage of Cruise "
+#| "Credits that can be used to book cruises increases to 90%."
 msgid ""
-"During the 37th to the 48th Membership payment, the percentage of Cruise "
-"Credits that can be used to book cruises increases to 90%."
+"During the 37th to the 48th Membership payment, the percentage of Reward "
+"Points that can be used to book cruises increases to 90%."
 msgstr ""
 "Desde el mes 37 al mes 48 de pagos de Membresía, el porcentaje de Créditos "
 "de Crucero que pueden ser utilizados se incrementan hasta el 90%."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "During the first 12 Membership payments, Members can use up to 60% of "
+#| "their Cruise Credits, per cruise."
 msgid ""
 "During the first 12 Membership payments, Members can use up to 60% of their "
-"Cruise Credits, per cruise."
+"Reward Points, per cruise."
 msgstr ""
 "Durante los primeros 12 pagos de Membresía, los Miembros pueden utilizar "
 "hasta el 60% de sus  Créditos de Crucero, por crucero."
 
 #: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "During the first 12 Membership payments, Members can use up to 60% of "
+#| "their Cruise Credits."
 msgid ""
 "During the first 12 Membership payments, Members can use up to 60% of their "
-"Cruise Credits."
+"Reward Points."
 msgstr ""
 "Durante los primeros 12 pagos de Membresía, los Miembros pueden utilizar el "
 "60% de sus  Créditos de Crucero."
@@ -5505,8 +5925,8 @@ msgstr "Fecha de Ganancias"
 msgid "Earned Points"
 msgstr "Puntos Ganados"
 
-#: components/payout/wallet-transfers.vue cruising_dollars/index.html
-#: layouts/default.html
+#: pages/reward_points.vue components/payout/wallet-transfers.vue
+#: cruising_dollars/index.html layouts/default.html
 msgid "Earnings"
 msgstr "Ganancias"
 
@@ -5736,14 +6156,6 @@ msgid "Expired Member"
 msgstr "Miembro Caducado"
 
 #: reports/index.html
-msgid "Expired Members"
-msgstr "Miembros Caducados"
-
-#: reports/index.html
-msgid "Expired Members with Pending Invoices"
-msgstr "Miembros Expirados con Recibos Pendientes"
-
-#: reports/index.html
 msgid "Expired Partners"
 msgstr "Socios Caducados"
 
@@ -5794,6 +6206,10 @@ msgstr "Facebook Marketing"
 #: pages/facebook_marketing.vue
 msgid "Facebook Pixel"
 msgstr "Pixel de Facebook"
+
+#: pages/hotels_details.vue
+msgid "Facilities"
+msgstr ""
 
 #: receipts/booking_receipt.html
 msgid "FAQ"
@@ -5914,8 +6330,14 @@ msgstr "Numero de registro de Florida"
 msgid "Follow these simple steps to set up your inCruises account."
 msgstr "Sigue estos sencillos pasos para configurar tu cuenta de inCruises."
 
+#: pages/hotels.vue
+msgid "for {{ daysApart }} nights"
+msgstr ""
+
 #: components/public/Faq.vue
-msgid "For each $100 USD payment, our Members receive 200 Cruise Credits."
+#, fuzzy
+#| msgid "For each $100 USD payment, our Members receive 200 Cruise Credits."
+msgid "For each $100 USD payment, our Members receive 200 Reward Points."
 msgstr ""
 "Por cada $100 pagados, nuestros Miembros reciben 200 Créditos de Crucero."
 
@@ -6211,6 +6633,10 @@ msgstr "Ir a recibos"
 msgid "Go to settings"
 msgstr "Ir a configuración"
 
+#: pages/reward_points.vue
+msgid "Gold Reward Card"
+msgstr ""
+
 #: pages/public/leadership.vue
 msgid "Graduated from Georgetown University in Washington, D.C."
 msgstr "Graduado de La Universidad de  Georgetown en Washington, D.C."
@@ -6311,6 +6737,18 @@ msgstr ""
 "permite ver el mundo por menos e incluso ganar dinero en el proceso. Si esto "
 "suena demasiado bueno para ser verdad, no te preocupes, no lo es."
 
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Team Inactive Members"
+msgid "Have an Active Membership Plan"
+msgstr "Miembros Inactivos del Equipo"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "You’re an Active Partner, Congratulations!"
+msgid "Have an Active Partnership Plan"
+msgstr "¡Felicidades, eres un Socio Activo!"
+
 #: components/info-reminder.vue
 msgid ""
 "Have you ever vacationed on a cruise (MSC, Costa, Carnival, etc.) before?"
@@ -6346,6 +6784,18 @@ msgstr "Jerarquía"
 msgid "Host:"
 msgstr "Anfitrión:"
 
+#: receipts/index.html
+#, fuzzy
+#| msgid "Continue Booking"
+msgid "Hotel Booking"
+msgstr "Continuar con la Reserva"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "More Info"
+msgid "Hotel Info"
+msgstr "Más información"
+
 #: components/countdown.vue components/membership_countdown.vue
 #: compensation/index.html info_center/index.html reach/index.html
 msgid "hours"
@@ -6356,11 +6806,16 @@ msgid "How can I be successful?"
 msgstr "¿Cómo puedo tener éxito?"
 
 #: components/public/Faq.vue
-msgid "How can I use my Cruise Credits?"
+#, fuzzy
+#| msgid "How can I use my Cruise Credits?"
+msgid "How can I use my Reward Points?"
 msgstr "¿Cómo puedo utilizar mis Créditos de Crucero?"
 
 #: components/public/Faq.vue
-msgid "How can inCruises afford to offer 2 Cruise Credits for every $1 paid?"
+#, fuzzy
+#| msgid ""
+#| "How can inCruises afford to offer 2 Cruise Credits for every $1 paid?"
+msgid "How can inCruises afford to offer 2 Reward Points for every $1 paid?"
 msgstr ""
 "¿Cómo puede permitirse inCruises el lujo de ofrecer 2 Créditos de Crucero "
 "por cada $1 pagado?"
@@ -6382,16 +6837,18 @@ msgid "How easily can I cancel my Membership?"
 msgstr "¿Cómo puedo cancelar de forma sencilla mi Membresía?"
 
 #: components/public/Faq.vue
-msgid "How many Cruise Credits can I use per cruise?"
-msgstr "¿Cuántos Créditos de Crucero puedo utilizar por crucero?"
-
-#: components/public/Faq.vue
 msgid "How many cruises can we take in one year?"
 msgstr "¿Cuántos viajes en crucero puedo realizar en un año?"
 
 #: components/public/Faq.vue
 msgid "How many Global Cruises are there available on the site?"
 msgstr "¿Cuántos cruceros de Global Cruises hay disponibles en la página web?"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid "How many Cruise Credits can I use per cruise?"
+msgid "How many Reward Points can I use per cruise?"
+msgstr "¿Cuántos Créditos de Crucero puedo utilizar por crucero?"
 
 #: components/info-reminder.vue
 msgid "How many total cruises have you done?"
@@ -6762,10 +7219,16 @@ msgstr ""
 "regresar a casa si se cancela mi crucero."
 
 #: agreements/leadership_agreement.html
+#, fuzzy
+#| msgid ""
+#| "I understand that if I promote any group cruise or make improper "
+#| "advertising claims or do not adhere to this agreement/commitment, I can "
+#| "lose all of my awarded Cruise Dollars and Cruise Dollars earned via our "
+#| "Free Membership program."
 msgid ""
 "I understand that if I promote any group cruise or make improper advertising "
 "claims or do not adhere to this agreement/commitment, I can lose all of my "
-"awarded Cruise Dollars and Cruise Dollars earned via our Free Membership "
+"awarded Reward Points and Reward Points earned via our Free Membership "
 "program."
 msgstr ""
 "Entiendo que si promociono cualquier crucero grupal o realizo acciones "
@@ -6847,10 +7310,16 @@ msgstr ""
 "que alguien puede:"
 
 #: agreements/leadership_agreement.html
+#, fuzzy
+#| msgid ""
+#| "I will not sell our Membership in order for someone to go on any specific "
+#| "cruise. I clearly tell all Members and potential Member that they first "
+#| "must accumulate their Cruise Dollars and then book a cruise that’s "
+#| "available on our website."
 msgid ""
 "I will not sell our Membership in order for someone to go on any specific "
 "cruise. I clearly tell all Members and potential Member that they first must "
-"accumulate their Cruise Dollars and then book a cruise that’s available on "
+"accumulate their Reward Points and then book a cruise that’s available on "
 "our website."
 msgstr ""
 "No venderé nuestra Membresía para que alguien participe en un crucero "
@@ -7006,28 +7475,46 @@ msgid "Identification"
 msgstr "Identificación"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If a couple are both inCruises Members, can they combine their Cruise "
+#| "Credits on one cruise booking?"
 msgid ""
-"If a couple are both inCruises Members, can they combine their Cruise "
-"Credits on one cruise booking?"
+"If a couple are both inCruises Members, can they combine their Reward Points "
+"on one cruise booking?"
 msgstr ""
 "¿Si en una pareja, ambos son Miembros de inCruises, pueden combinar sus "
 "Créditos de Crucero para reservar un crucero?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If a Member wants to change the name of the passengers on any cruise "
+#| "booked through our Website for which Cruise Credits were deducted to book "
+#| "the cruise, the new person must also be an active paying Member and have "
+#| "enough Cruise Credits to process the name change requested. In the event "
+#| "the name change involves removing from the reservation someone who used "
+#| "their Cruise Credits to book the stateroom with someone who is not an "
+#| "active paying Member or is a Member who does not have enough Cruise "
+#| "Credits to make the exchange, then the only available possibility to "
+#| "execute the name change, is for inCruises to refund the Cruise Credits "
+#| "from the Member being removed, adding those Cruise Credits back to their "
+#| "account and charging the new person taking their place the entire amount "
+#| "by credit card or any payment method allowed by inCruises. Member agrees "
+#| "that certain name change fees may also apply."
 msgid ""
 "If a Member wants to change the name of the passengers on any cruise booked "
-"through our Website for which Cruise Credits were deducted to book the "
+"through our Website for which Reward Points were deducted to book the "
 "cruise, the new person must also be an active paying Member and have enough "
-"Cruise Credits to process the name change requested. In the event the name "
-"change involves removing from the reservation someone who used their Cruise "
-"Credits to book the stateroom with someone who is not an active paying "
-"Member or is a Member who does not have enough Cruise Credits to make the "
-"exchange, then the only available possibility to execute the name change, is "
-"for inCruises to refund the Cruise Credits from the Member being removed, "
-"adding those Cruise Credits back to their account and charging the new "
-"person taking their place the entire amount by credit card or any payment "
-"method allowed by inCruises. Member agrees that certain name change fees may "
-"also apply."
+"Reward Points to process the name change requested. In the event the name "
+"change involves removing from the reservation someone who used their Reward "
+"Points to book the stateroom with someone who is not an active paying Member "
+"or is a Member who does not have enough Reward Points to make the exchange, "
+"then the only available possibility to execute the name change, is for "
+"inCruises to refund the Reward Points from the Member being removed, adding "
+"those Reward Points back to their account and charging the new person taking "
+"their place the entire amount by credit card or any payment method allowed "
+"by inCruises. Member agrees that certain name change fees may also apply."
 msgstr ""
 "Si un Miembro quiere cambiar el nombre de los pasajeros en cualquier reserva "
 "de crucero realizada a través de nuestra página web, para el cual fueron "
@@ -7116,13 +7603,22 @@ msgstr ""
 "haya realizado exitosamente."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If you discontinue being a member, we will give you up to 1 year to "
+#| "reactivate your account. To reactivate your account, you will need to pay "
+#| "each Membership month you missed. You will still earn double Cruise "
+#| "Credits for each month you pay to reactivate your account, and those "
+#| "Cruise Credits will be added to your previous balance. After 12 months of "
+#| "inactivity, your account is closed and your Cruise Credits expire and are "
+#| "forfeited."
 msgid ""
 "If you discontinue being a member, we will give you up to 1 year to "
 "reactivate your account. To reactivate your account, you will need to pay "
-"each Membership month you missed. You will still earn double Cruise Credits "
-"for each month you pay to reactivate your account, and those Cruise Credits "
+"each Membership month you missed. You will still earn double Reward Points "
+"for each month you pay to reactivate your account, and those Reward Points "
 "will be added to your previous balance. After 12 months of inactivity, your "
-"account is closed and your Cruise Credits expire and are forfeited."
+"account is closed and your Reward Points expire and are forfeited."
 msgstr ""
 "Si dejas de ser miembro, dispondrás de hasta 1 año para reactivar tu cuenta. "
 "Al reactivar tu cuenta, tendrás que pagar los meses de membresía que "
@@ -7167,9 +7663,14 @@ msgstr ""
 "nuestra página web, excepto para reactivar tu cuenta."
 
 #: upgrade/index.html
+#, fuzzy
+#| msgid ""
+#| "If you think this is an error, please contact our support staff. <a href="
+#| "\"https://incruises.com/support\">https://incruises.com/support</a>"
 msgid ""
-"If you think this is an error, please contact our support staff. <a href="
-"\"https://incruises.com/support\">https://incruises.com/support</a>"
+"If you think this is an error, please contact our support staff.\n"
+"\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"support</a>"
 msgstr ""
 "Si crees que se trata de un error, ponte en contacto con nuestro equipo de "
 "soporte. <a href=\"https://incruises.com/support\">https://incruises.com/"
@@ -7457,13 +7958,39 @@ msgstr ""
 "del SOCIO no finaliza en el momento en que INCRUISES rescinda este Anexo, el "
 "SOCIO volverá al rango de Regional Director."
 
-#: cruising_dollars/index.html
-msgid "Incentive Cruise Credits Balance"
-msgstr "Saldo de Créditos de Crucero de Incentivo"
+#: reports/index.html
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "Inactive Date"
+msgstr "Fecha de Factura"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Active Member"
+msgid "Inactive Direct Members"
+msgstr "Miembro Activo"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Active Member"
+msgid "Inactive Members"
+msgstr "Miembro Activo"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Active Team Members"
+msgid "Inactive Team Members"
+msgstr "Miembros de Equipo Activos"
 
 #: components/public/FooterDocs.vue
 msgid "Incentive Program Overview"
 msgstr "Programa de Incentivos"
+
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid "Incentive Cruise Credits Balance"
+msgid "Incentive Reward Points Balance"
+msgstr "Saldo de Créditos de Crucero de Incentivo"
 
 #: reports/index.html
 msgid "Include"
@@ -7552,13 +8079,21 @@ msgid "Incruises LLC"
 msgstr "Incruises LLC"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "InCruises Members can book any of our over 5,000 Global Cruises directly "
+#| "on our site, by clicking on Global Cruises on our “Cruises” menu, then "
+#| "following the steps all the way through the payment process. At checkout, "
+#| "you will be given the option to pay for your cruise using all of your "
+#| "available Cruise Credits and/or other payment methods to complete the "
+#| "booking process."
 msgid ""
 "InCruises Members can book any of our over 5,000 Global Cruises directly on "
 "our site, by clicking on Global Cruises on our “Cruises” menu, then "
 "following the steps all the way through the payment process. At checkout, "
 "you will be given the option to pay for your cruise using all of your "
-"available Cruise Credits and/or other payment methods to complete the "
-"booking process."
+"available Reward Points and/or other payment methods to complete the booking "
+"process."
 msgstr ""
 "Los Miembros de inCruises pueden reservar cualquiera de nuestros más de "
 "5,000 cruceros de Cruceros Globales directamente en nuestro sitio web, "
@@ -7799,6 +8334,12 @@ msgstr "Detalles de la Invitación"
 #: pages/contacts.vue pages/invite.vue
 msgid "Invite"
 msgstr "Invitación"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Invited Top"
+msgid "Invite and grow!"
+msgstr "Invitados Top"
 
 #: import/create.html
 msgid "Invite as Member"
@@ -8321,10 +8862,17 @@ msgstr "Cargar"
 msgid "Load Level"
 msgstr "Nivel de Carga"
 
-#: components/payout/wallet-transfers.vue compensation/index.html
-#: receipts/index.html reports/index.html track_results/index.html
+#: pages/hotels.vue components/payout/wallet-transfers.vue
+#: compensation/index.html receipts/index.html reports/index.html
+#: track_results/index.html
 msgid "Load More"
 msgstr "Ver Más"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "All Locations"
+msgid "Location"
+msgstr "Todas las Localizaciones"
 
 #: components/blog/navbar.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
@@ -8505,9 +9053,15 @@ msgid "Members"
 msgstr "Miembros"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Members can book any cruise available on our Website and we will "
+#| "automatically use their available Cruise Credits® to reduce the cost in "
+#| "full or partially pay for the booking subject to maximum percentage "
+#| "amounts as described below:"
 msgid ""
 "Members can book any cruise available on our Website and we will "
-"automatically use their available Cruise Credits® to reduce the cost in full "
+"automatically use their available Reward Points® to reduce the cost in full "
 "or partially pay for the booking subject to maximum percentage amounts as "
 "described below:"
 msgstr ""
@@ -8525,14 +9079,26 @@ msgstr ""
 "reservas de cruceros."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Members must be active (no unpaid monthly invoices) to book a cruise. "
+#| "Once a booking is confirmed, the Member must remain as an active paying "
+#| "Member through the embarkation process of the cruise for which Cruise "
+#| "Credits were used to book. If a Member fails to make Monthly Membership "
+#| "payments after booking the cruise and before embarkation, and "
+#| "consequently their account goes into an Inactive status, inCruises has "
+#| "the right to cancel the cruise, and reimburse/refund all Cruise Credits "
+#| "and payments made for the booking. Any fees associated with the "
+#| "cancellation, will be the responsibility of the Member and deducted from "
+#| "the Member's account."
 msgid ""
 "Members must be active (no unpaid monthly invoices) to book a cruise. Once a "
 "booking is confirmed, the Member must remain as an active paying Member "
-"through the embarkation process of the cruise for which Cruise Credits were "
+"through the embarkation process of the cruise for which Reward Points were "
 "used to book. If a Member fails to make Monthly Membership payments after "
 "booking the cruise and before embarkation, and consequently their account "
 "goes into an Inactive status, inCruises has the right to cancel the cruise, "
-"and reimburse/refund all Cruise Credits and payments made for the booking. "
+"and reimburse/refund all Reward Points and payments made for the booking. "
 "Any fees associated with the cancellation, will be the responsibility of the "
 "Member and deducted from the Member's account."
 msgstr ""
@@ -8550,7 +9116,7 @@ msgstr ""
 msgid "Members must be at least 18 years old."
 msgstr "Los Miembros deben tener al menos 18 años de edad."
 
-#: pages/welcome.vue components/public/Header.vue
+#: pages/upgrade.vue pages/welcome.vue components/public/Header.vue
 msgid "Membership"
 msgstr "Membresía"
 
@@ -8948,8 +9514,9 @@ msgstr ""
 #: competition/index.html invoices/invoice_statement.html
 #: negative_balances/index.html pay_bonus/index.html reach/index.html
 #: receipts/booking_receipt.html receipts/commission_statement.html
-#: receipts/instant_bonus_statement.html receipts/invoice.html
-#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
+#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
+#: receipts/invoice.html receipts/italian_receipt.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
@@ -8983,11 +9550,19 @@ msgstr ""
 "posible un cambio de nombre, comuníquese con"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Name changes to your Membership is simply NOT allowed. Membership is "
+#| "personal to you as a Member and you may not transfer, assign, change or "
+#| "otherwise dispose any of your rights or obligations and/or benefits, "
+#| "including Cruise Credits. Upon death of a Member, if all Membership fees "
+#| "are up to date, the Membership can be transferred to their spouse or "
+#| "legal heirs."
 msgid ""
 "Name changes to your Membership is simply NOT allowed. Membership is "
 "personal to you as a Member and you may not transfer, assign, change or "
 "otherwise dispose any of your rights or obligations and/or benefits, "
-"including Cruise Credits. Upon death of a Member, if all Membership fees are "
+"including Reward Points. Upon death of a Member, if all Membership fees are "
 "up to date, the Membership can be transferred to their spouse or legal heirs."
 msgstr ""
 "El cambio de nombre de la membresía NO está permitido. La Membresía es "
@@ -9209,7 +9784,7 @@ msgstr "Próximo Mes"
 msgid "Next Step"
 msgstr "Próximo Paso"
 
-#: cruising_dollars/index.html
+#: pages/reward_points.vue cruising_dollars/index.html
 msgid "Next Year"
 msgstr "Próximo Año"
 
@@ -9259,10 +9834,20 @@ msgstr "No hemos encontrado ningún vídeo."
 msgid "No, Cancel and keep current email"
 msgstr "No, cancelar y conservar correo actual"
 
+#: pages/checkout.vue
+msgid "No, I do not live in Puerto Rico"
+msgstr "No, no vivo en Puerto Rico"
+
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No, Cruise Credits are not a currency so there is no tax implication. "
+#| "Redeeming Cruise Credits is comparable to booking a Cruise as a result of "
+#| "a promotion or incentive. No one gets taxed more because the true value "
+#| "is higher. We also suggest you confirm with your accountant."
 msgid ""
-"No, Cruise Credits are not a currency so there is no tax implication. "
-"Redeeming Cruise Credits is comparable to booking a Cruise as a result of a "
+"No, Reward Points are not a currency so there is no tax implication. "
+"Redeeming Reward Points is comparable to booking a Cruise as a result of a "
 "promotion or incentive. No one gets taxed more because the true value is "
 "higher. We also suggest you confirm with your accountant."
 msgstr ""
@@ -9273,16 +9858,18 @@ msgstr ""
 "valor real del producto es mayor. No obstante siempre aconsejamos que se "
 "consulte con un gestor."
 
-#: pages/checkout.vue
-msgid "No, I do not live in Puerto Rico"
-msgstr "No, no vivo en Puerto Rico"
-
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No, they are not. This is strictly prohibited in our <a href="
+#| "\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>. "
+#| "Cruise Credits are never transferable, and change of ownership of the "
+#| "account is not allowed."
 msgid ""
 "No, they are not. This is strictly prohibited in our <a href="
-"\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>. Cruise "
-"Credits are never transferable, and change of ownership of the account is "
-"not allowed."
+"\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>. Reward "
+"Points are never transferable, and change of ownership of the account is not "
+"allowed."
 msgstr ""
 "No, no se puede. Está estrictamente prohibido en nuestro <a href="
 "\"{{memberAgreement}}\" target=\"_blank\">Acuerdo de Membresía</a>. Los "
@@ -9290,6 +9877,22 @@ msgstr ""
 "la persona original de la cuenta."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No, we are all at risk. To mitigate risk, we have Seller of Travel "
+#| "Registrations in every state required and are bonded when required to do "
+#| "so. Please see our <a href='{{corporateDueDiligence}}' "
+#| "target='_blank'>Due Diligence Document</a> to learn more about the "
+#| "company. Bottom line: we are built to last and are here for the long "
+#| "haul, and like anything in life, there are no guarantees. To further "
+#| "mitigate risk, we also have a relationship with Trust My Travel (TMT). "
+#| "TMT provides consumer protection for every Membership payment. Your "
+#| "payments to INCRUISES® are covered (your out-of-pocket amount, not the "
+#| "Cruise Dollars® (Cruise Credits) value) if, in the unlikely event "
+#| "INCRUISES were to stop doing business. Please click here for more "
+#| "information on your financial protection: <a "
+#| "href='{{tmtFinancialProtection}}' target='_blank'>TMT Financial "
+#| "Protection</a>."
 msgid ""
 "No, we are all at risk. To mitigate risk, we have Seller of Travel "
 "Registrations in every state required and are bonded when required to do so. "
@@ -9299,7 +9902,7 @@ msgid ""
 "there are no guarantees. To further mitigate risk, we also have a "
 "relationship with Trust My Travel (TMT). TMT provides consumer protection "
 "for every Membership payment. Your payments to INCRUISES® are covered (your "
-"out-of-pocket amount, not the Cruise Dollars® (Cruise Credits) value) if, in "
+"out-of-pocket amount, not the Reward Points® (Reward Points) value) if, in "
 "the unlikely event INCRUISES were to stop doing business. Please click here "
 "for more information on your financial protection: <a "
 "href='{{tmtFinancialProtection}}' target='_blank'>TMT Financial Protection</"
@@ -9342,10 +9945,16 @@ msgstr ""
 "paga comisiones y bonos por ventas de Membresías."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No. It's a $100 USD maximum per member. However, if you plan to cruise "
+#| "with another person, your spouse for example, that person can also be a "
+#| "member and both will be able to apply their Cruise Credits to the same "
+#| "cruise you will be booking together."
 msgid ""
 "No. It's a $100 USD maximum per member. However, if you plan to cruise with "
 "another person, your spouse for example, that person can also be a member "
-"and both will be able to apply their Cruise Credits to the same cruise you "
+"and both will be able to apply their Reward Points to the same cruise you "
 "will be booking together."
 msgstr ""
 "No. Solo se pueden pagar $100 USD como máximo por miembro. No obstante, si "
@@ -9427,13 +10036,13 @@ msgstr ""
 "la navegación se considera una cancelación y no es posible obtener un "
 "reembolso."
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue cruising_dollars/index.html info_center/index.html
+#: menu_page/index.html reach/index.html
 msgid "Not a Member"
 msgstr "No eres Miembro"
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue cruising_dollars/index.html info_center/index.html
+#: menu_page/index.html reach/index.html
 msgid "Not a Partner"
 msgstr "No eres Socio"
 
@@ -9472,6 +10081,12 @@ msgstr "No es Socio/ Si es Miembro"
 #: pages/duplicator.vue
 msgid "Not Reminded"
 msgstr "No Recordatorio"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Not Completed"
+msgid "Not Selected"
+msgstr "No completado"
 
 #: receipts/italian_receipt.html
 msgid "Notes:"
@@ -9717,6 +10332,12 @@ msgstr "Nuestros Valores"
 #: pages/public/mission.vue
 msgid "OUR VISION"
 msgstr "NUESTRA VISION"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Total Out Of Pocket"
+msgid "Out of Pocket"
+msgstr "Tu Precio Final"
 
 #: pages/my_cruise_savings.vue
 msgid "Out-of-Pocket Paid"
@@ -10071,7 +10692,7 @@ msgstr "Socios que no se han renovado"
 msgid "Partners That Will Be Renewing Next Month"
 msgstr "Socios que se renovarán este mes"
 
-#: components/public/Header.vue
+#: pages/upgrade.vue components/public/Header.vue
 msgid "Partnership"
 msgstr "Sociedad"
 
@@ -10123,6 +10744,12 @@ msgstr "Pagar bono"
 #: pay_bonus/index.html controllers/pay_bonus.js
 msgid "Pay Bonus"
 msgstr "Pagar Bono"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Pending Invoices"
+msgid "Pay Pending Invoices"
+msgstr "Recibos Pendientes"
 
 #: components/checkout/ProcessorWallet.vue
 msgid "Pay using inCruises® Wallet"
@@ -10214,6 +10841,18 @@ msgstr "Recibos Pendientes:"
 #: compensation/index.html
 msgid "Pending Member Bonus"
 msgstr "Bono de Miembro Pendiente"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Pending Member Bonus"
+msgid "Pending Members"
+msgstr "Bono de Miembro Pendiente"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Expired Members with Pending Invoices"
+msgid "Pending Members with Pending Invoices"
+msgstr "Miembros Expirados con Recibos Pendientes"
 
 #: compensation/index.html
 msgid "Pending Partner/Member Bonus"
@@ -10308,7 +10947,15 @@ msgid "Please add the inCruises members that will be a part of this booking:"
 msgstr "Agregue los miembros de inCruises que serán parte de esta reserva:"
 
 #: pages/booking.vue
-msgid "Please allocate the corresponding Cruise Credits for each member:"
+#, fuzzy
+#| msgid "Please allocate the corresponding Cruise Credits for each member:"
+msgid "Please allocate the corresponding Reward Points for each member:"
+msgstr "Asigna los Créditos de Crucero correspondientes a cada miembro:"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Please allocate the corresponding Cruise Credits for each member:"
+msgid "Please allocate the corresponding Rewards Points for each member:"
 msgstr "Asigna los Créditos de Crucero correspondientes a cada miembro:"
 
 #: pages/payout.vue
@@ -10345,6 +10992,10 @@ msgid ""
 msgstr ""
 "Por favor, elije la divisa de este Método de Pago. La divisa incorrecta "
 "puede generar un pago fallido."
+
+#: pages/booking.vue pages/hotels_booking.vue
+msgid "Please choose the type of booking you wish to do:"
+msgstr ""
 
 #: layouts/default.html layouts/default_no_nav.html
 msgid ""
@@ -10644,6 +11295,13 @@ msgid "Please wait while we gather all available cruises..."
 msgstr ""
 "Por favor espera mientras recopilamos todos los cruceros disponibles..."
 
+#: pages/hotels.vue pages/hotels_details.vue
+#, fuzzy
+#| msgid "Please wait while we gather all available cruises..."
+msgid "Please wait while we gather all available hotels..."
+msgstr ""
+"Por favor espera mientras recopilamos todos los cruceros disponibles..."
+
 #: pages/cruise.vue
 msgid "Please wait while we gather cruise trip information..."
 msgstr ""
@@ -10666,6 +11324,12 @@ msgstr "Puntos"
 #: pages/public/leadership.vue
 msgid "Ponce, Puerto Rico"
 msgstr "Ponce, Puerto Rico"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Cruise Destination:"
+msgid "Popular Destinations"
+msgstr "Destino de Crucero:"
 
 #: pages/booking.vue pages/cruise.vue pages/my_cruise_savings.vue
 msgid "Port"
@@ -10720,6 +11384,12 @@ msgstr "Miembros Potenciales"
 #: compensation/index.html
 msgid "Potential Points"
 msgstr "Puntos Potenciales"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Potential Members"
+msgid "Potential Rewards"
+msgstr "Miembros Potenciales"
 
 #: pages/my_cruise_savings.vue
 msgid ""
@@ -10818,11 +11488,12 @@ msgstr "Total del Mes anterior"
 msgid "Previous Step"
 msgstr "Paso Anterior"
 
-#: cruising_dollars/index.html
+#: pages/reward_points.vue cruising_dollars/index.html
 msgid "Previous Year"
 msgstr "Año Anterior"
 
-#: components/booking/category.vue receipts/receipt.html
+#: components/booking/category.vue receipts/hotel_booking_receipt.html
+#: receipts/receipt.html
 msgid "Price"
 msgstr "Precio"
 
@@ -10830,9 +11501,27 @@ msgstr "Precio"
 msgid "Price does not include Taxes and Fees"
 msgstr "El precio no incluye Tasas e Impuestos"
 
-#: receipts/booking_receipt.html
+#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Price Information"
 msgstr "Información del Precio"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Price"
+msgid "Price Max."
+msgstr "Precio"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Pricing"
+msgid "Price Min."
+msgstr "Precios"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Price per Ticket"
+msgid "Price per night:"
+msgstr "Precio por Boleto"
 
 #: pages/convention_manager.vue
 msgid "Price per Ticket"
@@ -10866,8 +11555,8 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr "Política de Privacidad"
 
-#: pages/booking.vue pages/checkout.vue pages/invoices.vue
-#: components/booking/agreements.vue upgrade/index.html
+#: pages/booking.vue pages/checkout.vue pages/hotels_booking.vue
+#: pages/invoices.vue components/booking/agreements.vue upgrade/index.html
 msgid "Proceed"
 msgstr "Proceder"
 
@@ -10876,11 +11565,21 @@ msgid "Proceed to Checkout"
 msgstr "Proceder a la Compra"
 
 #: upgrade/index.html
-msgid "Proceed to Checkout <i class=\"fa fa-check\"></i>"
+#, fuzzy
+#| msgid "Proceed to Checkout <i class=\"fa fa-check\"></i>"
+msgid ""
+"Proceed to Checkout\n"
+"\t\t\t\t\t\t\t<i class=\"fa fa-check\"></i>"
 msgstr "Proceder con la Compra <i class=\"fa fa-check\"></i>"
 
 #: components/checkout/CardStep.vue
 msgid "Process Payment"
+msgstr "Procesar pago"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Process Payment"
+msgid "Processing Fee"
 msgstr "Procesar pago"
 
 #: receipts/new_producer_bonus_statement.html
@@ -11103,8 +11802,9 @@ msgstr ""
 "¿Listo para aprender lo que necesitas saber para tener éxito a lo grande con "
 "inCruises? Échale un vistazo a nuestras grabaciones de webinars."
 
-#: components/payout/wallet-transfers.vue cruising_dollars/index.html
-#: layouts/default.html negative_balances/index.html
+#: pages/reward_points.vue components/payout/wallet-transfers.vue
+#: cruising_dollars/index.html layouts/default.html
+#: negative_balances/index.html
 msgid "Reason"
 msgstr "Razón:"
 
@@ -11351,7 +12051,7 @@ msgstr "Requiere Autentificación:"
 msgid "Resend Code"
 msgstr "Re enviar Código"
 
-#: receipts/booking_receipt.html
+#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Reservation Details"
 msgstr "Detalles de la Reserva"
 
@@ -11428,13 +12128,106 @@ msgid "Return to Welcome Page"
 msgstr "Regresar a Página de Inicio"
 
 #: info_center/index.html
-msgid "Review your Cruise Credits balance."
+#, fuzzy
+#| msgid "Review your Cruise Credits balance."
+msgid "Review your Reward Points balance."
 msgstr "Revisa tu saldo en Créditos de Crucero."
 
 #: components/weekly-competition.vue pages/competition.vue
 #: competition/index.html
 msgid "Reward"
 msgstr "Recompensa"
+
+#: pages/reward_points.vue pages/welcome.vue compensation/index.html
+#: info_center/index.html controllers/cruising_dollars.js
+#: controllers/menu_page.js
+#, fuzzy
+#| msgid "Earned Points"
+msgid "Reward Points"
+msgstr "Puntos Ganados"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Cruise Credits are credits or points our Members can use towards booking "
+#| "cruise vacations on our site. Cruise Credits accumulate and rollover "
+#| "month-after-month and they never expire as long as you remain an active "
+#| "Member. Cruise Credits® are not a currency and have no cash value. Cruise "
+#| "Credits are not an investment. INCRUISES is not a bank, depository or "
+#| "financial company of any type. Cruise Credits cannot be redeemed for cash "
+#| "under any circumstance. Credits can only be used to book cruises on our "
+#| "Website. For complete details please read our <a href="
+#| "\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>"
+msgid ""
+"Reward Points are credits or points our Members can use towards booking "
+"cruise vacations on our site. Reward Points accumulate and rollover month-"
+"after-month and they never expire as long as you remain an active Member. "
+"Reward Points® are not a currency and have no cash value. Reward Points are "
+"not an investment. INCRUISES is not a bank, depository or financial company "
+"of any type. Reward Points cannot be redeemed for cash under any "
+"circumstance. Credits can only be used to book cruises on our Website. For "
+"complete details please read our <a href=\"{{memberAgreement}}\" target="
+"\"_blank\">Membership Agreement</a>"
+msgstr ""
+"Los Créditos de Crucero son créditos o puntos que nuestros Miembros pueden "
+"utilizar para reservar sus vacaciones a través de nuestra página web. Los "
+"Créditos de Crucero se acumulan y van creciendo mes a mes; nunca expiran "
+"mientras permanezcas como un Miembro activo. Los Créditos de Crucero no son "
+"una moneda, no tienen ningún valor monetario y no son una inversión. "
+"INCRUISES no es un banco, depositaria o compañía financiera de ningún tipo. "
+"Así mismo, los Cruise Dollars no pueden ser canjeados por dinero bajo "
+"ninguna circunstancia. Estos créditos pueden ser utilizados únicamente para "
+"reservar cruceros en nuestra página web. Para más detalles, por favor lee "
+"nuestro <a href=\"{{memberAgreement}}\" target=\"_blank\">Acuerdo de "
+"Membresía</a>"
+
+#: pages/booking.vue pages/hotels_booking.vue
+msgid "Reward Points Available"
+msgstr ""
+
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid "Cruise Credits Balance"
+msgid "Reward Points Balance"
+msgstr "Saldo de Créditos de Crucero"
+
+#: pages/my_cruise_savings.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Earned Points"
+msgid "Reward Points Used"
+msgstr "Puntos Ganados"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Cruise Credits® can only be used for cruise fare(s) quoted and confirmed "
+#| "at booking on our website, including port charges and applicable "
+#| "government taxes and fees. Cruise Credits® may not be used to pay for "
+#| "flights, stateroom upgrades after a confirmed booking, travel insurance, "
+#| "processing fees, cancellation fees, name change fees or fees of any kind "
+#| "related to the cruise, pre-paid gratuities, tours and excursions, "
+#| "specialty meals and beverage packages and/or personal expenditures once "
+#| "on onboard (including medical expenses and/or gratuities)."
+msgid ""
+"Reward Points® can only be used for cruise fare(s) quoted and confirmed at "
+"booking on our website, including port charges and applicable government "
+"taxes and fees. Reward Points® may not be used to pay for flights, stateroom "
+"upgrades after a confirmed booking, travel insurance, processing fees, "
+"cancellation fees, name change fees or fees of any kind related to the "
+"cruise, pre-paid gratuities, tours and excursions, specialty meals and "
+"beverage packages and/or personal expenditures once on onboard (including "
+"medical expenses and/or gratuities)."
+msgstr ""
+"Los Créditos de Crucero solo pueden ser utilizados para reservar crucero(s) "
+"con tarifa y confirmados en nuestra página web, y donde se incluyen las "
+"tasas portuarias e impuestos gubernamentales. Los Créditos de Crucero no "
+"pueden ser utilizados para pagar vuelos, mejoras de camarote después de "
+"haberse confirmado la reserva, seguros de viajes, gastos de procesamiento, "
+"por cancelaciones o gastos por cambios de nombre en la reserva, o cualquier "
+"otro gasto relacionado con los cruceros, como también pago de propinas, "
+"tours o excursiones, comidas especiales y paquetes de bebidas y/o gastos "
+"personales una vez que se esté a bordo (incluyendo gastos médicos)"
 
 #: compensation/index.html
 msgid "Rewards"
@@ -11446,13 +12239,49 @@ msgstr "Recompensas"
 msgid "Romanian"
 msgstr "Rumano"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Room Num:"
+msgid "Room"
+msgstr "Número de Habitación:"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Room Num:"
+msgid "Room name:"
+msgstr "Número de Habitación:"
+
 #: pages/booking.vue
 msgid "Room Num:"
+msgstr "Número de Habitación:"
+
+#: receipts/hotel_booking_receipt.html
+#, fuzzy
+#| msgid "Email Type"
+msgid "Room Type"
+msgstr "Tipo de Correo Electrónico"
+
+#: pages/hotels.vue pages/hotels_details.vue
+#, fuzzy
+#| msgid "View Rooms"
+msgid "Rooms"
+msgstr "Habitaciones con Vista"
+
+#: pages/hotels.vue pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Room Num:"
+msgid "Rooms:"
 msgstr "Número de Habitación:"
 
 #: pages/global_summit_tracking.vue
 msgid "Rules to Qualify:"
 msgstr "Reglas para Calificar:"
+
+#: reports/index.html
+#, fuzzy
+#| msgid "Quick Reports"
+msgid "Run Quick Report"
+msgstr "Reportes Rápidos"
 
 #: reports/index.html
 msgid "Run Report"
@@ -11504,9 +12333,10 @@ msgstr ""
 "¡Ahorra tiempo presentando! Con esta poderosa herramienta, convertirás a tus "
 "posibles clientes en Miembros y/o Socios en un instante."
 
-#: pages/book.vue communications/index.html communications/view.html
-#: compensation/index.html email_notifications/index.html
-#: track_growth/index.html webinar_recordings/index.html
+#: pages/book.vue pages/hotels.vue communications/index.html
+#: communications/view.html compensation/index.html
+#: email_notifications/index.html track_growth/index.html
+#: webinar_recordings/index.html
 msgid "Search"
 msgstr "Búsqueda"
 
@@ -11525,6 +12355,10 @@ msgstr "Búsqueda por Camarote"
 #: components/translations/placeholders.vue
 msgid "Search for Names or Emails"
 msgstr "Buscar por Nombres o Correo Electrónicos"
+
+#: pages/hotels.vue
+msgid "Search Hotels and Cities:"
+msgstr ""
 
 #: components/translations/placeholders.vue
 msgid "Search Name or Email"
@@ -11634,6 +12468,18 @@ msgstr "Selecciona tu formato de nombre:"
 #: pages/growth_calculator.vue
 msgid "Select Your Potential Growth"
 msgstr "Selecciona Tu Crecimiento Potencial"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Select Deck:"
+msgid "Selected"
+msgstr "Seleccionar Cubierta:"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Meeting Room"
+msgid "Selected Room"
+msgstr "Sala de Reunión"
 
 #: components/public/FooterLinks.vue layouts/blank_angular.html
 #: layouts/default.html layouts/default_no_nav.html
@@ -11853,7 +12699,7 @@ msgstr "Mostrar Producción Total"
 msgid "Showing All Teams"
 msgstr "Mostrando Todos los Equipos"
 
-#: pages/book.vue
+#: pages/book.vue pages/hotels.vue
 msgid "Showing results for {{ describeSearch() }}"
 msgstr "Mostrando resultados para {{ describeSearch() }}"
 
@@ -11928,7 +12774,7 @@ msgstr "Gerente de Marketing, Redes Sociales"
 msgid "Social Security Number"
 msgstr "Número de Seguridad Social"
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels_booking.vue
 msgid "Some passenger fields are missing."
 msgstr "Hacen falta algunos campos de pasajero"
 
@@ -11947,24 +12793,42 @@ msgstr ""
 "\t\t\t\t\t\t."
 
 #: upgrade/index.html
+#, fuzzy
+#| msgid ""
+#| "Some upgrade options are not available until payment is completed. If you "
+#| "have any questions please contact <a href=\"https://incruises.com/support"
+#| "\">https://incruises.com/support</a>."
 msgid ""
 "Some upgrade options are not available until payment is completed. If you "
-"have any questions please contact <a href=\"https://incruises.com/support"
-"\">https://incruises.com/support</a>."
+"have any questions please contact\n"
+"\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"support</a>\n"
+"\t\t\t\t\t\t."
 msgstr ""
-"Algunas opciones para actualizar tu cuenta no están disponible hasta que "
-"este pago sea recibido. Si tienes alguna pregunta o duda, contáctanos en <a "
+"Algunas opciones para actualizar tu cuenta no están disponibles hasta que "
+"este pago sea recibido. Si tienes alguna pregunta o duda, contáctanos en<a "
 "href=\"https://incruises.com/support\">https://incruises.com/support</a>."
 
 #: upgrade/index.html
+#, fuzzy
+#| msgid ""
+#| "Some payment options are not available until transfer is completed. If "
+#| "you have any questions please contact\n"
+#| "\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises."
+#| "com/support</a>\n"
+#| "\t\t\t\t\t\t."
 msgid ""
 "Some upgrade options are not available until transfer is completed. If you "
-"have any questions please contact <a href=\"https://incruises.com/support"
-"\">https://incruises.com/support</a>."
+"have any questions please contact\n"
+"\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"support</a>\n"
+"\t\t\t\t\t\t."
 msgstr ""
-"Algunas opciones para actualizar tu cuenta no están disponible hasta que "
-"este pago sea recibido. Si tienes alguna pregunta o duda, contáctanos en <a "
-"href=\"https://incruises.com/support\">https://incruises.com/support</a>."
+"Algunas opciones de pago no están disponibles hasta que el pago sea "
+"recibido. Si tienes preguntas, por favor contacta a\n"
+"      <a href=\"https://incruises.com/support\">https://incruises.com/"
+"support</a>\n"
+"\t\t\t\t\t\t."
 
 #: controllers/agreements.js
 msgid "Something was wrong"
@@ -11974,7 +12838,7 @@ msgstr "Ha ocurrido un error"
 msgid "Sorting"
 msgstr "Clasificar"
 
-#: pages/admin_support_analytics.vue pages/book.vue
+#: pages/admin_support_analytics.vue pages/book.vue pages/hotels.vue
 msgid "Sorting:"
 msgstr "Clasificar:"
 
@@ -12065,8 +12929,8 @@ msgid "State/Region"
 msgstr "Estado/Provincia"
 
 #: receipts/booking_receipt.html receipts/commission_statement.html
-#: receipts/instant_bonus_statement.html receipts/invoice.html
-#: receipts/kickstart_bonus_statement.html
+#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
+#: receipts/invoice.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
@@ -12645,6 +13509,10 @@ msgstr ""
 "El contador de  arriba indica el tiempo que te queda para desbloquear tus "
 "Incentivos de Inicio Rápido (Quick Start)."
 
+#: pages/hotels_details.vue
+msgid "The use of the facility will issue a voucher."
+msgstr ""
+
 #: components/public/Faq.vue
 msgid ""
 "There are many ways to earn income as a Partner with inCruises. There are "
@@ -12658,6 +13526,12 @@ msgstr ""
 "Membresía Gratis y Bonos basados en el ingreso y volumen de ventas de toda "
 "tu organización completa, así como otros incentivos. Por favor, echa un "
 "vistazo a nuestro Programa de Compensación para más detalles."
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "There was no results for your search."
+msgid "There are no results for this search."
+msgstr "No existen resultados para tu búsqueda."
 
 #: pages/booking.vue
 msgid ""
@@ -12969,7 +13843,7 @@ msgstr ""
 "SOCIO según lo estipulado en el Acuerdo SCI y / o las Políticas y "
 "Procedimientos."
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels_booking.vue pages/hotels_details.vue
 msgid "This booking is non-refundable."
 msgstr "Esta reservación no es reembolsable."
 
@@ -13034,6 +13908,10 @@ msgstr ""
 "Este crucero ya no está disponible para miembros de inCruises. Se ha "
 "superado el número máximo de camarotes que podemos reservar para este "
 "crucero."
+
+#: pages/hotels_details.vue
+msgid "This facility has cost."
+msgstr ""
 
 #: pages/additional_info.vue
 msgid ""
@@ -13150,7 +14028,7 @@ msgstr ""
 "Este es tu total de Bonos de Producción y de Coaching durante este mes "
 "natural. Haz clic aquí para ver una vista detallada de tu remuneración real."
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels_booking.vue
 msgid "This member is already added."
 msgstr "Este miembro se ha agregado."
 
@@ -13209,6 +14087,12 @@ msgstr "Esta es una venta Final"
 #: pages/team_rankings.vue compensation/index.html track_results/index.html
 msgid "This user does not have an active membership"
 msgstr "Este usuario no tiene su membresía activa"
+
+#: components/booking/add-cd-user.vue
+msgid ""
+"This user has a pending invoice, therefore they may only be added to a Max "
+"Amount booking."
+msgstr ""
 
 #: pages/team_rankings.vue compensation/index.html track_results/index.html
 msgid "This user has an active member membership"
@@ -13522,13 +14406,21 @@ msgstr "Ahorro Total Realizado en Membresía"
 msgid "Total Number of Members"
 msgstr "Número total de Miembros"
 
-#: receipts/booking_receipt.html
+#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Total Out Of Pocket"
 msgstr "Tu Precio Final"
 
 #: pages/my_cruise_savings.vue
 msgid "Total Passengers Cruised"
 msgstr "Total de Pasajeros que viajaron"
+
+#: pages/hotels_booking.vue
+msgid "Total Price"
+msgstr "Precio Total"
+
+#: pages/hotels_booking.vue
+msgid "Total price per 6 nights:"
+msgstr ""
 
 #: pages/leadership_academy.vue
 msgid "Total quiz corrects"
@@ -13537,6 +14429,12 @@ msgstr "Total de correctas en quiz"
 #: pages/leadership_academy.vue
 msgid "Total quiz incorrects"
 msgstr "Total de incorrectas en quiz"
+
+#: pages/booking.vue pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Potential Points"
+msgid "Total Reward Points"
+msgstr "Puntos Potenciales"
 
 #: invoices/invoice_statement.html receipts/commission_statement.html
 #: receipts/instant_bonus_statement.html receipts/invoice.html
@@ -13744,7 +14642,7 @@ msgstr "Benefactores de Ukraine Relief"
 msgid "Ukrainian"
 msgstr "Ucraniano"
 
-#: pages/settings.vue cruising_dollars/index.html
+#: pages/reward_points.vue pages/settings.vue cruising_dollars/index.html
 msgid "Unique Membership Code"
 msgstr "Código Único de Miembro"
 
@@ -13766,8 +14664,8 @@ msgstr ""
 "este Anexo terminará automáticamente al finalizar o cancelar el Acuerdo SCI "
 "de SOCIO."
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue cruising_dollars/index.html info_center/index.html
+#: menu_page/index.html reach/index.html
 msgid "Unpaid Invoice"
 msgstr "Recibo Pendiente de Pago"
 
@@ -13799,16 +14697,22 @@ msgstr "Actualizar Perfil Recurrente"
 msgid "Update your browser"
 msgstr "Actualiza tu navegador"
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue pages/upgrade.vue cruising_dollars/index.html
+#: info_center/index.html menu_page/index.html reach/index.html
 msgid "Upgrade"
 msgstr "Actívate Ahora"
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid "Upgrade now!"
+msgid "Upgrade now"
+msgstr "Actualiza ahora!"
 
 #: pages/connect.vue power_tools_upgrade/index.html
 msgid "Upgrade Now"
 msgstr "Actívate Ahora"
 
-#: pages/welcome.vue
+#: pages/reward_points.vue pages/welcome.vue
 msgid "Upgrade now!"
 msgstr "Actualiza ahora!"
 
@@ -13823,10 +14727,6 @@ msgstr "Actualizate a Miembro"
 #: pages/connect.vue power_tools_upgrade/index.html
 msgid "Upgrade to Partner"
 msgstr "Actualizate a Socio"
-
-#: controllers/upgrade.js
-msgid "Upgrade Your Account"
-msgstr "Actualiza Tu Cuenta"
 
 #: pages/team_rankings.vue
 msgid "Upline"
@@ -14025,12 +14925,18 @@ msgstr "Ver la Guía de Arranque Rápido"
 msgid "View Guest List"
 msgstr "Ver Lista de Invitados"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "View Details"
+msgid "View Hotel Details"
+msgstr "Ver Detalles"
+
 #: pages/global_convention.vue
 msgid "View Info"
 msgstr "Ver Información"
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue cruising_dollars/index.html info_center/index.html
+#: menu_page/index.html reach/index.html
 msgid "View Invoices"
 msgstr "Ver Recibos"
 
@@ -14059,7 +14965,7 @@ msgstr "Visualiza nuestros 8 Rangos de Liderazgo"
 msgid "View our Membership Agreement"
 msgstr "Ver nuestro Acuerdo de Membresía"
 
-#: cruising_dollars/index.html menu_page/index.html
+#: pages/reward_points.vue cruising_dollars/index.html menu_page/index.html
 msgid "View Our Membership Agreement"
 msgstr "Ver nuestro Acuerdo de Membresía"
 
@@ -14122,10 +15028,6 @@ msgstr "Ver Cartera"
 msgid "View your contacts"
 msgstr "Ver tus contactos"
 
-#: pages/welcome.vue
-msgid "View your Cruise Credits and availability."
-msgstr "Checa tus Créditos de Crucero y disponibilidad."
-
 #: pages/welcome.vue controllers/menu_page.js
 msgid "View your past cruises, savings, and potential future savings as well."
 msgstr ""
@@ -14140,8 +15042,16 @@ msgstr "Ver tus compras anteriores"
 msgid "View your pending and paid Invoices."
 msgstr "Ver y Pagar tus Recibos pendientes."
 
+#: pages/welcome.vue
+#, fuzzy
+#| msgid "View your Cruise Credits and availability."
+msgid "View your Reward Points and availability."
+msgstr "Checa tus Créditos de Crucero y disponibilidad."
+
 #: controllers/menu_page.js
-msgid "View your total and available Cruise Credits balance."
+#, fuzzy
+#| msgid "View your total and available Cruise Credits balance."
+msgid "View your total and available Reward Points balance."
 msgstr "Checa el saldo total y disponibilidad de tus Créditos de Crucero."
 
 #: pages/referral_links.vue
@@ -14297,9 +15207,14 @@ msgid "We did not find any contacts to display, please try another account."
 msgstr "No se encontró ningún contacto para mostrar, intenta otra cuenta."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "We do not offer partial bookings or bookings done with an initial "
+#| "deposit. You can use all of your available Cruise Credits when you're "
+#| "ready to book a cruise."
 msgid ""
 "We do not offer partial bookings or bookings done with an initial deposit. "
-"You can use all of your available Cruise Credits when you're ready to book a "
+"You can use all of your available Reward Points when you're ready to book a "
 "cruise."
 msgstr ""
 "inCruises no ofrece la posibilidad de realizar reservas parciales, o "
@@ -14435,8 +15350,12 @@ msgid "WE VALUE"
 msgstr "VALORAMOS"
 
 #: pages/public/about.vue
+#, fuzzy
+#| msgid ""
+#| "We were created to make cruising more accessible, affordable and even "
+#| "profitable for millions of people worldwide."
 msgid ""
-"We were created to make cruising more accessible, affordable and even "
+"We were created to make travel more accessible, affordable and even "
 "profitable for millions of people worldwide."
 msgstr ""
 "Creamos inCruises™ para hacer más accesibles y asequibles los viajes en "
@@ -14540,7 +15459,9 @@ msgid "Welcome,"
 msgstr "Bienvenido,"
 
 #: components/public/Faq.vue
-msgid "What are Cruise Credits?"
+#, fuzzy
+#| msgid "What are Cruise Credits?"
+msgid "What are Reward Points?"
 msgstr "¿Qué son los Créditos de Crucero?"
 
 #: components/public/Faq.vue
@@ -14594,9 +15515,13 @@ msgid "What is the inCruises Duplicator?"
 msgstr "¿Qué es InCruises Duplicator?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "When can you book or reserve a cruise prior to accumulating all the "
+#| "needed Cruise Credits and then finalize the booking later?"
 msgid ""
 "When can you book or reserve a cruise prior to accumulating all the needed "
-"Cruise Credits and then finalize the booking later?"
+"Reward Points and then finalize the booking later?"
 msgstr ""
 "¿Cuándo se puede proceder a la reserva de un crucero? ¿Se puede realizar la "
 "reserva antes de acumular los Créditos de Crucero necesarios y terminar la "
@@ -14808,12 +15733,19 @@ msgstr ""
 "mayoría de las líneas de crucero exigen una ocupación doble."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Yes you can. While you cannot gift a cruise to others using your "
+#| "Membership and Cruise Credits, you can certainly gift our Membership to "
+#| "others and pay for them as long as they are at least 18 years old. Their "
+#| "Cruise Credits can only be used if they will be booked on the cabin for "
+#| "which the Cruise Credits are being used."
 msgid ""
 "Yes you can. While you cannot gift a cruise to others using your Membership "
-"and Cruise Credits, you can certainly gift our Membership to others and pay "
-"for them as long as they are at least 18 years old. Their Cruise Credits can "
-"only be used if they will be booked on the cabin for which the Cruise "
-"Credits are being used."
+"and Reward Points, you can certainly gift our Membership to others and pay "
+"for them as long as they are at least 18 years old. Their Reward Points can "
+"only be used if they will be booked on the cabin for which the Reward Points "
+"are being used."
 msgstr ""
 "Si, puedes. Aunque no puedes regalar un viaje en crucero utilizando tu "
 "Membresía y Créditos de Crucero, si que puedes regalar nuestra Membresía a "
@@ -14846,9 +15778,13 @@ msgid "Yes."
 msgstr "Si."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Yes. If a couple are both inCruises Members, they can combine their "
+#| "Cruise Credits to cover the total cost of booking a cabin on a cruise."
 msgid ""
-"Yes. If a couple are both inCruises Members, they can combine their Cruise "
-"Credits to cover the total cost of booking a cabin on a cruise."
+"Yes. If a couple are both inCruises Members, they can combine their Reward "
+"Points to cover the total cost of booking a cabin on a cruise."
 msgstr ""
 "Sí. Si ambas personas de una pareja son miembros de inCruises, podrán "
 "combinar sus Créditos de Crucero para pagar el costo total de la reserva de "
@@ -14895,6 +15831,23 @@ msgstr ""
 "Aplicaste descuentos para personas mayores, pero ningún pasajero de este "
 "viaje tiene más de 55 años."
 
+#: pages/booking.vue pages/hotels_booking.vue
+msgid ""
+"You are able to use your 1 for 1 balance to cover a portion of the booking "
+"price."
+msgstr ""
+
+#: pages/booking.vue
+msgid ""
+"You are able to use your 2 for 1 balance for up to 50% of the booking price."
+msgstr ""
+
+#: pages/hotels_booking.vue
+msgid ""
+"You are able to use your 2 for 1 balance to cover a portion of the booking "
+"price."
+msgstr ""
+
 #: components/booking/agreements.vue
 msgid ""
 "You are aware of visa requirements and have secured them before booking."
@@ -14920,10 +15873,16 @@ msgstr ""
 "{{os}}"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "You can apply Cruise Credits to any cabin booking, including bookings "
+#| "where multiple passengers are booked in the cabin, as long as there's at "
+#| "least ONE Member booked in that cabin and their Cruise Credits are being "
+#| "used for that booking."
 msgid ""
-"You can apply Cruise Credits to any cabin booking, including bookings where "
+"You can apply Reward Points to any cabin booking, including bookings where "
 "multiple passengers are booked in the cabin, as long as there's at least ONE "
-"Member booked in that cabin and their Cruise Credits are being used for that "
+"Member booked in that cabin and their Reward Points are being used for that "
 "booking."
 msgstr ""
 "Podrás aplicar los Créditos de Crucero para la reserva de cualquier "
@@ -15038,18 +15997,28 @@ msgstr "No tienes ningún Bono de Pago Instantáneo en este momento."
 msgid "You dont have permision"
 msgstr "No tienes permiso"
 
+#: upgrade/index.html
+#, fuzzy
+#| msgid "You earn $200 Cruise Dollars® for every membership payment."
+msgid "You earn $200 Reward Points for every membership payment."
+msgstr "Te damos 200 Cruise Dollars® por cada $ 100 que pagues de membresía."
+
 #: pages/public/pricing.vue
+#, fuzzy
+#| msgid ""
+#| "You earn $200 Cruise Dollars® (Cruise Credits) for every $100 you pay for "
+#| "membership."
 msgid ""
-"You earn $200 Cruise Dollars® (Cruise Credits) for every $100 you pay for "
+"You earn $200 Reward Points® (Reward Points) for every $100 you pay for "
 "membership."
 msgstr ""
 "Te damos 200 Créditos de Crucero por cada $100 que pagues de membresía."
 
-#: upgrade/index.html
-msgid ""
-"You earn $200 Cruise Dollars® (Cruise Credits) for every membership payment."
-msgstr ""
-"Te damos 200 Créditos de Crucero por cada $100 que pagues de membresía."
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "You earn $200 Cruise Dollars® for every membership payment."
+msgid "You earn 200 Reward Points (2 for 1) for every membership payment."
+msgstr "Te damos 200 Cruise Dollars® por cada $ 100 que pagues de membresía."
 
 #: pages/agreements.vue
 msgid "You electronically agreed to be bound by this agreement on"
@@ -15079,12 +16048,19 @@ msgstr "Ya has solicitado tu Premio de Inicio Rápido (Quick Start)."
 msgid "You have already requested your Weekly Bonus."
 msgstr "Ya solicitaste ese Bono semanal."
 
+#: pages/booking.vue
+msgid ""
+"You have an active sailing already booked in the future on "
+"%{hasActiveSailing}. You will be able to book a new reservation after "
+"%{hasActiveSailing}."
+msgstr ""
+
 #: pages/welcome.vue
 msgid "You have an unpaid invoice:"
 msgstr "Tienes una Factura pendiente de pagar:"
 
-#: cruising_dollars/index.html info_center/index.html menu_page/index.html
-#: reach/index.html
+#: pages/reward_points.vue cruising_dollars/index.html info_center/index.html
+#: menu_page/index.html reach/index.html
 msgid ""
 "You have an unpaid invoice. Click below to review your pending invoices."
 msgstr ""
@@ -15092,27 +16068,39 @@ msgstr ""
 "pendientes."
 
 #: cruising_dollars/index.html
-msgid ""
-"You have been a member for {{user_months}} month(s). Your available cruise "
-"credits are\n"
-"\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
-"\t\t\t\t\t\t\t."
-msgstr ""
-"Has sido miembro de inCruises por {{user_months}} mes(es). Tus Créditos de "
-"Crucero disponibles son\n"
-"\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
-"       ."
-
-#: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "You have been a member for {{user_months}} month(s). Your available "
+#| "incentive cruise dollars are\n"
+#| "\t\t\t\t\t\t\t<span class=\"text-green\">{{incentiveBalance}}</span>\n"
+#| "\t\t\t\t\t\t\t."
 msgid ""
 "You have been a member for {{user_months}} month(s). Your available "
-"incentive cruise dollars are\n"
+"incentive reward points are\n"
 "\t\t\t\t\t\t\t<span class=\"text-green\">{{incentiveBalance}}</span>\n"
 "\t\t\t\t\t\t\t."
 msgstr ""
 "Has sido miembro de inCruises por {{user_months}} mes(es). Tus Cruise "
 "Dollars® de Incentivo disponibles son \n"
 "\t<span class=\"text-green\">{{incentiveBalance}}</span>\n"
+"       ."
+
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid ""
+#| "You have been a member for {{user_months}} month(s). Your available "
+#| "cruise credits are\n"
+#| "\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
+#| "\t\t\t\t\t\t\t."
+msgid ""
+"You have been a member for {{user_months}} month(s). Your available Reward "
+"Points are\n"
+"\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
+"\t\t\t\t\t\t\t."
+msgstr ""
+"Has sido miembro de inCruises por {{user_months}} mes(es). Tus Créditos de "
+"Crucero disponibles son\n"
+"\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
 "       ."
 
 #: upgrade/index.html
@@ -15134,7 +16122,7 @@ msgstr "Has ganado un bono más grande."
 msgid "You have no payments to approve"
 msgstr "No tienes pagos por aprobar"
 
-#: pages/booking.vue
+#: pages/booking.vue pages/hotels_booking.vue
 msgid "You have not specified a user to be added."
 msgstr "No has especificado un usuario para ser agregado."
 
@@ -15254,7 +16242,7 @@ msgstr ""
 msgid "You need to donate more than $0."
 msgstr "Necesitas donar más de $0."
 
-#: pages/public/pricing.vue upgrade/index.html
+#: pages/upgrade.vue pages/public/pricing.vue upgrade/index.html
 msgid ""
 "You will also get access to world class marketing tools, live and recorded "
 "training, mobile applications, downloadable business cards, and much more."
@@ -15359,6 +16347,29 @@ msgstr "Has recibido un Bono de Productor de inCruises"
 msgid "Your Active Levels ({{active_levels}} levels)"
 msgstr "Tus Niveles Activos ({{active_levels}} Niveles)"
 
+#: pages/reward_points.vue
+msgid ""
+"Your balance equals the amount of payments you have made out of pocket to "
+"inCruises for your Membership and / or any additional Reward Points earned "
+"with promotions offered from time to time, minus any Reward Points used."
+msgstr ""
+
+#: pages/reward_points.vue
+msgid ""
+"Your balance equals your membership payments multiplied by 2, minus any "
+"Reward Points used. With your Black Card you can use 100% of your Reward "
+"Points Balance up to 100% of your cruise booking total price. Membership has "
+"its rewards!"
+msgstr ""
+
+#: pages/reward_points.vue
+msgid ""
+"Your balance equals your membership payments multiplied by 2, minus any "
+"Reward Points used. With your Gold Card you can use 100% of your Reward "
+"Points Balance up to 50% of your cruise booking total price. Your available "
+"balance is 0 during the first 14 days of Membership."
+msgstr ""
+
 #: pages/invoices.vue
 msgid ""
 "Your bank transfer has initiated and should be completed within a few days."
@@ -15432,9 +16443,14 @@ msgid "Your contribution cannot be greater than your balance."
 msgstr "Tu contribución no puede ser mayor que tu saldo."
 
 #: pages/booking.vue
+#, fuzzy
+#| msgid ""
+#| "Your cruise booking has a $0 out of pocket cost, therefore if you "
+#| "proceed, you will be automatically booked and your Cruise Credits will be "
+#| "deducted."
 msgid ""
 "Your cruise booking has a $0 out of pocket cost, therefore if you proceed, "
-"you will be automatically booked and your Cruise Credits will be deducted."
+"you will be automatically booked and your Reward Points will be deducted."
 msgstr ""
 "Tu reserva de crucero tiene un costo de bolsillo de $0, por lo tanto, si "
 "continúas, se generará la reserva automáticamente y el costo se deducirá de "
@@ -15556,6 +16572,10 @@ msgstr "Su contribución a Mercy Ships fue recibida exitosamente."
 msgid "Your Name"
 msgstr "Tu Nombre"
 
+#: pages/reward_points.vue
+msgid "YOUR NAME HERE"
+msgstr ""
+
 #: pages/italian_onboarding.vue
 msgid ""
 "Your partner onboarding is now complete. An admin will review your "
@@ -15655,6 +16675,10 @@ msgstr ""
 msgid "Your Referrer has not upgraded"
 msgstr "La persona que te refirió no se ha actualizado"
 
+#: reports/index.html
+msgid "Your report results will appear in this area."
+msgstr ""
+
 #: pages/settings.vue
 msgid "Your Sponsors"
 msgstr "Tus Patrocinadores"
@@ -15723,6 +16747,10 @@ msgstr "Cruceros"
 #: Menu
 msgid "Leadership Titles"
 msgstr "Títulos de Liderazgo"
+
+#: Menu
+msgid "Cruise Credits"
+msgstr "Créditos de Crucero"
 
 #: Menu
 msgid "Email Blast Tracking"
@@ -23129,6 +24157,65 @@ msgstr ""
 "Necesitas 11 puntos para ganar. Los 5 TOP Líderes con más puntos ganarán una "
 "entrada para GoPro."
 
+#~ msgid "{{ user.eligible_cd }} Available CD"
+#~ msgstr "{{ user.eligible_cd }} CD Disponibles"
+
+#~ msgid ""
+#~ "<i class=\"fe fe-search mr-1\"></i>\n"
+#~ "\t\t\t\t\t\t\tNew Search"
+#~ msgstr ""
+#~ "<i class=\"fe fe-search mr-1\"></i>\n"
+#~ "\t\t\t\t\t\t\tNueva Búsqueda"
+
+#~ msgid ""
+#~ "Click here to learn more about our Membership and how you can use your "
+#~ "Cruise Dollars® (Cruise Credits) to book Global Cruises."
+#~ msgstr ""
+#~ "Haz clic aquí para saber más acerca de nuestra Membresía y de cómo puedes "
+#~ "utilizar tus Cruise Dollars® (Créditos de Crucero) para reservar uno de "
+#~ "nuestros Cruceros Globales."
+
+#~ msgid "Credit Card"
+#~ msgstr "Tarjeta de Crédito"
+
+#~ msgid "Cruise Credits Used"
+#~ msgstr "Créditos de Crucero Utilizados"
+
+#~ msgid "Cruise Dollars"
+#~ msgstr "Cruise Dollars"
+
+#~ msgid "Expired Members"
+#~ msgstr "Miembros Caducados"
+
+#~ msgid ""
+#~ "Some upgrade options are not available until payment is completed. If you "
+#~ "have any questions please contact <a href=\"https://incruises.com/support"
+#~ "\">https://incruises.com/support</a>."
+#~ msgstr ""
+#~ "Algunas opciones para actualizar tu cuenta no están disponible hasta que "
+#~ "este pago sea recibido. Si tienes alguna pregunta o duda, contáctanos en "
+#~ "<a href=\"https://incruises.com/support\">https://incruises.com/support</"
+#~ "a>."
+
+#~ msgid ""
+#~ "Some upgrade options are not available until transfer is completed. If "
+#~ "you have any questions please contact <a href=\"https://incruises.com/"
+#~ "support\">https://incruises.com/support</a>."
+#~ msgstr ""
+#~ "Algunas opciones para actualizar tu cuenta no están disponible hasta que "
+#~ "este pago sea recibido. Si tienes alguna pregunta o duda, contáctanos en "
+#~ "<a href=\"https://incruises.com/support\">https://incruises.com/support</"
+#~ "a>."
+
+#~ msgid "Upgrade Your Account"
+#~ msgstr "Actualiza Tu Cuenta"
+
+#~ msgid ""
+#~ "You earn $200 Cruise Dollars® (Cruise Credits) for every membership "
+#~ "payment."
+#~ msgstr ""
+#~ "Te damos 200 Créditos de Crucero por cada $100 que pagues de membresía."
+
 #~ msgid ""
 #~ "You cannot change your country. Please contact support\n"
 #~ "\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
@@ -23692,9 +24779,6 @@ msgstr ""
 #~ msgid "Card Details"
 #~ msgstr "Detalles de la Tarjeta"
 
-#~ msgid "Checkout"
-#~ msgstr "Salida"
-
 #~ msgid "Continue with payment"
 #~ msgstr "Continuar con el pago"
 
@@ -24005,13 +25089,6 @@ msgstr ""
 
 #~ msgid ""
 #~ "Click here to learn more about our Membership and how you can use your "
-#~ "Cruise Dollars to book Global Cruises."
-#~ msgstr ""
-#~ "Haz clic aquí para saber más acerca de nuestra Membresía y de cómo puedes "
-#~ "utilizar tus Cruise Dollars para reservar uno de nuestros Cruceros."
-
-#~ msgid ""
-#~ "Click here to learn more about our Membership and how you can use your "
 #~ "Cruise Dollars® to book Global Cruises."
 #~ msgstr ""
 #~ "Haz clic aquí para saber más acerca de nuestra Membresía y de cómo puedes "
@@ -24052,10 +25129,6 @@ msgstr ""
 #~ "reservar con un depósito inicial. Podrás utilizar todos tus Cruise "
 #~ "Dollars disponibles cuando estés preparado para reservar un crucero."
 
-#~ msgid "You earn $200 Cruise Dollars® for every membership payment."
-#~ msgstr ""
-#~ "Te damos 200 Cruise Dollars® por cada $ 100 que pagues de membresía."
-
 #~ msgid ""
 #~ "For your financial protection (INCRUISES INTERNATIONAL LLC) is a member "
 #~ "of Trust My Travel and our membership number is (TMT56252). All client "
@@ -24095,43 +25168,6 @@ msgstr ""
 #~ "    de la Competencia <a href=\"{{incentivePDF}}\" target=\"_blank"
 #~ "\">aquí</a>\n"
 #~ "    ."
-
-#, fuzzy
-#~| msgid ""
-#~| "Some upgrade options are not available until payment is completed. If "
-#~| "you have any questions please contact <a href=\"https://incruises.com/"
-#~| "support\">https://incruises.com/support</a>."
-#~ msgid ""
-#~ "Some upgrade options are not available until payment is completed. If you "
-#~ "have any questions please contact\n"
-#~ "\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises."
-#~ "com/support</a>\n"
-#~ "\t\t\t\t\t\t."
-#~ msgstr ""
-#~ "Algunas opciones para actualizar tu cuenta no están disponibles hasta que "
-#~ "este pago sea recibido. Si tienes alguna pregunta o duda, contáctanos "
-#~ "en<a href=\"https://incruises.com/support\">https://incruises.com/"
-#~ "support</a>."
-
-#, fuzzy
-#~| msgid ""
-#~| "Some payment options are not available until transfer is completed. If "
-#~| "you have any questions please contact\n"
-#~| "\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises."
-#~| "com/support</a>\n"
-#~| "\t\t\t\t\t\t."
-#~ msgid ""
-#~ "Some upgrade options are not available until transfer is completed. If "
-#~ "you have any questions please contact\n"
-#~ "\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises."
-#~ "com/support</a>\n"
-#~ "\t\t\t\t\t\t."
-#~ msgstr ""
-#~ "Algunas opciones de pago no están disponibles hasta que el pago sea "
-#~ "recibido. Si tienes preguntas, por favor contacta a\n"
-#~ "      <a href=\"https://incruises.com/support\">https://incruises.com/"
-#~ "support</a>\n"
-#~ "\t\t\t\t\t\t."
 
 #, fuzzy
 #~| msgid "Total Cruise Dollar Balance"
@@ -24286,15 +25322,6 @@ msgstr ""
 #~ msgstr ""
 #~ "<i class=\"far fa-moon-stars\"></i>\n"
 #~ "\t\t\t\t\t\t\t\t\t<span>Noches:</span>"
-
-#~ msgid ""
-#~ "<i class=\"far fa-route mr-1\"></i>\n"
-#~ "\n"
-#~ "\t\t\t\t\t\t\t\t\t<span>Cruise Destination:</span>"
-#~ msgstr ""
-#~ "<i class=\"far fa-route mr-1\"></i>\n"
-#~ "\n"
-#~ "\t\t\t\t\t\t\t\t\t<span>Destino de Crucero:</span>"
 
 #~ msgid ""
 #~ "<i class=\"far fa-sort-amount-down\"></i>\n"
@@ -26016,9 +27043,6 @@ msgstr ""
 #~ msgid "SEE THE WORLD"
 #~ msgstr "MIRA EL MUNDO"
 
-#~ msgid "Select a Card"
-#~ msgstr "Selecciona una Tarjeta"
-
 #~ msgid "Select email language:"
 #~ msgstr "Selecciona el idioma del Email:"
 
@@ -26333,9 +27357,6 @@ msgstr ""
 #~ msgid "Your Spanish Direct Referral Link is:"
 #~ msgstr "Tu Link de Referidos de inCruises.com en Español es:"
 
-#~ msgid "Active Team Members"
-#~ msgstr "Miembros de Equipo Activos"
-
 #~ msgid ""
 #~ "inCruises® is an invitation-only exclusive membership travel\n"
 #~ "\t\t\t\t\tclub."
@@ -26635,9 +27656,6 @@ msgstr ""
 #~ msgid "All Dates"
 #~ msgstr "Todas las Fechas"
 
-#~ msgid "All Locations"
-#~ msgstr "Todas las Localizaciones"
-
 #~ msgid "Any Length"
 #~ msgstr "Cualquier Longitud"
 
@@ -26697,9 +27715,6 @@ msgstr ""
 
 #~ msgid "Click here to view Cancellation Policy"
 #~ msgstr "Haz clic aquí para ver la Política de Cancelación"
-
-#~ msgid "Continue Booking"
-#~ msgstr "Continuar con la Reserva"
 
 #~ msgid "Conversation"
 #~ msgstr "Conversación"
@@ -26843,9 +27858,6 @@ msgstr ""
 #~ msgid "Recreation"
 #~ msgstr "Entretenimiento"
 
-#~ msgid "Select Deck:"
-#~ msgstr "Seleccionar Cubierta:"
-
 #~ msgid "Selected Cabin Category:"
 #~ msgstr "Categoría de Camarote Seleccionado:"
 
@@ -26986,9 +27998,6 @@ msgstr ""
 
 #~ msgid "Out-of-pocket Cost"
 #~ msgstr "Costo desembolsado"
-
-#~ msgid "Total Price"
-#~ msgstr "Precio Total"
 
 #~ msgid ""
 #~ "Have a dream of seeing the world but think it’s going to cost a fortune? "
@@ -27995,9 +29004,6 @@ msgstr ""
 #~ "com\" target=\"_blank\">https://support.incruises.com</a> y contacta a "
 #~ "tus patrocinadores arriba si tienes preguntas sobre marketing y liderazgo."
 
-#~ msgid "Invited Top"
-#~ msgstr "Invitados Top"
-
 #~ msgid "Map Contacts"
 #~ msgstr "Contactos en Mapa"
 
@@ -28220,9 +29226,6 @@ msgstr ""
 
 #~ msgid "Network Marketing"
 #~ msgstr "Mercadeo en Red"
-
-#~ msgid "<span class=\"ng-scope\">Login</span>"
-#~ msgstr "<span class=\"ng-scope\">Iniciar Sesión</span>"
 
 #~ msgid ""
 #~ "As a Partner you get the opportunity to earn compensation from spreading "
@@ -29235,9 +30238,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Aún no eres un Socio activo. Inscribe a 3 Miembros directos. Tus propia "
 #~ "membresia te cuenta."
-
-#~ msgid "You’re an Active Partner, Congratulations!"
-#~ msgstr "¡Felicidades, eres un Socio Activo!"
 
 #~ msgid ""
 #~ "<i class=\"fe fe-arrow-up-right\"></i>\n"
