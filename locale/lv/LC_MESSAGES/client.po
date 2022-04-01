@@ -394,10 +394,6 @@ msgstr "{{ līgums.nosaukums/vārds}}"
 msgid "{{ box.box }}"
 msgstr "{{ box.box }}"
 
-#: pages/hotels_details.vue
-msgid "{{ formatDate(cancellation.from) }}"
-msgstr "{{ formatDatums(atcelts.no) }}"
-
 #: components/support/TicketList.vue
 msgid "{{ header }}"
 msgstr "{{ header }}"
@@ -408,13 +404,25 @@ msgid ""
 "name.content }}, {{ hotel.state.name }}, {{ hotel.country.description."
 "content }}"
 msgstr ""
-"{{ viesnīca.adrese.saturs }}, {{ viesnīca.zona.nosaukums/vārds }}, {{ "
-"viesnīca.gala mērķis.vards/nosaukums.saturs }}, {{ viesnīca.valsts.vārds/"
+"{{ viesnīca.adrese.saturs }}, {{ viesnīca.zona.nosaukums/vārds }}, "
+"{{ viesnīca.gala mērķis.vards/nosaukums.saturs }}, {{ viesnīca.valsts.vārds/"
 "nosaukums }}, {{viesnīca.valsts.apraksts.saturs }}"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+msgid ""
+"{{ hotelAviability.sellingRate }}  per {{ searchParameters.nights }} nights"
+msgstr ""
+"${{ telpasMaksa.pārdošanasCens }} par/uz {{ eklēParameteri.naktis }} nakts"
 
 #: pages/book.vue
 msgid "{{ night }} Nights"
 msgstr "{{ night }} Naktis"
+
+#: pages/hotels.vue
+msgid "{{ searchParameters.roomCount }} rooms, {{ guestCount }} guests"
+msgstr ""
 
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
@@ -491,6 +499,10 @@ msgstr "{{message}}"
 #: refund_protocol/remove_producerbonus_modal.html
 msgid "{{uplineSales[0].tableName}}"
 msgstr "{{uplineSales0.tableName}}"
+
+#: pages/hotels_details.vue
+msgid "* Additional fees may apply on the above services and facilities."
+msgstr ""
 
 #: pages/booking.vue
 msgid ""
@@ -817,9 +829,9 @@ msgid ""
 msgstr ""
 "<b style=\"color: red\">SVARĪGS PAZIŅOJUMS:</b> visām kruīza līnijām ir "
 "nepieciešama\"check in\" tiešsaistē pirms iekāpšanas. Ja tas netiek izdarīts "
-"iepriekš, iekāpšana var tikt atteikta. Lūdzu, skatiet tiešsaistes \"check-"
-"in\" saiti zem rezervācijas saņemšanas datiem. Jānoklikšķina, lai piekļūtu "
-"un ievadītu visu nepieciešamo personisko informāciju\n"
+"iepriekš, iekāpšana var tikt atteikta. Lūdzu, skatiet tiešsaistes \"check-in"
+"\" saiti zem rezervācijas saņemšanas datiem. Jānoklikšķina, lai piekļūtu un "
+"ievadītu visu nepieciešamo personisko informāciju\n"
 " ne vēlāk kā 48 –72 stundas pirms izlidošanas atkarībā no kruīza līnijas. "
 "Atkarībā no kruīza līnijas tīmeklī \"check-in\" tiek atvērta 45 –60 dienas "
 "iepriekš. Lai izsniegtu iekāpšanas atļauju, visiem pasažieriem salonā ir "
@@ -1014,6 +1026,16 @@ msgstr ""
 "<i class=\"fa fa-check text-green\"></i>\n"
 "\t\t\t\t\tPārraide dzīvajā (piem. Facebook)"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i> Add Passenger"
+msgid ""
+"<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>\n"
+"\t\t\t\t\t\t\t\t\t\tAdd Passenger"
+msgstr ""
+"<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>Pievieno pasažieri"
+
 #: power_tools_upgrade/index.html
 msgid ""
 "<i class=\"fa fa-times text-red prs\"></i>\n"
@@ -1172,7 +1194,7 @@ msgstr ""
 "<i class=\"far fa-home mr-1\"></i>\n"
 "\t\t\t\t\t\t\tInformācjas panelis"
 
-#: layouts/booking.html
+#: layouts/booking.html layouts/hotels.html
 msgid ""
 "<i class=\"far fa-hotel mr-1\"></i>\n"
 "\t\t\t\t\t\t\tHotels"
@@ -1180,7 +1202,7 @@ msgstr ""
 "<i class=\"far fa-hotel mr-1\"></i>\n"
 "\t\t\t\t\t\t\tViesnīcas"
 
-#: layouts/hotels.html
+#: layouts/booking.html layouts/hotels.html
 msgid ""
 "<i class=\"far fa-ship mr-1\"></i>\n"
 "\t\t\t\t\t\t\tCruises"
@@ -1644,10 +1666,6 @@ msgstr ""
 "\t\t\t\t\t\t</span>\n"
 "\t\t\t\t\t\tSastādīt jaunu epastu"
 
-#: pages/hotels_details.vue
-msgid "<span class=\"ng-scope\">Search</span>"
-msgstr "<span class=\"ng-scope\">Meklēt</span>"
-
 #: pages/booking.vue
 msgid ""
 "<span style=\"color:red\">*</span>\n"
@@ -2074,26 +2092,6 @@ msgstr "<strong>Atvērtā Bāra & Speciaizēto Pusdienu Pateicības:</strong>"
 msgid "<strong>Total:</strong>"
 msgstr "<strong>Kopā:</strong>"
 
-#: pages/hotels_details.vue
-msgid ""
-"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
-"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
-"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
-"stroke-linejoin=\"round\">\n"
-"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
-"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
-"\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\tGo Back"
-msgstr ""
-"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
-"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
-"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
-"stroke-linejoin=\"round\">\n"
-"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
-"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
-"\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\tEj atpakaļ"
-
 #: email_notifications/index.html
 msgid ""
 "| Page: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
@@ -2101,8 +2099,23 @@ msgstr ""
 "| Lappuse: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
 
 #: pages/hotels_details.vue
+msgid "${{ calculatePricePerNight(hotelAviability.sellingRate) }} per night"
+msgstr ""
+
+#: pages/hotels_details.vue
+msgid "${{ calculatePricePerNight(rate.sellingRate) }} per night"
+msgstr ""
+
+#: pages/hotels_details.vue
 msgid "${{ cancellation.amount }} For cancellations made after"
 msgstr "${{ atcelšana.summa }} Jo atcelšana tika veikta pēc"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+msgid "${{ rate.sellingRate }} per {{ searchParameters.nights }} nights"
+msgstr ""
+"${{ telpasMaksa.pārdošanasCens }} par/uz {{ eklēParameteri.naktis }} nakts"
 
 #: pages/hotels_booking.vue
 msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
@@ -2480,6 +2493,10 @@ msgstr ""
 "Kompensācijas plānā,Partneris iegūs Nacionālā Direktora līmeni. Kā tāds "
 "Partneris pirmajā mēnesī saņems kompensāciju Nacionālā Direktora līmenī ."
 
+#: pages/hotels_details.vue
+msgid "About {{ hotel.name.content }}"
+msgstr ""
+
 #: components/public/FooterLinks.vue pages/public/about.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "About Us"
@@ -2595,14 +2612,6 @@ msgstr ""
 "inCruises var lauzt partnerību un es varu zaudēt visu nākotnes kompensāciju "
 "šādas manas uzvedības rezultātā."
 
-#: components/public/Faq.vue
-msgid ""
-"Additionally, Members that are also Partners, can speed up the progressive 4 "
-"year increase to 100% of Cruise Dollar usage by:"
-msgstr ""
-"Bez tam, biedri, kuri ir arī partneri, var paātrināt progresīvo 4 gadu "
-"kruīza dolāru izmantošanas apjomu līdz 100%:"
-
 #: components/info-reminder.vue pages/additional_info.vue
 #: pages/convention_manager.vue pages/settings.vue
 #: components/checkout/ItalianStep.vue compensation/index.html
@@ -2657,24 +2666,6 @@ msgstr "1 Pieaugušie"
 #: pages/hotels_booking.vue
 msgid "Adults:"
 msgstr "Pieaugušie:"
-
-#: components/public/Faq.vue
-msgid ""
-"Advancing to our Marketing Director Leadership Rank. To learn more about our "
-"Partnership opportunity and our Leadership Ranks, please review our "
-"Partnership page."
-msgstr ""
-"Tuvojoties mūsu Marketinga direktora vadības pakāpei.Lai uzzinātu vairāk par "
-"Partnerības iespējām un Vadības pakāpēm,lūdzu vēlreiz apskatiet Partnerības "
-"lappusi."
-
-#: components/public/Faq.vue
-msgid ""
-"After making 49 Membership payments, the percentage of Reward Points that "
-"can be used to book cruises increases to 100%, per cruise."
-msgstr ""
-"Pēc 49 dalības maksājumiemBalvu Punktu procentuālā daļa, ko var izmantot, "
-"lai rezervētu kruīzus, pieaug līdz 100% par vienu kruīzu."
 
 #: cruising_dollars/index.html
 msgid ""
@@ -2839,24 +2830,16 @@ msgstr ""
 "100% savus Balvu Punktus®."
 
 #: components/public/Faq.vue
-msgid ""
-"Although many of our Partners are also Members, it is not mandatory. It is "
-"possible to be a Partner, a Member, or both, what we call a “Partner "
-"Member.” Experiencing the value and personal use of our membership product "
-"helps you promote our genuine service to others."
+msgid "Although many of our Partners are also Members, it is not mandatory. \n"
 msgstr ""
-"Lai gan daudzi no mūsu partneriem arī ir biedri, tas nav obligāti. Jūs varat "
-"būt partneris vai biedrs vai arī abi, kā mēs saucam \"Partneris Biedrs\". "
-"Ņemot vērā personīgo dalības pieredzi, jums ir vieglāk sniegt mūsu "
-"pakalpojumus citiem."
 
 #: controllers/compensation.js
 msgid "Ambassador Board of Directors Bonus"
 msgstr "Direktoru Valdes vēstnieka Bonss"
 
-#: pages/growth_calculator.vue pages/invoices.vue pages/welcome.vue
-#: components/payout/wallet-transfers.vue compensation/index.html
-#: negative_balances/index.html pay_bonus/index.html
+#: pages/growth_calculator.vue pages/hotels_booking.vue pages/invoices.vue
+#: pages/welcome.vue components/payout/wallet-transfers.vue
+#: compensation/index.html negative_balances/index.html pay_bonus/index.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -2904,13 +2887,21 @@ msgstr ""
 "sazinieties ar atbalsta dienestu"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "An inCruises Member is someone who purchases a membership to save money "
+#| "on booking cruises and travel the world in comfort and style. Partners "
+#| "join our Independent Partner Program (IBP) to promote and earn "
+#| "commissions, bonuses and other incentives by referring others who "
+#| "purchase memberships. We call Partners who are also Members \"Partner "
+#| "Members\". So each time we mention Members, know that also includes "
+#| "\"Partner Members\"."
 msgid ""
 "An inCruises Member is someone who purchases a membership to save money on "
-"booking cruises and travel the world in comfort and style. Partners join our "
-"Independent Partner Program (IBP) to promote and earn commissions, bonuses "
-"and other incentives by referring others who purchase memberships. We call "
-"Partners who are also Members \"Partner Members\". So each time we mention "
-"Members, know that also includes \"Partner Members\"."
+"travel and see the world in comfort and style. Partners join our Independent "
+"Partner Program to promote and earn commissions, bonuses and other "
+"incentives by referring others who purchase memberships. We call Partners "
+"who are also Members \"Partner Members\"."
 msgstr ""
 "InCruises biedrs ir cilvēks, kurš nopērk savu dalību, lai ietaupītu naudu, "
 "rezervējot ceļojumus un ceļojot pa pasauli komfortā un stilā. Partneri "
@@ -3048,17 +3039,13 @@ msgstr ""
 "Vai kruīzi tiek uzskatīti par inCruises partneru uzņēmējdarbības izdevumiem?"
 
 #: components/public/Faq.vue
-msgid ""
-"Are Reward Points considered taxable income due to the 200 Reward Points for "
-"every $100 USD paid in Membership dues?"
-msgstr ""
-"Vai Balvu Punkti tiek uzskatīti par apliekamiem ar nodokli saistībā ar 200 "
-"Balvu Punktiem par katriem $100 USD, kas samaksāti dalības maksā?"
-
-#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Are the Reward Points applicable to just one passenger, or the total cost "
+#| "of the booking for all passengers in the cabin?"
 msgid ""
 "Are the Reward Points applicable to just one passenger, or the total cost of "
-"the booking for all passengers in the cabin?"
+"the booking for all passengers on the same reservation?"
 msgstr ""
 "Vai Balvu Punkti attiecas tieši uz vienu pasažieri vai uz kabīnē visu "
 "pasažieru kopējo rezervācijas maksu?"
@@ -3284,9 +3271,14 @@ msgstr ""
 "Partneris vai Partnera biedrs!"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "At the moment we offer over 5,000 cruises departing from just about every "
+#| "port city in the world."
 msgid ""
 "At the moment we offer over 5,000 cruises departing from just about every "
-"port city in the world."
+"port city in the world. There are also thousands of hotel and resort options "
+"available."
 msgstr ""
 "Patreiz mēs piedāvājam vairāk kā 5,000 kruīzu gandrīz no visām pasaules ostu "
 "pilsētām."
@@ -3336,16 +3328,18 @@ msgid "Available Balance:"
 msgstr "Pieejams atlikums:"
 
 #: cruising_dollars/index.html
-msgid "Available Cruise Dollar Balance"
-msgstr "Pieejamais kruīzu dolāru atlikums"
-
-#: cruising_dollars/index.html
 msgid "Available Incentive Balance"
 msgstr "Pieejamais stimulējošo kruīzu dolāru atlikums"
 
 #: reach/index.html
 msgid "Available Invitations"
 msgstr "Pieejami ielūgumi"
+
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid "Reward Points Balance"
+msgid "Available Reward Points Balance"
+msgstr "Balvu Punktu Bilance"
 
 #: pages/reward_points.vue
 msgid "Available Rewards"
@@ -3474,16 +3468,6 @@ msgstr ""
 "Kļūstiet par inCruises Biedru un izmantotojiet mūsu ekskluzīvās Biedru "
 "dalības priekšrocības, kur ir nodrošināta piekļuve vairāk nekā 5500 pasaules "
 "galamērķu piedāvājumie."
-
-#: components/public/Faq.vue
-msgid ""
-"Becoming Membership FREE (referring and maintaining 5 active Members) for "
-"three consecutive months after their initial activation payment or "
-"reactivation payment."
-msgstr ""
-"Kļūstot par FREE biedru (esot un konsultējot 5 aktīvus biedrus) trīs mēnešus "
-"pēc kārtas no viņu piesaistes sākuma aktivizēšanas maksājums vai "
-"reaktivizēšanas maksājums."
 
 #: pages/public/leadership.vue
 msgid "Began career working with Primerica, then a Member of Citigroup"
@@ -3642,6 +3626,12 @@ msgstr "REZERVĒ UN DODIES KRUĪZĀ PATS RISKĒJOT"
 #: pages/cruise.vue
 msgid "Book Cruise"
 msgstr "Rezervē kruīzu"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Book Now"
+msgid "Book now"
+msgstr "Rezervē tagad"
 
 #: components/costa-banner.vue
 msgid "Book Now"
@@ -3829,10 +3819,10 @@ msgid ""
 "\t\t\t\t\t\t\t\t\tlosses that may result due to interruption or cancellation "
 "of these travel plans."
 msgstr ""
-"Pabeidzot rezervāciju, es saprotu un pieņemu visus noteikumu un "
-"nosacījumus,ieskaitot visas iespējamās atcelšanas maksas.Es atbrīvoju in "
-"Cruises no jebkādas atbildības par zaudējumiem,ieskaitot,bet "
-"neaprobežojoties ar naudas\t\t\t\t\t\n"
+"Pabeidzot rezervāciju, es saprotu un pieņemu visus noteikumu un nosacījumus,"
+"ieskaitot visas iespējamās atcelšanas maksas.Es atbrīvoju in Cruises no "
+"jebkādas atbildības par zaudējumiem,ieskaitot,bet neaprobežojoties ar naudas"
+"\t\t\t\t\t\n"
 " zaudējumiem,kas var rasties šo ceļojumu pārtraukšanas vai atcelšanas dēļ."
 
 #: pages/public/contact.vue
@@ -3920,8 +3910,12 @@ msgid "California registration number"
 msgstr "Kalifornijas reģistrācijas numurs"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Can a Partners inCruises business be transferred to someone else if the "
+#| "Partner passes away?"
 msgid ""
-"Can a Partners inCruises business be transferred to someone else if the "
+"Can a Partner’s inCruises business be transferred to someone else if the "
 "Partner passes away?"
 msgstr ""
 "Vai partneru inCruises biznesu var nodot kādai citai personai, ja partneris "
@@ -3932,19 +3926,15 @@ msgid "Can I be successful selling online only?"
 msgstr "Vai es varu sekmīgi darboties, strādājot tikai tiešsaistē?"
 
 #: components/public/Faq.vue
-msgid ""
-"Can I book a cruise using my Reward Points and then change the name on the "
-"reservation?"
-msgstr ""
-"Vai es varu pieteikt rezervāciju ar saviem Balvu Punktiem un tad mainīt "
-"rezervācijas nosaukumu?"
-
-#: components/public/Faq.vue
-msgid "Can I change the name on an account?"
+#, fuzzy
+#| msgid "Can I change the name on an account?"
+msgid "Can I change the name on an account"
 msgstr "Vai es varu mainīt rēķina nosaukumu?"
 
 #: components/public/Faq.vue
-msgid "Can I contribute more than $100 month toward the membership?"
+#, fuzzy
+#| msgid "Can I contribute more than $100 month toward the membership?"
+msgid "Can I contribute more than $100 USD per month toward the Membership?"
 msgstr "Vai es varu dot ieguldījumu vairāk nekā $100 mēnešu ceļā uz dalību?"
 
 #: components/public/Faq.vue
@@ -3968,8 +3958,28 @@ msgstr ""
 "vai līdzvērtīgu uzņēmuma identifikācijas numuru ārpus ASV?"
 
 #: components/public/Faq.vue
-msgid "Can I gift a Membership to others?"
-msgstr "Vai es varu dāvināt Dalību citiem?"
+#, fuzzy
+#| msgid ""
+#| "When can you book or reserve a cruise prior to accumulating all the "
+#| "needed Reward Points and then finalize the booking later?"
+msgid ""
+"Can I make a cruise reservation prior to accumulating all the needed Reward "
+"Points and then finalize the booking later?"
+msgstr ""
+"Kad ir iespējams pasūtīt vai pieteikt rezervāciju kruīzam pirms esi savācis "
+"nepieciešamo Balvu Punktu daudzumu ,bet pabeidz maksājumu vēlāk?"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Can I book a cruise using my Reward Points and then change the name on "
+#| "the reservation?"
+msgid ""
+"Can I make a reservation using my Reward Points and then change the name on "
+"the reservation?"
+msgstr ""
+"Vai es varu pieteikt rezervāciju ar saviem Balvu Punktiem un tad mainīt "
+"rezervācijas nosaukumu?"
 
 #: pages/account_setup.vue
 msgid "Can only be between 1 and 20 characters long."
@@ -4029,6 +4039,12 @@ msgstr "Atceliet izvēlēto apmaksas plānu"
 #: power_tools_upgrade/index.html
 msgid "Cancel your Power Tools Subscription"
 msgstr "Pieņemto pilnvaru rīku atcelšana"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Cancellation Policy"
+msgid "Cancellation Policies"
+msgstr "Atcelšanas politika"
 
 #: receipts/booking_receipt.html
 msgid "Cancellation Policy"
@@ -4216,6 +4232,12 @@ msgstr "Izvēlies citu kategoriju"
 msgid "Choose Different Payment Method"
 msgstr "Izvēlēties citādu samaksas veidu"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Choose Different Category"
+msgid "Choose Different Room"
+msgstr "Izvēlies citu kategoriju"
+
 #: pages/additional_info.vue
 msgid "Choose Identification Type"
 msgstr "Izvēlies identifikācija veidu"
@@ -4223,6 +4245,12 @@ msgstr "Izvēlies identifikācija veidu"
 #: pages/checkout.vue
 msgid "Choose Payment Type"
 msgstr "Izvēlies samaksas tipu"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Choose"
+msgid "Choose room"
+msgstr "Izvēlies"
 
 #: components/checkout/CurrencyStep.vue components/checkout/ProcessorTmt.vue
 msgid "Choose your currency"
@@ -4293,15 +4321,6 @@ msgstr "Uzklikšķini šeit lai filtrētu kruīza līnijas"
 msgid "Click here to filter nights"
 msgstr "Uzklikšķini šeit lai filtrētu naktis"
 
-#: pages/reward_points.vue
-msgid ""
-"Click here to learn more about our Membership and how you can use your "
-"Cruise Dollars (Cruise Credits) to book Global Cruises."
-msgstr ""
-"Uzklikšķiniet šeit un uzziniet vairāk par dalību mūsu klubā, kā arī to, kā "
-"jūs varat izlietot savus Kruīza Dolārus(Kruīza Kredītus) kruīzu rezervēšanai "
-"pa visu pasauli."
-
 #: cruising_dollars/index.html
 msgid ""
 "Click here to learn more about our Membership and how you can use your "
@@ -4317,6 +4336,18 @@ msgid ""
 msgstr ""
 "Uzklikšķini šeit lai vairāk uzzinātu par jūsu Biedru Dalību un kā jūs varat "
 "izlietot jūsu Balvu Punktus(Balvu Punkti) lai rezervētu globālos kruīzus."
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid ""
+#| "Click here to learn more about our Membership and how you can use your "
+#| "Reward Points (Reward Points) to book Global Cruises."
+msgid ""
+"Click here to learn more about our Membership and how you can use your "
+"Reward Pointss (Reward Points) to book Global Cruises."
+msgstr ""
+"Uzklikšķini šeit lai vairāk uzzinātu par jūsu Dalību un kā jūs varat "
+"izlietot jūsu Balvu Punktus(Balvu Punkti) lai rezervētu globālos kruīzius."
 
 #: info_center/index.html
 msgid "Click here to see all Rank Achievement levels."
@@ -4625,6 +4656,12 @@ msgstr "Turpini"
 msgid "Continue Payment Below"
 msgstr "Turpini maksājumu zemāk"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Hotel Booking"
+msgid "Continue to Booking"
+msgstr "Viesnīcas rezervācija"
+
 #: components/checkout/CurrencyStep.vue components/checkout/ItalianStep.vue
 #: components/checkout/ProcessorTmt.vue
 msgid "Continue with Payment"
@@ -4755,8 +4792,8 @@ msgstr "Noteiktais datums"
 msgid "Credit or debit card"
 msgstr "Kredītkarte vai debetkarte"
 
-#: pages/public/about.vue pages/public/biz.vue pages/public/index.vue
-#: pages/public/mission.vue pages/public/partnership.vue
+#: pages/public/about.vue pages/public/biz.vue pages/public/mission.vue
+#: pages/public/partnership.vue
 msgid "CRUISE"
 msgstr "KRUĪZS"
 
@@ -4767,10 +4804,6 @@ msgstr "Kruīza Brošura"
 #: receipts/booking_receipt.html
 msgid "Cruise Confirmation"
 msgstr "Kruīza apstiprinājums"
-
-#: pages/welcome.vue
-msgid "Cruise Credits:"
-msgstr "Kruīza kredīti:"
 
 #: pages/book.vue
 msgid "Cruise Destination:"
@@ -5502,14 +5535,6 @@ msgstr ""
 "Dublikātors darbojas mobilajā ierīcē un jebkurā datora tipā, planšetdatorā "
 "un operāciju sistēmā."
 
-#: components/public/Faq.vue
-msgid ""
-"During the 13th to the 24th Membership payment, the percentage of Reward "
-"Points that can be used to book cruises increases to 70%, per cruise."
-msgstr ""
-"Starp 13 un 24 dalības maksājumu Balvu Punktu procenti, kas var tikt "
-"izlietoti, lai rezervētu kruīzus, pieaug par 70% par katru kruīzu."
-
 #: cruising_dollars/index.html
 msgid ""
 "During the 13th to the 24th Membership payment, the percentage of Reward "
@@ -5517,14 +5542,6 @@ msgid ""
 msgstr ""
 "Starp 13-to līdz 24-ajam Biedru dalības maksājumam,Balvu Punktu procents "
 "kruīzu rezervācijai pieaug līdz 70%."
-
-#: components/public/Faq.vue
-msgid ""
-"During the 25th to the 36th Membership payment, the percentage of Reward "
-"Points that can be used to book cruises increases to 80%, per cruise."
-msgstr ""
-"Starp 25 UN 36 dalības maksājumu Balvu Punktu procenti,kas var tikt "
-"izlietoti,lai rezervētu kruīzus,pieaug par80% par katru kruīzu."
 
 #: cruising_dollars/index.html
 msgid ""
@@ -5534,14 +5551,6 @@ msgstr ""
 "Starp 25-o līdz 36-jam Biedru Dalības maksājumam Balvu Punktu izmantošanas "
 "procenti kruīzu rezervācijai pieaug līdz 80%."
 
-#: components/public/Faq.vue
-msgid ""
-"During the 37th to the 48th Membership payment, the percentage of Reward "
-"Points that can be used to book cruises increases to 90%, per cruise."
-msgstr ""
-"Starp 37 un 48 dalības maksājumuBalvu Punktu procenti,kas var tikt "
-"pielietoti,lai rezervētu kruīzus pieaug par 90% par katru kruīzu."
-
 #: cruising_dollars/index.html
 msgid ""
 "During the 37th to the 48th Membership payment, the percentage of Reward "
@@ -5549,14 +5558,6 @@ msgid ""
 msgstr ""
 "Starp 37-o līdz 48-jam Biedru Dalības maksājumam Balvu Punktu izmantošanas "
 "procenti kruīzu rezervācijai pieaug līdz 90%."
-
-#: components/public/Faq.vue
-msgid ""
-"During the first 12 Membership payments, Members can use up to 60% of their "
-"Reward Points, per cruise."
-msgstr ""
-"Pirmo 12 dalības maksājumu laikā biedri var izmantot līdz pat 60% no saviem "
-"Balvu Punktem par vienu kruīzu."
 
 #: cruising_dollars/index.html
 msgid ""
@@ -5716,6 +5717,12 @@ msgstr "Piemērota kompensācija"
 #: Menu
 msgid "Email"
 msgstr "Epasts"
+
+#: pages/hotels_booking.vue
+msgid ""
+"Email\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+msgstr ""
 
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
@@ -6045,6 +6052,18 @@ msgstr "Pabeigts"
 msgid "First Name"
 msgstr "Vāŗds"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid ""
+#| "<span style=\"color:red\">*</span>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
+msgid ""
+"First Name\n"
+"\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
+msgstr ""
+"<span style=\"color:red\">*</span>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\tPilsēta:"
+
 #: pages/admin_support_analytics.vue
 msgid "First Response"
 msgstr "Pirmā atbilde"
@@ -6074,7 +6093,11 @@ msgid "for {{ daysApart }} nights"
 msgstr "uz {{ dienasBez }} naktīm/naktis"
 
 #: components/public/Faq.vue
-msgid "For each $100 USD payment, our Members receive 200 Reward Points."
+#, fuzzy
+#| msgid "For each $100 USD payment, our Members receive 200 Reward Points."
+msgid ""
+"For each $100 USD monthly Membership fee payment, our Members receive 200 "
+"Reward Points."
 msgstr "Par katru 100$ iemaksu mūsu biedri saņem 200 Balvu Punktus."
 
 #: pages/public/about.vue pages/public/biz.vue pages/public/index.vue
@@ -6250,8 +6273,8 @@ msgstr ""
 "No:\n"
 "\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ from }}</span>"
 
-#: pages/invite.vue cards/index.html compensation/index.html
-#: certificates/index.html certificates/view.html import/index.html
+#: pages/invite.vue cards/index.html certificates/index.html
+#: certificates/view.html compensation/index.html import/index.html
 msgid "Full Name"
 msgstr "Pilns vāŗds"
 
@@ -6351,8 +6374,8 @@ msgstr "Pasaules sammita izsekošana"
 msgid "Go back"
 msgstr "Ej atpakaļ"
 
-#: pages/booking.vue pages/italian_onboarding.vue pages/login/login.vue
-#: pay_bonus/index.html
+#: pages/booking.vue pages/hotels_details.vue pages/italian_onboarding.vue
+#: pages/login/login.vue pay_bonus/index.html
 msgid "Go Back"
 msgstr "Ej atpakaļ"
 
@@ -6535,7 +6558,9 @@ msgid "How can I be successful?"
 msgstr "Kā es varu būt veiksmīgs?"
 
 #: components/public/Faq.vue
-msgid "How can I use my Reward Points?"
+#, fuzzy
+#| msgid "How can I use my Reward Points?"
+msgid "How can I use my Reward Points ?"
 msgstr "Kā es varu izlietot savus Balvu Punktus?"
 
 #: components/public/Faq.vue
@@ -6548,28 +6573,30 @@ msgid "How do I earn points?"
 msgstr "Kādā veidā es iegūstu punktus?"
 
 #: components/public/Faq.vue
-msgid "How do I get booked on a cruise on your site?"
-msgstr "Kā var rezervēt braucienu jūsu vietnē?"
-
-#: components/public/Faq.vue
 msgid "How do I receive my compensation?"
 msgstr "Kā es saņemšu manu kompensāciju?"
 
 #: components/public/Faq.vue
-msgid "How easily can I cancel my Membership?"
+#, fuzzy
+#| msgid "How easily can I cancel my Membership?"
+msgid "How easily can I cancel my Membership"
 msgstr "Kā vieglāk es varu pārtraukt savu partnerību?"
 
 #: components/public/Faq.vue
-msgid "How many cruises can we take in one year?"
+#, fuzzy
+#| msgid "How many cruises can we take in one year?"
+msgid "How many cruises can a Member book per year?"
 msgstr "Cik kruīzus mēs varam veikt vienā gadā?"
 
 #: components/public/Faq.vue
-msgid "How many Global Cruises are there available on the site?"
+#, fuzzy
+#| msgid "How many Global Cruises are there available on the site?"
+msgid "How many Global Cruises and Hotels are there available on the site?"
 msgstr "Cik vispasaules kruīzu ir pieejams šajā vietnē?"
 
 #: components/public/Faq.vue
-msgid "How many Reward Points can I use per cruise?"
-msgstr "Cik daudz Balvu Punktus es varu izlietot viena kruīza laikā?"
+msgid "How many hotel or resort stays can a Member book each year?"
+msgstr ""
 
 #: components/info-reminder.vue
 msgid "How many total cruises have you done?"
@@ -6596,7 +6623,11 @@ msgid "How old do you have to be to be a Member of inCruises?"
 msgstr "Cik gadu vecs tu vari būt,lai kļūtu par inCRUISES biedru?"
 
 #: components/public/Faq.vue
-msgid "How quickly can I book a cruise after becoming a Member?"
+#, fuzzy
+#| msgid "How quickly can I book a cruise after becoming a Member?"
+msgid ""
+"How quickly can I book a cruise, hotel or resort stay after becoming a "
+"Member?"
 msgstr "Cik ātri var rezervēt braucienu pēc kļūšanas par biedru?"
 
 #: Courses
@@ -7164,41 +7195,16 @@ msgid "Identification"
 msgstr "Identifikācija"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If a couple are both inCruises Members, can they combine their Reward "
+#| "Points on one cruise booking?"
 msgid ""
 "If a couple are both inCruises Members, can they combine their Reward Points "
-"on one cruise booking?"
+"for a reservation?"
 msgstr ""
 "Ja pāris ir abi inCruises biedri, vai viņi var apvienot savus Balvu Punktus "
 "vienā kruīzu rezervācijā?"
-
-#: components/public/Faq.vue
-msgid ""
-"If a Member wants to change the name of the passengers on any cruise booked "
-"through our Website for which Reward Points were deducted to book the "
-"cruise, the new person must also be an active paying Member and have enough "
-"Reward Points to process the name change requested. In the event the name "
-"change involves removing from the reservation someone who used their Reward "
-"Points to book the stateroom with someone who is not an active paying Member "
-"or is a Member who does not have enough Reward Points to make the exchange, "
-"then the only available possibility to execute the name change, is for "
-"inCruises to refund the Reward Points from the Member being removed, adding "
-"those Reward Points back to their account and charging the new person taking "
-"their place the entire amount by credit card or any payment method allowed "
-"by inCruises. Member agrees that certain name change fees may also apply."
-msgstr ""
-"Ja biedrs vēlas mainīt pasažieru vārdus jebkurā kruīzā, kas rezervēts mūsu "
-"tīmekļa vietnē, kurā kruīzu naudas tika atskaitītas, lai rezervētu "
-"braucienu, jaunajai personai arī jābūt aktīvam maksātājam un jābūt "
-"pietiekamam skaitam Balvu Punktu, lai apstrādātu pieprasīto nosaukuma maiņu. "
-"Gadījumā, ja nosaukuma maiņa ir saistīta ar to, ka no rezervācijas tiek "
-"izņemts kāds, kurš izmantojis savus Balvu Punktus, lai rezervētu "
-"reģistrācijas numuru kādam, kurš nav aktīvs maksātājs, vai kas ir "
-"dalībnieks, kuram nav pietiekami daudz Balvu Punktu, lai veiktu apmaiņu, tad "
-"vienīgā pieejamā iespēja veikt nosaukuma maiņu ir inCruises atmaksāt no "
-"dalībnieka izņemtos Balvu Punktus, pievienojot šos Balvu Punktus atpakaļ "
-"savam kontam un iekasējot no jaunās personas ņemot savā vietā visu summu ar "
-"kredītkarti vai jebkuru inCruises atļauto maksājuma veidu. Biedrs piekrīt, "
-"ka var piemērot arī noteiktas maksas par vārda maiņu."
 
 #: pages/italian_onboarding.vue
 msgid ""
@@ -7229,13 +7235,20 @@ msgid "If I am a Member, do I also have to be a Partner?"
 msgstr "Ja es esmu biedrs,vai man ir partneris?"
 
 #: components/public/Faq.vue
-msgid "If I want a cabin to myself, traveling alone, do I have to pay more?"
+#, fuzzy
+#| msgid "If I want a cabin to myself, traveling alone, do I have to pay more?"
+msgid "If I want a cabin to myself do I have to pay more?"
 msgstr "Ja es vēlos kajīti un ceļoju viens,vai man ir jāmaksā vairāk?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If someone wants to become an inCruises member, they will pay a monthly "
+#| "membership fee of $100 USD."
 msgid ""
-"If someone wants to become an inCruises member, they will pay a monthly "
-"membership fee of $100 USD."
+"If someone wants to become an inCruises Member, they will pay a one time "
+"Activation Fee of $100 USD plus their first monthly Membership fee of $100 "
+"USD."
 msgstr ""
 "Ja kāds vēlēsies kļūt par inCruises biedru, viņi maksās ikmēneša dalības "
 "maksu $100 USD."
@@ -7265,23 +7278,6 @@ msgstr ""
 "Ja jūs izvēlējāties tiešo bankas maksājumu, paziņojums var ilgt no dažām "
 "minūtēm līdz pāris stundām. Mēs jums paziņosim, kad līdzekļi būs dzēsti."
 
-#: components/public/Faq.vue
-msgid ""
-"If you discontinue being a member, we will give you up to 1 year to "
-"reactivate your account. To reactivate your account, you will need to pay "
-"each Membership month you missed. You will still earn double Reward Points "
-"for each month you pay to reactivate your account, and those Reward Points "
-"will be added to your previous balance. After 12 months of inactivity, your "
-"account is closed and your Reward Points expire and are forfeited."
-msgstr ""
-"Ja pārstāsiet būt dalībnieks, mēs dosim jums līdz 1 gadam laika, lai "
-"atkārtoti aktivizētu jūsu kontu. Lai atkārtoti aktivizētu kontu, jums būs "
-"jāmaksā par katru trūkstošo dalības mēnesi. Katru mēnesi, ko maksājat, lai "
-"atkārtoti aktivizētu savu kontu, jūs joprojām nopelnīsiet dubultā Balvu "
-"Punktus, un šie Balvu Punkti tiks pieskaitīti jūsu iepriekšējai bilancei. "
-"Pēc 12 neaktivitātes mēnešiem jūsu konts tiek slēgts, un jūsu Balvu Punkti "
-"zaudē spēku un tiek zaudētas."
-
 #: components/confirm-recurring.vue
 msgid ""
 "If you do not wish to update your info then you must delete your recurring "
@@ -7310,13 +7306,11 @@ msgstr ""
 
 #: components/public/Faq.vue
 msgid ""
-"If you miss a Membership payment, your account will be considered inactive, "
-"and you will not be able to book any cruises or access our site, except to "
-"reactivate your account."
+"If you miss more than 3 monthly payments in a row your (2 for 1) Reward "
+"Points will convert to ( 1 for 1) Reward Points. You can reactivate your "
+"account at any time and start earning (2 for 1) Reward Points again simply "
+"by paying a $100 activation fee and a $100 Monthly Membership payment."
 msgstr ""
-"Ja nokavējat ikmēneša dalības maksājumu, jūsu konts tiks uzskatīts par "
-"neaktīvu un nevarēsiet rezervēt kruīzus vai piekļūt mūsu vietnei, kamēr "
-"konts nebūs atkārtoti aktivizēts."
 
 #: upgrade/index.html
 msgid ""
@@ -7626,6 +7620,12 @@ msgstr "Stimulējošo Balvu Punktu Kredītu bilance"
 msgid "Include"
 msgstr "Ietvert"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Building Wide and Deep"
+msgid "Including taxes and fees"
+msgstr "Veidošana plaši un dziļi"
+
 #: controllers/income_disclosure.js
 msgid "Income Disclosure"
 msgstr "ienākumu atklāšana"
@@ -7704,22 +7704,6 @@ msgstr "inCruise dzīvo"
 msgid "Incruises LLC"
 msgstr "Incruises LLC (SIA)"
 
-#: components/public/Faq.vue
-msgid ""
-"InCruises Members can book any of our over 5,000 Global Cruises directly on "
-"our site, by clicking on Global Cruises on our “Cruises” menu, then "
-"following the steps all the way through the payment process. At checkout, "
-"you will be given the option to pay for your cruise using all of your "
-"available Reward Points and/or other payment methods to complete the booking "
-"process."
-msgstr ""
-"inCruises biedri var rezervēt jebkuru no mūsu, vairāk nekā 5000 globālajiem "
-"kruīziem tieši mūsu vietnē, noklikšķinot uz Global Cruises mūsu izvēlnē "
-"“Cruises” un pēc tam visu laiku sekojot līdzi maksājumu procesam. "
-"Izrakstīšanās laikā jums tiks piedāvāta iespēja samaksāt par braucienu, "
-"izmantojot visus pieejamos Balvu Punktus un/vai citus maksāšanas veidus, lai "
-"pabeigtu rezervācijas procesu."
-
 #: components/covid-disclaimer-reminder.vue
 msgid ""
 "inCruises Members that have paid more than 30 months may be eligible for a "
@@ -7747,9 +7731,17 @@ msgid "inCruises Partner"
 msgstr "inCruises partneris"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "inCruises pays its Partners through Payoneer®. Each time a commission is "
+#| "earned, we will transfer your earnings to yourinCruises Wallet and notify "
+#| "you. You can then transfer your wallet balance, assuming it is greater "
+#| "than $50.00, to Payoneer® in order to receive your funds via bank "
+#| "transfer to your local bank or Pre-paid Visa or MasterCard issued by "
+#| "Payoneer®"
 msgid ""
-"inCruises pays its Partners through Payoneer®. Each time a commission is "
-"earned, we will transfer your earnings to yourinCruises Wallet and notify "
+"inCruises pays its Partners through Payoneer®.  Each time a commission is "
+"earned, we will transfer your earnings to your inCruises Wallet and notify "
 "you. You can then transfer your wallet balance, assuming it is greater than "
 "$50.00, to Payoneer® in order to receive your funds via bank transfer to "
 "your local bank or Pre-paid Visa or MasterCard issued by Payoneer®"
@@ -8018,7 +8010,9 @@ msgid "is the holder of a social security pension (Retired)"
 msgstr "saņem sociālās apdrošināšanas pensijau (pensionēts)"
 
 #: components/public/Faq.vue
-msgid "Is there a way to get a reduced or free membership?"
+#, fuzzy
+#| msgid "Is there a way to get a reduced or free membership?"
+msgid "Is there a way to get a reduced or free Membership?"
 msgstr "Vai ir veids, kā iegūt samazinātu vai brīvu dalību?"
 
 #: components/public/Faq.vue
@@ -8062,12 +8056,19 @@ msgstr ""
 "ir jāapgreido jūsu konts."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "It's very easy to do so. You can do it by reaching out to us at <a "
+#| "href='https://incruises.com/support' target='_blank'>https://incruises."
+#| "com/support</a>. Each purchase made is backed by our 100% Money Back "
+#| "Guarantee for 14 days. After each payment passes its 14 day period, "
+#| "refunds are not allowed."
 msgid ""
-"It's very easy to do so. You can do it by reaching out to us at <a "
-"href='https://incruises.com/support' target='_blank'>https://incruises.com/"
-"support</a>. Each purchase made is backed by our 100% Money Back Guarantee "
-"for 14 days. After each payment passes its 14 day period, refunds are not "
-"allowed."
+"It's very easy to do so. You can do it by reaching out to us at <a href="
+"\"{{https://incruises.com/support}}\" target=\"_blank\">https://incruises."
+"com/support</a> Each purchase made is backed by our 100% Money Back "
+"Guarantee for 14 days. After each payment passes its 14 day period, refunds "
+"are not allowed."
 msgstr ""
 "Tas ir pavisam vienkārši. Jūs to varat izdarīt griežoties pie mums <a "
 "href='https://incruises.com/support' target='_blank'> \n"
@@ -8252,6 +8253,12 @@ msgstr "Pēdējā mēneša Vadības prēmija ir tikusi pieprasīta un gaida izma
 #: import/index.html
 msgid "Last Name"
 msgstr "Uzvārds"
+
+#: pages/hotels_booking.vue
+msgid ""
+"Last Name\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+msgstr ""
 
 #: pages/competition.vue competition/index.html
 msgid "Last Week's Contest"
@@ -8469,13 +8476,12 @@ msgstr "Ielādēt vairāk"
 msgid "Location"
 msgstr "Dzīves vieta"
 
-#: components/blog/navbar.vue components/public/Header.vue
-#: components/payout/hyperwallet-withdraw.vue
+#: components/blog/navbar.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
-#: components/payout/payoneer-withdraw.vue pages/login/login.vue
-#: pages/public/signup.vue communications/index.html communications/view.html
-#: income_disclosure/index.html live/index.html login/index.html
-#: unsubscribe/index.html
+#: components/payout/payoneer-withdraw.vue components/public/Header.vue
+#: pages/login/login.vue pages/public/signup.vue communications/index.html
+#: communications/view.html income_disclosure/index.html live/index.html
+#: login/index.html unsubscribe/index.html
 msgid "Login"
 msgstr "Ieiet"
 
@@ -8646,18 +8652,6 @@ msgstr "Biedrs:"
 msgid "Members"
 msgstr "Biedri"
 
-#: components/public/Faq.vue
-msgid ""
-"Members can book any cruise available on our Website and we will "
-"automatically use their available Reward Points® to reduce the cost in full "
-"or partially pay for the booking subject to maximum percentage amounts as "
-"described below:"
-msgstr ""
-"Biedrii var rezervēt jebkuru kruīzu, kas pieejams mūsu tīmekļa vietnē, un "
-"mēs automātiski izmantosim viņu pieejamos Balvu Punktus, lai pilnībā vai "
-"daļēji samazinātu izmaksas par rezervējumu, ņemot vērā maksimālās procentu "
-"summas, kas aprakstītas tālāk:"
-
 #: layouts/default.html
 msgid ""
 "Members can use the balance on their inCruises wallet to pay for cruise "
@@ -8667,29 +8661,14 @@ msgstr ""
 "rezervāciju."
 
 #: components/public/Faq.vue
-msgid ""
-"Members must be active (no unpaid monthly invoices) to book a cruise. Once a "
-"booking is confirmed, the Member must remain as an active paying Member "
-"through the embarkation process of the cruise for which Reward Points were "
-"used to book. If a Member fails to make Monthly Membership payments after "
-"booking the cruise and before embarkation, and consequently their account "
-"goes into an Inactive status, inCruises has the right to cancel the cruise, "
-"and reimburse/refund all Reward Points and payments made for the booking. "
-"Any fees associated with the cancellation, will be the responsibility of the "
-"Member and deducted from the Member's account."
-msgstr ""
-"Biedriem jābūt aktīviem (bez neapmaksātiem ikmēneša rēķiniem), lai rezervētu "
-"braucienu. Kad rezervācija ir apstiprināta, biedram jāpaliek kā aktīvam "
-"maksātājm līdz kruīzam, kura rezervācijai tika izmantoti Balvu Punkti. Ja "
-"dalībnieks neveic ikmēneša dalības maksājumus pēc kruīza rezervācijas līdz "
-"iekāpšanai kuģī, viņu konts nonāk neaktīvā statusā un līdz ar to inCruises "
-"ir tiesības atcelt braucienu un atmaksāt visus Balvu Punktus un maksājumus, "
-"kas veikti par rezervāciju. Par jebkādu maksu, kas saistīta ar atcelšanu, "
-"atbild Biedrs un to atskaita no biedra konta."
-
-#: components/public/Faq.vue
 msgid "Members must be at least 18 years old."
 msgstr "Biedriem jābūt vismaz 18 gadu veciem."
+
+#: components/public/Faq.vue
+msgid ""
+"Members will receive 100 (1 for 1) Reward Points that can be used to reduce "
+"the cost of booking cruises, hotels and resorts via inCruises website."
+msgstr ""
 
 #: pages/upgrade.vue pages/welcome.vue components/public/Header.vue
 msgid "Membership"
@@ -8838,6 +8817,12 @@ msgstr "Mobilās aplikācijas"
 #: compensation/index.html reach/index.html
 msgid "Mobile Phone"
 msgstr "Mobīlais telefons"
+
+#: pages/hotels_booking.vue
+msgid ""
+"Mobile Phone\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+msgstr ""
 
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Mobile Phone is required."
@@ -9116,10 +9101,18 @@ msgstr ""
 "Vārda/Nosaukuma maiņa netiek atlauta.Izņēmuma gdījumos lūdzu kontaktējaties"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Name changes to your Membership is simply NOT allowed. Membership is "
+#| "personal to you as a Member and you may not transfer, assign, change or "
+#| "otherwise dispose any of your rights or obligations and/or benefits, "
+#| "including Reward Points. Upon death of a Member, if all Membership fees "
+#| "are up to date, the Membership can be transferred to their spouse or "
+#| "legal heirs."
 msgid ""
-"Name changes to your Membership is simply NOT allowed. Membership is "
+"Name changes to your Club Membership are simply NOT allowed. Membership is "
 "personal to you as a Member and you may not transfer, assign, change or "
-"otherwise dispose any of your rights or obligations and/or benefits, "
+"otherwise dispose of any of your rights or obligations and/or benefits, "
 "including Reward Points. Upon death of a Member, if all Membership fees are "
 "up to date, the Membership can be transferred to their spouse or legal heirs."
 msgstr ""
@@ -9394,18 +9387,6 @@ msgstr "Nē es nedzīvoju Puerto Riko"
 
 #: components/public/Faq.vue
 msgid ""
-"No, Reward Points are not a currency so there is no tax implication. "
-"Redeeming Reward Points is comparable to booking a Cruise as a result of a "
-"promotion or incentive. No one gets taxed more because the true value is "
-"higher. We also suggest you confirm with your accountant."
-msgstr ""
-"Nē,Balvu Punkti nav valūta, tāpēc nav nekādu nodokļu maksājumu. Balvu Punktu "
-"iegūšana ir salīdzināma ar kruīza rezervēšanu akcijās vai veicināšanas "
-"rezultātā. Neviens netiek aplikts ar nodokļiem, jo kruīzu patiesā vērtība ir "
-"augstāka. Iesakām arī apspriest šo info ar savu grāmatvedi."
-
-#: components/public/Faq.vue
-msgid ""
 "No, they are not. This is strictly prohibited in our <a href="
 "\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>. Reward "
 "Points are never transferable, and change of ownership of the account is not "
@@ -9416,37 +9397,16 @@ msgstr ""
 "pārvedami, un nav pieļaujama konta īpašumtiesību maiņa."
 
 #: components/public/Faq.vue
-msgid ""
-"No, we are all at risk. To mitigate risk, we have Seller of Travel "
-"Registrations in every state required and are bonded when required to do so. "
-"Please see our <a href='{{corporateDueDiligence}}' target='_blank'>Due "
-"Diligence Document</a> to learn more about the company. Bottom line: we are "
-"built to last and are here for the long haul, and like anything in life, "
-"there are no guarantees. To further mitigate risk, we also have a "
-"relationship with Trust My Travel (TMT). TMT provides consumer protection "
-"for every Membership payment. Your payments to INCRUISES® are covered (your "
-"out-of-pocket amount, not the Reward Points® (Reward Points) value) if, in "
-"the unlikely event INCRUISES were to stop doing business. Please click here "
-"for more information on your financial protection: <a "
-"href='{{tmtFinancialProtection}}' target='_blank'>TMT Financial Protection</"
-"a>."
-msgstr ""
-"Tagad riskējam mēs visi. Lai mazinātu risku mums ir celojumu reģistrācija "
-"visos pieprasītajos štatos un viņiem tas ir jāpilda, kā pieprasīts. Skatiet "
-"mūsu <a href='{{corporateDueDiligence}}' target='_blank'>Due Diligence "
-"Document </a>,lai iegūtu sīkāku informāciju par Kompāniju.Beidzot: mēs esam "
-"šeit un būsim šeit uz ilgu laiku,un tāpat kā viss dzīvē,tam nav garantiju. "
-"Lai turpmāk mazinātu risku,mums ir saistības ar \"Trust My Travel\"(TMT).TMT "
-"nodrošina aizsardzību visiem Biedru Dalības maksājumiem. Jūsu inCruises "
-"maksājumi tiek segti(jūsu skaidrā nauda,nevis Balvu Punktu(Balvu Punkti) "
-"vērtība) , ja neiespējamā gadījumā INCRUISES pārtrauktu "
-"uzņēmējdarbību.Noklikšķiniet šeit,lai saņemtu papildus informāciju par jūsu "
-"finansiālo aizsardzību:<a href='{{tmtFinancialProtection}}' "
-"target='_blank'>TMT Financial Protection</a>."
-
-#: components/public/Faq.vue
 msgid "No."
 msgstr "Nē."
+
+#: components/public/Faq.vue
+msgid ""
+"No. Because we are not a full-service travel agency, we are not set up to "
+"handle anything like manual bookings, name changes and so on. If we were a "
+"full-service travel agency, we could not deliver (2 for 1) Reward Points to "
+"our Members."
+msgstr ""
 
 #: components/public/Faq.vue
 msgid ""
@@ -9465,11 +9425,17 @@ msgstr ""
 "prēmijas par dalības pārdošanu."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No. It's a $100 USD maximum per member. However, if you plan to cruise "
+#| "with another person, your spouse for example, that person can also be a "
+#| "member and both will be able to apply their Reward Points to the same "
+#| "cruise you will be booking together."
 msgid ""
-"No. It's a $100 USD maximum per member. However, if you plan to cruise with "
-"another person, your spouse for example, that person can also be a member "
-"and both will be able to apply their Reward Points to the same cruise you "
-"will be booking together."
+"No. It's a $100 USD maximum per month / per Member. However, if you plan to "
+"travel with another person, your spouse for example, that person can also be "
+"a Member and both will be able to apply their Reward Points to the same "
+"reservation if you book together."
 msgstr ""
 "Nē. Tas ir maksimālais $100 vienam dalībniekam. Tomēr, ja plānojat doties "
 "ceļojumā ar citu personu, piemēram, savu laulāto, šī persona var būt arī "
@@ -9493,19 +9459,49 @@ msgstr ""
 "bāzi, izmantojot viedtālruni, lai nopelnītu naudu jebkurā laikā un vietā!"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No. The person who's listed on the Membership, must be the one booking "
+#| "the cruise/cabin AND must be one of the passengers listed in the cabin."
 msgid ""
-"No. The person who's listed on the Membership, must be the one booking the "
-"cruise/cabin AND must be one of the passengers listed in the cabin."
+"No. The person who's listed on the Membership must be the one making the "
+"reservation AND must be one of the passengers listed on the cruise, hotel or "
+"resort reservation."
 msgstr ""
 "Nē. Personai, kas ir iekļauta dalībnieka sarakstā, ir jābūt tai, kas rezervē "
 "kruīzu/kajīti, UN tai jābūt vienai no pasažieriem, kas minēta kabīnē."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "We do not offer partial bookings or bookings done with an initial "
+#| "deposit. You can use all of your available Reward Points when you're "
+#| "ready to book a cruise."
 msgid ""
-"No. While members do have the opportunity to save on great cruise vacations, "
+"No. We do not offer partial bookings or bookings done with a partial initial "
+"deposit. At the time of booking you can use all of your available Reward "
+"Points up to the allowable amount for that specific cruise but you must pay "
+"for the entire booking at that time."
+msgstr ""
+"Mēs nepiedāvājam daļēju rezervāciju vai rezervāciju ar sākotnēju depozītu."
+"Jūs varat lietot jums visu pieejamos Balvu Punktus,kad esat gatavs kruīza "
+"rezervācijai."
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No. While members do have the opportunity to save on great cruise "
+#| "vacations, inCruises does not, nor do we promote having cooperative "
+#| "purchases because of our size or “group or volume buying power” or "
+#| "“clout” because of our membership base. While we do not promote having "
+#| "clout, we do promote that our booking partners certainly do have volume "
+#| "buying power, resulting in exceptional low prices and exclusive offers "
+#| "such as upgrades, discounts and more."
+msgid ""
+"No. While Members do have the opportunity to save on great cruise vacations, "
 "inCruises does not, nor do we promote having cooperative purchases because "
 "of our size or “group or volume buying power” or “clout” because of our "
-"membership base. While we do not promote having clout, we do promote that "
+"Membership base. While we do not promote having clout, we do promote that "
 "our booking partners certainly do have volume buying power, resulting in "
 "exceptional low prices and exclusive offers such as upgrades, discounts and "
 "more."
@@ -9579,11 +9575,13 @@ msgid "Not Opened"
 msgstr "Nav atvērts"
 
 #: track_results/index.html
-msgid "Not Partner / Expired Member"
-msgstr "Nav partneris/Neaktīvs Biedrs"
+msgid "Not Partner / Member"
+msgstr "Nav partneris/Biedrs"
 
 #: track_results/index.html
-msgid "Not Partner / Member"
+#, fuzzy
+#| msgid "Not Partner / Member"
+msgid "Not Partner / Pending Member"
 msgstr "Nav partneris/Biedrs"
 
 #: pages/duplicator.vue
@@ -9812,12 +9810,21 @@ msgstr ""
 "uzskatāt, ka tā ir kļūda, sazinieties ar mūsu atbalsta dienestu."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Our two-for-one offer is in part possible because of the negotiated "
+#| "relationships we have with our booking providers combined with our "
+#| "recurring Membership model. In addition, our innovative word-of-mouth "
+#| "marketing reduces overhead costs, eliminating the heavy investment in "
+#| "traditional advertising and call centers normally associated with booking "
+#| "cruises."
 msgid ""
 "Our two-for-one offer is in part possible because of the negotiated "
 "relationships we have with our booking providers combined with our recurring "
-"Membership model. In addition, our innovative word-of-mouth marketing "
-"reduces overhead costs, eliminating the heavy investment in traditional "
-"advertising and call centers normally associated with booking cruises."
+"Membership model.. In addition, we do not build cruise ships and hotels. Our "
+"innovative word-of-mouth marketing reduces overhead costs, eliminating the "
+"heavy investment in traditional advertising and call centers normally "
+"associated with booking cruises and other types of vacations."
 msgstr ""
 "Mūsu piedāvājums “divi par vienu” ir daļēji iespējams, jo mums ir pārrunātas "
 "attiecības ar mūsu rezervācijas nodrošinātājiem apvienojumā ar mūsu ikmēneša "
@@ -9911,16 +9918,18 @@ msgid "Partner"
 msgstr "Partneris"
 
 #: track_results/index.html
-msgid "Partner / Expired Member"
-msgstr "Partneris/neaktīvs Biedrs"
-
-#: track_results/index.html
 msgid "Partner / Member"
 msgstr "Partneri/Biedrs"
 
 #: track_results/index.html
 msgid "Partner / Not Member"
 msgstr "Partneri/Nav biedrs"
+
+#: track_results/index.html
+#, fuzzy
+#| msgid "Partner / Member"
+msgid "Partner / Pending Member"
+msgstr "Partneri/Biedrs"
 
 #: compensation/index.html
 msgid "Partner +1 Point"
@@ -10423,6 +10432,10 @@ msgstr "Foto ID"
 msgid "Picture Name"
 msgstr "Attēls, Vārds"
 
+#: pages/hotels_details.vue
+msgid "Placeholder"
+msgstr ""
+
 #: compensation/index.html
 msgid "Plan"
 msgstr "Plāns"
@@ -10735,6 +10748,12 @@ msgstr ""
 msgid "Please try again later."
 msgstr "Lūdzu mēģiniet vēlāk vēlreiz."
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Please try again later."
+msgid "Please try again with alternative dates or"
+msgstr "Lūdzu mēģiniet vēlāk vēlreiz."
+
 #: pages/booking.vue
 msgid ""
 "Please verify all booking details before proceeding, once you are sure of "
@@ -10962,6 +10981,12 @@ msgstr "Iepriekšējais gads"
 msgid "Price"
 msgstr "Summa"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "View Details"
+msgid "Price details"
+msgstr "Skatīt detalizētu informāciju"
+
 #: components/booking/category.vue
 msgid "Price does not include Taxes and Fees"
 msgstr "Cenā netiek iekļauti Nodokļi un Maksas"
@@ -11013,6 +11038,12 @@ msgstr ""
 #: components/public/FooterLinks.vue layouts/blank_angular.html
 #: layouts/default.html layouts/default_no_nav.html
 msgid "Privacy Policy"
+msgstr "Konfidencialitātes politika"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy Policy licenses."
 msgstr "Konfidencialitātes politika"
 
 #: pages/booking.vue pages/checkout.vue pages/hotels_booking.vue
@@ -11590,23 +11621,33 @@ msgstr "Pārbudi savu Balvu Punktu bilanci."
 msgid "Reward"
 msgstr "Apbalvojums"
 
-#: pages/reward_points.vue pages/welcome.vue compensation/index.html
-#: info_center/index.html controllers/cruising_dollars.js
-#: controllers/menu_page.js
+#: pages/hotels_booking.vue pages/reward_points.vue pages/welcome.vue
+#: compensation/index.html info_center/index.html
+#: controllers/cruising_dollars.js controllers/menu_page.js
 msgid "Reward Points"
 msgstr "Balvu Punkti"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Reward Points are credits or points our Members can use towards booking "
+#| "cruise vacations on our site. Reward Points accumulate and rollover month-"
+#| "after-month and they never expire as long as you remain an active Member. "
+#| "Reward Points® are not a currency and have no cash value. Reward Points "
+#| "are not an investment. INCRUISES is not a bank, depository or financial "
+#| "company of any type. Reward Points cannot be redeemed for cash under any "
+#| "circumstance. Credits can only be used to book cruises on our Website. "
+#| "For complete details please read our <a href=\"{{memberAgreement}}\" "
+#| "target=\"_blank\">Membership Agreement</a>"
 msgid ""
-"Reward Points are credits or points our Members can use towards booking "
-"cruise vacations on our site. Reward Points accumulate and rollover month-"
-"after-month and they never expire as long as you remain an active Member. "
-"Reward Points® are not a currency and have no cash value. Reward Points are "
-"not an investment. INCRUISES is not a bank, depository or financial company "
-"of any type. Reward Points cannot be redeemed for cash under any "
-"circumstance. Credits can only be used to book cruises on our Website. For "
-"complete details please read our <a href=\"{{memberAgreement}}\" target="
-"\"_blank\">Membership Agreement</a>"
+"Reward Points are points our Members can use towards booking vacations on "
+"inCruises website. Reward Points accumulate and rollover month-after-month "
+"and they never expire. Reward Points are not a currency and have no cash "
+"value. Reward Points are not an investment. INCRUISES is not a bank, "
+"depository or financial company of any type. Reward Points cannot be "
+"redeemed for cash under any circumstance. Reward Points can only be used to "
+"book travel on our website. For complete details please read our <a href="
+"\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>"
 msgstr ""
 "Balvu Punkti ir kredīti vai punkti, ko mūsu dalībnieki var izmantot, lai "
 "rezervētu kruīza brīvdienas mūsu vietnē. Balvu Punkti uzkrājas un pāriet "
@@ -11626,21 +11667,26 @@ msgstr "Pieejamie Balvu Punkti"
 msgid "Reward Points Balance"
 msgstr "Balvu Punktu Bilance"
 
-#: pages/my_cruise_savings.vue receipts/booking_receipt.html
-#: receipts/hotel_booking_receipt.html
-msgid "Reward Points Used"
-msgstr "Izmantotie Balvu Punkti"
-
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Reward Points® can only be used for cruise fare(s) quoted and confirmed "
+#| "at booking on our website, including port charges and applicable "
+#| "government taxes and fees. Reward Points® may not be used to pay for "
+#| "flights, stateroom upgrades after a confirmed booking, travel insurance, "
+#| "processing fees, cancellation fees, name change fees or fees of any kind "
+#| "related to the cruise, pre-paid gratuities, tours and excursions, "
+#| "specialty meals and beverage packages and/or personal expenditures once "
+#| "on onboard (including medical expenses and/or gratuities)."
 msgid ""
-"Reward Points® can only be used for cruise fare(s) quoted and confirmed at "
-"booking on our website, including port charges and applicable government "
-"taxes and fees. Reward Points® may not be used to pay for flights, stateroom "
-"upgrades after a confirmed booking, travel insurance, processing fees, "
-"cancellation fees, name change fees or fees of any kind related to the "
-"cruise, pre-paid gratuities, tours and excursions, specialty meals and "
-"beverage packages and/or personal expenditures once on onboard (including "
-"medical expenses and/or gratuities)."
+"Reward Points can only be used for hotel, resort and cruise fare(s) quoted "
+"and confirmed at booking on our website, including port charges and "
+"applicable government taxes and fees. Reward Points may not be used to pay "
+"for flights, stateroom upgrades after a confirmed booking, travel insurance, "
+"processing fees, cancellation fees, name change fees or fees of any kind "
+"related to the cruise, pre-paid gratuities, tours and excursions, specialty "
+"meals and beverage packages and/or personal expenditures once on onboard "
+"(including medical expenses and/or gratuities)."
 msgstr ""
 "Balbvu Punktus var izmantot tikai kruīza maksai (- ām), kas norādīta (- as) "
 "un apstiprināta (- as) rezervējot (- as) mūsu tīmekļa vietnē, ieskaitot "
@@ -11651,6 +11697,17 @@ msgstr ""
 "saistīta ar kruīzu, priekšapmaksas dotācijām, ekskursijām un ekskursijām, "
 "īpašām maltītēm un dzērienu pakām un/vai personīgiem izdevumiem (ieskaitot "
 "medicīnas izdevumus un/vai godalgas)."
+
+#: pages/my_cruise_savings.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
+msgid "Reward Points Used"
+msgstr "Izmantotie Balvu Punkti"
+
+#: pages/welcome.vue
+#, fuzzy
+#| msgid "Reward Points"
+msgid "Reward Points:"
+msgstr "Balvu Punkti"
 
 #: compensation/index.html
 msgid "Rewards"
@@ -11667,12 +11724,25 @@ msgid "Room"
 msgstr "Kajīte/numuriņš"
 
 #: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+msgid "Room {{ index }} ({{ searchParameters.nights }} nights)"
+msgstr ""
+"${{ telpasMaksa.pārdošanasCens }} par/uz {{ eklēParameteri.naktis }} nakts"
+
+#: pages/hotels_booking.vue
 msgid "Room name:"
 msgstr "Kajītes/numuriņa nosaukums:"
 
 #: pages/booking.vue
 msgid "Room Num:"
 msgstr "Kajītes numurs:"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Facilities"
+msgid "Room Stay Facilities"
+msgstr "Iekārtas/ērtības"
 
 #: receipts/hotel_booking_receipt.html
 msgid "Room Type"
@@ -11744,8 +11814,8 @@ msgstr ""
 "Ietaupi laiku prezentējot!Ar šo spēcīgo rīku tu paredzamos biedrus "
 "piesaistīsi kā Partnerus un/vai Biedrus jebkurā laikā."
 
-#: pages/book.vue pages/hotels.vue compensation/index.html
-#: communications/index.html communications/view.html
+#: pages/book.vue pages/hotels.vue pages/hotels_details.vue
+#: communications/index.html communications/view.html compensation/index.html
 #: email_notifications/index.html track_growth/index.html
 #: webinar_recordings/index.html
 msgid "Search"
@@ -11778,6 +11848,12 @@ msgstr "Meklē vāŗdu vai epastu"
 #: track_results/index.html
 msgid "Search Name or Email.."
 msgstr "Meklē vāŗdu vai epastu.."
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Search by date"
+msgid "Search other hotel"
+msgstr "Meklēt pēc datuma"
 
 #: controllers/menu_page.js
 msgid ""
@@ -12228,6 +12304,10 @@ msgstr ""
 msgid "Something was wrong"
 msgstr "Kaut kas nebija pareizi"
 
+#: pages/hotels_details.vue
+msgid "Sorry, we couldn't find any room available for your selection."
+msgstr ""
+
 #: pages/admin_signup_flow.vue track_results/index.html
 msgid "Sorting"
 msgstr "Šķirošana"
@@ -12278,6 +12358,12 @@ msgstr "SSL"
 #: pages/public/payment_terms.vue
 msgid "St. 1- Lot #3, Suite 500 (Metro Office Park 3)"
 msgstr "St. 1-Lot #3,Suite 500(Metro Parka Ofiss 3)"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Start"
+msgid "Stars"
+msgstr "Jāsāk"
 
 #: pages/admin_support_analytics.vue
 msgid "Start"
@@ -12410,6 +12496,23 @@ msgid "Subscriptions"
 msgstr "Abonēšana"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Success as an inCruises Partner can be measured in a variety of ways. To "
+#| "some people, success will be meeting and networking with like-minded "
+#| "people. For others, the ability to travel the world is their idea of "
+#| "success. And for some, the opportunity to earn some extra income will be "
+#| "their vision of success. inCruises has the tools and opportunity that "
+#| "allows our Partners to achieve their visions of success. Consistently "
+#| "using those tools and methods, coupled with a love of travel, talking to "
+#| "others about travel, and all of the amazing support that you receive as a "
+#| "Partner will give you the opportunity to achieve success.  inCruises is "
+#| "NOT an opportunity where you make thousands or tens of thousands of "
+#| "dollars in income overnight. It's a viable business similar to other "
+#| "direct selling companies. It would be irresponsible to claim that someone "
+#| "could be successful with inCruises simply by enrolling as a Partner. No "
+#| "one can make such a claim about any business opportunity, and inCruises "
+#| "makes no such claim."
 msgid ""
 "Success as an inCruises Partner can be measured in a variety of ways. To "
 "some people, success will be meeting and networking with like-minded people. "
@@ -12419,7 +12522,7 @@ msgid ""
 "achieve their visions of success. Consistently using those tools and "
 "methods, coupled with a love of travel, talking to others about travel, and "
 "all of the amazing support that you receive as a Partner will give you the "
-"opportunity to achieve success.  inCruises is NOT an opportunity where you "
+"opportunity to achieve success. inCruises is NOT an opportunity where you "
 "make thousands or tens of thousands of dollars in income overnight. It's a "
 "viable business similar to other direct selling companies. It would be "
 "irresponsible to claim that someone could be successful with inCruises "
@@ -12525,6 +12628,10 @@ msgstr "Summa, kurai uzliek nodokli sociālo iemaksu vajadzībām"
 #: pages/payout.vue receipts/italian_receipt.html
 msgid "Taxable Amount:"
 msgstr "Ar nodokli apliekamā summa:"
+
+#: pages/hotels_booking.vue
+msgid "Taxes"
+msgstr ""
 
 #: pages/team_rankings.vue
 msgid "Team - Most Direct Members"
@@ -12798,7 +12905,9 @@ msgstr ""
 "izvirzīt."
 
 #: cruising_dollars/index.html
-msgid "The result is your Available Cruise Dollar balance."
+#, fuzzy
+#| msgid "The result is your Available Cruise Dollar balance."
+msgid "The result is your Available Reward Points balance."
 msgstr "Jūsu pieejamo kruīzu dolāru atlikuma rezultāts."
 
 #: pages/public/reviews.vue
@@ -12889,9 +12998,16 @@ msgid "The use of the facility will issue a voucher."
 msgstr "Izmantojot šo iespēju, tiks izsniegta kvīts."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "There are many ways to earn income as a Partner with inCruises. There are "
+#| "Instant Pay Bonuses, Producer Bonuses, Residual Compensation, Free "
+#| "Memberships, and bonuses based on the income and sales volume of your "
+#| "entire downline organization, as well as several other incentives. Please "
+#| "review our Compensation Program for more details."
 msgid ""
 "There are many ways to earn income as a Partner with inCruises. There are "
-"Instant Pay Bonuses, Producer Bonuses, Residual Compensation, Free "
+"Instant Pay Bonuses, Producer Bonuses, Recurring  Compensation, Free "
 "Memberships, and bonuses based on the income and sales volume of your entire "
 "downline organization, as well as several other incentives. Please review "
 "our Compensation Program for more details."
@@ -12905,6 +13021,10 @@ msgstr ""
 #: pages/hotels.vue
 msgid "There are no results for this search."
 msgstr "Jūsu meklējumam nav rtezultātu."
+
+#: components/public/Faq.vue
+msgid "There are two types of cruise bookings possible. \n"
+msgstr ""
 
 #: pages/booking.vue
 msgid ""
@@ -13272,6 +13392,14 @@ msgstr ""
 "inCruises Biedriem šis kruīzs nav vairs pieejams.Tas ir pārsniedzis "
 "maksimālo kajīšu skaitu,ko varam šim kruīzam rezervēt."
 
+#: components/public/Faq.vue
+msgid ""
+"This depends on your Membership Account status. As an Active Member you can "
+"book up to 4 cruises per year using (2 for 1) Reward Points. However, when "
+"Members are using their (1 for 1) Reward Points to book cruises there are no "
+"limits on how many cruises you can book."
+msgstr ""
+
 #: pages/hotels_details.vue
 msgid "This facility has cost."
 msgstr "Šim aprīkojumam ir izmaksas."
@@ -13318,6 +13446,10 @@ msgid ""
 msgstr ""
 "Šis ir kruīza saraksts, kam beidzies derīguma termiņš, jūs drīkstat rezervēt "
 "ceļojumus, kas turpmāk ilgs 90 dienas vai ilgāk."
+
+#: pages/hotels_booking.vue
+msgid "This is not legal advice."
+msgstr ""
 
 #: info_center/index.html
 msgid ""
@@ -13585,10 +13717,15 @@ msgstr ""
 "atļauju veikt šo darbību."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "To book a cruise offered through your inCruises Membership on our site, "
+#| "you must be an active Member for 14 days after activation or re-"
+#| "activation of your Membership."
 msgid ""
-"To book a cruise offered through your inCruises Membership on our site, you "
-"must be an active Member for 14 days after activation or re-activation of "
-"your Membership."
+"To book a cruise, hotel or resort stay offered through your inCruises "
+"website, you must be an active Member for 14 days after activation or "
+"reactivation of your Membership."
 msgstr ""
 "TLai rezervētu kruīzu,izmantojot savu Biedru Dalību mūsu saitē,jums ir jābūt "
 "kā aktīvam Biedram 14 dienas pēc pirmās vai atkārtotās aktivizācijas."
@@ -13597,8 +13734,8 @@ msgstr ""
 msgid "To continue with iPayout, please create an account."
 msgstr "Lai turpinātu ar \"iPayout\", lūdzu izveidojiet kontu."
 
-#: pages/public/about.vue pages/public/biz.vue pages/public/index.vue
-#: pages/public/mission.vue pages/public/partnership.vue
+#: pages/public/about.vue pages/public/biz.vue pages/public/mission.vue
+#: pages/public/partnership.vue
 msgid "TO CRUISE"
 msgstr "DOTIES KRUĪZĀ"
 
@@ -13665,6 +13802,10 @@ msgid "To proceed with Hyperwallet please confirm your birthdate:"
 msgstr ""
 "Lai turpinātu ar Hyperwallet , lūdzu apstipriniet savu dzimšanas datumu:"
 
+#: pages/public/index.vue
+msgid "TO TRAVEL"
+msgstr ""
+
 #: pages/invoices.vue
 msgid ""
 "To update the preferred currency, please select a recurring profile and then "
@@ -13709,8 +13850,9 @@ msgstr "Tony Robbins’ VP no pasaules tirgiem un mārketinga (1987-1994)"
 msgid "Top 25 Contributors"
 msgstr "Top 25 Ieguldītāji"
 
-#: compensation/index.html receipts/italian_commission.html
-#: receipts/italian_receipt.html track_growth/index.html upgrade/index.html
+#: pages/hotels_booking.vue compensation/index.html
+#: receipts/italian_commission.html receipts/italian_receipt.html
+#: track_growth/index.html upgrade/index.html
 msgid "Total"
 msgstr "Kopējais"
 
@@ -13721,10 +13863,6 @@ msgstr "Kopā (ieskaitot PVN):"
 #: receipts/team_residual_bonus_statement.html
 msgid "Total Comp."
 msgstr "Kopā komp."
-
-#: cruising_dollars/index.html
-msgid "Total Cruise Dollar Balance"
-msgstr "Kopējā kruīza dolāru bilance"
 
 #: pages/booking.vue pages/my_cruise_savings.vue
 msgid "Total Cruise Price"
@@ -13797,6 +13935,12 @@ msgstr "Nepaeizās testa atbildes kopā"
 #: pages/booking.vue pages/hotels_booking.vue
 msgid "Total Reward Points"
 msgstr "Kopējie Balvu Punkti"
+
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid "Reward Points Balance"
+msgid "Total Reward Points Balance"
+msgstr "Balvu Punktu Bilance"
 
 #: invoices/invoice_statement.html receipts/commission_statement.html
 #: receipts/instant_bonus_statement.html receipts/invoice.html
@@ -13911,6 +14055,10 @@ msgstr "Pārskaiti uz Payquicker kontu"
 #: pages/public/values.vue
 msgid "TRANSPARENT, AUTHENTIC, AND HONEST PEOPLE"
 msgstr "Atklāti,autentiski un godīgi cilvēki"
+
+#: pages/public/index.vue
+msgid "TRAVEL"
+msgstr ""
 
 #: receipts/travel_challenge_statement.html
 msgid "Travel Challenge Bonus Statement"
@@ -14264,6 +14412,12 @@ msgstr "Skati kruīzu"
 msgid "View Details"
 msgstr "Skatīt detalizētu informāciju"
 
+#: pages/hotels_details.vue
+msgid ""
+"View Details\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"icon-open\"></span>"
+msgstr ""
+
 #: pages/welcome.vue
 msgid "View Donors"
 msgstr "Skati Donorus"
@@ -14553,16 +14707,6 @@ msgstr ""
 msgid "We did not find any contacts to display, please try another account."
 msgstr "Mēs neatradām nevienu kontaktu,ko parādīt,lūdzu mēģiniet citu kontu."
 
-#: components/public/Faq.vue
-msgid ""
-"We do not offer partial bookings or bookings done with an initial deposit. "
-"You can use all of your available Reward Points when you're ready to book a "
-"cruise."
-msgstr ""
-"Mēs nepiedāvājam daļēju rezervāciju vai rezervāciju ar sākotnēju "
-"depozītu.Jūs varat lietot jums visu pieejamos Balvu Punktus,kad esat gatavs "
-"kruīza rezervācijai."
-
 #: pages/public/causes.vue
 msgid ""
 "WE HAVE\n"
@@ -14608,8 +14752,12 @@ msgid "We hope to see you there!"
 msgstr "Mēs ceram jūs tur redzēt!"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "We like the way you're thinking and be sure to check with your accountant."
 msgid ""
-"We like the way you're thinking and be sure to check with your accountant."
+"We like the way you're thinking and be sure to check with your accountant. "
+"Please understand that inCruises cannot give you personal tax advice."
 msgstr ""
 "Mums patīt jūsu domāšanas veids un noteikti pajautājiet savam grāmatvedim."
 
@@ -14798,6 +14946,12 @@ msgid "What do I Win?"
 msgstr "Ko es iegūšu?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid "What do they get for their $100 USD monthly Membership fee?"
+msgid "What do they get for their $100 USD Activation Fee?"
+msgstr "Kas viņiem pienākas par viņu dalības 100 ASV dolāru iemaksu?"
+
+#: components/public/Faq.vue
 msgid "What do they get for their $100 USD monthly Membership fee?"
 msgstr "Kas viņiem pienākas par viņu dalības 100 ASV dolāru iemaksu?"
 
@@ -14810,7 +14964,9 @@ msgid "What happens if I miss a payment on a given month?"
 msgstr "Kas notiek,ja es neizdaru maksājumu dotajā mēnesī?"
 
 #: components/public/Faq.vue
-msgid "What happens if I stop paying the Membership?"
+#, fuzzy
+#| msgid "What happens if I stop paying the Membership?"
+msgid "What happens if I stop paying my Club Membership?"
 msgstr "Kas notiek,ja es pārtraucu maksāt dalības maksu?"
 
 #: components/public/Faq.vue
@@ -14832,14 +14988,6 @@ msgstr "Kas ir inCruises Connect?"
 #: pages/duplicator.vue
 msgid "What is the inCruises Duplicator?"
 msgstr "Kas ir inCruises dublikātors?"
-
-#: components/public/Faq.vue
-msgid ""
-"When can you book or reserve a cruise prior to accumulating all the needed "
-"Reward Points and then finalize the booking later?"
-msgstr ""
-"Kad ir iespējams pasūtīt vai pieteikt rezervāciju kruīzam pirms esi savācis "
-"nepieciešamo Balvu Punktu daudzumu ,bet pabeidz maksājumu vēlāk?"
 
 #: pages/banner_tracking.vue
 msgid ""
@@ -15045,16 +15193,21 @@ msgstr ""
 
 #: components/public/Faq.vue
 msgid ""
-"Yes you can. While you cannot gift a cruise to others using your Membership "
-"and Reward Points, you can certainly gift our Membership to others and pay "
-"for them as long as they are at least 18 years old. Their Reward Points can "
-"only be used if they will be booked on the cabin for which the Reward Points "
-"are being used."
+"Yes and we are all at risk. To mitigate risk, we have a relationship with "
+"Trust My Travel (TMT) - a Global Payment Processor and Protection Provider. "
+"TMT provides consumer protection for every Membership payment. Your payments "
+"to INCRUISES are covered (your out-of-pocket amount, not the Reward Points "
+"value) if, in the unlikely event INCRUISES were to stop doing business. "
+"Please click here for more information on your financial protection: <a "
+"href='{{https://trustprotects.me/wp-content/uploads/2021/08/TMTProtects.Me-"
+"Financial-Protection_EN.pdf}}' target='_blank'>TMT Financial Protection</a> "
+"To further mitigate risk, we have Seller of Travel Registrations in every "
+"USA state required and are bonded when required to do so. Please see our <a "
+"href='{{https://files.incruises.com/files/en/103EN_CORPORATE_DUE_DILIGENCE."
+"pdf}}' target='_blank'> Due Diligence Document </a> to learn more about the "
+"company. Bottom line: we are built to last and are here for the long haul, "
+"and like anything in life, there are no guarantees."
 msgstr ""
-"Jā jūs varat. Kamēr jūs nevarat dāvāt kruīzu,pielietojot savu partnerību un "
-"Balvu Punktus,jūs noteikti varat uzdāvāt mūsu partnerību citiem tik ilgi, "
-"kamēr viņi sasniegs vismaz 18 gadu vecumu.Viņu Balvu Punkti var tikt "
-"pielietoti kabīnei,kurai Balvu Punkti tiek pielietoti."
 
 #: pages/connect.vue power_tools_upgrade/index.html
 msgid "Yes, Cancel"
@@ -15081,22 +15234,34 @@ msgid "Yes."
 msgstr "Jā."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If a couple are both inCruises Members, can they combine their Reward "
+#| "Points on one cruise booking?"
 msgid ""
-"Yes. If a couple are both inCruises Members, they can combine their Reward "
-"Points to cover the total cost of booking a cabin on a cruise."
+"Yes. If a couple are both inCruises Club Members, they can combine their "
+"Reward Points for reservations."
 msgstr ""
-"Jā,ja pāris abi ir inCruises biedri,viņi drīkst lietot kopā savus Balvu "
-"Punktus,lai nosegtu kabīnes rezervāciju kruīza laikā."
+"Ja pāris ir abi inCruises biedri, vai viņi var apvienot savus Balvu Punktus "
+"vienā kruīzu rezervācijā?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Yes. If you join our optional Independent Business Partner Program, you "
+#| "can earn commissions by referring others to our program, which can help "
+#| "you reduce your cost or even earn you a part-time or full-time income. We "
+#| "also offer a unique program that waives your monthly membership dues if "
+#| "you personally refer 5 paying members who have an active membership. You "
+#| "can learn more on our <a href='/partnership' target='_blank'>Partnership "
+#| "page</a>."
 msgid ""
-"Yes. If you join our optional Independent Business Partner Program, you can "
-"earn commissions by referring others to our program, which can help you "
-"reduce your cost or even earn you a part-time or full-time income. We also "
-"offer a unique program that waives your monthly membership dues if you "
-"personally refer 5 paying members who have an active membership. You can "
-"learn more on our <a href='/partnership' target='_blank'>Partnership page</"
-"a>."
+"Yes. If you join our optional Independent Partner Program, you can earn "
+"commissions by referring others to our program, which can help you reduce "
+"your cost or even earn you a supplemental income. We also offer a unique "
+"program that waives your monthly Membership dues if you personally refer 5 "
+"paying Members who have an active Membership. You can learn more on our <a "
+"href='/partnership' target='_blank'>Partnership page</a>."
 msgstr ""
 "Jā. Ja jūs pievienosieties mūsu neatkarīgo biznesa partneru programmai,jūs "
 "varat saņemt komisijas naudu,rekomendējot citus mūsu programmai,kas var "
@@ -15137,7 +15302,8 @@ msgstr ""
 #: pages/booking.vue
 msgid ""
 "You are able to use your 2 for 1 balance for up to 50% of the booking price."
-msgstr "Jūs varat izmantot savu 2 par 1 bilanci līdz 50% no rezervācijas cenas."
+msgstr ""
+"Jūs varat izmantot savu 2 par 1 bilanci līdz 50% no rezervācijas cenas."
 
 #: pages/hotels_booking.vue
 msgid ""
@@ -15170,14 +15336,9 @@ msgstr ""
 
 #: components/public/Faq.vue
 msgid ""
-"You can apply Reward Points to any cabin booking, including bookings where "
-"multiple passengers are booked in the cabin, as long as there's at least ONE "
-"Member booked in that cabin and their Reward Points are being used for that "
-"booking."
+"You can apply Reward Points to any booking, including bookings with  "
+"multiple passengers."
 msgstr ""
-"Jūs varat izlietot BalvuPunktus jebkuras kajītes rezervācijai,arī tur kur "
-"kabīnē ir vairāki pasažieri tik, ilgi kamēr šajā kajītē atrodas vismaz viens "
-"biedrs un viņu Balvu Punkti tiek izlietoti rezervācijai."
 
 #: compensation/index.html
 msgid ""
@@ -15274,6 +15435,14 @@ msgstr ""
 #: compensation/index.html
 msgid "You don’t have any potential instant bonuses at this time."
 msgstr "Jums patreiz nav neviena steidzama bonusa."
+
+#: components/public/Faq.vue
+msgid ""
+"You don’t have to and cannot ‘catch up’ on invoices. If you miss a "
+"Membership payment, just do your best to pay your next Membership invoice on "
+"time. You will be able to maintain an Active Member status as long as you do "
+"not miss more than 3 monthly membership payments in a row."
+msgstr ""
 
 #: agreements/italian_addendum_agreement.html
 #: agreements/national_director_agreement.html
@@ -23220,6 +23389,12 @@ msgstr "Itālijas\"Onboarding(uzkapšna un kuģa)"
 msgid "Western Union"
 msgstr "Rietumu Savinība"
 
+#: Support Departments
+#, fuzzy
+#| msgid "Payout"
+msgid "Payout Refunds"
+msgstr "Izmaksa"
+
 #: Travel Challenge (titles)
 msgid "DOUBLE DIGIT IN MARCH TO GOPRO IN NOVEMBER!"
 msgstr "DIVCIPARS MARTĀ UZ GOPRO NOVEMBRĪ!"
@@ -23231,6 +23406,315 @@ msgid ""
 msgstr ""
 "Lai vinnētu ir vajadzīgi 11 punkti. 5 topa vadošie (šeit:jāizvēlas) , līderi "
 "vinnēs GoPro biļeti."
+
+#~ msgid "{{ formatDate(cancellation.from) }}"
+#~ msgstr "{{ formatDatums(atcelts.no) }}"
+
+#~ msgid "<span class=\"ng-scope\">Search</span>"
+#~ msgstr "<span class=\"ng-scope\">Meklēt</span>"
+
+#~ msgid ""
+#~ "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+#~ "tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+#~ "stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+#~ "stroke-linejoin=\"round\">\n"
+#~ "\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/"
+#~ ">\n"
+#~ "\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+#~ "\t\t\t\t\t\t\t</svg>\n"
+#~ "\t\t\t\t\t\t\tGo Back"
+#~ msgstr ""
+#~ "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+#~ "tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+#~ "stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+#~ "stroke-linejoin=\"round\">\n"
+#~ "\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/"
+#~ ">\n"
+#~ "\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+#~ "\t\t\t\t\t\t\t</svg>\n"
+#~ "\t\t\t\t\t\t\tEj atpakaļ"
+
+#~ msgid ""
+#~ "Additionally, Members that are also Partners, can speed up the "
+#~ "progressive 4 year increase to 100% of Cruise Dollar usage by:"
+#~ msgstr ""
+#~ "Bez tam, biedri, kuri ir arī partneri, var paātrināt progresīvo 4 gadu "
+#~ "kruīza dolāru izmantošanas apjomu līdz 100%:"
+
+#~ msgid ""
+#~ "Advancing to our Marketing Director Leadership Rank. To learn more about "
+#~ "our Partnership opportunity and our Leadership Ranks, please review our "
+#~ "Partnership page."
+#~ msgstr ""
+#~ "Tuvojoties mūsu Marketinga direktora vadības pakāpei.Lai uzzinātu vairāk "
+#~ "par Partnerības iespējām un Vadības pakāpēm,lūdzu vēlreiz apskatiet "
+#~ "Partnerības lappusi."
+
+#~ msgid ""
+#~ "After making 49 Membership payments, the percentage of Reward Points that "
+#~ "can be used to book cruises increases to 100%, per cruise."
+#~ msgstr ""
+#~ "Pēc 49 dalības maksājumiemBalvu Punktu procentuālā daļa, ko var izmantot, "
+#~ "lai rezervētu kruīzus, pieaug līdz 100% par vienu kruīzu."
+
+#~ msgid ""
+#~ "Although many of our Partners are also Members, it is not mandatory. It "
+#~ "is possible to be a Partner, a Member, or both, what we call a “Partner "
+#~ "Member.” Experiencing the value and personal use of our membership "
+#~ "product helps you promote our genuine service to others."
+#~ msgstr ""
+#~ "Lai gan daudzi no mūsu partneriem arī ir biedri, tas nav obligāti. Jūs "
+#~ "varat būt partneris vai biedrs vai arī abi, kā mēs saucam \"Partneris "
+#~ "Biedrs\". Ņemot vērā personīgo dalības pieredzi, jums ir vieglāk sniegt "
+#~ "mūsu pakalpojumus citiem."
+
+#~ msgid ""
+#~ "Are Reward Points considered taxable income due to the 200 Reward Points "
+#~ "for every $100 USD paid in Membership dues?"
+#~ msgstr ""
+#~ "Vai Balvu Punkti tiek uzskatīti par apliekamiem ar nodokli saistībā ar "
+#~ "200 Balvu Punktiem par katriem $100 USD, kas samaksāti dalības maksā?"
+
+#~ msgid "Available Cruise Dollar Balance"
+#~ msgstr "Pieejamais kruīzu dolāru atlikums"
+
+#~ msgid ""
+#~ "Becoming Membership FREE (referring and maintaining 5 active Members) for "
+#~ "three consecutive months after their initial activation payment or "
+#~ "reactivation payment."
+#~ msgstr ""
+#~ "Kļūstot par FREE biedru (esot un konsultējot 5 aktīvus biedrus) trīs "
+#~ "mēnešus pēc kārtas no viņu piesaistes sākuma aktivizēšanas maksājums vai "
+#~ "reaktivizēšanas maksājums."
+
+#~ msgid "Can I gift a Membership to others?"
+#~ msgstr "Vai es varu dāvināt Dalību citiem?"
+
+#~ msgid ""
+#~ "Click here to learn more about our Membership and how you can use your "
+#~ "Cruise Dollars (Cruise Credits) to book Global Cruises."
+#~ msgstr ""
+#~ "Uzklikšķiniet šeit un uzziniet vairāk par dalību mūsu klubā, kā arī to, "
+#~ "kā jūs varat izlietot savus Kruīza Dolārus(Kruīza Kredītus) kruīzu "
+#~ "rezervēšanai pa visu pasauli."
+
+#~ msgid "Cruise Credits:"
+#~ msgstr "Kruīza kredīti:"
+
+#~ msgid ""
+#~ "During the 13th to the 24th Membership payment, the percentage of Reward "
+#~ "Points that can be used to book cruises increases to 70%, per cruise."
+#~ msgstr ""
+#~ "Starp 13 un 24 dalības maksājumu Balvu Punktu procenti, kas var tikt "
+#~ "izlietoti, lai rezervētu kruīzus, pieaug par 70% par katru kruīzu."
+
+#~ msgid ""
+#~ "During the 25th to the 36th Membership payment, the percentage of Reward "
+#~ "Points that can be used to book cruises increases to 80%, per cruise."
+#~ msgstr ""
+#~ "Starp 25 UN 36 dalības maksājumu Balvu Punktu procenti,kas var tikt "
+#~ "izlietoti,lai rezervētu kruīzus,pieaug par80% par katru kruīzu."
+
+#~ msgid ""
+#~ "During the 37th to the 48th Membership payment, the percentage of Reward "
+#~ "Points that can be used to book cruises increases to 90%, per cruise."
+#~ msgstr ""
+#~ "Starp 37 un 48 dalības maksājumuBalvu Punktu procenti,kas var tikt "
+#~ "pielietoti,lai rezervētu kruīzus pieaug par 90% par katru kruīzu."
+
+#~ msgid ""
+#~ "During the first 12 Membership payments, Members can use up to 60% of "
+#~ "their Reward Points, per cruise."
+#~ msgstr ""
+#~ "Pirmo 12 dalības maksājumu laikā biedri var izmantot līdz pat 60% no "
+#~ "saviem Balvu Punktem par vienu kruīzu."
+
+#~ msgid "How do I get booked on a cruise on your site?"
+#~ msgstr "Kā var rezervēt braucienu jūsu vietnē?"
+
+#~ msgid "How many Reward Points can I use per cruise?"
+#~ msgstr "Cik daudz Balvu Punktus es varu izlietot viena kruīza laikā?"
+
+#~ msgid ""
+#~ "If a Member wants to change the name of the passengers on any cruise "
+#~ "booked through our Website for which Reward Points were deducted to book "
+#~ "the cruise, the new person must also be an active paying Member and have "
+#~ "enough Reward Points to process the name change requested. In the event "
+#~ "the name change involves removing from the reservation someone who used "
+#~ "their Reward Points to book the stateroom with someone who is not an "
+#~ "active paying Member or is a Member who does not have enough Reward "
+#~ "Points to make the exchange, then the only available possibility to "
+#~ "execute the name change, is for inCruises to refund the Reward Points "
+#~ "from the Member being removed, adding those Reward Points back to their "
+#~ "account and charging the new person taking their place the entire amount "
+#~ "by credit card or any payment method allowed by inCruises. Member agrees "
+#~ "that certain name change fees may also apply."
+#~ msgstr ""
+#~ "Ja biedrs vēlas mainīt pasažieru vārdus jebkurā kruīzā, kas rezervēts "
+#~ "mūsu tīmekļa vietnē, kurā kruīzu naudas tika atskaitītas, lai rezervētu "
+#~ "braucienu, jaunajai personai arī jābūt aktīvam maksātājam un jābūt "
+#~ "pietiekamam skaitam Balvu Punktu, lai apstrādātu pieprasīto nosaukuma "
+#~ "maiņu. Gadījumā, ja nosaukuma maiņa ir saistīta ar to, ka no rezervācijas "
+#~ "tiek izņemts kāds, kurš izmantojis savus Balvu Punktus, lai rezervētu "
+#~ "reģistrācijas numuru kādam, kurš nav aktīvs maksātājs, vai kas ir "
+#~ "dalībnieks, kuram nav pietiekami daudz Balvu Punktu, lai veiktu apmaiņu, "
+#~ "tad vienīgā pieejamā iespēja veikt nosaukuma maiņu ir inCruises atmaksāt "
+#~ "no dalībnieka izņemtos Balvu Punktus, pievienojot šos Balvu Punktus "
+#~ "atpakaļ savam kontam un iekasējot no jaunās personas ņemot savā vietā "
+#~ "visu summu ar kredītkarti vai jebkuru inCruises atļauto maksājuma veidu. "
+#~ "Biedrs piekrīt, ka var piemērot arī noteiktas maksas par vārda maiņu."
+
+#~ msgid ""
+#~ "If you discontinue being a member, we will give you up to 1 year to "
+#~ "reactivate your account. To reactivate your account, you will need to pay "
+#~ "each Membership month you missed. You will still earn double Reward "
+#~ "Points for each month you pay to reactivate your account, and those "
+#~ "Reward Points will be added to your previous balance. After 12 months of "
+#~ "inactivity, your account is closed and your Reward Points expire and are "
+#~ "forfeited."
+#~ msgstr ""
+#~ "Ja pārstāsiet būt dalībnieks, mēs dosim jums līdz 1 gadam laika, lai "
+#~ "atkārtoti aktivizētu jūsu kontu. Lai atkārtoti aktivizētu kontu, jums būs "
+#~ "jāmaksā par katru trūkstošo dalības mēnesi. Katru mēnesi, ko maksājat, "
+#~ "lai atkārtoti aktivizētu savu kontu, jūs joprojām nopelnīsiet dubultā "
+#~ "Balvu Punktus, un šie Balvu Punkti tiks pieskaitīti jūsu iepriekšējai "
+#~ "bilancei. Pēc 12 neaktivitātes mēnešiem jūsu konts tiek slēgts, un jūsu "
+#~ "Balvu Punkti zaudē spēku un tiek zaudētas."
+
+#~ msgid ""
+#~ "If you miss a Membership payment, your account will be considered "
+#~ "inactive, and you will not be able to book any cruises or access our "
+#~ "site, except to reactivate your account."
+#~ msgstr ""
+#~ "Ja nokavējat ikmēneša dalības maksājumu, jūsu konts tiks uzskatīts par "
+#~ "neaktīvu un nevarēsiet rezervēt kruīzus vai piekļūt mūsu vietnei, kamēr "
+#~ "konts nebūs atkārtoti aktivizēts."
+
+#~ msgid ""
+#~ "InCruises Members can book any of our over 5,000 Global Cruises directly "
+#~ "on our site, by clicking on Global Cruises on our “Cruises” menu, then "
+#~ "following the steps all the way through the payment process. At checkout, "
+#~ "you will be given the option to pay for your cruise using all of your "
+#~ "available Reward Points and/or other payment methods to complete the "
+#~ "booking process."
+#~ msgstr ""
+#~ "inCruises biedri var rezervēt jebkuru no mūsu, vairāk nekā 5000 "
+#~ "globālajiem kruīziem tieši mūsu vietnē, noklikšķinot uz Global Cruises "
+#~ "mūsu izvēlnē “Cruises” un pēc tam visu laiku sekojot līdzi maksājumu "
+#~ "procesam. Izrakstīšanās laikā jums tiks piedāvāta iespēja samaksāt par "
+#~ "braucienu, izmantojot visus pieejamos Balvu Punktus un/vai citus "
+#~ "maksāšanas veidus, lai pabeigtu rezervācijas procesu."
+
+#~ msgid ""
+#~ "Members can book any cruise available on our Website and we will "
+#~ "automatically use their available Reward Points® to reduce the cost in "
+#~ "full or partially pay for the booking subject to maximum percentage "
+#~ "amounts as described below:"
+#~ msgstr ""
+#~ "Biedrii var rezervēt jebkuru kruīzu, kas pieejams mūsu tīmekļa vietnē, un "
+#~ "mēs automātiski izmantosim viņu pieejamos Balvu Punktus, lai pilnībā vai "
+#~ "daļēji samazinātu izmaksas par rezervējumu, ņemot vērā maksimālās "
+#~ "procentu summas, kas aprakstītas tālāk:"
+
+#~ msgid ""
+#~ "Members must be active (no unpaid monthly invoices) to book a cruise. "
+#~ "Once a booking is confirmed, the Member must remain as an active paying "
+#~ "Member through the embarkation process of the cruise for which Reward "
+#~ "Points were used to book. If a Member fails to make Monthly Membership "
+#~ "payments after booking the cruise and before embarkation, and "
+#~ "consequently their account goes into an Inactive status, inCruises has "
+#~ "the right to cancel the cruise, and reimburse/refund all Reward Points "
+#~ "and payments made for the booking. Any fees associated with the "
+#~ "cancellation, will be the responsibility of the Member and deducted from "
+#~ "the Member's account."
+#~ msgstr ""
+#~ "Biedriem jābūt aktīviem (bez neapmaksātiem ikmēneša rēķiniem), lai "
+#~ "rezervētu braucienu. Kad rezervācija ir apstiprināta, biedram jāpaliek kā "
+#~ "aktīvam maksātājm līdz kruīzam, kura rezervācijai tika izmantoti Balvu "
+#~ "Punkti. Ja dalībnieks neveic ikmēneša dalības maksājumus pēc kruīza "
+#~ "rezervācijas līdz iekāpšanai kuģī, viņu konts nonāk neaktīvā statusā un "
+#~ "līdz ar to inCruises ir tiesības atcelt braucienu un atmaksāt visus Balvu "
+#~ "Punktus un maksājumus, kas veikti par rezervāciju. Par jebkādu maksu, kas "
+#~ "saistīta ar atcelšanu, atbild Biedrs un to atskaita no biedra konta."
+
+#~ msgid ""
+#~ "No, Reward Points are not a currency so there is no tax implication. "
+#~ "Redeeming Reward Points is comparable to booking a Cruise as a result of "
+#~ "a promotion or incentive. No one gets taxed more because the true value "
+#~ "is higher. We also suggest you confirm with your accountant."
+#~ msgstr ""
+#~ "Nē,Balvu Punkti nav valūta, tāpēc nav nekādu nodokļu maksājumu. Balvu "
+#~ "Punktu iegūšana ir salīdzināma ar kruīza rezervēšanu akcijās vai "
+#~ "veicināšanas rezultātā. Neviens netiek aplikts ar nodokļiem, jo kruīzu "
+#~ "patiesā vērtība ir augstāka. Iesakām arī apspriest šo info ar savu "
+#~ "grāmatvedi."
+
+#~ msgid ""
+#~ "No, we are all at risk. To mitigate risk, we have Seller of Travel "
+#~ "Registrations in every state required and are bonded when required to do "
+#~ "so. Please see our <a href='{{corporateDueDiligence}}' "
+#~ "target='_blank'>Due Diligence Document</a> to learn more about the "
+#~ "company. Bottom line: we are built to last and are here for the long "
+#~ "haul, and like anything in life, there are no guarantees. To further "
+#~ "mitigate risk, we also have a relationship with Trust My Travel (TMT). "
+#~ "TMT provides consumer protection for every Membership payment. Your "
+#~ "payments to INCRUISES® are covered (your out-of-pocket amount, not the "
+#~ "Reward Points® (Reward Points) value) if, in the unlikely event INCRUISES "
+#~ "were to stop doing business. Please click here for more information on "
+#~ "your financial protection: <a href='{{tmtFinancialProtection}}' "
+#~ "target='_blank'>TMT Financial Protection</a>."
+#~ msgstr ""
+#~ "Tagad riskējam mēs visi. Lai mazinātu risku mums ir celojumu reģistrācija "
+#~ "visos pieprasītajos štatos un viņiem tas ir jāpilda, kā pieprasīts. "
+#~ "Skatiet mūsu <a href='{{corporateDueDiligence}}' target='_blank'>Due "
+#~ "Diligence Document </a>,lai iegūtu sīkāku informāciju par Kompāniju."
+#~ "Beidzot: mēs esam šeit un būsim šeit uz ilgu laiku,un tāpat kā viss dzīvē,"
+#~ "tam nav garantiju. Lai turpmāk mazinātu risku,mums ir saistības ar "
+#~ "\"Trust My Travel\"(TMT).TMT nodrošina aizsardzību visiem Biedru Dalības "
+#~ "maksājumiem. Jūsu inCruises maksājumi tiek segti(jūsu skaidrā nauda,nevis "
+#~ "Balvu Punktu(Balvu Punkti) vērtība) , ja neiespējamā gadījumā INCRUISES "
+#~ "pārtrauktu uzņēmējdarbību.Noklikšķiniet šeit,lai saņemtu papildus "
+#~ "informāciju par jūsu finansiālo aizsardzību:<a "
+#~ "href='{{tmtFinancialProtection}}' target='_blank'>TMT Financial "
+#~ "Protection</a>."
+
+#~ msgid "Not Partner / Expired Member"
+#~ msgstr "Nav partneris/Neaktīvs Biedrs"
+
+#~ msgid "Partner / Expired Member"
+#~ msgstr "Partneris/neaktīvs Biedrs"
+
+#~ msgid "Total Cruise Dollar Balance"
+#~ msgstr "Kopējā kruīza dolāru bilance"
+
+#~ msgid ""
+#~ "Yes you can. While you cannot gift a cruise to others using your "
+#~ "Membership and Reward Points, you can certainly gift our Membership to "
+#~ "others and pay for them as long as they are at least 18 years old. Their "
+#~ "Reward Points can only be used if they will be booked on the cabin for "
+#~ "which the Reward Points are being used."
+#~ msgstr ""
+#~ "Jā jūs varat. Kamēr jūs nevarat dāvāt kruīzu,pielietojot savu partnerību "
+#~ "un Balvu Punktus,jūs noteikti varat uzdāvāt mūsu partnerību citiem tik "
+#~ "ilgi, kamēr viņi sasniegs vismaz 18 gadu vecumu.Viņu Balvu Punkti var "
+#~ "tikt pielietoti kabīnei,kurai Balvu Punkti tiek pielietoti."
+
+#~ msgid ""
+#~ "Yes. If a couple are both inCruises Members, they can combine their "
+#~ "Reward Points to cover the total cost of booking a cabin on a cruise."
+#~ msgstr ""
+#~ "Jā,ja pāris abi ir inCruises biedri,viņi drīkst lietot kopā savus Balvu "
+#~ "Punktus,lai nosegtu kabīnes rezervāciju kruīza laikā."
+
+#~ msgid ""
+#~ "You can apply Reward Points to any cabin booking, including bookings "
+#~ "where multiple passengers are booked in the cabin, as long as there's at "
+#~ "least ONE Member booked in that cabin and their Reward Points are being "
+#~ "used for that booking."
+#~ msgstr ""
+#~ "Jūs varat izlietot BalvuPunktus jebkuras kajītes rezervācijai,arī tur kur "
+#~ "kabīnē ir vairāki pasažieri tik, ilgi kamēr šajā kajītē atrodas vismaz "
+#~ "viens biedrs un viņu Balvu Punkti tiek izlietoti rezervācijai."
 
 #~ msgid "{{ user.eligible_cd }} Available CD"
 #~ msgstr "{{ user.eligible_cd }} PieejamaisCD"
@@ -26566,11 +27050,6 @@ msgstr ""
 
 #~ msgid "<i class=\"fa fa-eye mr-1\"></i> Remove from Watch List"
 #~ msgstr "<i class=\"fa fa-eye mr-1\"></i >Izņem no dienas lapas"
-
-#~ msgid ""
-#~ "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i> Add Passenger"
-#~ msgstr ""
-#~ "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>Pievieno pasažieri"
 
 #~ msgid "<i class=\"fa fa-star mr-1\"></i> Add to Favorites"
 #~ msgstr "<i class=\"fa fa-star mr-1\" ></i> Pievieno favorītiem"

@@ -394,10 +394,6 @@ msgstr "{{ agreement.name }}"
 msgid "{{ box.box }}"
 msgstr "{{ box.box }}"
 
-#: pages/hotels_details.vue
-msgid "{{ formatDate(cancellation.from) }}"
-msgstr "{{ formatDate(cancellation.from) }}"
-
 #: components/support/TicketList.vue
 msgid "{{ header }}"
 msgstr "{{ header }}"
@@ -408,13 +404,24 @@ msgid ""
 "name.content }}, {{ hotel.state.name }}, {{ hotel.country.description."
 "content }}"
 msgstr ""
-"{{ hotel.address.content }}, {{ hotel.zone.name }}, {{ "
-"hotel.destination.name.content }}, {{ hotel.state.name }}, {{ "
-"hotel.country.description.content }}"
+"{{ hotel.address.content }}, {{ hotel.zone.name }}, {{ hotel.destination."
+"name.content }}, {{ hotel.state.name }}, {{ hotel.country.description."
+"content }}"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+msgid ""
+"{{ hotelAviability.sellingRate }}  per {{ searchParameters.nights }} nights"
+msgstr "{{ searchParameters.nights }} 박당 ${{ roomRate.sellingRate }}"
 
 #: pages/book.vue
 msgid "{{ night }} Nights"
 msgstr "{{ night }} 박"
+
+#: pages/hotels.vue
+msgid "{{ searchParameters.roomCount }} rooms, {{ guestCount }} guests"
+msgstr ""
 
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
@@ -491,6 +498,10 @@ msgstr "{{message}}"
 #: refund_protocol/remove_producerbonus_modal.html
 msgid "{{uplineSales[0].tableName}}"
 msgstr "{{uplineSales[0].tableName}}"
+
+#: pages/hotels_details.vue
+msgid "* Additional fees may apply on the above services and facilities."
+msgstr ""
 
 #: pages/booking.vue
 msgid ""
@@ -789,11 +800,14 @@ msgid ""
 "check-in for ALL passengers in the cabin is REQUIRED to issue boarding pass."
 msgstr ""
 "<b style=\"color:red>중요 공지: </b>\n"
-"    모든 크루즈 선사는 이제 승선전에 온라인 웹 체크인이 요구합니다. 미리 작성하지 않으면 탑승이 거부 될 수 있습니다. 예약 영수증 "
-"데이터 아래에 있는 온라인 체크인 링크를 참조하십시오. 클릭하여 필요한 모든 개인 정보를 입력하십시오. 크루즈 선사에 따라 \n"
+"    모든 크루즈 선사는 이제 승선전에 온라인 웹 체크인이 요구합니다. 미리 작성"
+"하지 않으면 탑승이 거부 될 수 있습니다. 예약 영수증 데이터 아래에 있는 온라"
+"인 체크인 링크를 참조하십시오. 클릭하여 필요한 모든 개인 정보를 입력하십시"
+"오. 크루즈 선사에 따라 \n"
 "    출발 48-72 시간 전까지\n"
-"    웹 체크인이 완료되어야 합니다. 웹 체크인은 크루즈 선사에 따라 45 ~ 60 일 전에 시작됩니다. 탑승권을 발급하려면 객실의 "
-"모든 승객이 체크인을 완료해야합니다."
+"    웹 체크인이 완료되어야 합니다. 웹 체크인은 크루즈 선사에 따라 45 ~ 60 일 "
+"전에 시작됩니다. 탑승권을 발급하려면 객실의 모든 승객이 체크인을 완료해야합니"
+"다."
 
 #: receipts/booking_receipt.html
 msgid ""
@@ -807,11 +821,13 @@ msgid ""
 "Completed check-in for ALL passengers in the cabin is REQUIRED to issue "
 "boarding pass."
 msgstr ""
-"<b style=\"color:red>중요 공지: </b> 모든 크루즈 선사는 이제 승선전에 온라인 웹 체크인이 요구합니다. 미리 "
-"작성하지 않으면 탑승이 거부 될 수 있습니다. 예약 영수증 데이터 아래에 있는 온라인 체크인 링크를 참조하십시오. 클릭하여 필요한 모든 "
-"개인 정보에 액세스하고 입력하십시오.\n"
-"    크루즈 선사에 따라 출발 48-72 시간 전까지 웹 체크인이 완료되어야 합니다. 웹 체크인은 크루즈 선사에 따라 45 ~ 60 일 "
-"전에 시작됩니다. 탑승권을 발급하려면 객실의 모든 승객이 체크인을 완료해야합니다."
+"<b style=\"color:red>중요 공지: </b> 모든 크루즈 선사는 이제 승선전에 온라인 "
+"웹 체크인이 요구합니다. 미리 작성하지 않으면 탑승이 거부 될 수 있습니다. 예"
+"약 영수증 데이터 아래에 있는 온라인 체크인 링크를 참조하십시오. 클릭하여 필요"
+"한 모든 개인 정보에 액세스하고 입력하십시오.\n"
+"    크루즈 선사에 따라 출발 48-72 시간 전까지 웹 체크인이 완료되어야 합니다. "
+"웹 체크인은 크루즈 선사에 따라 45 ~ 60 일 전에 시작됩니다. 탑승권을 발급하려"
+"면 객실의 모든 승객이 체크인을 완료해야합니다."
 
 #: pages/booking.vue
 msgid ""
@@ -1000,6 +1016,15 @@ msgstr ""
 "<i class=\"fa fa-check text-green\"></i>\n"
 "     생방송 (예 : 페이스북)"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i> Add Passenger"
+msgid ""
+"<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>\n"
+"\t\t\t\t\t\t\t\t\t\tAdd Passenger"
+msgstr "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>승객 추가"
+
 #: power_tools_upgrade/index.html
 msgid ""
 "<i class=\"fa fa-times text-red prs\"></i>\n"
@@ -1157,7 +1182,7 @@ msgstr ""
 "<i class=\"far fa-home mr-1\"></i>\n"
 "\t\t\t\t\t\t\t대쉬보드"
 
-#: layouts/booking.html
+#: layouts/booking.html layouts/hotels.html
 msgid ""
 "<i class=\"far fa-hotel mr-1\"></i>\n"
 "\t\t\t\t\t\t\tHotels"
@@ -1165,7 +1190,7 @@ msgstr ""
 "<i class=\"far fa-hotel mr-1\"></i>\n"
 "\t\t\t\t\t\t\t호텔"
 
-#: layouts/hotels.html
+#: layouts/booking.html layouts/hotels.html
 msgid ""
 "<i class=\"far fa-ship mr-1\"></i>\n"
 "\t\t\t\t\t\t\tCruises"
@@ -1629,10 +1654,6 @@ msgstr ""
 "\t\t\t\t\t\t</span>\n"
 "\t\t\t\t\t\t새 이메일 작성"
 
-#: pages/hotels_details.vue
-msgid "<span class=\"ng-scope\">Search</span>"
-msgstr "<span class=\"ng-scope\">검색</span>"
-
 #: pages/booking.vue
 msgid ""
 "<span style=\"color:red\">*</span>\n"
@@ -1870,8 +1891,9 @@ msgid ""
 "to help create memorable cruising experiences."
 msgstr ""
 "<strong style=\"font-size: 36px;\">R</strong>\n"
-"\t\t\t\t\t멤버십 비용은 혁신적인 리워드 포인트로 교환되어 지급됩니다.  리워드 포인트는 휴가적립금의 구매력을 두 배로 높여, "
-"기억에 남는 크루즈 경험을 만들 수 있도록 도와줍니다."
+"\t\t\t\t\t멤버십 비용은 혁신적인 리워드 포인트로 교환되어 지급됩니다.  리워"
+"드 포인트는 휴가적립금의 구매력을 두 배로 높여, 기억에 남는 크루즈 경험을 만"
+"들 수 있도록 도와줍니다."
 
 #: pages/public/mission.vue
 msgid ""
@@ -2057,26 +2079,6 @@ msgstr "<strong>오픈 바 & 스페셜티 다이닝 팁:</strong>"
 msgid "<strong>Total:</strong>"
 msgstr "<strong>총:</strong>"
 
-#: pages/hotels_details.vue
-msgid ""
-"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
-"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
-"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
-"stroke-linejoin=\"round\">\n"
-"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
-"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
-"\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\tGo Back"
-msgstr ""
-"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
-"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
-"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
-"stroke-linejoin=\"round\">\n"
-"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
-"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
-"\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\t되돌아가기"
-
 #: email_notifications/index.html
 msgid ""
 "| Page: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
@@ -2084,8 +2086,22 @@ msgstr ""
 "| 페이지: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
 
 #: pages/hotels_details.vue
+msgid "${{ calculatePricePerNight(hotelAviability.sellingRate) }} per night"
+msgstr ""
+
+#: pages/hotels_details.vue
+msgid "${{ calculatePricePerNight(rate.sellingRate) }} per night"
+msgstr ""
+
+#: pages/hotels_details.vue
 msgid "${{ cancellation.amount }} For cancellations made after"
 msgstr "${{ cancellation.amount }} 이후 취소의 경우"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+msgid "${{ rate.sellingRate }} per {{ searchParameters.nights }} nights"
+msgstr "{{ searchParameters.nights }} 박당 ${{ roomRate.sellingRate }}"
 
 #: pages/hotels_booking.vue
 msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
@@ -2237,7 +2253,9 @@ msgstr "1. 정의"
 msgid ""
 "1. Review how many Reward Points you have received in total since you began "
 "your inCruises Membership."
-msgstr "1. inCruises 멤버십을 시작한 이후 얼마나 많은 리워드 포인트를 받았는지 검토하십시오."
+msgstr ""
+"1. inCruises 멤버십을 시작한 이후 얼마나 많은 리워드 포인트를 받았는지 검토하"
+"십시오."
 
 #: pages/global_convention.vue
 msgid "100,000+ Global Attendees"
@@ -2304,7 +2322,9 @@ msgstr ""
 msgid ""
 "3. Subtract the number of Reward Points you have already used towards "
 "previous reservations from the maximum total found in step 2."
-msgstr "3. 2 단계에서 찾은 최대 합계에서 이전 예약에 이미 사용한 리워드 포인트를 뺍니다."
+msgstr ""
+"3. 2 단계에서 찾은 최대 합계에서 이전 예약에 이미 사용한 리워드 포인트를 뺍니"
+"다."
 
 #: agreements/national_director_agreement.html
 msgid "3. Term of Addendum."
@@ -2402,7 +2422,9 @@ msgstr ""
 msgid ""
 "A member added to this booking has a pending invoice. The type of booking is "
 "locked to Max Amount."
-msgstr "이 예약에 추가된 멤버에게는 보류 중인 청구서가 있습니다. 예약 유형은 최대 금액으로 고정됩니다."
+msgstr ""
+"이 예약에 추가된 멤버에게는 보류 중인 청구서가 있습니다. 예약 유형은 최대 금"
+"액으로 고정됩니다."
 
 #: components/public/Faq.vue
 msgid ""
@@ -2454,6 +2476,10 @@ msgstr ""
 "에 명시된 대로 내셔널 디렉터의 모든 요구 사항을 만족하면 파트너는 내셔널 디렉"
 "터로 승급합니다. 이와 같이, 파트너는 첫 달에 내셔널 디렉터로서 이 두 가지 요"
 "구 사항을 모두 충족해야 합니다."
+
+#: pages/hotels_details.vue
+msgid "About {{ hotel.name.content }}"
+msgstr ""
 
 #: components/public/FooterLinks.vue pages/public/about.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
@@ -2568,14 +2594,6 @@ msgstr ""
 "적절한 광고를 하면, inCruises는 본인의 파트너 계약을 해지 할 수 있으며, 행동"
 "에 직접적인 결과로 향후 모든 보상을 잃게 됩니다."
 
-#: components/public/Faq.vue
-msgid ""
-"Additionally, Members that are also Partners, can speed up the progressive 4 "
-"year increase to 100% of Cruise Dollar usage by:"
-msgstr ""
-"추가로, 파트너이기도 한 멤버은 크루즈 달러를 만 4 년이 되면 100 %까지 점진적"
-"으로 사용가능합니다:"
-
 #: components/info-reminder.vue pages/additional_info.vue
 #: pages/convention_manager.vue pages/settings.vue
 #: components/checkout/ItalianStep.vue compensation/index.html
@@ -2631,26 +2649,13 @@ msgstr "성인들"
 msgid "Adults:"
 msgstr "성인:"
 
-#: components/public/Faq.vue
-msgid ""
-"Advancing to our Marketing Director Leadership Rank. To learn more about our "
-"Partnership opportunity and our Leadership Ranks, please review our "
-"Partnership page."
-msgstr ""
-"마케팅 디렉터 직급으로 승급됩니다. 파트너쉽 기회와 리더쉽 직급에 대한 자세한 "
-"내용은 파트너쉽 페이지를 확인하십시오."
-
-#: components/public/Faq.vue
-msgid ""
-"After making 49 Membership payments, the percentage of Reward Points that "
-"can be used to book cruises increases to 100%, per cruise."
-msgstr "멤버십 비용을 49회 지불한 뒤부터, 크루즈 예약에 쓸 수 있는 리워드 포인트의 비율이 각 크루즈 당 100%까지 증가됩니다."
-
 #: cruising_dollars/index.html
 msgid ""
 "After making 49 Membership payments, the percentage of Reward Points that "
 "can be used to book cruises increases to 100%."
-msgstr "멤버십 비용을 49회 지불한 뒤부터, 크루즈 예약에 쓸 수 리워드 포인트의 비율이 100%까지 증가됩니다."
+msgstr ""
+"멤버십 비용을 49회 지불한 뒤부터, 크루즈 예약에 쓸 수 리워드 포인트의 비율이 "
+"100%까지 증가됩니다."
 
 #: receipts/hotel_booking_receipt.html
 msgid "Agency Reference"
@@ -2795,28 +2800,20 @@ msgid ""
 "Marketing Directors or above OR have been Membership FREE for at least 3 "
 "months can use 100% of their Reward Points®."
 msgstr ""
-"마케팅 디렉터 이상의 직급을 달성한 파트너 멤버 또는 3 개월 이상 무료 멤버십을 유지한 파트너 멤버는 리워드 포인트®를 100 % "
-"사용할 수 있습니다."
+"마케팅 디렉터 이상의 직급을 달성한 파트너 멤버 또는 3 개월 이상 무료 멤버십"
+"을 유지한 파트너 멤버는 리워드 포인트®를 100 % 사용할 수 있습니다."
 
 #: components/public/Faq.vue
-msgid ""
-"Although many of our Partners are also Members, it is not mandatory. It is "
-"possible to be a Partner, a Member, or both, what we call a “Partner "
-"Member.” Experiencing the value and personal use of our membership product "
-"helps you promote our genuine service to others."
+msgid "Although many of our Partners are also Members, it is not mandatory. \n"
 msgstr ""
-"많은 파트너멤버들이 멤버이기도 하지만 반드시 멤버는 않습니다. 의무사항은 아닙"
-"니다. 파트너이거나, 멤버일 수도 있고, \"파트너이자 멤버\" 일 수도 있습니다. "
-"멤버의 가치에 대한 개인적인 경험은, 다른 사람들에게 인크루즈의 진정한 서비스"
-"를 홍보하는 데 도움이 됩니다."
 
 #: controllers/compensation.js
 msgid "Ambassador Board of Directors Bonus"
 msgstr "앰배서더 보드 오브 디렉터 보너스"
 
-#: pages/growth_calculator.vue pages/invoices.vue pages/welcome.vue
-#: components/payout/wallet-transfers.vue compensation/index.html
-#: negative_balances/index.html pay_bonus/index.html
+#: pages/growth_calculator.vue pages/hotels_booking.vue pages/invoices.vue
+#: pages/welcome.vue components/payout/wallet-transfers.vue
+#: compensation/index.html negative_balances/index.html pay_bonus/index.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -2861,13 +2858,21 @@ msgstr ""
 "팀에 문의하십시오"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "An inCruises Member is someone who purchases a membership to save money "
+#| "on booking cruises and travel the world in comfort and style. Partners "
+#| "join our Independent Partner Program (IBP) to promote and earn "
+#| "commissions, bonuses and other incentives by referring others who "
+#| "purchase memberships. We call Partners who are also Members \"Partner "
+#| "Members\". So each time we mention Members, know that also includes "
+#| "\"Partner Members\"."
 msgid ""
 "An inCruises Member is someone who purchases a membership to save money on "
-"booking cruises and travel the world in comfort and style. Partners join our "
-"Independent Partner Program (IBP) to promote and earn commissions, bonuses "
-"and other incentives by referring others who purchase memberships. We call "
-"Partners who are also Members \"Partner Members\". So each time we mention "
-"Members, know that also includes \"Partner Members\"."
+"travel and see the world in comfort and style. Partners join our Independent "
+"Partner Program to promote and earn commissions, bonuses and other "
+"incentives by referring others who purchase memberships. We call Partners "
+"who are also Members \"Partner Members\"."
 msgstr ""
 "inCruises 멤버는 크루즈 예약 경비를 절약하고 편안한 스타일로 전 세계를 여행하"
 "기 위해 멤버십을 구매한 분입니다. 파트너는  독립 파트너 프로그램 (IBP)에 가입"
@@ -3002,16 +3007,16 @@ msgid "Are cruises considered business expenses for inCruises Partners?"
 msgstr "크루즈 경비는 inCruises 파트너의 비즈니스 비용으로 간주됩니까?"
 
 #: components/public/Faq.vue
-msgid ""
-"Are Reward Points considered taxable income due to the 200 Reward Points for "
-"every $100 USD paid in Membership dues?"
-msgstr "$100 USD로 200 리워드 포인트를 교환하는데 대해 리워드 포인트를 과세 소득으로 간주합니까?"
-
-#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Are the Reward Points applicable to just one passenger, or the total cost "
+#| "of the booking for all passengers in the cabin?"
 msgid ""
 "Are the Reward Points applicable to just one passenger, or the total cost of "
-"the booking for all passengers in the cabin?"
-msgstr "리워드 포인트는 한 분의 승객만 이용할 수 있습니까? 아니면 모든 승객의 예약 비용으로 쓸 수 있습니까?"
+"the booking for all passengers on the same reservation?"
+msgstr ""
+"리워드 포인트는 한 분의 승객만 이용할 수 있습니까? 아니면 모든 승객의 예약 비"
+"용으로 쓸 수 있습니까?"
 
 #: components/public/Faq.vue
 msgid "Are the Reward Points transferable to another person?"
@@ -3225,9 +3230,14 @@ msgstr ""
 "려줍니다!"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "At the moment we offer over 5,000 cruises departing from just about every "
+#| "port city in the world."
 msgid ""
 "At the moment we offer over 5,000 cruises departing from just about every "
-"port city in the world."
+"port city in the world. There are also thousands of hotel and resort options "
+"available."
 msgstr ""
 "현재 당사는 세계의 거의 모든 항구 도시에서 출발하는 5,000 개 이상의 크루즈를 "
 "제공하고 있습니다."
@@ -3239,8 +3249,10 @@ msgid ""
 "Chrome. Safari, Firefox, Internet Explorer all work well to pay with Credit "
 "Cards and PayPal. Thank you and sorry for the inconvenience."
 msgstr ""
-"현재 엣지 브라우저에서는 신용카드로 결제할 수 없습니다. 페이팔로 결제하거나 다른 브라우저를 사용하여 로그인하십시오. 크롬. 사파리, "
-"파이어팍스, 인터넷 익스플로러를 추천합니다. 신용 카드 또는 페이팔 결제에 문제가 없습니다. 불편을 끼쳐 드려 죄송합니다."
+"현재 엣지 브라우저에서는 신용카드로 결제할 수 없습니다. 페이팔로 결제하거나 "
+"다른 브라우저를 사용하여 로그인하십시오. 크롬. 사파리, 파이어팍스, 인터넷 익"
+"스플로러를 추천합니다. 신용 카드 또는 페이팔 결제에 문제가 없습니다. 불편을 "
+"끼쳐 드려 죄송합니다."
 
 #: pages/growth_calculator.vue
 msgid ""
@@ -3273,16 +3285,18 @@ msgid "Available Balance:"
 msgstr "인출 가능 잔액:"
 
 #: cruising_dollars/index.html
-msgid "Available Cruise Dollar Balance"
-msgstr "예약에 쓸 수 있는 크루즈 달러 잔액"
-
-#: cruising_dollars/index.html
 msgid "Available Incentive Balance"
 msgstr "사용 가능한 인센티브 잔액"
 
 #: reach/index.html
 msgid "Available Invitations"
 msgstr "이용가능한 가입안내"
+
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid "Reward Points Balance"
+msgid "Available Reward Points Balance"
+msgstr "리워드 포인트 잔액"
 
 #: pages/reward_points.vue
 msgid "Available Rewards"
@@ -3409,15 +3423,6 @@ msgid ""
 msgstr ""
 "inCruises의 멤버가 되어서,  5,500개 이상의 전세계 여정들을 이용할 수 있는 특"
 "별한 멤버십 혜택을 누리십시오."
-
-#: components/public/Faq.vue
-msgid ""
-"Becoming Membership FREE (referring and maintaining 5 active Members) for "
-"three consecutive months after their initial activation payment or "
-"reactivation payment."
-msgstr ""
-"초기 활성화 지불 또는 재활성화 지불 후 3 개월 연속 무료 멤버 되기 (5 명의 활"
-"성화 멤버 추천 및 유지)."
 
 #: pages/public/leadership.vue
 msgid "Began career working with Primerica, then a Member of Citigroup"
@@ -3574,6 +3579,12 @@ msgstr "자신의 책임하에 예약하고 크루즈를 가십시오"
 #: pages/cruise.vue
 msgid "Book Cruise"
 msgstr "크루즈를 예약하십시오"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Book Now"
+msgid "Book now"
+msgstr "지금 예약하기"
 
 #: components/costa-banner.vue
 msgid "Book Now"
@@ -3845,8 +3856,12 @@ msgid "California registration number"
 msgstr "캘리포니아주 등록 번호"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Can a Partners inCruises business be transferred to someone else if the "
+#| "Partner passes away?"
 msgid ""
-"Can a Partners inCruises business be transferred to someone else if the "
+"Can a Partner’s inCruises business be transferred to someone else if the "
 "Partner passes away?"
 msgstr ""
 "파트너가 사망한 경우 파트너의 inCruises 사업을 다른 사람에게 양도할 수 있습니"
@@ -3857,17 +3872,15 @@ msgid "Can I be successful selling online only?"
 msgstr "온라인에서만 성공적으로 판매 할 수 있습니까?"
 
 #: components/public/Faq.vue
-msgid ""
-"Can I book a cruise using my Reward Points and then change the name on the "
-"reservation?"
-msgstr "리워드 포인트를 사용하여 크루즈를 예약한 다음, 예약자의 이름을 변경할 수 있습니까?"
-
-#: components/public/Faq.vue
-msgid "Can I change the name on an account?"
+#, fuzzy
+#| msgid "Can I change the name on an account?"
+msgid "Can I change the name on an account"
 msgstr "계정의 이름을 변경할 수 있습니까?"
 
 #: components/public/Faq.vue
-msgid "Can I contribute more than $100 month toward the membership?"
+#, fuzzy
+#| msgid "Can I contribute more than $100 month toward the membership?"
+msgid "Can I contribute more than $100 USD per month toward the Membership?"
 msgstr "한 달에 멤버십 비용으로 100 달러 이상을 지불할 수 있습니까?"
 
 #: components/public/Faq.vue
@@ -3891,8 +3904,28 @@ msgstr ""
 "니어에서 사업체로 지불받을 수 있습니까?"
 
 #: components/public/Faq.vue
-msgid "Can I gift a Membership to others?"
-msgstr "멤버십 자격을 다른 사람에게 선물할 수 있습니까?"
+#, fuzzy
+#| msgid ""
+#| "When can you book or reserve a cruise prior to accumulating all the "
+#| "needed Reward Points and then finalize the booking later?"
+msgid ""
+"Can I make a cruise reservation prior to accumulating all the needed Reward "
+"Points and then finalize the booking later?"
+msgstr ""
+"필요한 리워드 포인트를 모두 적립하기 전에 크루즈를 먼저 예약하고 나중에 예약"
+"을 마무리지을 수 있는 때는 언제입니까?"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Can I book a cruise using my Reward Points and then change the name on "
+#| "the reservation?"
+msgid ""
+"Can I make a reservation using my Reward Points and then change the name on "
+"the reservation?"
+msgstr ""
+"리워드 포인트를 사용하여 크루즈를 예약한 다음, 예약자의 이름을 변경할 수 있습"
+"니까?"
 
 #: pages/account_setup.vue
 msgid "Can only be between 1 and 20 characters long."
@@ -3952,6 +3985,12 @@ msgstr "파워툴 다운그레이드 취소"
 #: power_tools_upgrade/index.html
 msgid "Cancel your Power Tools Subscription"
 msgstr "파워 툴 구독 취소"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Cancellation Policy"
+msgid "Cancellation Policies"
+msgstr "취소 정책"
 
 #: receipts/booking_receipt.html
 msgid "Cancellation Policy"
@@ -4134,6 +4173,12 @@ msgstr "다른 범주 선택"
 msgid "Choose Different Payment Method"
 msgstr "다른 지불 방법 선택"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Choose Different Category"
+msgid "Choose Different Room"
+msgstr "다른 범주 선택"
+
 #: pages/additional_info.vue
 msgid "Choose Identification Type"
 msgstr "신분증명 종류 선택"
@@ -4141,6 +4186,12 @@ msgstr "신분증명 종류 선택"
 #: pages/checkout.vue
 msgid "Choose Payment Type"
 msgstr "지불 종류"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Choose"
+msgid "Choose room"
+msgstr "선택하십시오"
 
 #: components/checkout/CurrencyStep.vue components/checkout/ProcessorTmt.vue
 msgid "Choose your currency"
@@ -4211,27 +4262,33 @@ msgstr "크루즈 선사를 선택하려면 여기를 클릭하십시오"
 msgid "Click here to filter nights"
 msgstr "숙박일수를 선택하려면 여기를 클릭하십시오"
 
-#: pages/reward_points.vue
-msgid ""
-"Click here to learn more about our Membership and how you can use your "
-"Cruise Dollars (Cruise Credits) to book Global Cruises."
-msgstr ""
-"멤버십 자격에 대한 자세한 내용과 크루즈 달러 (크루즈 크레디트)를 사용하여 글"
-"로벌 크루즈를 예약하는 방법을 보려면 여기를 클릭하십시오."
-
 #: cruising_dollars/index.html
 msgid ""
 "Click here to learn more about our Membership and how you can use your "
 "Reward Points (Reward Points) to book Global Cruises."
 msgstr ""
-"멤버십 자격에 대한 자세한 내용과 리워드 포인트(리워드 포인트)를 사용하여 글로벌 크루즈를 예약하는 방법을 보려면 여기를 클릭하십시오."
+"멤버십 자격에 대한 자세한 내용과 리워드 포인트(리워드 포인트)를 사용하여 글로"
+"벌 크루즈를 예약하는 방법을 보려면 여기를 클릭하십시오."
 
 #: menu_page/index.html
 msgid ""
 "Click here to learn more about our Membership and how you can use your "
 "Reward Points® (Reward Points) to book Global Cruises."
 msgstr ""
-"멤버십 자격에 대한 자세한 내용과 리워드 포인트® (리워드 포인트)를 사용하여 글로벌 크루즈를 예약하는 방법을 보려면 여기를 클릭하십시오."
+"멤버십 자격에 대한 자세한 내용과 리워드 포인트® (리워드 포인트)를 사용하여 글"
+"로벌 크루즈를 예약하는 방법을 보려면 여기를 클릭하십시오."
+
+#: pages/reward_points.vue
+#, fuzzy
+#| msgid ""
+#| "Click here to learn more about our Membership and how you can use your "
+#| "Reward Points (Reward Points) to book Global Cruises."
+msgid ""
+"Click here to learn more about our Membership and how you can use your "
+"Reward Pointss (Reward Points) to book Global Cruises."
+msgstr ""
+"멤버십 자격에 대한 자세한 내용과 리워드 포인트(리워드 포인트)를 사용하여 글로"
+"벌 크루즈를 예약하는 방법을 보려면 여기를 클릭하십시오."
 
 #: info_center/index.html
 msgid "Click here to see all Rank Achievement levels."
@@ -4533,6 +4590,12 @@ msgstr "진행"
 msgid "Continue Payment Below"
 msgstr "아래에서 결제 계속 지불 하십시오"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Hotel Booking"
+msgid "Continue to Booking"
+msgstr "호텔 예약"
+
 #: components/checkout/CurrencyStep.vue components/checkout/ItalianStep.vue
 #: components/checkout/ProcessorTmt.vue
 msgid "Continue with Payment"
@@ -4663,8 +4726,8 @@ msgstr "생성 날짜"
 msgid "Credit or debit card"
 msgstr "신용 또는 직불 카드"
 
-#: pages/public/about.vue pages/public/biz.vue pages/public/index.vue
-#: pages/public/mission.vue pages/public/partnership.vue
+#: pages/public/about.vue pages/public/biz.vue pages/public/mission.vue
+#: pages/public/partnership.vue
 msgid "CRUISE"
 msgstr "크루즈 여행"
 
@@ -4675,10 +4738,6 @@ msgstr "크루즈 브로셔"
 #: receipts/booking_receipt.html
 msgid "Cruise Confirmation"
 msgstr "크루즈 확정"
-
-#: pages/welcome.vue
-msgid "Cruise Credits:"
-msgstr "크루즈 크레디트:"
 
 #: pages/book.vue
 msgid "Cruise Destination:"
@@ -5400,53 +5459,37 @@ msgstr ""
 "듀플리케이터는 스마트폰 및 태블릿 PC, 모든 운영시스템의 PC에서 사용할 수 있습"
 "니다."
 
-#: components/public/Faq.vue
-msgid ""
-"During the 13th to the 24th Membership payment, the percentage of Reward "
-"Points that can be used to book cruises increases to 70%, per cruise."
-msgstr "13 회차에서 24 회차 멤버십 납부기간 동안, 적립된 리워드 포인트의 70 %까지 크루즈 예약에 사용할 수 있습니다."
-
 #: cruising_dollars/index.html
 msgid ""
 "During the 13th to the 24th Membership payment, the percentage of Reward "
 "Points that can be used to book cruises increases to 70%."
-msgstr "13 회차에서 24 회차 멤버십 납부기간 동안, 적립된 크루즈 크레디트의 70 %까지 크루즈 예약에 사용할 수 있습니다."
-
-#: components/public/Faq.vue
-msgid ""
-"During the 25th to the 36th Membership payment, the percentage of Reward "
-"Points that can be used to book cruises increases to 80%, per cruise."
-msgstr "25 회차에서 36 회차 멤버십 납부기간 동안, 크루즈당 적립된 리워드 포인트의 80 %까지 사용할 수 있습니다."
+msgstr ""
+"13 회차에서 24 회차 멤버십 납부기간 동안, 적립된 크루즈 크레디트의 70 %까지 "
+"크루즈 예약에 사용할 수 있습니다."
 
 #: cruising_dollars/index.html
 msgid ""
 "During the 25th to the 36th Membership payment, the percentage of Reward "
 "Points that can be used to book cruises increases to 80%."
-msgstr "25 회차에서 36 회차 멤버십 납부기간 동안, 적립된 리워드 포인트의 80 %까지 크루즈 예약에 사용할 수 있습니다."
-
-#: components/public/Faq.vue
-msgid ""
-"During the 37th to the 48th Membership payment, the percentage of Reward "
-"Points that can be used to book cruises increases to 90%, per cruise."
-msgstr "37 회차에서 48 회차 멤버십 납부기간 동안, 크루즈당 적립된 리워드 포인트의 90 %까지 사용할 수 있습니다."
+msgstr ""
+"25 회차에서 36 회차 멤버십 납부기간 동안, 적립된 리워드 포인트의 80 %까지 크"
+"루즈 예약에 사용할 수 있습니다."
 
 #: cruising_dollars/index.html
 msgid ""
 "During the 37th to the 48th Membership payment, the percentage of Reward "
 "Points that can be used to book cruises increases to 90%."
-msgstr "37 회차에서 48 회차 멤버십 납부기간 동안, 적립된 리워드 포인트의 90 %까지 크루즈 예약에 사용할 수 있습니다."
-
-#: components/public/Faq.vue
-msgid ""
-"During the first 12 Membership payments, Members can use up to 60% of their "
-"Reward Points, per cruise."
-msgstr "등록 후 12 회차 멤버십 납부기간 동안에는, 크루즈당 적립된 리워드 포인트의 60% 까지 사용할 수 있습니다."
+msgstr ""
+"37 회차에서 48 회차 멤버십 납부기간 동안, 적립된 리워드 포인트의 90 %까지 크"
+"루즈 예약에 사용할 수 있습니다."
 
 #: cruising_dollars/index.html
 msgid ""
 "During the first 12 Membership payments, Members can use up to 60% of their "
 "Reward Points."
-msgstr "등록 후 12 회차 멤버십 납부기간 동안, 적립된 리워드 포인트의 60% 까지 크루즈 예약에 사용할 수 있습니다."
+msgstr ""
+"등록 후 12 회차 멤버십 납부기간 동안, 적립된 리워드 포인트의 60% 까지 크루즈 "
+"예약에 사용할 수 있습니다."
 
 #: agreements/national_director_agreement.html
 msgid ""
@@ -5593,6 +5636,12 @@ msgstr "사용 가능한 보상"
 #: Menu
 msgid "Email"
 msgstr "이메일"
+
+#: pages/hotels_booking.vue
+msgid ""
+"Email\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+msgstr ""
 
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
@@ -5919,6 +5968,18 @@ msgstr "완료"
 msgid "First Name"
 msgstr "이름"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid ""
+#| "<span style=\"color:red\">*</span>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
+msgid ""
+"First Name\n"
+"\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
+msgstr ""
+"<span style=\"color: red\">*</span>\n"
+"\t\t\t\t\t\t\t     도시"
+
 #: pages/admin_support_analytics.vue
 msgid "First Response"
 msgstr "첫 응답"
@@ -5948,7 +6009,11 @@ msgid "for {{ daysApart }} nights"
 msgstr "{{ daysApart }} 박"
 
 #: components/public/Faq.vue
-msgid "For each $100 USD payment, our Members receive 200 Reward Points."
+#, fuzzy
+#| msgid "For each $100 USD payment, our Members receive 200 Reward Points."
+msgid ""
+"For each $100 USD monthly Membership fee payment, our Members receive 200 "
+"Reward Points."
 msgstr "$ 100 USD 가 지불될 때마다 멤버는 200 리워드 포인트를 지급받습니다."
 
 #: pages/public/about.vue pages/public/biz.vue pages/public/index.vue
@@ -6120,8 +6185,8 @@ msgstr ""
 "시작:\n"
 "\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ from }}</span>"
 
-#: pages/invite.vue cards/index.html compensation/index.html
-#: certificates/index.html certificates/view.html import/index.html
+#: pages/invite.vue cards/index.html certificates/index.html
+#: certificates/view.html compensation/index.html import/index.html
 msgid "Full Name"
 msgstr "성명"
 
@@ -6222,8 +6287,8 @@ msgstr "글로벌 서밋 발자취"
 msgid "Go back"
 msgstr "뒤로 돌아가기"
 
-#: pages/booking.vue pages/italian_onboarding.vue pages/login/login.vue
-#: pay_bonus/index.html
+#: pages/booking.vue pages/hotels_details.vue pages/italian_onboarding.vue
+#: pages/login/login.vue pay_bonus/index.html
 msgid "Go Back"
 msgstr "뒤로 돌아가기"
 
@@ -6398,40 +6463,46 @@ msgid "How can I be successful?"
 msgstr "어떻게 성공할 수 있습니까?"
 
 #: components/public/Faq.vue
-msgid "How can I use my Reward Points?"
+#, fuzzy
+#| msgid "How can I use my Reward Points?"
+msgid "How can I use my Reward Points ?"
 msgstr "리워드 포인트를 어떻게 사용할 수 있습니까?"
 
 #: components/public/Faq.vue
 msgid "How can inCruises afford to offer 2 Reward Points for every $1 paid?"
-msgstr "inCruises는 $1가 지불될 때마다 2 리워드 포인트를 제공할 수 있는 비결은 무엇입니까?"
+msgstr ""
+"inCruises는 $1가 지불될 때마다 2 리워드 포인트를 제공할 수 있는 비결은 무엇입"
+"니까?"
 
 #: pages/global_summit_tracking.vue
 msgid "How do I earn points?"
 msgstr "점수를 받는 방법은?"
 
 #: components/public/Faq.vue
-msgid "How do I get booked on a cruise on your site?"
-msgstr "귀사의 사이트에서 크루즈를 예약하려면 어떻게 해야합니까?"
-
-#: components/public/Faq.vue
 msgid "How do I receive my compensation?"
 msgstr "보상은 어떻게 받습니까?"
 
 #: components/public/Faq.vue
-msgid "How easily can I cancel my Membership?"
+#, fuzzy
+#| msgid "How easily can I cancel my Membership?"
+msgid "How easily can I cancel my Membership"
 msgstr "멤버십을 취소하는 간단한 방법은 무엇입니까?"
 
 #: components/public/Faq.vue
-msgid "How many cruises can we take in one year?"
+#, fuzzy
+#| msgid "How many cruises can we take in one year?"
+msgid "How many cruises can a Member book per year?"
 msgstr "1 년동안 크루즈 여행을 몇 번 갈 수 있습니까?"
 
 #: components/public/Faq.vue
-msgid "How many Global Cruises are there available on the site?"
+#, fuzzy
+#| msgid "How many Global Cruises are there available on the site?"
+msgid "How many Global Cruises and Hotels are there available on the site?"
 msgstr "이 사이트에는 몇 개의 글로벌 크루즈가  있습니까?"
 
 #: components/public/Faq.vue
-msgid "How many Reward Points can I use per cruise?"
-msgstr "각 크루즈 당 몇 리워드 포인트를 사용할 수 있습니까?"
+msgid "How many hotel or resort stays can a Member book each year?"
+msgstr ""
 
 #: components/info-reminder.vue
 msgid "How many total cruises have you done?"
@@ -6458,7 +6529,11 @@ msgid "How old do you have to be to be a Member of inCruises?"
 msgstr "inCruises의 멤버가 되는데 나이 제한이 있습니까?"
 
 #: components/public/Faq.vue
-msgid "How quickly can I book a cruise after becoming a Member?"
+#, fuzzy
+#| msgid "How quickly can I book a cruise after becoming a Member?"
+msgid ""
+"How quickly can I book a cruise, hotel or resort stay after becoming a "
+"Member?"
 msgstr "멤버가 된 후, 최소 몇 일이 지나면 크루즈를 예약할 수 있습니까?"
 
 #: Courses
@@ -6787,8 +6862,9 @@ msgid ""
 "awarded Reward Points and Reward Points earned via our Free Membership "
 "program."
 msgstr ""
-"그룹 크루즈를 홍보하거나 부적절한 광고 주장을하거나 이 계약 / 약속을 준수하지 않으면 무료 멤버십 프로그램을 통해 획득한 모든 리워드 "
-"포인트를 잃을 수 있음에 동의합니다."
+"그룹 크루즈를 홍보하거나 부적절한 광고 주장을하거나 이 계약 / 약속을 준수하"
+"지 않으면 무료 멤버십 프로그램을 통해 획득한 모든 리워드 포인트를 잃을 수 있"
+"음에 동의합니다."
 
 #: components/covid-disclaimer-reminder.vue
 msgid ""
@@ -6865,8 +6941,9 @@ msgid ""
 "accumulate their Reward Points and then book a cruise that’s available on "
 "our website."
 msgstr ""
-"누군가에게 특정 크루즈를 타기 위해 본인의 멤버십 자격을 판매하지 않겠습니다. 본인은 모든 멤버들과 잠재적인 멤버들에게 먼저 리워드 "
-"포인트를 적립하고 저희 웹 사이트에서 제공되는 크루즈를 예약해야 한다고 분명히 말씀드렸습니다."
+"누군가에게 특정 크루즈를 타기 위해 본인의 멤버십 자격을 판매하지 않겠습니다. "
+"본인은 모든 멤버들과 잠재적인 멤버들에게 먼저 리워드 포인트를 적립하고 저희 "
+"웹 사이트에서 제공되는 크루즈를 예약해야 한다고 분명히 말씀드렸습니다."
 
 #: components/booking/agreements.vue
 msgid ""
@@ -7006,31 +7083,16 @@ msgid "Identification"
 msgstr "신분 증명"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If a couple are both inCruises Members, can they combine their Reward "
+#| "Points on one cruise booking?"
 msgid ""
 "If a couple are both inCruises Members, can they combine their Reward Points "
-"on one cruise booking?"
-msgstr "한 커플이 둘 다 inCruises 멤버인 경우, 동일한 크루즈 예약에서 리워드 포인트를 결합하여 사용할 수 있습니까?"
-
-#: components/public/Faq.vue
-msgid ""
-"If a Member wants to change the name of the passengers on any cruise booked "
-"through our Website for which Reward Points were deducted to book the "
-"cruise, the new person must also be an active paying Member and have enough "
-"Reward Points to process the name change requested. In the event the name "
-"change involves removing from the reservation someone who used their Reward "
-"Points to book the stateroom with someone who is not an active paying Member "
-"or is a Member who does not have enough Reward Points to make the exchange, "
-"then the only available possibility to execute the name change, is for "
-"inCruises to refund the Reward Points from the Member being removed, adding "
-"those Reward Points back to their account and charging the new person taking "
-"their place the entire amount by credit card or any payment method allowed "
-"by inCruises. Member agrees that certain name change fees may also apply."
+"for a reservation?"
 msgstr ""
-"리워드 포인트를 사용해 당사 웹사이트를 통해 크루즈를 예약한 멤버가 승객의 명의를 변경하고자하는 경우, 새로운 승객이 유효 멤버로 크루즈 "
-"예약에 충분한 리워드 포인트가 적립되어 있는 경우에만 명의 변경을 요청할 수 있습니다. 리워드 포인트로 객실을 예약한 사람이 유효 멤버가 "
-"아니거나, 변경을 하기에 충분한 리워드 포인트가 없는 경우, 유일한 명의 변경 방법은, 취소하는 멤버의 리워드 포인트를 환불하여 해당 "
-"멤버의 계정에 다시 리워드 포인트를 적립하고, 신규로 교체되는 분이 신용 카드나 inCruises에서 허용하는 지불수단으로 예약 총 "
-"가격을 지불하는 것입니다. 멤버는 명의변경 수수료가 적용될 수 있음에 동의합니다."
+"한 커플이 둘 다 inCruises 멤버인 경우, 동일한 크루즈 예약에서 리워드 포인트"
+"를 결합하여 사용할 수 있습니까?"
 
 #: pages/italian_onboarding.vue
 msgid ""
@@ -7058,13 +7120,20 @@ msgid "If I am a Member, do I also have to be a Partner?"
 msgstr "본인이 멤버인 경우, 뱐드시 파트너도 되어야 합니까?"
 
 #: components/public/Faq.vue
-msgid "If I want a cabin to myself, traveling alone, do I have to pay more?"
+#, fuzzy
+#| msgid "If I want a cabin to myself, traveling alone, do I have to pay more?"
+msgid "If I want a cabin to myself do I have to pay more?"
 msgstr "만약 제가 혼자 여행해서 혼자만의 객실을 원한다면, 더 지불해야합니까?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If someone wants to become an inCruises member, they will pay a monthly "
+#| "membership fee of $100 USD."
 msgid ""
-"If someone wants to become an inCruises member, they will pay a monthly "
-"membership fee of $100 USD."
+"If someone wants to become an inCruises Member, they will pay a one time "
+"Activation Fee of $100 USD plus their first monthly Membership fee of $100 "
+"USD."
 msgstr ""
 "누군가가 inCruises 멤버가 되길 원하면, 월간 멤버십 회비로  $ 100 USD를 지불하"
 "게됩니다."
@@ -7094,19 +7163,6 @@ msgstr ""
 "직접 은행 결제를 선택한 경우 몇 분에서 몇 시간이 걸릴 수 있습니다. 결제가 완"
 "료되면 알려드리겠습니다."
 
-#: components/public/Faq.vue
-msgid ""
-"If you discontinue being a member, we will give you up to 1 year to "
-"reactivate your account. To reactivate your account, you will need to pay "
-"each Membership month you missed. You will still earn double Reward Points "
-"for each month you pay to reactivate your account, and those Reward Points "
-"will be added to your previous balance. After 12 months of inactivity, your "
-"account is closed and your Reward Points expire and are forfeited."
-msgstr ""
-"멤버십 비용 지불이 중단되면, 귀하의 계정을 재활성화할 수 있는 기간은 최대 1년까지입니다. 계정을 재활성화하려면,  미지불된 달들에 "
-"대한 멤버십 비용을 지불해야 합니다. 계정재활성화를 위해 지불된 금액은 두 배의 리워드 포인트로 이전 잔액에 누적하여 적립됩니다. "
-"비활성화된 지 12 개월 이후에는, 계정은 폐쇄되며 리워드 포인트는 만료되고 몰수됩니다."
-
 #: components/confirm-recurring.vue
 msgid ""
 "If you do not wish to update your info then you must delete your recurring "
@@ -7133,12 +7189,11 @@ msgstr "크루즈 여행을 하신 경험이 있으시다면 다음 두 질문�
 
 #: components/public/Faq.vue
 msgid ""
-"If you miss a Membership payment, your account will be considered inactive, "
-"and you will not be able to book any cruises or access our site, except to "
-"reactivate your account."
+"If you miss more than 3 monthly payments in a row your (2 for 1) Reward "
+"Points will convert to ( 1 for 1) Reward Points. You can reactivate your "
+"account at any time and start earning (2 for 1) Reward Points again simply "
+"by paying a $100 activation fee and a $100 Monthly Membership payment."
 msgstr ""
-"멤버십 비용이 지불되지 경우, 귀하의 계정은 비활성으로 간주되어, 귀하의 계정 "
-"재활성화만 가능하며, 크루즈 예약이나 당사 사이트 접속이 불가능합니다."
 
 #: upgrade/index.html
 msgid ""
@@ -7433,6 +7488,12 @@ msgstr "인센티브 리워드 포인트 잔액"
 msgid "Include"
 msgstr "포함"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Building Wide and Deep"
+msgid "Including taxes and fees"
+msgstr "넓고 깊은 비즈니스 구축"
+
 #: controllers/income_disclosure.js
 msgid "Income Disclosure"
 msgstr "소득 공개"
@@ -7510,19 +7571,6 @@ msgstr "inCruises 생방송"
 msgid "Incruises LLC"
 msgstr "Incruises LLC"
 
-#: components/public/Faq.vue
-msgid ""
-"InCruises Members can book any of our over 5,000 Global Cruises directly on "
-"our site, by clicking on Global Cruises on our “Cruises” menu, then "
-"following the steps all the way through the payment process. At checkout, "
-"you will be given the option to pay for your cruise using all of your "
-"available Reward Points and/or other payment methods to complete the booking "
-"process."
-msgstr ""
-"inCruises 멤버는 전세계적으로 5,000 개가 넘는 크루즈를 당사 사이트에서 직접 예약할 수 있습니다. 사이트의 \"크루즈 "
-"여행\"메뉴에서 글로벌 크루즈를 클릭한 다음, 결제 과정의 모든 단계를 따르십시오. 예약을 완료하기 위해, 결제시 이용 가능한 모든 "
-"리워드 포인트 및 / 또는 기타 방법으로 크루즈 비용에 대한 지불방법을 선택할 수 있습니다."
-
 #: components/covid-disclaimer-reminder.vue
 msgid ""
 "inCruises Members that have paid more than 30 months may be eligible for a "
@@ -7550,9 +7598,17 @@ msgid "inCruises Partner"
 msgstr "InCruises 파트너"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "inCruises pays its Partners through Payoneer®. Each time a commission is "
+#| "earned, we will transfer your earnings to yourinCruises Wallet and notify "
+#| "you. You can then transfer your wallet balance, assuming it is greater "
+#| "than $50.00, to Payoneer® in order to receive your funds via bank "
+#| "transfer to your local bank or Pre-paid Visa or MasterCard issued by "
+#| "Payoneer®"
 msgid ""
-"inCruises pays its Partners through Payoneer®. Each time a commission is "
-"earned, we will transfer your earnings to yourinCruises Wallet and notify "
+"inCruises pays its Partners through Payoneer®.  Each time a commission is "
+"earned, we will transfer your earnings to your inCruises Wallet and notify "
 "you. You can then transfer your wallet balance, assuming it is greater than "
 "$50.00, to Payoneer® in order to receive your funds via bank transfer to "
 "your local bank or Pre-paid Visa or MasterCard issued by Payoneer®"
@@ -7816,7 +7872,9 @@ msgid "is the holder of a social security pension (Retired)"
 msgstr "사회 보장 연금 보유자(은퇴자)"
 
 #: components/public/Faq.vue
-msgid "Is there a way to get a reduced or free membership?"
+#, fuzzy
+#| msgid "Is there a way to get a reduced or free membership?"
+msgid "Is there a way to get a reduced or free Membership?"
 msgstr "멤버십 가격을 낮추거나 무료로 될 수 있는 방법이 있습니까?"
 
 #: components/public/Faq.vue
@@ -7860,12 +7918,19 @@ msgstr ""
 "업그레이드해야 합니다."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "It's very easy to do so. You can do it by reaching out to us at <a "
+#| "href='https://incruises.com/support' target='_blank'>https://incruises."
+#| "com/support</a>. Each purchase made is backed by our 100% Money Back "
+#| "Guarantee for 14 days. After each payment passes its 14 day period, "
+#| "refunds are not allowed."
 msgid ""
-"It's very easy to do so. You can do it by reaching out to us at <a "
-"href='https://incruises.com/support' target='_blank'>https://incruises.com/"
-"support</a>. Each purchase made is backed by our 100% Money Back Guarantee "
-"for 14 days. After each payment passes its 14 day period, refunds are not "
-"allowed."
+"It's very easy to do so. You can do it by reaching out to us at <a href="
+"\"{{https://incruises.com/support}}\" target=\"_blank\">https://incruises."
+"com/support</a> Each purchase made is backed by our 100% Money Back "
+"Guarantee for 14 days. After each payment passes its 14 day period, refunds "
+"are not allowed."
 msgstr ""
 "방법은 매우 간단합니다, <a href='https://incruises.com/support' "
 "target='_blank'>https://incruises.com/support</a>을 통해 문의하실 수 있습니"
@@ -8048,6 +8113,12 @@ msgstr "지난 달의 리더십 보너스가 요청되었으며 지불 보류 �
 #: import/index.html
 msgid "Last Name"
 msgstr "성"
+
+#: pages/hotels_booking.vue
+msgid ""
+"Last Name\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+msgstr ""
 
 #: pages/competition.vue competition/index.html
 msgid "Last Week's Contest"
@@ -8267,13 +8338,12 @@ msgstr "더 보기"
 msgid "Location"
 msgstr "위치"
 
-#: components/blog/navbar.vue components/public/Header.vue
-#: components/payout/hyperwallet-withdraw.vue
+#: components/blog/navbar.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
-#: components/payout/payoneer-withdraw.vue pages/login/login.vue
-#: pages/public/signup.vue communications/index.html communications/view.html
-#: income_disclosure/index.html live/index.html login/index.html
-#: unsubscribe/index.html
+#: components/payout/payoneer-withdraw.vue components/public/Header.vue
+#: pages/login/login.vue pages/public/signup.vue communications/index.html
+#: communications/view.html income_disclosure/index.html live/index.html
+#: login/index.html unsubscribe/index.html
 msgid "Login"
 msgstr "로그인"
 
@@ -8444,16 +8514,6 @@ msgstr "멤버:"
 msgid "Members"
 msgstr "멤버"
 
-#: components/public/Faq.vue
-msgid ""
-"Members can book any cruise available on our Website and we will "
-"automatically use their available Reward Points® to reduce the cost in full "
-"or partially pay for the booking subject to maximum percentage amounts as "
-"described below:"
-msgstr ""
-"멤버는 당사 웹 사이트에서 제공되는 모든 글로벌 크루즈를 예약할 수 있으며, 회사는 아래에 설명된 최대 비율에 따라, 이용 가능한 리워드 "
-"포인트®를  예약 가격의 전체 또는 일부에 자동 차감합니다："
-
 #: layouts/default.html
 msgid ""
 "Members can use the balance on their inCruises wallet to pay for cruise "
@@ -8461,25 +8521,14 @@ msgid ""
 msgstr "회원은 크루즈 예약을 위해 inCruises 지갑의 잔액을 사용할 수 있습니다."
 
 #: components/public/Faq.vue
-msgid ""
-"Members must be active (no unpaid monthly invoices) to book a cruise. Once a "
-"booking is confirmed, the Member must remain as an active paying Member "
-"through the embarkation process of the cruise for which Reward Points were "
-"used to book. If a Member fails to make Monthly Membership payments after "
-"booking the cruise and before embarkation, and consequently their account "
-"goes into an Inactive status, inCruises has the right to cancel the cruise, "
-"and reimburse/refund all Reward Points and payments made for the booking. "
-"Any fees associated with the cancellation, will be the responsibility of the "
-"Member and deducted from the Member's account."
-msgstr ""
-"크루즈를 예약하려면 활성화 멤버여야 합니다 (미지급된 월별 청구서 없음). 일단 예약이 확정되면, 멤버는 리워드 포인트로 예약된 크루즈의 "
-"승선까지 활성화 멤버여야 합니다. 멤버가 크루즈를 예약한 후 승선하기 전에 월간 멤버십 비용을 지불하지 않아 계정이 비활성 상태가 되면 "
-"inCruises는 크루즈를 취소할 수 있는 권한을 가지며 모든 리워드 포인트와 예약에 대한 지불금을 상환 / 환불합니다. 취소와 관련된 "
-"수수료는 멤버가 부담하며 멤버 계정에서 공제됩니다."
-
-#: components/public/Faq.vue
 msgid "Members must be at least 18 years old."
 msgstr "멤버는 만 18 세 이상이어야합니다."
+
+#: components/public/Faq.vue
+msgid ""
+"Members will receive 100 (1 for 1) Reward Points that can be used to reduce "
+"the cost of booking cruises, hotels and resorts via inCruises website."
+msgstr ""
 
 #: pages/upgrade.vue pages/welcome.vue components/public/Header.vue
 msgid "Membership"
@@ -8624,6 +8673,12 @@ msgstr "모바일 앱"
 #: compensation/index.html reach/index.html
 msgid "Mobile Phone"
 msgstr "휴대 전화"
+
+#: pages/hotels_booking.vue
+msgid ""
+"Mobile Phone\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+msgstr ""
 
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Mobile Phone is required."
@@ -8900,16 +8955,25 @@ msgstr ""
 "연락을 주십시오"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Name changes to your Membership is simply NOT allowed. Membership is "
+#| "personal to you as a Member and you may not transfer, assign, change or "
+#| "otherwise dispose any of your rights or obligations and/or benefits, "
+#| "including Reward Points. Upon death of a Member, if all Membership fees "
+#| "are up to date, the Membership can be transferred to their spouse or "
+#| "legal heirs."
 msgid ""
-"Name changes to your Membership is simply NOT allowed. Membership is "
+"Name changes to your Club Membership are simply NOT allowed. Membership is "
 "personal to you as a Member and you may not transfer, assign, change or "
-"otherwise dispose any of your rights or obligations and/or benefits, "
+"otherwise dispose of any of your rights or obligations and/or benefits, "
 "including Reward Points. Upon death of a Member, if all Membership fees are "
 "up to date, the Membership can be transferred to their spouse or legal heirs."
 msgstr ""
-"귀하의 명의 변경은 허용되지 않습니다. 멤버십은 멤버로서 귀하에게 개인적인 것이며 귀하는 리워드 포인트를 포함한 귀하의 권리 또는 의무 "
-"및 / 또는 혜택을 양도, 변경 또는 처분할 수 없습니다. 멤버가 사망한 경우, 멤버십 비용이 제대로 지불되고 있으면 멤버 자격을 배우자 "
-"또는 법적 상속인에게 양도할 수 있습니다."
+"귀하의 명의 변경은 허용되지 않습니다. 멤버십은 멤버로서 귀하에게 개인적인 것"
+"이며 귀하는 리워드 포인트를 포함한 귀하의 권리 또는 의무 및 / 또는 혜택을 양"
+"도, 변경 또는 처분할 수 없습니다. 멤버가 사망한 경우, 멤버십 비용이 제대로 지"
+"불되고 있으면 멤버 자격을 배우자 또는 법적 상속인에게 양도할 수 있습니다."
 
 #: import/create.html
 msgid "Name Descending"
@@ -9174,51 +9238,26 @@ msgstr "아니요, 저는 푸에르토 리코에 살지 않습니다"
 
 #: components/public/Faq.vue
 msgid ""
-"No, Reward Points are not a currency so there is no tax implication. "
-"Redeeming Reward Points is comparable to booking a Cruise as a result of a "
-"promotion or incentive. No one gets taxed more because the true value is "
-"higher. We also suggest you confirm with your accountant."
-msgstr ""
-"아니오, 리워드 포인트는 통화가 아니므로 세금과 관계가 없습니다. 리워드 포인트를 사용하는 것은 프로모션이나 인센티브의 결과로 크루즈를 "
-"예약하는 것과 비슷합니다. 제품의 실제 가치가 더 크기 때문에 세금이 부과되지 않습니다. 당사는 회계사에게도 확인할 것을 권고합니다."
-
-#: components/public/Faq.vue
-msgid ""
 "No, they are not. This is strictly prohibited in our <a href="
 "\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>. Reward "
 "Points are never transferable, and change of ownership of the account is not "
 "allowed."
 msgstr ""
-"아니요, 그렇지 않습니다. 이는 <a href=\"{{memberAgreement}}\" target=\"_blank\">멤버십 계약서</"
-"a>에서 엄격히 금지되어 있습니다. 리워드 포인트는 양도할 수 없으며 계정소유권 변경은 허용되지 않습니다."
-
-#: components/public/Faq.vue
-msgid ""
-"No, we are all at risk. To mitigate risk, we have Seller of Travel "
-"Registrations in every state required and are bonded when required to do so. "
-"Please see our <a href='{{corporateDueDiligence}}' target='_blank'>Due "
-"Diligence Document</a> to learn more about the company. Bottom line: we are "
-"built to last and are here for the long haul, and like anything in life, "
-"there are no guarantees. To further mitigate risk, we also have a "
-"relationship with Trust My Travel (TMT). TMT provides consumer protection "
-"for every Membership payment. Your payments to INCRUISES® are covered (your "
-"out-of-pocket amount, not the Reward Points® (Reward Points) value) if, in "
-"the unlikely event INCRUISES were to stop doing business. Please click here "
-"for more information on your financial protection: <a "
-"href='{{tmtFinancialProtection}}' target='_blank'>TMT Financial Protection</"
-"a>."
-msgstr ""
-"아니요, 우리 모두는 위험에 처해 있습니다. 위험을 완화하기 위해, 요구되는 모든 주에 여행 판매자를 등록했으며 필요한 경우 보증을 "
-"받습니다. 회사에 대한 자세한 내용은 <a href='{{corporateDueDiligence}}' target='_blank'>회사 "
-"실사 문서를 참조하십시오</a>. 즉, 우리는 지속가능하도록 설계되었으며 장기적으로 존재할 것이며, 인생의 여느 것과 마찬가지로 보장은 "
-"없습니다. 위험을 더 완화하기 위해, 트러스트마이트래블(TMT) 과도 관계를 맺고 있습니다. TMT는 모든 멤버십 지불에 대한 소비자 "
-"보호를 제공합니다. 당신이 inCruises에게 지불한 금액(리워드 포인트®(리워드 포인트)가 아닌 본인이 직접 부담한 금액)은 예기치 "
-"못한 상황에서 inCruises가 사업을 중단할 경우 보증되어 있습니다. 재정 보호에 대한 자세한 내용을 보려면 다음을 클릭하세요. <a "
-"href='{{tmtFinancialProtection}}' target='_blank'>TMT 재정 보호</a>."
+"아니요, 그렇지 않습니다. 이는 <a href=\"{{memberAgreement}}\" target=\"_blank"
+"\">멤버십 계약서</a>에서 엄격히 금지되어 있습니다. 리워드 포인트는 양도할 수 "
+"없으며 계정소유권 변경은 허용되지 않습니다."
 
 #: components/public/Faq.vue
 msgid "No."
 msgstr "아닙니다."
+
+#: components/public/Faq.vue
+msgid ""
+"No. Because we are not a full-service travel agency, we are not set up to "
+"handle anything like manual bookings, name changes and so on. If we were a "
+"full-service travel agency, we could not deliver (2 for 1) Reward Points to "
+"our Members."
+msgstr ""
 
 #: components/public/Faq.vue
 msgid ""
@@ -9237,14 +9276,21 @@ msgstr ""
 "합니다."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No. It's a $100 USD maximum per member. However, if you plan to cruise "
+#| "with another person, your spouse for example, that person can also be a "
+#| "member and both will be able to apply their Reward Points to the same "
+#| "cruise you will be booking together."
 msgid ""
-"No. It's a $100 USD maximum per member. However, if you plan to cruise with "
-"another person, your spouse for example, that person can also be a member "
-"and both will be able to apply their Reward Points to the same cruise you "
-"will be booking together."
+"No. It's a $100 USD maximum per month / per Member. However, if you plan to "
+"travel with another person, your spouse for example, that person can also be "
+"a Member and both will be able to apply their Reward Points to the same "
+"reservation if you book together."
 msgstr ""
-"아닙니다. 멤버 당 최대 $ 100 USD입니다. 그러나 다른 사람, 예를 들어 배우자와 함께 크루즈를 계획하는 경우 그 사람도 멤버가 "
-"될 수 있으며 함께 예약할 동일한 크루즈에서 리워드 포인트를 적용할 수 있습니다."
+"아닙니다. 멤버 당 최대 $ 100 USD입니다. 그러나 다른 사람, 예를 들어 배우자와 "
+"함께 크루즈를 계획하는 경우 그 사람도 멤버가 될 수 있으며 함께 예약할 동일한 "
+"크루즈에서 리워드 포인트를 적용할 수 있습니다."
 
 #: components/public/Faq.vue
 msgid ""
@@ -9262,19 +9308,48 @@ msgstr ""
 "트폰으로 고객과 소통하고 고객층을 넓혀 돈을 벌 수 있습니다!"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No. The person who's listed on the Membership, must be the one booking "
+#| "the cruise/cabin AND must be one of the passengers listed in the cabin."
 msgid ""
-"No. The person who's listed on the Membership, must be the one booking the "
-"cruise/cabin AND must be one of the passengers listed in the cabin."
+"No. The person who's listed on the Membership must be the one making the "
+"reservation AND must be one of the passengers listed on the cruise, hotel or "
+"resort reservation."
 msgstr ""
 "아닙니다. 크루즈 / 객실을 예약한 사람은 멤버여야 하며 객실 승객 중 한 명이어"
 "야 합니다."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "We do not offer partial bookings or bookings done with an initial "
+#| "deposit. You can use all of your available Reward Points when you're "
+#| "ready to book a cruise."
 msgid ""
-"No. While members do have the opportunity to save on great cruise vacations, "
+"No. We do not offer partial bookings or bookings done with a partial initial "
+"deposit. At the time of booking you can use all of your available Reward "
+"Points up to the allowable amount for that specific cruise but you must pay "
+"for the entire booking at that time."
+msgstr ""
+"inCruises는 부분 납부나 계약금으로 예약할 수 없습니다. 크루즈를 예약할 때, 예"
+"약에 쓸 수 있는 모든 리워드 포인트를 사용할 수 있습니다."
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No. While members do have the opportunity to save on great cruise "
+#| "vacations, inCruises does not, nor do we promote having cooperative "
+#| "purchases because of our size or “group or volume buying power” or "
+#| "“clout” because of our membership base. While we do not promote having "
+#| "clout, we do promote that our booking partners certainly do have volume "
+#| "buying power, resulting in exceptional low prices and exclusive offers "
+#| "such as upgrades, discounts and more."
+msgid ""
+"No. While Members do have the opportunity to save on great cruise vacations, "
 "inCruises does not, nor do we promote having cooperative purchases because "
 "of our size or “group or volume buying power” or “clout” because of our "
-"membership base. While we do not promote having clout, we do promote that "
+"Membership base. While we do not promote having clout, we do promote that "
 "our booking partners certainly do have volume buying power, resulting in "
 "exceptional low prices and exclusive offers such as upgrades, discounts and "
 "more."
@@ -9345,11 +9420,13 @@ msgid "Not Opened"
 msgstr "미공개"
 
 #: track_results/index.html
-msgid "Not Partner / Expired Member"
-msgstr "파트너 아님 / 만료된 멤버"
+msgid "Not Partner / Member"
+msgstr "파트너 아님 / 멤버"
 
 #: track_results/index.html
-msgid "Not Partner / Member"
+#, fuzzy
+#| msgid "Not Partner / Member"
+msgid "Not Partner / Pending Member"
 msgstr "파트너 아님 / 멤버"
 
 #: pages/duplicator.vue
@@ -9577,12 +9654,21 @@ msgstr ""
 "각되면 지원 담당자에게 문의하십시오."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Our two-for-one offer is in part possible because of the negotiated "
+#| "relationships we have with our booking providers combined with our "
+#| "recurring Membership model. In addition, our innovative word-of-mouth "
+#| "marketing reduces overhead costs, eliminating the heavy investment in "
+#| "traditional advertising and call centers normally associated with booking "
+#| "cruises."
 msgid ""
 "Our two-for-one offer is in part possible because of the negotiated "
 "relationships we have with our booking providers combined with our recurring "
-"Membership model. In addition, our innovative word-of-mouth marketing "
-"reduces overhead costs, eliminating the heavy investment in traditional "
-"advertising and call centers normally associated with booking cruises."
+"Membership model.. In addition, we do not build cruise ships and hotels. Our "
+"innovative word-of-mouth marketing reduces overhead costs, eliminating the "
+"heavy investment in traditional advertising and call centers normally "
+"associated with booking cruises and other types of vacations."
 msgstr ""
 "당사의 1 대 2의 제안은, 매달 반복 지불하는 멤버십 모델과 결합하여, 당사 예약 "
 "공급업체와의 협상 관계로 인해 부분적으로 가능합니다. 더우기, 혁신적인 입소문 "
@@ -9674,16 +9760,18 @@ msgid "Partner"
 msgstr "파트너"
 
 #: track_results/index.html
-msgid "Partner / Expired Member"
-msgstr "파트너 / 만료된 멤버"
-
-#: track_results/index.html
 msgid "Partner / Member"
 msgstr "파트너 / 멤버"
 
 #: track_results/index.html
 msgid "Partner / Not Member"
 msgstr "파트너 / 멤버 아님"
+
+#: track_results/index.html
+#, fuzzy
+#| msgid "Partner / Member"
+msgid "Partner / Pending Member"
+msgstr "파트너 / 멤버"
 
 #: compensation/index.html
 msgid "Partner +1 Point"
@@ -10169,6 +10257,10 @@ msgstr "사진이 부착된 신분증"
 msgid "Picture Name"
 msgstr "사진 이름"
 
+#: pages/hotels_details.vue
+msgid "Placeholder"
+msgstr ""
+
 #: compensation/index.html
 msgid "Plan"
 msgstr "평면도"
@@ -10467,6 +10559,12 @@ msgstr ""
 msgid "Please try again later."
 msgstr "나중에 다시 시도하세요."
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Please try again later."
+msgid "Please try again with alternative dates or"
+msgstr "나중에 다시 시도하세요."
+
 #: pages/booking.vue
 msgid ""
 "Please verify all booking details before proceeding, once you are sure of "
@@ -10692,6 +10790,12 @@ msgstr "작년"
 msgid "Price"
 msgstr "가격"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "View Details"
+msgid "Price details"
+msgstr "세부 정보 보기"
+
 #: components/booking/category.vue
 msgid "Price does not include Taxes and Fees"
 msgstr "가격에는 세금 및 수수료가 포함되어 있지 않습니다"
@@ -10741,6 +10845,12 @@ msgstr "우선 탑승 및 출발, 전용 엔터테인먼트 좌석 등 .."
 #: components/public/FooterLinks.vue layouts/blank_angular.html
 #: layouts/default.html layouts/default_no_nav.html
 msgid "Privacy Policy"
+msgstr "개인정보 처리방침"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy Policy licenses."
 msgstr "개인정보 처리방침"
 
 #: pages/booking.vue pages/checkout.vue pages/hotels_booking.vue
@@ -11310,29 +11420,42 @@ msgstr "리워드 포인트 잔액을 확인하십시오."
 msgid "Reward"
 msgstr "보상"
 
-#: pages/reward_points.vue pages/welcome.vue compensation/index.html
-#: info_center/index.html controllers/cruising_dollars.js
-#: controllers/menu_page.js
+#: pages/hotels_booking.vue pages/reward_points.vue pages/welcome.vue
+#: compensation/index.html info_center/index.html
+#: controllers/cruising_dollars.js controllers/menu_page.js
 msgid "Reward Points"
 msgstr "리워드 포인트"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Reward Points are credits or points our Members can use towards booking "
+#| "cruise vacations on our site. Reward Points accumulate and rollover month-"
+#| "after-month and they never expire as long as you remain an active Member. "
+#| "Reward Points® are not a currency and have no cash value. Reward Points "
+#| "are not an investment. INCRUISES is not a bank, depository or financial "
+#| "company of any type. Reward Points cannot be redeemed for cash under any "
+#| "circumstance. Credits can only be used to book cruises on our Website. "
+#| "For complete details please read our <a href=\"{{memberAgreement}}\" "
+#| "target=\"_blank\">Membership Agreement</a>"
 msgid ""
-"Reward Points are credits or points our Members can use towards booking "
-"cruise vacations on our site. Reward Points accumulate and rollover month-"
-"after-month and they never expire as long as you remain an active Member. "
-"Reward Points® are not a currency and have no cash value. Reward Points are "
-"not an investment. INCRUISES is not a bank, depository or financial company "
-"of any type. Reward Points cannot be redeemed for cash under any "
-"circumstance. Credits can only be used to book cruises on our Website. For "
-"complete details please read our <a href=\"{{memberAgreement}}\" target="
-"\"_blank\">Membership Agreement</a>"
+"Reward Points are points our Members can use towards booking vacations on "
+"inCruises website. Reward Points accumulate and rollover month-after-month "
+"and they never expire. Reward Points are not a currency and have no cash "
+"value. Reward Points are not an investment. INCRUISES is not a bank, "
+"depository or financial company of any type. Reward Points cannot be "
+"redeemed for cash under any circumstance. Reward Points can only be used to "
+"book travel on our website. For complete details please read our <a href="
+"\"{{memberAgreement}}\" target=\"_blank\">Membership Agreement</a>"
 msgstr ""
-"리워드 포인트는 멤버가 우리 사이트에서 크루즈 휴가를 예약할 때 사용할 수 있는 크레디트 또는 포인트입니다. 리워드 포인트는 한 달에 한 "
-"번씩 적립되고 계속적으로 누적되며, 귀하가 활성화 멤버로 남아있는 한 만료되지 않습니다. 리워드 포인트®는 화폐가 아니며 현금 가치가 "
-"없습니다. 리워드 포인트는 투자가 아닙니다. INCRUISES는 은행, 금고 또는 어떤 형태의 금융 회사가 아닙니다. 리워드 포인트는 "
-"어떠한 경우에도 현금으로 상환할 수 없습니다. 크레디트는 웹사이트에서 크루즈를 예약하는 데만 사용할 수 있습니다. 자세한 내용은 다음을 "
-"참고하세요. <a href=\"{{memberAgreement}}\" target=\"_blank\">멤버십 계약서</a>"
+"리워드 포인트는 멤버가 우리 사이트에서 크루즈 휴가를 예약할 때 사용할 수 있"
+"는 크레디트 또는 포인트입니다. 리워드 포인트는 한 달에 한 번씩 적립되고 계속"
+"적으로 누적되며, 귀하가 활성화 멤버로 남아있는 한 만료되지 않습니다. 리워드 "
+"포인트®는 화폐가 아니며 현금 가치가 없습니다. 리워드 포인트는 투자가 아닙니"
+"다. INCRUISES는 은행, 금고 또는 어떤 형태의 금융 회사가 아닙니다. 리워드 포인"
+"트는 어떠한 경우에도 현금으로 상환할 수 없습니다. 크레디트는 웹사이트에서 크"
+"루즈를 예약하는 데만 사용할 수 있습니다. 자세한 내용은 다음을 참고하세요. <a "
+"href=\"{{memberAgreement}}\" target=\"_blank\">멤버십 계약서</a>"
 
 #: pages/booking.vue pages/hotels_booking.vue
 msgid "Reward Points Available"
@@ -11342,26 +11465,44 @@ msgstr "사용가능한 리워드 포인트"
 msgid "Reward Points Balance"
 msgstr "리워드 포인트 잔액"
 
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Reward Points® can only be used for cruise fare(s) quoted and confirmed "
+#| "at booking on our website, including port charges and applicable "
+#| "government taxes and fees. Reward Points® may not be used to pay for "
+#| "flights, stateroom upgrades after a confirmed booking, travel insurance, "
+#| "processing fees, cancellation fees, name change fees or fees of any kind "
+#| "related to the cruise, pre-paid gratuities, tours and excursions, "
+#| "specialty meals and beverage packages and/or personal expenditures once "
+#| "on onboard (including medical expenses and/or gratuities)."
+msgid ""
+"Reward Points can only be used for hotel, resort and cruise fare(s) quoted "
+"and confirmed at booking on our website, including port charges and "
+"applicable government taxes and fees. Reward Points may not be used to pay "
+"for flights, stateroom upgrades after a confirmed booking, travel insurance, "
+"processing fees, cancellation fees, name change fees or fees of any kind "
+"related to the cruise, pre-paid gratuities, tours and excursions, specialty "
+"meals and beverage packages and/or personal expenditures once on onboard "
+"(including medical expenses and/or gratuities)."
+msgstr ""
+"리워드 포인트®는 항만 이용료 및 해당 정부 세금 및 수수료를 포함하여 당사 웹 "
+"사이트에서 예약시 제시되고 확인된 크루즈 요금(들)에만 사용할 수 있습니다. 리"
+"워드 포인트®는 항공편 예약, 확정 예약 후 객실 업그레이드, 여행자 보험, 제경"
+"비, 취소 수수료, 이름 변경 수수료 또는 크루즈 관련 제반 비용, 선불 팁, 기항"
+"지 여행비, 특별 식사 및 음료 패키지 및 / 또는 선상에서의 개인 경비 (의료비 "
+"및 / 또는 팁 포함)에는 사용할 수 없습니다."
+
 #: pages/my_cruise_savings.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Reward Points Used"
 msgstr "사용한 리워드 포인트"
 
-#: components/public/Faq.vue
-msgid ""
-"Reward Points® can only be used for cruise fare(s) quoted and confirmed at "
-"booking on our website, including port charges and applicable government "
-"taxes and fees. Reward Points® may not be used to pay for flights, stateroom "
-"upgrades after a confirmed booking, travel insurance, processing fees, "
-"cancellation fees, name change fees or fees of any kind related to the "
-"cruise, pre-paid gratuities, tours and excursions, specialty meals and "
-"beverage packages and/or personal expenditures once on onboard (including "
-"medical expenses and/or gratuities)."
-msgstr ""
-"리워드 포인트®는 항만 이용료 및 해당 정부 세금 및 수수료를 포함하여 당사 웹 사이트에서 예약시 제시되고 확인된 크루즈 요금(들)에만 "
-"사용할 수 있습니다. 리워드 포인트®는 항공편 예약, 확정 예약 후 객실 업그레이드, 여행자 보험, 제경비, 취소 수수료, 이름 변경 "
-"수수료 또는 크루즈 관련 제반 비용, 선불 팁, 기항지 여행비, 특별 식사 및 음료 패키지 및 / 또는 선상에서의 개인 경비 (의료비 및 "
-"/ 또는 팁 포함)에는 사용할 수 없습니다."
+#: pages/welcome.vue
+#, fuzzy
+#| msgid "Reward Points"
+msgid "Reward Points:"
+msgstr "리워드 포인트"
 
 #: compensation/index.html
 msgid "Rewards"
@@ -11378,12 +11519,24 @@ msgid "Room"
 msgstr "객실"
 
 #: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+msgid "Room {{ index }} ({{ searchParameters.nights }} nights)"
+msgstr "{{ searchParameters.nights }} 박당 ${{ roomRate.sellingRate }}"
+
+#: pages/hotels_booking.vue
 msgid "Room name:"
 msgstr "객실 이름:"
 
 #: pages/booking.vue
 msgid "Room Num:"
 msgstr "객실 번호:"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Facilities"
+msgid "Room Stay Facilities"
+msgstr "시설"
 
 #: receipts/hotel_booking_receipt.html
 msgid "Room Type"
@@ -11455,8 +11608,8 @@ msgstr ""
 "시간을 절약하십시오! 강력한 이 도구가 잠재 고객이 파트너 및 / 또는 멤버로 즉"
 "시 가입하도록 도와드립니다."
 
-#: pages/book.vue pages/hotels.vue compensation/index.html
-#: communications/index.html communications/view.html
+#: pages/book.vue pages/hotels.vue pages/hotels_details.vue
+#: communications/index.html communications/view.html compensation/index.html
 #: email_notifications/index.html track_growth/index.html
 #: webinar_recordings/index.html
 msgid "Search"
@@ -11489,6 +11642,12 @@ msgstr "이름 또는 이메일 검색"
 #: track_results/index.html
 msgid "Search Name or Email.."
 msgstr "이름 또는 이메일 검색."
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Search by date"
+msgid "Search other hotel"
+msgstr "날짜별 검색"
 
 #: controllers/menu_page.js
 msgid ""
@@ -11935,6 +12094,10 @@ msgstr ""
 msgid "Something was wrong"
 msgstr "오류가 생겼습니다"
 
+#: pages/hotels_details.vue
+msgid "Sorry, we couldn't find any room available for your selection."
+msgstr ""
+
 #: pages/admin_signup_flow.vue track_results/index.html
 msgid "Sorting"
 msgstr "분류하기"
@@ -11985,6 +12148,12 @@ msgstr "SSL"
 #: pages/public/payment_terms.vue
 msgid "St. 1- Lot #3, Suite 500 (Metro Office Park 3)"
 msgstr "St. 1- Lot #3, 500호 (메트로 오피스 파크 3)"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Start"
+msgid "Stars"
+msgstr "시작"
 
 #: pages/admin_support_analytics.vue
 msgid "Start"
@@ -12117,6 +12286,23 @@ msgid "Subscriptions"
 msgstr "구독 정보"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Success as an inCruises Partner can be measured in a variety of ways. To "
+#| "some people, success will be meeting and networking with like-minded "
+#| "people. For others, the ability to travel the world is their idea of "
+#| "success. And for some, the opportunity to earn some extra income will be "
+#| "their vision of success. inCruises has the tools and opportunity that "
+#| "allows our Partners to achieve their visions of success. Consistently "
+#| "using those tools and methods, coupled with a love of travel, talking to "
+#| "others about travel, and all of the amazing support that you receive as a "
+#| "Partner will give you the opportunity to achieve success.  inCruises is "
+#| "NOT an opportunity where you make thousands or tens of thousands of "
+#| "dollars in income overnight. It's a viable business similar to other "
+#| "direct selling companies. It would be irresponsible to claim that someone "
+#| "could be successful with inCruises simply by enrolling as a Partner. No "
+#| "one can make such a claim about any business opportunity, and inCruises "
+#| "makes no such claim."
 msgid ""
 "Success as an inCruises Partner can be measured in a variety of ways. To "
 "some people, success will be meeting and networking with like-minded people. "
@@ -12126,7 +12312,7 @@ msgid ""
 "achieve their visions of success. Consistently using those tools and "
 "methods, coupled with a love of travel, talking to others about travel, and "
 "all of the amazing support that you receive as a Partner will give you the "
-"opportunity to achieve success.  inCruises is NOT an opportunity where you "
+"opportunity to achieve success. inCruises is NOT an opportunity where you "
 "make thousands or tens of thousands of dollars in income overnight. It's a "
 "viable business similar to other direct selling companies. It would be "
 "irresponsible to claim that someone could be successful with inCruises "
@@ -12231,6 +12417,10 @@ msgstr "사회공헌 과세 대상 금액"
 #: pages/payout.vue receipts/italian_receipt.html
 msgid "Taxable Amount:"
 msgstr "과세 금액:"
+
+#: pages/hotels_booking.vue
+msgid "Taxes"
+msgstr ""
 
 #: pages/team_rankings.vue
 msgid "Team - Most Direct Members"
@@ -12493,7 +12683,9 @@ msgid ""
 msgstr "큰 꿈을 이루기 위해 열정적으로 도전하는 사람들."
 
 #: cruising_dollars/index.html
-msgid "The result is your Available Cruise Dollar balance."
+#, fuzzy
+#| msgid "The result is your Available Cruise Dollar balance."
+msgid "The result is your Available Reward Points balance."
 msgstr "결과는 예약시 쓸 수 있는 크루즈 달러 잔액입니다."
 
 #: pages/public/reviews.vue
@@ -12581,9 +12773,16 @@ msgid "The use of the facility will issue a voucher."
 msgstr "시설 이용 시 바우처가 발행됩니다."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "There are many ways to earn income as a Partner with inCruises. There are "
+#| "Instant Pay Bonuses, Producer Bonuses, Residual Compensation, Free "
+#| "Memberships, and bonuses based on the income and sales volume of your "
+#| "entire downline organization, as well as several other incentives. Please "
+#| "review our Compensation Program for more details."
 msgid ""
 "There are many ways to earn income as a Partner with inCruises. There are "
-"Instant Pay Bonuses, Producer Bonuses, Residual Compensation, Free "
+"Instant Pay Bonuses, Producer Bonuses, Recurring  Compensation, Free "
 "Memberships, and bonuses based on the income and sales volume of your entire "
 "downline organization, as well as several other incentives. Please review "
 "our Compensation Program for more details."
@@ -12596,6 +12795,10 @@ msgstr ""
 #: pages/hotels.vue
 msgid "There are no results for this search."
 msgstr "해당 검색에 대한 결과가 없습니다."
+
+#: components/public/Faq.vue
+msgid "There are two types of cruise bookings possible. \n"
+msgstr ""
 
 #: pages/booking.vue
 msgid ""
@@ -12945,6 +13148,14 @@ msgstr ""
 "이 크루즈는 더 이상 inCruises 멤버가 이용할 수 없습니다. 이 크루즈에서 예약"
 "할 수 있는 최대 객실수를 초과했습니다."
 
+#: components/public/Faq.vue
+msgid ""
+"This depends on your Membership Account status. As an Active Member you can "
+"book up to 4 cruises per year using (2 for 1) Reward Points. However, when "
+"Members are using their (1 for 1) Reward Points to book cruises there are no "
+"limits on how many cruises you can book."
+msgstr ""
+
 #: pages/hotels_details.vue
 msgid "This facility has cost."
 msgstr "이 시설은 비용이 있습니다."
@@ -12989,6 +13200,10 @@ msgid ""
 msgstr ""
 "이것은 만료된 크루즈 목록입니다. 향후 90일 이후 항해하는 크루즈만 예약할 수 "
 "있습니다."
+
+#: pages/hotels_booking.vue
+msgid "This is not legal advice."
+msgstr ""
 
 #: info_center/index.html
 msgid ""
@@ -13120,7 +13335,9 @@ msgstr "이 사용자는 활성화된 멤버십이 없습니다"
 msgid ""
 "This user has a pending invoice, therefore they may only be added to a Max "
 "Amount booking."
-msgstr "이 사용자는 보류 중인 청구서가 있으므로 최대 금액 예약에만 추가할 수 있습니다."
+msgstr ""
+"이 사용자는 보류 중인 청구서가 있으므로 최대 금액 예약에만 추가할 수 있습니"
+"다."
 
 #: pages/team_rankings.vue compensation/index.html track_results/index.html
 msgid "This user has an active member membership"
@@ -13245,10 +13462,15 @@ msgstr ""
 "수 있는 공공 기관의 승인을 받은 직원이어야 합니다."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "To book a cruise offered through your inCruises Membership on our site, "
+#| "you must be an active Member for 14 days after activation or re-"
+#| "activation of your Membership."
 msgid ""
-"To book a cruise offered through your inCruises Membership on our site, you "
-"must be an active Member for 14 days after activation or re-activation of "
-"your Membership."
+"To book a cruise, hotel or resort stay offered through your inCruises "
+"website, you must be an active Member for 14 days after activation or "
+"reactivation of your Membership."
 msgstr ""
 "본 사이트에서 inCruises 멤버십 자격을 통해 제공되는 크루즈를 예약하려면 멤버"
 "십을 활성화하거나 재활성화한 후 14 일이 지나야 합니다."
@@ -13257,8 +13479,8 @@ msgstr ""
 msgid "To continue with iPayout, please create an account."
 msgstr "iPayout을 진행하기 위해서는, 계정을 생성하십시오."
 
-#: pages/public/about.vue pages/public/biz.vue pages/public/index.vue
-#: pages/public/mission.vue pages/public/partnership.vue
+#: pages/public/about.vue pages/public/biz.vue pages/public/mission.vue
+#: pages/public/partnership.vue
 msgid "TO CRUISE"
 msgstr "크루즈 여행"
 
@@ -13320,6 +13542,10 @@ msgstr "페이스북에 게시하려면 추천 링크를 설정해야합니다."
 msgid "To proceed with Hyperwallet please confirm your birthdate:"
 msgstr "하이퍼월렛을 계속 진행하려면 생년월일을 확인하십시오:"
 
+#: pages/public/index.vue
+msgid "TO TRAVEL"
+msgstr ""
+
 #: pages/invoices.vue
 msgid ""
 "To update the preferred currency, please select a recurring profile and then "
@@ -13363,8 +13589,9 @@ msgstr "토니 로빈스의 전세계 영업 및 마케팅 담당 부사장 (198
 msgid "Top 25 Contributors"
 msgstr "상위 기부자 25명"
 
-#: compensation/index.html receipts/italian_commission.html
-#: receipts/italian_receipt.html track_growth/index.html upgrade/index.html
+#: pages/hotels_booking.vue compensation/index.html
+#: receipts/italian_commission.html receipts/italian_receipt.html
+#: track_growth/index.html upgrade/index.html
 msgid "Total"
 msgstr "합계"
 
@@ -13375,10 +13602,6 @@ msgstr "합계(VAT 포함):"
 #: receipts/team_residual_bonus_statement.html
 msgid "Total Comp."
 msgstr "전체 보상금액."
-
-#: cruising_dollars/index.html
-msgid "Total Cruise Dollar Balance"
-msgstr "총 크루즈 달러 잔액"
 
 #: pages/booking.vue pages/my_cruise_savings.vue
 msgid "Total Cruise Price"
@@ -13451,6 +13674,12 @@ msgstr "전체 퀴즈 오답수"
 #: pages/booking.vue pages/hotels_booking.vue
 msgid "Total Reward Points"
 msgstr "총 리워드 포인트"
+
+#: cruising_dollars/index.html
+#, fuzzy
+#| msgid "Reward Points Balance"
+msgid "Total Reward Points Balance"
+msgstr "리워드 포인트 잔액"
 
 #: invoices/invoice_statement.html receipts/commission_statement.html
 #: receipts/instant_bonus_statement.html receipts/invoice.html
@@ -13563,6 +13792,10 @@ msgstr "Payquicker 계정으로 이체"
 #: pages/public/values.vue
 msgid "TRANSPARENT, AUTHENTIC, AND HONEST PEOPLE"
 msgstr "맑고 진실하고 정직한 사람들"
+
+#: pages/public/index.vue
+msgid "TRAVEL"
+msgstr ""
 
 #: receipts/travel_challenge_statement.html
 msgid "Travel Challenge Bonus Statement"
@@ -13914,6 +14147,12 @@ msgstr "크루즈 보기"
 msgid "View Details"
 msgstr "세부 정보 보기"
 
+#: pages/hotels_details.vue
+msgid ""
+"View Details\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"icon-open\"></span>"
+msgstr ""
+
 #: pages/welcome.vue
 msgid "View Donors"
 msgstr "기증자 보기"
@@ -14198,15 +14437,6 @@ msgstr ""
 msgid "We did not find any contacts to display, please try another account."
 msgstr "표시된 연락처를 찾지 못했습니다. 다른 계정으로 시도하십시오."
 
-#: components/public/Faq.vue
-msgid ""
-"We do not offer partial bookings or bookings done with an initial deposit. "
-"You can use all of your available Reward Points when you're ready to book a "
-"cruise."
-msgstr ""
-"inCruises는 부분 납부나 계약금으로 예약할 수 없습니다. 크루즈를 예약할 때, 예약에 쓸 수 있는 모든 리워드 포인트를 사용할 수 "
-"있습니다."
-
 #: pages/public/causes.vue
 msgid ""
 "WE HAVE\n"
@@ -14253,8 +14483,12 @@ msgid "We hope to see you there!"
 msgstr "거기에서 뵙기를 희망합니다!"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "We like the way you're thinking and be sure to check with your accountant."
 msgid ""
-"We like the way you're thinking and be sure to check with your accountant."
+"We like the way you're thinking and be sure to check with your accountant. "
+"Please understand that inCruises cannot give you personal tax advice."
 msgstr ""
 "우리는 당신이 생각하는 방식을 좋아하며, 회계사에게 반드시 확인하십시오."
 
@@ -14330,7 +14564,9 @@ msgstr "우리는 소중하게 생각합니다"
 msgid ""
 "We were created to make travel more accessible, affordable and even "
 "profitable for millions of people worldwide."
-msgstr "당사는 전세계 수백만 명의 사람들이 여행을 더 편리하게, 더 저렴한 가격으로, 더 수익성있게 이용할 수 있도록 하고자 합니다."
+msgstr ""
+"당사는 전세계 수백만 명의 사람들이 여행을 더 편리하게, 더 저렴한 가격으로, "
+"더 수익성있게 이용할 수 있도록 하고자 합니다."
 
 #: pages/email_address.vue
 msgid ""
@@ -14436,6 +14672,12 @@ msgid "What do I Win?"
 msgstr "달성하는 방법은?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid "What do they get for their $100 USD monthly Membership fee?"
+msgid "What do they get for their $100 USD Activation Fee?"
+msgstr "월간 $100 USD 멤버십 비용으로 얻는 혜택은 무엇입니까?"
+
+#: components/public/Faq.vue
 msgid "What do they get for their $100 USD monthly Membership fee?"
 msgstr "월간 $100 USD 멤버십 비용으로 얻는 혜택은 무엇입니까?"
 
@@ -14448,7 +14690,9 @@ msgid "What happens if I miss a payment on a given month?"
 msgstr "해당 월의 지불을 놓친 경우 어떻게 됩니까?"
 
 #: components/public/Faq.vue
-msgid "What happens if I stop paying the Membership?"
+#, fuzzy
+#| msgid "What happens if I stop paying the Membership?"
+msgid "What happens if I stop paying my Club Membership?"
 msgstr "멤버십 지불을 중단하면 어떻게 됩니까?"
 
 #: components/public/Faq.vue
@@ -14471,12 +14715,6 @@ msgstr "inCruises 커넥트란 무엇입니까?"
 #: pages/duplicator.vue
 msgid "What is the inCruises Duplicator?"
 msgstr "inCruises 듀플리케이터는 무엇입니까?"
-
-#: components/public/Faq.vue
-msgid ""
-"When can you book or reserve a cruise prior to accumulating all the needed "
-"Reward Points and then finalize the booking later?"
-msgstr "필요한 리워드 포인트를 모두 적립하기 전에 크루즈를 먼저 예약하고 나중에 예약을 마무리지을 수 있는 때는 언제입니까?"
 
 #: pages/banner_tracking.vue
 msgid ""
@@ -14675,15 +14913,21 @@ msgstr ""
 
 #: components/public/Faq.vue
 msgid ""
-"Yes you can. While you cannot gift a cruise to others using your Membership "
-"and Reward Points, you can certainly gift our Membership to others and pay "
-"for them as long as they are at least 18 years old. Their Reward Points can "
-"only be used if they will be booked on the cabin for which the Reward Points "
-"are being used."
+"Yes and we are all at risk. To mitigate risk, we have a relationship with "
+"Trust My Travel (TMT) - a Global Payment Processor and Protection Provider. "
+"TMT provides consumer protection for every Membership payment. Your payments "
+"to INCRUISES are covered (your out-of-pocket amount, not the Reward Points "
+"value) if, in the unlikely event INCRUISES were to stop doing business. "
+"Please click here for more information on your financial protection: <a "
+"href='{{https://trustprotects.me/wp-content/uploads/2021/08/TMTProtects.Me-"
+"Financial-Protection_EN.pdf}}' target='_blank'>TMT Financial Protection</a> "
+"To further mitigate risk, we have Seller of Travel Registrations in every "
+"USA state required and are bonded when required to do so. Please see our <a "
+"href='{{https://files.incruises.com/files/en/103EN_CORPORATE_DUE_DILIGENCE."
+"pdf}}' target='_blank'> Due Diligence Document </a> to learn more about the "
+"company. Bottom line: we are built to last and are here for the long haul, "
+"and like anything in life, there are no guarantees."
 msgstr ""
-"예, 할 수 있습니다. 귀하가 멤버쉽 및 리워드 포인트를 사용하여 다른 사람들에게 크루즈 여행를 선물할 수는 없지만, 멤버십 자격을 "
-"선물할 수 있으며, 18 세 이상에게 비용을 지불할 수 있습니다. 그들의 리워드 포인트는 리워드 포인트가 사용되는 객실이 예약될 경우에만 "
-"사용할 수 있습니다."
 
 #: pages/connect.vue power_tools_upgrade/index.html
 msgid "Yes, Cancel"
@@ -14710,20 +14954,34 @@ msgid "Yes."
 msgstr "예"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "If a couple are both inCruises Members, can they combine their Reward "
+#| "Points on one cruise booking?"
 msgid ""
-"Yes. If a couple are both inCruises Members, they can combine their Reward "
-"Points to cover the total cost of booking a cabin on a cruise."
-msgstr "예. 부부가 모두 inCruises 멤버인 경우, 리워드 포인트를 결합하여 크루즈 객실 예약의 총 비용으로 쓸 수 있습니다."
+"Yes. If a couple are both inCruises Club Members, they can combine their "
+"Reward Points for reservations."
+msgstr ""
+"한 커플이 둘 다 inCruises 멤버인 경우, 동일한 크루즈 예약에서 리워드 포인트"
+"를 결합하여 사용할 수 있습니까?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Yes. If you join our optional Independent Business Partner Program, you "
+#| "can earn commissions by referring others to our program, which can help "
+#| "you reduce your cost or even earn you a part-time or full-time income. We "
+#| "also offer a unique program that waives your monthly membership dues if "
+#| "you personally refer 5 paying members who have an active membership. You "
+#| "can learn more on our <a href='/partnership' target='_blank'>Partnership "
+#| "page</a>."
 msgid ""
-"Yes. If you join our optional Independent Business Partner Program, you can "
-"earn commissions by referring others to our program, which can help you "
-"reduce your cost or even earn you a part-time or full-time income. We also "
-"offer a unique program that waives your monthly membership dues if you "
-"personally refer 5 paying members who have an active membership. You can "
-"learn more on our <a href='/partnership' target='_blank'>Partnership page</"
-"a>."
+"Yes. If you join our optional Independent Partner Program, you can earn "
+"commissions by referring others to our program, which can help you reduce "
+"your cost or even earn you a supplemental income. We also offer a unique "
+"program that waives your monthly Membership dues if you personally refer 5 "
+"paying Members who have an active Membership. You can learn more on our <a "
+"href='/partnership' target='_blank'>Partnership page</a>."
 msgstr ""
 "맞습니다. 독립 파트너 프로그램에 가입하면 다른 사람들을 추천하여 수당을 받을 "
 "수 있습니다.이 프로그램을 통해 비용을 절감하거나 파트 타임 또는 풀 타임 수입"
@@ -14791,13 +15049,9 @@ msgstr ""
 
 #: components/public/Faq.vue
 msgid ""
-"You can apply Reward Points to any cabin booking, including bookings where "
-"multiple passengers are booked in the cabin, as long as there's at least ONE "
-"Member booked in that cabin and their Reward Points are being used for that "
-"booking."
+"You can apply Reward Points to any booking, including bookings with  "
+"multiple passengers."
 msgstr ""
-"해당 객실중 1 명이 리워드 포인트를 사용하여 예약을 하는 한, 동일한 객실에서 여러 명의 승객을 예약하는 것을 포함하여 객실의 예약에 "
-"모든 멤버의 리워드 포인트를 적용할 수 있습니다."
 
 #: compensation/index.html
 msgid ""
@@ -14894,6 +15148,14 @@ msgstr ""
 msgid "You don’t have any potential instant bonuses at this time."
 msgstr "귀하는 지금 수령가능한 즉석지급 보너스가 없습니다."
 
+#: components/public/Faq.vue
+msgid ""
+"You don’t have to and cannot ‘catch up’ on invoices. If you miss a "
+"Membership payment, just do your best to pay your next Membership invoice on "
+"time. You will be able to maintain an Active Member status as long as you do "
+"not miss more than 3 monthly membership payments in a row."
+msgstr ""
+
 #: agreements/italian_addendum_agreement.html
 #: agreements/national_director_agreement.html
 #: agreements/ukrainian_addendum_agreement.html
@@ -14908,7 +15170,9 @@ msgstr "매달 멤버십 지불액에 대해 $ 200의 리워드 포인트를 받
 msgid ""
 "You earn $200 Reward Points® (Reward Points) for every $100 you pay for "
 "membership."
-msgstr "멤버십에 대해 지불하는 $100달러마다 $ 200 리워드 포인트®(리워드 포인트)를 받습니다."
+msgstr ""
+"멤버십에 대해 지불하는 $100달러마다 $ 200 리워드 포인트®(리워드 포인트)를 받"
+"습니다."
 
 #: pages/upgrade.vue
 msgid "You earn 200 Reward Points (2 for 1) for every membership payment."
@@ -14949,8 +15213,8 @@ msgid ""
 "%{hasActiveSailing}. You will be able to book a new reservation after "
 "%{hasActiveSailing}."
 msgstr ""
-"%{hasActiveSailing}에서 미래에 이미 예약된 활성 항해가 있습니다. %{hasActiveSailing} 후에 새 예약을 "
-"예약할 수 있습니다."
+"%{hasActiveSailing}에서 미래에 이미 예약된 활성 항해가 있습니다. "
+"%{hasActiveSailing} 후에 새 예약을 예약할 수 있습니다."
 
 #: pages/welcome.vue
 msgid "You have an unpaid invoice:"
@@ -14970,7 +15234,8 @@ msgid ""
 "\t\t\t\t\t\t\t<span class=\"text-green\">{{incentiveBalance}}</span>\n"
 "\t\t\t\t\t\t\t."
 msgstr ""
-"귀하는 {{user_months}}윌 동안 멤버 자격을 유지했습니다. 사용 가능한 인센티브 리워드 포인트는\n"
+"귀하는 {{user_months}}윌 동안 멤버 자격을 유지했습니다. 사용 가능한 인센티브 "
+"리워드 포인트는\n"
 "       <span class=\"text-green\">{{incentiveBalance}}</span>\n"
 "       입니다."
 
@@ -14981,7 +15246,8 @@ msgid ""
 "\t\t\t\t\t\t\t<span class=\"text-green\">{{available}}</span>\n"
 "\t\t\t\t\t\t\t."
 msgstr ""
-"귀하는 {{user_months}}윌 동안 멤버 자격을 유지했습니다. 사용 가능한 리워드 포인트는\n"
+"귀하는 {{user_months}}윌 동안 멤버 자격을 유지했습니다. 사용 가능한 리워드 포"
+"인트는\n"
 "       <span class=\"text-green\">{{available}}</span>\n"
 "       입니다."
 
@@ -15222,8 +15488,8 @@ msgid ""
 "inCruises for your Membership and / or any additional Reward Points earned "
 "with promotions offered from time to time, minus any Reward Points used."
 msgstr ""
-"귀하의 잔액은 귀하의 멤버십 및/또는 수시로 제공되는 프로모션을 통해 적립한 추가 리워드 포인트에서 사용한 리워드 포인트를 뺀 금액과 "
-"동일합니다."
+"귀하의 잔액은 귀하의 멤버십 및/또는 수시로 제공되는 프로모션을 통해 적립한 추"
+"가 리워드 포인트에서 사용한 리워드 포인트를 뺀 금액과 동일합니다."
 
 #: pages/reward_points.vue
 msgid ""
@@ -15232,8 +15498,9 @@ msgid ""
 "Points Balance up to 100% of your cruise booking total price. Membership has "
 "its rewards!"
 msgstr ""
-"귀하의 잔액은 멤버십 지불에 2를 곱하고 사용한 리워드 포인트를 뺀 것과 같습니다. 블랙 카드로 리워드 포인트 잔액의 100%를 크루즈 "
-"예약 총액의 100%까지 사용할 수 있습니다. 멤버십에는 보상이 있습니다!"
+"귀하의 잔액은 멤버십 지불에 2를 곱하고 사용한 리워드 포인트를 뺀 것과 같습니"
+"다. 블랙 카드로 리워드 포인트 잔액의 100%를 크루즈 예약 총액의 100%까지 사용"
+"할 수 있습니다. 멤버십에는 보상이 있습니다!"
 
 #: pages/reward_points.vue
 msgid ""
@@ -15242,8 +15509,9 @@ msgid ""
 "Points Balance up to 50% of your cruise booking total price. Your available "
 "balance is 0 during the first 14 days of Membership."
 msgstr ""
-"귀하의 잔액은 멤버십 지불에 2를 곱하고 사용한 리워드 포인트를 뺀 것과 같습니다. 골드 카드를 사용하면 리워드 포인트 잔액의 100%를 "
-"크루즈 예약 총액의 50%까지 사용할 수 있습니다. 사용 가능한 잔액은 멤버십 첫 14일 동안 0입니다."
+"귀하의 잔액은 멤버십 지불에 2를 곱하고 사용한 리워드 포인트를 뺀 것과 같습니"
+"다. 골드 카드를 사용하면 리워드 포인트 잔액의 100%를 크루즈 예약 총액의 50%까"
+"지 사용할 수 있습니다. 사용 가능한 잔액은 멤버십 첫 14일 동안 0입니다."
 
 #: pages/invoices.vue
 msgid ""
@@ -15314,7 +15582,9 @@ msgstr "잔액 이상의 금액을 기부할 수 없습니다."
 msgid ""
 "Your cruise booking has a $0 out of pocket cost, therefore if you proceed, "
 "you will be automatically booked and your Reward Points will be deducted."
-msgstr "당신의 크루즈 예약은 본인 부담금이 $ 0이므로, 계속 진행하면, 자동으로 예약이 이루어지며 리워드 포인트가 공제됩니다."
+msgstr ""
+"당신의 크루즈 예약은 본인 부담금이 $ 0이므로, 계속 진행하면, 자동으로 예약이 "
+"이루어지며 리워드 포인트가 공제됩니다."
 
 #: receipts/invoice.html receipts/kickstart_bonus_statement.html
 msgid "Your Direct"
@@ -22734,6 +23004,12 @@ msgstr "이탈리아어 온보딩"
 msgid "Western Union"
 msgstr "웨스턴 유니온"
 
+#: Support Departments
+#, fuzzy
+#| msgid "Payout"
+msgid "Payout Refunds"
+msgstr "지불금"
+
 #: Travel Challenge (titles)
 msgid "DOUBLE DIGIT IN MARCH TO GOPRO IN NOVEMBER!"
 msgstr ""
@@ -22746,6 +23022,298 @@ msgid ""
 msgstr ""
 "자격을 얻으려면 11 점이 필요합니다. 가장 많은 점수를 얻은 최고 5명의 리더가 "
 "고프로티켓을 획득합니다."
+
+#~ msgid "{{ formatDate(cancellation.from) }}"
+#~ msgstr "{{ formatDate(cancellation.from) }}"
+
+#~ msgid "<span class=\"ng-scope\">Search</span>"
+#~ msgstr "<span class=\"ng-scope\">검색</span>"
+
+#~ msgid ""
+#~ "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+#~ "tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+#~ "stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+#~ "stroke-linejoin=\"round\">\n"
+#~ "\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/"
+#~ ">\n"
+#~ "\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+#~ "\t\t\t\t\t\t\t</svg>\n"
+#~ "\t\t\t\t\t\t\tGo Back"
+#~ msgstr ""
+#~ "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+#~ "tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+#~ "stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+#~ "stroke-linejoin=\"round\">\n"
+#~ "\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/"
+#~ ">\n"
+#~ "\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+#~ "\t\t\t\t\t\t\t</svg>\n"
+#~ "\t\t\t\t\t\t\t되돌아가기"
+
+#~ msgid ""
+#~ "Additionally, Members that are also Partners, can speed up the "
+#~ "progressive 4 year increase to 100% of Cruise Dollar usage by:"
+#~ msgstr ""
+#~ "추가로, 파트너이기도 한 멤버은 크루즈 달러를 만 4 년이 되면 100 %까지 점진"
+#~ "적으로 사용가능합니다:"
+
+#~ msgid ""
+#~ "Advancing to our Marketing Director Leadership Rank. To learn more about "
+#~ "our Partnership opportunity and our Leadership Ranks, please review our "
+#~ "Partnership page."
+#~ msgstr ""
+#~ "마케팅 디렉터 직급으로 승급됩니다. 파트너쉽 기회와 리더쉽 직급에 대한 자세"
+#~ "한 내용은 파트너쉽 페이지를 확인하십시오."
+
+#~ msgid ""
+#~ "After making 49 Membership payments, the percentage of Reward Points that "
+#~ "can be used to book cruises increases to 100%, per cruise."
+#~ msgstr ""
+#~ "멤버십 비용을 49회 지불한 뒤부터, 크루즈 예약에 쓸 수 있는 리워드 포인트"
+#~ "의 비율이 각 크루즈 당 100%까지 증가됩니다."
+
+#~ msgid ""
+#~ "Although many of our Partners are also Members, it is not mandatory. It "
+#~ "is possible to be a Partner, a Member, or both, what we call a “Partner "
+#~ "Member.” Experiencing the value and personal use of our membership "
+#~ "product helps you promote our genuine service to others."
+#~ msgstr ""
+#~ "많은 파트너멤버들이 멤버이기도 하지만 반드시 멤버는 않습니다. 의무사항은 "
+#~ "아닙니다. 파트너이거나, 멤버일 수도 있고, \"파트너이자 멤버\" 일 수도 있습"
+#~ "니다. 멤버의 가치에 대한 개인적인 경험은, 다른 사람들에게 인크루즈의 진정"
+#~ "한 서비스를 홍보하는 데 도움이 됩니다."
+
+#~ msgid ""
+#~ "Are Reward Points considered taxable income due to the 200 Reward Points "
+#~ "for every $100 USD paid in Membership dues?"
+#~ msgstr ""
+#~ "$100 USD로 200 리워드 포인트를 교환하는데 대해 리워드 포인트를 과세 소득으"
+#~ "로 간주합니까?"
+
+#~ msgid "Available Cruise Dollar Balance"
+#~ msgstr "예약에 쓸 수 있는 크루즈 달러 잔액"
+
+#~ msgid ""
+#~ "Becoming Membership FREE (referring and maintaining 5 active Members) for "
+#~ "three consecutive months after their initial activation payment or "
+#~ "reactivation payment."
+#~ msgstr ""
+#~ "초기 활성화 지불 또는 재활성화 지불 후 3 개월 연속 무료 멤버 되기 (5 명의 "
+#~ "활성화 멤버 추천 및 유지)."
+
+#~ msgid "Can I gift a Membership to others?"
+#~ msgstr "멤버십 자격을 다른 사람에게 선물할 수 있습니까?"
+
+#~ msgid ""
+#~ "Click here to learn more about our Membership and how you can use your "
+#~ "Cruise Dollars (Cruise Credits) to book Global Cruises."
+#~ msgstr ""
+#~ "멤버십 자격에 대한 자세한 내용과 크루즈 달러 (크루즈 크레디트)를 사용하여 "
+#~ "글로벌 크루즈를 예약하는 방법을 보려면 여기를 클릭하십시오."
+
+#~ msgid "Cruise Credits:"
+#~ msgstr "크루즈 크레디트:"
+
+#~ msgid ""
+#~ "During the 13th to the 24th Membership payment, the percentage of Reward "
+#~ "Points that can be used to book cruises increases to 70%, per cruise."
+#~ msgstr ""
+#~ "13 회차에서 24 회차 멤버십 납부기간 동안, 적립된 리워드 포인트의 70 %까지 "
+#~ "크루즈 예약에 사용할 수 있습니다."
+
+#~ msgid ""
+#~ "During the 25th to the 36th Membership payment, the percentage of Reward "
+#~ "Points that can be used to book cruises increases to 80%, per cruise."
+#~ msgstr ""
+#~ "25 회차에서 36 회차 멤버십 납부기간 동안, 크루즈당 적립된 리워드 포인트의 "
+#~ "80 %까지 사용할 수 있습니다."
+
+#~ msgid ""
+#~ "During the 37th to the 48th Membership payment, the percentage of Reward "
+#~ "Points that can be used to book cruises increases to 90%, per cruise."
+#~ msgstr ""
+#~ "37 회차에서 48 회차 멤버십 납부기간 동안, 크루즈당 적립된 리워드 포인트의 "
+#~ "90 %까지 사용할 수 있습니다."
+
+#~ msgid ""
+#~ "During the first 12 Membership payments, Members can use up to 60% of "
+#~ "their Reward Points, per cruise."
+#~ msgstr ""
+#~ "등록 후 12 회차 멤버십 납부기간 동안에는, 크루즈당 적립된 리워드 포인트의 "
+#~ "60% 까지 사용할 수 있습니다."
+
+#~ msgid "How do I get booked on a cruise on your site?"
+#~ msgstr "귀사의 사이트에서 크루즈를 예약하려면 어떻게 해야합니까?"
+
+#~ msgid "How many Reward Points can I use per cruise?"
+#~ msgstr "각 크루즈 당 몇 리워드 포인트를 사용할 수 있습니까?"
+
+#~ msgid ""
+#~ "If a Member wants to change the name of the passengers on any cruise "
+#~ "booked through our Website for which Reward Points were deducted to book "
+#~ "the cruise, the new person must also be an active paying Member and have "
+#~ "enough Reward Points to process the name change requested. In the event "
+#~ "the name change involves removing from the reservation someone who used "
+#~ "their Reward Points to book the stateroom with someone who is not an "
+#~ "active paying Member or is a Member who does not have enough Reward "
+#~ "Points to make the exchange, then the only available possibility to "
+#~ "execute the name change, is for inCruises to refund the Reward Points "
+#~ "from the Member being removed, adding those Reward Points back to their "
+#~ "account and charging the new person taking their place the entire amount "
+#~ "by credit card or any payment method allowed by inCruises. Member agrees "
+#~ "that certain name change fees may also apply."
+#~ msgstr ""
+#~ "리워드 포인트를 사용해 당사 웹사이트를 통해 크루즈를 예약한 멤버가 승객의 "
+#~ "명의를 변경하고자하는 경우, 새로운 승객이 유효 멤버로 크루즈 예약에 충분"
+#~ "한 리워드 포인트가 적립되어 있는 경우에만 명의 변경을 요청할 수 있습니다. "
+#~ "리워드 포인트로 객실을 예약한 사람이 유효 멤버가 아니거나, 변경을 하기에 "
+#~ "충분한 리워드 포인트가 없는 경우, 유일한 명의 변경 방법은, 취소하는 멤버"
+#~ "의 리워드 포인트를 환불하여 해당 멤버의 계정에 다시 리워드 포인트를 적립하"
+#~ "고, 신규로 교체되는 분이 신용 카드나 inCruises에서 허용하는 지불수단으로 "
+#~ "예약 총 가격을 지불하는 것입니다. 멤버는 명의변경 수수료가 적용될 수 있음"
+#~ "에 동의합니다."
+
+#~ msgid ""
+#~ "If you discontinue being a member, we will give you up to 1 year to "
+#~ "reactivate your account. To reactivate your account, you will need to pay "
+#~ "each Membership month you missed. You will still earn double Reward "
+#~ "Points for each month you pay to reactivate your account, and those "
+#~ "Reward Points will be added to your previous balance. After 12 months of "
+#~ "inactivity, your account is closed and your Reward Points expire and are "
+#~ "forfeited."
+#~ msgstr ""
+#~ "멤버십 비용 지불이 중단되면, 귀하의 계정을 재활성화할 수 있는 기간은 최대 "
+#~ "1년까지입니다. 계정을 재활성화하려면,  미지불된 달들에 대한 멤버십 비용을 "
+#~ "지불해야 합니다. 계정재활성화를 위해 지불된 금액은 두 배의 리워드 포인트"
+#~ "로 이전 잔액에 누적하여 적립됩니다. 비활성화된 지 12 개월 이후에는, 계정"
+#~ "은 폐쇄되며 리워드 포인트는 만료되고 몰수됩니다."
+
+#~ msgid ""
+#~ "If you miss a Membership payment, your account will be considered "
+#~ "inactive, and you will not be able to book any cruises or access our "
+#~ "site, except to reactivate your account."
+#~ msgstr ""
+#~ "멤버십 비용이 지불되지 경우, 귀하의 계정은 비활성으로 간주되어, 귀하의 계"
+#~ "정 재활성화만 가능하며, 크루즈 예약이나 당사 사이트 접속이 불가능합니다."
+
+#~ msgid ""
+#~ "InCruises Members can book any of our over 5,000 Global Cruises directly "
+#~ "on our site, by clicking on Global Cruises on our “Cruises” menu, then "
+#~ "following the steps all the way through the payment process. At checkout, "
+#~ "you will be given the option to pay for your cruise using all of your "
+#~ "available Reward Points and/or other payment methods to complete the "
+#~ "booking process."
+#~ msgstr ""
+#~ "inCruises 멤버는 전세계적으로 5,000 개가 넘는 크루즈를 당사 사이트에서 직"
+#~ "접 예약할 수 있습니다. 사이트의 \"크루즈 여행\"메뉴에서 글로벌 크루즈를 클"
+#~ "릭한 다음, 결제 과정의 모든 단계를 따르십시오. 예약을 완료하기 위해, 결제"
+#~ "시 이용 가능한 모든 리워드 포인트 및 / 또는 기타 방법으로 크루즈 비용에 대"
+#~ "한 지불방법을 선택할 수 있습니다."
+
+#~ msgid ""
+#~ "Members can book any cruise available on our Website and we will "
+#~ "automatically use their available Reward Points® to reduce the cost in "
+#~ "full or partially pay for the booking subject to maximum percentage "
+#~ "amounts as described below:"
+#~ msgstr ""
+#~ "멤버는 당사 웹 사이트에서 제공되는 모든 글로벌 크루즈를 예약할 수 있으며, "
+#~ "회사는 아래에 설명된 최대 비율에 따라, 이용 가능한 리워드 포인트®를  예약 "
+#~ "가격의 전체 또는 일부에 자동 차감합니다："
+
+#~ msgid ""
+#~ "Members must be active (no unpaid monthly invoices) to book a cruise. "
+#~ "Once a booking is confirmed, the Member must remain as an active paying "
+#~ "Member through the embarkation process of the cruise for which Reward "
+#~ "Points were used to book. If a Member fails to make Monthly Membership "
+#~ "payments after booking the cruise and before embarkation, and "
+#~ "consequently their account goes into an Inactive status, inCruises has "
+#~ "the right to cancel the cruise, and reimburse/refund all Reward Points "
+#~ "and payments made for the booking. Any fees associated with the "
+#~ "cancellation, will be the responsibility of the Member and deducted from "
+#~ "the Member's account."
+#~ msgstr ""
+#~ "크루즈를 예약하려면 활성화 멤버여야 합니다 (미지급된 월별 청구서 없음). 일"
+#~ "단 예약이 확정되면, 멤버는 리워드 포인트로 예약된 크루즈의 승선까지 활성"
+#~ "화 멤버여야 합니다. 멤버가 크루즈를 예약한 후 승선하기 전에 월간 멤버십 비"
+#~ "용을 지불하지 않아 계정이 비활성 상태가 되면 inCruises는 크루즈를 취소할 "
+#~ "수 있는 권한을 가지며 모든 리워드 포인트와 예약에 대한 지불금을 상환 / 환"
+#~ "불합니다. 취소와 관련된 수수료는 멤버가 부담하며 멤버 계정에서 공제됩니다."
+
+#~ msgid ""
+#~ "No, Reward Points are not a currency so there is no tax implication. "
+#~ "Redeeming Reward Points is comparable to booking a Cruise as a result of "
+#~ "a promotion or incentive. No one gets taxed more because the true value "
+#~ "is higher. We also suggest you confirm with your accountant."
+#~ msgstr ""
+#~ "아니오, 리워드 포인트는 통화가 아니므로 세금과 관계가 없습니다. 리워드 포"
+#~ "인트를 사용하는 것은 프로모션이나 인센티브의 결과로 크루즈를 예약하는 것"
+#~ "과 비슷합니다. 제품의 실제 가치가 더 크기 때문에 세금이 부과되지 않습니"
+#~ "다. 당사는 회계사에게도 확인할 것을 권고합니다."
+
+#~ msgid ""
+#~ "No, we are all at risk. To mitigate risk, we have Seller of Travel "
+#~ "Registrations in every state required and are bonded when required to do "
+#~ "so. Please see our <a href='{{corporateDueDiligence}}' "
+#~ "target='_blank'>Due Diligence Document</a> to learn more about the "
+#~ "company. Bottom line: we are built to last and are here for the long "
+#~ "haul, and like anything in life, there are no guarantees. To further "
+#~ "mitigate risk, we also have a relationship with Trust My Travel (TMT). "
+#~ "TMT provides consumer protection for every Membership payment. Your "
+#~ "payments to INCRUISES® are covered (your out-of-pocket amount, not the "
+#~ "Reward Points® (Reward Points) value) if, in the unlikely event INCRUISES "
+#~ "were to stop doing business. Please click here for more information on "
+#~ "your financial protection: <a href='{{tmtFinancialProtection}}' "
+#~ "target='_blank'>TMT Financial Protection</a>."
+#~ msgstr ""
+#~ "아니요, 우리 모두는 위험에 처해 있습니다. 위험을 완화하기 위해, 요구되는 "
+#~ "모든 주에 여행 판매자를 등록했으며 필요한 경우 보증을 받습니다. 회사에 대"
+#~ "한 자세한 내용은 <a href='{{corporateDueDiligence}}' target='_blank'>회사 "
+#~ "실사 문서를 참조하십시오</a>. 즉, 우리는 지속가능하도록 설계되었으며 장기"
+#~ "적으로 존재할 것이며, 인생의 여느 것과 마찬가지로 보장은 없습니다. 위험을 "
+#~ "더 완화하기 위해, 트러스트마이트래블(TMT) 과도 관계를 맺고 있습니다. TMT"
+#~ "는 모든 멤버십 지불에 대한 소비자 보호를 제공합니다. 당신이 inCruises에게 "
+#~ "지불한 금액(리워드 포인트®(리워드 포인트)가 아닌 본인이 직접 부담한 금액)"
+#~ "은 예기치 못한 상황에서 inCruises가 사업을 중단할 경우 보증되어 있습니다. "
+#~ "재정 보호에 대한 자세한 내용을 보려면 다음을 클릭하세요. <a "
+#~ "href='{{tmtFinancialProtection}}' target='_blank'>TMT 재정 보호</a>."
+
+#~ msgid "Not Partner / Expired Member"
+#~ msgstr "파트너 아님 / 만료된 멤버"
+
+#~ msgid "Partner / Expired Member"
+#~ msgstr "파트너 / 만료된 멤버"
+
+#~ msgid "Total Cruise Dollar Balance"
+#~ msgstr "총 크루즈 달러 잔액"
+
+#~ msgid ""
+#~ "Yes you can. While you cannot gift a cruise to others using your "
+#~ "Membership and Reward Points, you can certainly gift our Membership to "
+#~ "others and pay for them as long as they are at least 18 years old. Their "
+#~ "Reward Points can only be used if they will be booked on the cabin for "
+#~ "which the Reward Points are being used."
+#~ msgstr ""
+#~ "예, 할 수 있습니다. 귀하가 멤버쉽 및 리워드 포인트를 사용하여 다른 사람들"
+#~ "에게 크루즈 여행를 선물할 수는 없지만, 멤버십 자격을 선물할 수 있으며, 18 "
+#~ "세 이상에게 비용을 지불할 수 있습니다. 그들의 리워드 포인트는 리워드 포인"
+#~ "트가 사용되는 객실이 예약될 경우에만 사용할 수 있습니다."
+
+#~ msgid ""
+#~ "Yes. If a couple are both inCruises Members, they can combine their "
+#~ "Reward Points to cover the total cost of booking a cabin on a cruise."
+#~ msgstr ""
+#~ "예. 부부가 모두 inCruises 멤버인 경우, 리워드 포인트를 결합하여 크루즈 객"
+#~ "실 예약의 총 비용으로 쓸 수 있습니다."
+
+#~ msgid ""
+#~ "You can apply Reward Points to any cabin booking, including bookings "
+#~ "where multiple passengers are booked in the cabin, as long as there's at "
+#~ "least ONE Member booked in that cabin and their Reward Points are being "
+#~ "used for that booking."
+#~ msgstr ""
+#~ "해당 객실중 1 명이 리워드 포인트를 사용하여 예약을 하는 한, 동일한 객실에"
+#~ "서 여러 명의 승객을 예약하는 것을 포함하여 객실의 예약에 모든 멤버의 리워"
+#~ "드 포인트를 적용할 수 있습니다."
 
 #~ msgid "{{ user.eligible_cd }} Available CD"
 #~ msgstr "{{ user.eligible_cd }} 사용가능한 크루즈 달러"
@@ -25972,10 +26540,6 @@ msgstr ""
 
 #~ msgid "<i class=\"fa fa-eye mr-1\"></i> Remove from Watch List"
 #~ msgstr "<i class=\"fa fa-eye mr-1\"></i>관심목록에서 제외"
-
-#~ msgid ""
-#~ "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i> Add Passenger"
-#~ msgstr "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>승객 추가"
 
 #~ msgid "<i class=\"fa fa-star mr-1\"></i> Add to Favorites"
 #~ msgstr "<i class=\"fa fa-star mr-1\"></i> 선호목록에 추가"
