@@ -394,6 +394,10 @@ msgstr "{{ līgums.nosaukums/vārds}}"
 msgid "{{ box.box }}"
 msgstr "{{ box.box }}"
 
+#: pages/hotels_details.vue
+msgid "{{ formatDate(cancellation.from) }}"
+msgstr "{{ formatDatums(atcelts.no) }}"
+
 #: components/support/TicketList.vue
 msgid "{{ header }}"
 msgstr "{{ header }}"
@@ -408,21 +412,9 @@ msgstr ""
 "{{ viesnīca.gala mērķis.vards/nosaukums.saturs }}, {{ viesnīca.valsts.vārds/"
 "nosaukums }}, {{viesnīca.valsts.apraksts.saturs }}"
 
-#: pages/hotels_details.vue
-#, fuzzy
-#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
-msgid ""
-"{{ hotelAviability.sellingRate }}  per {{ searchParameters.nights }} nights"
-msgstr ""
-"${{ telpasMaksa.pārdošanasCens }} par/uz {{ eklēParameteri.naktis }} nakts"
-
 #: pages/book.vue
 msgid "{{ night }} Nights"
 msgstr "{{ night }} Naktis"
-
-#: pages/hotels.vue
-msgid "{{ searchParameters.roomCount }} rooms, {{ guestCount }} guests"
-msgstr ""
 
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
@@ -1025,16 +1017,6 @@ msgid ""
 msgstr ""
 "<i class=\"fa fa-check text-green\"></i>\n"
 "\t\t\t\t\tPārraide dzīvajā (piem. Facebook)"
-
-#: pages/hotels_booking.vue
-#, fuzzy
-#| msgid ""
-#| "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i> Add Passenger"
-msgid ""
-"<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\tAdd Passenger"
-msgstr ""
-"<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>Pievieno pasažieri"
 
 #: power_tools_upgrade/index.html
 msgid ""
@@ -1666,6 +1648,10 @@ msgstr ""
 "\t\t\t\t\t\t</span>\n"
 "\t\t\t\t\t\tSastādīt jaunu epastu"
 
+#: pages/hotels_details.vue
+msgid "<span class=\"ng-scope\">Search</span>"
+msgstr "<span class=\"ng-scope\">Meklēt</span>"
+
 #: pages/booking.vue
 msgid ""
 "<span style=\"color:red\">*</span>\n"
@@ -2092,6 +2078,26 @@ msgstr "<strong>Atvērtā Bāra & Speciaizēto Pusdienu Pateicības:</strong>"
 msgid "<strong>Total:</strong>"
 msgstr "<strong>Kopā:</strong>"
 
+#: pages/hotels_details.vue
+msgid ""
+"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+"stroke-linejoin=\"round\">\n"
+"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
+"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+"\t\t\t\t\t\t\t</svg>\n"
+"\t\t\t\t\t\t\tGo Back"
+msgstr ""
+"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+"stroke-linejoin=\"round\">\n"
+"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
+"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+"\t\t\t\t\t\t\t</svg>\n"
+"\t\t\t\t\t\t\tEj atpakaļ"
+
 #: email_notifications/index.html
 msgid ""
 "| Page: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
@@ -2099,23 +2105,8 @@ msgstr ""
 "| Lappuse: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
 
 #: pages/hotels_details.vue
-msgid "${{ calculatePricePerNight(hotelAviability.sellingRate) }} per night"
-msgstr ""
-
-#: pages/hotels_details.vue
-msgid "${{ calculatePricePerNight(rate.sellingRate) }} per night"
-msgstr ""
-
-#: pages/hotels_details.vue
 msgid "${{ cancellation.amount }} For cancellations made after"
 msgstr "${{ atcelšana.summa }} Jo atcelšana tika veikta pēc"
-
-#: pages/hotels_details.vue
-#, fuzzy
-#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
-msgid "${{ rate.sellingRate }} per {{ searchParameters.nights }} nights"
-msgstr ""
-"${{ telpasMaksa.pārdošanasCens }} par/uz {{ eklēParameteri.naktis }} nakts"
 
 #: pages/hotels_booking.vue
 msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
@@ -2492,10 +2483,6 @@ msgstr ""
 "Partnera vēlēšanos izpildīt visas Nacionālā Direktora prasības, kas minētas "
 "Kompensācijas plānā,Partneris iegūs Nacionālā Direktora līmeni. Kā tāds "
 "Partneris pirmajā mēnesī saņems kompensāciju Nacionālā Direktora līmenī ."
-
-#: pages/hotels_details.vue
-msgid "About {{ hotel.name.content }}"
-msgstr ""
 
 #: components/public/FooterLinks.vue pages/public/about.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
@@ -3627,12 +3614,6 @@ msgstr "REZERVĒ UN DODIES KRUĪZĀ PATS RISKĒJOT"
 msgid "Book Cruise"
 msgstr "Rezervē kruīzu"
 
-#: pages/hotels_details.vue
-#, fuzzy
-#| msgid "Book Now"
-msgid "Book now"
-msgstr "Rezervē tagad"
-
 #: components/costa-banner.vue
 msgid "Book Now"
 msgstr "Rezervē tagad"
@@ -4039,12 +4020,6 @@ msgstr "Atceliet izvēlēto apmaksas plānu"
 #: power_tools_upgrade/index.html
 msgid "Cancel your Power Tools Subscription"
 msgstr "Pieņemto pilnvaru rīku atcelšana"
-
-#: pages/hotels_details.vue
-#, fuzzy
-#| msgid "Cancellation Policy"
-msgid "Cancellation Policies"
-msgstr "Atcelšanas politika"
 
 #: receipts/booking_receipt.html
 msgid "Cancellation Policy"
@@ -4655,12 +4630,6 @@ msgstr "Turpini"
 #: components/checkout/ProcessorTrustly.vue
 msgid "Continue Payment Below"
 msgstr "Turpini maksājumu zemāk"
-
-#: pages/hotels_booking.vue
-#, fuzzy
-#| msgid "Hotel Booking"
-msgid "Continue to Booking"
-msgstr "Viesnīcas rezervācija"
 
 #: components/checkout/CurrencyStep.vue components/checkout/ItalianStep.vue
 #: components/checkout/ProcessorTmt.vue
@@ -5718,12 +5687,6 @@ msgstr "Piemērota kompensācija"
 msgid "Email"
 msgstr "Epasts"
 
-#: pages/hotels_booking.vue
-msgid ""
-"Email\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
-
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
 msgstr "Epasta adrese"
@@ -6052,18 +6015,6 @@ msgstr "Pabeigts"
 msgid "First Name"
 msgstr "Vāŗds"
 
-#: pages/hotels_booking.vue
-#, fuzzy
-#| msgid ""
-#| "<span style=\"color:red\">*</span>\n"
-#| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
-msgid ""
-"First Name\n"
-"\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
-msgstr ""
-"<span style=\"color:red\">*</span>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\tPilsēta:"
-
 #: pages/admin_support_analytics.vue
 msgid "First Response"
 msgstr "Pirmā atbilde"
@@ -6374,8 +6325,8 @@ msgstr "Pasaules sammita izsekošana"
 msgid "Go back"
 msgstr "Ej atpakaļ"
 
-#: pages/booking.vue pages/hotels_details.vue pages/italian_onboarding.vue
-#: pages/login/login.vue pay_bonus/index.html
+#: pages/booking.vue pages/italian_onboarding.vue pages/login/login.vue
+#: pay_bonus/index.html
 msgid "Go Back"
 msgstr "Ej atpakaļ"
 
@@ -8254,12 +8205,6 @@ msgstr "Pēdējā mēneša Vadības prēmija ir tikusi pieprasīta un gaida izma
 msgid "Last Name"
 msgstr "Uzvārds"
 
-#: pages/hotels_booking.vue
-msgid ""
-"Last Name\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
-
 #: pages/competition.vue competition/index.html
 msgid "Last Week's Contest"
 msgstr "Pēdējās nedēļas konkurss"
@@ -8817,12 +8762,6 @@ msgstr "Mobilās aplikācijas"
 #: compensation/index.html reach/index.html
 msgid "Mobile Phone"
 msgstr "Mobīlais telefons"
-
-#: pages/hotels_booking.vue
-msgid ""
-"Mobile Phone\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
 
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Mobile Phone is required."
@@ -10432,10 +10371,6 @@ msgstr "Foto ID"
 msgid "Picture Name"
 msgstr "Attēls, Vārds"
 
-#: pages/hotels_details.vue
-msgid "Placeholder"
-msgstr ""
-
 #: compensation/index.html
 msgid "Plan"
 msgstr "Plāns"
@@ -11724,13 +11659,6 @@ msgid "Room"
 msgstr "Kajīte/numuriņš"
 
 #: pages/hotels_booking.vue
-#, fuzzy
-#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
-msgid "Room {{ index }} ({{ searchParameters.nights }} nights)"
-msgstr ""
-"${{ telpasMaksa.pārdošanasCens }} par/uz {{ eklēParameteri.naktis }} nakts"
-
-#: pages/hotels_booking.vue
 msgid "Room name:"
 msgstr "Kajītes/numuriņa nosaukums:"
 
@@ -11814,8 +11742,8 @@ msgstr ""
 "Ietaupi laiku prezentējot!Ar šo spēcīgo rīku tu paredzamos biedrus "
 "piesaistīsi kā Partnerus un/vai Biedrus jebkurā laikā."
 
-#: pages/book.vue pages/hotels.vue pages/hotels_details.vue
-#: communications/index.html communications/view.html compensation/index.html
+#: pages/book.vue pages/hotels.vue communications/index.html
+#: communications/view.html compensation/index.html
 #: email_notifications/index.html track_growth/index.html
 #: webinar_recordings/index.html
 msgid "Search"
@@ -14411,12 +14339,6 @@ msgstr "Skati kruīzu"
 #: pages/welcome.vue
 msgid "View Details"
 msgstr "Skatīt detalizētu informāciju"
-
-#: pages/hotels_details.vue
-msgid ""
-"View Details\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"icon-open\"></span>"
-msgstr ""
 
 #: pages/welcome.vue
 msgid "View Donors"
@@ -23407,32 +23329,60 @@ msgstr ""
 "Lai vinnētu ir vajadzīgi 11 punkti. 5 topa vadošie (šeit:jāizvēlas) , līderi "
 "vinnēs GoPro biļeti."
 
-#~ msgid "{{ formatDate(cancellation.from) }}"
-#~ msgstr "{{ formatDatums(atcelts.no) }}"
-
-#~ msgid "<span class=\"ng-scope\">Search</span>"
-#~ msgstr "<span class=\"ng-scope\">Meklēt</span>"
-
+#, fuzzy
+#~| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
 #~ msgid ""
-#~ "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
-#~ "tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
-#~ "stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
-#~ "stroke-linejoin=\"round\">\n"
-#~ "\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/"
-#~ ">\n"
-#~ "\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
-#~ "\t\t\t\t\t\t\t</svg>\n"
-#~ "\t\t\t\t\t\t\tGo Back"
+#~ "{{ hotelAviability.sellingRate }}  per {{ searchParameters.nights }} "
+#~ "nights"
 #~ msgstr ""
-#~ "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
-#~ "tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
-#~ "stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
-#~ "stroke-linejoin=\"round\">\n"
-#~ "\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/"
-#~ ">\n"
-#~ "\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
-#~ "\t\t\t\t\t\t\t</svg>\n"
-#~ "\t\t\t\t\t\t\tEj atpakaļ"
+#~ "${{ telpasMaksa.pārdošanasCens }} par/uz {{ eklēParameteri.naktis }} nakts"
+
+#, fuzzy
+#~| msgid ""
+#~| "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i> Add Passenger"
+#~ msgid ""
+#~ "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>\n"
+#~ "\t\t\t\t\t\t\t\t\t\tAdd Passenger"
+#~ msgstr ""
+#~ "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>Pievieno pasažieri"
+
+#, fuzzy
+#~| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+#~ msgid "${{ rate.sellingRate }} per {{ searchParameters.nights }} nights"
+#~ msgstr ""
+#~ "${{ telpasMaksa.pārdošanasCens }} par/uz {{ eklēParameteri.naktis }} nakts"
+
+#, fuzzy
+#~| msgid "Book Now"
+#~ msgid "Book now"
+#~ msgstr "Rezervē tagad"
+
+#, fuzzy
+#~| msgid "Cancellation Policy"
+#~ msgid "Cancellation Policies"
+#~ msgstr "Atcelšanas politika"
+
+#, fuzzy
+#~| msgid "Hotel Booking"
+#~ msgid "Continue to Booking"
+#~ msgstr "Viesnīcas rezervācija"
+
+#, fuzzy
+#~| msgid ""
+#~| "<span style=\"color:red\">*</span>\n"
+#~| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
+#~ msgid ""
+#~ "First Name\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
+#~ msgstr ""
+#~ "<span style=\"color:red\">*</span>\n"
+#~ "\t\t\t\t\t\t\t\t\t\t\t\tPilsēta:"
+
+#, fuzzy
+#~| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+#~ msgid "Room {{ index }} ({{ searchParameters.nights }} nights)"
+#~ msgstr ""
+#~ "${{ telpasMaksa.pārdošanasCens }} par/uz {{ eklēParameteri.naktis }} nakts"
 
 #~ msgid ""
 #~ "Additionally, Members that are also Partners, can speed up the "

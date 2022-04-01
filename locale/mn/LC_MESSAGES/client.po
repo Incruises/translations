@@ -402,6 +402,10 @@ msgstr "{{ agreement.name }}"
 msgid "{{ box.box }}"
 msgstr "{{ box.box }}"
 
+#: pages/hotels_details.vue
+msgid "{{ formatDate(cancellation.from) }}"
+msgstr "{{ formatDate(cancellation.from) }}"
+
 #: components/support/TicketList.vue
 msgid "{{ header }}"
 msgstr "{{ header }}"
@@ -416,20 +420,9 @@ msgstr ""
 "name.content }}, {{ hotel.state.name }}, {{ hotel.country.description."
 "content }}"
 
-#: pages/hotels_details.vue
-#, fuzzy
-#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
-msgid ""
-"{{ hotelAviability.sellingRate }}  per {{ searchParameters.nights }} nights"
-msgstr "${{ roomRate.sellingRate }} шөнө {{ searchParameters.nights }} бүр"
-
 #: pages/book.vue
 msgid "{{ night }} Nights"
 msgstr "{{ night }} Шөнө"
-
-#: pages/hotels.vue
-msgid "{{ searchParameters.roomCount }} rooms, {{ guestCount }} guests"
-msgstr ""
 
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
@@ -1028,15 +1021,6 @@ msgid ""
 msgstr ""
 "<i class=\"fa fa-check text-green\"></i>\n"
 "\t\t\t\t\tЛайв Стриминг (жишээ нь, Фэйсбүүк)"
-
-#: pages/hotels_booking.vue
-#, fuzzy
-#| msgid ""
-#| "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i> Add Passenger"
-msgid ""
-"<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\tAdd Passenger"
-msgstr "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i> Зорчигч нэмэх"
 
 #: power_tools_upgrade/index.html
 msgid ""
@@ -1669,6 +1653,10 @@ msgstr ""
 "\t\t\t\t\t\t</span>\n"
 "\t\t\t\t\t\tШинэ имэйл бичих"
 
+#: pages/hotels_details.vue
+msgid "<span class=\"ng-scope\">Search</span>"
+msgstr "<span class=\"ng-scope\">Хайх</span>"
+
 #: pages/booking.vue
 msgid ""
 "<span style=\"color:red\">*</span>\n"
@@ -2095,6 +2083,26 @@ msgstr "<strong>Нээлттэй баар ба Тусгай хоолны ура�
 msgid "<strong>Total:</strong>"
 msgstr "<strong>Нийт:</strong>"
 
+#: pages/hotels_details.vue
+msgid ""
+"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+"stroke-linejoin=\"round\">\n"
+"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
+"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+"\t\t\t\t\t\t\t</svg>\n"
+"\t\t\t\t\t\t\tGo Back"
+msgstr ""
+"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+"stroke-linejoin=\"round\">\n"
+"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
+"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+"\t\t\t\t\t\t\t</svg>\n"
+"\t\t\t\t\t\t\tБуцах"
+
 #: email_notifications/index.html
 msgid ""
 "| Page: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
@@ -2102,22 +2110,8 @@ msgstr ""
 "| Хуудас: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
 
 #: pages/hotels_details.vue
-msgid "${{ calculatePricePerNight(hotelAviability.sellingRate) }} per night"
-msgstr ""
-
-#: pages/hotels_details.vue
-msgid "${{ calculatePricePerNight(rate.sellingRate) }} per night"
-msgstr ""
-
-#: pages/hotels_details.vue
 msgid "${{ cancellation.amount }} For cancellations made after"
 msgstr "${{ cancellation.amount }} -ын цуцлалт"
-
-#: pages/hotels_details.vue
-#, fuzzy
-#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
-msgid "${{ rate.sellingRate }} per {{ searchParameters.nights }} nights"
-msgstr "${{ roomRate.sellingRate }} шөнө {{ searchParameters.nights }} бүр"
 
 #: pages/hotels_booking.vue
 msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
@@ -2496,10 +2490,6 @@ msgstr ""
 "Захирал болэ зэрэг ахиулах бүх шаардлагыг хангасан тохиолдолд ТҮНШ нь "
 "Үндэсний Захирал болж зэрэг ахиулж болно. Үүнд, ТҮНШ нь энэ хоёр шаардлагыг "
 "хангасан эхнийхээ сараас Үндэсний Захирлын урамшууллыг авна."
-
-#: pages/hotels_details.vue
-msgid "About {{ hotel.name.content }}"
-msgstr ""
 
 #: components/public/FooterLinks.vue pages/public/about.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
@@ -3651,12 +3641,6 @@ msgstr "ӨӨРСДИЙН ЭРСДЭЛЭЭР АЯЛАЛЫН ЗАХИАЛГА ХИ
 msgid "Book Cruise"
 msgstr "Аялал захиалах"
 
-#: pages/hotels_details.vue
-#, fuzzy
-#| msgid "Book Now"
-msgid "Book now"
-msgstr "Одоо захиалга хийх"
-
 #: components/costa-banner.vue
 msgid "Book Now"
 msgstr "Одоо захиалга хийх"
@@ -4071,12 +4055,6 @@ msgstr "Хүчирхэг Хэрэгсэлүүд Төлөвлөгөөний тү�
 #: power_tools_upgrade/index.html
 msgid "Cancel your Power Tools Subscription"
 msgstr "Хүчирхэг Хэрэгсэлүүд Төлөвлөгөөний захиалгыг цуцлах"
-
-#: pages/hotels_details.vue
-#, fuzzy
-#| msgid "Cancellation Policy"
-msgid "Cancellation Policies"
-msgstr "Цуцлалтын Бодлого"
 
 #: receipts/booking_receipt.html
 msgid "Cancellation Policy"
@@ -4687,12 +4665,6 @@ msgstr "Үргэлжлүүлэх"
 #: components/checkout/ProcessorTrustly.vue
 msgid "Continue Payment Below"
 msgstr "Доорхи төлбөрийг үргэлжлүүлэх"
-
-#: pages/hotels_booking.vue
-#, fuzzy
-#| msgid "Hotel Booking"
-msgid "Continue to Booking"
-msgstr "Зочид буудал захиалах"
 
 #: components/checkout/CurrencyStep.vue components/checkout/ItalianStep.vue
 #: components/checkout/ProcessorTmt.vue
@@ -5748,12 +5720,6 @@ msgstr "Хэрэглэж болох Шагнал урамшуулал"
 msgid "Email"
 msgstr "Имэйл"
 
-#: pages/hotels_booking.vue
-msgid ""
-"Email\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
-
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
 msgstr "Имэйл хаяг"
@@ -6083,18 +6049,6 @@ msgstr "Дууссан"
 msgid "First Name"
 msgstr "Нэр"
 
-#: pages/hotels_booking.vue
-#, fuzzy
-#| msgid ""
-#| "<span style=\"color:red\">*</span>\n"
-#| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
-msgid ""
-"First Name\n"
-"\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
-msgstr ""
-"<span style=\"color:red\">*</span>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\tХот:"
-
 #: pages/admin_support_analytics.vue
 msgid "First Response"
 msgstr "Анхны хариу"
@@ -6413,8 +6367,8 @@ msgstr "Дэлхийн дээд хэмжээний уулзалтыг харах
 msgid "Go back"
 msgstr "Буцах"
 
-#: pages/booking.vue pages/hotels_details.vue pages/italian_onboarding.vue
-#: pages/login/login.vue pay_bonus/index.html
+#: pages/booking.vue pages/italian_onboarding.vue pages/login/login.vue
+#: pay_bonus/index.html
 msgid "Go Back"
 msgstr "Буцах"
 
@@ -8336,12 +8290,6 @@ msgstr ""
 msgid "Last Name"
 msgstr "Овог"
 
-#: pages/hotels_booking.vue
-msgid ""
-"Last Name\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
-
 #: pages/competition.vue competition/index.html
 msgid "Last Week's Contest"
 msgstr "Өмнөх 7 хоногийн уралдаан"
@@ -8903,12 +8851,6 @@ msgstr "Гар утасны Аппууд"
 #: compensation/index.html reach/index.html
 msgid "Mobile Phone"
 msgstr "Гар утасны дугаар"
-
-#: pages/hotels_booking.vue
-msgid ""
-"Mobile Phone\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
 
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Mobile Phone is required."
@@ -10534,10 +10476,6 @@ msgstr "Зураг"
 msgid "Picture Name"
 msgstr "Зургийн нэр"
 
-#: pages/hotels_details.vue
-msgid "Placeholder"
-msgstr ""
-
 #: compensation/index.html
 msgid "Plan"
 msgstr "Төлөвлөгөө"
@@ -11820,12 +11758,6 @@ msgid "Room"
 msgstr "Өрөө"
 
 #: pages/hotels_booking.vue
-#, fuzzy
-#| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
-msgid "Room {{ index }} ({{ searchParameters.nights }} nights)"
-msgstr "${{ roomRate.sellingRate }} шөнө {{ searchParameters.nights }} бүр"
-
-#: pages/hotels_booking.vue
 msgid "Room name:"
 msgstr "Өрөөний нэр:"
 
@@ -11909,8 +11841,8 @@ msgstr ""
 "Цагаа хэмнэ! Энэхүү Power Tool нь таны найзуудыг Түнш болон/эсвэл Гишүүнээр "
 "шууд бүртгүүлэхэд тусална."
 
-#: pages/book.vue pages/hotels.vue pages/hotels_details.vue
-#: communications/index.html communications/view.html compensation/index.html
+#: pages/book.vue pages/hotels.vue communications/index.html
+#: communications/view.html compensation/index.html
 #: email_notifications/index.html track_growth/index.html
 #: webinar_recordings/index.html
 msgid "Search"
@@ -14482,12 +14414,6 @@ msgstr "Энэ аялалыг харах"
 #: pages/welcome.vue
 msgid "View Details"
 msgstr "Дэлгэрэнгүйг харах"
-
-#: pages/hotels_details.vue
-msgid ""
-"View Details\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"icon-open\"></span>"
-msgstr ""
 
 #: pages/welcome.vue
 msgid "View Donors"
@@ -23689,32 +23615,57 @@ msgstr ""
 "Ялахын тулд танд 11 оноо хэрэгтэй байна. Хамгийн их оноотой ТОП 5 Манлайлагч "
 "GoPro билет хожих болно."
 
-#~ msgid "{{ formatDate(cancellation.from) }}"
-#~ msgstr "{{ formatDate(cancellation.from) }}"
-
-#~ msgid "<span class=\"ng-scope\">Search</span>"
-#~ msgstr "<span class=\"ng-scope\">Хайх</span>"
-
+#, fuzzy
+#~| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
 #~ msgid ""
-#~ "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
-#~ "tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
-#~ "stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
-#~ "stroke-linejoin=\"round\">\n"
-#~ "\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/"
-#~ ">\n"
-#~ "\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
-#~ "\t\t\t\t\t\t\t</svg>\n"
-#~ "\t\t\t\t\t\t\tGo Back"
+#~ "{{ hotelAviability.sellingRate }}  per {{ searchParameters.nights }} "
+#~ "nights"
+#~ msgstr "${{ roomRate.sellingRate }} шөнө {{ searchParameters.nights }} бүр"
+
+#, fuzzy
+#~| msgid ""
+#~| "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i> Add Passenger"
+#~ msgid ""
+#~ "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i>\n"
+#~ "\t\t\t\t\t\t\t\t\t\tAdd Passenger"
 #~ msgstr ""
-#~ "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
-#~ "tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
-#~ "stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
-#~ "stroke-linejoin=\"round\">\n"
-#~ "\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/"
-#~ ">\n"
-#~ "\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
-#~ "\t\t\t\t\t\t\t</svg>\n"
-#~ "\t\t\t\t\t\t\tБуцах"
+#~ "<i class=\"fa fa-plus-square\" aria-hidden=\"true\"></i> Зорчигч нэмэх"
+
+#, fuzzy
+#~| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+#~ msgid "${{ rate.sellingRate }} per {{ searchParameters.nights }} nights"
+#~ msgstr "${{ roomRate.sellingRate }} шөнө {{ searchParameters.nights }} бүр"
+
+#, fuzzy
+#~| msgid "Book Now"
+#~ msgid "Book now"
+#~ msgstr "Одоо захиалга хийх"
+
+#, fuzzy
+#~| msgid "Cancellation Policy"
+#~ msgid "Cancellation Policies"
+#~ msgstr "Цуцлалтын Бодлого"
+
+#, fuzzy
+#~| msgid "Hotel Booking"
+#~ msgid "Continue to Booking"
+#~ msgstr "Зочид буудал захиалах"
+
+#, fuzzy
+#~| msgid ""
+#~| "<span style=\"color:red\">*</span>\n"
+#~| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
+#~ msgid ""
+#~ "First Name\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
+#~ msgstr ""
+#~ "<span style=\"color:red\">*</span>\n"
+#~ "\t\t\t\t\t\t\t\t\t\t\t\tХот:"
+
+#, fuzzy
+#~| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+#~ msgid "Room {{ index }} ({{ searchParameters.nights }} nights)"
+#~ msgstr "${{ roomRate.sellingRate }} шөнө {{ searchParameters.nights }} бүр"
 
 #~ msgid ""
 #~ "Additionally, Members that are also Partners, can speed up the "
