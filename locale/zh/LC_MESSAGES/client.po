@@ -370,23 +370,9 @@ msgstr "{{ agreement.name }}"
 msgid "{{ box.box }}"
 msgstr "{{ box.box }}"
 
-#: pages/hotels_details.vue
-msgid "{{ formatDate(cancellation.from) }}"
-msgstr "{{ formatDate(cancellation.from) }}"
-
 #: components/support/TicketList.vue
 msgid "{{ header }}"
 msgstr "{{ header }}"
-
-#: pages/hotels_booking.vue
-msgid ""
-"{{ hotel.address.content }}, {{ hotel.zone.name }}, {{ hotel.destination."
-"name.content }}, {{ hotel.state.name }}, {{ hotel.country.description."
-"content }}"
-msgstr ""
-"{{ hotel.address.content }}, {{ hotel.zone.name }}, {{ hotel.destination."
-"name.content }}, {{ hotel.state.name }}, {{ hotel.country.description."
-"content }}"
 
 #: pages/book.vue
 msgid "{{ night }} Nights"
@@ -1602,10 +1588,6 @@ msgstr ""
 "\t\t\t\t\t\t</span>\n"
 "\t\t\t\t\t\t撰寫新電子郵件"
 
-#: pages/hotels_details.vue
-msgid "<span class=\"ng-scope\">Search</span>"
-msgstr "<span class=\"ng-scope\">搜索</span>"
-
 #: pages/booking.vue
 msgid ""
 "<span style=\"color:red\">*</span>\n"
@@ -1767,18 +1749,6 @@ msgid ""
 msgstr ""
 "<span translate>歡迎,</span>\n"
 "\t\t\t\t\t\t\t{{$root.user.first_name + ' ' + $root.user.last_name}}"
-
-#: pages/hotels_booking.vue
-msgid ""
-"<span v-for=\"(phone, index) in hotel.phones\" :key=\"index\">\n"
-"\t\t\t\t\t\t\t\t\t{{ phone.phoneType }}: {{ phone.phoneNumber }}\n"
-"\t\t\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\t\t</span>"
-msgstr ""
-"<span v-for=\"(phone, index) in hotel.phones\" :key=\"index\">\n"
-"\t\t\t\t\t\t\t\t\t{{ phone.phoneType }}: {{ phone.phoneNumber }}\n"
-"\t\t\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\t\t</span>"
 
 #: pages/public/membership.vue
 msgid ""
@@ -2026,39 +1996,11 @@ msgstr "<strong>開放式酒吧和特色餐飲小費：</strong>"
 msgid "<strong>Total:</strong>"
 msgstr "<strong>全部：</strong>"
 
-#: pages/hotels_details.vue
-msgid ""
-"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
-"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
-"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
-"stroke-linejoin=\"round\">\n"
-"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
-"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
-"\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\tGo Back"
-msgstr ""
-"<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
-"tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
-"stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
-"stroke-linejoin=\"round\">\n"
-"\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/>\n"
-"\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
-"\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\t退回"
-
 #: email_notifications/index.html
 msgid ""
 "| Page: {{pageNumber}} ({{pageStartEmail + 1}}-{{pageStartEmail+100}}) |"
 msgstr ""
 "|頁：{{pageNumber}}（{{pageStartEmail 1}}  -  {{pageStartEmail 100}}）|"
-
-#: pages/hotels_details.vue
-msgid "${{ cancellation.amount }} For cancellations made after"
-msgstr "${{ cancellation.amount }} 對於之後的取消"
-
-#: pages/hotels_booking.vue
-msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
-msgstr "${{ roomRate.sellingRate }} 每 {{ searchParameters.nights }} 晚"
 
 #: refund_protocol/remove_weeklybonus_modal.html
 msgid "${{statement.data.amount}}"
@@ -2409,7 +2351,7 @@ msgstr ""
 "因此，合作夥伴應在滿足這兩項要求的第一個月內得到作為National Director級別的薪"
 "酬。"
 
-#: components/public/FooterLinks.vue pages/public/about.vue
+#: pages/public/about.vue components/public/FooterLinks.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "About Us"
 msgstr "關於我們"
@@ -2481,7 +2423,13 @@ msgstr "以後添加"
 msgid "Add Leaders"
 msgstr "添加領導者"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "Passengers"
+msgid "Add Passenger"
+msgstr "乘客"
+
+#: pages/invoices.vue components/confirm-recurring.vue
 msgid "Add Recurring Profile"
 msgstr "添加循環結算資料"
 
@@ -2522,10 +2470,9 @@ msgstr ""
 "inCruises可能會選擇終止我的合作夥伴協議，我將會因為我的行為，失去所有未來的賠"
 "償。"
 
-#: components/info-reminder.vue pages/additional_info.vue
-#: pages/convention_manager.vue pages/settings.vue
-#: components/checkout/ItalianStep.vue compensation/index.html
-#: receipts/italian_receipt.html
+#: pages/additional_info.vue pages/convention_manager.vue pages/settings.vue
+#: components/info-reminder.vue components/checkout/ItalianStep.vue
+#: compensation/index.html receipts/italian_receipt.html
 msgid "Address"
 msgstr "地址"
 
@@ -2857,8 +2804,8 @@ msgstr "Android"
 msgid "Annual Income (USD)"
 msgstr "年收入（美元）"
 
-#: components/weekly-competition.vue pages/competition.vue
-#: pages/team_rankings.vue pages/welcome.vue competition/index.html
+#: pages/competition.vue pages/team_rankings.vue pages/welcome.vue
+#: components/weekly-competition.vue competition/index.html
 msgid "Anonymous"
 msgstr "匿名"
 
@@ -3242,7 +3189,7 @@ msgstr "後臺辦公室主題"
 msgid "Back to Highlights"
 msgstr "返回亮點"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 msgid "BACK UP"
 msgstr "備份"
 
@@ -3471,6 +3418,12 @@ msgstr "預訂和巡航風險自負"
 #: pages/cruise.vue
 msgid "Book Cruise"
 msgstr "預定郵輪"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Book Now"
+msgid "Book now"
+msgstr "現在預訂"
 
 #: components/costa-banner.vue
 msgid "Book Now"
@@ -3855,6 +3808,12 @@ msgstr "取消您的Power Tools降級"
 msgid "Cancel your Power Tools Subscription"
 msgstr "取消您的Power Tools訂閱"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Cancellation Policy"
+msgid "Cancellation Policies"
+msgstr "取消政策"
+
 #: receipts/booking_receipt.html
 msgid "Cancellation Policy"
 msgstr "取消政策"
@@ -3863,22 +3822,22 @@ msgstr "取消政策"
 msgid "Cancellation Warning"
 msgstr "取消警告"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 #: components/checkout/CardStep.vue
 msgid "Card CVC/CVV:"
 msgstr "卡CVC / CVV："
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 #: components/checkout/CardStep.vue
 msgid "Card Expiration:"
 msgstr "卡過期日期："
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 #: components/checkout/CardStep.vue
 msgid "Card Name:"
 msgstr "卡名："
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 #: components/checkout/CardStep.vue
 msgid "Card Number:"
 msgstr "卡號:"
@@ -4064,7 +4023,7 @@ msgstr "選擇您的貨幣"
 msgid "Choose your Referral Link:"
 msgstr "選擇推薦鏈接："
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Choose your referrer:"
 msgstr "選擇您的推薦人："
 
@@ -4076,7 +4035,7 @@ msgstr "參觀過的城市"
 msgid "Citizenship"
 msgstr "國籍"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 #: components/checkout/ItalianStep.vue compensation/index.html
 #: receipts/italian_receipt.html
 msgid "City"
@@ -4186,17 +4145,17 @@ msgstr "點擊這裡註冊"
 msgid "Client Configuration"
 msgstr "客戶端配置"
 
-#: components/global-summit-reminder.vue components/weekly-competition.vue
 #: pages/booking.vue pages/connect.vue pages/convention_manager.vue
 #: pages/cruises.vue pages/global_summit_tracking.vue pages/hotels_details.vue
 #: pages/invoices.vue pages/reward_points.vue
-#: components/global_convention/event_info.vue
-#: components/public/FooterLinks.vue components/public/JoinModal.vue
+#: components/global-summit-reminder.vue components/weekly-competition.vue
 #: pages/public/biz.vue pages/public/index.vue pages/public/leadership.vue
 #: pages/public/membership.vue pages/public/mission.vue
-#: pages/public/partnership.vue pages/public/signup.vue compensation/index.html
-#: connect/index.html cruising_dollars/index.html pay_bonus/index.html
-#: reach/index.html
+#: pages/public/partnership.vue pages/public/signup.vue
+#: components/global_convention/event_info.vue
+#: components/public/FooterLinks.vue components/public/JoinModal.vue
+#: compensation/index.html connect/index.html cruising_dollars/index.html
+#: pay_bonus/index.html reach/index.html
 msgid "Close"
 msgstr "關閉"
 
@@ -4285,12 +4244,13 @@ msgstr "壓縮"
 msgid "Conditions"
 msgstr "條件"
 
-#: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: pages/payout.vue receipts/booking_receipt.html reports/index.html
+#: pages/payout.vue components/birthdate-reminder.vue
+#: components/italian-vat-reminder.vue receipts/booking_receipt.html
+#: reports/index.html
 msgid "Confirm"
 msgstr "確認"
 
-#: components/birthdate-reminder.vue pages/payout.vue
+#: pages/payout.vue components/birthdate-reminder.vue
 msgid "Confirm Birthdate"
 msgstr "確認出生日期"
 
@@ -4430,7 +4390,7 @@ msgstr "通過郵件聯繫："
 msgid "Contact Information"
 msgstr "聯繫信息"
 
-#: components/public/FooterLinks.vue pages/public/contact.vue
+#: pages/public/contact.vue components/public/FooterLinks.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "Contact Us"
 msgstr "聯繫我們"
@@ -4496,14 +4456,14 @@ msgstr "國家和計數"
 msgid "Countries Visited"
 msgstr "參觀過的國家"
 
-#: components/info-reminder.vue components/weekly-competition.vue
 #: pages/additional_info.vue pages/admin_user.vue pages/competition.vue
 #: pages/contacts.vue pages/global_summit_tracking.vue pages/referral_links.vue
 #: pages/settings.vue pages/team_rankings.vue pages/welcome.vue
-#: components/checkout/ItalianStep.vue components/public/JoinModal.vue
-#: pages/public/signup.vue competition/index.html compensation/index.html
-#: new_ranks/index.html reach/index.html receipts/italian_receipt.html
-#: reports/index.html track_results/index.html
+#: components/info-reminder.vue components/weekly-competition.vue
+#: pages/public/signup.vue components/checkout/ItalianStep.vue
+#: components/public/JoinModal.vue compensation/index.html
+#: competition/index.html new_ranks/index.html reach/index.html
+#: receipts/italian_receipt.html reports/index.html track_results/index.html
 msgid "Country"
 msgstr "國家"
 
@@ -4878,7 +4838,7 @@ msgstr "甲板："
 msgid "Deductions"
 msgstr "扣除"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 msgid "DEFAULT"
 msgstr "默認"
 
@@ -5462,6 +5422,18 @@ msgstr "符合條件的報酬"
 msgid "Email"
 msgstr "電子郵件"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid ""
+#| "<span style=\"color:red\">*</span>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
+msgid ""
+"Email\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+msgstr ""
+"<span style=\"color:red\">*</span>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t城市："
+
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
 msgstr "電子郵件地址"
@@ -5542,7 +5514,7 @@ msgstr "ePayments ID (例如，000-123456)"
 msgid "ePayments ID, email, mobile phone number"
 msgstr "ePayments ID，電子郵件，手機號碼"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Error with signup!"
 msgstr "註冊時發生錯誤！"
 
@@ -5785,6 +5757,18 @@ msgstr "完成"
 msgid "First Name"
 msgstr "名"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid ""
+#| "<span style=\"color:red\">*</span>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
+msgid ""
+"First Name\n"
+"\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
+msgstr ""
+"<span style=\"color:red\">*</span>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t城市："
+
 #: pages/admin_support_analytics.vue
 msgid "First Response"
 msgstr "第一反應"
@@ -5812,6 +5796,12 @@ msgstr "按照以下簡單步驟設置您的inCruise帳戶。"
 #: pages/hotels.vue
 msgid "for {{ daysApart }} nights"
 msgstr "{{ daysApart }} 晚"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "${{ cancellation.amount }} For cancellations made after"
+msgid "For cancellations made after"
+msgstr "${{ cancellation.amount }} 對於之後的取消"
 
 #: components/public/Faq.vue
 #, fuzzy
@@ -5857,7 +5847,7 @@ msgstr ""
 "由於這些原因，我成為Mercy Ships使命的信徒，並希望您，我們的inCruises家族也能"
 "做到這一點。"
 
-#: components/public/FooterLinks.vue pages/public/pricing.vue
+#: pages/public/pricing.vue components/public/FooterLinks.vue
 msgid ""
 "For your financial protection (INCRUISES INTERNATIONAL LLC) is a member of "
 "Trust My\n"
@@ -5999,7 +5989,7 @@ msgstr "g. 確認效果"
 msgid "Gallery"
 msgstr "畫廊"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Gender Required!"
 msgstr "性別是必須的！"
 
@@ -6081,8 +6071,8 @@ msgstr "全球峰會追踪"
 msgid "Go back"
 msgstr "返回"
 
-#: pages/booking.vue pages/italian_onboarding.vue pages/login/login.vue
-#: pay_bonus/index.html
+#: pages/booking.vue pages/hotels_details.vue pages/italian_onboarding.vue
+#: pages/login/login.vue pay_bonus/index.html
 msgid "Go Back"
 msgstr "後退"
 
@@ -6341,7 +6331,7 @@ msgstr ""
 msgid "HR Director"
 msgstr "人力資源總監"
 
-#: components/covid-disclaimer-reminder.vue pages/invoices.vue
+#: pages/invoices.vue components/covid-disclaimer-reminder.vue
 msgid "I Accept"
 msgstr "我接受"
 
@@ -7714,11 +7704,12 @@ msgstr "日語"
 msgid "Japanese Press Releases"
 msgstr "日語新聞稿"
 
-#: components/blog/navbar.vue components/public/Header.vue
-#: components/public/JoinModal.vue pages/public/biz.vue pages/public/index.vue
-#: pages/public/media.vue pages/public/membership.vue pages/public/mission.vue
+#: pages/public/biz.vue pages/public/index.vue pages/public/media.vue
+#: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/reviews.vue
-#: pages/public/signup.vue communications/index.html communications/view.html
+#: pages/public/signup.vue components/blog/navbar.vue
+#: components/public/Header.vue components/public/JoinModal.vue
+#: communications/index.html communications/view.html
 #: income_disclosure/index.html live/index.html unsubscribe/index.html
 msgid "Join Now"
 msgstr "現在加入"
@@ -7821,6 +7812,18 @@ msgstr "上個月的領導獎金已申請，正在等待支付。"
 #: import/index.html
 msgid "Last Name"
 msgstr "姓"
+
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid ""
+#| "<span style=\"color:red\">*</span>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
+msgid ""
+"Last Name\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+msgstr ""
+"<span style=\"color:red\">*</span>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t城市："
 
 #: pages/competition.vue competition/index.html
 msgid "Last Week's Contest"
@@ -8035,10 +8038,10 @@ msgstr "加載更多"
 msgid "Location"
 msgstr "地點"
 
-#: components/blog/navbar.vue components/payout/hyperwallet-withdraw.vue
+#: pages/login/login.vue pages/public/signup.vue components/blog/navbar.vue
+#: components/public/Header.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
-#: components/payout/payoneer-withdraw.vue components/public/Header.vue
-#: pages/login/login.vue pages/public/signup.vue communications/index.html
+#: components/payout/payoneer-withdraw.vue communications/index.html
 #: communications/view.html income_disclosure/index.html live/index.html
 #: login/index.html unsubscribe/index.html
 msgid "Login"
@@ -8099,7 +8102,7 @@ msgstr ""
 msgid "March"
 msgstr "三月"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 msgid "Marital Status"
 msgstr "婚姻狀況"
 
@@ -8120,7 +8123,7 @@ msgstr "MARKETING DIRECTOR"
 msgid "Marketing Director Bonus"
 msgstr "Marketing Director獎金"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 msgid "Married"
 msgstr "已婚"
 
@@ -8367,7 +8370,19 @@ msgstr "移動應用"
 msgid "Mobile Phone"
 msgstr "移動電話"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid ""
+#| "<span style=\"color:red\">*</span>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
+msgid ""
+"Mobile Phone\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+msgstr ""
+"<span style=\"color:red\">*</span>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t城市："
+
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Mobile Phone is required."
 msgstr "移動電話是必需的。"
 
@@ -8587,11 +8602,11 @@ msgstr ""
 "我最真誠的希望是，您和您的團隊合作夥伴經常拜訪，並以新的決心保持增長，從而擺"
 "脫困境。"
 
-#: components/weekly-competition.vue pages/banner_tracking.vue
-#: pages/competition.vue pages/contacts.vue pages/convention_manager.vue
-#: pages/duplicator.vue pages/global_summit_tracking.vue pages/settings.vue
-#: pages/team_rankings.vue pages/welcome.vue competition/index.html
-#: compensation/index.html invoices/invoice_statement.html
+#: pages/banner_tracking.vue pages/competition.vue pages/contacts.vue
+#: pages/convention_manager.vue pages/duplicator.vue
+#: pages/global_summit_tracking.vue pages/settings.vue pages/team_rankings.vue
+#: pages/welcome.vue components/weekly-competition.vue compensation/index.html
+#: competition/index.html invoices/invoice_statement.html
 #: negative_balances/index.html pay_bonus/index.html reach/index.html
 #: receipts/booking_receipt.html receipts/commission_statement.html
 #: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
@@ -8854,11 +8869,23 @@ msgstr "下一步"
 msgid "Next Year"
 msgstr "明年"
 
+#: pages/hotels_booking.vue
+#, fuzzy
+#| msgid "/ night"
+msgid "night"
+msgstr "/ 夜晚"
+
+#: pages/hotels_booking.vue pages/hotels_details.vue
+#, fuzzy
+#| msgid "/ night"
+msgid "nights"
+msgstr "/ 夜晚"
+
 #: pages/book.vue
 msgid "Nights:"
 msgstr "晚:"
 
-#: components/info-reminder.vue pages/invoices.vue
+#: pages/invoices.vue components/info-reminder.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -9277,7 +9304,7 @@ msgstr "奧爾迪諾，安道爾"
 msgid "Other"
 msgstr "其他"
 
-#: components/public/FooterLinks.vue pages/public/causes.vue
+#: pages/public/causes.vue components/public/FooterLinks.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "Our Causes"
 msgstr "我們的原因"
@@ -9286,7 +9313,7 @@ msgstr "我們的原因"
 msgid "OUR MEMBERS AND PARTNERS"
 msgstr "我們的會員和合作夥伴"
 
-#: components/public/FooterLinks.vue pages/public/mission.vue
+#: pages/public/mission.vue components/public/FooterLinks.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "Our Mission"
 msgstr "我們的使命"
@@ -9703,7 +9730,7 @@ msgstr "密碼："
 msgid "Passwords"
 msgstr "密碼"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Passwords do not match!"
 msgstr "密碼不匹配！"
 
@@ -9750,7 +9777,7 @@ msgstr "付款鏈接（帶有HTTPS的完整URL）"
 msgid "Payment Option"
 msgstr "付款選項"
 
-#: components/public/FooterLinks.vue pages/public/payment_terms.vue
+#: pages/public/payment_terms.vue components/public/FooterLinks.vue
 #: layouts/default.html layouts/default_no_nav.html
 msgid "Payment Terms"
 msgstr "付款條件"
@@ -9828,6 +9855,10 @@ msgstr "待定轉賬"
 msgid "Pension Rights"
 msgstr "養老金權利"
 
+#: pages/hotels_booking.vue pages/hotels_details.vue
+msgid "per"
+msgstr ""
+
 #: pages/public/pricing.vue
 msgid "per month; no contracts. You can cancel at any time."
 msgstr "每月；沒有合同。您可以隨時取消。"
@@ -9835,6 +9866,12 @@ msgstr "每月；沒有合同。您可以隨時取消。"
 #: upgrade/index.html
 msgid "per month. No contracts. You can cancel anytime."
 msgstr "每月。沒有合同。您可以隨時取消。"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "/ per night"
+msgid "per night"
+msgstr "/ 每晚"
 
 #: track_growth/index.html
 msgid "Percent Growth Needed"
@@ -9896,6 +9933,10 @@ msgstr "照片身份證"
 msgid "Picture Name"
 msgstr "圖片名稱"
 
+#: pages/hotels_details.vue
+msgid "Placeholder"
+msgstr ""
+
 #: compensation/index.html
 msgid "Plan"
 msgstr "計劃"
@@ -9931,7 +9972,7 @@ msgstr ""
 msgid "Please check below and confirm your country is correct."
 msgstr "請在下方查看並確認您所在的國家。"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 msgid "Please check the expiration date you entered."
 msgstr "請檢查您輸入的到期日期."
 
@@ -10017,7 +10058,7 @@ msgstr "請參閱我們的政策和程序手冊以查看完整的詳細信息。
 msgid "Please do not show me this video again."
 msgstr "請不要再向我展示這個視頻。"
 
-#: components/birthdate-reminder.vue pages/payout.vue
+#: pages/payout.vue components/birthdate-reminder.vue
 msgid "Please enter a valid birthdate to continue."
 msgstr "請輸入有效的出生日期以繼續"
 
@@ -10055,7 +10096,7 @@ msgstr "請輸入您的電子郵件，我們將向您發送進一步的說明：
 msgid "Please enter your second passengers 'Unique Membership Code'."
 msgstr "請輸入您的第二位乘客“唯一會員代碼”。"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Please fill all fields to continue."
 msgstr "請填寫所有空格以繼續。"
 
@@ -10184,8 +10225,8 @@ msgstr ""
 "請花幾分鐘時間觀看整個視頻，它解釋了有關InCruises獨立業務合作夥伴計劃的資源和"
 "報酬的重要信息。"
 
-#: components/italian-vat-reminder.vue pages/email.vue
-#: pages/italian_onboarding.vue
+#: pages/email.vue pages/italian_onboarding.vue
+#: components/italian-vat-reminder.vue
 msgid "Please try again later."
 msgstr "請稍後再試。"
 
@@ -10242,9 +10283,9 @@ msgstr "請稍等，我們會幫助您回到inCruises®。"
 msgid "Please write a more descriptive message."
 msgstr "請撰寫更具描述性的信息。"
 
-#: components/weekly-competition.vue pages/competition.vue
-#: pages/global_summit_tracking.vue competition/index.html
-#: compensation/index.html
+#: pages/competition.vue pages/global_summit_tracking.vue
+#: components/weekly-competition.vue compensation/index.html
+#: competition/index.html
 msgid "Points"
 msgstr "分數"
 
@@ -10285,7 +10326,7 @@ msgstr "葡萄牙語"
 msgid "Portuguese Speaking Global Markets"
 msgstr "葡萄牙語全球市場"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 #: components/checkout/CardStep.vue components/checkout/ItalianStep.vue
 msgid "Postal Code"
 msgstr "郵政編碼"
@@ -10634,8 +10675,9 @@ msgstr "快速啟動結束日期"
 msgid "Quiz"
 msgstr "小測驗"
 
-#: components/weekly-competition.vue pages/competition.vue pages/powerup.vue
-#: pages/team_rankings.vue competition/index.html negative_balances/index.html
+#: pages/competition.vue pages/powerup.vue pages/team_rankings.vue
+#: components/weekly-competition.vue competition/index.html
+#: negative_balances/index.html
 msgid "Rank"
 msgstr "排名"
 
@@ -10851,7 +10893,7 @@ msgstr "升序排列註冊日期"
 msgid "Registration Date Desc"
 msgstr "降序排列註冊日期"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid ""
 "Registration with inCruises can only be done using Roman/Latin alphabet "
 "letters (A-Z)."
@@ -11032,7 +11074,7 @@ msgstr "返回歡迎頁面"
 msgid "Review your Reward Points balance."
 msgstr "查看您的獎勵積分餘額。"
 
-#: components/weekly-competition.vue pages/competition.vue
+#: pages/competition.vue components/weekly-competition.vue
 #: competition/index.html
 msgid "Reward"
 msgstr "獎勵"
@@ -11126,7 +11168,7 @@ msgstr "獎勵"
 msgid "Romanian"
 msgstr "羅馬尼亞"
 
-#: pages/hotels_details.vue
+#: pages/hotels_booking.vue pages/hotels_details.vue
 msgid "Room"
 msgstr "房間"
 
@@ -11214,8 +11256,8 @@ msgstr ""
 "節省展示時間！有了這個強大的工具，您可以立即將潛在客戶轉換為合作夥伴和/或會"
 "員。"
 
-#: pages/book.vue pages/hotels.vue communications/index.html
-#: communications/view.html compensation/index.html
+#: pages/book.vue pages/hotels.vue pages/hotels_details.vue
+#: communications/index.html communications/view.html compensation/index.html
 #: email_notifications/index.html track_growth/index.html
 #: webinar_recordings/index.html
 msgid "Search"
@@ -11598,7 +11640,7 @@ msgstr "註冊"
 msgid "Singapore"
 msgstr "新加坡"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 msgid "Single"
 msgstr "單獨"
 
@@ -11791,7 +11833,7 @@ msgstr "州/省"
 msgid "State/Province:"
 msgstr "州/省："
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 #: components/checkout/ItalianStep.vue
 msgid "State/Region"
 msgstr "國家/地區"
@@ -12108,7 +12150,7 @@ msgstr "褒獎"
 msgid "That agreement does not exist in your selected language."
 msgstr "該協議不存在於您選擇的語言中。"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid ""
 "That email address has not been invited to inCruises. Kindly get back to the "
 "independent Partner that referred you or try another email that was invited. "
@@ -12141,7 +12183,7 @@ msgstr "您輸入的卡有效期無效"
 msgid "The card number you entered is not valid."
 msgstr "您輸入的卡號無效"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 msgid "The cardholder name is required."
 msgstr "持卡人姓名為必填項."
 
@@ -12810,7 +12852,7 @@ msgstr "此會員代碼可在其“設置”&gt;“個人資料”頁面中找�
 msgid "This Month's Compensation"
 msgstr "本月的報酬"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid ""
 "This name in Roman/Latin alphabet letters (A-Z) will be used for cruise "
 "bookings and with commission payments providers and must be in this format."
@@ -13647,7 +13689,7 @@ msgstr "查看比賽規則"
 msgid "View Cruise"
 msgstr "查看郵輪"
 
-#: pages/welcome.vue
+#: pages/hotels_details.vue pages/welcome.vue
 msgid "View Details"
 msgstr "查看詳情"
 
@@ -13845,10 +13887,10 @@ msgstr ""
 msgid "Watch the demo of the inCruises App with WhatsUp!"
 msgstr "使用 WhatsUp 觀看 inCruises 應用程序的演示！"
 
-#: components/public/Testimonials.vue pages/public/about.vue
-#: pages/public/biz.vue pages/public/index.vue pages/public/leadership.vue
-#: pages/public/membership.vue pages/public/mission.vue
-#: pages/public/partnership.vue
+#: pages/public/about.vue pages/public/biz.vue pages/public/index.vue
+#: pages/public/leadership.vue pages/public/membership.vue
+#: pages/public/mission.vue pages/public/partnership.vue
+#: components/public/Testimonials.vue
 msgid "Watch Video"
 msgstr "觀看視頻"
 
@@ -14278,7 +14320,7 @@ msgstr "這已過時且不被我們的應用支持。"
 msgid "Who is our target market?"
 msgstr "誰是我們的目標市場？"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 msgid "Widowed"
 msgstr "寡婦"
 
@@ -14346,7 +14388,7 @@ msgstr "年份"
 msgid "Yeongdong-eup, Korea"
 msgstr "永同邑，韓國"
 
-#: components/info-reminder.vue pages/email_address.vue pages/invoices.vue
+#: pages/email_address.vue pages/invoices.vue components/info-reminder.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -14526,7 +14568,7 @@ msgstr ""
 "月的最後一天結束，獎金在第二天計算。基於夢想生活獎金，團隊產量達到550,000美元"
 "的團隊領導，可以分享公司總銷售額5％的獎勵。"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "You can find the correct name in your passport and/or your national ID."
 msgstr "您可以在護照和/或國民身份證中找到正確的姓名。"
 
@@ -14566,7 +14608,7 @@ msgstr ""
 msgid "You can't book Global Destination Cruises yet."
 msgstr "您還無法預訂全球目的地郵輪。"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 msgid ""
 "You cannot change your country. Please contact support\n"
 "\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
@@ -15061,7 +15103,7 @@ msgstr ""
 msgid "Your Email Trackers"
 msgstr "跟蹤您的電子郵件"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Your emails don't match, please fix and try again."
 msgstr "您的電子郵件不匹配，請修改並重試。"
 
@@ -15157,7 +15199,7 @@ msgstr ""
 "電子郵件</strong>\n"
 "\t\t\t\t\t\t. 在此之前，您將不得不等待訪問完整的 inCruises 合作夥伴體驗"
 
-#: pages/settings.vue components/public/JoinModal.vue pages/public/signup.vue
+#: pages/settings.vue pages/public/signup.vue components/public/JoinModal.vue
 msgid ""
 "Your password must have a minimum of 8 characters, and have at least 1 "
 "letter and 1 number."
@@ -21910,6 +21952,56 @@ msgid ""
 "GoPro Ticket."
 msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門票。"
 
+#~ msgid "{{ formatDate(cancellation.from) }}"
+#~ msgstr "{{ formatDate(cancellation.from) }}"
+
+#~ msgid ""
+#~ "{{ hotel.address.content }}, {{ hotel.zone.name }}, {{ hotel.destination."
+#~ "name.content }}, {{ hotel.state.name }}, {{ hotel.country.description."
+#~ "content }}"
+#~ msgstr ""
+#~ "{{ hotel.address.content }}, {{ hotel.zone.name }}, {{ hotel.destination."
+#~ "name.content }}, {{ hotel.state.name }}, {{ hotel.country.description."
+#~ "content }}"
+
+#~ msgid "<span class=\"ng-scope\">Search</span>"
+#~ msgstr "<span class=\"ng-scope\">搜索</span>"
+
+#~ msgid ""
+#~ "<span v-for=\"(phone, index) in hotel.phones\" :key=\"index\">\n"
+#~ "\t\t\t\t\t\t\t\t\t{{ phone.phoneType }}: {{ phone.phoneNumber }}\n"
+#~ "\t\t\t\t\t\t\t\t\t<br>\n"
+#~ "\t\t\t\t\t\t\t\t</span>"
+#~ msgstr ""
+#~ "<span v-for=\"(phone, index) in hotel.phones\" :key=\"index\">\n"
+#~ "\t\t\t\t\t\t\t\t\t{{ phone.phoneType }}: {{ phone.phoneNumber }}\n"
+#~ "\t\t\t\t\t\t\t\t\t<br>\n"
+#~ "\t\t\t\t\t\t\t\t</span>"
+
+#~ msgid ""
+#~ "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+#~ "tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+#~ "stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+#~ "stroke-linejoin=\"round\">\n"
+#~ "\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/"
+#~ ">\n"
+#~ "\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+#~ "\t\t\t\t\t\t\t</svg>\n"
+#~ "\t\t\t\t\t\t\tGo Back"
+#~ msgstr ""
+#~ "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-"
+#~ "tabler-arrow-back-up\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" "
+#~ "stroke-width=\"2\" stroke=\"#fff\" fill=\"none\" stroke-linecap=\"round\" "
+#~ "stroke-linejoin=\"round\">\n"
+#~ "\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"/"
+#~ ">\n"
+#~ "\t\t\t\t\t\t\t\t<path d=\"M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1\"/>\n"
+#~ "\t\t\t\t\t\t\t</svg>\n"
+#~ "\t\t\t\t\t\t\t退回"
+
+#~ msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
+#~ msgstr "${{ roomRate.sellingRate }} 每 {{ searchParameters.nights }} 晚"
+
 #, fuzzy
 #~| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
 #~ msgid ""
@@ -21931,30 +22023,9 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ msgstr "${{ roomRate.sellingRate }} 每 {{ searchParameters.nights }} 晚"
 
 #, fuzzy
-#~| msgid "Book Now"
-#~ msgid "Book now"
-#~ msgstr "現在預訂"
-
-#, fuzzy
-#~| msgid "Cancellation Policy"
-#~ msgid "Cancellation Policies"
-#~ msgstr "取消政策"
-
-#, fuzzy
 #~| msgid "Hotel Booking"
 #~ msgid "Continue to Booking"
 #~ msgstr "訂酒店"
-
-#, fuzzy
-#~| msgid ""
-#~| "<span style=\"color:red\">*</span>\n"
-#~| "\t\t\t\t\t\t\t\t\t\t\t\tCity:"
-#~ msgid ""
-#~ "First Name\n"
-#~ "\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
-#~ msgstr ""
-#~ "<span style=\"color:red\">*</span>\n"
-#~ "\t\t\t\t\t\t\t\t\t\t\t\t城市："
 
 #, fuzzy
 #~| msgid "${{ roomRate.sellingRate }} per {{ searchParameters.nights }} night"
