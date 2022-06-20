@@ -382,10 +382,6 @@ msgstr "{{ box.box }}"
 msgid "{{ header }}"
 msgstr "{{ header }}"
 
-#: pages/book.vue
-msgid "{{ night }} Nights"
-msgstr "{{ night }} Noches"
-
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
 msgstr "{{ tips[cruise.lineId].note }}."
@@ -547,7 +543,7 @@ msgstr ""
 "*El precio puede variar según disponibilidad. Recibirás precios precisos al "
 "elegir una categoría de camarote."
 
-#: pages/hotels.vue
+#: pages/hotels.vue pages/hotels_booking.vue
 msgid "/ night"
 msgstr "/ noche"
 
@@ -614,6 +610,16 @@ msgstr "%{ name }, vamos a subir tu primera foto"
 #: pages/account_setup.vue
 msgid "%{ name }, now let's import your contacts"
 msgstr "%{ name }, ahora vamos a importar tus contactos"
+
+#: pages/book.vue
+#, fuzzy
+#| msgid "{{ night }} Nights"
+msgid "%{ night } Nights"
+msgstr "{{ night }} Noches"
+
+#: pages/hotels.vue
+msgid "%{ roomCount } rooms, %{ guestCount } guests"
+msgstr ""
 
 #: pages/book.vue
 msgid "%{nights} Nights"
@@ -1772,15 +1778,24 @@ msgstr ""
 "banner de TRES DÍGITOS con tu nombre.</span>"
 
 #: pages/cruise.vue
+#, fuzzy
+#| msgid ""
+#| "<strong>\n"
+#| "\t\t\t\t\t\t\t\tThe prices shown are in US dollars, based on\n"
+#| "\t\t\t\t\t\t\t\t<u>double occupancy</u>\n"
+#| "\t\t\t\t\t\t\t\t, and subject to availability.\n"
+#| "\t\t\t\t\t\t\t</strong>\n"
+#| "\t\t\t\t\t\t\t{{ cruise.includeTaxes ? 'They include port charges and "
+#| "taxes' : 'They do not include port charges and taxes' }}. They do not "
+#| "include airfare or transfer to and from the arriving and departing ports."
 msgid ""
 "<strong>\n"
 "\t\t\t\t\t\t\t\tThe prices shown are in US dollars, based on\n"
 "\t\t\t\t\t\t\t\t<u>double occupancy</u>\n"
 "\t\t\t\t\t\t\t\t, and subject to availability.\n"
 "\t\t\t\t\t\t\t</strong>\n"
-"\t\t\t\t\t\t\t{{ cruise.includeTaxes ? 'They include port charges and "
-"taxes' : 'They do not include port charges and taxes' }}. They do not "
-"include airfare or transfer to and from the arriving and departing ports."
+"\t\t\t\t\t\t\t%{ taxes }. They do not include airfare or transfer to and "
+"from the arriving and departing ports."
 msgstr ""
 "<strong>\n"
 "\t\t\t\t\t\t\t\tLos precios se muestran en dólares estadounidenses, basados "
@@ -1897,7 +1912,7 @@ msgstr ""
 msgid "${{statement.data.amount}}"
 msgstr "${{statement.data.amount}}"
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$10,000 in total team production in any given month.<br><br> Senior "
 "Marketing Director automatically earn our TRAVEL BONUS OF $1,000 each and "
@@ -1908,12 +1923,16 @@ msgstr ""
 "$1,000 cada mes que se mantienen calificando."
 
 #: pages/upgrade.vue
-msgid "$100 per month, No Long-Term Contracts. You can cancel anytime."
+#, fuzzy
+#| msgid "$100 per month, No Long-Term Contracts. You can cancel anytime."
+msgid ""
+"$100 activation fee (only when activating your membership) and $100 per "
+"month, No Long-Term Contracts. You can cancel anytime."
 msgstr ""
 "$100 por mes, sin contratos a largo plazo. Puedes cancelar en cualquier "
 "momento."
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$100,000 in total team production in any given month.<br><br> International "
 "Directors automatically earn our FREEDOM BONUS of $10,000 each and every "
@@ -1931,7 +1950,7 @@ msgstr "$195.00 Tarifa de activación"
 msgid "$20/month value ($240 annually)"
 msgstr "Un valor de $20/mes o $240/anual"
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$25,000 in total team production in any given month.<br><br> Regional "
 "Directors automatically earn our FINANCIAL COMMITMENT BONUS OF $2,500 each "
@@ -1941,7 +1960,7 @@ msgstr ""
 "Regional Directors ganan automáticamente nuestro BONO DE COMPROMISO "
 "FINANCIERO de $2,500 cada mes que se mantienen calificando."
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$250,000 in total team production in any given month.<br><br> Executive "
 "Directors automatically earn our INDEPENDENCE BONUS of $25,000 each and "
@@ -1951,7 +1970,7 @@ msgstr ""
 "EXECUTIVE DIRECTORS ganan automáticamente nuestro BONO DE INDEPENDENCIA de "
 "$25,000 cada mes que se mantienen calificando."
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$3,000 in total team production in any given month.<br><br> Marketing "
 "Director automatically earn our CAR BONUS OF $300 each and every month they "
@@ -1961,7 +1980,7 @@ msgstr ""
 "MARKETING DIRECTORS automáticamente ganan nuestro BONO de COCHE de $300 cada "
 "mes que se mantengan calificando."
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$50,000 in total team production in any given month.<br><br> National "
 "Marketing Directors automatically earn our LUXURY BONUS OF $5,000 each and "
@@ -1983,7 +2002,7 @@ msgstr ""
 "ENSUEÑO de $55,000 cada mes que se mantienen calificando y también comparten "
 "nuestro Bono Global del 5%."
 
-#: controllers/titles.js
+#: pages/titles.vue controllers/titles.js
 msgid ""
 "$550,000 in total team production in any given month.<br><br> Board of "
 "Directors Members automatically earn our DREAM LIFE BONUS of $55,000 each "
@@ -2177,7 +2196,7 @@ msgstr ""
 "el bien y que las acciones individuales de las personas pueden marcar la "
 "diferencia."
 
-#: controllers/titles.js
+#: pages/titles.vue controllers/titles.js
 msgid ""
 "5 Direct International Directors or above and $1,000,000 in NEW team "
 "production in any given month.<br><br> In addition to the same compensation "
@@ -2227,7 +2246,7 @@ msgstr ""
 msgid "7. Conflicting Provisions."
 msgstr "7. Disposiciones conflictivas."
 
-#: titles/index.html
+#: pages/titles.vue titles/index.html
 msgid "8 Title Achievement Goals To Max-out Compensation"
 msgstr "8 Objetivos de Títulos de Liderazgo para Maximizar tu Compensación"
 
@@ -2512,6 +2531,12 @@ msgstr "Soporte de Admin"
 msgid "Admin View"
 msgstr "Panel de Admin"
 
+#: pages/booking.vue
+#, fuzzy
+#| msgid "Adults"
+msgid "Adult"
+msgstr "Adultos"
+
 #: pages/booking.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Adults"
 msgstr "Adultos"
@@ -2552,6 +2577,10 @@ msgstr "Todas las Categorías"
 #: pages/booking.vue
 msgid "All children must be younger than 18 years old."
 msgstr "Todos los infantes debe ser menores de 18 años."
+
+#: pages/book.vue
+msgid "All cruise lines"
+msgstr "Todas las Líneas de Cruceros"
 
 #: pages/resources.vue resources/index.html
 msgid "All Documents"
@@ -3274,7 +3303,7 @@ msgstr "Saldo"
 msgid "Balance:"
 msgstr "Saldo:"
 
-#: components/booking/cabin_categories.vue
+#: pages/cruise.vue components/booking/cabin_categories.vue
 msgid "Balcony"
 msgstr "Balcón"
 
@@ -3377,10 +3406,6 @@ msgstr "Descriptor de Facturación: Incruises"
 msgid "Billing Descriptor: Incruises International LLC"
 msgstr "Descriptor de Facturación: Incruises International LLC"
 
-#: pages/public/payment_terms.vue
-msgid "Billing Descriptor: Incruises Puerto Rico LLC"
-msgstr "Descriptor de Facturación: Incruises Puerto Rico LLC"
-
 #: pages/additional_info.vue
 msgid "Birthdate"
 msgstr "Cumpleaños"
@@ -3423,7 +3448,7 @@ msgstr "Board of Directors"
 msgid "BOARD OF DIRECTORS"
 msgstr "BOARD OF DIRECTORS"
 
-#: controllers/titles.js
+#: pages/titles.vue controllers/titles.js
 msgid "BOARD OF DIRECTORS AMBASSADOR"
 msgstr "BOARD OF DIRECTORS AMBASSADOR"
 
@@ -3435,7 +3460,7 @@ msgstr "Bono del Comité de Directores"
 msgid "Board of Directors Member"
 msgstr "Miembro del Comité de Directores"
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid "BOARD OF DIRECTORS MEMBER"
 msgstr "BOARD OF DIRECTORS MEMBERS"
 
@@ -4097,6 +4122,12 @@ msgid "Chief Technology Officer (CTO)"
 msgstr "Director de Tecnología (CTO)"
 
 #: pages/booking.vue
+#, fuzzy
+#| msgid "1 Child"
+msgid "Child"
+msgstr "1 Niño/a"
+
+#: pages/booking.vue
 msgid "Child #%{ childNumber } Birthdate"
 msgstr "Niño #%{ childNumber } Fecha de nacimiento"
 
@@ -4266,6 +4297,12 @@ msgstr "Haga clic aquí para firmar los acuerdos pendientes."
 msgid "Click here to Signup"
 msgstr "Haz Clic aquí para Registrarte"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Click here to filter nights"
+msgid "Click to filter by Stars"
+msgstr "Da clic aquí para filtrar las noches"
+
 #: pages/email_address.vue
 msgid "Client Configuration"
 msgstr "Configuración de Cliente"
@@ -4276,7 +4313,7 @@ msgstr "Configuración de Cliente"
 #: pages/global_summit_tracking.vue pages/hotels_details.vue pages/invoices.vue
 #: pages/reward_points.vue components/global_convention/event_info.vue
 #: components/public/FooterLinks.vue components/public/JoinModal.vue
-#: pages/public/index.vue pages/public/leadership.vue
+#: pages/public/about.vue pages/public/index.vue pages/public/leadership.vue
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/signup.vue compensation/index.html
 #: connect/index.html cruising_dollars/index.html pay_bonus/index.html
@@ -4360,6 +4397,12 @@ msgstr "Invitaciones Completadas"
 #: pages/invoices.vue
 msgid "Completed Invoices"
 msgstr "Recibos Completados"
+
+#: pages/email.vue
+#, fuzzy
+#| msgid "Compose Email"
+msgid "Compose new Email"
+msgstr "Escribir Correo"
 
 #: pages/email.vue
 msgid "Compose your email"
@@ -4552,6 +4595,12 @@ msgstr "Continuar"
 msgid "Continue Payment Below"
 msgstr "Continuar Pago Debajo"
 
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Confirm Checkout"
+msgid "Continue to Checkout"
+msgstr "Confirmar Pago"
+
 #: components/checkout/CurrencyStep.vue components/checkout/ItalianStep.vue
 #: components/checkout/ProcessorTmt.vue
 msgid "Continue with Payment"
@@ -4581,12 +4630,16 @@ msgstr "Información Corporativa"
 msgid "Correct!"
 msgstr "¡Correcto!"
 
+#: pages/booking.vue
+msgid "Cost"
+msgstr ""
+
 #: pages/team_rankings.vue components/user/vip-data.vue reach/index.html
 #: track_results/index.html
 msgid "Count"
 msgstr "Número"
 
-#: track_results/index.html
+#: reach/index.html track_results/index.html
 msgid "Countries"
 msgstr "Países"
 
@@ -4900,7 +4953,7 @@ msgstr "Campos de Información"
 msgid "Date"
 msgstr "Fecha"
 
-#: receipts/index.html
+#: pages/contacts.vue receipts/index.html
 msgid "Date Ascending"
 msgstr "Fecha Ascendiente"
 
@@ -4908,13 +4961,21 @@ msgstr "Fecha Ascendiente"
 msgid "Date Created"
 msgstr "Fecha de Creación"
 
-#: receipts/index.html
+#: pages/contacts.vue receipts/index.html
 msgid "Date Descending"
 msgstr "Fecha descendiente"
+
+#: pages/book.vue
+msgid "Date Earliest on Top"
+msgstr "Fecha más Cercana en parte Superior"
 
 #: pages/team_rankings.vue reports/index.html
 msgid "Date From"
 msgstr "Desde"
+
+#: pages/book.vue
+msgid "Date Latest on Top"
+msgstr "Ultima Fecha de Arribo en parte Superior"
 
 #: pages/booking.vue
 msgid "Date of Birth"
@@ -5059,6 +5120,12 @@ msgstr "Departamento"
 #: receipts/booking_receipt.html
 msgid "Departs From"
 msgstr "Salida Desde"
+
+#: pages/booking.vue pages/cruise.vue
+#, fuzzy
+#| msgid "Depart Date"
+msgid "Departs: %{ start }"
+msgstr "Fecha de Salida"
 
 #: pages/my_cruise_savings.vue
 msgid "Departure"
@@ -5565,14 +5632,6 @@ msgstr ""
 "podrá acceder más tarde a un nuevo Anexo del National Director. Ver 5.b a "
 "continuación con respecto a dicha reaplicación."
 
-#: pages/upgrade.vue
-msgid ""
-"Each $100 Membership payment awards you 200 Reward Points (2 for 1). Book "
-"travel using your Reward Points and save."
-msgstr ""
-"Cada pago de Membresía de $100 te otorga 200 Puntos de Recompensa (2 por 1). "
-"Reserva viajes usando tus Puntos de Recompensa y ahorra."
-
 #: compensation/index.html
 msgid "Each Member enrollment equals 1 point."
 msgstr "Cada Miembro registrado igual a 1 punto."
@@ -5665,14 +5724,6 @@ msgstr "Compensación Disponible"
 #: Menu
 msgid "Email"
 msgstr "Email"
-
-#: pages/hotels_booking.vue
-msgid ""
-"Email\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
-"Email\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
 
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
@@ -5810,8 +5861,8 @@ msgstr "Excluyendo Equipos"
 msgid "Executive Director"
 msgstr "Director Ejecutivo"
 
-#: certificates/executive-director.html controllers/compensation.js
-#: controllers/titles.js
+#: pages/titles.vue certificates/executive-director.html
+#: controllers/compensation.js controllers/titles.js
 msgid "EXECUTIVE DIRECTOR"
 msgstr "EXECUTIVE DIRECTOR"
 
@@ -5997,18 +6048,10 @@ msgstr "Configuración Terminada"
 msgid "Finished"
 msgstr "Terminado"
 
-#: pages/admin_restricted_paybonus.vue pages/invite.vue pages/settings.vue
-#: import/index.html controllers/reports.js
+#: pages/admin_restricted_paybonus.vue pages/hotels_booking.vue
+#: pages/invite.vue pages/settings.vue import/index.html controllers/reports.js
 msgid "First Name"
 msgstr "Nombre"
-
-#: pages/hotels_booking.vue
-msgid ""
-"First Name\n"
-"\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
-msgstr ""
-"Primer Nombre\n"
-"\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
 
 #: pages/booking.vue
 msgid "First Name:"
@@ -6037,10 +6080,6 @@ msgstr "Numero de registro de Florida"
 #: controllers/menu_page.js
 msgid "Follow these simple steps to set up your inCruises account."
 msgstr "Sigue estos sencillos pasos para configurar tu cuenta de inCruises."
-
-#: pages/hotels.vue
-msgid "for {{ daysApart }} nights"
-msgstr "por {{ daysApart }} noches"
 
 #: pages/hotels_details.vue
 msgid "For cancellations made after"
@@ -6256,6 +6295,10 @@ msgid ""
 msgstr ""
 "Desde:\n"
 "\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ desde }}</span>"
+
+#: pages/booking.vue pages/cruise.vue
+msgid "From: %{ from }"
+msgstr ""
 
 #: pages/admin_user_id.vue
 msgid "FSG"
@@ -6552,6 +6595,16 @@ msgstr ""
 msgid "Hierarchy"
 msgstr "Jerarquía"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Unit Price"
+msgid "Highest Price"
+msgstr "Precio por Unidad"
+
+#: pages/hotels.vue
+msgid "Highest Stars First"
+msgstr ""
+
 #: receipts/hotel_booking_receipt.html
 msgid "Holder Name"
 msgstr "Nombre del titular"
@@ -6567,6 +6620,14 @@ msgstr "Reserva de Hotel"
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Info"
 msgstr "Información del Hotel"
+
+#: pages/hotels.vue
+msgid "Hotel Name (A-Z)"
+msgstr ""
+
+#: pages/hotels.vue
+msgid "Hotel Name (Z-A)"
+msgstr ""
 
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Phone #"
@@ -7371,6 +7432,12 @@ msgstr ""
 "\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
 "support</a>"
 
+#: components/booking/confirm-no-rp-used.vue
+msgid ""
+"If you wish to use Reward Points, you must add them in this step, you will "
+"not be able to add Reward Points later."
+msgstr ""
+
 #: pages/checkout.vue
 msgid ""
 "If you wish you cancel your pending sale you may do so by pressing the "
@@ -7823,10 +7890,6 @@ msgstr ""
 msgid "inCruises Press Releases"
 msgstr "Comunicados de Prensa inCruises"
 
-#: pages/public/payment_terms.vue
-msgid "InCruises Puerto Rico LLC"
-msgstr "InCruises Puerto Rico LLC"
-
 #: pages/public/reviews.vue
 msgid "inCruises Reviews"
 msgstr "Comentarios inCruises"
@@ -7943,7 +8006,7 @@ msgstr "Inserta ID de Pixel aquí"
 msgid "Insert your email..."
 msgstr "Introduce tu correo electrónico..."
 
-#: components/booking/cabin_categories.vue
+#: pages/cruise.vue components/booking/cabin_categories.vue
 msgid "Inside"
 msgstr "Interior"
 
@@ -7983,8 +8046,8 @@ msgstr ""
 msgid "International Director"
 msgstr "Director Internacional"
 
-#: certificates/international-director.html controllers/compensation.js
-#: controllers/titles.js
+#: pages/titles.vue certificates/international-director.html
+#: controllers/compensation.js controllers/titles.js
 msgid "INTERNATIONAL DIRECTOR"
 msgstr "INTERNATIONAL DIRECTOR"
 
@@ -8322,18 +8385,10 @@ msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr ""
 "Bono de Liderazgo del mes pasado se ha solicitado y está pendiente de pago."
 
-#: pages/admin_restricted_paybonus.vue pages/invite.vue pages/settings.vue
-#: import/index.html
+#: pages/admin_restricted_paybonus.vue pages/hotels_booking.vue
+#: pages/invite.vue pages/settings.vue import/index.html
 msgid "Last Name"
 msgstr "Apellido"
-
-#: pages/hotels_booking.vue
-msgid ""
-"Last Name\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
-"Apellido\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
 
 #: pages/booking.vue
 msgid "Last Name:"
@@ -8341,6 +8396,12 @@ msgstr "Apellido:"
 
 #: pages/competition.vue competition/index.html
 msgid "Last Week's Contest"
+msgstr "Concurso de la Semana Pasada"
+
+#: compensation/index.html
+#, fuzzy
+#| msgid "Last Week's Contest"
+msgid "Last Week's Points"
 msgstr "Concurso de la Semana Pasada"
 
 #: compensation/index.html
@@ -8504,6 +8565,12 @@ msgstr ""
 msgid "Length:"
 msgstr "Duración:"
 
+#: pages/booking.vue pages/cruise.vue
+#, fuzzy
+#| msgid "%{nights} Nights"
+msgid "Length: %{ nights } Nights"
+msgstr "%{nights} Noches"
+
 #: reach/index.html receipts/team_residual_bonus_statement.html
 #: track_results/index.html
 msgid "Level"
@@ -8517,7 +8584,7 @@ msgstr "Nivel {{$index + 1 }}"
 msgid "Level Limit"
 msgstr "Límite de Nivel"
 
-#: track_results/index.html
+#: reach/index.html track_results/index.html
 msgid "Levels"
 msgstr "Niveles"
 
@@ -8589,6 +8656,16 @@ msgstr "Inicios de sesión"
 msgid "Logout"
 msgstr "Cerrar Sesión"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Total Price"
+msgid "Lowest Price"
+msgstr "Precio Total"
+
+#: pages/hotels.vue
+msgid "Lowest Stars First"
+msgstr ""
+
 #: pages/invoices.vue
 msgid "Make Default Card"
 msgstr "Hacer Tarjeta Predeterminada"
@@ -8649,8 +8726,8 @@ msgstr "MARKETING"
 msgid "Marketing Director"
 msgstr "Director de Marketing"
 
-#: certificates/marketing-director.html controllers/compensation.js
-#: controllers/titles.js
+#: pages/titles.vue certificates/marketing-director.html
+#: controllers/compensation.js controllers/titles.js
 msgid "MARKETING DIRECTOR"
 msgstr "MARKETING DIRECTOR"
 
@@ -8909,18 +8986,10 @@ msgstr "Recordatorio para App Móvil"
 msgid "Mobile Apps"
 msgstr "Apps para Móviles"
 
-#: pages/additional_info.vue pages/team_rankings.vue cards/index.html
-#: compensation/index.html reach/index.html
+#: pages/additional_info.vue pages/hotels_booking.vue pages/team_rankings.vue
+#: cards/index.html compensation/index.html reach/index.html
 msgid "Mobile Phone"
 msgstr "Teléfono Móvil"
-
-#: pages/hotels_booking.vue
-msgid ""
-"Mobile Phone\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
-"Teléfono Móvil\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
 
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Mobile Phone is required."
@@ -9146,9 +9215,13 @@ msgstr ""
 "título en sociología. Vive en Davie, Florida."
 
 #: pages/public/leadership.vue
+#, fuzzy
+#| msgid ""
+#| "Ms. Andrews graduated from the University of Washington with a degree in "
+#| "Communications.  She lives in Seattle, WA."
 msgid ""
 "Ms. Andrews graduated from the University of Washington with a degree in "
-"Communications.  She lives in Seattle, WA."
+"Communications. She lives in Seattle, WA."
 msgstr ""
 "La Sra. Andrews se graduó de la Universidad de Washington con un título en "
 "Comunicación. Vive en Seattle, Washington."
@@ -9198,10 +9271,11 @@ msgstr ""
 #: pages/global_summit_tracking.vue pages/settings.vue pages/team_rankings.vue
 #: pages/welcome.vue compensation/index.html competition/index.html
 #: invoices/invoice_statement.html negative_balances/index.html
-#: pay_bonus/index.html reach/index.html receipts/booking_receipt.html
-#: receipts/commission_statement.html receipts/hotel_booking_receipt.html
-#: receipts/instant_bonus_statement.html receipts/invoice.html
-#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
+#: new_ranks/index.html pay_bonus/index.html reach/index.html
+#: receipts/booking_receipt.html receipts/commission_statement.html
+#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
+#: receipts/invoice.html receipts/italian_receipt.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
@@ -9214,7 +9288,7 @@ msgstr ""
 msgid "Name"
 msgstr "Nombre"
 
-#: import/create.html
+#: pages/contacts.vue import/create.html
 msgid "Name Ascending"
 msgstr "Nombre Ascendiente"
 
@@ -9249,7 +9323,7 @@ msgstr ""
 "A la muerte de un Miembro, si todas las cuotas de Membresía están al día, la "
 "Membresía se puede transferir a su cónyuge o herederos legales."
 
-#: import/create.html
+#: pages/contacts.vue import/create.html
 msgid "Name Descending"
 msgstr "Nombre Descendente"
 
@@ -9275,8 +9349,8 @@ msgstr "Nombre:"
 msgid "National Director"
 msgstr "Director Nacional"
 
-#: certificates/national-director.html controllers/compensation.js
-#: controllers/titles.js
+#: pages/titles.vue certificates/national-director.html
+#: controllers/compensation.js controllers/titles.js
 msgid "NATIONAL DIRECTOR"
 msgstr "NATIONAL DIRECTOR"
 
@@ -9409,7 +9483,7 @@ msgstr "Nuevos Rangos del Mes Pasado"
 msgid "New Ranks this month"
 msgstr "Nuevos rangos este mes"
 
-#: reports/index.html
+#: new_ranks/index.html reports/index.html
 msgid "New Ranks This Month"
 msgstr "Nuevos Rangos Este Mes"
 
@@ -9489,7 +9563,7 @@ msgstr "Próximo Año"
 msgid "night"
 msgstr "noche"
 
-#: pages/hotels_booking.vue pages/hotels_details.vue
+#: pages/hotels.vue pages/hotels_booking.vue pages/hotels_details.vue
 msgid "nights"
 msgstr "noches"
 
@@ -9801,6 +9875,12 @@ msgstr "Ocasional"
 msgid "Oceanview"
 msgstr "Vista al Océano"
 
+#: pages/cruise.vue
+#, fuzzy
+#| msgid "Oceanview"
+msgid "OceanView"
+msgstr "Vista al Océano"
+
 #: pages/booking.vue
 msgid "October"
 msgstr "Octubre"
@@ -9849,12 +9929,21 @@ msgid "Onboarding Complete"
 msgstr "Incorporación Completada"
 
 #: pages/cruise.vue
+#, fuzzy
+#| msgid ""
+#| "Once on board, you will need to pay out of pocket for things such as: "
+#| "cruise tours, beverage packages and personal expenditures. Those are your "
+#| "expenses, subject to our\n"
+#| "\t\t\t\t\t\t\t<a class=\"text-black\" target=\"_blank\" :href=\"documents."
+#| "memberAgreement\">Cruise Membership Agreement</a>\n"
+#| "\t\t\t\t\t\t\t. Flights to and from the cruise, if necessary, are not "
+#| "included in our prices nor membership."
 msgid ""
 "Once on board, you will need to pay out of pocket for things such as: cruise "
 "tours, beverage packages and personal expenditures. Those are your expenses, "
 "subject to our\n"
-"\t\t\t\t\t\t\t<a class=\"text-black\" target=\"_blank\" :href=\"documents."
-"memberAgreement\">Cruise Membership Agreement</a>\n"
+"\t\t\t\t\t\t\t<a class=\"text-black\" target=\"_blank\" href="
+"\"%{agreement}\">Cruise Membership Agreement</a>\n"
 "\t\t\t\t\t\t\t. Flights to and from the cruise, if necessary, are not "
 "included in our prices nor membership."
 msgstr ""
@@ -10406,6 +10495,12 @@ msgstr "Fecha de Creación de Sociedad"
 msgid "Passenger #%{passengerNo}"
 msgstr "Pasajero #%{passengerNo}"
 
+#: pages/booking.vue
+#, fuzzy
+#| msgid "Passengers"
+msgid "Passenger count"
+msgstr "Pasajeros"
+
 #: receipts/booking_receipt.html
 msgid "Passengers"
 msgstr "Pasajeros"
@@ -10574,7 +10669,7 @@ msgstr "Pago Pendiente"
 msgid "Pension Rights"
 msgstr "Derechos de Pensión"
 
-#: pages/hotels_details.vue
+#: pages/hotels.vue pages/hotels_booking.vue pages/hotels_details.vue
 msgid "per"
 msgstr "por"
 
@@ -10695,6 +10790,14 @@ msgstr "Por favor revisa abajo y confirma que tu estado esté correcto."
 #: components/confirm-recurring.vue pages/invoices.vue
 msgid "Please check the expiration date you entered."
 msgstr "Por favor verifica la fecha de expiración  que ingresaste."
+
+#: pages/book.vue
+msgid "Please choose date"
+msgstr "Por favor elige una fecha"
+
+#: pages/book.vue
+msgid "Please choose destination"
+msgstr "Por favor elige un Destino"
 
 #: components/checkout/CurrencyStep.vue components/checkout/ProcessorTmt.vue
 msgid ""
@@ -11208,6 +11311,12 @@ msgstr "Moneda Preferida:"
 msgid "Presentation"
 msgstr "Presentación"
 
+#: pages/invite.vue
+#, fuzzy
+#| msgid "Preview"
+msgid "Preview Email"
+msgstr "Vista Previa"
+
 #: pages/email.vue pages/leadership_academy.vue
 msgid "Previous"
 msgstr "Previa"
@@ -11237,8 +11346,8 @@ msgstr "Paso Anterior"
 msgid "Previous Year"
 msgstr "Año Anterior"
 
-#: components/booking/category.vue receipts/hotel_booking_receipt.html
-#: receipts/receipt.html
+#: pages/booking.vue components/booking/category.vue
+#: receipts/hotel_booking_receipt.html receipts/receipt.html
 msgid "Price"
 msgstr "Precio"
 
@@ -11250,9 +11359,17 @@ msgstr "Detalles del Precio"
 msgid "Price does not include Taxes and Fees"
 msgstr "El precio no incluye Tasas e Impuestos"
 
+#: pages/book.vue
+msgid "Price Higher on Top"
+msgstr "Precio Más Alto en Parte Superior"
+
 #: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Price Information"
 msgstr "Información del Precio"
+
+#: pages/book.vue
+msgid "Price Lower on Top"
+msgstr "Precio Más Bajo en Parte Superior"
 
 #: pages/hotels_booking.vue
 msgid "Price per night:"
@@ -11689,8 +11806,8 @@ msgstr "Estado/Provincia:"
 msgid "Regional Director"
 msgstr "Director Regional"
 
-#: certificates/regional-director.html controllers/compensation.js
-#: controllers/titles.js
+#: pages/titles.vue certificates/regional-director.html
+#: controllers/compensation.js controllers/titles.js
 msgid "REGIONAL DIRECTOR"
 msgstr "REGIONAL DIRECTOR"
 
@@ -12246,6 +12363,12 @@ msgstr "Selecciona Tu Vista"
 msgid "Selected"
 msgstr "Seleccionado:"
 
+#: pages/booking.vue
+#, fuzzy
+#| msgid "Selected Cabin Category:"
+msgid "Selected cabin category"
+msgstr "Categoría de Camarote Seleccionado:"
+
 #: pages/hotels_booking.vue
 msgid "Selected Room"
 msgstr "Habitación Seleccionada"
@@ -12291,6 +12414,12 @@ msgstr "Enviar Invitación"
 msgid "Send Invitations Now"
 msgstr "Enviar Invitaciones Ahora"
 
+#: pages/invite.vue
+#, fuzzy
+#| msgid "Send Invites"
+msgid "Send Invite"
+msgstr "Enviar Invitaciones"
+
 #: pages/account_setup.vue pages/apps.vue apps/index.html
 msgid "Send Invites"
 msgstr "Enviar Invitaciones"
@@ -12326,7 +12455,7 @@ msgstr "Enviar Advertencia"
 msgid "Senior Marketing Director"
 msgstr "Director Senior de Marketing"
 
-#: certificates/senior-marketing-director.html
+#: pages/titles.vue certificates/senior-marketing-director.html
 #: certificates/senior-marketing-manager.html controllers/compensation.js
 #: controllers/titles.js
 msgid "SENIOR MARKETING DIRECTOR"
@@ -12421,8 +12550,14 @@ msgstr "Capital social: societa' costituita in base a leggi di altro stato"
 msgid "Ship Amenities"
 msgstr "Amenidades del Barco"
 
-#: pages/booking.vue pages/cruise.vue
+#: pages/booking.vue
 msgid "Ship Launch: {{ cruise.ship.launched }}"
+msgstr "Lanzamiento de Barco: {{ cruise.ship.launched }}"
+
+#: pages/cruise.vue
+#, fuzzy
+#| msgid "Ship Launch: {{ cruise.ship.launched }}"
+msgid "Ship Launch: %{ shipLaunched }"
 msgstr "Lanzamiento de Barco: {{ cruise.ship.launched }}"
 
 #: receipts/booking_receipt.html
@@ -12473,8 +12608,14 @@ msgstr "Mostrar Producción Total"
 msgid "Showing All Teams"
 msgstr "Mostrando Todos los Equipos"
 
-#: pages/book.vue pages/hotels.vue
+#: pages/hotels.vue
 msgid "Showing results for {{ describeSearch() }}"
+msgstr "Mostrando resultados para {{ describeSearch() }}"
+
+#: pages/book.vue
+#, fuzzy
+#| msgid "Showing results for {{ describeSearch() }}"
+msgid "Showing results for %{ description }"
 msgstr "Mostrando resultados para {{ describeSearch() }}"
 
 #: pages/agreements.vue
@@ -12701,6 +12842,12 @@ msgstr "A partir del 1 de abril de 2022 y hasta el 30 de septiembre de 2022"
 msgid "Starting at"
 msgstr "A partir de"
 
+#: components/booking/category.vue
+#, fuzzy
+#| msgid "Staterooms starting at ${{ cruise.price | round }}"
+msgid "Starting at ${{ startingPrice | number }}"
+msgstr "Camarotes empezando en ${{ cruise.price | round }}"
+
 #: pages/booking.vue
 msgid "State:"
 msgstr "Estado:"
@@ -12779,9 +12926,9 @@ msgstr "Asunto"
 msgid "Subject:"
 msgstr "Asunto:"
 
-#: pages/additional_info.vue pages/italian_onboarding.vue
-#: components/payout/social-check.vue certificates/index.html
-#: certificates/view.html
+#: pages/account_setup.vue pages/additional_info.vue
+#: pages/italian_onboarding.vue components/payout/social-check.vue
+#: certificates/index.html certificates/view.html
 msgid "Submit"
 msgstr "Enviar"
 
@@ -12861,7 +13008,7 @@ msgstr "Hemos actualizado tu nombre de visualización con éxito."
 msgid "Suggestions"
 msgstr "Sugerencias"
 
-#: components/booking/cabin_categories.vue
+#: pages/cruise.vue components/booking/cabin_categories.vue
 msgid "Suite"
 msgstr "Suite"
 
@@ -13068,7 +13215,7 @@ msgstr ""
 "Las \"Políticas y procedimientos\" son documentos complementarios que se "
 "incorporan por referencia en el Acuerdo de socio comercial independiente."
 
-#: pages/public/pricing.vue
+#: pages/upgrade.vue pages/public/pricing.vue
 msgid ""
 "The $100 activation fee equals 100 Reward Points (1 for 1), and each $100 "
 "Membership payment awards you 200 Reward Points (2 for 1). Book travel using "
@@ -13892,6 +14039,12 @@ msgstr "Este usuario tiene una membresía activa"
 msgid "This username has already been taken."
 msgstr "Este nombre de usuario ya esta en uso."
 
+#: compensation/index.html
+#, fuzzy
+#| msgid "Weekly Points"
+msgid "This Week's Points"
+msgstr "Puntos Semanales"
+
 #: pages/growth_calculator.vue
 msgid "This will take a few seconds. Please be patient."
 msgstr "Esto tomará algunos segundos. Por favor sé paciente."
@@ -13969,8 +14122,8 @@ msgstr "Título"
 msgid "Title:"
 msgstr "Título:"
 
-#: pages/settings.vue reports/index.html controllers/menu_page.js
-#: controllers/titles.js
+#: pages/settings.vue pages/titles.vue reports/index.html
+#: controllers/menu_page.js controllers/titles.js
 msgid "Titles"
 msgstr "Título"
 
@@ -13981,6 +14134,10 @@ msgstr "TLS (o SSL si TLS no esta disponible)"
 #: reports/index.html
 msgid "TMT"
 msgstr "TMT"
+
+#: compensation/index.html
+msgid "to"
+msgstr ""
 
 #: cards/index.html menu_page/index.html resources/index.html
 #: webinar_recordings/index.html
@@ -14175,6 +14332,18 @@ msgstr "Compensacion Total."
 #: pages/booking.vue pages/my_cruise_savings.vue
 msgid "Total Cruise Price"
 msgstr "Precio Total del Crucero"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Due Monthly"
+msgid "Total Due Monthly:"
+msgstr "Pago Mensual"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Total Users:"
+msgid "Total Due Now:"
+msgstr "Total de Usuarios:"
 
 #: compensation/index.html
 msgid "Total Earned"
@@ -14497,6 +14666,10 @@ msgstr "Darte de baja"
 #: unsubscribe/index.html
 msgid "Unsubscribe from our mailing list:"
 msgstr "Date de baja de nuestra lista de correo:"
+
+#: pages/booking.vue pages/cruise.vue
+msgid "Until: %{ return }"
+msgstr ""
 
 #: components/confirm-recurring.vue
 msgid "Update Later"
@@ -14960,7 +15133,7 @@ msgstr ""
 msgid "Watch the demo of the inCruises App with WhatsUp!"
 msgstr "Mira la demostración de la App de inCruises con WhatsUp!"
 
-#: components/public/Testimonials.vue pages/public/about.vue
+#: pages/cruises.vue components/public/Testimonials.vue pages/public/about.vue
 #: pages/public/index.vue pages/public/leadership.vue
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue
@@ -24042,6 +24215,50 @@ msgstr ""
 "Necesitas 11 puntos para ganar. Los 5 TOP Líderes con más puntos ganarán una "
 "entrada para GoPro."
 
+#~ msgid "Billing Descriptor: Incruises Puerto Rico LLC"
+#~ msgstr "Descriptor de Facturación: Incruises Puerto Rico LLC"
+
+#~ msgid ""
+#~ "Each $100 Membership payment awards you 200 Reward Points (2 for 1). Book "
+#~ "travel using your Reward Points and save."
+#~ msgstr ""
+#~ "Cada pago de Membresía de $100 te otorga 200 Puntos de Recompensa (2 por "
+#~ "1). Reserva viajes usando tus Puntos de Recompensa y ahorra."
+
+#~ msgid ""
+#~ "Email\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+#~ msgstr ""
+#~ "Email\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+
+#~ msgid ""
+#~ "First Name\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
+#~ msgstr ""
+#~ "Primer Nombre\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
+
+#~ msgid "for {{ daysApart }} nights"
+#~ msgstr "por {{ daysApart }} noches"
+
+#~ msgid "InCruises Puerto Rico LLC"
+#~ msgstr "InCruises Puerto Rico LLC"
+
+#~ msgid ""
+#~ "Last Name\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+#~ msgstr ""
+#~ "Apellido\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+
+#~ msgid ""
+#~ "Mobile Phone\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+#~ msgstr ""
+#~ "Teléfono Móvil\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+
 #~ msgid "Payquicker Returns"
 #~ msgstr "Devoluciones de Payquicker"
 
@@ -25735,18 +25952,6 @@ msgstr ""
 #~ "<i class=\"fe fe-help-circle\"></i>\n"
 #~ "   <span>Guía y Configuración</span>"
 
-#~ msgid "Date Earliest on Top"
-#~ msgstr "Fecha más Cercana en parte Superior"
-
-#~ msgid "Date Latest on Top"
-#~ msgstr "Ultima Fecha de Arribo en parte Superior"
-
-#~ msgid "Price Higher on Top"
-#~ msgstr "Precio Más Alto en Parte Superior"
-
-#~ msgid "Price Lower on Top"
-#~ msgstr "Precio Más Bajo en Parte Superior"
-
 #~ msgid "Return to Land"
 #~ msgstr "Regresar a Tierra"
 
@@ -26158,15 +26363,6 @@ msgstr ""
 #~ msgstr ""
 #~ "<i class=\"fe fe-x-square\"></i>\n"
 #~ "\t\t\t\t\t\t\t\t\t\tCerrar Filtro"
-
-#~ msgid "All cruise lines"
-#~ msgstr "Todas las Líneas de Cruceros"
-
-#~ msgid "Please choose date"
-#~ msgstr "Por favor elige una fecha"
-
-#~ msgid "Please choose destination"
-#~ msgstr "Por favor elige un Destino"
 
 #~ msgid ""
 #~ "Please click <a href=\"%{tmtFinancialProtection}\" target=\"_blank"
@@ -27025,9 +27221,6 @@ msgstr ""
 #~ "target=\"_blank\" href=\"http://www.startnowbook.com\">START NOW!</a> "
 #~ "with Dr. Denis Cauvier"
 
-#~ msgid "Compose Email"
-#~ msgstr "Escribir Correo"
-
 #~ msgid "Confirm Social Security Number:"
 #~ msgstr "Confirma tu Número de Seguridad Social:"
 
@@ -27757,9 +27950,6 @@ msgstr ""
 #~ msgid "Pre-paid Visa or MasterCard issued by Payoneer®"
 #~ msgstr "Visa o MasterCard de prepago emitida por Payoneer®"
 
-#~ msgid "Preview"
-#~ msgstr "Vista Previa"
-
 #~ msgid "Previous Page"
 #~ msgstr "Página Anterior"
 
@@ -27937,9 +28127,6 @@ msgstr ""
 #~ "Recurrente de TMT. Además, TMT brinda protección al consumidor para "
 #~ "algunos pagos no recurrentes en países limitados cuando TMT es el "
 #~ "proveedor de procesamiento de pagos."
-
-#~ msgid "Total Users:"
-#~ msgstr "Total de Usuarios:"
 
 #~ msgid "Total<br>"
 #~ msgstr "Total<br>"
@@ -28362,9 +28549,6 @@ msgstr ""
 #~ msgid "${{totalOutOfPocket  | number:2}} Out of Pocket"
 #~ msgstr "${{totalOutOfPocket  | number:2}} Desembolso"
 
-#~ msgid "1 Child"
-#~ msgstr "1 Niño/a"
-
 #~ msgid "10 - 14 Nights"
 #~ msgstr "10 - 14 Noches"
 
@@ -28602,9 +28786,6 @@ msgstr ""
 
 #~ msgid "Recreation"
 #~ msgstr "Entretenimiento"
-
-#~ msgid "Selected Cabin Category:"
-#~ msgstr "Categoría de Camarote Seleccionado:"
 
 #~ msgid "Ship Details"
 #~ msgstr "Detalles del Barco"

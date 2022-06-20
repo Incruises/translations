@@ -378,10 +378,6 @@ msgstr "{{ box.box }}"
 msgid "{{ header }}"
 msgstr "{{ header }}"
 
-#: pages/book.vue
-msgid "{{ night }} Nights"
-msgstr "{{ night }} Хоног"
-
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
 msgstr "{{ tips[cruise.lineId].note }}."
@@ -538,7 +534,7 @@ msgstr ""
 "*Өрөөний боломжоос хамаарч үнэ өөрчлөгдөх боломжтой. Өрөөний төрөл сонгох "
 "үед бодит үнэ харагдах болно."
 
-#: pages/hotels.vue
+#: pages/hotels.vue pages/hotels_booking.vue
 msgid "/ night"
 msgstr "/ Хоног"
 
@@ -605,6 +601,16 @@ msgstr "%{ name }, таны анхны зургийг оруулъя"
 #: pages/account_setup.vue
 msgid "%{ name }, now let's import your contacts"
 msgstr "%{ name }, одоо харилцагч нарын хаягийг импортлоё"
+
+#: pages/book.vue
+#, fuzzy
+#| msgid "{{ night }} Nights"
+msgid "%{ night } Nights"
+msgstr "{{ night }} Хоног"
+
+#: pages/hotels.vue
+msgid "%{ roomCount } rooms, %{ guestCount } guests"
+msgstr ""
 
 #: pages/book.vue
 msgid "%{nights} Nights"
@@ -1760,15 +1766,24 @@ msgstr ""
 "ТРИПЛ ДИЖИТ (3 ОРОНТ) баннер өргөмжлөл авах болно.</span>"
 
 #: pages/cruise.vue
+#, fuzzy
+#| msgid ""
+#| "<strong>\n"
+#| "\t\t\t\t\t\t\t\tThe prices shown are in US dollars, based on\n"
+#| "\t\t\t\t\t\t\t\t<u>double occupancy</u>\n"
+#| "\t\t\t\t\t\t\t\t, and subject to availability.\n"
+#| "\t\t\t\t\t\t\t</strong>\n"
+#| "\t\t\t\t\t\t\t{{ cruise.includeTaxes ? 'They include port charges and "
+#| "taxes' : 'They do not include port charges and taxes' }}. They do not "
+#| "include airfare or transfer to and from the arriving and departing ports."
 msgid ""
 "<strong>\n"
 "\t\t\t\t\t\t\t\tThe prices shown are in US dollars, based on\n"
 "\t\t\t\t\t\t\t\t<u>double occupancy</u>\n"
 "\t\t\t\t\t\t\t\t, and subject to availability.\n"
 "\t\t\t\t\t\t\t</strong>\n"
-"\t\t\t\t\t\t\t{{ cruise.includeTaxes ? 'They include port charges and "
-"taxes' : 'They do not include port charges and taxes' }}. They do not "
-"include airfare or transfer to and from the arriving and departing ports."
+"\t\t\t\t\t\t\t%{ taxes }. They do not include airfare or transfer to and "
+"from the arriving and departing ports."
 msgstr ""
 "<strong>\n"
 "\t\t\t\t\t\t\t\tУг үнэ ам.доллараар үнэлэгдсэн\n"
@@ -1883,7 +1898,7 @@ msgstr ""
 msgid "${{statement.data.amount}}"
 msgstr "${{statement.data.amount}}"
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$10,000 in total team production in any given month.<br><br> Senior "
 "Marketing Director automatically earn our TRAVEL BONUS OF $1,000 each and "
@@ -1894,10 +1909,14 @@ msgstr ""
 "болох $1,000-ыг авах болно."
 
 #: pages/upgrade.vue
-msgid "$100 per month, No Long-Term Contracts. You can cancel anytime."
+#, fuzzy
+#| msgid "$100 per month, No Long-Term Contracts. You can cancel anytime."
+msgid ""
+"$100 activation fee (only when activating your membership) and $100 per "
+"month, No Long-Term Contracts. You can cancel anytime."
 msgstr "сарын $100, урт хугацааны гэрээ байхгүй. Хэзээ ч цуцалж болно."
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$100,000 in total team production in any given month.<br><br> International "
 "Directors automatically earn our FREEDOM BONUS of $10,000 each and every "
@@ -1915,7 +1934,7 @@ msgstr "$195.00-ын Идэвхжүүлэх хураамж"
 msgid "$20/month value ($240 annually)"
 msgstr "Сарын $20 (Жилийн $240)"
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$25,000 in total team production in any given month.<br><br> Regional "
 "Directors automatically earn our FINANCIAL COMMITMENT BONUS OF $2,500 each "
@@ -1925,7 +1944,7 @@ msgstr ""
 "бүр хангаж буй Бүсийн Захирлууд сар бүр автоматаар САНХҮҮГИЙН ЗОРИУЛАЛТЫН "
 "БОНУС болох $2,500-ыг авах болно."
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$250,000 in total team production in any given month.<br><br> Executive "
 "Directors automatically earn our INDEPENDENCE BONUS of $25,000 each and "
@@ -1935,7 +1954,7 @@ msgstr ""
 "хангаж буй Гүйцэтгэх Захирлууд нь сар бүр автоматаар БИЕ ДААСАН БАЙДЛЫН "
 "БОНУС болох $25,000-ыг авах болно."
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$3,000 in total team production in any given month.<br><br> Marketing "
 "Director automatically earn our CAR BONUS OF $300 each and every month they "
@@ -1945,7 +1964,7 @@ msgstr ""
 "хангаж буй Маркетингийн Захирлууд сар бүр автоматаар АВТОМАШИНЫ БОНУС болох "
 "$300-ыг авах болно."
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid ""
 "$50,000 in total team production in any given month.<br><br> National "
 "Marketing Directors automatically earn our LUXURY BONUS OF $5,000 each and "
@@ -1967,7 +1986,7 @@ msgstr ""
 "АМЬДРАЛЫН БОНУС болох $55,000-ыг авах бөгөөд түүнчлэн Дэлхийн Зах зээлийн "
 "Бонусын Сангаас 5%-ийн ноогдол ашиг хүртэнэ."
 
-#: controllers/titles.js
+#: pages/titles.vue controllers/titles.js
 msgid ""
 "$550,000 in total team production in any given month.<br><br> Board of "
 "Directors Members automatically earn our DREAM LIFE BONUS of $55,000 each "
@@ -2160,7 +2179,7 @@ msgstr ""
 "өөрчлөлтийг авчирч чадна, харин бизнес бол энэ сайн үйлийг хийх хүч гэдэгт "
 "итгэдэг юм."
 
-#: controllers/titles.js
+#: pages/titles.vue controllers/titles.js
 msgid ""
 "5 Direct International Directors or above and $1,000,000 in NEW team "
 "production in any given month.<br><br> In addition to the same compensation "
@@ -2212,7 +2231,7 @@ msgstr ""
 msgid "7. Conflicting Provisions."
 msgstr "7. Зөрчилтэй заалтууд."
 
-#: titles/index.html
+#: pages/titles.vue titles/index.html
 msgid "8 Title Achievement Goals To Max-out Compensation"
 msgstr "Шагнал Урамшууллийг Хамгийн ихээр авах 8 Цол зэрэглэл, Зорилт"
 
@@ -2497,6 +2516,12 @@ msgstr "Админий дэмжлэг"
 msgid "Admin View"
 msgstr "Админы Харах"
 
+#: pages/booking.vue
+#, fuzzy
+#| msgid "Adults"
+msgid "Adult"
+msgstr "Хүний тоо"
+
 #: pages/booking.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Adults"
 msgstr "Хүний тоо"
@@ -2537,6 +2562,10 @@ msgstr "Бүх төрлүүд"
 #: pages/booking.vue
 msgid "All children must be younger than 18 years old."
 msgstr "Бүх хүүхдийн нас 18-аас доош байх ёстой."
+
+#: pages/book.vue
+msgid "All cruise lines"
+msgstr "Бүх Круиз аялалын компаниуд"
 
 #: pages/resources.vue resources/index.html
 msgid "All Documents"
@@ -3259,7 +3288,7 @@ msgstr "Баланс"
 msgid "Balance:"
 msgstr "Баланс:"
 
-#: components/booking/cabin_categories.vue
+#: pages/cruise.vue components/booking/cabin_categories.vue
 msgid "Balcony"
 msgstr "Балкон"
 
@@ -3361,10 +3390,6 @@ msgstr "Төлбөр тооцооны утга: Incruises"
 msgid "Billing Descriptor: Incruises International LLC"
 msgstr "Гүйлгээний утга: Incruises International LLC"
 
-#: pages/public/payment_terms.vue
-msgid "Billing Descriptor: Incruises Puerto Rico LLC"
-msgstr "Гүйлгээний утга: Incruises Puerto Rico LLC"
-
 #: pages/additional_info.vue
 msgid "Birthdate"
 msgstr "Төрсөн огноо"
@@ -3408,7 +3433,7 @@ msgstr "Захирлуудын Зөвлөл"
 msgid "BOARD OF DIRECTORS"
 msgstr "ЗАХИРЛУУДЫН ЗӨВЛӨЛ"
 
-#: controllers/titles.js
+#: pages/titles.vue controllers/titles.js
 msgid "BOARD OF DIRECTORS AMBASSADOR"
 msgstr "ЗАХИРЛУУДЫН ЗӨВЛӨЛИЙН ЭЛЧИН САЙД"
 
@@ -3420,7 +3445,7 @@ msgstr "Захирлуудын Зөвлөлийн Шагнал"
 msgid "Board of Directors Member"
 msgstr "Захирлуудын Зөвлөлийн Гишүүн"
 
-#: controllers/compensation.js controllers/titles.js
+#: pages/titles.vue controllers/compensation.js controllers/titles.js
 msgid "BOARD OF DIRECTORS MEMBER"
 msgstr "ЗАХИРЛУУДЫН ЗӨВЛӨЛИЙН ГИШҮҮН"
 
@@ -4081,6 +4106,12 @@ msgid "Chief Technology Officer (CTO)"
 msgstr "Технологийн ахлах Захирал (CTO)"
 
 #: pages/booking.vue
+#, fuzzy
+#| msgid "1 Child"
+msgid "Child"
+msgstr "1 Хүүхэд"
+
+#: pages/booking.vue
 msgid "Child #%{ childNumber } Birthdate"
 msgstr "Хүүхэд %{ childNumber } төрсөн он сар өдөр"
 
@@ -4247,6 +4278,12 @@ msgstr "Энд дарж хүлээгдэж буй гэрээнд гарын үс
 msgid "Click here to Signup"
 msgstr "Энд дарж бүртгүүлнэ үү"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Click here to filter nights"
+msgid "Click to filter by Stars"
+msgstr "Энд дарж шөнийн тоог сонгоно уу"
+
 #: pages/email_address.vue
 msgid "Client Configuration"
 msgstr "Харилцагч Тохиргоо"
@@ -4257,7 +4294,7 @@ msgstr "Харилцагч Тохиргоо"
 #: pages/global_summit_tracking.vue pages/hotels_details.vue pages/invoices.vue
 #: pages/reward_points.vue components/global_convention/event_info.vue
 #: components/public/FooterLinks.vue components/public/JoinModal.vue
-#: pages/public/index.vue pages/public/leadership.vue
+#: pages/public/about.vue pages/public/index.vue pages/public/leadership.vue
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/signup.vue compensation/index.html
 #: connect/index.html cruising_dollars/index.html pay_bonus/index.html
@@ -4339,6 +4376,12 @@ msgstr "Уригдсан хүмүүс"
 #: pages/invoices.vue
 msgid "Completed Invoices"
 msgstr "Дууссан Нэхэмжлэхүүд"
+
+#: pages/email.vue
+#, fuzzy
+#| msgid "Compose Email"
+msgid "Compose new Email"
+msgstr "Имэйл бичих"
 
 #: pages/email.vue
 msgid "Compose your email"
@@ -4530,6 +4573,12 @@ msgstr "Үргэлжлүүлэх"
 msgid "Continue Payment Below"
 msgstr "Доорхи төлбөрийг үргэлжлүүлэх"
 
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Confirm Checkout"
+msgid "Continue to Checkout"
+msgstr "Төлбөрийг баталгаажуулах"
+
 #: components/checkout/CurrencyStep.vue components/checkout/ItalianStep.vue
 #: components/checkout/ProcessorTmt.vue
 msgid "Continue with Payment"
@@ -4559,12 +4608,16 @@ msgstr "Компаний Магадлан Шинжлэл"
 msgid "Correct!"
 msgstr "Зөв!"
 
+#: pages/booking.vue
+msgid "Cost"
+msgstr ""
+
 #: pages/team_rankings.vue components/user/vip-data.vue reach/index.html
 #: track_results/index.html
 msgid "Count"
 msgstr "Тоо"
 
-#: track_results/index.html
+#: reach/index.html track_results/index.html
 msgid "Countries"
 msgstr "Улс орнууд"
 
@@ -4877,7 +4930,7 @@ msgstr "Мэдээлэл"
 msgid "Date"
 msgstr "Огноо"
 
-#: receipts/index.html
+#: pages/contacts.vue receipts/index.html
 msgid "Date Ascending"
 msgstr "Огноо Өсөх дарааллаар"
 
@@ -4885,13 +4938,21 @@ msgstr "Огноо Өсөх дарааллаар"
 msgid "Date Created"
 msgstr "Огноо үүсгэгдлээ"
 
-#: receipts/index.html
+#: pages/contacts.vue receipts/index.html
 msgid "Date Descending"
 msgstr "Огноо Буурах дарааллаар"
+
+#: pages/book.vue
+msgid "Date Earliest on Top"
+msgstr "Огноо (Эртнийх нь эхэнд)"
 
 #: pages/team_rankings.vue reports/index.html
 msgid "Date From"
 msgstr "Эхлэх Огноо"
+
+#: pages/book.vue
+msgid "Date Latest on Top"
+msgstr "Огноо Сүүлийнх нь эхэнд"
 
 #: pages/booking.vue
 msgid "Date of Birth"
@@ -5036,6 +5097,12 @@ msgstr "Хэлтэс"
 #: receipts/booking_receipt.html
 msgid "Departs From"
 msgstr "Явах газар"
+
+#: pages/booking.vue pages/cruise.vue
+#, fuzzy
+#| msgid "Depart Date"
+msgid "Departs: %{ start }"
+msgstr "Явах өдөр"
 
 #: pages/my_cruise_savings.vue
 msgid "Departure"
@@ -5536,14 +5603,6 @@ msgstr ""
 "Үндэсний Захирлын шинэ Нэмэлт Өөрчлөлтөнд орж болно. Дахин өргөдөл гаргахтай "
 "холбоотой мэдээллийг доорх 5.б-ээс үзнэ үү."
 
-#: pages/upgrade.vue
-msgid ""
-"Each $100 Membership payment awards you 200 Reward Points (2 for 1). Book "
-"travel using your Reward Points and save."
-msgstr ""
-"100 долларын Гишүүнчлэлийн төлбөр болох 100 бүрт танд 200 (1:2) Шагналын "
-"Оноо өгнө. Уг Шагналын Оноог ашиглан аялал захиалан хэмнэлт эдлэх болно."
-
 #: compensation/index.html
 msgid "Each Member enrollment equals 1 point."
 msgstr "Гишүүн элссэн бол 1 оноо байна."
@@ -5637,14 +5696,6 @@ msgstr "Хэрэглэж болох Шагнал урамшуулал"
 #: Menu
 msgid "Email"
 msgstr "Имэйл"
-
-#: pages/hotels_booking.vue
-msgid ""
-"Email\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
-"Имэйл хаяг\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
 
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
@@ -5783,8 +5834,8 @@ msgstr "Хасагдсан багууд"
 msgid "Executive Director"
 msgstr "Гүйцэтгэх Захирал"
 
-#: certificates/executive-director.html controllers/compensation.js
-#: controllers/titles.js
+#: pages/titles.vue certificates/executive-director.html
+#: controllers/compensation.js controllers/titles.js
 msgid "EXECUTIVE DIRECTOR"
 msgstr "ГҮЙЦЭТГЭХ ЗАХИРАЛ"
 
@@ -5970,18 +6021,10 @@ msgstr "Тохиргоог дуусгах"
 msgid "Finished"
 msgstr "Дууссан"
 
-#: pages/admin_restricted_paybonus.vue pages/invite.vue pages/settings.vue
-#: import/index.html controllers/reports.js
+#: pages/admin_restricted_paybonus.vue pages/hotels_booking.vue
+#: pages/invite.vue pages/settings.vue import/index.html controllers/reports.js
 msgid "First Name"
 msgstr "Нэр"
-
-#: pages/hotels_booking.vue
-msgid ""
-"First Name\n"
-"\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
-msgstr ""
-"Нэр\n"
-"\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
 
 #: pages/booking.vue
 msgid "First Name:"
@@ -6010,10 +6053,6 @@ msgstr "Флорида мужийн бүртгэлийн дугаар"
 #: controllers/menu_page.js
 msgid "Follow these simple steps to set up your inCruises account."
 msgstr "InCruises™-ийн бүртгэлийн тохиргоо хийх алхамууд."
-
-#: pages/hotels.vue
-msgid "for {{ daysApart }} nights"
-msgstr "{{ daysApart }} хоног"
 
 #: pages/hotels_details.vue
 msgid "For cancellations made after"
@@ -6231,6 +6270,10 @@ msgid ""
 msgstr ""
 "Хэнээс:\n"
 "\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ from }}</span>"
+
+#: pages/booking.vue pages/cruise.vue
+msgid "From: %{ from }"
+msgstr ""
 
 #: pages/admin_user_id.vue
 msgid "FSG"
@@ -6531,6 +6574,16 @@ msgstr ""
 msgid "Hierarchy"
 msgstr "Шатлал"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Unit Price"
+msgid "Highest Price"
+msgstr "Ширхэгийн үнэ"
+
+#: pages/hotels.vue
+msgid "Highest Stars First"
+msgstr ""
+
 #: receipts/hotel_booking_receipt.html
 msgid "Holder Name"
 msgstr "Эзэмшигчийн нэр"
@@ -6546,6 +6599,14 @@ msgstr "Зочид буудал захиалах"
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Info"
 msgstr "Зочид буудлын мэдээлэл"
+
+#: pages/hotels.vue
+msgid "Hotel Name (A-Z)"
+msgstr ""
+
+#: pages/hotels.vue
+msgid "Hotel Name (Z-A)"
+msgstr ""
 
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Phone #"
@@ -7348,6 +7409,12 @@ msgstr ""
 "    <a href=\"https://incruises.com/support\">https://incruises.com/support</"
 "a>"
 
+#: components/booking/confirm-no-rp-used.vue
+msgid ""
+"If you wish to use Reward Points, you must add them in this step, you will "
+"not be able to add Reward Points later."
+msgstr ""
+
 #: pages/checkout.vue
 msgid ""
 "If you wish you cancel your pending sale you may do so by pressing the "
@@ -7795,10 +7862,6 @@ msgstr ""
 msgid "inCruises Press Releases"
 msgstr "inCruises-ийн мэдээ, мэдээллүүд"
 
-#: pages/public/payment_terms.vue
-msgid "InCruises Puerto Rico LLC"
-msgstr "InCruises Puerto Rico LLC"
-
 #: pages/public/reviews.vue
 msgid "inCruises Reviews"
 msgstr "InCruises-ийн Тойм"
@@ -7916,7 +7979,7 @@ msgstr "Энд Пиксел ID-г бичнэ үү"
 msgid "Insert your email..."
 msgstr "Имэйл хаягаа бичнэ үү..."
 
-#: components/booking/cabin_categories.vue
+#: pages/cruise.vue components/booking/cabin_categories.vue
 msgid "Inside"
 msgstr "Дотор талд"
 
@@ -7956,8 +8019,8 @@ msgstr ""
 msgid "International Director"
 msgstr "Олон Улсын Захирал"
 
-#: certificates/international-director.html controllers/compensation.js
-#: controllers/titles.js
+#: pages/titles.vue certificates/international-director.html
+#: controllers/compensation.js controllers/titles.js
 msgid "INTERNATIONAL DIRECTOR"
 msgstr "ОЛОН УЛСЫН ЗАХИРАЛ"
 
@@ -8291,18 +8354,10 @@ msgstr ""
 "Өмнөх сарын Лидерийн Шагналыг авах хүсэлт гаргасан бөгөөд төлбөр хүлээгдэж "
 "байна."
 
-#: pages/admin_restricted_paybonus.vue pages/invite.vue pages/settings.vue
-#: import/index.html
+#: pages/admin_restricted_paybonus.vue pages/hotels_booking.vue
+#: pages/invite.vue pages/settings.vue import/index.html
 msgid "Last Name"
 msgstr "Овог"
-
-#: pages/hotels_booking.vue
-msgid ""
-"Last Name\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
-"Овог\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
 
 #: pages/booking.vue
 msgid "Last Name:"
@@ -8310,6 +8365,12 @@ msgstr "Овог:"
 
 #: pages/competition.vue competition/index.html
 msgid "Last Week's Contest"
+msgstr "Өмнөх 7 хоногийн уралдаан"
+
+#: compensation/index.html
+#, fuzzy
+#| msgid "Last Week's Contest"
+msgid "Last Week's Points"
 msgstr "Өмнөх 7 хоногийн уралдаан"
 
 #: compensation/index.html
@@ -8473,6 +8534,12 @@ msgstr ""
 msgid "Length:"
 msgstr "Хугацаа:"
 
+#: pages/booking.vue pages/cruise.vue
+#, fuzzy
+#| msgid "%{nights} Nights"
+msgid "Length: %{ nights } Nights"
+msgstr "%{nights} Хоног"
+
 #: reach/index.html receipts/team_residual_bonus_statement.html
 #: track_results/index.html
 msgid "Level"
@@ -8486,7 +8553,7 @@ msgstr "Үе {{$index + 1 }}"
 msgid "Level Limit"
 msgstr "Үеийн Хязгаар"
 
-#: track_results/index.html
+#: reach/index.html track_results/index.html
 msgid "Levels"
 msgstr "Үеүүд"
 
@@ -8558,6 +8625,16 @@ msgstr "Нэвтрэн орсон"
 msgid "Logout"
 msgstr "Гарах"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Total Price"
+msgid "Lowest Price"
+msgstr "Нийт үнэ"
+
+#: pages/hotels.vue
+msgid "Lowest Stars First"
+msgstr ""
+
 #: pages/invoices.vue
 msgid "Make Default Card"
 msgstr "Өгөгдмөл Карт болгох"
@@ -8617,8 +8694,8 @@ msgstr "МАРКЕТИНГ"
 msgid "Marketing Director"
 msgstr "Маркетингийн Захирал"
 
-#: certificates/marketing-director.html controllers/compensation.js
-#: controllers/titles.js
+#: pages/titles.vue certificates/marketing-director.html
+#: controllers/compensation.js controllers/titles.js
 msgid "MARKETING DIRECTOR"
 msgstr "МАРКЕТИНГИЙН ЗАХИРАЛ"
 
@@ -8878,18 +8955,10 @@ msgstr "Гар утасны Апп Сануулагч"
 msgid "Mobile Apps"
 msgstr "Гар утасны Аппууд"
 
-#: pages/additional_info.vue pages/team_rankings.vue cards/index.html
-#: compensation/index.html reach/index.html
+#: pages/additional_info.vue pages/hotels_booking.vue pages/team_rankings.vue
+#: cards/index.html compensation/index.html reach/index.html
 msgid "Mobile Phone"
 msgstr "Гар утасны дугаар"
-
-#: pages/hotels_booking.vue
-msgid ""
-"Mobile Phone\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
-msgstr ""
-"Гар утасны дугаар\n"
-"\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
 
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Mobile Phone is required."
@@ -9110,9 +9179,13 @@ msgstr ""
 "Тэрээр одоо Флорида мужийн Дэви хотод амьдардаг."
 
 #: pages/public/leadership.vue
+#, fuzzy
+#| msgid ""
+#| "Ms. Andrews graduated from the University of Washington with a degree in "
+#| "Communications.  She lives in Seattle, WA."
 msgid ""
 "Ms. Andrews graduated from the University of Washington with a degree in "
-"Communications.  She lives in Seattle, WA."
+"Communications. She lives in Seattle, WA."
 msgstr ""
 "Хатагтай Андрюс Вашингтоны их сургуулийг харилцаа холбооны чиглэлээр "
 "төгссөн. Тэрээр одоо Вашингтон мужийн Сиэтл хотод амьдардаг."
@@ -9161,10 +9234,11 @@ msgstr ""
 #: pages/global_summit_tracking.vue pages/settings.vue pages/team_rankings.vue
 #: pages/welcome.vue compensation/index.html competition/index.html
 #: invoices/invoice_statement.html negative_balances/index.html
-#: pay_bonus/index.html reach/index.html receipts/booking_receipt.html
-#: receipts/commission_statement.html receipts/hotel_booking_receipt.html
-#: receipts/instant_bonus_statement.html receipts/invoice.html
-#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
+#: new_ranks/index.html pay_bonus/index.html reach/index.html
+#: receipts/booking_receipt.html receipts/commission_statement.html
+#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
+#: receipts/invoice.html receipts/italian_receipt.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
@@ -9177,7 +9251,7 @@ msgstr ""
 msgid "Name"
 msgstr "Нэр"
 
-#: import/create.html
+#: pages/contacts.vue import/create.html
 msgid "Name Ascending"
 msgstr "Нэр, Өсөх дарааллаар"
 
@@ -9212,7 +9286,7 @@ msgstr ""
 "хураамж нь шинэчлэгдсэн тохиолдолд уг Гишүүнчлэлийг түүний эхнэр, нөхөр "
 "эсвэл хууль ёсны өв залгамжлагчид нь шилжүүлж болно."
 
-#: import/create.html
+#: pages/contacts.vue import/create.html
 msgid "Name Descending"
 msgstr "Нэр, Буурах дарааллаар"
 
@@ -9238,8 +9312,8 @@ msgstr "Нэр:"
 msgid "National Director"
 msgstr "Үндэсний Захирал"
 
-#: certificates/national-director.html controllers/compensation.js
-#: controllers/titles.js
+#: pages/titles.vue certificates/national-director.html
+#: controllers/compensation.js controllers/titles.js
 msgid "NATIONAL DIRECTOR"
 msgstr "ҮНДЭСНИЙ ЗАХИРАЛ"
 
@@ -9371,7 +9445,7 @@ msgstr "Өмнөх сарын шинэ Цолууд"
 msgid "New Ranks this month"
 msgstr "Энэ сарын шинэ Цолууд"
 
-#: reports/index.html
+#: new_ranks/index.html reports/index.html
 msgid "New Ranks This Month"
 msgstr "Энэ сарын шинэ Цолууд"
 
@@ -9450,7 +9524,7 @@ msgstr "Дараа жил"
 msgid "night"
 msgstr "хоног"
 
-#: pages/hotels_booking.vue pages/hotels_details.vue
+#: pages/hotels.vue pages/hotels_booking.vue pages/hotels_details.vue
 msgid "nights"
 msgstr "хоног"
 
@@ -9757,6 +9831,12 @@ msgstr "Байнгын биш"
 msgid "Oceanview"
 msgstr "Далай руу  харсан цонхтой"
 
+#: pages/cruise.vue
+#, fuzzy
+#| msgid "Oceanview"
+msgid "OceanView"
+msgstr "Далай руу  харсан цонхтой"
+
 #: pages/booking.vue
 msgid "October"
 msgstr "10 сар"
@@ -9805,12 +9885,21 @@ msgid "Onboarding Complete"
 msgstr "Бүртгэл дууслаа"
 
 #: pages/cruise.vue
+#, fuzzy
+#| msgid ""
+#| "Once on board, you will need to pay out of pocket for things such as: "
+#| "cruise tours, beverage packages and personal expenditures. Those are your "
+#| "expenses, subject to our\n"
+#| "\t\t\t\t\t\t\t<a class=\"text-black\" target=\"_blank\" :href=\"documents."
+#| "memberAgreement\">Cruise Membership Agreement</a>\n"
+#| "\t\t\t\t\t\t\t. Flights to and from the cruise, if necessary, are not "
+#| "included in our prices nor membership."
 msgid ""
 "Once on board, you will need to pay out of pocket for things such as: cruise "
 "tours, beverage packages and personal expenditures. Those are your expenses, "
 "subject to our\n"
-"\t\t\t\t\t\t\t<a class=\"text-black\" target=\"_blank\" :href=\"documents."
-"memberAgreement\">Cruise Membership Agreement</a>\n"
+"\t\t\t\t\t\t\t<a class=\"text-black\" target=\"_blank\" href="
+"\"%{agreement}\">Cruise Membership Agreement</a>\n"
 "\t\t\t\t\t\t\t. Flights to and from the cruise, if necessary, are not "
 "included in our prices nor membership."
 msgstr ""
@@ -10364,6 +10453,12 @@ msgstr "Түншлэл үүсгэгдсэн огноо"
 msgid "Passenger #%{passengerNo}"
 msgstr "Зорчигч #%{passengerNo}"
 
+#: pages/booking.vue
+#, fuzzy
+#| msgid "Passengers"
+msgid "Passenger count"
+msgstr "Зорчигчид"
+
 #: receipts/booking_receipt.html
 msgid "Passengers"
 msgstr "Зорчигчид"
@@ -10532,7 +10627,7 @@ msgstr "Хүлээгдэж буй Гүйлгээ"
 msgid "Pension Rights"
 msgstr "Тэтгэвэрийн эрх"
 
-#: pages/hotels_details.vue
+#: pages/hotels.vue pages/hotels_booking.vue pages/hotels_details.vue
 msgid "per"
 msgstr "-"
 
@@ -10651,6 +10746,14 @@ msgstr "Өөрийн оршин суудаг мужийн нэр зөв эсэх
 #: components/confirm-recurring.vue pages/invoices.vue
 msgid "Please check the expiration date you entered."
 msgstr "Та хугацаа дуусах өдрөө шалгана уу."
+
+#: pages/book.vue
+msgid "Please choose date"
+msgstr "Он сар өдрөө сонгоно уу"
+
+#: pages/book.vue
+msgid "Please choose destination"
+msgstr "Очих газраа сонгоно уу"
 
 #: components/checkout/CurrencyStep.vue components/checkout/ProcessorTmt.vue
 msgid ""
@@ -11154,6 +11257,12 @@ msgstr "Мөнгөн тэмдэгт:"
 msgid "Presentation"
 msgstr "Танилцуулга"
 
+#: pages/invite.vue
+#, fuzzy
+#| msgid "Preview"
+msgid "Preview Email"
+msgstr "Харах"
+
 #: pages/email.vue pages/leadership_academy.vue
 msgid "Previous"
 msgstr "Өмнөх"
@@ -11181,8 +11290,8 @@ msgstr "Өмнөх"
 msgid "Previous Year"
 msgstr "Өмнөх жил"
 
-#: components/booking/category.vue receipts/hotel_booking_receipt.html
-#: receipts/receipt.html
+#: pages/booking.vue components/booking/category.vue
+#: receipts/hotel_booking_receipt.html receipts/receipt.html
 msgid "Price"
 msgstr "Үнэ"
 
@@ -11194,9 +11303,17 @@ msgstr "Дэлгэрэнгүй үнэ"
 msgid "Price does not include Taxes and Fees"
 msgstr "Үнэнд татвар, хураамжууд ороогүй болно"
 
+#: pages/book.vue
+msgid "Price Higher on Top"
+msgstr "Хамгийн үнэтэй нь эхэнд бичигдэнэ"
+
 #: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Price Information"
 msgstr "Үнийн Мэдээлэл"
+
+#: pages/book.vue
+msgid "Price Lower on Top"
+msgstr "Хамгийн хямд нь эхэнд бичигдэнэ"
 
 #: pages/hotels_booking.vue
 msgid "Price per night:"
@@ -11628,8 +11745,8 @@ msgstr "Бүс:"
 msgid "Regional Director"
 msgstr "Бүсийн Захирал"
 
-#: certificates/regional-director.html controllers/compensation.js
-#: controllers/titles.js
+#: pages/titles.vue certificates/regional-director.html
+#: controllers/compensation.js controllers/titles.js
 msgid "REGIONAL DIRECTOR"
 msgstr "БҮСИЙН ЗАХИРАЛ"
 
@@ -12182,6 +12299,12 @@ msgstr "Доорхоос сонгоно уу"
 msgid "Selected"
 msgstr "Сонгогдсон"
 
+#: pages/booking.vue
+#, fuzzy
+#| msgid "Selected Cabin Category:"
+msgid "Selected cabin category"
+msgstr "Өрөөний төрөл сонгох:"
+
 #: pages/hotels_booking.vue
 msgid "Selected Room"
 msgstr "Сонгогдсон өрөө"
@@ -12227,6 +12350,12 @@ msgstr "Урилга илгээх"
 msgid "Send Invitations Now"
 msgstr "Одоо урилга илгээх"
 
+#: pages/invite.vue
+#, fuzzy
+#| msgid "Send Invites"
+msgid "Send Invite"
+msgstr "Урилга илгээх"
+
 #: pages/account_setup.vue pages/apps.vue apps/index.html
 msgid "Send Invites"
 msgstr "Урилга илгээх"
@@ -12261,7 +12390,7 @@ msgstr "Анхааруулга илгээх"
 msgid "Senior Marketing Director"
 msgstr "Ахлах Маркетингийн Захирал"
 
-#: certificates/senior-marketing-director.html
+#: pages/titles.vue certificates/senior-marketing-director.html
 #: certificates/senior-marketing-manager.html controllers/compensation.js
 #: controllers/titles.js
 msgid "SENIOR MARKETING DIRECTOR"
@@ -12354,8 +12483,14 @@ msgstr ""
 msgid "Ship Amenities"
 msgstr "Хөлгийн орчин"
 
-#: pages/booking.vue pages/cruise.vue
+#: pages/booking.vue
 msgid "Ship Launch: {{ cruise.ship.launched }}"
+msgstr "Хөлөг онгоц хөдлөх: {{ cruise.ship.launched }}"
+
+#: pages/cruise.vue
+#, fuzzy
+#| msgid "Ship Launch: {{ cruise.ship.launched }}"
+msgid "Ship Launch: %{ shipLaunched }"
 msgstr "Хөлөг онгоц хөдлөх: {{ cruise.ship.launched }}"
 
 #: receipts/booking_receipt.html
@@ -12406,8 +12541,14 @@ msgstr "Нийт борлуулалтыг харуулах"
 msgid "Showing All Teams"
 msgstr "Бүх багуудыг харуулах"
 
-#: pages/book.vue pages/hotels.vue
+#: pages/hotels.vue
 msgid "Showing results for {{ describeSearch() }}"
+msgstr "{{ describeSearch() }}-ийн үр дүнг харуулах"
+
+#: pages/book.vue
+#, fuzzy
+#| msgid "Showing results for {{ describeSearch() }}"
+msgid "Showing results for %{ description }"
 msgstr "{{ describeSearch() }}-ийн үр дүнг харуулах"
 
 #: pages/agreements.vue
@@ -12632,6 +12773,12 @@ msgstr "2022 оны 4-р сарын 1-нд эхэлж, 2022 оны 9-р сары
 msgid "Starting at"
 msgstr "Эхлэх"
 
+#: components/booking/category.vue
+#, fuzzy
+#| msgid "Staterooms starting at ${{ cruise.price | round }}"
+msgid "Starting at ${{ startingPrice | number }}"
+msgstr "Өрөөний эхлэх үнэ ${{ cruise.price | round }}"
+
 #: pages/booking.vue
 msgid "State:"
 msgstr "Байдал:"
@@ -12710,9 +12857,9 @@ msgstr "Сэдэв"
 msgid "Subject:"
 msgstr "Сэдэв:"
 
-#: pages/additional_info.vue pages/italian_onboarding.vue
-#: components/payout/social-check.vue certificates/index.html
-#: certificates/view.html
+#: pages/account_setup.vue pages/additional_info.vue
+#: pages/italian_onboarding.vue components/payout/social-check.vue
+#: certificates/index.html certificates/view.html
 msgid "Submit"
 msgstr "Илгээх"
 
@@ -12793,7 +12940,7 @@ msgstr "Таны хэрэглэгчийн нэр амжилттай шинэчл
 msgid "Suggestions"
 msgstr "Саналууд"
 
-#: components/booking/cabin_categories.vue
+#: pages/cruise.vue components/booking/cabin_categories.vue
 msgid "Suite"
 msgstr "Люкс өрөө"
 
@@ -12998,7 +13145,7 @@ msgstr ""
 "\"Бодлого ба Горим\" нь  Бие даасан Бизнесийн Түншийн Гэрээнд хавсрагдах "
 "нэмэлт баримт бичиг юм."
 
-#: pages/public/pricing.vue
+#: pages/upgrade.vue pages/public/pricing.vue
 msgid ""
 "The $100 activation fee equals 100 Reward Points (1 for 1), and each $100 "
 "Membership payment awards you 200 Reward Points (2 for 1). Book travel using "
@@ -13787,6 +13934,12 @@ msgstr "Энэ хэрэглэгч идэвхтэй гишүүнчлэлтэй б
 msgid "This username has already been taken."
 msgstr "Энэ хэрэглэгчийн нэр хэрэглэгдэж байна."
 
+#: compensation/index.html
+#, fuzzy
+#| msgid "Weekly Points"
+msgid "This Week's Points"
+msgstr "Долоо хоног бүрийн Оноонууд"
+
 #: pages/growth_calculator.vue
 msgid "This will take a few seconds. Please be patient."
 msgstr "Хэдэн мөч зарцуулах болно. Түр хүлээнэ үү."
@@ -13864,8 +14017,8 @@ msgstr "Гарчиг"
 msgid "Title:"
 msgstr "Гарчиг:"
 
-#: pages/settings.vue reports/index.html controllers/menu_page.js
-#: controllers/titles.js
+#: pages/settings.vue pages/titles.vue reports/index.html
+#: controllers/menu_page.js controllers/titles.js
 msgid "Titles"
 msgstr "Цол Зэрэг"
 
@@ -13876,6 +14029,10 @@ msgstr "TLS (эсвэл SSL хэрэв байхгүй бол)"
 #: reports/index.html
 msgid "TMT"
 msgstr "TMT"
+
+#: compensation/index.html
+msgid "to"
+msgstr ""
 
 #: cards/index.html menu_page/index.html resources/index.html
 #: webinar_recordings/index.html
@@ -14072,6 +14229,18 @@ msgstr "Шагнал урамшууллын нийт хэмжээ."
 #: pages/booking.vue pages/my_cruise_savings.vue
 msgid "Total Cruise Price"
 msgstr "Нийт Круиз аялалын Үнэ"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Due Monthly"
+msgid "Total Due Monthly:"
+msgstr "Дуусах сар бүрийн"
+
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Total Users:"
+msgid "Total Due Now:"
+msgstr "Нийт хэрэглэгчид:"
 
 #: compensation/index.html
 msgid "Total Earned"
@@ -14393,6 +14562,10 @@ msgstr "Захиалыг цуцлах"
 #: unsubscribe/index.html
 msgid "Unsubscribe from our mailing list:"
 msgstr "Манай имэйлийн жагсаалтаас хасагдах:"
+
+#: pages/booking.vue pages/cruise.vue
+msgid "Until: %{ return }"
+msgstr ""
 
 #: components/confirm-recurring.vue
 msgid "Update Later"
@@ -14849,7 +15022,7 @@ msgstr ""
 msgid "Watch the demo of the inCruises App with WhatsUp!"
 msgstr "WhatsUp! бүхий inCruises Аппын үзүүлбэрийг үзээрэй!"
 
-#: components/public/Testimonials.vue pages/public/about.vue
+#: pages/cruises.vue components/public/Testimonials.vue pages/public/about.vue
 #: pages/public/index.vue pages/public/leadership.vue
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue
@@ -23919,6 +24092,50 @@ msgstr ""
 "Ялахын тулд танд 11 оноо хэрэгтэй байна. Хамгийн их оноотой ТОП 5 Манлайлагч "
 "GoPro билет хожих болно."
 
+#~ msgid "Billing Descriptor: Incruises Puerto Rico LLC"
+#~ msgstr "Гүйлгээний утга: Incruises Puerto Rico LLC"
+
+#~ msgid ""
+#~ "Each $100 Membership payment awards you 200 Reward Points (2 for 1). Book "
+#~ "travel using your Reward Points and save."
+#~ msgstr ""
+#~ "100 долларын Гишүүнчлэлийн төлбөр болох 100 бүрт танд 200 (1:2) Шагналын "
+#~ "Оноо өгнө. Уг Шагналын Оноог ашиглан аялал захиалан хэмнэлт эдлэх болно."
+
+#~ msgid ""
+#~ "Email\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+#~ msgstr ""
+#~ "Имэйл хаяг\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+
+#~ msgid ""
+#~ "First Name\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
+#~ msgstr ""
+#~ "Нэр\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span style=\"color:red\">*</span>"
+
+#~ msgid "for {{ daysApart }} nights"
+#~ msgstr "{{ daysApart }} хоног"
+
+#~ msgid "InCruises Puerto Rico LLC"
+#~ msgstr "InCruises Puerto Rico LLC"
+
+#~ msgid ""
+#~ "Last Name\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+#~ msgstr ""
+#~ "Овог\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+
+#~ msgid ""
+#~ "Mobile Phone\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+#~ msgstr ""
+#~ "Гар утасны дугаар\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<span class=\"mr-1\" style=\"color:red\">*</span>"
+
 #~ msgid "Payquicker Returns"
 #~ msgstr "Payquicker буцан ирлээ"
 
@@ -25482,18 +25699,6 @@ msgstr ""
 #~ "<i class=\"fe fe-help-circle\"></i>\n"
 #~ "\t\t\t<span>Гарын авлага ба Тохиргоо</span>"
 
-#~ msgid "Date Earliest on Top"
-#~ msgstr "Огноо (Эртнийх нь эхэнд)"
-
-#~ msgid "Date Latest on Top"
-#~ msgstr "Огноо Сүүлийнх нь эхэнд"
-
-#~ msgid "Price Higher on Top"
-#~ msgstr "Хамгийн үнэтэй нь эхэнд бичигдэнэ"
-
-#~ msgid "Price Lower on Top"
-#~ msgstr "Хамгийн хямд нь эхэнд бичигдэнэ"
-
 #~ msgid "Return to Land"
 #~ msgstr "Эргэж ирэх газар"
 
@@ -25901,15 +26106,6 @@ msgstr ""
 #~ msgstr ""
 #~ "<i class=\"fe fe-x-square\"></i>\n"
 #~ "\t\t\t\t\t\t\t\t\t\tШүүлтүүрийг хаах"
-
-#~ msgid "All cruise lines"
-#~ msgstr "Бүх Круиз аялалын компаниуд"
-
-#~ msgid "Please choose date"
-#~ msgstr "Он сар өдрөө сонгоно уу"
-
-#~ msgid "Please choose destination"
-#~ msgstr "Очих газраа сонгоно уу"
 
 #~ msgid ""
 #~ "Please click <a href=\"%{tmtFinancialProtection}\" target=\"_blank"
@@ -26749,9 +26945,6 @@ msgstr ""
 #~ "Денис Каувиертай хамт <a target=\"_blank\" href=\"http://www.startnowbook."
 #~ "com\">ОДОО ЭХЭЛ!</a> номыг хамтран зохиогч"
 
-#~ msgid "Compose Email"
-#~ msgstr "Имэйл бичих"
-
 #~ msgid "Confirm Social Security Number:"
 #~ msgstr "Иргэний үнэмлэхний дугаар баталгаажуулах:"
 
@@ -27463,9 +27656,6 @@ msgstr ""
 #~ msgid "Pre-paid Visa or MasterCard issued by Payoneer®"
 #~ msgstr "Payoneer®-аас гаргасан урьчилсан төлбөрт Мастер болон Виза Карт"
 
-#~ msgid "Preview"
-#~ msgstr "Харах"
-
 #~ msgid "Previous Page"
 #~ msgstr "Өмнөх Хуудас"
 
@@ -27642,9 +27832,6 @@ msgstr ""
 #~ "гишүүдийг  төлбөрийн хамгаалалтаар хангаж өгдөг юм. Түүнчлэн,  TMT зарим "
 #~ "нэг орнуудад Давтагдах бус төлбөрийн аргаар төлбөр хийсэн хэрэглэгчдэд ч "
 #~ "төлбөрийн хамгаалалтыг хийж өгдөг юм."
-
-#~ msgid "Total Users:"
-#~ msgstr "Нийт хэрэглэгчид:"
 
 #~ msgid "Total<br>"
 #~ msgstr "Нийт<br>"
@@ -28064,9 +28251,6 @@ msgstr ""
 #~ msgid "${{totalOutOfPocket  | number:2}} Out of Pocket"
 #~ msgstr "${{totalOutOfPocket  | number:2}} Бэлнээр төлөх"
 
-#~ msgid "1 Child"
-#~ msgstr "1 Хүүхэд"
-
 #~ msgid "10 - 14 Nights"
 #~ msgstr "10 - 14 Шөнө"
 
@@ -28302,9 +28486,6 @@ msgstr ""
 
 #~ msgid "Recreation"
 #~ msgstr "Хэрэгтэй үйлчилгээнүүд"
-
-#~ msgid "Selected Cabin Category:"
-#~ msgstr "Өрөөний төрөл сонгох:"
 
 #~ msgid "Ship Details"
 #~ msgstr "Хөлгийн Мэдээлэл"
