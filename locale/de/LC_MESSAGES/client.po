@@ -3936,7 +3936,8 @@ msgid "Canada"
 msgstr "Kanada"
 
 #: pages/booking.vue pages/checkout.vue pages/connect.vue pages/email.vue
-#: pages/invoices.vue pages/payout.vue components/booking/add-cd-user.vue
+#: pages/invoices.vue components/booking/add-cd-user.vue
+#: components/payout/euro-conversion.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -4422,11 +4423,12 @@ msgid "Conditions"
 msgstr "Bedingungen"
 
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: pages/payout.vue receipts/booking_receipt.html reports/index.html
+#: components/payout/birthday-modal.vue receipts/booking_receipt.html
+#: reports/index.html
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: components/birthdate-reminder.vue pages/payout.vue
+#: components/birthdate-reminder.vue components/payout/birthday-modal.vue
 msgid "Confirm Birthdate"
 msgstr "Geburtstags-Datum bestätigen"
 
@@ -4462,7 +4464,7 @@ msgstr "Passwort bestätigen"
 msgid "Confirm Password:"
 msgstr "Passwort bestätigen:"
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "Confirm Payout"
 msgstr "Bestätigung der Auszahlung"
 
@@ -4744,7 +4746,7 @@ msgstr "Ein iPayout Konto erstellen"
 msgid "Create Meeting Account"
 msgstr "Meeting Konto erstellen"
 
-#: pages/payout.vue components/payout/payoneer-withdraw.vue
+#: components/payout/payoneer-withdraw.vue
 msgid "Create Payoneer Account"
 msgstr "Ein Payoneer Konto erstellen"
 
@@ -5523,7 +5525,7 @@ msgstr ""
 "Unterstriche ( _) enthalten können. Empfehlungslinks, die Unterstriche ( _ ) "
 "enthalten, funktionieren weiterhin auf Geräten, die diese zulassen."
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "Due to your"
 msgstr "Aufgrund Ihres"
 
@@ -5835,11 +5837,11 @@ msgstr "Fehler bei der Anmeldung!"
 msgid "EU Residents Only"
 msgstr "Nur EU-Einwohner"
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "Euro Amount:"
 msgstr "Euro-Betrag:"
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "Euro Conversion Confirmation"
 msgstr "Euro-Umwandlungsbestätigung"
 
@@ -7679,7 +7681,7 @@ msgstr "Angaben zur Rückerstattung:"
 msgid "Imported Contacts"
 msgstr "Importierte Kontakte"
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "In addition, you were paid"
 msgstr "Darüber hinaus wurden Sie bezahlt"
 
@@ -7741,7 +7743,7 @@ msgstr ""
 "inCruises, weil [sagen Sie hier, warum Sie inCruises lieben]. Danke "
 "inCruises!"
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "in social contribution tax."
 msgstr "in der Sozialversicherungssteuer."
 
@@ -7781,11 +7783,11 @@ msgstr ""
 msgid "In total"
 msgstr "Gesamt"
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "in VAT."
 msgstr "in der Umsatzsteuer."
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "in Withholding Taxes and"
 msgstr "in Quellensteuern und"
 
@@ -9319,8 +9321,8 @@ msgstr ""
 #: pages/duplicator.vue pages/global_summit_dr.vue
 #: pages/global_summit_tracking.vue pages/settings.vue pages/team_rankings.vue
 #: pages/welcome.vue compensation/index.html competition/index.html
-#: invoices/invoice_statement.html negative_balances/index.html
-#: new_ranks/index.html pay_bonus/index.html reach/index.html
+#: invoices/invoice_statement.html new_ranks/index.html
+#: negative_balances/index.html pay_bonus/index.html reach/index.html
 #: receipts/booking_receipt.html receipts/commission_statement.html
 #: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
 #: receipts/invoice.html receipts/italian_receipt.html
@@ -9447,7 +9449,7 @@ msgstr "Erforderlich, um sich für Ihren Quick Start Award zu qualifizieren."
 msgid "Negative Balances"
 msgstr "Negatives Guthaben"
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "Net Commission:"
 msgstr "Netto-Provision:"
 
@@ -12747,7 +12749,7 @@ msgstr "bis jetzt. habe ich angesammelt"
 msgid "Social Contribution"
 msgstr "Sozialer Beitrag"
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "Social Contribution Tax"
 msgstr "Sozialbeitragssteuer"
 
@@ -12964,7 +12966,7 @@ msgstr "Statistik"
 msgid "Status"
 msgstr "Status"
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "status, you will pay"
 msgstr "Status, Sie bezahlen"
 
@@ -13145,7 +13147,7 @@ msgstr "Steuerpflichtiger Betrag (78% des Bruttobetrags)"
 msgid "Taxable amount for social contribution purposes"
 msgstr "Bemessungsgrundlage für die Sozialbeiträge"
 
-#: pages/payout.vue receipts/italian_receipt.html
+#: components/payout/euro-conversion.vue receipts/italian_receipt.html
 msgid "Taxable Amount:"
 msgstr "Steuerpflichtiger Betrag:"
 
@@ -13396,10 +13398,14 @@ msgstr ""
 "Die iPhone App steht noch aus und wird bald im App Store zur Verfügung "
 "stehen. Wir werden eine E-Mail versenden, sobald diese verfügbar ist."
 
-#: pages/payout.vue
+#: components/payout/wallet-balance.vue
+#, fuzzy
+#| msgid ""
+#| "The minimum amount needed to transfer is\n"
+#| "\t\t\t\t\t\t\t\t\t<strong>$50.00</strong>"
 msgid ""
 "The minimum amount needed to transfer is\n"
-"\t\t\t\t\t\t\t\t\t<strong>$50.00</strong>"
+"\t\t\t\t<strong>$50.00</strong>"
 msgstr ""
 "Der Mindestbetrag für eine Überweisung beträgt\n"
 "\t\t\t\t\t<strong>$50.00</strong>"
@@ -14345,7 +14351,7 @@ msgid "To post on Facebook you must set up your Referral Link."
 msgstr ""
 "Um auf Facebook zu posten, müssen Sie Ihren Empfehlungs-Link einrichten."
 
-#: pages/payout.vue
+#: components/payout/birthday-modal.vue
 msgid "To proceed please confirm your birthdate:"
 msgstr "Um fortzufahren, bestätigen Sie bitte Ihr Geburtsdatum:"
 
@@ -14926,7 +14932,7 @@ msgstr "Umsatzsteuer-Identifikationsnummer"
 msgid "VAT Tax"
 msgstr "Mehrwertsteuer"
 
-#: pages/payout.vue receipts/italian_commission.html
+#: components/payout/euro-conversion.vue receipts/italian_commission.html
 #: receipts/italian_receipt.html
 msgid "VAT:"
 msgstr "MEHRWERTSTEUER:"
@@ -15167,7 +15173,8 @@ msgstr "VIP Daten"
 msgid "Wallet"
 msgstr "E-Cash-Konto"
 
-#: pages/payout.vue negative_balances/index.html pay_bonus/index.html
+#: components/payout/wallet-balance.vue negative_balances/index.html
+#: pay_bonus/index.html
 msgid "Wallet Balance"
 msgstr "E-Cash-Konto Guthaben"
 
@@ -15788,7 +15795,7 @@ msgstr ""
 "Quellensteuer (23 % auf der Grundlage von Artikel 25-bis des "
 "Präsidialerlasses Nr. 600 vom 29. September 1973)"
 
-#: pages/payout.vue
+#: components/payout/euro-conversion.vue
 msgid "Withholding Tax (23%):"
 msgstr "Quellensteuer (23%):"
 
@@ -16871,26 +16878,33 @@ msgstr "Ihre Spende für die Ukraine-Hilfe wurde erfolgreich empfangen."
 msgid "Your Video Referral Links"
 msgstr "Ihre direkten Empfehlungs-Links lauten:"
 
-#: pages/payout.vue
+#: components/payout/withdraw-status.vue
 msgid "Your Withdrawal"
 msgstr "Ihre Abhebung"
 
-#: pages/payout.vue
+#: components/payout/withdraw-status.vue
 msgid "Your withdrawal has completed and should be available in your account."
 msgstr ""
 "Ihre Abhebung wurde abgeschlossen und sollte auf Ihrem Konto verfügbar sein."
 
-#: pages/payout.vue
+#: components/payout/withdraw-status.vue
 msgid "Your withdrawal is processing, please wait while it completes."
 msgstr ""
 "Ihre Abhebung wird bearbeitet, bitte warten Sie, bis sie abgeschlossen ist."
 
-#: pages/payout.vue
+#: components/payout/withdraw-status.vue
+#, fuzzy
+#| msgid ""
+#| "Your withdrawal was not successful, please try again or contact support "
+#| "at\n"
+#| "\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://"
+#| "incruises.com/support</a>\n"
+#| "\t\t\t\t\t\t\t\t."
 msgid ""
 "Your withdrawal was not successful, please try again or contact support at\n"
-"\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises."
-"com/support</a>\n"
-"\t\t\t\t\t\t\t\t."
+"\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"support</a>\n"
+"\t\t\t."
 msgstr ""
 "Ihre Abhebung war nicht erfolgreich, bitte versuchen Sie es erneut oder "
 "wenden Sie sich bitte an unseren Support unter \n"
