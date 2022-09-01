@@ -17,10 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.1.1\n"
 
-#: compensation/index.html
-msgid "0"
-msgstr "0"
-
 #: Course Answers
 msgid "1"
 msgstr "1"
@@ -88,6 +84,19 @@ msgstr ""
 ", und ihr nächstes Rechnungsdatum ist am {{ selectedContact.info."
 "next_billing }}."
 
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
+#, fuzzy
+#| msgid ""
+#| ", and their next billing date is on {{selectedUser.next_billing | "
+#| "date:'MMM dd, yyyy'}}."
+msgid ""
+", and their next billing date is on {{ selectedUser.next_billing | date('MMM "
+"dd, yyyy') }}."
+msgstr ""
+", und das nächste Rechnungsdatum ist am {{selectedUser.next_billing | "
+"date:'MMM dd, yyyy'}}."
+
 #: track_results/index.html
 msgid ""
 ", and their next billing date is on {{selectedAffiliate.next_billing | "
@@ -96,7 +105,7 @@ msgstr ""
 ", und ihr nächstes Rechnungsdatum ist am {{selectedAffiliate.next_billing | "
 "date:'MMM dd, yyyy'}}."
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid ""
 ", and their next billing date is on {{selectedUser.next_billing | date:'MMM "
 "dd, yyyy'}}."
@@ -128,10 +137,35 @@ msgstr ""
 "\">{{ selectedContact.info.months_paid }}</span> \n"
 "               bezahlt"
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
+#, fuzzy
+#| msgid ""
+#| ", they have been paying for\n"
+#| "\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedContact."
+#| "info.months_paid }}</span>\n"
+#| "\t\t\t\t\t\t\tmonth(s)"
 msgid ""
-", they have been paying for <span class=\"text-green open-bold"
-"\">{{selectedUser.months_paid}}</span> month(s)"
+", they have been paying for\n"
+"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
+"months_paid }}</span>\n"
+"\t\t\t\t\t\t\tmonth(s)"
+msgstr ""
+", sie haben für \n"
+"               den Monat(e) <span class=\"text-green open-bold"
+"\">{{ selectedContact.info.months_paid }}</span> \n"
+"               bezahlt"
+
+#: old_compensation/index.html
+#, fuzzy
+#| msgid ""
+#| ", they have been paying for <span class=\"text-green open-bold"
+#| "\">{{selectedUser.months_paid}}</span> month(s)"
+msgid ""
+", they have been paying for\n"
+"\t\t\t\t\t\t<span class=\"text-green open-bold\">{{selectedUser.months_paid}}"
+"</span>\n"
+"\t\t\t\t\t\tmonth(s)"
 msgstr ""
 ", sie haben für den Monat(e) <span class=\"text-green open-bold"
 "\">{{selectedUser.months_paid}}</span> bezahlt"
@@ -169,10 +203,35 @@ msgstr ""
 "info.months_paid }}</span> \n"
 "                   aktiv, bevor sie ihre Zahlung einstellten"
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
+#, fuzzy
+#| msgid ""
+#| ". They were active for\n"
+#| "\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedContact."
+#| "info.months_paid }}</span>\n"
+#| "\t\t\t\t\t\t\tmonth(s) before they stopped paying"
 msgid ""
-". They were active for<span class=\"text-green open-bold\">{{selectedUser."
-"months_paid}}</span> month(s) before they stopped paying"
+". They were active for\n"
+"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
+"months_paid }}</span>\n"
+"\t\t\t\t\t\t\tmonth(s) before they stopped paying"
+msgstr ""
+". Sie waren in den Monaten \n"
+"                  <span class=\"text-green open-bold\">{{ selectedContact."
+"info.months_paid }}</span> \n"
+"                   aktiv, bevor sie ihre Zahlung einstellten"
+
+#: old_compensation/index.html
+#, fuzzy
+#| msgid ""
+#| ". They were active for<span class=\"text-green open-bold\">{{selectedUser."
+#| "months_paid}}</span> month(s) before they stopped paying"
+msgid ""
+". They were active for\n"
+"\t\t\t\t\t\t<span class=\"text-green open-bold\">{{selectedUser.months_paid}}"
+"</span>\n"
+"\t\t\t\t\t\tmonth(s) before they stopped paying"
 msgstr ""
 ". Sie waren in den Monaten <span class=\"text-green open-bold"
 "\">{{selectedUser.months_paid}}</span> aktiv, bevor sie ihre Zahlung "
@@ -391,7 +450,7 @@ msgstr ""
 msgid "(max bonus amount = $30,000 regardless of production)"
 msgstr "(maximaler Bonusbetrag = 30.000 $ unabhängig um Umsatz)"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "(New Production)"
 msgstr "(Neuer Umsatz)"
 
@@ -425,13 +484,85 @@ msgstr ""
 msgid "{{ (profile.data.currency || 'USD').toUpperCase() }}"
 msgstr "{{ (profile.data.currency || 'USD').toUpperCase() }}"
 
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid ""
+#| "{{(15 - travel_downlines_members)&lt;  0 ? 0 : (15 - "
+#| "travel_downlines_members)}} Members"
+msgid ""
+"{{ 15 - travel_downlines_members &lt; 0 ? 0 : 15 - "
+"travel_downlines_members }} Members"
+msgstr ""
+"{{(15 - travel_downlines_members)&lt;0 ? 0 : (15 - "
+"travel_downlines_members)}} Mitglieder"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid ""
+#| "{{(15 - travel_downlines_partners)&lt; 0 ? 0 : (15 - "
+#| "travel_downlines_partners)}} Partners"
+msgid ""
+"{{ 15 - travel_downlines_partners &lt; 0 ? 0 : 15 - "
+"travel_downlines_partners }} Partners"
+msgstr ""
+"{{(15 - travel_downlines_partners)&lt;0 ? 0 : (15 - "
+"travel_downlines_partners)}} Partner"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid ""
+#| "{{(30 - travel_downlines_members)&lt;  0 ? 0 : (30 - "
+#| "travel_downlines_members)}} Members"
+msgid ""
+"{{ 30 - travel_downlines_members &lt; 0 ? 0 : 30 - "
+"travel_downlines_members }} Members"
+msgstr ""
+"{{(30 - travel_downlines_members)&lt; 0 ? 0 : (30 - "
+"travel_downlines_members)}} Mitglieder"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid ""
+#| "{{(30 - travel_downlines_partners)&lt; 0 ? 0 : (30 - "
+#| "travel_downlines_partners)}} Partners"
+msgid ""
+"{{ 30 - travel_downlines_partners &lt; 0 ? 0 : 30 - "
+"travel_downlines_partners }} Partners"
+msgstr ""
+"{{(30 - travel_downlines_partners)&lt; 0 ? 0 : (30 - "
+"travel_downlines_partners)}} Partner"
+
 #: pages/agreements.vue
 msgid "{{ agreement.name }}"
 msgstr "{{ agreement.name }}"
 
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+msgid "{{ bankField.errorMessage }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+msgid "{{ bankField.hintText }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#, fuzzy
+#| msgid "{{ agreement.name }}"
+msgid "{{ bankField.name }}"
+msgstr "{{ agreement.name }}"
+
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+msgid "{{ bankField.placeholderText }}"
+msgstr ""
+
 #: pages/email.vue
 msgid "{{ box.box }}"
 msgstr "{{ box.box }}"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+msgid ""
+"{{ confirmationDetails.recipientDetails.firstName }} {{ confirmationDetails."
+"recipientDetails.lastName }}"
+msgstr ""
 
 #: pages/courses.vue
 msgid "{{ course.description }}"
@@ -440,6 +571,12 @@ msgstr "{{ course.description }}"
 #: pages/courses.vue
 msgid "{{ course.name }}"
 msgstr "{{ course.name }}"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid "{{ course.description }}"
+msgid "{{ error.message }} {{ error.description }}"
+msgstr "{{ course.description }}"
 
 #: components/support/TicketList.vue
 msgid "{{ header }}"
@@ -457,45 +594,108 @@ msgstr "{{ question.reason }}"
 msgid "{{ question.type | capitalize }}"
 msgstr "{{ question.type | capitalize }}"
 
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "{{ agreement.name }}"
+msgid "{{ recipientAccountField.name }}"
+msgstr "{{ agreement.name }}"
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"{{ recipientAccountField.value.id ? recipientAccountField.value.name : "
+"recipientAccountField.fieldType === 'PHONE_NUMBER' ? `+"
+"${recipientAccountField.value.countryPhoneCode}${recipientAccountField.value."
+"number}` : recipientAccountField.value }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-details.vue
+msgid "{{ recipientField.errorMessage }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-details.vue
+msgid "{{ recipientField.hintText }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-details.vue
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "{{ agreement.name }}"
+msgid "{{ recipientField.name }}"
+msgstr "{{ agreement.name }}"
+
+#: components/payout/brightwell/brightwell-recipient-details.vue
+msgid "{{ recipientField.placeholderText }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"{{ recipientField.value.id ? recipientField.value.name : recipientField."
+"fieldType === 'PHONE_NUMBER' ? `+${recipientField.value."
+"countryPhoneCode}${recipientField.value.number}` : recipientField.value }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+msgid ""
+"{{ reformatStringCurrencyAmount(confirmationDetails.quote.receiveAmount) }} "
+"{{ confirmationDetails.quote.destinationCurrencyISO3Code }}"
+msgstr ""
+
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
 msgstr "{{ tips[cruise.lineId].note }}."
 
+#: components/payout/brightwell/brightwell-review.vue
+msgid "{{ transferDetails.amountToSend }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
+"\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+"${transferDetails.destinationCountryAndCurrency.country.code}`\">"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
+"\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+"${transferDetails.destinationCountryAndCurrency.country.code}`\">"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid "{{ transferDetails.exchangeAmount }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"{{ transferDetails.totalCost }} {{ transferDetails.sourceCountryAndCurrency."
+"currency.code }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"{{ transferDetails.transferFee }} {{ transferDetails."
+"sourceCountryAndCurrency.currency.code }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid "{{ transferField.hintText }}"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "{{ course.name }}"
+msgid "{{ transferField.name }}"
+msgstr "{{ course.name }}"
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid "{{ transferField.placeholderText }}"
+msgstr ""
+
 #: pages/account_setup.vue
 msgid "{{ videoDescription }}"
 msgstr "{{ videoDescription }}"
-
-#: compensation/index.html
-msgid ""
-"{{(15 - travel_downlines_members)&lt;  0 ? 0 : (15 - "
-"travel_downlines_members)}} Members"
-msgstr ""
-"{{(15 - travel_downlines_members)&lt;0 ? 0 : (15 - "
-"travel_downlines_members)}} Mitglieder"
-
-#: compensation/index.html
-msgid ""
-"{{(15 - travel_downlines_partners)&lt; 0 ? 0 : (15 - "
-"travel_downlines_partners)}} Partners"
-msgstr ""
-"{{(15 - travel_downlines_partners)&lt;0 ? 0 : (15 - "
-"travel_downlines_partners)}} Partner"
-
-#: compensation/index.html
-msgid ""
-"{{(30 - travel_downlines_members)&lt;  0 ? 0 : (30 - "
-"travel_downlines_members)}} Members"
-msgstr ""
-"{{(30 - travel_downlines_members)&lt; 0 ? 0 : (30 - "
-"travel_downlines_members)}} Mitglieder"
-
-#: compensation/index.html
-msgid ""
-"{{(30 - travel_downlines_partners)&lt; 0 ? 0 : (30 - "
-"travel_downlines_partners)}} Partners"
-msgstr ""
-"{{(30 - travel_downlines_partners)&lt; 0 ? 0 : (30 - "
-"travel_downlines_partners)}} Partner"
 
 #: agreements/view.html
 msgid "{{agreement.name}}"
@@ -513,11 +713,7 @@ msgstr "{{data.data.data.check_in}}"
 msgid "{{data.data.data.depart}}"
 msgstr "{{data.data.data.depart}}"
 
-#: compensation/index.html
-msgid "{{displayInstantDate}}"
-msgstr "{{displayInstantDate}}"
-
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "{{displayLeadershipDate}}"
 msgstr "{{displayLeadershipDate}}"
 
@@ -533,7 +729,7 @@ msgstr "{{incentiveCruisesDollars.tableName}}"
 msgid "{{message}}"
 msgstr "{{message}}"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid ""
 "{{selectedDirectName}} Leadership Bonus ({{firstDayLastMonth | date: 'MM/"
 "yy'}})"
@@ -541,7 +737,7 @@ msgstr ""
 "{{selectedDirectName}} Leadership Bonus ({{firstDayLastMonth | date: 'MM/"
 "yy'}})"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid ""
 "{{selectedDirectName}} Leadership Bonus ({{firstDayThisMonth | date: 'MM/"
 "yy'}})"
@@ -625,6 +821,13 @@ msgstr ""
 "*Der Preis kann je nach Verfügbarkeit variieren. Sie erhalten eine genaue "
 "Preisangabe, wenn Sie eine Kabinenkategorie auswählen."
 
+#: components/compensation/account_status.vue
+msgid ""
+"*This information is for internal use only and should never be used to "
+"attract or try and sell our membership as this will not be tolerated by "
+"inCruises and is subject to penalization."
+msgstr ""
+
 #: pages/hotels.vue pages/hotels_booking.vue
 msgid "/ night"
 msgstr "/ Nacht"
@@ -653,11 +856,11 @@ msgstr "# Geschlossen Absteigend"
 msgid "# of first responded to descending"
 msgstr "# zuerst geantwortet an absteigend"
 
-#: compensation/index.html
+#: components/compensation/residual_bonus.vue
 msgid "# of Members"
 msgstr "# Mitglieder"
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue
 msgid "# of Sales"
 msgstr "# Umsatz"
 
@@ -668,6 +871,10 @@ msgstr "# Tickets Geschlossen"
 #: pages/admin_support_analytics.vue
 msgid "# of tickets First Responded to"
 msgstr "# Tickets, auf die zuerst geantwortet wurde"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+msgid "#{{ confirmationDetails.confirmationNumber }}"
+msgstr ""
 
 #: pages/courses.vue
 msgid "%{ correct } correct out of %{ questions }"
@@ -761,6 +968,10 @@ msgid "© 2015 to Present inGroup International. All rights reserved."
 msgstr ""
 "© 2015 inGroup International zu repräsentieren. Alle Rechte vorbehalten."
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+msgid "+ Add new account"
+msgstr ""
+
 #: pages/email.vue
 msgid ""
 "</div><div><br></div><div>Happy birthday!</div><div><br></div><div>You must "
@@ -777,6 +988,21 @@ msgstr ""
 "wie Sie es tun!</div><div><br></div><div>Auf Sie und ein gesundes, "
 "glückliches neues Jahr!</div><div><br></div><div>Mit freundlichen Grüßen,</"
 "div><div>[IHRE UNTERSCHRIFT HIER]</div>"
+
+#: pages/email.vue
+msgid ""
+"</div><div><br></div><div>I am sending you this message because I noticed "
+"your Partner status is currently Inactive as a result of not meeting the "
+"Minimum Activations Requirement. This means you are not eligible to receive "
+"inCome.</div><div><br></div><div>The good news is it's very simple to become "
+"Active again. As soon as you directly Activate even one new Member or "
+"Partner Member or Reactivate a Member or Partner Member you become "
+"immediately Active and inCome eligible again for the next 30 days.</"
+"div><div><br></div><div>As you continue Activating additional Members this "
+"can extend your Active status up to a full year (365 days). I know you can "
+"do this and I'm here to help!</div><div><br></div><div>Best regards,</"
+"div><div>[YOUR SIGNATURE HERE]</div>"
+msgstr ""
 
 #: pages/public/reviews.vue
 msgid ""
@@ -957,6 +1183,18 @@ msgstr ""
 #: pages/booking.vue
 msgid "<b>Booking Terms &amp; Conditions</b>"
 msgstr "<b>Buchungsbedingungen &amp; und Konditionen</b>"
+
+#: pages/email.vue
+#, fuzzy
+#| msgid ""
+#| "<div>[SUGGESTED MESSAGE PLEASE PERSONALIZE]</div><div><br></div><div>Hi"
+msgid ""
+"<div>[SUGGESTED MESSAGE PLEASE PERSONALIZE]</div><div>[${contact.name."
+"toUpperCase()} SPEAKS ${contact.language.toUpperCase()}]</div><div><br></"
+"div><div>Hi"
+msgstr ""
+"<div>[VORGESCHLAGENE NACHRICHT BITTE PERSONALISIEREN]</div><div><br></"
+"div><div>Hi"
 
 #: pages/email.vue
 msgid "<div>[SUGGESTED MESSAGE PLEASE PERSONALIZE]</div><div><br></div><div>Hi"
@@ -1250,29 +1488,89 @@ msgstr ""
 "<i class=\"far fa-ban\"></i>\n"
 "\t\t\t\tStorniert"
 
-#: compensation/index.html
+#: old_compensation/index.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-clock mr-2\"></i>Become an Active Partner by referring "
+#| "3 direct Members."
 msgid ""
-"<i class=\"far fa-clock mr-2\"></i>Become an Active Partner by referring 3 "
-"direct Members."
+"<i class=\"far fa-clock mr-2\"></i>\n"
+"\t\t\t\t\t\tBecome an Active Partner by referring 3 direct Members."
 msgstr ""
 "<i class=\"far fa-clock mr-2\"></i>Werden Sie aktiver Partner, indem Sie 3 "
 "direkte Mitglieder registrieren."
 
-#: compensation/index.html
+#: old_compensation/index.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-clock mr-2\"></i>Become eligible to receive Residual "
+#| "Compensation by referring 5 direct Members and helping one of them also "
+#| "to become Membership free."
 msgid ""
-"<i class=\"far fa-clock mr-2\"></i>Become eligible to receive Residual "
-"Compensation by referring 5 direct Members and helping one of them also to "
-"become Membership free."
+"<i class=\"far fa-clock mr-2\"></i>\n"
+"\t\t\t\t\t\tBecome eligible to receive Residual Compensation by referring 5 "
+"direct Members and helping one of them also to become Membership free."
 msgstr ""
 "<i class=\"far fa-clock mr-2\"></i>Werden Sie berechtigt, eine "
 "Residualvergütung zu erhalten, indem Sie 5 direkte Mitglieder registrieren "
 "und einem von ihnen helfen, auch beitragsfreies Mitglied zu werden."
 
-#: compensation/index.html
+#: old_compensation/index.html
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-clock mr-2\"></i>You're only <strong>{{5 - "
+#| "quick_actions[10]}} Members</strong> away from getting your next month's "
+#| "Membership dues of $100 waived"
 msgid ""
-"<i class=\"far fa-clock mr-2\"></i>You're only <strong>{{5 - "
-"quick_actions[10]}} Members</strong> away from getting your next month's "
-"Membership dues of $100 waived"
+"<i class=\"far fa-clock mr-2\"></i>\n"
+"\t\t\t\t\t\tYou're only\n"
+"\t\t\t\t\t\t<strong>{{5 - quick_actions[10]}} Members</strong>\n"
+"\t\t\t\t\t\taway from getting your next month's Membership dues of $100 "
+"waived"
+msgstr ""
+"<i class=\"far fa-clock mr-2\"></i>Sie sind nur <strong>{{5 - "
+"quick_actions[10]}} Mitglieder <strong> davon entfernt, die "
+"Mitgliedsbeiträge des nächsten Monats in Höhe von $100 nicht bezahlen zu "
+"müssen"
+
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-clock mr-2\"></i>Become an Active Partner by referring "
+#| "3 direct Members."
+msgid ""
+"<i class=\"far fa-clock mr-2\"></i>\n"
+"\t\t\t\tBecome an Active Partner by referring 1 direct Member this month."
+msgstr ""
+"<i class=\"far fa-clock mr-2\"></i>Werden Sie aktiver Partner, indem Sie 3 "
+"direkte Mitglieder registrieren."
+
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-clock mr-2\"></i>Become eligible to receive Residual "
+#| "Compensation by referring 5 direct Members and helping one of them also "
+#| "to become Membership free."
+msgid ""
+"<i class=\"far fa-clock mr-2\"></i>\n"
+"\t\t\t\tBecome eligible to receive Residual Compensation by referring 5 "
+"direct Members and helping one of them also to become Membership free."
+msgstr ""
+"<i class=\"far fa-clock mr-2\"></i>Werden Sie berechtigt, eine "
+"Residualvergütung zu erhalten, indem Sie 5 direkte Mitglieder registrieren "
+"und einem von ihnen helfen, auch beitragsfreies Mitglied zu werden."
+
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-clock mr-2\"></i>You're only <strong>{{5 - "
+#| "quick_actions[10]}} Members</strong> away from getting your next month's "
+#| "Membership dues of $100 waived"
+msgid ""
+"<i class=\"far fa-clock mr-2\"></i>\n"
+"\t\t\t\tYou're only\n"
+"\t\t\t\t<strong>{{ 5 - parseInt(quickActions[10] || 0) }} Members</strong>\n"
+"\t\t\t\taway from getting your next month's Membership dues of $100 waived"
 msgstr ""
 "<i class=\"far fa-clock mr-2\"></i>Sie sind nur <strong>{{5 - "
 "quick_actions[10]}} Mitglieder <strong> davon entfernt, die "
@@ -1382,6 +1680,16 @@ msgid ""
 msgstr ""
 "<i class=\"fe fe-file-text noicon mr-2\"></i>\n"
 "\t\t\t\t\t\t\t\t\t\t查看發票"
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"<i class=\"fe fe-info font-weight-bold\" style=\"color:#007bff\"></i>\n"
+"\t\t<label class=\"font-weight-bold text-end text-left\" v-translate="
+"\"\">Almost there...</label>\n"
+"\t\t<label class=\"text-end text-left\" style=\"padding-left:1rem\" v-"
+"translate=\"\">Before completing the transfer review all the information.</"
+"label>"
+msgstr ""
 
 #: components/global_convention/event_info.vue
 msgid "<i class=\"fe fe-link\"></i> Visit Event Link"
@@ -1516,6 +1824,13 @@ msgstr ""
 "i>\n"
 "\t\t<span v-translate=\"\">Bestätigungs-E-Mail gesendet, bitte überprüfen "
 "Sie Ihren Posteingang und folgen Sie dem Link.</span>"
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+"${transferDetails.sourceCountryAndCurrency.country.code}`\">\n"
+"\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
+msgstr ""
 
 #: pages/booking.vue
 msgid ""
@@ -1741,6 +2056,30 @@ msgstr ""
 "<span class=\"h3\">${{ calculateNightlyRate(hotel.sellingRate) }}</span>\n"
 "\t\t\t\t   <sub v-translate=\"\">/ night</sub>"
 
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid ""
+#| "<span v-translate=\"\">Course:</span>\n"
+#| "\t\t\t\t\t\t\t\t\t\t<span v-translate=\"\">{{ course.name }}</span>"
+msgid ""
+"<span class=\"mr-1\" style=\"color:red\">*</span>\n"
+"\t\t\t\t<span v-translate=\"\">Destination country</span>"
+msgstr ""
+"<span v-translate=\"\">Kurs:</span>\n"
+"\t\t\t<span v-translate=\"\">{{ course.name }}</span>"
+
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid ""
+#| "<span v-translate=\"\">Course:</span>\n"
+#| "\t\t\t\t\t\t\t\t\t\t<span v-translate=\"\">{{ course.name }}</span>"
+msgid ""
+"<span class=\"mr-1\" style=\"color:red\">*</span>\n"
+"\t\t\t\t<span v-translate=\"\">Transfer type</span>"
+msgstr ""
+"<span v-translate=\"\">Kurs:</span>\n"
+"\t\t\t<span v-translate=\"\">{{ course.name }}</span>"
+
 #: pages/email.vue
 msgid ""
 "<span class=\"mr-3\">\n"
@@ -1752,6 +2091,23 @@ msgstr ""
 "\t\t\t\t\t\t\t<i class=\"fe fe-edit\"></i>\n"
 "\t\t\t\t\t\t</span>\n"
 "\t\t\t\t\t\tNeue E-Mail erstellen"
+
+#: components/compensation/account_status.vue
+msgid ""
+"<span class=\"text-orange\">NOTE:</span>\n"
+"\t\t\t\t\tActivating as a Partner early in a month gives you an advantage "
+"for Fast Start as you will have additional time to add Members and Partners "
+"to your team and build momentum and ongoing membership payments going into "
+"your first full calendar month, which is the month following\n"
+"\t\t\t\t\tyour initial activation."
+msgstr ""
+
+#: components/compensation/account_status.vue
+msgid ""
+"<span class=\"text-orange\">NOTE:</span>\n"
+"\t\t\t\t\tThis one-time bonus is paid on the 7th of the following month the "
+"bonus is earned."
+msgstr ""
 
 #: email_notifications/index.html
 msgid "<span style=\"position:relative; left:-5px;\">Search</span>"
@@ -2012,7 +2368,7 @@ msgstr ""
 msgid "${{statement.data.amount}}"
 msgstr "${{statement.data.amount}}"
 
-#: pages/titles.vue controllers/compensation.js
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$10,000 in total team production in any given month.<br><br> Senior "
 "Marketing Director automatically earn our TRAVEL BONUS OF $1,000 each and "
@@ -2030,7 +2386,7 @@ msgstr ""
 "$100 Aktivierungsgebühr (nur bei Aktivierung Ihrer Mitgliedschaft) und $100 "
 "pro Monat, keine langfristigen Verträge. Sie können jederzeit kündigen."
 
-#: pages/titles.vue controllers/compensation.js
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$100,000 in total team production in any given month.<br><br> International "
 "Directors automatically earn our FREEDOM BONUS of $10,000 each and every "
@@ -2044,7 +2400,7 @@ msgstr ""
 msgid "$20/month value ($240 annually)"
 msgstr "$20/monatlich ($240 jährlicher Wert)"
 
-#: pages/titles.vue controllers/compensation.js
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$25,000 in total team production in any given month.<br><br> Regional "
 "Directors automatically earn our FINANCIAL COMMITMENT BONUS OF $2,500 each "
@@ -2054,7 +2410,7 @@ msgstr ""
 "erhalten automatisch unseren FINANCIAL COMMITMENT BONUS i. H. v. $2,500 "
 "solange sie qualifiziert bleiben."
 
-#: pages/titles.vue controllers/compensation.js
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$250,000 in total team production in any given month.<br><br> Executive "
 "Directors automatically earn our INDEPENDENCE BONUS of $25,000 each and "
@@ -2064,7 +2420,7 @@ msgstr ""
 "erhalten automatisch unseren INDEPENDENCE BONUS i.H.v. $25,000 solange sie "
 "qualifiziert bleiben."
 
-#: pages/titles.vue controllers/compensation.js
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$3,000 in total team production in any given month.<br><br> Marketing "
 "Director automatically earn our CAR BONUS OF $300 each and every month they "
@@ -2078,7 +2434,7 @@ msgstr ""
 msgid "$475 USD"
 msgstr "$475 USD"
 
-#: pages/titles.vue controllers/compensation.js
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$50,000 in total team production in any given month.<br><br> National "
 "Marketing Directors automatically earn our LUXURY BONUS OF $5,000 each and "
@@ -2092,7 +2448,7 @@ msgstr ""
 msgid "$500 USD"
 msgstr "$500 USD"
 
-#: controllers/compensation.js
+#: controllers/old_compensation.js
 msgid ""
 "$550,000 in total team production in any given month.<br><br> Board of "
 "Directors Members automatically earn our DREAM LIFE BONUS of $55,000 each "
@@ -2123,6 +2479,13 @@ msgstr "$95.00 Aktivierungsgebühr"
 #: pages/global_summit_tracking.vue
 msgid "05 June 2022 - 12 June 2022"
 msgstr "05. Juni 2022 - 12. Juni 2022"
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"1 {{ transferDetails.sourceCountryAndCurrency.currency.code }} = "
+"{{ transferDetails.exchangeRate }} {{ transferDetails."
+"destinationCountryAndCurrency.currency.code }}"
+msgstr ""
 
 #: pages/admin_support_analytics.vue
 msgid "1 Day"
@@ -2477,7 +2840,7 @@ msgstr ""
 "Greifen Sie auf die Daten zu, die Sie für Ihr internationales Geschäft "
 "benötigen."
 
-#: pages/public/about.vue pages/public/index.vue
+#: pages/public/about.vue pages/public/index.vue pages/public/partnership.vue
 msgid "ACCESSIBLE"
 msgstr "ZUGÄNGLICH"
 
@@ -2498,17 +2861,27 @@ msgstr ""
 msgid "Account Setup"
 msgstr "Kontoeinrichtung"
 
-#: pages/invoices.vue pages/receipts.vue pages/welcome.vue
-#: compensation/index.html receipts/index.html
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Account Setup"
+msgid "Account Status"
+msgstr "Kontoeinrichtung"
+
+#: pages/invoices.vue pages/receipts.vue pages/welcome.vue receipts/index.html
 msgid "Action"
 msgstr "Aktion"
 
 #: pages/admin_restricted_paybonus.vue pages/contacts.vue
-#: pages/convention_manager.vue components/top_bar/Connect.vue
-#: certificates/index.html certificates/view.html compensation/index.html
-#: pay_bonus/index.html negative_balances/index.html reports/index.html
+#: pages/convention_manager.vue components/compensation/leadership_bonus.vue
+#: components/compensation/statements.vue components/top_bar/Connect.vue
+#: certificates/index.html certificates/view.html negative_balances/index.html
+#: old_compensation/index.html pay_bonus/index.html reports/index.html
 msgid "Actions"
 msgstr "Aktionen"
+
+#: components/public/Faq.vue
+msgid "Activation Bonuses (Daily and Monthly)"
+msgstr ""
 
 #: pages/public/pricing.vue upgrade/index.html
 msgid "Activation fee"
@@ -2518,9 +2891,29 @@ msgstr "Aktivierungsgebühr"
 msgid "activation fee (only when activating your membership) and"
 msgstr "Aktivierungsgebühr (nur bei Aktivierung Ihrer Mitgliedschaft) und"
 
+#: components/compensation/builders_bonus.vue
+#: components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "Activation fee"
+msgid "Activations"
+msgstr "Aktivierungsgebühr"
+
 #: components/welcome/members-modal.vue
 msgid "Active"
 msgstr "Aktiv"
+
+#: components/compensation/residual_bonus.vue
+#, fuzzy
+#| msgid "Active Member"
+msgid "Active Levels"
+msgstr "Aktive Mitglieder"
+
+#: components/compensation/active_partner_modal.vue
+#: components/compensation/compensation_month.vue
+#, fuzzy
+#| msgid "Partner Status"
+msgid "Active Partner Status:"
+msgstr "Partner Status"
 
 #: pages/info_center.vue
 msgid "Active Team Members"
@@ -2529,6 +2922,12 @@ msgstr "Aktive Team Mitglieder"
 #: pages/info_center.vue
 msgid "Active Team Members MTD"
 msgstr "Aktive Team Mitglieder MTD"
+
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid "Active"
+msgid "Active until:"
+msgstr "Aktiv"
 
 #: pages/invoices.vue
 msgid "Add Card"
@@ -2613,7 +3012,9 @@ msgstr ""
 
 #: components/info-reminder.vue pages/additional_info.vue
 #: pages/convention_manager.vue pages/settings.vue
-#: components/checkout/ItalianStep.vue compensation/index.html
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
+#: components/checkout/ItalianStep.vue old_compensation/index.html
 #: receipts/italian_receipt.html
 msgid "Address"
 msgstr "Adresse"
@@ -2642,6 +3043,12 @@ msgstr "Adresse:"
 #: pages/admin_communications.vue
 msgid "Admin Communications"
 msgstr "Verwaltung Kommunikation"
+
+#: pages/admin_compensation.vue
+#, fuzzy
+#| msgid "Pending Compensation"
+msgid "Admin Compensation"
+msgstr "Ausstehende Vergütung"
 
 #: pages/admin_global_convention.vue
 msgid "Admin Global Convention"
@@ -2679,7 +3086,7 @@ msgstr "Erwachsene"
 msgid "Adults:"
 msgstr "Erwachsene:"
 
-#: pages/public/about.vue pages/public/index.vue
+#: pages/public/about.vue pages/public/index.vue pages/public/partnership.vue
 msgid "AFFORDABLE"
 msgstr "LEISTBAR"
 
@@ -2690,6 +3097,12 @@ msgstr "Alter der Kinder:"
 #: receipts/hotel_booking_receipt.html
 msgid "Agency Reference"
 msgstr "Referenz der Agentur"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "I Agree"
+msgid "Agree"
+msgstr "Ich bin einverstanden"
 
 #: Menu
 msgid "Agreements"
@@ -2794,10 +3207,15 @@ msgid "All Team Partners"
 msgstr "Alle Team Partner"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "All the processes and steps to address this are explained in our "
+#| "Procedures Manual found in our Resources (Documents) section of our "
+#| "website (your back office)."
 msgid ""
-"All the processes and steps to address this are explained in our Procedures "
-"Manual found in our Resources (Documents) section of our website (your back "
-"office)."
+"All the processes and steps to address this are explained in our Policies "
+"and Procedures document found in the Resources (Documents) section of our "
+"website (your back office)."
 msgstr ""
 "Alle notwendigen Prozesse und Schritte werden in unserer Verfahrens-"
 "Anleitung und unter Resources (Dokumente) Abschnitt unserer Website (in "
@@ -2821,6 +3239,10 @@ msgstr ""
 #: pages/booking.vue
 msgid "Allowed Reward Points"
 msgstr "Erlaubte Reward Points"
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid "Almost there..."
+msgstr ""
 
 #: track_results/index.html
 msgid "Alphabetical Asc"
@@ -2850,26 +3272,17 @@ msgstr "Alternative E-Mail"
 msgid "Alternate Phone"
 msgstr "Alternative Telefonnummer"
 
-#: components/public/Faq.vue
-msgid ""
-"Although many of our Partners are also Members, it is not mandatory. It is "
-"possible to be a Partner, a Member, or both, what we call a “Partner "
-"Member.” Experiencing the value and personal use of our membership product "
-"helps you promote our genuine service to others."
-msgstr ""
-"Auch wenn viele unserer Partner auch Mitglieder sind, ist dies nicht "
-"erforderlich. Es ist möglich, Partner zu sein oder beides, was wir Partner-"
-"Mitglied nennen. Der Genuß des Preis-Leistungs-Verhältnisses und der "
-"persönliche Gebrauch unseres Mitgliedsprodukts geben Ihnen den Anreiz, unser "
-"geniales Service anderen anzubieten."
-
-#: controllers/compensation.js
+#: controllers/old_compensation.js
 msgid "Ambassador Board of Directors"
 msgstr "Ambassador Board of Directors"
 
 #: pages/growth_calculator.vue pages/hotels_booking.vue pages/invoices.vue
-#: pages/welcome.vue components/payout/wallet-transfers.vue
-#: compensation/index.html pay_bonus/index.html negative_balances/index.html
+#: pages/welcome.vue components/compensation/leadership_bonus.vue
+#: components/compensation/member_activations.vue
+#: components/compensation/residual_bonus.vue
+#: components/compensation/statements.vue
+#: components/payout/wallet-transfers.vue negative_balances/index.html
+#: old_compensation/index.html pay_bonus/index.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -2918,12 +3331,19 @@ msgstr ""
 "versuchen Sie es erneut oder kontaktieren Sie den Support"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "An inCruises Member is someone who purchases a membership to save money "
+#| "on travel and see the world in comfort and style. Partners join our "
+#| "Independent Partner Program to promote and earn commissions, bonuses and "
+#| "other incentives by referring others who purchase memberships. We call "
+#| "Partners who are also Members \"Partner Members\"."
 msgid ""
-"An inCruises Member is someone who purchases a membership to save money on "
-"travel and see the world in comfort and style. Partners join our Independent "
-"Partner Program to promote and earn commissions, bonuses and other "
-"incentives by referring others who purchase memberships. We call Partners "
-"who are also Members \"Partner Members\"."
+"An inCruises Member is someone who has purchased a Club Membership to create "
+"travel value and earn Reward Points. They want to see more of the world. "
+"inCruises Partners are part of our Independent Partner Program and can refer "
+"and Activate others into the Club Membership. Many Partners are also "
+"\"Partner Members\"."
 msgstr ""
 "Ein inCruises-Mitglied ist jemand, der eine Mitgliedschaft erwirbt, um bei "
 "Reisen Geld zu sparen und die Welt mit Komfort und Stil zu sehen. Partner "
@@ -2938,6 +3358,41 @@ msgid ""
 msgstr ""
 "Ein Kleinkind muss zum Zeitpunkt der Abfahrt mindestens 6 Monate alt sein, "
 "um an Bord gehen zu können."
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "There's an activation fee of $195 USD and an annual renewal fee of $95 "
+#| "USD ($195 USD for Partners in Italy) each year thereafter. Partners gain "
+#| "access to online recorded training and weekly live training, their very "
+#| "own corporate email (theirname@incruises.com), personalized Referral "
+#| "Links and replicated pages, marketing materials and tools, marketing "
+#| "videos, Android and iPhone apps, and downloadable business cards. We "
+#| "estimate the value of our training program to be more than $50.00 USD per "
+#| "month. You're receiving a lot of value for an activation fee of $195 USD "
+#| "during your first year and $95 USD ($195 USD for Partners in Italy) "
+#| "annually, thereafter."
+msgid ""
+"An initial Partner Activation payment is $95 USD. To retain your Active "
+"Partner status, you must make semi-annual Partner renewal payments of $95 "
+"USD. Special renewal terms apply to residents of Italy.  See the Policies "
+"and Procedures document for more details. Active Partners have access to "
+"online recorded and weekly live training, their corporate email "
+"(theirname@incruises.com), personalized Referral Links and replicated pages, "
+"marketing materials and tools, marketing videos, Android and iPhone apps, "
+"and downloadable business cards. We estimate the value of our training "
+"program to be more than $50.00 USD per month."
+msgstr ""
+"Es gibt eine Aktivierungsgebühr i.H.v. $ 195 USD und danach eine jährliche "
+"Verlängerungsgebühr i.H.v. $ 95 USD pro Jahr. Partner erhalten Zugang zu "
+"Online-Schulungen, wöchentliche Live-Trainings, ihre eigene Firmen-E-Mail "
+"(theirname@incruises.com), personalisierte Empfehlungs-Links, "
+"vervielfältigte Seiten, Marketing-Materialien und Tools, Marketing-Videos, "
+"Android- und iPhone-Apps und herunterladbare Visitenkarten. Wir schätzen den "
+"Wert unseres Training Programms auf mehr als $ 50,00 USD pro Monat. Für eine "
+"Aktivierungsgebühr i.H.v. $ 195 USD während Ihres ersten Jahres bekommen Sie "
+"eine Menge geboten und zahlen danach nur $ 95 USD pro Jahr ($195 USD für "
+"Partner in Italien) ."
 
 #: power_tools_upgrade/index.html
 msgid ""
@@ -3136,7 +3591,7 @@ msgstr ""
 msgid "Are you sure you want to delete this event?"
 msgstr "Sind Sie sicher, dass Sie dieses Event entfernen möchten?"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid ""
 "Are you sure you want to Request this bonus? Once requested it cannot be "
 "modified."
@@ -3249,14 +3704,6 @@ msgstr ""
 #: components/public/Faq.vue
 msgid "As many as you like! There are no limits."
 msgstr "So viele Sie möchten! Es gibt keine Grenzen."
-
-#: compensation/index.html
-msgid ""
-"As soon as you have Members who have paid their second membership month, you "
-"will receive your Residual Bonus."
-msgstr ""
-"Sobald Ihre Mitglieder die zweite monatliche Mitgliedsgebühr bezahlt haben, "
-"erhalten Sie Ihre Residual-Boni."
 
 #: import/index.html
 msgid ""
@@ -3440,6 +3887,12 @@ msgstr "Back Office Thema"
 msgid "Back to Highlights"
 msgstr "Zurück zu Highlights"
 
+#: components/compensation/team.vue
+#, fuzzy
+#| msgid "Your Direct"
+msgid "Back to your Directs"
+msgstr "Ihr Direkter"
+
 #: components/confirm-recurring.vue pages/invoices.vue
 msgid "BACK UP"
 msgstr "SICHERUNG"
@@ -3456,6 +3909,25 @@ msgstr "Guthaben:"
 #: pages/cruise.vue components/booking/cabin_categories.vue
 msgid "Balcony"
 msgstr "Balkon"
+
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid "Create Account"
+msgid "Bank Account"
+msgstr "Konto erstellen"
+
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#, fuzzy
+#| msgid "Card Details"
+msgid "Bank Details"
+msgstr "Kartendetails"
+
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "Cash/Bank Transfer"
+msgid "Bank transfer"
+msgstr "Bargeld/Banküberweisung"
 
 #: pages/admin_user_id.vue track_results/index.html
 msgid "Basic Info"
@@ -3514,6 +3986,12 @@ msgstr ""
 #: pages/welcome.vue
 msgid "Become a Partner"
 msgstr "Partner werden"
+
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "Please complete all required information."
+msgid "Before completing the transfer review all the information."
+msgstr "Bitte füllen Sie alle erforderlichen Informationen aus."
 
 #: pages/public/leadership.vue
 msgid "Began career working with Primerica, then a Member of Citigroup"
@@ -3585,7 +4063,7 @@ msgid "Blue Reward Card"
 msgstr "Blue Reward Card"
 
 #: pages/builders_base.vue pages/global_summit_dr.vue
-#: controllers/compensation.js
+#: components/compensation/leadership_bonus.vue controllers/old_compensation.js
 msgid "Board of Directors"
 msgstr "Board of Directors"
 
@@ -3605,7 +4083,7 @@ msgstr "Board of Directors Bonus"
 msgid "Board of Directors Member"
 msgstr "Board of Directors Mitglied"
 
-#: pages/titles.vue controllers/compensation.js
+#: pages/titles.vue controllers/old_compensation.js
 msgid "BOARD OF DIRECTORS MEMBER"
 msgstr "MITGLIEDER des BOARD OF DIRECTORS"
 
@@ -3613,17 +4091,19 @@ msgstr "MITGLIEDER des BOARD OF DIRECTORS"
 msgid "Board Type"
 msgstr "Board-Typ"
 
-#: pages/growth_calculator.vue compensation/index.html
-#: refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
+#: old_compensation/index.html refund_protocol/leadership_bonus_modal.html
 msgid "Bonus"
 msgstr "Bonus"
 
-#: receipts/instant_bonus_statement.html
+#: components/compensation/builders_bonus.vue receipts/builders_bonus.html
+#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
+#: receipts/monthly_member_activation.html
 msgid "Bonus Amount"
 msgstr "Bonusbetrag"
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
 msgid "Bonus earned!"
 msgstr "Bonus verdient!"
 
@@ -3635,12 +4115,13 @@ msgstr "Bonus verdient!"
 msgid "Bonus has been added. Transaction successfully completed"
 msgstr "Der Bonus wurde hinzugefügt. Transaktion erfolgreich abgeschlossen"
 
-#: compensation/index.html
-msgid "Bonus Locked (Need {{(5 - thisWeek.weekly_points)}} more points)"
-msgstr ""
-"Bonus gesperrt (Sie benötigen {{5 - thisWeek.weekly_points}} Punkte mehr)"
+#: components/compensation/weekly_bonus.vue
+#, fuzzy
+#| msgid "Bonus Unlocked!"
+msgid "Bonus Locked"
+msgstr "Bonus freigegeben!"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Bonus Locked (Need {{5 - lastWeek.weekly_points}} more points)"
 msgstr ""
 "Bonus gesperrt (Sie benötigen {{5 - lastWeek.weekly_points}} Punkte mehr)"
@@ -3651,8 +4132,8 @@ msgstr ""
 "Bonus gesperrt (Sie benötigen {{5 - weeklyBonus.data.weekly_points}} Punkte "
 "mehr)"
 
-#: pages/growth_calculator.vue compensation/index.html
-#: refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
+#: old_compensation/index.html refund_protocol/leadership_bonus_modal.html
 msgid "Bonus not earned yet."
 msgstr "Sie haben diesen Bonus noch nicht verdient."
 
@@ -3661,7 +4142,8 @@ msgstr "Sie haben diesen Bonus noch nicht verdient."
 msgid "Bonus Paid For"
 msgstr "Bonus gezahlt für"
 
-#: compensation/index.html refund_protocol/remove_weeklybonus_modal.html
+#: components/compensation/weekly_bonus.vue old_compensation/index.html
+#: refund_protocol/remove_weeklybonus_modal.html
 msgid "Bonus Unlocked!"
 msgstr "Bonus freigegeben!"
 
@@ -3701,7 +4183,7 @@ msgstr "Buchen Sie mit Reward Points, haben Sie volles Vertrauen!"
 msgid "Book your next Vacation"
 msgstr "Buchen Sie Ihren nächsten Urlaub"
 
-#: pages/receipts.vue receipts/index.html
+#: receipts/index.html
 msgid "Booking"
 msgstr "Buchung"
 
@@ -3733,13 +4215,35 @@ msgstr "Broschüren, Präsentationen und Flyer"
 msgid "Builder Plan - $32"
 msgstr "Builder Paket - $32"
 
+#: components/compensation/builders_bonus.vue
+#, fuzzy
+#| msgid "Business Ownership This Month"
+msgid "Builder's Bonus This Month"
+msgstr "Business Inhaber in diesem Monat"
+
 #: pages/builders_base.vue
 msgid "Builders Base"
 msgstr "Builders Base"
 
+#: pages/compensation.vue components/compensation/builders_bonus.vue
+#, fuzzy
+#| msgid "Builders Base"
+msgid "Builders Base Bonus"
+msgstr "Builders Base"
+
+#: components/public/Faq.vue
+msgid "Builders Base Bonus (for team new production)"
+msgstr ""
+
 #: pages/welcome.vue
 msgid "Builders Base:"
 msgstr "Builders Base:"
+
+#: receipts/builders_bonus.html
+#, fuzzy
+#| msgid "Builders Base"
+msgid "Builders Bonus"
+msgstr "Builders Base"
 
 #: reports/index.html
 msgid "Building a Compliant Business"
@@ -3977,6 +4481,12 @@ msgstr "Kabinen:"
 msgid "Calendar"
 msgstr "Kalender"
 
+#: receipts/builders_bonus.html receipts/monthly_member_activation.html
+#, fuzzy
+#| msgid "Calendar of Events"
+msgid "Calendar Month"
+msgstr "Event-Kalender"
+
 #: pages/welcome.vue
 msgid "Calendar of Events"
 msgstr "Event-Kalender"
@@ -4011,19 +4521,28 @@ msgstr ""
 "Kann ich einen Mitgliedsaccount als Unternehmen oder als Firma anmelden?"
 
 #: components/public/Faq.vue
-msgid "Can I earn back my activation fee within 30 days of upgrading?"
+#, fuzzy
+#| msgid "Can I earn back my activation fee within 30 days of upgrading?"
+msgid ""
+"Can I earn back my Activation payment within 30 days of upgrading to Partner?"
 msgstr ""
 "Kann ich meine Aktivierungsgebühr für das Upgrade innerhalb 30 Tagen "
 "erwirtschaften?"
 
 #: components/public/Faq.vue
-msgid "Can I get paid for recruiting others?"
+#, fuzzy
+#| msgid "Can I get paid for recruiting others?"
+msgid "Can I get paid for recruiting other Partners?"
 msgstr "Kann ich für das Einschreiben anderer vergütet werden?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Can I get paid from Payoneer® as a business using my EIN or equivalent "
+#| "business identification number outside the US?"
 msgid ""
-"Can I get paid from Payoneer® as a business using my EIN or equivalent "
-"business identification number outside the US?"
+"Can I get paid through my chosen payout provider as a business using my EIN "
+"or equivalent business identification number outside the US?"
 msgstr ""
 "Kann ich durch Payoneer® unter Angabe meiner Steuernummer oder einer anderen "
 "gleichwertigen Geschäfts-ID außerhalb der USA bezahlt werden?"
@@ -4079,7 +4598,7 @@ msgstr "Können Sie Reisen für andere buchen und selbst NICHT mitreisen?"
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
-#: agreements/ukrainian_addendum_agreement.html compensation/index.html
+#: agreements/ukrainian_addendum_agreement.html old_compensation/index.html
 #: pay_bonus/index.html power_tools_upgrade/index.html subscriptions/index.html
 #: upgrade/index.html
 msgid "Cancel"
@@ -4152,6 +4671,10 @@ msgstr "Casa de Campo Global Summit 2022:"
 #: components/checkout/ProcessorSafetypay.vue
 msgid "Cash Payment"
 msgstr "Barzahlung"
+
+#: components/payout/brightwell/brightwell-transfer-details.vue
+msgid "Cash Pickup"
+msgstr ""
 
 #: pages/checkout.vue
 msgid "Cash/Bank Transfer"
@@ -4357,7 +4880,9 @@ msgid "Citizenship"
 msgstr "Staatsbürgerschaft"
 
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
-#: components/checkout/ItalianStep.vue compensation/index.html
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
+#: components/checkout/ItalianStep.vue old_compensation/index.html
 #: receipts/italian_receipt.html
 msgid "City"
 msgstr "Stadt"
@@ -4443,7 +4968,7 @@ msgstr "Klicken Sie hier, um Ihren Empfehlungs-Link zu erstellen"
 msgid "Click Here to Sign and Date"
 msgstr "Klicken Sie hier zum Unterschreiben und Datieren"
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
 msgid "Click here to sign pending agreement(s)"
 msgstr "Klicken Sie hier, um ausstehende Verträge zu unterzeichnen"
 
@@ -4455,6 +4980,12 @@ msgstr "Zur Anmeldung hier klicken"
 msgid "Click to filter by Stars"
 msgstr "Klicken Sie zum Filtern nach Sternen"
 
+#: components/compensation/residual_bonus.vue
+#, fuzzy
+#| msgid "Click here to continue"
+msgid "Click to view"
+msgstr "Klicken Sie hier um fortzufahren"
+
 #: pages/email_address.vue
 msgid "Client Configuration"
 msgstr "Client-Konfiguration"
@@ -4465,13 +4996,15 @@ msgstr "Client-Konfiguration"
 #: pages/global_summit_tracking.vue pages/hotels_details.vue pages/invoices.vue
 #: pages/reach.vue pages/referral_links.vue pages/resources.vue
 #: pages/reward_points.vue pages/welcome.vue
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
 #: components/global_convention/event_info.vue
 #: components/public/FooterLinks.vue components/public/JoinModal.vue
 #: components/public/Testimonials.vue pages/public/about.vue
 #: pages/public/index.vue pages/public/leadership.vue
 #: pages/public/membership.vue pages/public/mission.vue
-#: pages/public/partnership.vue pages/public/signup.vue compensation/index.html
-#: connect/index.html pay_bonus/index.html
+#: pages/public/partnership.vue pages/public/signup.vue connect/index.html
+#: old_compensation/index.html pay_bonus/index.html
 msgid "Close"
 msgstr "Schließen"
 
@@ -4529,6 +5062,18 @@ msgstr "Eintrag im Unternehmensregister: RI/PRA/2021/455603/100"
 #: Menu
 msgid "Compensation"
 msgstr "Vergütung"
+
+#: pages/compensation.vue
+#, fuzzy
+#| msgid "Compensation Period"
+msgid "Compensation has moved"
+msgstr "Vergütungszeitraum"
+
+#: components/compensation/compensation_month.vue
+#, fuzzy
+#| msgid "End of Compensation Month"
+msgid "Compensation Month Details"
+msgstr "Ende des Vergütungsmonats"
 
 #: refund_protocol/remove_producerbonus_modal.html
 msgid "Compensation Period"
@@ -4629,7 +5174,7 @@ msgstr "Staat bestätigen"
 msgid "Confirm VAT Number"
 msgstr "Umsatzsteuer-Identifikationsnummer bestätigen"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Confirm Weekly Bonus Checkout"
 msgstr "Bestätigung der wöchentlichen Bonuszahlung"
 
@@ -4641,6 +5186,18 @@ msgstr ""
 "Bestätigen Sie Ihr wiederkehrendes Protokoll, um die Trust My Travel (TMT)-"
 "Schutzgarantie zu erhalten"
 
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid "Cruise Confirmation"
+msgid "Confirmation"
+msgstr "Bestätigung der Kreuzfahrt"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid "Cruise Confirmation"
+msgid "Confirmation:"
+msgstr "Bestätigung der Kreuzfahrt"
+
 #: pages/global_summit_dr.vue
 msgid ""
 "Congrats, you are on track to qualify for the Global Leadership Summit, with"
@@ -4648,11 +5205,18 @@ msgstr ""
 "Herzlichen Glückwunsch, Sie sind auf dem besten Weg, sich für den Global "
 "Leadership Summit zu qualifizieren, mit"
 
-#: compensation/index.html
+#: components/compensation/residual_bonus.vue
+#, fuzzy
+#| msgid ""
+#| "Congratulations you have unlocked UP to {{active_levels}} levels of "
+#| "Residual Compensation based on your Rank Achievement. If eligible, you "
+#| "will get paid automatically each time a Member makes a recurring "
+#| "Membership payment."
 msgid ""
-"Congratulations you have unlocked UP to {{active_levels}} levels of Residual "
-"Compensation based on your Rank Achievement. If eligible, you will get paid "
-"automatically each time a Member makes a recurring Membership payment."
+"Congratulations you have unlocked UP to {{ activeLevels }} levels of "
+"Residual Compensation based on your Rank Achievement. If eligible, you will "
+"get paid automatically each time a Member makes a recurring Membership "
+"payment."
 msgstr ""
 "Herzlichen Glückwunsch, Sie haben die Ebenen zu Ihrem Residual-Einkommen "
 "aktiviert {{active_levels}}, basierend auf Ihrem Rangerfolg. Sie werden "
@@ -4725,9 +5289,11 @@ msgstr "Connect Plan"
 msgid "Connect Plans"
 msgstr "Connect Pläne"
 
-#: receipts/commission_statement.html receipts/instant_bonus_statement.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
 #: receipts/invoice.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
+#: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html receipts/receipt.html
@@ -4760,6 +5326,7 @@ msgid "Contest Timeline:"
 msgstr "Zeitplan für den Wettbewerb:"
 
 #: pages/courses.vue pages/italian_onboarding.vue pages/leadership_academy.vue
+#: components/payout/brightwell/brightwell-transfer-details.vue
 #: courses/view.html
 msgid "Continue"
 msgstr "Fortsetzen"
@@ -4835,10 +5402,15 @@ msgstr "Besuchte Länder"
 #: pages/competition.vue pages/contacts.vue pages/global_summit_dr.vue
 #: pages/global_summit_tracking.vue pages/reach.vue pages/referral_links.vue
 #: pages/settings.vue pages/team_rankings.vue pages/welcome.vue
+#: components/compensation/builders_bonus.vue
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/member_activations.vue
+#: components/compensation/residual_bonus.vue
 #: components/checkout/ItalianStep.vue components/public/JoinModal.vue
-#: pages/public/signup.vue compensation/index.html competition/index.html
-#: new_ranks/index.html receipts/italian_receipt.html reports/index.html
-#: track_results/index.html
+#: pages/public/signup.vue
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: competition/index.html new_ranks/index.html old_compensation/index.html
+#: receipts/italian_receipt.html reports/index.html track_results/index.html
 msgid "Country"
 msgstr "Land"
 
@@ -4919,10 +5491,6 @@ msgstr "Datum erstellen"
 #: components/payout/epayments-withdraw.vue
 msgid "Create ePayments Wallet"
 msgstr "Ein ePayments Wallet erstellen"
-
-#: pages/payout.vue
-msgid "Create iPayout Account"
-msgstr "Ein iPayout Konto erstellen"
 
 #: components/payout/payoneer-withdraw.vue
 msgid "Create Payoneer Account"
@@ -5035,11 +5603,7 @@ msgstr "Cruise Dollar Logs"
 msgid "Cruising Information"
 msgstr "Kreuzfahrt-Informationen"
 
-#: compensation/index.html
-msgid "Cruising Partner +2 Points"
-msgstr "Kreuzfahrt-Partner +2 Punkte"
-
-#: compensation/index.html refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html refund_protocol/remove_weeklybonus_modal.html
 msgid "Cruising Partner Sale"
 msgstr "Kreuzfahrt-Partner Umsatz"
 
@@ -5071,12 +5635,12 @@ msgstr "Aktuelles Datum"
 msgid "Current Month's Total"
 msgstr "Summe im aktuellen Monat"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Current Paid-As Title"
 msgstr "Bezahlt als Titel-Position"
 
-#: pages/connect.vue pages/settings.vue compensation/index.html
-#: power_tools_upgrade/index.html
+#: pages/connect.vue pages/settings.vue
+#: components/compensation/residual_bonus.vue power_tools_upgrade/index.html
 msgid "Current Plan"
 msgstr "Aktueller Plan"
 
@@ -5087,6 +5651,12 @@ msgstr "Aktueller Rang"
 #: pages/competition.vue competition/index.html
 msgid "Current Week's Contest"
 msgstr "Wettbewerb der laufenden Woche"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Current Paid-As Title"
+msgid "Currently Paid As:"
+msgstr "Bezahlt als Titel-Position"
 
 #: pages/admin_support_analytics.vue
 msgid "Custom"
@@ -5130,9 +5700,19 @@ msgstr ""
 msgid "d. Policies and Procedures"
 msgstr "d. Allgemeine Bestimmungen und Modalitäten"
 
+#: components/compensation/member_activations.vue
+#, fuzzy
+#| msgid "Email Notifications"
+msgid "Daily Activations"
+msgstr "E-Mail-Benachrichtigungen"
+
 #: Gender
 msgid "Dark"
 msgstr "Dunkel"
+
+#: pages/compensation.vue
+msgid "Dashboard"
+msgstr ""
 
 #: pages/account_setup.vue pages/referral_links.vue
 msgid ""
@@ -5157,6 +5737,7 @@ msgid "Data Fields"
 msgstr "Datenfelder"
 
 #: pages/contacts.vue pages/email.vue pages/reward_points.vue
+#: components/compensation/statements.vue
 #: components/payout/wallet-transfers.vue email_notifications/index.html
 #: layouts/default.html negative_balances/index.html
 msgid "Date"
@@ -5218,11 +5799,11 @@ msgstr "Datum:"
 msgid "Date: {{statement.created | date:'MMM dd, yyyy'}}"
 msgstr "Datum: {{statement.created | date:'MMM dd, yyyy'}}"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Date: December 6th"
 msgstr "Datum: 6. Dezember"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Date: November 6th"
 msgstr "Datum: 6. November"
 
@@ -5239,7 +5820,7 @@ msgid "Day"
 msgstr "Tag"
 
 #: components/countdown.vue components/membership_countdown.vue pages/reach.vue
-#: compensation/index.html
+#: components/compensation/countdown.vue
 msgid "days"
 msgstr "Tage"
 
@@ -5299,6 +5880,12 @@ msgstr "Konto löschen"
 #: pages/invoices.vue
 msgid "Delete Card"
 msgstr "Karte löschen"
+
+#: components/payout/brightwell/brightwell-recipient-account.vue
+#, fuzzy
+#| msgid "Delete Account"
+msgid "Delete recipient account"
+msgstr "Konto löschen"
 
 #: receipts/italian_receipt.html
 msgid "Delivery Date"
@@ -5373,6 +5960,18 @@ msgstr "Beschreibung"
 msgid "Description (ie. Outlook on Laptop)"
 msgstr "Beschreibung (z.B.: Outlook am Laptop)"
 
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid "Notifications center"
+msgid "Destination country"
+msgstr "Benachrichtigungs-Center"
+
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "Certification Courses"
+msgid "Destination coutry"
+msgstr "Zertifizierungs-Kurse"
+
 #: pages/devices.vue
 msgid "Devices"
 msgstr "Geräte"
@@ -5404,14 +6003,23 @@ msgstr "Direkte aktive Mitglieder MTD"
 msgid "Direct Bank Payment"
 msgstr "Direktzahlung"
 
-#: compensation/index.html
-msgid "Direct Downline Potential Rewards"
-msgstr "Direkte Downline Potenzial Prämien"
+#: components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "International Director"
+msgid "Direct International Directors"
+msgstr "Internationaler Director"
 
-#: components/welcome/members-modal.vue compensation/index.html
-#: export/index.html receipts/new_producer_bonus_statement.html
+#: components/compensation/residual_bonus.vue
+#: components/welcome/members-modal.vue export/index.html
+#: receipts/new_producer_bonus_statement.html
 #: receipts/residual_bonus_statement.html receipts/weekly_bonus_statement.html
 msgid "Direct Members"
+msgstr "Direkte Mitglieder"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Direct Members"
+msgid "Direct Members:"
 msgstr "Direkte Mitglieder"
 
 #: pages/competition.vue pages/info_center.vue competition/index.html
@@ -5553,17 +6161,24 @@ msgid "Documents"
 msgstr "Dokumente"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Does a Member have to join as a Partner to sell other memberships and "
+#| "earn a free membership?"
 msgid ""
-"Does a Member have to join as a Partner to sell other memberships and earn a "
-"free membership?"
+"Does a Member have to join as a Partner to refer and Activate new Members "
+"and earn a free Membership for themselves"
 msgstr ""
 "Muss ein Mitglied zum Partner werden, um andere MItgliedschaften zu "
 "verkaufen und um eine beitragsfreie Mitgliedschaft zu erreichen?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Does your own membership count as 1 of your 5 Members to become "
+#| "Membership free?"
 msgid ""
-"Does your own membership count as 1 of your 5 Members to become Membership "
-"free?"
+"Does your membership count as 1 of your 5 Members to become Membership free?"
 msgstr ""
 "Zählt Ihre eigene Mitgliedschaft als 1 von den 5 Mitgliedern, die Sie "
 "benötigen, um eine beitragsfreie Mitgliedschaft zu erreichen?"
@@ -5588,6 +6203,7 @@ msgstr "Spende mit Kartenzahlung"
 msgid "Donate with Wallet"
 msgstr "Mit Wallet spenden"
 
+#: components/payout/brightwell/brightwell-confirmation.vue
 #: layouts/default_no_nav.html
 msgid "Done"
 msgstr "Fertig"
@@ -5604,7 +6220,7 @@ msgstr "Zweistelliges Banner"
 msgid "Downgrade"
 msgstr "Herunterstufen"
 
-#: compensation/index.html pay_bonus/index.html
+#: old_compensation/index.html pay_bonus/index.html
 msgid "Downline"
 msgstr "Downline"
 
@@ -5616,7 +6232,8 @@ msgstr "Das Downline Level Limit muss eine Zahl sein!"
 msgid "Downline limit must be set between 1 and 50."
 msgstr "Die Downline-Grenze muss zwischen 1 und 50 eingestellt werden."
 
-#: compensation/index.html
+#: components/compensation/residual_bonus.vue
+#: receipts/daily_member_activation.html
 msgid "Downline Name"
 msgstr "Downline Name"
 
@@ -5834,22 +6451,47 @@ msgstr ""
 "PARTNER danach einen neuen National Director-Zusatz abschließen. Siehe 5.b. "
 "bezüglich einer solchen Wiederbewerbung."
 
-#: compensation/index.html
-msgid "Each Member enrollment equals 1 point."
-msgstr "Jede Registrierung eines Mitgliedes bringt 1 Punkt."
+#: components/compensation/weekly_bonus.vue
+#, fuzzy
+#| msgid ""
+#| "Earn a matching bonus equal to the amount of instant bonuses earned by "
+#| "all your direct Partners each week. To be eligible to claim your weekly "
+#| "bonus your direct Partners must have 5 points in total for activations "
+#| "and you must personally sponsor at least 1 NEW direct Member or Partner "
+#| "Member during the qualifying week. Each Partner is 1 point, each Member "
+#| "is 1 point and each Partner Member is 2 points."
+msgid ""
+"Earn a matching bonus equal to the amount of instant bonuses earned by all "
+"your direct Partners each week. To be eligible to claim your weekly bonus "
+"your direct Partners must have 3 member activations and you must personally "
+"sponsor at least 1 NEW direct Member or Partner\n"
+"\t\t\t\t\t\tMember during the qualifying week."
+msgstr ""
+"Sichern Sie sich Ihren Matching Bonus, entsprechend dem Betrag der den "
+"Instant Boni, welche von allen Ihren direkten Partnern wöchentlich verdient "
+"werden. Um Anspruch auf Ihren wöchentlichen Bonus zu haben, müssen Ihre "
+"direkten Partner insgesamt 5 Punkte für die Aktivierung erzielen und Sie "
+"müssen während der Qualifikationswoche mindestens 1 NEUES direktes Mitglied "
+"oder Partner-Mitglied persönlich sponsern. Jeder Partner bringt 1 Punkt, "
+"jedes Mitglied bringt 1 Punkt und jedes Partner-Mitglied bringt 2 Punkte."
 
-#: compensation/index.html
-msgid "Each Partner enrollment equals 1 point."
-msgstr "Jede Registrierung eines Partners bringt 1 Punkt."
-
-#: compensation/index.html
+#: old_compensation/index.html
+#, fuzzy
+#| msgid ""
+#| "Earn a matching bonus equal to the amount of instant bonuses earned by "
+#| "all your direct Partners each week. To be eligible to claim your weekly "
+#| "bonus your direct Partners must have 5 points in total for activations "
+#| "and you must personally sponsor at least 1 NEW direct Member or Partner "
+#| "Member during the qualifying week. Each Partner is 1 point, each Member "
+#| "is 1 point and each Partner Member is 2 points."
 msgid ""
 "Earn a matching bonus equal to the amount of instant bonuses earned by all "
 "your direct Partners each week. To be eligible to claim your weekly bonus "
 "your direct Partners must have 5 points in total for activations and you "
-"must personally sponsor at least 1 NEW direct Member or Partner Member "
-"during the qualifying week. Each Partner is 1 point, each Member is 1 point "
-"and each Partner Member is 2 points."
+"must personally sponsor at least 1 NEW direct\n"
+"\t\t\t\t\t\t\t\tMember or Partner Member during the qualifying week. Each "
+"Partner is 1 point, each Member is 1 point and each Partner Member is 2 "
+"points."
 msgstr ""
 "Sichern Sie sich Ihren Matching Bonus, entsprechend dem Betrag der den "
 "Instant Boni, welche von allen Ihren direkten Partnern wöchentlich verdient "
@@ -5863,17 +6505,9 @@ msgstr ""
 msgid "Earned Certificates"
 msgstr "Erhaltene Zertifikate"
 
-#: compensation/index.html
+#: components/compensation/residual_bonus.vue
 msgid "Earned Compensation"
 msgstr "Verdiente Vergütung"
-
-#: compensation/index.html
-msgid "Earned Date"
-msgstr "Vergütungsdatum"
-
-#: compensation/index.html
-msgid "Earned Points"
-msgstr "Verdiente Punkte"
 
 #: pages/reward_points.vue components/payout/wallet-transfers.vue
 #: layouts/default.html
@@ -5921,7 +6555,7 @@ msgstr ""
 "Paket erhalten. Wir haben ein Paket für jeden Partner, bitte wählen Sie das "
 "für Sie passende Paket."
 
-#: compensation/index.html
+#: components/compensation/residual_bonus.vue
 msgid "Eligible Compensation"
 msgstr "Zustehende Vergütungen"
 
@@ -5989,10 +6623,6 @@ msgstr "Verschlüsselung:"
 msgid "End"
 msgstr "Ende"
 
-#: compensation/index.html
-msgid "End of Compensation Month"
-msgstr "Ende des Vergütungsmonats"
-
 #: components/costa-banner.vue
 msgid "End of the Year Dream Cruise Special!"
 msgstr "Dream Cruise Special zum Jahresende!"
@@ -6057,6 +6687,11 @@ msgstr "Event Titel"
 msgid "Example:"
 msgstr "Beispiel:"
 
+#: components/payout/brightwell/brightwell-review.vue
+#: components/payout/brightwell/brightwell-transfer-details.vue
+msgid "Exchange rate"
+msgstr ""
+
 #: reports/index.html
 msgid "Exclude Teams"
 msgstr "Teams ausschließen"
@@ -6065,13 +6700,14 @@ msgstr "Teams ausschließen"
 msgid "Excluding Teams"
 msgstr "Teams ausschließen"
 
-#: pages/builders_base.vue pages/global_summit_dr.vue reports/index.html
-#: controllers/compensation.js
+#: pages/builders_base.vue pages/global_summit_dr.vue
+#: components/compensation/leadership_bonus.vue reports/index.html
+#: controllers/old_compensation.js
 msgid "Executive Director"
 msgstr "Executive Director"
 
 #: pages/titles.vue certificates/executive-director.html
-#: controllers/compensation.js
+#: controllers/old_compensation.js
 msgid "EXECUTIVE DIRECTOR"
 msgstr "EXECUTIVE DIRECTOR"
 
@@ -6091,10 +6727,6 @@ msgstr "Beenden"
 msgid "Exit Checkout Page"
 msgstr "Checkout-Seite verlassen"
 
-#: compensation/index.html
-msgid "Expected Earned Date"
-msgstr "Voraussichtliches Vergütungsdatum"
-
 #: track_results/index.html
 msgid "Expiration Date Asc"
 msgstr "Ablaufdatum aufsteigend"
@@ -6102,14 +6734,6 @@ msgstr "Ablaufdatum aufsteigend"
 #: track_results/index.html
 msgid "Expiration Date Desc"
 msgstr "Ablaufdatum absteigend"
-
-#: components/welcome/members-modal.vue
-msgid "Expired"
-msgstr "Abgelaufen"
-
-#: compensation/index.html
-msgid "Expired Member"
-msgstr "Abgelaufene Mitgliedschaft"
 
 #: reports/index.html
 msgid "Expired Partners"
@@ -6167,6 +6791,28 @@ msgstr "Facebook-Pixel"
 msgid "Facilities"
 msgstr "Einrichtungen"
 
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+msgid "Failed to create account. Please check the data entered and try again."
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-details.vue
+msgid ""
+"Failed to create recipient. Please check the data entered and try again."
+msgstr ""
+
+#: components/payout/brightwell/brightwell-transfer-details.vue
+msgid "Failed to get quote. Please check the amount to send and try again."
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+msgid "Failed to update account. Please check the data entered and try again."
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-details.vue
+msgid ""
+"Failed to update recipient. Please check the data entered and try again."
+msgstr ""
+
 #: receipts/booking_receipt.html
 msgid "FAQ"
 msgstr "FAQ"
@@ -6179,7 +6825,17 @@ msgstr "Tarif"
 msgid "Fare:"
 msgstr "Tarif:"
 
-#: reports/index.html
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Fast Start Bonus"
+msgid "Fast Start"
+msgstr "Fast Start Bonus"
+
+#: components/compensation/account_status.vue
+msgid "Fast Start &amp; Quick Start"
+msgstr ""
+
+#: components/compensation/account_status.vue reports/index.html
 msgid "Fast Start Bonus"
 msgstr "Fast Start Bonus"
 
@@ -6187,9 +6843,19 @@ msgstr "Fast Start Bonus"
 msgid "Fast Start Earned"
 msgstr "Fast Start erreicht"
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Fast Start End Date"
+msgid "Fast Start Eligibility:"
+msgstr "Fast Start Enddatum"
+
+#: components/compensation/account_status.vue
 msgid "Fast Start End Date"
 msgstr "Fast Start Enddatum"
+
+#: components/compensation/account_status.vue
+msgid "FAST START INCENTIVE = $500.00 MD BONUS!"
+msgstr ""
 
 #: reports/index.html
 msgid "Fast Start Last Month"
@@ -6219,17 +6885,7 @@ msgstr "Filtern"
 msgid "Filters reset!"
 msgstr "Filter zurücksetzen!"
 
-#: pages/competition.vue
-msgid ""
-"Final contest numbers will be published on the 16th of this month after all "
-"sales are\n"
-"\t\t\t\tfinalized."
-msgstr ""
-"Die endgültigen Wettbewerbszahlen werden am 16. dieses Monats "
-"veröffentlicht, sobald alle Umsätze \n"
-"          abgeschlossen sind."
-
-#: competition/index.html
+#: pages/competition.vue competition/index.html
 msgid ""
 "Final contest numbers will be published on the 16th of this month after all "
 "sales are finalized."
@@ -6312,7 +6968,7 @@ msgstr ""
 "Für jede monatliche Zahlung in Höhe von 100 USD Mitgliedsbeitrag erhalten "
 "unsere Mitglieder 200 Reward Points."
 
-#: pages/public/mission.vue pages/public/partnership.vue
+#: pages/public/mission.vue
 msgid "FOR FREE"
 msgstr "KOSTENFREI"
 
@@ -6320,7 +6976,14 @@ msgstr "KOSTENFREI"
 msgid "For help logging in please contact"
 msgstr "Für Hilfe beim Einloggen wenden Sie sich bitte an"
 
-#: pages/public/mission.vue pages/public/partnership.vue
+#: pages/compensation.vue
+msgid ""
+"For last month's compensation, visit the old compensation page\n"
+"\t\t\t\t\t\t<a href=\"/old_compensation\">here</a>\n"
+"\t\t\t\t\t\t."
+msgstr ""
+
+#: pages/public/mission.vue
 msgid "FOR LESS"
 msgstr "GÜNSTIGER"
 
@@ -6353,6 +7016,13 @@ msgid ""
 msgstr ""
 "Aus diesen Gründen wurde ich ein Anhänger der Mission von Mercy Ships, und "
 "ich hoffe, dass Sie, unsere inCruises-Familie, das Gleiche tun werden."
+
+#: old_compensation/index.html
+msgid ""
+"For this month's compensation, visit the brand new compensation page\n"
+"\t\t\t\t<a href=\"/compensation\">here</a>\n"
+"\t\t\t\t."
+msgstr ""
 
 #: pages/welcome.vue
 msgid ""
@@ -6588,7 +7258,7 @@ msgid "FSG"
 msgstr "FSG"
 
 #: pages/cards.vue pages/invite.vue cards/index.html certificates/index.html
-#: certificates/view.html compensation/index.html import/index.html
+#: certificates/view.html import/index.html
 msgid "Full Name"
 msgstr "vollständiger Name"
 
@@ -6654,7 +7324,7 @@ msgstr "Deutsch"
 msgid "Get Help"
 msgstr "Hilfe erhalten"
 
-#: pages/public/mission.vue pages/public/partnership.vue
+#: pages/public/mission.vue
 msgid "GET PAID"
 msgstr "BEZAHLT WERDEN"
 
@@ -6758,6 +7428,12 @@ msgstr "Trinkgelder"
 msgid "Gray"
 msgstr "Grau"
 
+#: components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "Bonus earned!"
+msgid "Greater bonus earned."
+msgstr "Bonus verdient!"
+
 #: track_growth/index.html
 msgid "Growth"
 msgstr "Wachstum"
@@ -6789,6 +7465,12 @@ msgstr "Leitfaden und Einrichtung"
 #: pages/italian_onboarding.vue
 msgid "Habitual"
 msgstr "regelmäßig"
+
+#: components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "Bonus earned!"
+msgid "Half bonus earned!"
+msgstr "Bonus verdient!"
 
 #: pages/email.vue
 msgid "Happy Birthday"
@@ -6907,7 +7589,7 @@ msgstr "Gastgeber:"
 msgid "Hotel and Cruise Offers"
 msgstr "Hotel- und Kreuzfahrtangebote"
 
-#: pages/receipts.vue receipts/index.html
+#: receipts/index.html
 msgid "Hotel Booking"
 msgstr "Hotel Buchung"
 
@@ -6940,7 +7622,7 @@ msgid "Hotel Website"
 msgstr "Hotel Website"
 
 #: components/countdown.vue components/membership_countdown.vue pages/reach.vue
-#: compensation/index.html
+#: components/compensation/countdown.vue
 msgid "hours"
 msgstr "Stunden"
 
@@ -6992,9 +7674,13 @@ msgid "How much can I earn selling inCruises?"
 msgstr "Wie viel kann ich pro Empfehlung bei inCruises verdienen?"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "How much does it cost to have my own inCruises independent business with "
+#| "all the tools necessary to do business?"
 msgid ""
-"How much does it cost to have my own inCruises independent business with all "
-"the tools necessary to do business?"
+"How much does it cost to have my inCruises independent business with all the "
+"necessary tools?"
 msgstr ""
 "Wie hoch ist mein Aufwand, um mein eigenes unabhängiges InCruises Business "
 "mit allen für das Geschäft notwendigen Tools zu erhalten?"
@@ -7068,6 +7754,34 @@ msgstr ""
 "Guthaben abgezogen wird, sowie zusätzliche Strafen und Gebühren gemäß "
 "unseren Bestimmungen  und Modalitäten verhängt werden."
 
+#: old_compensation/index.html
+#, fuzzy
+#| msgid ""
+#| "I agree to allow inCruises to use my personal data as per the\n"
+#| "\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy Policy</"
+#| "a>\n"
+#| "\t\t\t\t\tand\n"
+#| "\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
+#| "Service</a>\n"
+#| "\t\t\t\t\t."
+msgid ""
+"I agree to allow inCruises to use my personal data as per the\n"
+"\t\t\t\t\t<a href=\"{{privacyPolicy}}\" target=\"_blank\">Privacy Policy</"
+"a>\n"
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<a href=\"{{termsOfService}}\" target=\"_blank\">Terms of Service</"
+"a>\n"
+"\t\t\t\t\t."
+msgstr ""
+"Ich stimme zu, dass inCruises meine persönlichen Daten gemäß den "
+"Datenschutzbestimmungen</a> \n"
+"            <a href=\"%{privacyPolicy}\" target=\"_blank"
+"\">Datenschutzbestimmungen</a>\n"
+"            und\n"
+"            <a href=\"%{termsOfService}\" target=\"_blank"
+"\">Nutzungsbedingungen</a>\n"
+"            ."
+
 #: components/payout/partner-consent.vue
 msgid ""
 "I agree to allow inCruises to use my personal data as per the\n"
@@ -7085,17 +7799,6 @@ msgstr ""
 "            <a href=\"%{termsOfService}\" target=\"_blank"
 "\">Nutzungsbedingungen</a>\n"
 "            ."
-
-#: compensation/index.html
-msgid ""
-"I agree to allow inCruises to use my personal data as per the<a href="
-"\"{{privacyPolicy}}\" target=\"_blank\">Privacy Policy</a> and<a href="
-"\"{{termsOfService}}\" target=\"_blank\">Terms of Service</a>."
-msgstr ""
-"Ich stimme zu, dass inCruises meine persönlichen Daten gemäß den "
-"Datenschutzbestimmungen</a> und <a href=\"/terms\" target=\"_blank"
-"\">Nutzungsbedingungen<</a><a href=\"{{termsOfService}}\" target=\"_blank\">/"
-"a> verwenden darf.</a>"
 
 #: controllers/pay_bonus.js
 msgid ""
@@ -7129,7 +7832,7 @@ msgstr ""
 "zurückkehren werden und ich eine großartige Kreuzfahrt ohne diese Probleme "
 "und Einschränkungen genießen kann."
 
-#: components/payout/partner-consent.vue compensation/index.html
+#: components/payout/partner-consent.vue old_compensation/index.html
 msgid "I CONSENT AND AGREE"
 msgstr "ICH BIN EINVERSTANDEN UND STIMME ZU"
 
@@ -7182,7 +7885,7 @@ msgstr ""
 "Preise und wie mit unserer Mitgliedschaft eine bestimmte Kreuzfahrt weniger "
 "kosten könnte."
 
-#: components/payout/partner-consent.vue compensation/index.html
+#: components/payout/partner-consent.vue old_compensation/index.html
 msgid "I DON'T CONSENT OR AGREE"
 msgstr "ICH BIN NICHT EINVERSTANDEN UND STIMME NICHT ZU"
 
@@ -7204,16 +7907,32 @@ msgstr ""
 "\">Bestimmungen und Modalitäten</a> zu\n"
 "               ."
 
-#: compensation/index.html
+#: old_compensation/index.html
+#, fuzzy
+#| msgid ""
+#| "I have read and agree with the\n"
+#| "\t\t\t\t\t<a href=\"%{partnerAgreement}\" target=\"_blank\">Partner "
+#| "Agreement</a>\n"
+#| "\t\t\t\t\tand\n"
+#| "\t\t\t\t\t<a href=\"%{policiesProcedures}\" target=\"_blank\">Policies "
+#| "and Procedures Manual</a>\n"
+#| "\t\t\t\t\t."
 msgid ""
-"I have read and agree with the<a ng-href=\"{{partner_agreement}}\" target="
-"\"_blank\">Partner Agreement</a> and<a href=\"{{policies_procedures}}\" "
-"target=\"_blank\">Policies and Procedures Manual</a>."
+"I have read and agree with the\n"
+"\t\t\t\t\t<a ng-href=\"{{partner_agreement}}\" target=\"_blank\">Partner "
+"Agreement</a>\n"
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<a href=\"{{policies_procedures}}\" target=\"_blank\">Policies and "
+"Procedures Manual</a>\n"
+"\t\t\t\t\t."
 msgstr ""
-"Ich habe gelesen und stimme der <a ng-href=\"{{partner_agreement}}\" target="
-"\"_blank\">Partnervereinbarung</a> und den <a href="
-"\"{{policies_procedures}}\" target=\"_blank\">Bestimmungen und Modalitäten</"
-"a> zu."
+"Ich habe gelesen und stimme der \n"
+"              <a href=\"%{partnerAgreement}\" target=\"_blank"
+"\">Partnervereinbarung</a>\n"
+"               und den\n"
+"               <a href=\"%{policiesProcedures}\" target=\"_blank"
+"\">Bestimmungen und Modalitäten</a> zu\n"
+"               ."
 
 #: pages/additional_info.vue
 msgid ""
@@ -7484,7 +8203,7 @@ msgstr ""
 "Membership Agreement</a>\n"
 "               ."
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "I, {{partnerName}} consent to the following"
 msgstr "I, {{partnerName}} stimmt Folgendem zu"
 
@@ -7558,11 +8277,11 @@ msgstr ""
 "Dienstleistungen vertreiben, die mit den reisebezogenen Produkten und "
 "Dienstleistungen von inGroup International konkurrenzfähig sind."
 
-#: components/payout/partner-consent.vue compensation/index.html
+#: components/payout/partner-consent.vue old_compensation/index.html
 msgid "I'm 18 year of age or older."
 msgstr "Ich bin 18 Jahre alt oder älter.."
 
-#: components/payout/partner-consent.vue compensation/index.html
+#: components/payout/partner-consent.vue old_compensation/index.html
 msgid ""
 "I'm not acting as a booking agent and I do not assist in booking cruises for "
 "other Members and do not have their password or account access."
@@ -7571,7 +8290,7 @@ msgstr ""
 "bei der Buchung von Kreuzfahrten, weder habe ich deren Passwort noch den "
 "Kontozugriff."
 
-#: components/payout/partner-consent.vue compensation/index.html
+#: components/payout/partner-consent.vue old_compensation/index.html
 msgid ""
 "I'm not acting as a tour operator and I'm not organizing or promoting group "
 "cruises."
@@ -7579,7 +8298,7 @@ msgstr ""
 "Ich agiere nicht als Reiseveranstalter und organisiere oder fördere keine "
 "Gruppenkreuzfahrten."
 
-#: components/payout/partner-consent.vue compensation/index.html
+#: components/payout/partner-consent.vue old_compensation/index.html
 msgid "I'm not acting as a travel agent and I do not promote specific cruises."
 msgstr ""
 "Ich agiere nicht als Reiseveranstalter und promote nicht spezielle "
@@ -7628,6 +8347,12 @@ msgstr "id"
 msgid "Identification"
 msgstr "Identifikation"
 
+#: pages/kyc_verification.vue
+#, fuzzy
+#| msgid "Identification"
+msgid "Identity Verification"
+msgstr "Identifikation"
+
 #: components/public/Faq.vue
 msgid ""
 "If a couple are both inCruises Members, can they combine their Reward Points "
@@ -7662,7 +8387,9 @@ msgstr ""
 "Berechtigung einer Rückerstattung prüfen."
 
 #: components/public/Faq.vue
-msgid "If I am a Member, do I also have to be a Partner?"
+#, fuzzy
+#| msgid "If I am a Member, do I also have to be a Partner?"
+msgid "If I am a Member, do I have to be a Partner?"
 msgstr "Wenn ich Mitglied bin, muss ich auch Partner werden?"
 
 #: components/public/Faq.vue
@@ -8025,16 +8752,6 @@ msgstr ""
 "Um auf diese Videos zugreifen zu können, müssen Sie mindestens 5 angenommene "
 "Einladungen vorweisen können."
 
-#: compensation/index.html
-msgid ""
-"In order to earn Producer Bonuses you must be an active Member. Upgrade to "
-"Members today to unlock Producer Bonuses, by<a href=\"/upgrade\">clicking "
-"here</a>."
-msgstr ""
-"Um Producer Boni zu verdienen, müssen Sie ein aktives Mitglied sein. "
-"Upgraden Sie heute auf Mitglied, um Producer Boni zu erhalten, indem Sie <a "
-"href=\"/upgrade\">hier klicken</a>."
-
 #: pages/additional_info.vue
 msgid ""
 "In order to set up your eWallet account, you must complete the form below."
@@ -8110,6 +8827,12 @@ msgstr "in der Umsatzsteuer."
 #: components/payout/euro-conversion.vue
 msgid "in Withholding Taxes and"
 msgstr "in Quellensteuern und"
+
+#: components/welcome/members-modal.vue
+#, fuzzy
+#| msgid "Inactive Date"
+msgid "Inactive"
+msgstr "Inaktives Datum"
 
 #: reports/index.html
 msgid "Inactive Date"
@@ -8236,12 +8959,21 @@ msgid "inCruises Partner"
 msgstr "InCruises Partner"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "inCruises pays its Partners through Payoneer®.  Each time a commission is "
+#| "earned, we will transfer your earnings to your inCruises Wallet and "
+#| "notify you. You can then transfer your wallet balance, assuming it is "
+#| "greater than $50.00, to Payoneer® in order to receive your funds via bank "
+#| "transfer to your local bank or Pre-paid Visa or MasterCard issued by "
+#| "Payoneer®"
 msgid ""
-"inCruises pays its Partners through Payoneer®.  Each time a commission is "
-"earned, we will transfer your earnings to your inCruises Wallet and notify "
-"you. You can then transfer your wallet balance, assuming it is greater than "
-"$50.00, to Payoneer® in order to receive your funds via bank transfer to "
-"your local bank or Pre-paid Visa or MasterCard issued by Payoneer®"
+"inCruises pays its Partners through various payout providers. We will "
+"transfer your earnings to your inCruises Wallet and notify you each time a "
+"commission is earned. You can then transfer your wallet balance, assuming it "
+"is greater than $50.00, to your preferred payout provider to receive your "
+"funds via bank transfer to your local bank or prepaid Visa or MasterCard "
+"issued by your chosen payout provider."
 msgstr ""
 "inCruises bezahlt seine Partner über Payoneer®. Jedes Mal, wenn eine "
 "Vergütung verdient wurde, werden wir Ihren Verdienst auf Ihr inCruises "
@@ -8357,6 +9089,12 @@ msgstr "Indirekte Mitglieder"
 msgid "Info Center"
 msgstr "Infocenter"
 
+#: pages/kyc_success.vue
+#, fuzzy
+#| msgid "Booking Submitted!"
+msgid "Information Submitted"
+msgstr "Buchung übermittelt!"
+
 #: pages/public/payment_terms.vue
 msgid "INGROUP INTERNATIONAL LLC"
 msgstr "INGROUP INTERNATIONAL LLC"
@@ -8377,7 +9115,7 @@ msgstr "Ihre E-Mail einfügen..."
 msgid "Inside"
 msgstr "Innerhalb"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Instant Bonus"
 msgstr "Instant Bonus"
 
@@ -8385,7 +9123,7 @@ msgstr "Instant Bonus"
 msgid "Instant Bonus Statement"
 msgstr "Instant Bonus-Kontoauszug "
 
-#: compensation/index.html refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html refund_protocol/remove_weeklybonus_modal.html
 msgid "Instant Bonuses"
 msgstr "Instant Boni"
 
@@ -8413,12 +9151,13 @@ msgstr ""
 "Die Innenkabinen bieten eine Vielzahl von Annehmlichkeiten, die Ihre ganze "
 "Familie genießen kann"
 
-#: pages/builders_base.vue reports/index.html controllers/compensation.js
+#: pages/builders_base.vue components/compensation/leadership_bonus.vue
+#: reports/index.html controllers/old_compensation.js
 msgid "International Director"
 msgstr "Internationaler Director"
 
 #: pages/titles.vue certificates/international-director.html
-#: controllers/compensation.js
+#: controllers/old_compensation.js
 msgid "INTERNATIONAL DIRECTOR"
 msgstr "INTERNATIONAL DIRECTOR"
 
@@ -8583,6 +9322,12 @@ msgstr ""
 "Sie sind noch kein Partner. Um auf die Funktionen von Power Tools zugreifen "
 "zu können, müssen Sie zunächst Ihren Account aktivieren."
 
+#: components/compensation/team.vue
+#, fuzzy
+#| msgid "You have no cruises on your watch list at this time!"
+msgid "It seems you have no current partners in your team at this time."
+msgstr "Sie haben zur Zeit keine Kreuzfahrten auf Ihrer Watchlist!"
+
 #: components/public/Faq.vue
 msgid ""
 "It's very easy to do so. You can do it by reaching out to us at <a href="
@@ -8596,6 +9341,14 @@ msgstr ""
 "a>erreichen. Jede getätigter Kauf wird für 14 Tage durch unsere 100% Geld-"
 "Zurück-Garantie abgesichert. 14 Tage nach der Zahlung sind Rückerstattungen "
 "nicht erlaubt."
+
+#: components/public/Faq.vue
+msgid ""
+"It’s possible, and many Partners have successfully earned $95 and much more "
+"in their first 30 days. Many new Partners do not. There are no guarantees as "
+"the results depend entirely on your efforts and abilities to Activate new "
+"Members."
+msgstr ""
 
 #: pages/facebook_marketing.vue pages/invite.vue pages/referral_links.vue
 #: pages/webinar_recordings.vue communications/index.html
@@ -8714,8 +9467,9 @@ msgid "Laminated Presentations"
 msgstr "Hochglanz-Präsentationen"
 
 #: pages/admin_user.vue pages/contacts.vue pages/settings.vue
-#: pages/team_rankings.vue compensation/index.html reports/index.html
-#: track_results/index.html
+#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue old_compensation/index.html
+#: reports/index.html track_results/index.html
 msgid "Language"
 msgstr "Sprache"
 
@@ -8747,11 +9501,12 @@ msgstr "Die letzten 30 Tage"
 msgid "Last 7 Days"
 msgstr "Die letzten 7 Tage"
 
-#: pages/team_rankings.vue
+#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
 msgid "Last Month"
 msgstr "Im letzten Monat"
 
-#: compensation/index.html refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: refund_protocol/leadership_bonus_modal.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr ""
 "Die Auszahlung des Leadership Bonuses vom letzten Monat, wurde beantragt und "
@@ -8766,15 +9521,21 @@ msgstr "Nachname"
 msgid "Last Name:"
 msgstr "Nachname:"
 
+#: components/compensation/weekly_bonus.vue
+#, fuzzy
+#| msgid "Last Week's Points"
+msgid "Last Week"
+msgstr "Die Punkte der letzten Woche"
+
 #: pages/competition.vue competition/index.html
 msgid "Last Week's Contest"
 msgstr "Wettbewerb der letzten Woche"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Last Week's Points"
 msgstr "Die Punkte der letzten Woche"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Last Week's Weekly Points"
 msgstr "Die letzten wöchentlichen Punkte"
 
@@ -8814,13 +9575,15 @@ msgstr ""
 "Die Leadership Akademie ist ein virtueller Lernort für unsere Business-"
 "Führungskräfte."
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Leadership Bonus ({{firstDayLastMonth | date: 'MM/yy'}})"
 msgstr "Leadership Bonus ({{firstDayLastMonth | date: 'MM/yy'}})"
 
-#: compensation/index.html
-msgid "Leadership Bonus ({{firstDayThisMonth | date: 'MM/yy'}})"
-msgstr "Leadership Bonus ({{firstDayThisMonth | date: 'MM/yy'}})"
+#: components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "Leadership Bonus Statement"
+msgid "Leadership Bonus Last Month"
+msgstr "Leadership Bonus-Kontoauszug"
 
 #: refund_protocol/leadership_bonus_modal.html
 msgid ""
@@ -8830,7 +9593,7 @@ msgstr ""
 "Leadership Bonus letzter Monat ({{firstDayLastMonth | date: 'MM/-dd/-yyyy'}} "
 "- {{lastDayLastMonth | date: 'MM/-dd/-yyyy'}})"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid ""
 "Leadership Bonus Last Month (New Production) ({{firstDayLastMonth | date: "
 "'MM/dd/yyyy'}} - {{lastDayLastMonth | date: 'MM/dd/yyyy'}})"
@@ -8842,17 +9605,15 @@ msgstr ""
 msgid "Leadership Bonus Statement"
 msgstr "Leadership Bonus-Kontoauszug"
 
-#: compensation/index.html
-msgid "Leadership Bonuses"
+#: components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "Leadership Bonuses"
+msgid "Leadership Bonus This Month"
 msgstr "Leadership Boni"
 
-#: compensation/index.html
-msgid ""
-"Leadership Bonuses This Month (New Production) ({{firstDayThisMonth | date: "
-"'MM/dd/yyyy'}} - {{lastDayThisMonth | date: 'MM/dd/yyyy'}})"
-msgstr ""
-"Leadership Boni diesen Monat (Neuer Umsatz) ({{firstDayThisMonth | Datum: "
-"'MM/dd/yyyy'}} - {{lastDayThisMonth | Datum: 'MM/dd/yyyy'}} )"
+#: old_compensation/index.html
+msgid "Leadership Bonuses"
+msgstr "Leadership Boni"
 
 #: agreements/leadership_agreement.html
 msgid "Leadership Certification"
@@ -8948,6 +9709,10 @@ msgstr "Machen wir es wieder!"
 msgid "LET'S DO IT AGAIN!"
 msgstr "LASST ES UNS WIEDER TUN!"
 
+#: pages/email.vue
+msgid "Let's maximize your inCome,"
+msgstr ""
+
 #: pages/price_match_guarantee.vue
 msgid ""
 "lets you book with even more confidence. Simply make a confirmed hotel or "
@@ -8974,13 +9739,31 @@ msgstr "Level {{$index + 1 }}"
 msgid "Level Limit"
 msgstr "Level Limit"
 
+#: components/compensation/residual_bonus.vue
+#, fuzzy
+#| msgid "Levels"
+msgid "levels"
+msgstr "Levels"
+
 #: pages/reach.vue track_results/index.html
 msgid "Levels"
 msgstr "Levels"
 
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Reached"
+msgid "Levels Reached:"
+msgstr "Erreicht"
+
 #: pages/additional_info.vue
 msgid "License #"
 msgstr "Lizenz #"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Net Commission:"
+msgid "Lifetime Commissions:"
+msgstr "Netto-Provision:"
 
 #: Gender
 msgid "Light"
@@ -9011,10 +9794,17 @@ msgid "Load Level"
 msgstr "Level hochladen"
 
 #: pages/receipts.vue pages/webinar_recordings.vue
-#: components/payout/wallet-transfers.vue compensation/index.html
-#: receipts/index.html reports/index.html track_results/index.html
+#: components/payout/wallet-transfers.vue receipts/index.html
+#: reports/index.html track_results/index.html
 msgid "Load More"
 msgstr "Mehr hochladen"
+
+#: components/compensation/active_partner_modal.vue
+#: components/compensation/compensation_month.vue
+#, fuzzy
+#| msgid "Onboarding"
+msgid "Loading..."
+msgstr "Einstieg"
 
 #: receipts/hotel_booking_receipt.html
 msgid "Location"
@@ -9024,12 +9814,13 @@ msgstr "Standort"
 msgid "Logged in as user!"
 msgstr "Eingeloggt als Benutzer!"
 
-#: components/blog/navbar.vue components/payout/hyperwallet-withdraw.vue
+#: components/blog/navbar.vue components/public/Header.vue
+#: components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
-#: components/payout/payoneer-withdraw.vue components/public/Header.vue
-#: pages/public/signup.vue pages/login/login.vue communications/index.html
-#: communications/view.html income_disclosure/index.html login/index.html
-#: live/index.html unsubscribe/index.html
+#: components/payout/payoneer-withdraw.vue pages/login/login.vue
+#: pages/public/signup.vue communications/index.html communications/view.html
+#: income_disclosure/index.html live/index.html login/index.html
+#: unsubscribe/index.html
 msgid "Login"
 msgstr "Login"
 
@@ -9109,12 +9900,13 @@ msgid "MARKETING"
 msgstr "MARKETING"
 
 #: pages/builders_base.vue pages/powerup.vue pages/settings.vue
-#: reports/index.html controllers/compensation.js
+#: components/compensation/leadership_bonus.vue reports/index.html
+#: controllers/old_compensation.js
 msgid "Marketing Director"
 msgstr "Marketing Director"
 
 #: pages/titles.vue certificates/marketing-director.html
-#: controllers/compensation.js
+#: controllers/old_compensation.js
 msgid "MARKETING DIRECTOR"
 msgstr "MARKETING DIRECTOR"
 
@@ -9138,11 +9930,11 @@ msgstr "Master Paket - $119"
 msgid "Mastermind Training"
 msgstr "Mastermind Training"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Max Compensation Bonus"
 msgstr "Max Vergütungsbonus"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Max Compensation Bonus Per Leg"
 msgstr "Max Vergütungsbonus pro Bein"
 
@@ -9150,10 +9942,6 @@ msgstr "Max Vergütungsbonus pro Bein"
 #: components/support/AdminCreateTicket.vue components/support/TicketViewer.vue
 msgid "Max file size is 25mb"
 msgstr "Maximale Dateigröße ist 25mb"
-
-#: compensation/index.html
-msgid "Maximum Residual"
-msgstr "Maximum Residual"
 
 #: pages/booking.vue
 msgid "May"
@@ -9184,14 +9972,17 @@ msgstr "Meeting Raum"
 msgid "Meeting Rooms"
 msgstr "Meeting Räume"
 
-#: pages/team_rankings.vue pages/public/pricing.vue compensation/index.html
-#: subscriptions/index.html upgrade/index.html
+#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue pages/public/pricing.vue
+#: old_compensation/index.html subscriptions/index.html upgrade/index.html
 msgid "Member"
 msgstr "Mitglied"
 
-#: compensation/index.html
-msgid "Member +1 Point"
-msgstr "Mitglied +1 Punkt"
+#: pages/compensation.vue components/compensation/member_activations.vue
+#, fuzzy
+#| msgid "Member Savings"
+msgid "Member Activations"
+msgstr "Mitgliedschafts-Ersparnisse"
 
 #: components/public/FooterDocs.vue
 msgid "Member Agreement"
@@ -9209,8 +10000,8 @@ msgstr "Mitglied seit"
 msgid "Member:"
 msgstr "Mitglieder:"
 
-#: pages/referral_links.vue compensation/index.html reports/index.html
-#: track_growth/index.html
+#: pages/referral_links.vue components/compensation/account_status.vue
+#: reports/index.html track_growth/index.html
 msgid "Members"
 msgstr "Mitglieder"
 
@@ -9255,16 +10046,28 @@ msgstr "Mitgliedschaft erstellt"
 msgid "Membership Creation Date"
 msgstr "Datum der Erstellung der Mitgliedschaft"
 
+#: components/compensation/weekly_bonus.vue
+#, fuzzy
+#| msgid "Membership Sale"
+msgid "Membership Date"
+msgstr "Mitgliedschaft Umsatz"
+
 #: reports/index.html
 msgid "Membership free"
 msgstr "Beitragsfreie Mitgliedschaft"
 
-#: compensation/index.html reports/index.html
+#: components/compensation/residual_bonus.vue reports/index.html
 msgid "Membership Free"
 msgstr "Beitragsfreie Mitgliedschaft"
 
 #: reports/index.html
 msgid "Membership Free Date"
+msgstr "Beitragsfreie Mitgliedschaft Datum"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Membership Free Date"
+msgid "Membership Free Directs:"
 msgstr "Beitragsfreie Mitgliedschaft Datum"
 
 #: components/membership_countdown.vue
@@ -9306,7 +10109,7 @@ msgstr ""
 "als Nachweis dafür, dass Ihr Ticket \n"
 "            rechtzeitig bei uns eingegangen ist."
 
-#: compensation/index.html refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html refund_protocol/remove_weeklybonus_modal.html
 msgid "Membership Sale"
 msgstr "Mitgliedschaft Umsatz"
 
@@ -9382,7 +10185,7 @@ msgstr ""
 "Mitgliedschaftsprogramm verdient/vergeben"
 
 #: components/countdown.vue components/membership_countdown.vue pages/reach.vue
-#: compensation/index.html
+#: components/compensation/countdown.vue
 msgid "minutes"
 msgstr "Minuten"
 
@@ -9405,8 +10208,10 @@ msgid "Mobile Apps"
 msgstr "Mobile Apps"
 
 #: pages/additional_info.vue pages/cards.vue pages/hotels_booking.vue
-#: pages/reach.vue pages/team_rankings.vue cards/index.html
-#: compensation/index.html
+#: pages/reach.vue pages/team_rankings.vue
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue cards/index.html
+#: old_compensation/index.html
 msgid "Mobile Phone"
 msgstr "Mobiltelefon"
 
@@ -9440,8 +10245,20 @@ msgstr "Monat angeben"
 msgid "Month-to-Date"
 msgstr "Monat-bis-Datum"
 
+#: components/compensation/member_activations.vue
+#, fuzzy
+#| msgid "Monthly Competition"
+msgid "Monthly Activations"
+msgstr "Monatlicher Wettbewerb"
+
 #: pages/competition.vue competition/index.html
 msgid "Monthly Competition"
+msgstr "Monatlicher Wettbewerb"
+
+#: receipts/monthly_member_activation.html
+#, fuzzy
+#| msgid "Monthly Competition"
+msgid "Monthly Member Activations"
 msgstr "Monatlicher Wettbewerb"
 
 #: components/payout/wallet-transfers.vue
@@ -9662,6 +10479,21 @@ msgstr ""
 msgid "MSC Cancellation Policy"
 msgstr "MSC Stornierungsbedingungen"
 
+#: components/public/Faq.vue
+msgid ""
+"Much will depend on your personal idea of success and your effort and "
+"ability. For example, to some people, the ability to better travel the world "
+"is their idea of success. And for some, the opportunity to earn extra income "
+"will mean success. inCruises has a proven, fair, and effective program that "
+"is being used by many thousands of different Partners to achieve varying "
+"levels of success. That said, inCruises does not guarantee any level of "
+"success for its Partners and is NOT an opportunity where one should expect "
+"to make thousands of dollars in income overnight. Those who hope to simply "
+"Activate as a Partner and suddenly earn income will likely be disappointed "
+"with inCruises and should not join as a Partner. Again, the consistency and "
+"type of effort and individual ability will determine success with inCruises."
+msgstr ""
+
 #: pages/account_setup.vue pages/referral_links.vue
 msgid "Must be unique and available."
 msgstr "Muss bestehen und verfügbar sein."
@@ -9688,14 +10520,22 @@ msgstr ""
 #: pages/contacts.vue pages/convention_manager.vue pages/duplicator.vue
 #: pages/global_summit_dr.vue pages/global_summit_tracking.vue pages/reach.vue
 #: pages/settings.vue pages/team_rankings.vue pages/welcome.vue
-#: components/welcome/members-modal.vue compensation/index.html
-#: competition/index.html invoices/invoice_statement.html new_ranks/index.html
-#: pay_bonus/index.html negative_balances/index.html
-#: receipts/booking_receipt.html receipts/commission_statement.html
-#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/italian_receipt.html
-#: receipts/kickstart_bonus_statement.html
+#: components/compensation/account_status.vue
+#: components/compensation/builders_bonus.vue
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/member_activations.vue
+#: components/compensation/residual_bonus.vue
+#: components/compensation/top_producers.vue
+#: components/compensation/weekly_bonus.vue
+#: components/welcome/members-modal.vue competition/index.html
+#: invoices/invoice_statement.html negative_balances/index.html
+#: new_ranks/index.html pay_bonus/index.html receipts/booking_receipt.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
+#: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html receipts/receipt.html
@@ -9765,13 +10605,14 @@ msgstr "Der Name wurde abgezogen. Transaktion erfolgreich abgeschlossen"
 msgid "Name:"
 msgstr "Name:"
 
-#: pages/builders_base.vue pages/settings.vue reports/index.html
-#: controllers/compensation.js
+#: pages/builders_base.vue pages/settings.vue
+#: components/compensation/leadership_bonus.vue reports/index.html
+#: controllers/old_compensation.js
 msgid "National Director"
 msgstr "National Director"
 
 #: pages/titles.vue certificates/national-director.html
-#: controllers/compensation.js
+#: controllers/old_compensation.js
 msgid "NATIONAL DIRECTOR"
 msgstr "NATIONAL DIRECTOR"
 
@@ -9805,11 +10646,11 @@ msgstr ""
 "Benötigen Sie mehr Information? Laden Sie diese PDFs herunter um mehr zu "
 "erfahren."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "Needed to pre-qualify for your Fast Start Award."
 msgstr "Erforderlich, um sich für Ihren Fast Start Award zu qualifizieren."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "Needed to pre-qualify for your Quick Start Award."
 msgstr "Erforderlich, um sich für Ihren Quick Start Award zu qualifizieren."
 
@@ -9826,7 +10667,7 @@ msgstr "Netto-Provision:"
 msgid "Nevermind"
 msgstr "Das macht nichts"
 
-#: compensation/index.html reports/index.html
+#: old_compensation/index.html reports/index.html
 msgid "New"
 msgstr "Neu"
 
@@ -9874,7 +10715,8 @@ msgstr "NEUE Partner in diesem Monat"
 msgid "New Partners This Month (10 Levels)"
 msgstr "Neue Partner in diesem Monat (10 Stufen)"
 
-#: pages/growth_calculator.vue compensation/index.html
+#: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
+#: components/compensation/top_producers.vue old_compensation/index.html
 #: refund_protocol/leadership_bonus_modal.html
 msgid "New Production"
 msgstr "Neuer Umsatz"
@@ -9948,8 +10790,9 @@ msgstr ""
 "Nächster\n"
 "\t\t\t Monat"
 
-#: pages/team_rankings.vue compensation/index.html reports/index.html
-#: track_results/index.html
+#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue old_compensation/index.html
+#: reports/index.html track_results/index.html
 msgid "Next Billing Date"
 msgstr "Nächstes Zahlungsdatum"
 
@@ -9965,8 +10808,8 @@ msgstr "Nächstes Zahlungsdatum: {{subscription.expires | date:'MMM dd, yyyy'}}"
 msgid "Next Billing:"
 msgstr "Nächste Zahlungsaufforderung:"
 
-#: components/payout/wallet-transfers.vue compensation/index.html
-#: email_notifications/index.html
+#: components/payout/wallet-transfers.vue email_notifications/index.html
+#: old_compensation/index.html
 msgid "Next Month"
 msgstr "Nächster Monat"
 
@@ -9977,6 +10820,16 @@ msgstr "Nächster Schritt"
 #: pages/reward_points.vue
 msgid "Next Year"
 msgstr "Nächstes Jahr"
+
+#: components/payout/brightwell/brightwell-recipient-details.vue
+msgid "Next: Recipient's Bank Details"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#, fuzzy
+#| msgid "Our Reviews"
+msgid "Next: Review"
+msgstr "Unsere Bewertungen"
 
 #: pages/hotels.vue
 msgid "night"
@@ -10069,6 +10922,24 @@ msgid "No."
 msgstr "Nein."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Although many of our Partners are also Members, it is not mandatory. It "
+#| "is possible to be a Partner, a Member, or both, what we call a “Partner "
+#| "Member.” Experiencing the value and personal use of our membership "
+#| "product helps you promote our genuine service to others."
+msgid ""
+"No. Although many of our Members are also Partners, it is not mandatory. It "
+"is possible to be a Partner, a Member, or both, what we call a “Partner "
+"Member.”"
+msgstr ""
+"Auch wenn viele unserer Partner auch Mitglieder sind, ist dies nicht "
+"erforderlich. Es ist möglich, Partner zu sein oder beides, was wir Partner-"
+"Mitglied nennen. Der Genuß des Preis-Leistungs-Verhältnisses und der "
+"persönliche Gebrauch unseres Mitgliedsprodukts geben Ihnen den Anreiz, unser "
+"geniales Service anderen anzubieten."
+
+#: components/public/Faq.vue
 msgid ""
 "No. Because we are not a full-service travel agency, we are not set up to "
 "handle anything like manual bookings, name changes and so on. If we were a "
@@ -10081,13 +10952,21 @@ msgstr ""
 "Reward Points anbieten."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "No. inCruises does not pay for the recruitment of Partners. We only pay "
+#| "commissions for the personal enrollment of Members, including Partner "
+#| "Member memberships. You will only earn downline compensation from "
+#| "Membership sales and not from any Partner upgrades. To be clear: "
+#| "Commissions are not paid for any fees paid by Partners to have access to "
+#| "our business opportunity. We only pay commissions and bonuses for "
+#| "Membership sales."
 msgid ""
-"No. inCruises does not pay for the recruitment of Partners. We only pay "
-"commissions for the personal enrollment of Members, including Partner Member "
-"memberships. You will only earn downline compensation from Membership sales "
-"and not from any Partner upgrades. To be clear: Commissions are not paid for "
-"any fees paid by Partners to have access to our business opportunity. We "
-"only pay commissions and bonuses for Membership sales."
+"No. inCruises does not pay commissions for the recruitment of Partners. We "
+"only pay commissions when you or your Partner team Activate Club Members. Or "
+"when Club Members in your organization make ongoing Membership payments. "
+"Again, commissions are not paid for any Partner Activation payments. We only "
+"pay commissions and bonuses for Membership sales."
 msgstr ""
 "Nein. InCruises zahlt nicht für die Rekrutierung von Partnern. Wir zahlen "
 "nur Vergütungen für das persönliche Einschreiben von Mitgliedern, "
@@ -10108,23 +10987,6 @@ msgstr ""
 "jedoch planen, mit einer anderen Person zu reisen, z. B. mit Ihrem "
 "Ehepartner, kann diese Person ebenfalls Mitglied sein, und beide können ihre "
 "Reward Points auf dieselbe Buchung anwenden, wenn Sie gemeinsam buchen."
-
-#: components/public/Faq.vue
-msgid ""
-"No. Our business requires human interaction beyond digital messaging. "
-"However, inCruises is fully integrated in social media and we offer great "
-"email marketing tools so there are many opportunities to promote your "
-"business online. Plus, inCruises has its own mobile apps so you can connect "
-"with and grow your client base from your smartphone to make money anytime, "
-"anywhere!"
-msgstr ""
-"Nein. Unser Geschäft verlangt menschliche Interaktionen, die über das "
-"digitale Messaging hinausgehen. Dennoch ist inCruises vollständig in  "
-"sozialen Medien integriert und wir bieten hervorragende E-Mail-Marketing-"
-"Tools an, dadurch gibt es viele Möglichkeiten, um Ihr Geschäft online zu "
-"promoten. Hinzu kommt, dass inCruises seine eigenen mobilen Apps hat. Sie "
-"können diese downloaden und Ihren Kundenstamm von Ihrem Smartphone aus "
-"erweitern, um Geld zu verdienen, und zwar jederzeit und überall!"
 
 #: components/public/Faq.vue
 msgid ""
@@ -10217,11 +11079,8 @@ msgstr "Nicht erledigt"
 msgid "Not Invited"
 msgstr "Nicht eingeladen"
 
-#: compensation/index.html
-msgid "Not Member or Partner"
-msgstr "Kein Mitglied oder Partner"
-
-#: components/membership_countdown.vue compensation/index.html
+#: components/membership_countdown.vue
+#: components/compensation/residual_bonus.vue
 msgid "Not Membership Free"
 msgstr "Keine beitragsfreie Mitgliedschaft"
 
@@ -10244,6 +11103,12 @@ msgstr "Nicht erinnert"
 #: pages/upgrade.vue
 msgid "Not Selected"
 msgstr "Nicht ausgewählt"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+msgid ""
+"NOTE: Please allow up to -- {{ confirmationDetails.quote.deliverySLA.name }} "
+"-- to complete."
+msgstr ""
 
 #: receipts/italian_receipt.html
 msgid "Notes:"
@@ -10346,6 +11211,12 @@ msgstr "Offizielle Team Partner"
 msgid "Ok"
 msgstr "Ok"
 
+#: controllers/old_compensation.js
+#, fuzzy
+#| msgid "Compensation"
+msgid "Old Compensation"
+msgstr "Vergütung"
+
 #: email_notifications/index.html
 msgid "Older"
 msgstr "Älter"
@@ -10445,29 +11316,6 @@ msgstr ""
 #: reports/index.html
 msgid "Only select one course per report."
 msgstr "Wählen Sie nur einen Kurs pro Bericht aus."
-
-#: components/public/Faq.vue
-msgid ""
-"Only two percent of the world population has vacationed on a cruise. Only 20 "
-"percent of U.S. adults have ever enjoyed a relaxing cruise vacation. There "
-"is an enormous untapped market. First-time cruisers, which are the focus of "
-"inCruises, are important to the growth of the industry. During 2019, the "
-"cruise industry carried 29,000,000 passengers on a global basis (up 11.2 "
-"million from 2009). By 2025, this number is projected to increase to "
-"38,000,000 passengers on a global basis. Learn more about our Membership, "
-"the benefits, and about our unique offer on our <a href='/membership' "
-"target='_blank'>Membership page</a>."
-msgstr ""
-"Lediglich zwei Prozent der Weltbevölkerung hat auf einer Kreuzfahrt Urlaub "
-"gemacht. Nur 20 Prozent der U.S.- amerikanischen Erwachsenen haben bisher "
-"jemals einen erholsamen Kreuzfahrt-Urlaub genossen. Es gibt einen enormen "
-"unerschlossenen Markt. Erstmalige Kreuzfahrt-Urlauber, die InCruises als "
-"Zielgruppe erkennt, sind für das Wachstum der Branche wichtig. Im Jahr 2019 "
-"hat die Kreuzfahrtindustrie weltweit 29,000,000 Passagiere befördert  (plus "
-"11,2 Millionen gegenüber 2009). Bis 2025 soll diese Zahl auf 38.000.000 "
-"Passagiere weltweit ansteigen. Erfahren Sie mehr über unsere Mitgliedschaft, "
-"die Vorteile und über unser einzigartiges Angebot auf unserer <a href='/"
-"membership' target='_blank'>Membership page</a>."
 
 #: error/401.html error/500.html error/503.html
 msgid "Oops!! The page you are looking for doesn't seem to exist."
@@ -10612,7 +11460,8 @@ msgstr "Daten der Seite"
 msgid "Paid Date"
 msgstr "Zahlungsdatum"
 
-#: pages/team_rankings.vue compensation/index.html
+#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue old_compensation/index.html
 msgid "Paid Months"
 msgstr "Bezahlte Monate"
 
@@ -10672,10 +11521,6 @@ msgstr "Partner / Kein Mitglied"
 msgid "Partner / Pending Member"
 msgstr "Partner / Ausstehendes Mitglied"
 
-#: compensation/index.html
-msgid "Partner +1 Point"
-msgstr "Partner +1 Punkt"
-
 #: pages/additional_info.vue reports/index.html
 msgid "Partner Access Only"
 msgstr "Nur Partnerzugang"
@@ -10724,8 +11569,14 @@ msgstr ""
 "ausreichend Gelegenheit gegeben wurde, diesen Zusatz von einem Berater "
 "seiner Wahl überprüfen zu lassen."
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Partner Activation Date"
+msgstr "Partner Aktivschaltungsdatum"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Partner Activation Date"
+msgid "Partner Activation Date:"
 msgstr "Partner Aktivschaltungsdatum"
 
 #: agreements/national_director_agreement.html
@@ -10848,10 +11699,6 @@ msgstr "Partnerdatum"
 msgid "Partner ID"
 msgstr "Partner ID"
 
-#: compensation/index.html
-msgid "Partner Member enrollments 2 points."
-msgstr "Einschreibung von einem Partner-Mitglied, 2 Punkte."
-
 #: agreements/national_director_agreement.html
 msgid ""
 "PARTNER recognizes and is prepared for the possibility that his/her standard "
@@ -10866,11 +11713,13 @@ msgstr ""
 msgid "Partner Refund And Compress"
 msgstr "Partner Rückerstattung und Komprimierung"
 
-#: compensation/index.html refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html refund_protocol/remove_weeklybonus_modal.html
 msgid "Partner Sale"
 msgstr "Partner Umsatz"
 
 #: pages/italian_onboarding.vue
+#: components/compensation/active_partner_modal.vue
+#: components/compensation/team.vue
 msgid "Partner Status"
 msgstr "Partner Status"
 
@@ -10917,7 +11766,8 @@ msgstr "Partner-Mitglieder"
 msgid "Partner:"
 msgstr "Partner:"
 
-#: pages/referral_links.vue compensation/index.html reports/index.html
+#: pages/referral_links.vue components/compensation/account_status.vue
+#: components/compensation/residual_bonus.vue reports/index.html
 #: track_growth/index.html
 msgid "Partners"
 msgstr "Partner"
@@ -11065,14 +11915,6 @@ msgstr "Bezahlen mit Reward Points"
 msgid "Pay with Bank"
 msgstr "Bezahlen mit Bank"
 
-#: compensation/index.html
-msgid ""
-"Pay your pending invoice to unlock Producer Bonuses, by<a href=\"/invoices"
-"\">clicking here</a>."
-msgstr ""
-"Bezahlen Sie Ihre ausstehende Rechnung, um Producer Boni zu aktivieren, "
-"indem <a href=\"/invoices\">Sie hier klicken</a>."
-
 #: pages/checkout.vue
 msgid "Payment Agreement"
 msgstr "Zahlungsvereinbarung"
@@ -11120,7 +11962,13 @@ msgstr "Auszahlung"
 msgid "Pembroke Pines, FL 33027 USA"
 msgstr "Pembroke Pines, FL 33027  USA"
 
-#: compensation/index.html
+#: components/welcome/members-modal.vue
+#, fuzzy
+#| msgid "Attending"
+msgid "Pending"
+msgstr "Teilnahme an"
+
+#: old_compensation/index.html
 msgid "Pending Compensation"
 msgstr "Ausstehende Vergütung"
 
@@ -11148,17 +11996,13 @@ msgstr "Ausstehende Rechnungen"
 msgid "Pending Invoices:"
 msgstr "Ausstehende Rechnungen:"
 
-#: compensation/index.html
-msgid "Pending Member Bonus"
-msgstr "Ausstehende Mitglieds-Boni"
+#: Membership Plans
+msgid "Pending Member"
+msgstr "Ausstehendes Mitglied"
 
 #: reports/index.html
 msgid "Pending Members"
 msgstr "Ausstehende Mitglieder"
-
-#: compensation/index.html
-msgid "Pending Partner/Member Bonus"
-msgstr "Ausstehende Partner-Mitglieder Boni"
 
 #: pages/invoices.vue upgrade/index.html
 msgid "Pending Transaction"
@@ -11192,6 +12036,22 @@ msgstr "Prozentuelles Wachstum erforderlich"
 #: pages/powerup.vue
 msgid "Percentage Growth"
 msgstr "Prozentuales Wachstum"
+
+#: components/compensation/weekly_bonus.vue
+#, fuzzy
+#| msgid "Partner Activation Date"
+msgid "Personal Direct Activations Last Week"
+msgstr "Partner Aktivschaltungsdatum"
+
+#: components/compensation/weekly_bonus.vue
+msgid "Personal Direct Activations This Week"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-details.vue
+#, fuzzy
+#| msgid "Contact Information"
+msgid "Personal Information"
+msgstr "Kontaktinformationen"
 
 #: pages/invite.vue
 msgid "Personal invite with Website/Video link"
@@ -11241,10 +12101,6 @@ msgstr "Telefon:"
 msgid "Photo ID"
 msgstr "Foto-ID"
 
-#: compensation/index.html
-msgid "Plan"
-msgstr "Plan"
-
 #: components/booking/agreements.vue
 msgid "Please Acknowledge"
 msgstr "Bitte beachten Sie"
@@ -11286,6 +12142,12 @@ msgstr "Bitte überprüfen Sie unten, ob Ihr Staat korrekt ist."
 
 #: components/confirm-recurring.vue pages/invoices.vue
 msgid "Please check the expiration date you entered."
+msgstr "Bitte überprüfen Sie das von Ihnen eingegebene Ablaufdatum."
+
+#: pages/kyc_verification.vue
+#, fuzzy
+#| msgid "Please check the expiration date you entered."
+msgid "Please check your information and try again."
 msgstr "Bitte überprüfen Sie das von Ihnen eingegebene Ablaufdatum."
 
 #: pages/book.vue
@@ -11381,9 +12243,13 @@ msgid "Please confirm your VAT Number below."
 msgstr "Bitte bestätigen Sie unten Ihre Umsatzsteuer-Identifikationsnummer."
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Please consult our Policies and Procedures Manual for complete details. "
+#| "It states:"
 msgid ""
-"Please consult our Policies and Procedures Manual for complete details. It "
-"states:"
+"Please consult the inCruises Policies and Procedures for complete details. "
+"It states:"
 msgstr ""
 "Bitte lesen Sie unsere Richtlinien und die Anleitung mit allen  "
 "vollständigen Details. Darin heißt es:"
@@ -11456,6 +12322,10 @@ msgstr ""
 "Bitte füllen Sie alle erforderlichen Felder aus, bevor Sie Ihre Angaben "
 "bestätigen"
 
+#: pages/kyc_verification.vue
+msgid "Please have your ID ready and click 'Start'."
+msgstr ""
+
 #: components/user/functions.vue
 msgid "Please include an amount and a reason."
 msgstr "Bitte geben Sie einen Betrag und einen Grund an."
@@ -11527,6 +12397,22 @@ msgstr ""
 "Sie denken, dies sei ein Fehler, wenden Sie sich bitte an unsere Support-"
 "Mitarbeiter."
 
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+msgid ""
+"Please review 'Recipient Bank Details' for accuracy as inaccurate and "
+"incomplete information may result in delay, cancellation and/or return of "
+"funds."
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-details.vue
+msgid ""
+"Please review 'Recipient Details' for accuracy as inaccurate and incomplete "
+"information may result in delay, cancellation and/or return of funds. Some "
+"information may be populated from verified documents provided. If any "
+"information is incorrect please reach out to support to have it\n"
+"\t\tcorrected."
+msgstr ""
+
 #: pages/booking.vue
 msgid "Please select a cabin to continue."
 msgstr "Bitte wählen Sie eine Kabine aus, um fortzufahren."
@@ -11538,6 +12424,12 @@ msgstr "Bitte wählen Sie ein Datum für Ihre Suche aus."
 #: pages/team_rankings.vue
 msgid "Please select a date less than a year ago."
 msgstr "Bitte wählen Sie ein Datum, das weniger als ein Jahr zurückliegt."
+
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid "Please select a destination for your search."
+msgid "Please select a destination country"
+msgstr "Bitte wählen Sie ein Ziel für Ihre Suche aus."
 
 #: pages/book.vue
 msgid "Please select a destination for your search."
@@ -11558,6 +12450,12 @@ msgstr "Bitte eine Zahlungsmethode auswählen:"
 #: pages/upgrade.vue
 msgid "Please select a plan to continue."
 msgstr "Bitte wählen Sie einen Plan aus, um fortzufahren."
+
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid "Please select department"
+msgid "Please select a transfer type"
+msgstr "Bitte wählen Sie eine Abteilung"
 
 #: components/info-reminder.vue
 msgid "Please select an annual income"
@@ -11628,14 +12526,26 @@ msgstr ""
 "Bitte überprüfen Sie alle Buchungsdetails, bevor Sie fortfahren. Sobald Sie "
 "sich der Buchung sicher sind, klicken Sie auf Fortfahren."
 
-#: compensation/index.html
+#: old_compensation/index.html
+#, fuzzy
+#| msgid ""
+#| "Please verify the amount and contact our Operations Team ( <a href="
+#| "\"mailto:operations@incruises.com\">operations@incruises.com</a> ) if you "
+#| "have any questions."
 msgid ""
-"Please verify the amount and contact our Operations Team ( <a href=\"mailto:"
-"operations@incruises.com\">operations@incruises.com</a> ) if you have any "
-"questions."
+"Please verify the amount and contact our Operations Team (\n"
+"\t\t\t<a href=\"mailto:operations@incruises.com\">operations@incruises.com</"
+"a>\n"
+"\t\t\t) if you have any questions."
 msgstr ""
 "Bitte bestätigen Sie den Betrag und wenden Sie sich für Fragen an unser Team "
 "( <a href=\"mailto:operations@incruises.com\">operations@incruises.com</a> )."
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+msgid ""
+"Please verify the information submitted is correct and try again. If the "
+"issue still persists please contact support."
+msgstr ""
 
 #: pages/settings.vue
 msgid "Please verify your email address"
@@ -11675,12 +12585,20 @@ msgstr "Einen Moment, wir leiten Sie zurück zu inCruises®."
 msgid "Please write a more descriptive message."
 msgstr "Bitte schreiben Sie eine ausführlichere Nachricht."
 
+#: components/compensation/account_status.vue
+msgid ""
+"Plus, when you achieve the Fast Start Bonus and then maintain the MD rank "
+"through the next calendar month, your upline sponsor earns a matching one-"
+"time $500.00 bonus."
+msgstr ""
+
 #: pages/global_summit_dr.vue
 msgid "points"
 msgstr "Punkte"
 
 #: components/weekly-competition.vue pages/competition.vue
-#: pages/global_summit_dr.vue compensation/index.html competition/index.html
+#: pages/global_summit_dr.vue competition/index.html
+#: old_compensation/index.html
 msgid "Points"
 msgstr "Punkte"
 
@@ -11727,21 +12645,13 @@ msgstr "Postleitzahl"
 msgid "Postal Code:"
 msgstr "Postleitzahl:"
 
-#: compensation/index.html
-msgid "Potential Bonuses"
-msgstr "Potentielle Boni"
-
 #: pages/my_cruise_savings.vue
 msgid "Potential Future Membership Savings"
 msgstr "Mögliche zukünftige Mitglieds-Ersparnisse"
 
-#: compensation/index.html
+#: components/compensation/residual_bonus.vue
 msgid "Potential Members"
 msgstr "Potentielle Mitglieder"
-
-#: compensation/index.html
-msgid "Potential Points"
-msgstr "Potentielle Punkte"
 
 #: pages/reward_points.vue
 msgid "Potential Rewards"
@@ -11825,6 +12735,12 @@ msgstr "Präsentation"
 msgid "Preview Email"
 msgstr "E-Mail-Vorschau"
 
+#: components/compensation/statements.vue
+#, fuzzy
+#| msgid "View Receipt"
+msgid "Preview Receipt"
+msgstr "Beleg zeigen"
+
 #: pages/email.vue pages/leadership_academy.vue
 msgid "Previous"
 msgstr "Vorherig"
@@ -11837,8 +12753,8 @@ msgstr ""
 "Vorheriger\n"
 "\t\t\t Monat"
 
-#: components/payout/wallet-transfers.vue compensation/index.html
-#: email_notifications/index.html
+#: components/payout/wallet-transfers.vue email_notifications/index.html
+#: old_compensation/index.html
 msgid "Previous Month"
 msgstr "Vorheriger Monat"
 
@@ -11962,6 +12878,13 @@ msgstr "Ohne Reward Points vorgehen"
 msgid "Process Payment"
 msgstr "Zahlung fortsetzen"
 
+#: pages/kyc_success.vue
+msgid ""
+"Processing can take a moment depending on the information provided. If you "
+"are not redirected shortly, you may navigate away and wait for the process "
+"completed notification."
+msgstr ""
+
 #: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
 msgid "Processing Fee"
 msgstr "Bearbeitungsgebühr"
@@ -11974,24 +12897,21 @@ msgstr "Für diese Transaktion wird keine Bearbeitungsgebühr erhoben."
 msgid "Producer Bonus Statement"
 msgstr "Producer Bonus-Kontoauszug"
 
-#: compensation/index.html
-msgid "Producer Bonuses"
-msgstr "Producer Boni"
-
 #: pages/public/leadership.vue
 msgid "Product Director"
 msgstr "Produkt-Direktor"
 
-#: pages/growth_calculator.vue compensation/index.html
-#: refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
+#: old_compensation/index.html refund_protocol/leadership_bonus_modal.html
 msgid "Production"
 msgstr "Umsatz"
 
-#: compensation/index.html refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: refund_protocol/leadership_bonus_modal.html
 msgid "Production Details Last Month"
 msgstr "Umsätze im letzten Monat"
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue
 msgid "Production Details This Month"
 msgstr "Umsätze in diesem Monat"
 
@@ -12011,7 +12931,7 @@ msgstr "Profilbild"
 msgid "Profile Picture"
 msgstr "Profilbild"
 
-#: pages/public/about.vue pages/public/index.vue
+#: pages/public/about.vue pages/public/index.vue pages/public/partnership.vue
 msgid "PROFITABLE"
 msgstr "PROFITABEL"
 
@@ -12022,10 +12942,6 @@ msgstr "Programm-Manager"
 #: pages/leadership_academy.vue
 msgid "Progress"
 msgstr "Fortschritt"
-
-#: compensation/index.html
-msgid "Projected Earnings"
-msgstr "Erwartete Einnahmen"
 
 #: pages/price_match_guarantee.vue
 msgid "Proof of Lower Rate"
@@ -12075,12 +12991,13 @@ msgstr ""
 msgid "Quadruple Digit Banner"
 msgstr "Quadruple Digit Banner"
 
-#: pages/growth_calculator.vue compensation/index.html
-#: refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
+#: old_compensation/index.html refund_protocol/leadership_bonus_modal.html
 msgid "Qualified Prod."
 msgstr "Qualifizierte Prod."
 
-#: compensation/index.html refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: refund_protocol/leadership_bonus_modal.html
 msgid "Qualified Production"
 msgstr "Qualifizierte Produktion"
 
@@ -12107,7 +13024,7 @@ msgstr ""
 "Fragen? Bitte öffnen Sie hier ein Ticket mit unserem Cruise Booking Support "
 "Team"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Quick Actions"
 msgstr "Schnelle Aktionen"
 
@@ -12115,7 +13032,13 @@ msgstr "Schnelle Aktionen"
 msgid "Quick Reports"
 msgstr "Schnelle Berichte"
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Request Quick Start Bonus"
+msgid "Quick Start Bonus"
+msgstr "Quick Start Bonus anfordern"
+
+#: components/compensation/account_status.vue
 msgid "Quick Start End Date"
 msgstr "Quick Start Enddatum"
 
@@ -12244,6 +13167,30 @@ msgstr "Belege"
 msgid "Recent Invitations"
 msgstr "Aktuelle Einladungen"
 
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "Recipients"
+msgid "Recipient Bank details"
+msgstr "Empfänger"
+
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "Recipients"
+msgid "Recipient details"
+msgstr "Empfänger"
+
+#: components/payout/brightwell/brightwell-recipient-details.vue
+#, fuzzy
+#| msgid "Recipients"
+msgid "Recipient Details"
+msgstr "Empfänger"
+
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#, fuzzy
+#| msgid "Reservation Details"
+msgid "Recipient's Bank Details"
+msgstr "Reservierungsdetails"
+
 #: pages/email_tracking.vue
 msgid "Recipients"
 msgstr "Empfänger"
@@ -12255,6 +13202,16 @@ msgstr "Datensatz-Suchmaschine"
 #: pages/invoices.vue reports/index.html
 msgid "Recurring Billing"
 msgstr "Wiederkehrende Abrechnungen"
+
+#: pages/compensation.vue components/compensation/residual_bonus.vue
+#, fuzzy
+#| msgid "Recurring:"
+msgid "Recurring Income"
+msgstr "Wiederkehrend:"
+
+#: components/public/Faq.vue
+msgid "Recurring Income (for ongoing team Membership payments)"
+msgstr ""
 
 #: pages/invoices.vue
 msgid "Recurring Payment Method Pending Validation"
@@ -12273,7 +13230,8 @@ msgid "Redirecting you over to Ingenico."
 msgstr "Sie werden zu Ingenico weitergeleitet."
 
 #: pages/account_setup.vue pages/admin_user.vue pages/team_rankings.vue
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue old_compensation/index.html
 msgid "Referral Link"
 msgstr "Empfehlungs-Link"
 
@@ -12298,7 +13256,7 @@ msgstr ""
 "registrieren. Sie erhalten automatische Vergütungen, wenn sich jemand mit "
 "diesem Link registriert."
 
-#: pages/admin_user.vue
+#: pages/admin_user.vue components/compensation/weekly_bonus.vue
 msgid "Referrer"
 msgstr "Sponsor"
 
@@ -12331,7 +13289,8 @@ msgstr ""
 "oder vor/nach meiner Kreuzfahrterfahrung während des Neustarts der "
 "Kreuzfahrtindustrie in diesen unerwarteten Zeiten passiert."
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue old_compensation/index.html
 msgid "Region"
 msgstr "Region"
 
@@ -12340,12 +13299,13 @@ msgid "Region:"
 msgstr "Region:"
 
 #: pages/builders_base.vue pages/global_summit_dr.vue pages/powerup.vue
-#: pages/settings.vue reports/index.html controllers/compensation.js
+#: pages/settings.vue components/compensation/leadership_bonus.vue
+#: reports/index.html controllers/old_compensation.js
 msgid "Regional Director"
 msgstr "Regionaler Director"
 
 #: pages/titles.vue certificates/regional-director.html
-#: controllers/compensation.js
+#: controllers/old_compensation.js
 msgid "REGIONAL DIRECTOR"
 msgstr "REGIONAL DIRECTOR"
 
@@ -12426,41 +13386,39 @@ msgstr ""
 "um jederzeit und von überall auf der Welt auf Ihr Geschäft zugreifen zu "
 "können."
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Request Bonus"
 msgstr "Bonus anfordern"
-
-#: compensation/index.html
-msgid "Request Bonus Payout"
-msgstr "Bonuszahlung anfordern"
 
 #: pages/reach.vue
 msgid "Request Early Upgrade Now"
 msgstr "Jetzt rechtzeitig Upgrade anfordern"
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "Request Fast Start Coupon"
 msgstr "Fast Start-Coupon anfordern"
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
 msgid "Request Leadership Bonus Payout"
 msgstr "Leadership Bonus Auszahlung anfordern"
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "Request Quick Start Bonus"
 msgstr "Quick Start Bonus anfordern"
-
-#: compensation/index.html
-msgid "Request Residual Bonus Payout"
-msgstr "Fordern Sie die Residual Bonus Zahlung an"
 
 #: pages/italian_onboarding.vue
 msgid "Required"
 msgstr "Erforderlich"
 
-#: pages/growth_calculator.vue compensation/index.html
-#: refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
+#: old_compensation/index.html refund_protocol/leadership_bonus_modal.html
 msgid "Requirement"
+msgstr "Anforderung"
+
+#: components/compensation/weekly_bonus.vue
+#, fuzzy
+#| msgid "Requirement"
+msgid "Requirement met!"
 msgstr "Anforderung"
 
 #: pages/account_setup.vue
@@ -12511,14 +13469,6 @@ msgstr "Passwort zurücksetzen"
 msgid "Reset password to \"incruises1234\""
 msgstr "Passwort zurücksetzen auf \"incruises1234\""
 
-#: compensation/index.html
-msgid "Residual Earned This Month"
-msgstr "verdientes Residual-Einkommen in diesem Monat"
-
-#: compensation/index.html
-msgid "Residual Income"
-msgstr "Residual-Einkommen"
-
 #: Menu
 msgid "Resources"
 msgstr "Ressourcen"
@@ -12562,6 +13512,12 @@ msgstr "Zum Video zurückkehren"
 #: error/404.html
 msgid "Return to Welcome Page"
 msgstr "Zurück zur Willkommensseite"
+
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "Overview"
+msgid "Review"
+msgstr "Übersicht"
 
 #: components/weekly-competition.vue pages/competition.vue
 #: competition/index.html
@@ -12637,10 +13593,6 @@ msgstr "Reward Points Logs"
 #: receipts/hotel_booking_receipt.html
 msgid "Reward Points Used"
 msgstr "Reward Points verwendet"
-
-#: compensation/index.html
-msgid "Rewards"
-msgstr "Prämien"
 
 #: pages/booking.vue
 msgid "Rewards Points:"
@@ -12745,15 +13697,10 @@ msgstr ""
 
 #: pages/book.vue pages/contacts.vue pages/hotels.vue pages/hotels_details.vue
 #: components/blog/blog_list.vue communications/index.html
-#: communications/view.html compensation/index.html
-#: email_notifications/index.html track_growth/index.html
-#: webinar_recordings/index.html
+#: communications/view.html email_notifications/index.html
+#: track_growth/index.html webinar_recordings/index.html
 msgid "Search"
 msgstr "Suche"
-
-#: compensation/index.html
-msgid "Search by date"
-msgstr "Suche gemäß Datum"
 
 #: resources/index.html
 msgid "Search Documents.."
@@ -12801,7 +13748,7 @@ msgid "Search Parameters"
 msgstr "Suchparameter"
 
 #: components/countdown.vue components/membership_countdown.vue pages/reach.vue
-#: compensation/index.html
+#: components/compensation/countdown.vue
 msgid "seconds"
 msgstr "Sekunden"
 
@@ -12970,6 +13917,16 @@ msgstr "Einladungen versenden"
 msgid "Send message"
 msgstr "Nachricht senden"
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+#, fuzzy
+#| msgid "Send Invite"
+msgid "Send money"
+msgstr "Einladung versenden"
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid "Send money now"
+msgstr ""
+
 #: pages/facebook_marketing.vue
 msgid "Send Private Invitation"
 msgstr "Eine private Einladung versenden"
@@ -12997,12 +13954,13 @@ msgid "Senior Managers &amp; Territory Growth Directors"
 msgstr "Senior Managers &amp; Gebietsleiter für Wachstum"
 
 #: pages/builders_base.vue pages/powerup.vue pages/settings.vue
-#: reports/index.html controllers/compensation.js
+#: components/compensation/leadership_bonus.vue reports/index.html
+#: controllers/old_compensation.js
 msgid "Senior Marketing Director"
 msgstr "Senior Marketing Director"
 
 #: pages/titles.vue certificates/senior-marketing-director.html
-#: certificates/senior-marketing-manager.html controllers/compensation.js
+#: certificates/senior-marketing-manager.html controllers/old_compensation.js
 msgid "SENIOR MARKETING DIRECTOR"
 msgstr "SENIOR MARKETING DIRECTOR"
 
@@ -13122,7 +14080,19 @@ msgstr "Alle Fotos anzeigen"
 msgid "Show conversion always?"
 msgstr "Konvertierung immer anzeigen?"
 
-#: compensation/index.html
+#: components/compensation/compensation_month.vue
+#, fuzzy
+#| msgid "Ship Details"
+msgid "Show Details"
+msgstr "Schiffdetails"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "View Fast Start Guide"
+msgid "Show Fast Start"
+msgstr "Anzeigen des Fast Start Leitfadens"
+
+#: old_compensation/index.html
 msgid "Show Last Month"
 msgstr "Den letzten Monat zeigen"
 
@@ -13130,23 +14100,31 @@ msgstr "Den letzten Monat zeigen"
 msgid "Show Leaderboards For"
 msgstr "Leaderboards zeigen für"
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "Leadership"
+msgid "Show Leadership"
+msgstr "Leadership"
+
+#: old_compensation/index.html
 msgid "Show New Production"
 msgstr "Neuen Umsatz anzeigen"
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
 msgid "Show Production"
 msgstr "Umsatz anzeigen"
+
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "Quick Start End Date"
+msgid "Show Quick Start"
+msgstr "Quick Start Enddatum"
 
 #: pages/team_rankings.vue
 msgid "Show Teams For"
 msgstr "Teams anzeigen für"
 
-#: compensation/index.html
-msgid "Show This Month"
-msgstr "Diesen Monat zeigen"
-
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Show Total Production"
 msgstr "Gesamten neuen Umsatz anzeigen"
 
@@ -13191,7 +14169,7 @@ msgstr "Single"
 msgid "Skip For Now"
 msgstr "Jetzt überspringen"
 
-#: compensation/index.html
+#: components/compensation/residual_bonus.vue
 msgid ""
 "So far this month, you have not unlocked residual income. You must have 5 "
 "direct members and 1 ACTIVE Partner that has 5 direct Members that have paid "
@@ -13202,7 +14180,7 @@ msgstr ""
 "vorweisen, der wiederum 5 direkte Mitglieder hat, die diesen Monat aktive "
 "Mitglieder sind."
 
-#: compensation/index.html
+#: components/compensation/residual_bonus.vue
 msgid ""
 "So far this month, you have not unlocked residual income. You must have 5 "
 "direct members and automatically you will unlock 2 levels of residual "
@@ -13234,6 +14212,22 @@ msgstr "Social Media Marketing Manager"
 #: pages/additional_info.vue components/payout/social-check.vue
 msgid "Social Security Number"
 msgstr "Sozialversicherungsnummer"
+
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"Some banks may charge additional fees upon deposit. Foreign taxes may apply. "
+"By continuing you agree to\n"
+"\t\t<a target=\"_blank\" href=\"https://files.incruises.com/files/"
+"en/504EN_TERMS_OF_SERVICE.pdf\" class=\"dimmer-content text-muted\">Terms of "
+"Use</a>\n"
+"\t\tand\n"
+"\t\t<a target=\"_blank\" href=\"https://files.incruises.com/files/"
+"en/505EN_PRIVACY_POLICY.pdf\" class=\"dimmer-content text-muted\">Privacy "
+"Policy.</a>\n"
+"\t\tYou also agree to\n"
+"\t\t<a target=\"_blank\" href=\"./files/RR_Privacy_Policy.pdf\" class="
+"\"dimmer-content text-muted\">ReadyRemit User Privacy Policy.</a>"
+msgstr ""
 
 #: pages/info_center.vue
 msgid ""
@@ -13345,7 +14339,7 @@ msgstr "St. 1- Lot #3, Suite 500 (Metro Office Park 3)"
 msgid "Stars"
 msgstr "Sterne"
 
-#: pages/admin_support_analytics.vue
+#: pages/admin_support_analytics.vue pages/kyc_verification.vue
 msgid "Start"
 msgstr "Starten"
 
@@ -13366,6 +14360,12 @@ msgstr "Den Kurs starten"
 #: pages/public/leadership.vue
 msgid "START NOW! with Dr. Denis Cauvier"
 msgstr "JETZT STARTEN! mit Dr. Denis Cauvier"
+
+#: pages/kyc_verification.vue
+#, fuzzy
+#| msgid "Phone Verification"
+msgid "Start Verification"
+msgstr "Telefonverifizierung"
 
 #: pages/booking.vue
 msgid "Start:"
@@ -13404,10 +14404,12 @@ msgstr "Bundesland/Region:"
 msgid "State/Region"
 msgstr "Staat/Region"
 
-#: receipts/booking_receipt.html receipts/commission_statement.html
+#: receipts/booking_receipt.html receipts/builders_bonus.html
+#: receipts/commission_statement.html receipts/daily_member_activation.html
 #: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
 #: receipts/invoice.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
+#: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html receipts/receipt.html
@@ -13418,7 +14420,8 @@ msgstr "Staat/Region"
 msgid "Statement Date"
 msgstr "Rechnungsdatum"
 
-#: compensation/index.html refund_protocol/remove_weeklybonus_modal.html
+#: components/compensation/statements.vue old_compensation/index.html
+#: refund_protocol/remove_weeklybonus_modal.html
 msgid "Statements"
 msgstr "Rechnungen"
 
@@ -13439,8 +14442,10 @@ msgid "Stats"
 msgstr "Statistik"
 
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
-#: compensation/index.html invoices/invoice_statement.html
-#: negative_balances/index.html refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue invoices/invoice_statement.html
+#: negative_balances/index.html old_compensation/index.html
+#: refund_protocol/leadership_bonus_modal.html
 msgid "Status"
 msgstr "Status"
 
@@ -13498,41 +14503,6 @@ msgstr "Abonnementvertrag"
 #: Menu
 msgid "Subscriptions"
 msgstr "Abonnements"
-
-#: components/public/Faq.vue
-msgid ""
-"Success as an inCruises Partner can be measured in a variety of ways. To "
-"some people, success will be meeting and networking with like-minded people. "
-"For others, the ability to travel the world is their idea of success. And "
-"for some, the opportunity to earn some extra income will be their vision of "
-"success. inCruises has the tools and opportunity that allows our Partners to "
-"achieve their visions of success. Consistently using those tools and "
-"methods, coupled with a love of travel, talking to others about travel, and "
-"all of the amazing support that you receive as a Partner will give you the "
-"opportunity to achieve success. inCruises is NOT an opportunity where you "
-"make thousands or tens of thousands of dollars in income overnight. It's a "
-"viable business similar to other direct selling companies. It would be "
-"irresponsible to claim that someone could be successful with inCruises "
-"simply by enrolling as a Partner. No one can make such a claim about any "
-"business opportunity, and inCruises makes no such claim."
-msgstr ""
-"Der Erfolg als inCruises Partner kann auf verschiedene Weise gemessen "
-"werden. Für manche Menschen besteht der Erfolg darin, Gleichgesinnte zu "
-"treffen und sich mit ihnen zu vernetzen. Für andere ist die Möglichkeit, die "
-"Welt zu bereisen, ihre Vorstellung von Erfolg. Und für einige ist die "
-"Möglichkeit, ein zusätzliches Einkommen zu verdienen, ihre Vision von "
-"Erfolg. inCruises hat die Werkzeuge und Möglichkeiten, die es unseren "
-"Partnern ermöglichen, ihre Visionen von Erfolg zu erreichen. Die konsequente "
-"Anwendung dieser Werkzeuge und Methoden, gepaart mit der Liebe zum Reisen, "
-"dem Gespräch mit anderen über das Reisen und all der erstaunlichen "
-"Unterstützung, die Sie als Partner erhalten, wird Ihnen die Möglichkeit "
-"geben, Erfolg zu haben. inCruises ist KEINE Möglichkeit, bei der Sie über "
-"Nacht Tausende oder Zehntausende von Dollar verdienen. Es ist ein "
-"lebensfähiges Geschäft, ähnlich wie bei anderen Direktvertriebsunternehmen. "
-"Es wäre unverantwortlich zu behaupten, dass jemand mit inCruises erfolgreich "
-"sein kann, nur weil er sich als Partner einschreibt. Niemand kann eine "
-"solche Behauptung über eine Geschäftsmöglichkeit aufstellen, und inCruises "
-"erhebt keinen solchen Anspruch."
 
 #: reports/index.html
 msgid "Successful Growth"
@@ -13676,6 +14646,30 @@ msgstr "Team (Alle Daten)"
 msgid "Team (Month to Date)"
 msgstr "Team (Monat bis Datum)"
 
+#: pages/compensation.vue components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "Remove Leadership Bonus"
+msgid "Team Leadership Bonus"
+msgstr "Leadership Boni entfernen"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid "Leadership Bonus Statement"
+msgid "Team Leadership Bonus (for team sales volume)"
+msgstr "Leadership Bonus-Kontoauszug"
+
+#: components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "Leadership Bonus Statement"
+msgid "Team Leadership Bonus Last Month"
+msgstr "Leadership Bonus-Kontoauszug"
+
+#: components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "Senior Team Leader This Month"
+msgid "Team Leadership Bonus This Month"
+msgstr "Senior Team Leader diesen Monat"
+
 #: pages/info_center.vue
 msgid "Team Partners"
 msgstr "Alle Partner"
@@ -13773,14 +14767,6 @@ msgstr ""
 "Reward Points (2 für 1). Buchen Sie Reisen mit Ihren Reward Points und "
 "sparen Sie."
 
-#: components/public/Faq.vue
-msgid ""
-"The $195 USD activation fee is refundable only during your first 14 days "
-"after upgrading."
-msgstr ""
-"Die Aktivierungsgebühr in Höhe von $195 USD wird nur in den ersten 14 Tagen "
-"nach dem Upgrade erstattet."
-
 #: pages/public/reviews.vue
 msgid "The Benefits"
 msgstr "Die Vorteile"
@@ -13871,6 +14857,18 @@ msgstr "Die folgende Rufnummer ist ungültig oder hat keine Landesvorwahl: "
 msgid "The Incaricato also warrants and declares to the Company that he/she:"
 msgstr "Der Vertragspartner garantiert und erklärt dem Unternehmen außerdem:"
 
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "The $195 USD activation fee is refundable only during your first 14 days "
+#| "after upgrading."
+msgid ""
+"The initial $95 USD Activation payment is fully refundable during your first "
+"14 days as a Partner. After that, no refunds will be issued."
+msgstr ""
+"Die Aktivierungsgebühr in Höhe von $195 USD wird nur in den ersten 14 Tagen "
+"nach dem Upgrade erstattet."
+
 #: pages/price_match_guarantee.vue
 msgid "The inStays Price Match Guarantee terms are:"
 msgstr "Die Bedingungen der inStays-Preisanpassungsgarantie lauten:"
@@ -13892,6 +14890,7 @@ msgstr ""
 "\t    <strong>$50.00</strong>"
 
 #: pages/payout.vue
+#: components/payout/brightwell/brightwell-transfer-details.vue
 msgid "The minimum withdrawal you can make is $50.00."
 msgstr "Die minimale Auszahlung, die Sie vornehmen können, beträgt $50.00."
 
@@ -14031,7 +15030,7 @@ msgstr ""
 "Der Begriff \"PARTNER\" bezeichnet die oben genannte natürliche oder "
 "juristische Person, die dieses Addendum mit inGroup International abschließt."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid ""
 "The timer above indicates how much time you have left to unlock your Fast "
 "Start Awards."
@@ -14039,13 +15038,19 @@ msgstr ""
 "Der Timer oben zeigt an, wie viel Zeit Sie noch für die Freischaltung Ihres "
 "Fast Start Preises haben."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid ""
 "The timer above indicates how much time you have left to unlock your Quick "
 "Start Awards."
 msgstr ""
 "Der Timer oben zeigt an, wie viel Zeit Sie noch für die Freischaltung Ihres "
 "Quick Start Awards haben."
+
+#: components/payout/brightwell/brightwell-transfer-details.vue
+msgid ""
+"The total cost which includes the transfer fee is greater than your wallet "
+"balance. Please adjust the send amount to account for all fees."
+msgstr ""
 
 #: pages/hotels_details.vue
 msgid "The use of the facility will issue a voucher."
@@ -14057,18 +15062,9 @@ msgstr "DIE WELT"
 
 #: components/public/Faq.vue
 msgid ""
-"There are many ways to earn income as a Partner with inCruises. There are "
-"Instant Pay Bonuses, Producer Bonuses, Recurring  Compensation, Free "
-"Memberships, and bonuses based on the income and sales volume of your entire "
-"downline organization, as well as several other incentives. Please review "
-"our Compensation Program for more details."
+"There are 5 Partner income sources (Please review our INcome and INcentive "
+"Overview document for details):"
 msgstr ""
-"Es gibt viele Möglichkeiten, um Einkommen als Partner mit inCruises zu "
-"verdienen. Es gibt Instant-Pay- Boni,  Producer -Boni, wiederkehrendes "
-"Einkommen, freie Mitgliedschaften und Boni, die auf Basis der Einkommen und "
-"der Umsätze Ihrer gesamten Downline basieren sowie mehrere andere "
-"Incentives. Für weitere Details, schauen Sie bitte in unserem "
-"Vergütungsprogramm nach."
 
 #: pages/hotels.vue
 msgid "There are no results for this search."
@@ -14183,29 +15179,6 @@ msgstr "Es gab {{resultAmount}}} Ergebnisse, die auf Ihre Auswahl basieren."
 msgid "There were no results based on your selections."
 msgstr "Es wurden keine Ergebnisse aufgrund Ihrer Auswahl angezeigt."
 
-#: components/public/Faq.vue
-msgid ""
-"There's an activation fee of $195 USD and an annual renewal fee of $95 USD "
-"($195 USD for Partners in Italy) each year thereafter. Partners gain access "
-"to online recorded training and weekly live training, their very own "
-"corporate email (theirname@incruises.com), personalized Referral Links and "
-"replicated pages, marketing materials and tools, marketing videos, Android "
-"and iPhone apps, and downloadable business cards. We estimate the value of "
-"our training program to be more than $50.00 USD per month. You're receiving "
-"a lot of value for an activation fee of $195 USD during your first year and "
-"$95 USD ($195 USD for Partners in Italy) annually, thereafter."
-msgstr ""
-"Es gibt eine Aktivierungsgebühr i.H.v. $ 195 USD und danach eine jährliche "
-"Verlängerungsgebühr i.H.v. $ 95 USD pro Jahr. Partner erhalten Zugang zu "
-"Online-Schulungen, wöchentliche Live-Trainings, ihre eigene Firmen-E-Mail "
-"(theirname@incruises.com), personalisierte Empfehlungs-Links, "
-"vervielfältigte Seiten, Marketing-Materialien und Tools, Marketing-Videos, "
-"Android- und iPhone-Apps und herunterladbare Visitenkarten. Wir schätzen den "
-"Wert unseres Training Programms auf mehr als $ 50,00 USD pro Monat. Für eine "
-"Aktivierungsgebühr i.H.v. $ 195 USD während Ihres ersten Jahres bekommen Sie "
-"eine Menge geboten und zahlen danach nur $ 95 USD pro Jahr ($195 USD für "
-"Partner in Italien) ."
-
 #: agreements/leadership_agreement.html
 msgid ""
 "Therefore I do not book cruises for any Member and or Partner. When asked "
@@ -14249,13 +15222,13 @@ msgstr ""
 "Dies sind alle registrierten Mitglieder (Webregistrierungen, Mitglieder und "
 "Partner), die Sie angemeldet haben."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "These are how many Members you need to unlock your Fast Start Award."
 msgstr ""
 "Hier ist die Anzahl Ihrer Mitglieder, die Sie benötigen, um Ihren Fast Start "
 "Preis freizuschalten."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "These are how many Members you need to unlock your Quick Start Award."
 msgstr ""
 "Hier ist die Anzahl Ihrer Mitglieder, die Sie benötigen, um Ihren Quick "
@@ -14325,9 +15298,9 @@ msgstr ""
 msgid "These are the Team Members with a pending membership invoice."
 msgstr "Dies sind die Teammitglieder mit einer ausstehenden Mitgliedsrechnung."
 
-#: compensation/index.html
-msgid "These are your direct downlines with available rewards"
-msgstr "Dies sind Ihre direkten Downlines mit verfügbaren Gutschriften"
+#: components/payout/brightwell/brightwell-review.vue
+msgid "They receive"
+msgstr ""
 
 #: agreements/national_director_agreement.html
 msgid ""
@@ -14582,7 +15555,13 @@ msgid "This membership code can be found in their Settings - Profile page."
 msgstr ""
 "Diesen Mitgliedschafts-Code finden Sie auf der Seite Einstellungen - Profil."
 
-#: compensation/index.html
+#: components/compensation/leadership_bonus.vue
+#, fuzzy
+#| msgid "Show This Month"
+msgid "This Month"
+msgstr "Diesen Monat zeigen"
+
+#: old_compensation/index.html
 msgid "This Month's Compensation"
 msgstr "Vergütung von diesem Monat"
 
@@ -14626,6 +15605,12 @@ msgstr ""
 "Dieser Beitrag ist privat oder es gibt keine Beiträge in der aktuellen "
 "Sprache. Bitte wählen Sie eine andere Sprache."
 
+#: pages/kyc_verification.vue
+msgid ""
+"This process is designed to verify your identity and protect you from "
+"identity theft."
+msgstr ""
+
 #: pages/public/disclosure.vue
 msgid "This represents"
 msgstr "Dies entspricht"
@@ -14646,7 +15631,9 @@ msgstr "Dieser Benutzer hat derzeit eine aktive Fahrt."
 msgid "This user currently inactive."
 msgstr "Dieser Benutzer ist derzeit inaktiv."
 
-#: pages/team_rankings.vue compensation/index.html track_results/index.html
+#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue old_compensation/index.html
+#: track_results/index.html
 msgid "This user does not have an active membership"
 msgstr "Dieser Benutzer hat keine aktive Mitgliedschaft"
 
@@ -14654,7 +15641,9 @@ msgstr "Dieser Benutzer hat keine aktive Mitgliedschaft"
 msgid "This user has a pending invoice."
 msgstr "Dieser Benutzer hat eine ausstehende Rechnung."
 
-#: pages/team_rankings.vue compensation/index.html track_results/index.html
+#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue old_compensation/index.html
+#: track_results/index.html
 msgid "This user has an active member membership"
 msgstr "Dieser Benutzer hat eine aktive Mitgliedschaft"
 
@@ -14662,8 +15651,10 @@ msgstr "Dieser Benutzer hat eine aktive Mitgliedschaft"
 msgid "This username has already been taken."
 msgstr "Dieser Benutzername ist bereits vergeben."
 
-#: compensation/index.html
-msgid "This Week's Points"
+#: components/compensation/weekly_bonus.vue
+#, fuzzy
+#| msgid "This Week's Points"
+msgid "This Week"
 msgstr "Die Punkte dieser Woche"
 
 #: pages/growth_calculator.vue
@@ -14673,6 +15664,42 @@ msgstr "Dies wird ein paar Sekunden dauern. Bitte haben Sie etwas Geduld."
 #: pages/public/values.vue
 msgid "THOSE WHO LIVE TO GIVE"
 msgstr "JENE DIE LEBEN UM ZU GEBEN"
+
+#: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Only two percent of the world population has vacationed on a cruise. Only "
+#| "20 percent of U.S. adults have ever enjoyed a relaxing cruise vacation. "
+#| "There is an enormous untapped market. First-time cruisers, which are the "
+#| "focus of inCruises, are important to the growth of the industry. During "
+#| "2019, the cruise industry carried 29,000,000 passengers on a global basis "
+#| "(up 11.2 million from 2009). By 2025, this number is projected to "
+#| "increase to 38,000,000 passengers on a global basis. Learn more about our "
+#| "Membership, the benefits, and about our unique offer on our <a href='/"
+#| "membership' target='_blank'>Membership page</a>."
+msgid ""
+"Those who want to travel better, further and more often. Those who want to "
+"earn income or even build a business doing something they love. Just think! "
+"Only 2 percent of the world population has vacationed on a cruise. Only 20 "
+"percent of U.S. adults have ever enjoyed a relaxing cruise vacation. There "
+"is an enormous, untapped market just for those who want to go on a cruise. "
+"First-time cruisers, which are the focus of inCruises, are important to the "
+"industry’s growth. In 2019, the cruise industry carried 29,000,000 "
+"passengers worldwide (up 11.2 million from 2009). By 2025, this number is "
+"projected to increase to 38,000,000 passengers globally. Learn more about "
+"our Membership, the benefits, and our unique offer on our <a href='/"
+"membership' target='_blank'>Membership page</a>."
+msgstr ""
+"Lediglich zwei Prozent der Weltbevölkerung hat auf einer Kreuzfahrt Urlaub "
+"gemacht. Nur 20 Prozent der U.S.- amerikanischen Erwachsenen haben bisher "
+"jemals einen erholsamen Kreuzfahrt-Urlaub genossen. Es gibt einen enormen "
+"unerschlossenen Markt. Erstmalige Kreuzfahrt-Urlauber, die InCruises als "
+"Zielgruppe erkennt, sind für das Wachstum der Branche wichtig. Im Jahr 2019 "
+"hat die Kreuzfahrtindustrie weltweit 29,000,000 Passagiere befördert  (plus "
+"11,2 Millionen gegenüber 2009). Bis 2025 soll diese Zahl auf 38.000.000 "
+"Passagiere weltweit ansteigen. Erfahren Sie mehr über unsere Mitgliedschaft, "
+"die Vorteile und über unser einzigartiges Angebot auf unserer <a href='/"
+"membership' target='_blank'>Membership page</a>."
 
 #: receipts/booking_receipt.html
 msgid "Ticket Contract"
@@ -14699,7 +15726,9 @@ msgid "Time Range:"
 msgstr "Zeitrahmen:"
 
 #: components/welcome/countdown-tiles.vue
-msgid "Time Remaining Before Membership Expires"
+#, fuzzy
+#| msgid "Time Remaining Before Membership Expires"
+msgid "Time Remaining Before Membership Invoice"
 msgstr "Verbleibende Zeit bis zum Ablauf der Mitgliedschaft"
 
 #: components/welcome/countdown-tiles.vue
@@ -14736,7 +15765,8 @@ msgstr "Die Uhrzeiten werden in Ihrer Ortszeit angezeigt."
 
 #: pages/admin_user.vue pages/banner_tracking.vue pages/builders_base.vue
 #: pages/global_summit_dr.vue pages/global_summit_tracking.vue
-#: new_ranks/index.html reports/index.html
+#: components/compensation/builders_bonus.vue new_ranks/index.html
+#: reports/index.html
 msgid "Title"
 msgstr "Position"
 
@@ -14753,7 +15783,9 @@ msgstr "Positionen"
 msgid "TLS (or SSL if not available)"
 msgstr "TLS (oder SSL wenn nicht verfügbar)"
 
-#: pages/book.vue pages/global_summit_dr.vue compensation/index.html
+#: pages/book.vue pages/global_summit_dr.vue
+#: components/compensation/compensation_month.vue
+#: components/payout/brightwell/brightwell-confirmation.vue
 msgid "to"
 msgstr "zu"
 
@@ -14850,15 +15882,6 @@ msgstr ""
 "Um ein neues Passwort zu generieren, müssen Sie uns mitteilen, welchen E-"
 "Mail-Client Sie einrichten möchten und dann  klicken Sie auf \"Generieren\"."
 
-#: pages/payout.vue
-msgid ""
-"To get started you will need to get approved by i-Payout. Once approved, you "
-"will be able to access Payoneer, HyperWallet, and PayQuicker."
-msgstr ""
-"Um loszulegen, müssen Sie von i-Payout zugelassen werden. Sobald Sie "
-"zugelassen sind, können Sie auf Payoneer, HyperWallet und PayQuicker "
-"zugreifen."
-
 #: error/412.html
 msgid ""
 "To improve security, stability, privacy and and have overall a better "
@@ -14870,6 +15893,16 @@ msgstr ""
 "insgesamt eine bessere Umsetzung mit unserer Anwendung, sollten Sie <a href="
 "\"{{latestBrowser.link}}\">{{latestBrowser.name}} </a> oder einen der unten "
 "aufgeführten Browser herunterladen."
+
+#: components/compensation/account_status.vue
+msgid ""
+"To inspire you to reach Marketing Director as quickly as possible, we have "
+"the Fast Start INcentive, which instead of the regular monthly $300.00 MD "
+"Bonus, pays you a $500.00 USD one-time bonus when you achieve Marketing "
+"Director by the end of your first full calendar month.\n"
+"\t\t\t\t\tMeaning the month after you Activate as a Partner. This $500.00 "
+"bonus is paid on top of all other available bonuses."
+msgstr ""
 
 #: pages/public/contact.vue
 msgid "To open a support ticket you must be a registered user of our site."
@@ -14893,10 +15926,6 @@ msgstr "Um fortzufahren, bestätigen Sie bitte Ihr Geburtsdatum:"
 #: pages/price_match_guarantee.vue
 msgid "To request a credit, visit your Support page ("
 msgstr "Um eine Gutschrift zu beantragen, besuchen Sie Ihre Support-Seite ("
-
-#: pages/public/partnership.vue
-msgid "TO TRAVEL"
-msgstr "ZU REISEN"
 
 #: pages/invoices.vue
 msgid ""
@@ -14958,11 +15987,17 @@ msgstr "Top 25 Beitragszahler"
 msgid "Top 25 Contributors as of July 1st, 2022"
 msgstr "Top 25 Beitragszahler, ab dem 1. Juli 2022"
 
+#: components/compensation/top_producers.vue
+#, fuzzy
+#| msgid "New Production This Month"
+msgid "Top Producers This Month"
+msgstr "Neuer Umsatz in diesem Monat"
+
 #: pages/hotels.vue
 msgid "total"
 msgstr "gesamt"
 
-#: pages/hotels_booking.vue compensation/index.html
+#: pages/hotels_booking.vue old_compensation/index.html
 #: receipts/italian_commission.html receipts/italian_receipt.html
 #: track_growth/index.html upgrade/index.html
 msgid "Total"
@@ -14976,6 +16011,13 @@ msgstr "Insgesamt (einschließlich Mehrwertsteuer):"
 msgid "Total Comp."
 msgstr "Gesamtumsatz"
 
+#: components/payout/brightwell/brightwell-review.vue
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid "Total Comp."
+msgid "Total cost"
+msgstr "Gesamtumsatz"
+
 #: pages/booking.vue pages/my_cruise_savings.vue
 msgid "Total Cruise Price"
 msgstr "Gesamter Kreuzfahrt-Preis"
@@ -14987,10 +16029,6 @@ msgstr "Monatlich fälliger Gesamtbetrag:"
 #: pages/upgrade.vue
 msgid "Total Due Now:"
 msgstr "Gesamtbetrag jetzt fällig:"
-
-#: compensation/index.html
-msgid "Total Earned"
-msgstr "Insgesamt verdient"
 
 #: pages/leadership_academy.vue
 msgid "Total Exam corrects"
@@ -15016,7 +16054,8 @@ msgstr "Insgesamt gezahlte Mitgliedsbeiträge"
 msgid "Total Membership Savings Realized"
 msgstr "Insgesamt erzielte Mitglieds-Ersparnisse"
 
-#: compensation/index.html receipts/team_residual_bonus_statement.html
+#: components/compensation/residual_bonus.vue
+#: receipts/team_residual_bonus_statement.html
 msgid "Total Number of Members"
 msgstr "Anzahl der  Mitglieder"
 
@@ -15061,10 +16100,12 @@ msgid "Total Team Members"
 msgstr "Team Mitglieder insgesamt"
 
 #: pages/booking.vue invoices/invoice_statement.html
-#: receipts/commission_statement.html receipts/instant_bonus_statement.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
 #: receipts/invoice.html receipts/italian_receipt.html
 #: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
+#: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html receipts/receipt.html
@@ -15074,6 +16115,14 @@ msgstr "Team Mitglieder insgesamt"
 #: receipts/weekly_bonus_statement.html track_results/index.html
 msgid "Total:"
 msgstr "Insgesamt:"
+
+#: components/compensation/member_activations.vue
+msgid "TOTAL:"
+msgstr ""
+
+#: components/compensation/builders_bonus.vue
+msgid "TOTALS:"
+msgstr ""
 
 #: Menu
 msgid "Track Growth"
@@ -15107,12 +16156,43 @@ msgstr ""
 msgid "Track your world-wide reach below!"
 msgstr "Verfolgen Sie Ihre unten stehende weltweite Struktur!"
 
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "Transfer Funds"
+msgid "Tranfer fee"
+msgstr "Mittel überweisen"
+
+#: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Transaction details"
+msgstr "Einladungsdetails"
+
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid "More Details"
+msgid "Transfer Details"
+msgstr "Mehr Details"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid "Transfer Funds"
+msgid "Transfer failed"
+msgstr "Mittel überweisen"
+
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid "Transfer Funds"
+msgid "Transfer fee"
+msgstr "Mittel überweisen"
+
 #: components/payout/epayments-withdraw.vue
 #: components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
 #: components/payout/payoneer-withdraw.vue
 #: components/payout/payquicker-ita-withdraw.vue
 #: components/payout/payquicker-withdraw.vue
+#: components/payout/brightwell/brightwell-withdraw.vue
 msgid "Transfer Funds"
 msgstr "Mittel überweisen"
 
@@ -15151,6 +16231,12 @@ msgstr ""
 "haben, wird eines erstellt, sobald Sie Geld überweisen und Sie erhalten eine "
 "E-Mail mit weiteren Anweisungen."
 
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid "Transfer Funds"
+msgid "Transfer submitted"
+msgstr "Mittel überweisen"
+
 #: components/payout/epayments-withdraw.vue
 msgid "Transfer To ePayments Account"
 msgstr "Zum ePayments Account überweisen"
@@ -15172,13 +16258,17 @@ msgstr "Zum Payoneer Account überweisen"
 msgid "Transfer To Payquicker Account"
 msgstr "Zum Payquicker Account überweisen"
 
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-review.vue
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid "Transfer Funds"
+msgid "Transfer type"
+msgstr "Mittel überweisen"
+
 #: pages/public/values.vue
 msgid "TRANSPARENT, AUTHENTIC, AND HONEST PEOPLE"
 msgstr "TRANSPARENTE, AUTHENTISCHE UND EHRLICHE MENSCHEN"
-
-#: pages/public/partnership.vue
-msgid "TRAVEL"
-msgstr "REISE"
 
 #: receipts/travel_challenge_statement.html
 msgid "Travel Challenge Bonus Statement"
@@ -15212,6 +16302,10 @@ msgstr ""
 "Sie bitte Ihre Zahlungsmethode hinzu oder ersetzen Sie sie, und sie wird "
 "automatisch TMT garantiert."
 
+#: pages/kyc_verification.vue
+msgid "Try again"
+msgstr ""
+
 #: hidden/hidden.html
 msgid "Turn off demo mode"
 msgstr "Demo-Modus deaktivieren"
@@ -15236,8 +16330,8 @@ msgstr "Summe der letzten zwei Monate"
 msgid "Two Weeks Prior Contest"
 msgstr "Zwei Wochen vor dem Wettbewerb"
 
-#: pages/admin_user.vue pages/receipts.vue compensation/index.html
-#: negative_balances/index.html receipts/index.html reports/index.html
+#: pages/admin_user.vue pages/receipts.vue negative_balances/index.html
+#: old_compensation/index.html receipts/index.html reports/index.html
 #: track_results/index.html
 msgid "Type"
 msgstr "Typ"
@@ -15380,9 +16474,13 @@ msgid "Upload Photo"
 msgstr "Foto hochladen"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Upon the death of a Partner that has achieved the rank of Marketing "
+#| "Director or higher, his or her business may be passed to his or her heirs."
 msgid ""
-"Upon the death of a Partner that has achieved the rank of Marketing Director "
-"or higher, his or her business may be passed to his or her heirs."
+"Upon the death of a Partner with Marketing Director or higher rank, their "
+"business may be passed to their heirs."
 msgstr ""
 "Nach dem Tod eines Partners, der die Position eines Marketing Directors oder "
 "höher erreicht hat, kann sein Geschäft an seine Erben weitergegeben werden."
@@ -15491,6 +16589,12 @@ msgstr ""
 "Bestätigungs-E-Mail gesendet, bitte überprüfen Sie Ihren Posteingang und "
 "folgen Sie dem angegebenen Link."
 
+#: pages/kyc_verification.vue
+#, fuzzy
+#| msgid "Send Verification Email"
+msgid "Verification Failure"
+msgstr "Bestätigungs-Email senden"
+
 #: pages/settings.vue
 msgid "Verified"
 msgstr "Verifiziert"
@@ -15510,6 +16614,12 @@ msgstr "Bestätigen Sie Ihre Mobiltelefonnummer"
 #: pages/settings.vue
 msgid "Verify your Phone Number"
 msgstr "Verifizieren Sie Ihre Telefonnummer"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid "Cash/Bank Transfer"
+msgid "via bank transfer."
+msgstr "Bargeld/Banküberweisung"
 
 #: resources/index.html
 msgid "Video, Images, and Other Links"
@@ -15544,7 +16654,8 @@ msgstr "Geburtstage anzeigen"
 msgid "View Certificate"
 msgstr "Zertifikat anzeigen"
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
+#: components/compensation/active_partner_modal.vue old_compensation/index.html
 msgid "View Compensation Plan"
 msgstr "Vergütungsplan anzeigen"
 
@@ -15573,7 +16684,7 @@ msgstr "Spender anzeigen"
 msgid "View Fares"
 msgstr "Tarife anzeigen"
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "View Fast Start Guide"
 msgstr "Anzeigen des Fast Start Leitfadens"
 
@@ -15589,7 +16700,7 @@ msgstr "Gästeliste anzeigen"
 msgid "View Hotel Details"
 msgstr "Hoteldetails anzeigen"
 
-#: pages/global_convention.vue
+#: pages/global_convention.vue components/compensation/account_status.vue
 msgid "View Info"
 msgstr "Infos anzeigen"
 
@@ -15636,7 +16747,7 @@ msgstr "ausstehende Downline-Boni anzeigen, die Sie genehmigen können."
 msgid "View Pending Leads"
 msgstr "Ausstehende Leads anzeigen"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "View Previous Compensation"
 msgstr "Vorherigen Vergütungsplan anzeigen"
 
@@ -15703,7 +16814,8 @@ msgstr "Ansichten"
 msgid "VIP Data"
 msgstr "VIP Daten"
 
-#: pages/builders_base.vue
+#: pages/builders_base.vue components/compensation/builders_bonus.vue
+#: receipts/builders_bonus.html
 msgid "Volume"
 msgstr "Volumen"
 
@@ -15711,8 +16823,8 @@ msgstr "Volumen"
 msgid "Wallet"
 msgstr "Wallet-Konto"
 
-#: components/payout/wallet-balance.vue pay_bonus/index.html
-#: negative_balances/index.html
+#: components/payout/wallet-balance.vue negative_balances/index.html
+#: pay_bonus/index.html
 msgid "Wallet Balance"
 msgstr "Wallet-Konto Guthaben"
 
@@ -15842,24 +16954,22 @@ msgstr ""
 msgid "We believe in you!, Together, we have a bright future!"
 msgstr "Wir glauben an Sie, denn gemeinsam haben wir eine große Zukunft!"
 
-#: components/public/Faq.vue
-msgid ""
-"We believe you can! By launching your business and successfully referring "
-"and enrolling family and friends, your initial activation fee can be "
-"recovered – plus some additional earnings as well. There are no guarantees "
-"of this and that's entirely up to your efforts and ability to enroll others."
-msgstr ""
-"Wir glauben an Sie! Wenn Sie Ihr Business starten, es erfolgreich "
-"weiterempfehlen, Familie und Freunde registrieren kann Ihre ursprüngliche "
-"Aktivierungs-Gebühr gecovert werden – plus Sie erhalten zusätzliche "
-"Vergütungen. Es gibt jedoch keine Garantie dafür und ist vollständig von "
-"Ihren Bemühungen und Ihren Fähigkeit abhängig, andere einzuschreiben."
-
 #: import/create.html
 msgid "We did not find any contacts to display, please try another account."
 msgstr ""
 "Wir haben keine Kontakte gefunden. Bitte versuchen Sie es mit einem anderen "
 "Konto."
+
+#: components/public/Faq.vue
+msgid ""
+"We encourage our Partners to promote the Club Membership in a variety of "
+"ways and believe personal contact and interaction should always be a part of "
+"any of your efforts. That said, inCruises is fully digital marketing ready.  "
+"Many Partners effectively supplement their marketing efforts using Social "
+"Media and digital marketing tools to connect with people online. Plus, "
+"inCruises is mobile-ready and has its own app so Partners can manage their "
+"business from their phones."
+msgstr ""
 
 #: pages/public/causes.vue
 msgid ""
@@ -15909,8 +17019,13 @@ msgid "We hope to see you there!"
 msgstr "Wir hoffen, Sie dort zu sehen!"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "We like the way you're thinking and be sure to check with your "
+#| "accountant. Please understand that inCruises cannot give you personal tax "
+#| "advice."
 msgid ""
-"We like the way you're thinking and be sure to check with your accountant. "
+"We like the way you're thinking, and be sure to check with your accountant. "
 "Please understand that inCruises cannot give you personal tax advice."
 msgstr ""
 "Uns gefällt, wie Sie denken, und Sie sollten sich auf jeden Fall an Ihren "
@@ -16015,7 +17130,7 @@ msgstr "Wöchentliches / monatliches Wettbewerbs-Tracking"
 msgid "Weekly / Monthly Competition:"
 msgstr "Wöchentlicher / monatlicher Wettbewerb:"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Weekly Bonus"
 msgstr "Wöchentlicher Bonus"
 
@@ -16027,7 +17142,17 @@ msgstr "Wöchentliche Auflistung der Boni"
 msgid "Weekly Competition"
 msgstr "Wöchentlicher Wettbewerb"
 
-#: compensation/index.html refund_protocol/remove_weeklybonus_modal.html
+#: pages/compensation.vue components/compensation/weekly_bonus.vue
+#, fuzzy
+#| msgid "Weekly Bonus"
+msgid "Weekly Matching Bonus"
+msgstr "Wöchentlicher Bonus"
+
+#: components/public/Faq.vue
+msgid "Weekly Matching Bonuses (on your direct Partners Activations)"
+msgstr ""
+
+#: refund_protocol/remove_weeklybonus_modal.html
 msgid "Weekly Points"
 msgstr "Wöchentliche Punkte"
 
@@ -16118,7 +17243,10 @@ msgstr ""
 "Was passiert, wenn ich die Zahlung meiner Clubmitgliedschaft einstelle?"
 
 #: components/public/Faq.vue
-msgid "What if I cancel or drop out from being a Partner? Can I get a refund?"
+#, fuzzy
+#| msgid ""
+#| "What if I cancel or drop out from being a Partner? Can I get a refund?"
+msgid "What if I cancel or drop out from being a Partner, can I get a refund?"
 msgstr ""
 "Was passiert, wenn ich als Partner kündige oder ausfalle? Kann ich die "
 "Kosten erstattet bekommen?"
@@ -16421,7 +17549,7 @@ msgstr "Ja, ich lebe in Puerto Rico"
 msgid "Yes, Proceed to Change the Email"
 msgstr "Ja, mit der Änderung der E-Mail fortfahren"
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "Yes, this amount is correct"
 msgstr "Ja, dieser Betrag ist korrekt"
 
@@ -16456,12 +17584,18 @@ msgstr ""
 "<a href='/partnership' target='_blank'>Partnerschaftsseite</a>"
 
 #: components/public/Faq.vue
+#, fuzzy
+#| msgid ""
+#| "Yes. We make a clear separation of the two roles. You cannot earn "
+#| "commissions or incentives for referring others unless you are a Partner. "
+#| "For example, in order to get your own Membership waived, a Member must be "
+#| "a Partner and refer 5 active paying Members to have their own Membership "
+#| "dues waived."
 msgid ""
-"Yes. We make a clear separation of the two roles. You cannot earn "
-"commissions or incentives for referring others unless you are a Partner. For "
-"example, in order to get your own Membership waived, a Member must be a "
-"Partner and refer 5 active paying Members to have their own Membership dues "
-"waived."
+"Yes. You must be an Active Partner to refer new Club Members and earn "
+"commissions or incentives like Membership Free, etc. For example, to waive "
+"your Membership payment, a Member must also be a Partner and refer at least "
+"5 direct Members who keep their Membership payments up to date every month."
 msgstr ""
 "Genau. Wir haben eine klare Trennung zwischen beiden Positionen. Sie können "
 "keine Vergütungen oder Incentives für das Einschreiben anderer verdienen, es "
@@ -16528,6 +17662,7 @@ msgstr ""
 "gesichert."
 
 #: pages/payout.vue
+#: components/payout/brightwell/brightwell-transfer-details.vue
 msgid ""
 "You are trying to withdraw more money than you currently have in your "
 "balance."
@@ -16548,15 +17683,24 @@ msgstr ""
 "Sie können Reward Points für jede Buchung verwenden, auch für Buchungen mit "
 "mehreren Passagieren."
 
-#: compensation/index.html
+#: old_compensation/index.html
+#, fuzzy
+#| msgid ""
+#| "You can earn one (whichever is higher) of these bonuses during each "
+#| "Natural Calendar Month. A Natural Calendar month ends the last day of "
+#| "each month and the bonus is calculated on the following day. In addition "
+#| "to the LEADERSHIP BONUS, leaders that produce $550,000 in qualified team "
+#| "production subject to the maximum production per leg, earn 5% of the "
+#| "total new production done in their organization during that month. We "
+#| "call this your Global New Production Bonus."
 msgid ""
 "You can earn one (whichever is higher) of these bonuses during each Natural "
 "Calendar Month. A Natural Calendar month ends the last day of each month and "
 "the bonus is calculated on the following day. In addition to the LEADERSHIP "
-"BONUS, leaders that produce $550,000 in qualified team production subject to "
-"the maximum production per leg, earn 5% of the total new production done in "
-"their organization during that month. We call this your Global New "
-"Production Bonus."
+"BONUS, leaders that produce $550,000 in\n"
+"\t\t\t\t\t\t\tqualified team production subject to the maximum production "
+"per leg, earn 5% of the total new production done in their organization "
+"during that month. We call this your Global New Production Bonus."
 msgstr ""
 "Sie können in jedem Natürlichen Kalendermonat einen dieser Boni erhalten (je "
 "nachdem, welcher höher ist). Ein Natürlicher Kalendermonat endet jeweils am "
@@ -16680,6 +17824,13 @@ msgstr "Sie haben derzeit"
 msgid "You currently have a pending invoice."
 msgstr "Sie haben derzeit eine ausstehende Rechnung."
 
+#: components/compensation/account_status.vue
+#, fuzzy
+#| msgid "You don’t have any potential instant bonuses at this time."
+msgid ""
+"You currently have no potential downlines with fast start opportunities."
+msgstr "Im Moment haben Sie keine potenzielle Instant-Boni."
+
 #: components/booking/confirm-no-rp-used.vue
 msgid "You did not add any Reward Points to this Cruise Booking."
 msgstr "Sie haben für diese Kreuzfahrtbuchung keine Reward Points hinzugefügt."
@@ -16708,6 +17859,12 @@ msgstr "Sie haben keinen Zugriff auf diese Funktion."
 msgid "You do not have any pending invoices at this time."
 msgstr "Im Moment haben Sie keine ausstehenden Rechnungen."
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+#, fuzzy
+#| msgid "You do not have any pending invoices at this time."
+msgid "You do not have any saved recipient accounts."
+msgstr "Im Moment haben Sie keine ausstehenden Rechnungen."
+
 #: pages/cards.vue
 msgid ""
 "You don't have a display name! Set it up\n"
@@ -16727,10 +17884,6 @@ msgid ""
 msgstr ""
 "Sie haben keinen Displaynamen! Richten Sie ihn <a href=\"/settings\" target="
 "\"_blank\" translate=\"\">hier ein</a>."
-
-#: compensation/index.html
-msgid "You don’t have any potential instant bonuses at this time."
-msgstr "Im Moment haben Sie keine potenzielle Instant-Boni."
 
 #: components/public/Faq.vue
 msgid ""
@@ -16791,15 +17944,15 @@ msgstr ""
 "Sie haben eine ausstehende Rechnung. Bitte bezahlen Sie so schnell wie "
 "möglich."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "You have already requested your Fast Start Reward."
 msgstr "Sie haben bereits Ihre Fast Start-Prämie beantragt."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "You have already requested your Quick Start Reward."
 msgstr "Sie haben bereits Ihre Quick Start-Prämie beantragt."
 
-#: compensation/index.html
+#: old_compensation/index.html
 msgid "You have already requested your Weekly Bonus."
 msgstr "Sie haben Ihren wöchentlichen Bonus bereits angefordert."
 
@@ -16821,10 +17974,22 @@ msgstr ""
 "Zahlungsart kann es mehrere Minuten bis 24 Stunden dauern, bis wir über Ihre "
 "erfolgreiche Zahlung informiert werden."
 
-#: pages/growth_calculator.vue compensation/index.html
+#: pages/growth_calculator.vue old_compensation/index.html
 #: refund_protocol/leadership_bonus_modal.html
 msgid "You have earned a greater bonus."
 msgstr "Sie haben einen höheren Bonus verdient."
+
+#: components/compensation/member_activations.vue
+#, fuzzy
+#| msgid "You have no cruises on your watch list at this time!"
+msgid "You have no daily member activations at this time."
+msgstr "Sie haben zur Zeit keine Kreuzfahrten auf Ihrer Watchlist!"
+
+#: components/compensation/member_activations.vue
+#, fuzzy
+#| msgid "You have no cruises on your watch list at this time!"
+msgid "You have no monthly member activations at this time."
+msgstr "Sie haben zur Zeit keine Kreuzfahrten auf Ihrer Watchlist!"
 
 #: pay_bonus/index.html
 msgid "You have no payments to approve"
@@ -16853,7 +18018,7 @@ msgstr ""
 "möchten, bitten Ihren Sponsor selbst upzugraden, sodass Sie dies auch machen "
 "können."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid ""
 "You have requested your Quick Start Reward. Please check your email for more "
 "information."
@@ -16861,7 +18026,7 @@ msgstr ""
 "Sie haben Ihre Quick Start-Prämie beantragt. Bitte überprüfen Sie Ihre E-"
 "Mail für weitere Informationen."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid ""
 "You have requested your Travel Reward. Please check your email for more "
 "information."
@@ -16885,6 +18050,12 @@ msgid ""
 msgstr ""
 "Sie haben Partnerdaten ausgewählt, aber die Felder für das Aktivierungsdatum "
 "der Mitgliedschaft sind aktiv, bitte entfernen Sie sie, bevor Sie fortfahren."
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid "Your checkout was successful!"
+msgid "You have successfully sent"
+msgstr "Ihr Checkout war erfolgreich!"
 
 #: pages/welcome.vue
 msgid "You haven't setup your eWallet:"
@@ -16965,7 +18136,7 @@ msgstr "Sie müssen Ihre neue Telefonnummer verifizieren."
 msgid "You need 5 accepted invitations"
 msgstr "Sie benötigen 5 akzeptierte Einladungen"
 
-#: compensation/index.html
+#: components/compensation/weekly_bonus.vue old_compensation/index.html
 msgid "You need a Direct Member to unlock this week."
 msgstr "Sie benötigen ein direktes Mitglied, um diese Woche freizuschalten."
 
@@ -16982,6 +18153,19 @@ msgstr ""
 #: pages/welcome.vue
 msgid "You need to donate more than $0."
 msgstr "Sie müssen mehr als $0 spenden."
+
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid "Your Receipts"
+msgid "You receive"
+msgstr "Ihre Einnahmen"
+
+#: components/payout/brightwell/brightwell-review.vue
+#: components/payout/brightwell/brightwell-transfer-details.vue
+#, fuzzy
+#| msgid "You have"
+msgid "You send"
+msgstr "Sie haben"
 
 #: pages/upgrade.vue pages/public/pricing.vue upgrade/index.html
 msgid ""
@@ -17068,9 +18252,23 @@ msgstr ""
 msgid "You've received a Producer Bonus from inCruises"
 msgstr "Sie haben einen Producer Bonus von inCruises erhalten"
 
-#: compensation/index.html
-msgid "Your Active Levels ({{active_levels}} levels)"
-msgstr "Ihre aktiven Ebenen ({{active_levels}} levels)"
+#: components/payout/brightwell/brightwell-withdraw.vue
+msgid ""
+"Your account will be eligible for InPays in the coming days. Please check "
+"back later."
+msgstr ""
+
+#: components/payout/brightwell/brightwell-recipient-account.vue
+#, fuzzy
+#| msgid "Upgrade Your Account"
+msgid "Your Accounts"
+msgstr "Upgraden Sie Ihr Konto"
+
+#: components/compensation/residual_bonus.vue
+#, fuzzy
+#| msgid "Direct Active Members"
+msgid "Your Active Levels"
+msgstr "Direkte aktive Mitglieder"
 
 #: pages/reward_points.vue
 msgid ""
@@ -17144,10 +18342,6 @@ msgstr "Ihr Eincheckdatum und Ihr Auscheckdatum müssen unterschiedlich sein"
 msgid "Your checkout was successful!"
 msgstr "Ihr Checkout war erfolgreich!"
 
-#: compensation/index.html
-msgid "Your Compensation Calendar Month"
-msgstr "Ihr Vergütungs-Kalender-Monat"
-
 #: pages/connect.vue
 msgid ""
 "Your Connect plan is scheduled to be cancelled at the end of your "
@@ -17202,16 +18396,20 @@ msgstr "Ihr Direkter"
 msgid "Your Direct Referral Links"
 msgstr "Ihre direkten Empfehlungs-Links lauten:"
 
+#: components/compensation/weekly_bonus.vue
+msgid "Your Directs Activations Last Week"
+msgstr ""
+
+#: components/compensation/weekly_bonus.vue
+msgid "Your Directs Activations This Week"
+msgstr ""
+
 #: components/public/Faq.vue
 msgid ""
-"Your earnings match your efforts, your passion and the size of your team and "
-"their efforts. You have the opportunity to grow your earnings as you grow "
-"your number of personal and team Membership sales."
+"Your earnings will depend entirely on your abilities and efforts and will "
+"match your results and the size of your team and their results. For more "
+"details on earnings, please see the INcome and INcentive Overview document."
 msgstr ""
-"Ihr Einkommen entspricht Ihren Anstrengungen, Ihrer Leidenschaft und der "
-"Größe Ihres Teams und deren Anstrengungen. Sie haben die Möglichkeit, Ihr "
-"Einkommen zu erhöhen, genauso wie Ihren eigenen Umsatz und den Umsatz Ihrer "
-"Team-Mitglieder."
 
 #: pages/account_setup.vue
 msgid ""
@@ -17263,7 +18461,7 @@ msgstr "Ihre Veranstaltung muss eine Adresse haben."
 msgid "Your Events"
 msgstr "Ihre Events"
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "Your Fast Start Reward has been requested and is awaiting approval."
 msgstr "Ihre Fast Start-Prämie wurde angefordert und wartet auf Genehmigung."
 
@@ -17282,6 +18480,19 @@ msgstr "Ihr Wachstum"
 #: components/checkout/ProcessorWallet.vue
 msgid "Your inCruises® Wallet balance is:"
 msgstr "Ihr inCruises Wallet Guthaben beträgt:"
+
+#: pages/kyc_success.vue
+msgid ""
+"Your information has been submitted successfully and verification is "
+"currently processing. You will receive a notification once the process has "
+"completed."
+msgstr ""
+
+#: pages/kyc_verification.vue
+msgid ""
+"Your information was not successfully verified. Verification failed for the "
+"following reason: {{ failureReason }}."
+msgstr ""
 
 #: pages/payout.vue
 msgid "Your iPayout account is pending approval."
@@ -17381,7 +18592,7 @@ msgstr ""
 "Präsentation abspielt, die ihnen alles über InCruises erklärt und eine "
 "Auswahl ermöglicht."
 
-#: compensation/index.html
+#: components/compensation/account_status.vue
 msgid "Your Quick Start Reward has been requested and is awaiting approval."
 msgstr "Ihre Quick Start-Prämie wurde angefordert und wartet auf Genehmigung."
 
@@ -17422,6 +18633,12 @@ msgstr "Ihre Sponsoren"
 #: subscriptions/index.html
 msgid "Your Subscriptions"
 msgstr "Ihre Abonnements"
+
+#: pages/compensation.vue components/compensation/team.vue
+#, fuzzy
+#| msgid "Your Name"
+msgid "Your Team"
+msgstr "Ihr Name"
 
 #: pages/price_match_guarantee.vue
 msgid ""
@@ -17528,10 +18745,6 @@ msgstr "Abgelaufene Partnerschaft"
 #: Membership Plans
 msgid "Active Member"
 msgstr "Aktive Mitglieder"
-
-#: Membership Plans
-msgid "Pending Member"
-msgstr "Ausstehendes Mitglied"
 
 #: Membership Plans
 msgid "Deleted Member"
@@ -25440,6 +26653,277 @@ msgstr ""
 "Sie benötigen 11 Punkte um zu gewinnen. Die TOP 5 Leader mit den meisten "
 "Punkten gewinnen ein GoPro Ticket"
 
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "{{displayInstantDate}}"
+#~ msgstr "{{displayInstantDate}}"
+
+#~ msgid ""
+#~ "As soon as you have Members who have paid their second membership month, "
+#~ "you will receive your Residual Bonus."
+#~ msgstr ""
+#~ "Sobald Ihre Mitglieder die zweite monatliche Mitgliedsgebühr bezahlt "
+#~ "haben, erhalten Sie Ihre Residual-Boni."
+
+#~ msgid "Bonus Locked (Need {{(5 - thisWeek.weekly_points)}} more points)"
+#~ msgstr ""
+#~ "Bonus gesperrt (Sie benötigen {{5 - thisWeek.weekly_points}} Punkte mehr)"
+
+#~ msgid "Create iPayout Account"
+#~ msgstr "Ein iPayout Konto erstellen"
+
+#~ msgid "Cruising Partner +2 Points"
+#~ msgstr "Kreuzfahrt-Partner +2 Punkte"
+
+#~ msgid "Direct Downline Potential Rewards"
+#~ msgstr "Direkte Downline Potenzial Prämien"
+
+#~ msgid "Each Member enrollment equals 1 point."
+#~ msgstr "Jede Registrierung eines Mitgliedes bringt 1 Punkt."
+
+#~ msgid "Each Partner enrollment equals 1 point."
+#~ msgstr "Jede Registrierung eines Partners bringt 1 Punkt."
+
+#~ msgid "Earned Date"
+#~ msgstr "Vergütungsdatum"
+
+#~ msgid "Earned Points"
+#~ msgstr "Verdiente Punkte"
+
+#~ msgid "Expected Earned Date"
+#~ msgstr "Voraussichtliches Vergütungsdatum"
+
+#~ msgid "Expired"
+#~ msgstr "Abgelaufen"
+
+#~ msgid "Expired Member"
+#~ msgstr "Abgelaufene Mitgliedschaft"
+
+#~ msgid ""
+#~ "Final contest numbers will be published on the 16th of this month after "
+#~ "all sales are\n"
+#~ "\t\t\t\tfinalized."
+#~ msgstr ""
+#~ "Die endgültigen Wettbewerbszahlen werden am 16. dieses Monats "
+#~ "veröffentlicht, sobald alle Umsätze \n"
+#~ "          abgeschlossen sind."
+
+#~ msgid ""
+#~ "I agree to allow inCruises to use my personal data as per the<a href="
+#~ "\"{{privacyPolicy}}\" target=\"_blank\">Privacy Policy</a> and<a href="
+#~ "\"{{termsOfService}}\" target=\"_blank\">Terms of Service</a>."
+#~ msgstr ""
+#~ "Ich stimme zu, dass inCruises meine persönlichen Daten gemäß den "
+#~ "Datenschutzbestimmungen</a> und <a href=\"/terms\" target=\"_blank"
+#~ "\">Nutzungsbedingungen<</a><a href=\"{{termsOfService}}\" target=\"_blank"
+#~ "\">/a> verwenden darf.</a>"
+
+#~ msgid ""
+#~ "I have read and agree with the<a ng-href=\"{{partner_agreement}}\" target="
+#~ "\"_blank\">Partner Agreement</a> and<a href=\"{{policies_procedures}}\" "
+#~ "target=\"_blank\">Policies and Procedures Manual</a>."
+#~ msgstr ""
+#~ "Ich habe gelesen und stimme der <a ng-href=\"{{partner_agreement}}\" "
+#~ "target=\"_blank\">Partnervereinbarung</a> und den <a href="
+#~ "\"{{policies_procedures}}\" target=\"_blank\">Bestimmungen und "
+#~ "Modalitäten</a> zu."
+
+#~ msgid ""
+#~ "In order to earn Producer Bonuses you must be an active Member. Upgrade "
+#~ "to Members today to unlock Producer Bonuses, by<a href=\"/upgrade"
+#~ "\">clicking here</a>."
+#~ msgstr ""
+#~ "Um Producer Boni zu verdienen, müssen Sie ein aktives Mitglied sein. "
+#~ "Upgraden Sie heute auf Mitglied, um Producer Boni zu erhalten, indem Sie "
+#~ "<a href=\"/upgrade\">hier klicken</a>."
+
+#~ msgid "Leadership Bonus ({{firstDayThisMonth | date: 'MM/yy'}})"
+#~ msgstr "Leadership Bonus ({{firstDayThisMonth | date: 'MM/yy'}})"
+
+#~ msgid ""
+#~ "Leadership Bonuses This Month (New Production) ({{firstDayThisMonth | "
+#~ "date: 'MM/dd/yyyy'}} - {{lastDayThisMonth | date: 'MM/dd/yyyy'}})"
+#~ msgstr ""
+#~ "Leadership Boni diesen Monat (Neuer Umsatz) ({{firstDayThisMonth | Datum: "
+#~ "'MM/dd/yyyy'}} - {{lastDayThisMonth | Datum: 'MM/dd/yyyy'}} )"
+
+#~ msgid "Maximum Residual"
+#~ msgstr "Maximum Residual"
+
+#~ msgid "Member +1 Point"
+#~ msgstr "Mitglied +1 Punkt"
+
+#~ msgid ""
+#~ "No. Our business requires human interaction beyond digital messaging. "
+#~ "However, inCruises is fully integrated in social media and we offer great "
+#~ "email marketing tools so there are many opportunities to promote your "
+#~ "business online. Plus, inCruises has its own mobile apps so you can "
+#~ "connect with and grow your client base from your smartphone to make money "
+#~ "anytime, anywhere!"
+#~ msgstr ""
+#~ "Nein. Unser Geschäft verlangt menschliche Interaktionen, die über das "
+#~ "digitale Messaging hinausgehen. Dennoch ist inCruises vollständig in  "
+#~ "sozialen Medien integriert und wir bieten hervorragende E-Mail-Marketing-"
+#~ "Tools an, dadurch gibt es viele Möglichkeiten, um Ihr Geschäft online zu "
+#~ "promoten. Hinzu kommt, dass inCruises seine eigenen mobilen Apps hat. Sie "
+#~ "können diese downloaden und Ihren Kundenstamm von Ihrem Smartphone aus "
+#~ "erweitern, um Geld zu verdienen, und zwar jederzeit und überall!"
+
+#~ msgid "Not Member or Partner"
+#~ msgstr "Kein Mitglied oder Partner"
+
+#~ msgid "Partner +1 Point"
+#~ msgstr "Partner +1 Punkt"
+
+#~ msgid "Partner Member enrollments 2 points."
+#~ msgstr "Einschreibung von einem Partner-Mitglied, 2 Punkte."
+
+#~ msgid ""
+#~ "Pay your pending invoice to unlock Producer Bonuses, by<a href=\"/invoices"
+#~ "\">clicking here</a>."
+#~ msgstr ""
+#~ "Bezahlen Sie Ihre ausstehende Rechnung, um Producer Boni zu aktivieren, "
+#~ "indem <a href=\"/invoices\">Sie hier klicken</a>."
+
+#~ msgid "Pending Member Bonus"
+#~ msgstr "Ausstehende Mitglieds-Boni"
+
+#~ msgid "Pending Partner/Member Bonus"
+#~ msgstr "Ausstehende Partner-Mitglieder Boni"
+
+#~ msgid "Plan"
+#~ msgstr "Plan"
+
+#~ msgid "Potential Bonuses"
+#~ msgstr "Potentielle Boni"
+
+#~ msgid "Potential Points"
+#~ msgstr "Potentielle Punkte"
+
+#~ msgid "Producer Bonuses"
+#~ msgstr "Producer Boni"
+
+#~ msgid "Projected Earnings"
+#~ msgstr "Erwartete Einnahmen"
+
+#~ msgid "Request Bonus Payout"
+#~ msgstr "Bonuszahlung anfordern"
+
+#~ msgid "Request Residual Bonus Payout"
+#~ msgstr "Fordern Sie die Residual Bonus Zahlung an"
+
+#~ msgid "Residual Earned This Month"
+#~ msgstr "verdientes Residual-Einkommen in diesem Monat"
+
+#~ msgid "Residual Income"
+#~ msgstr "Residual-Einkommen"
+
+#~ msgid "Rewards"
+#~ msgstr "Prämien"
+
+#~ msgid "Search by date"
+#~ msgstr "Suche gemäß Datum"
+
+#~ msgid ""
+#~ "Success as an inCruises Partner can be measured in a variety of ways. To "
+#~ "some people, success will be meeting and networking with like-minded "
+#~ "people. For others, the ability to travel the world is their idea of "
+#~ "success. And for some, the opportunity to earn some extra income will be "
+#~ "their vision of success. inCruises has the tools and opportunity that "
+#~ "allows our Partners to achieve their visions of success. Consistently "
+#~ "using those tools and methods, coupled with a love of travel, talking to "
+#~ "others about travel, and all of the amazing support that you receive as a "
+#~ "Partner will give you the opportunity to achieve success. inCruises is "
+#~ "NOT an opportunity where you make thousands or tens of thousands of "
+#~ "dollars in income overnight. It's a viable business similar to other "
+#~ "direct selling companies. It would be irresponsible to claim that someone "
+#~ "could be successful with inCruises simply by enrolling as a Partner. No "
+#~ "one can make such a claim about any business opportunity, and inCruises "
+#~ "makes no such claim."
+#~ msgstr ""
+#~ "Der Erfolg als inCruises Partner kann auf verschiedene Weise gemessen "
+#~ "werden. Für manche Menschen besteht der Erfolg darin, Gleichgesinnte zu "
+#~ "treffen und sich mit ihnen zu vernetzen. Für andere ist die Möglichkeit, "
+#~ "die Welt zu bereisen, ihre Vorstellung von Erfolg. Und für einige ist die "
+#~ "Möglichkeit, ein zusätzliches Einkommen zu verdienen, ihre Vision von "
+#~ "Erfolg. inCruises hat die Werkzeuge und Möglichkeiten, die es unseren "
+#~ "Partnern ermöglichen, ihre Visionen von Erfolg zu erreichen. Die "
+#~ "konsequente Anwendung dieser Werkzeuge und Methoden, gepaart mit der "
+#~ "Liebe zum Reisen, dem Gespräch mit anderen über das Reisen und all der "
+#~ "erstaunlichen Unterstützung, die Sie als Partner erhalten, wird Ihnen die "
+#~ "Möglichkeit geben, Erfolg zu haben. inCruises ist KEINE Möglichkeit, bei "
+#~ "der Sie über Nacht Tausende oder Zehntausende von Dollar verdienen. Es "
+#~ "ist ein lebensfähiges Geschäft, ähnlich wie bei anderen "
+#~ "Direktvertriebsunternehmen. Es wäre unverantwortlich zu behaupten, dass "
+#~ "jemand mit inCruises erfolgreich sein kann, nur weil er sich als Partner "
+#~ "einschreibt. Niemand kann eine solche Behauptung über eine "
+#~ "Geschäftsmöglichkeit aufstellen, und inCruises erhebt keinen solchen "
+#~ "Anspruch."
+
+#~ msgid ""
+#~ "There are many ways to earn income as a Partner with inCruises. There are "
+#~ "Instant Pay Bonuses, Producer Bonuses, Recurring  Compensation, Free "
+#~ "Memberships, and bonuses based on the income and sales volume of your "
+#~ "entire downline organization, as well as several other incentives. Please "
+#~ "review our Compensation Program for more details."
+#~ msgstr ""
+#~ "Es gibt viele Möglichkeiten, um Einkommen als Partner mit inCruises zu "
+#~ "verdienen. Es gibt Instant-Pay- Boni,  Producer -Boni, wiederkehrendes "
+#~ "Einkommen, freie Mitgliedschaften und Boni, die auf Basis der Einkommen "
+#~ "und der Umsätze Ihrer gesamten Downline basieren sowie mehrere andere "
+#~ "Incentives. Für weitere Details, schauen Sie bitte in unserem "
+#~ "Vergütungsprogramm nach."
+
+#~ msgid "These are your direct downlines with available rewards"
+#~ msgstr "Dies sind Ihre direkten Downlines mit verfügbaren Gutschriften"
+
+#~ msgid ""
+#~ "To get started you will need to get approved by i-Payout. Once approved, "
+#~ "you will be able to access Payoneer, HyperWallet, and PayQuicker."
+#~ msgstr ""
+#~ "Um loszulegen, müssen Sie von i-Payout zugelassen werden. Sobald Sie "
+#~ "zugelassen sind, können Sie auf Payoneer, HyperWallet und PayQuicker "
+#~ "zugreifen."
+
+#~ msgid "TO TRAVEL"
+#~ msgstr "ZU REISEN"
+
+#~ msgid "Total Earned"
+#~ msgstr "Insgesamt verdient"
+
+#~ msgid "TRAVEL"
+#~ msgstr "REISE"
+
+#~ msgid ""
+#~ "We believe you can! By launching your business and successfully referring "
+#~ "and enrolling family and friends, your initial activation fee can be "
+#~ "recovered – plus some additional earnings as well. There are no "
+#~ "guarantees of this and that's entirely up to your efforts and ability to "
+#~ "enroll others."
+#~ msgstr ""
+#~ "Wir glauben an Sie! Wenn Sie Ihr Business starten, es erfolgreich "
+#~ "weiterempfehlen, Familie und Freunde registrieren kann Ihre ursprüngliche "
+#~ "Aktivierungs-Gebühr gecovert werden – plus Sie erhalten zusätzliche "
+#~ "Vergütungen. Es gibt jedoch keine Garantie dafür und ist vollständig von "
+#~ "Ihren Bemühungen und Ihren Fähigkeit abhängig, andere einzuschreiben."
+
+#~ msgid "Your Active Levels ({{active_levels}} levels)"
+#~ msgstr "Ihre aktiven Ebenen ({{active_levels}} levels)"
+
+#~ msgid "Your Compensation Calendar Month"
+#~ msgstr "Ihr Vergütungs-Kalender-Monat"
+
+#~ msgid ""
+#~ "Your earnings match your efforts, your passion and the size of your team "
+#~ "and their efforts. You have the opportunity to grow your earnings as you "
+#~ "grow your number of personal and team Membership sales."
+#~ msgstr ""
+#~ "Ihr Einkommen entspricht Ihren Anstrengungen, Ihrer Leidenschaft und der "
+#~ "Größe Ihres Teams und deren Anstrengungen. Sie haben die Möglichkeit, Ihr "
+#~ "Einkommen zu erhöhen, genauso wie Ihren eigenen Umsatz und den Umsatz "
+#~ "Ihrer Team-Mitglieder."
+
 #~ msgid "<i class=\"fa icon-facebook mrs\"></i>Share"
 #~ msgstr "<i class=\"fa icon-facebook mrs\"></i>Teilen"
 
@@ -26821,9 +28305,6 @@ msgstr ""
 #~ "<a href=\"https://incruises.com/support\">https://incruises.com/support</"
 #~ "a>."
 
-#~ msgid "Upgrade Your Account"
-#~ msgstr "Upgraden Sie Ihr Konto"
-
 #~ msgid ""
 #~ "You earn $200 Cruise Dollars® (Cruise Credits) for every membership "
 #~ "payment."
@@ -27345,9 +28826,6 @@ msgstr ""
 #~ msgid "Cancel Payment"
 #~ msgstr "Zahlung stornieren"
 
-#~ msgid "Card Details"
-#~ msgstr "Kartendetails"
-
 #~ msgid "Continue with payment"
 #~ msgstr "Die Zahlung fortsetzen"
 
@@ -27365,9 +28843,6 @@ msgstr ""
 
 #~ msgid "Expiry MM/YYYY"
 #~ msgstr "Läuft am MM/YYYY ab"
-
-#~ msgid "I Agree"
-#~ msgstr "Ich bin einverstanden"
 
 #~ msgid "I understand"
 #~ msgstr "Hiermit erkläre ich mich einverstanden"
@@ -28777,9 +30252,6 @@ msgstr ""
 #~ "Schauen Sie sich dieses PDF an, um die Regeln für Track Growth <a href="
 #~ "\"{{trackGrowthLink}}\" target=\"_blank\">hier</a> anzusehen."
 
-#~ msgid "Click here to continue"
-#~ msgstr "Klicken Sie hier um fortzufahren"
-
 #~ msgid ""
 #~ "Click here to find out all of the required documents for your booking."
 #~ msgstr ""
@@ -30187,9 +31659,6 @@ msgstr ""
 #~ msgid "Booking Failed"
 #~ msgstr "Buchung fehlgeschlagen"
 
-#~ msgid "Booking Submitted!"
-#~ msgstr "Buchung übermittelt!"
-
 #~ msgid ""
 #~ "By adding this cruise to your watch list you will get email alerts when:"
 #~ msgstr ""
@@ -30368,9 +31837,6 @@ msgstr ""
 #~ msgid "Recreation"
 #~ msgstr "Erholung"
 
-#~ msgid "Ship Details"
-#~ msgstr "Schiffdetails"
-
 #~ msgid "Ship Feature"
 #~ msgstr "Schiffseigenschaften"
 
@@ -30486,9 +31952,6 @@ msgstr ""
 #~ msgid "New membership free"
 #~ msgstr "Neue beitragsfreie Mitgliedschaft"
 
-#~ msgid "Certification Courses"
-#~ msgstr "Zertifizierungs-Kurse"
-
 #~ msgid ""
 #~ "Leadership Academy - Improving Lives through Affordable Vacations and "
 #~ "Entrepreneurial Action. At inCruises International what we believe is "
@@ -30560,9 +32023,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Sehen Sie sich die Incentive Cruises an, die Sie als Favorit markiert "
 #~ "haben."
-
-#~ msgid "You have no cruises on your watch list at this time!"
-#~ msgstr "Sie haben zur Zeit keine Kreuzfahrten auf Ihrer Watchlist!"
 
 #~ msgid "NEW Partners in July"
 #~ msgstr "NEUE Partner im Juli"
