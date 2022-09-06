@@ -106,6 +106,20 @@ msgstr ""
 ", унинг навбатдаги тўлов санаси: {{selectedUser.next_billing | date:'MMM dd, "
 "yyyy'}}."
 
+#: pages/track_results.vue
+#, fuzzy
+#| msgid ""
+#| ", and their next billing date is on {{ selectedContact.info."
+#| "next_billing }}."
+msgid ", and their next billing date is on %{ next_billing }."
+msgstr ""
+", уларнинг навбатдаги тўловни амалга ошириш санаси {{ selectedContact.info."
+"next_billing }}."
+
+#: pages/track_results.vue
+msgid ", they have been paying for"
+msgstr ""
+
 #: track_results/index.html
 msgid ""
 ", they have been paying for\n"
@@ -163,6 +177,10 @@ msgstr ", сизга минимум"
 #: pages/price_match_guarantee.vue
 msgid ". If all terms below are met, you will receive"
 msgstr "Агар қуйидаги барча талаблар бажарилса, ҳисобингизга"
+
+#: pages/track_results.vue
+msgid ". They were active for"
+msgstr ""
 
 #: track_results/index.html
 msgid ""
@@ -517,6 +535,12 @@ msgstr ""
 "{{ confirmationDetails.recipientDetails.firstName }} {{ confirmationDetails."
 "recipientDetails.lastName }}"
 
+#: pages/track_results.vue
+#, fuzzy
+#| msgid "{{ course.name }}"
+msgid "{{ country }}"
+msgstr "{{ course.name }}"
+
 #: pages/courses.vue
 msgid "{{ course.description }}"
 msgstr "{{ course.description }}"
@@ -532,6 +556,12 @@ msgstr "{{ error.message }} {{ error.description }}"
 #: components/support/TicketList.vue
 msgid "{{ header }}"
 msgstr "{{ сарлавҳа }}"
+
+#: pages/track_results.vue
+#, fuzzy
+#| msgid "{{lang}}"
+msgid "{{ lang }}"
+msgstr "{{lang}}"
 
 #: pages/courses.vue
 msgid "{{ question.question }}"
@@ -2772,7 +2802,7 @@ msgstr ""
 msgid "About"
 msgstr "Биз ҳақимизда"
 
-#: components/public/FooterLinks.vue pages/public/about.vue
+#: pages/public/about.vue components/public/FooterLinks.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "About Us"
 msgstr "Биз ҳақимизда"
@@ -2820,8 +2850,8 @@ msgstr "Ҳаракат"
 #: pages/admin_restricted_paybonus.vue pages/contacts.vue
 #: pages/convention_manager.vue components/compensation/leadership_bonus.vue
 #: components/compensation/statements.vue components/top_bar/Connect.vue
-#: certificates/index.html certificates/view.html negative_balances/index.html
-#: old_compensation/index.html reports/index.html
+#: certificates/index.html certificates/view.html old_compensation/index.html
+#: negative_balances/index.html reports/index.html
 msgid "Actions"
 msgstr "Ҳаракатлар"
 
@@ -2850,10 +2880,22 @@ msgstr "Фаол"
 msgid "Active Levels"
 msgstr "Фаол даражалар"
 
+#: pages/track_results.vue
+#, fuzzy
+#| msgid "Active Member"
+msgid "Active Members"
+msgstr "Фаол Аъзо"
+
 #: components/compensation/active_partner_modal.vue
 #: components/compensation/compensation_month.vue
 msgid "Active Partner Status:"
 msgstr "Фаол Ҳамкор мақоми:"
+
+#: pages/track_results.vue
+#, fuzzy
+#| msgid "Active Team Partners"
+msgid "Active Partners"
+msgstr "Фаол жамоа Ҳамкорлари"
 
 #: pages/info_center.vue
 msgid "Active Team Members"
@@ -2901,7 +2943,7 @@ msgstr "Йўловчи қўшиш"
 msgid "Add Recurring Card"
 msgstr "Даврий картани қўшиш"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 msgid "Add Recurring Profile"
 msgstr "Даврий профиль қўшиш"
 
@@ -2949,9 +2991,8 @@ msgstr ""
 "қилсам, inCruises менинг Ҳамкорлик битимимни бекор қилиши мумкин ва мен ўз "
 "ҳаракатим оқибатида келгуси компенсацияларимни йўқотаман."
 
-#: components/info-reminder.vue pages/additional_info.vue
-#: pages/convention_manager.vue pages/settings.vue
-#: components/checkout/ItalianStep.vue
+#: pages/additional_info.vue pages/convention_manager.vue pages/settings.vue
+#: components/info-reminder.vue components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue old_compensation/index.html
 #: receipts/italian_receipt.html
@@ -3048,8 +3089,8 @@ msgid "Agreements and Important Forms"
 msgstr "Битимлар ва Муҳим ҳужжатлар"
 
 #: pages/checkout.vue pages/info_center.vue pages/leadership_academy.vue
-#: pages/team_rankings.vue export/index.html reports/index.html
-#: track_results/index.html
+#: pages/team_rankings.vue pages/track_results.vue export/index.html
+#: reports/index.html track_results/index.html
 msgid "All"
 msgstr "Барчаси"
 
@@ -3174,11 +3215,11 @@ msgstr "Ишлатиш мумкин бўлган Бонус баллари"
 msgid "Almost there..."
 msgstr "Деярли тайёр..."
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Alphabetical Asc"
 msgstr "Алифбо бўйича (ўсиб борувчи тартибда)"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Alphabetical Desc"
 msgstr "Алифбо бўйича (камайиб борувчи тартибда)"
 
@@ -3207,12 +3248,12 @@ msgid "Ambassador Board of Directors"
 msgstr "Директорлар Кенгаши Амбассадори"
 
 #: pages/growth_calculator.vue pages/hotels_booking.vue pages/invoices.vue
-#: pages/welcome.vue components/compensation/leadership_bonus.vue
+#: pages/welcome.vue components/payout/wallet-transfers.vue
+#: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue
-#: components/compensation/statements.vue
-#: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/statements.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html negative_balances/index.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -3373,8 +3414,8 @@ msgstr "Android"
 msgid "Annual Income (USD)"
 msgstr "Йиллик даромад (АҚШ доллари)"
 
-#: components/weekly-competition.vue pages/competition.vue
-#: pages/team_rankings.vue pages/welcome.vue competition/index.html
+#: pages/competition.vue pages/team_rankings.vue pages/welcome.vue
+#: components/weekly-competition.vue competition/index.html
 msgid "Anonymous"
 msgstr "Аноним"
 
@@ -3789,7 +3830,7 @@ msgstr "Асосийларига қайтиш"
 msgid "Back to your Directs"
 msgstr "Тўғридан-тўғриларга қайтиш"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 msgid "BACK UP"
 msgstr "ОРҚАГА"
 
@@ -3819,7 +3860,7 @@ msgstr "Банк реквизитлари"
 msgid "Bank transfer"
 msgstr "Банк ўтказмаси"
 
-#: pages/admin_user_id.vue track_results/index.html
+#: pages/admin_user_id.vue pages/track_results.vue track_results/index.html
 msgid "Basic Info"
 msgstr "Асосий маълумотлар"
 
@@ -4497,22 +4538,22 @@ msgstr "Бекор қилиш сиёсати"
 msgid "Cancellation Warning"
 msgstr "Бекор қилишга оид огоҳлантириш"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 #: components/checkout/CardStep.vue
 msgid "Card CVC/CVV:"
 msgstr "Карта CVC/CVV:"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 #: components/checkout/CardStep.vue
 msgid "Card Expiration:"
 msgstr "Карта амал қилиш муддатининг тугаши:"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 #: components/checkout/CardStep.vue
 msgid "Card Name:"
 msgstr "Карта номи:"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 #: components/checkout/CardStep.vue
 msgid "Card Number:"
 msgstr "Карта рақами:"
@@ -4728,7 +4769,7 @@ msgstr "Валютани танланг"
 msgid "Choose your Referral Link:"
 msgstr "Реферал ҳаволангизни танланг:"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Choose your referrer:"
 msgstr "Реферерингизни танланг:"
 
@@ -4740,7 +4781,7 @@ msgstr "Ташриф буюрилган шаҳарлар"
 msgid "Citizenship"
 msgstr "Фуқаролиги:"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue old_compensation/index.html
@@ -4748,8 +4789,8 @@ msgstr "Фуқаролиги:"
 msgid "City"
 msgstr "Шаҳар"
 
-#: pages/booking.vue pages/contacts.vue components/checkout/CardStep.vue
-#: track_results/index.html
+#: pages/booking.vue pages/contacts.vue pages/track_results.vue
+#: components/checkout/CardStep.vue track_results/index.html
 msgid "City:"
 msgstr "Шаҳар:"
 
@@ -4849,20 +4890,20 @@ msgstr "Кўриш учун бу ерга босинг"
 msgid "Client Configuration"
 msgstr "Мижоз конфигурацияси"
 
-#: components/global-summit-reminder.vue components/weekly-competition.vue
 #: pages/booking.vue pages/connect.vue pages/convention_manager.vue
 #: pages/cruises.vue pages/global_summit_dr.vue
 #: pages/global_summit_tracking.vue pages/hotels_details.vue pages/invoices.vue
 #: pages/reach.vue pages/referral_links.vue pages/resources.vue
 #: pages/reward_points.vue pages/welcome.vue
-#: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
+#: components/global-summit-reminder.vue components/weekly-competition.vue
+#: pages/public/about.vue pages/public/index.vue pages/public/leadership.vue
+#: pages/public/membership.vue pages/public/mission.vue
+#: pages/public/partnership.vue pages/public/signup.vue
 #: components/global_convention/event_info.vue
 #: components/public/FooterLinks.vue components/public/JoinModal.vue
-#: components/public/Testimonials.vue pages/public/about.vue
-#: pages/public/index.vue pages/public/leadership.vue
-#: pages/public/membership.vue pages/public/mission.vue
-#: pages/public/partnership.vue pages/public/signup.vue connect/index.html
+#: components/public/Testimonials.vue
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue connect/index.html
 #: old_compensation/index.html
 msgid "Close"
 msgstr "Ёпиш"
@@ -5144,7 +5185,7 @@ msgstr "Почта орқали боғланинг:"
 msgid "Contact Information"
 msgstr "Контакт маълумотлари"
 
-#: components/public/FooterLinks.vue pages/public/contact.vue
+#: pages/public/contact.vue components/public/FooterLinks.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "Contact Us"
 msgstr "Биз билан боғланинг"
@@ -5212,8 +5253,8 @@ msgstr "Нархи"
 msgid "Costa del Este, Panamá"
 msgstr "Коста-дель-Эсте, Панама"
 
-#: pages/reach.vue pages/team_rankings.vue components/user/vip-data.vue
-#: track_results/index.html
+#: pages/reach.vue pages/team_rankings.vue pages/track_results.vue
+#: components/user/vip-data.vue track_results/index.html
 msgid "Count"
 msgstr "Ҳисоблаш"
 
@@ -5221,7 +5262,7 @@ msgstr "Ҳисоблаш"
 msgid "Countdowns"
 msgstr "Тескари ҳисоб"
 
-#: pages/reach.vue track_results/index.html
+#: pages/reach.vue pages/track_results.vue track_results/index.html
 msgid "Countries"
 msgstr "Мамлакатлар"
 
@@ -5233,19 +5274,19 @@ msgstr "Мамлакат ва бу чегара эмас"
 msgid "Countries Visited"
 msgstr "Ташриф буюрилган мамлакатлар"
 
-#: components/info-reminder.vue components/weekly-competition.vue
 #: pages/additional_info.vue pages/admin_user.vue pages/builders_base.vue
 #: pages/competition.vue pages/contacts.vue pages/global_summit_dr.vue
 #: pages/global_summit_tracking.vue pages/reach.vue pages/referral_links.vue
-#: pages/settings.vue pages/team_rankings.vue pages/welcome.vue
-#: components/checkout/ItalianStep.vue
+#: pages/settings.vue pages/team_rankings.vue pages/track_results.vue
+#: pages/welcome.vue components/info-reminder.vue
+#: components/weekly-competition.vue pages/public/signup.vue
+#: components/checkout/ItalianStep.vue components/public/JoinModal.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
-#: components/compensation/residual_bonus.vue components/public/JoinModal.vue
-#: pages/public/signup.vue
+#: components/compensation/residual_bonus.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
-#: competition/index.html new_ranks/index.html old_compensation/index.html
+#: competition/index.html old_compensation/index.html new_ranks/index.html
 #: receipts/italian_receipt.html reports/index.html track_results/index.html
 msgid "Country"
 msgstr "Мамлакат"
@@ -5266,11 +5307,11 @@ msgstr "Яшаш мамлакатингизга доир эслатма"
 msgid "Country of Residency:"
 msgstr "Яшаш мамлакати:"
 
-#: pages/contacts.vue track_results/index.html
+#: pages/contacts.vue pages/track_results.vue track_results/index.html
 msgid "Country:"
 msgstr "Мамлакат:"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Counts"
 msgstr "Ҳисоблашлар"
 
@@ -5571,8 +5612,8 @@ msgid "Data Fields"
 msgstr "Маълумотлар майдони"
 
 #: pages/contacts.vue pages/email.vue pages/reward_points.vue
-#: components/compensation/statements.vue
-#: components/payout/wallet-transfers.vue email_notifications/index.html
+#: components/payout/wallet-transfers.vue
+#: components/compensation/statements.vue email_notifications/index.html
 #: layouts/default.html negative_balances/index.html
 msgid "Date"
 msgstr "Сана"
@@ -5653,7 +5694,7 @@ msgstr "Саналар:"
 msgid "Day"
 msgstr "Кун"
 
-#: components/countdown.vue components/membership_countdown.vue pages/reach.vue
+#: pages/reach.vue components/countdown.vue components/membership_countdown.vue
 #: components/compensation/countdown.vue
 msgid "days"
 msgstr "кун"
@@ -5694,7 +5735,7 @@ msgstr "Палубалар:"
 msgid "Deductions"
 msgstr "Ушланма"
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 msgid "DEFAULT"
 msgstr "ОДАТИЙ"
 
@@ -5882,8 +5923,8 @@ msgstr "Тўғридан-тўғри ҳомийингиз"
 msgid "Direct Total Members"
 msgstr "Тўғридан-тўғри Жами Аъзолар"
 
-#: pages/admin_user_id.vue pages/competition.vue competition/index.html
-#: track_results/index.html
+#: pages/admin_user_id.vue pages/competition.vue pages/track_results.vue
+#: competition/index.html track_results/index.html
 msgid "Directs"
 msgstr "Тўғридан-тўғрилар"
 
@@ -6395,7 +6436,8 @@ msgstr "Электрон почта тури"
 msgid "Email Warning"
 msgstr "Огоҳлантирувчи хат"
 
-#: pages/booking.vue pages/contacts.vue track_results/index.html
+#: pages/booking.vue pages/contacts.vue pages/track_results.vue
+#: track_results/index.html
 msgid "Email:"
 msgstr "Электрон почта:"
 
@@ -6439,7 +6481,7 @@ msgstr "ePayments ID (eg. 000-123456)"
 msgid "ePayments ID, email, mobile phone number"
 msgstr "ePayments ID, электрон почта, мобил телефон рақами"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Error with signup!"
 msgstr "Рўйхатдан ўтишда хатолик юз берди!"
 
@@ -6523,11 +6565,11 @@ msgstr "Чиқиш"
 msgid "Exit Checkout Page"
 msgstr "Рўйхатдан чиқиш саҳифасидан чиқиш"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Expiration Date Asc"
 msgstr "Муддати тугаши бўйича (ўсиб борувчи тартибда)"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Expiration Date Desc"
 msgstr "Муддати тугаши бўйича (камайиб борувчи тартибда)"
 
@@ -6675,7 +6717,7 @@ msgstr "Февраль"
 msgid "Female"
 msgstr "Аёл"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Filtering"
 msgstr "Фильтрлаш"
 
@@ -7098,11 +7140,11 @@ msgstr "Галерея"
 msgid "Gaziveren, Cyprus"
 msgstr "Газиверен, Кипр"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Gender Required!"
 msgstr "Жинс талаб қилинади!"
 
-#: pages/booking.vue track_results/index.html
+#: pages/booking.vue pages/track_results.vue track_results/index.html
 msgid "Gender:"
 msgstr "Жинси:"
 
@@ -7364,7 +7406,7 @@ msgstr ""
 msgid "Hide"
 msgstr "Бекитиш"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Hierarchy"
 msgstr "Иерархия"
 
@@ -7421,7 +7463,7 @@ msgstr "Меҳмонхона излаш"
 msgid "Hotel Website"
 msgstr "Меҳмонхона веб-сайти"
 
-#: components/countdown.vue components/membership_countdown.vue pages/reach.vue
+#: pages/reach.vue components/countdown.vue components/membership_countdown.vue
 #: components/compensation/countdown.vue
 msgid "hours"
 msgstr "соат"
@@ -7514,7 +7556,7 @@ msgstr ""
 msgid "HR Director"
 msgstr "Ходимлар билан ишлаш бўйича директор"
 
-#: components/covid-disclaimer-reminder.vue pages/invoices.vue
+#: pages/invoices.vue components/covid-disclaimer-reminder.vue
 msgid "I Accept"
 msgstr "Қабул қиламан"
 
@@ -9090,11 +9132,11 @@ msgstr "16 ва 17 январь кунлари"
 msgid "Japanese"
 msgstr "Япон"
 
-#: components/blog/navbar.vue components/public/Header.vue
-#: components/public/JoinModal.vue pages/public/index.vue
-#: pages/public/membership.vue pages/public/mission.vue
+#: pages/public/index.vue pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/reviews.vue
-#: pages/public/signup.vue communications/index.html communications/view.html
+#: pages/public/signup.vue components/blog/navbar.vue
+#: components/public/Header.vue components/public/JoinModal.vue
+#: communications/index.html communications/view.html
 #: income_disclosure/index.html live/index.html unsubscribe/index.html
 msgid "Join Now"
 msgstr "Ҳозироқ қўшилиш"
@@ -9138,7 +9180,8 @@ msgid "Laminated Presentations"
 msgstr "Ламинацияланган тақдимотлар"
 
 #: pages/admin_user.vue pages/contacts.vue pages/settings.vue
-#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: pages/team_rankings.vue pages/track_results.vue
+#: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue old_compensation/index.html
 #: reports/index.html track_results/index.html
 msgid "Language"
@@ -9387,8 +9430,8 @@ msgstr ""
 "платформаси орқали меҳмонхона ёки курорт буюртмасини тасдиқланг. *Агар "
 "inStays билан буюртма берганингиздан сўнг"
 
-#: pages/reach.vue receipts/team_residual_bonus_statement.html
-#: track_results/index.html
+#: pages/reach.vue pages/track_results.vue
+#: receipts/team_residual_bonus_statement.html track_results/index.html
 msgid "Level"
 msgstr "Даража"
 
@@ -9404,7 +9447,7 @@ msgstr "Даража лимити"
 msgid "levels"
 msgstr "даражалар"
 
-#: pages/reach.vue track_results/index.html
+#: pages/reach.vue pages/track_results.vue track_results/index.html
 msgid "Levels"
 msgstr "Даражалар"
 
@@ -9448,7 +9491,7 @@ msgstr "Юклаш"
 msgid "Load Level"
 msgstr "Даражани юклаш"
 
-#: pages/receipts.vue pages/webinar_recordings.vue
+#: pages/receipts.vue pages/track_results.vue pages/webinar_recordings.vue
 #: components/payout/wallet-transfers.vue receipts/index.html
 #: reports/index.html track_results/index.html
 msgid "Load More"
@@ -9467,10 +9510,10 @@ msgstr "Жойлашуви"
 msgid "Logged in as user!"
 msgstr "Тизимга фойдаланувчи сифатида кирилди!"
 
-#: components/blog/navbar.vue components/payout/hyperwallet-withdraw.vue
+#: pages/login/login.vue pages/public/signup.vue components/blog/navbar.vue
+#: components/public/Header.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
-#: components/payout/payoneer-withdraw.vue components/public/Header.vue
-#: pages/login/login.vue pages/public/signup.vue communications/index.html
+#: components/payout/payoneer-withdraw.vue communications/index.html
 #: communications/view.html income_disclosure/index.html live/index.html
 #: login/index.html unsubscribe/index.html
 msgid "Login"
@@ -9544,7 +9587,7 @@ msgstr ""
 msgid "March"
 msgstr "Март"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 msgid "Marital Status"
 msgstr "Оилавий ҳолати"
 
@@ -9567,7 +9610,7 @@ msgstr "МАРКЕТИНГ ДИРЕКТОР"
 msgid "Marketing Director Bonus"
 msgstr "Маркетинг директор бонуси"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 msgid "Married"
 msgstr "Оилали"
 
@@ -9629,9 +9672,10 @@ msgstr "Мажлислар хонаси"
 msgid "Meetings"
 msgstr "Учрашувлар"
 
-#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue pages/public/pricing.vue
-#: old_compensation/index.html subscriptions/index.html upgrade/index.html
+#: pages/team_rankings.vue pages/public/pricing.vue
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue old_compensation/index.html
+#: subscriptions/index.html upgrade/index.html
 msgid "Member"
 msgstr "Аъзо"
 
@@ -9651,7 +9695,7 @@ msgstr "Аъзолар тежаган пуллар"
 msgid "Member Since"
 msgstr "Аъзолар"
 
-#: pages/contacts.vue track_results/index.html
+#: pages/contacts.vue pages/track_results.vue track_results/index.html
 msgid "Member:"
 msgstr "Аъзо:"
 
@@ -9767,7 +9811,7 @@ msgstr "Аъзолик сотуви"
 msgid "Membership Type"
 msgstr "Аъзолик тури"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Membership:"
 msgstr "Аъзолик:"
 
@@ -9833,7 +9877,7 @@ msgstr ""
 "бизнинг Бепул Аъзолик дастуримиз орқали миллионлаб Бонус баллари ишлаб "
 "топилди/тақдим этилди"
 
-#: components/countdown.vue components/membership_countdown.vue pages/reach.vue
+#: pages/reach.vue components/countdown.vue components/membership_countdown.vue
 #: components/compensation/countdown.vue
 msgid "minutes"
 msgstr "дақиқа"
@@ -9864,7 +9908,7 @@ msgstr "Мобил иловалар"
 msgid "Mobile Phone"
 msgstr "Мобил телефон"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Mobile Phone is required."
 msgstr "Мобил телефон талаб этилади."
 
@@ -9893,6 +9937,16 @@ msgstr "Ой бошидан буён"
 #: track_growth/index.html
 msgid "Month-to-Date"
 msgstr "Ой бошидан буён"
+
+#: pages/track_results.vue
+#, fuzzy
+#| msgid "Month"
+msgid "month(s)"
+msgstr "Ой"
+
+#: pages/track_results.vue
+msgid "month(s) before they stopped paying"
+msgstr ""
 
 #: components/compensation/member_activations.vue
 msgid "Monthly Activations"
@@ -10163,12 +10217,12 @@ msgstr ""
 "Умид қиламанки, сиз тез-тез ташриф буюриб, ўзингизни ва жаомангизни ўстириш "
 "учун янги иштиёқ билан кетасиз."
 
-#: components/weekly-competition.vue pages/admin_user.vue
-#: pages/banner_tracking.vue pages/builders_base.vue pages/competition.vue
-#: pages/contacts.vue pages/convention_manager.vue pages/duplicator.vue
-#: pages/global_summit_dr.vue pages/global_summit_tracking.vue pages/reach.vue
-#: pages/settings.vue pages/team_rankings.vue pages/welcome.vue
-#: components/compensation/account_status.vue
+#: pages/admin_user.vue pages/banner_tracking.vue pages/builders_base.vue
+#: pages/competition.vue pages/contacts.vue pages/convention_manager.vue
+#: pages/duplicator.vue pages/global_summit_dr.vue
+#: pages/global_summit_tracking.vue pages/reach.vue pages/settings.vue
+#: pages/team_rankings.vue pages/track_results.vue pages/welcome.vue
+#: components/weekly-competition.vue components/compensation/account_status.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
@@ -10176,8 +10230,8 @@ msgstr ""
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
 #: components/welcome/members-modal.vue competition/index.html
-#: invoices/invoice_statement.html negative_balances/index.html
-#: new_ranks/index.html receipts/booking_receipt.html
+#: invoices/invoice_statement.html new_ranks/index.html
+#: negative_balances/index.html receipts/booking_receipt.html
 #: receipts/builders_bonus.html receipts/commission_statement.html
 #: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
 #: receipts/instant_bonus_statement.html receipts/invoice.html
@@ -10246,7 +10300,7 @@ msgstr "Исм формати муваффақиятли ўзгартирилд�
 msgid "Name has been deducted. Transaction successfully completed"
 msgstr "Исм ўчириб ташланди. Транзакция муваффақиятли якунланди"
 
-#: agreements/leadership_agreement.html
+#: pages/track_results.vue agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
 #: agreements/ukrainian_addendum_agreement.html track_results/index.html
 msgid "Name:"
@@ -10437,7 +10491,8 @@ msgstr ""
 "Кейинги\n"
 "\t\t\tой"
 
-#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: pages/team_rankings.vue pages/track_results.vue
+#: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue old_compensation/index.html
 #: reports/index.html track_results/index.html
 msgid "Next Billing Date"
@@ -10452,7 +10507,7 @@ msgid "Next Billing Date: {{subscription.expires | date:'MMM dd, yyyy'}}"
 msgstr ""
 "Навбатдаги тўлов санаси: {{subscription.expires | date:'MMM dd, yyyy'}}"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Next Billing:"
 msgstr "Навбатдаги тўлов:"
 
@@ -10490,7 +10545,7 @@ msgstr "кеча"
 msgid "Nights:"
 msgstr "Кечалар:"
 
-#: components/info-reminder.vue pages/invoices.vue
+#: pages/invoices.vue pages/track_results.vue components/info-reminder.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -10657,7 +10712,7 @@ msgstr ""
 msgid "Non-Refundable Fare"
 msgstr "Қайтарилмайдиган тариф"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "None"
 msgstr "Ҳеч қайси"
 
@@ -10713,11 +10768,11 @@ msgstr "Бепул Аъзо эмас"
 msgid "Not Opened"
 msgstr "Очилмаган"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Not Partner / Member"
 msgstr "Ҳамкор эмас / Аъзо"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Not Partner / Pending Member"
 msgstr "Ҳамкор эмас / Кутаётган Аъзо"
 
@@ -10986,7 +11041,7 @@ msgstr "Ордино, Андорра"
 msgid "Other"
 msgstr "Бошқа"
 
-#: components/public/FooterLinks.vue pages/public/causes.vue
+#: pages/public/causes.vue components/public/FooterLinks.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "Our Causes"
 msgstr "Бизнинг сабаблар"
@@ -10995,7 +11050,7 @@ msgstr "Бизнинг сабаблар"
 msgid "OUR MEMBERS AND PARTNERS"
 msgstr "АЪЗОЛАРИМИЗ ВА ҲАМКОРЛАРИМИЗ"
 
-#: components/public/FooterLinks.vue pages/public/mission.vue
+#: pages/public/mission.vue components/public/FooterLinks.vue
 #: layouts/blank_angular.html layouts/default.html layouts/default_no_nav.html
 msgid "Our Mission"
 msgstr "Бизнинг миссия"
@@ -11076,7 +11131,7 @@ msgstr "Тўланган сана"
 msgid "Paid Months"
 msgstr "Тўланган ойлар"
 
-#: pages/contacts.vue track_results/index.html
+#: pages/contacts.vue pages/track_results.vue track_results/index.html
 msgid "Paid Months:"
 msgstr "Тўланган ойлар:"
 
@@ -11120,15 +11175,15 @@ msgstr ""
 msgid "Partner"
 msgstr "Ҳамкор"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Partner / Member"
 msgstr "Ҳамкор / Аъзо"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Partner / Not Member"
 msgstr "Ҳамкор / Аъзо эмас"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Partner / Pending Member"
 msgstr "Ҳамкор / Кутаётган Аъзо"
 
@@ -11292,7 +11347,7 @@ msgstr "ҲАМКОРЛИКНИ СЕРТИФИКАТЛАШ:"
 msgid "Partner Count"
 msgstr "Ҳамкор ҳисоби"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Partner Date"
 msgstr "Ҳамкор бўлган санаси"
 
@@ -11481,7 +11536,7 @@ msgstr "Пароль:"
 msgid "Passwords"
 msgstr "Пароллар"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Passwords do not match!"
 msgstr "Пароллар мос тушмади!"
 
@@ -11521,7 +11576,7 @@ msgstr "Тўлов ҳаволаси (тўлиқ URL HTTPS билан)"
 msgid "Payment Option"
 msgstr "Тўлов усули"
 
-#: components/public/FooterLinks.vue pages/public/payment_terms.vue
+#: pages/public/payment_terms.vue components/public/FooterLinks.vue
 #: layouts/default.html layouts/default_no_nav.html
 msgid "Payment Terms"
 msgstr "Тўлов шартлари"
@@ -11580,7 +11635,7 @@ msgstr "Кутаётган ҳисоблар"
 msgid "Pending Invoices"
 msgstr "Кутаётган ҳисоблар"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Pending Invoices:"
 msgstr "Кутаётган ҳисоблар:"
 
@@ -11678,7 +11733,7 @@ msgstr "Киритилган телефон рақами нотўғри."
 msgid "Phone Verification"
 msgstr "Телефонни тасдиқлаш"
 
-#: pages/contacts.vue track_results/index.html
+#: pages/contacts.vue pages/track_results.vue track_results/index.html
 msgid "Phone:"
 msgstr "Телефон:"
 
@@ -11726,7 +11781,7 @@ msgid "Please check below and confirm your state is correct."
 msgstr ""
 "Илтимос, қуйидагиларни текшириб, штатингиз тўғри кўрсатилганини тасдиқланг."
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 msgid "Please check the expiration date you entered."
 msgstr "Илтимос, киритилган яроқлилик муддати санасини текширинг."
 
@@ -11839,7 +11894,7 @@ msgstr "Илтимос, ушбу видеони менга бошқа кўрса
 msgid "Please enter a valid birthdate of all children."
 msgstr "Илтимос, барча болаларнинг туғилган санасини тўғри киритинг."
 
-#: components/birthdate-reminder.vue pages/payout.vue
+#: pages/payout.vue components/birthdate-reminder.vue
 msgid "Please enter a valid birthdate to continue."
 msgstr "Илтимос, давом этиш учун ҳақиқий туғилган санангизни киритинг."
 
@@ -11883,7 +11938,7 @@ msgstr ""
 msgid "Please enter your second passengers 'Unique Membership Code'."
 msgstr "Илтимос, иккинчи йўловчининг 'Ноёб Аъзолик Кодини' киритинг."
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Please fill all fields to continue."
 msgstr "Илтимос, давом этиш учун барча майдонларни тўлдиринг."
 
@@ -12080,8 +12135,8 @@ msgstr ""
 "inCruises Мустақил бизнес ҳамкорлари дастурига оид манбалар ва "
 "компенсациялар ҳақида муҳим маълумотларни баён этган."
 
-#: components/italian-vat-reminder.vue pages/email.vue
-#: pages/italian_onboarding.vue
+#: pages/email.vue pages/italian_onboarding.vue
+#: components/italian-vat-reminder.vue
 msgid "Please try again later."
 msgstr "Илтимос, кечроқ яна уриниб кўринг."
 
@@ -12173,8 +12228,8 @@ msgstr ""
 msgid "points"
 msgstr "баллар"
 
-#: components/weekly-competition.vue pages/competition.vue
-#: pages/global_summit_dr.vue competition/index.html
+#: pages/competition.vue pages/global_summit_dr.vue
+#: components/weekly-competition.vue competition/index.html
 #: old_compensation/index.html
 msgid "Points"
 msgstr "Баллар"
@@ -12213,7 +12268,7 @@ msgstr "Португал"
 msgid "Portuguese Speaking Global Markets"
 msgstr "Португал тилида сўзлашувчи глобал бозор"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 #: components/checkout/CardStep.vue components/checkout/ItalianStep.vue
 msgid "Postal Code"
 msgstr "Почта индекси"
@@ -12619,8 +12674,9 @@ msgstr "Кескин стартнинг тугаш санаси"
 msgid "Quiz"
 msgstr "Сўровнома"
 
-#: components/weekly-competition.vue pages/competition.vue pages/powerup.vue
-#: pages/team_rankings.vue competition/index.html negative_balances/index.html
+#: pages/competition.vue pages/powerup.vue pages/team_rankings.vue
+#: components/weekly-competition.vue competition/index.html
+#: negative_balances/index.html
 msgid "Rank"
 msgstr "Ранг"
 
@@ -12632,7 +12688,7 @@ msgstr "Ранг сертификати"
 msgid "Rank Status"
 msgstr "Ранг мақоми"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Rank:"
 msgstr "Ранг:"
 
@@ -12778,7 +12834,7 @@ msgstr "Даврий даромад (жамоанинг жорий Аъзоли�
 msgid "Recurring Payment Method Pending Validation"
 msgstr "Даврий тўлов усули тасдиқланишни кутмоқда"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Recurring:"
 msgstr "Даврий:"
 
@@ -12800,7 +12856,8 @@ msgstr "Реферал ҳавола"
 msgid "Referral link language"
 msgstr "Реферал ҳавола тили"
 
-#: pages/account_setup.vue pages/contacts.vue track_results/index.html
+#: pages/account_setup.vue pages/contacts.vue pages/track_results.vue
+#: track_results/index.html
 msgid "Referral Link:"
 msgstr "Реферал ҳавола:"
 
@@ -12854,7 +12911,7 @@ msgstr ""
 msgid "Region"
 msgstr "Минтақа"
 
-#: pages/contacts.vue track_results/index.html
+#: pages/contacts.vue pages/track_results.vue track_results/index.html
 msgid "Region:"
 msgstr "Минтақа:"
 
@@ -12882,15 +12939,15 @@ msgstr ""
 msgid "Register Now"
 msgstr "Ҳозироқ рўйхатдан ўтиш"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Registration Date Asc"
 msgstr "Рўйхатга олинган санаси бўйича (ўсиб борувчи тартибда)"
 
-#: track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Registration Date Desc"
 msgstr "Рўйхатга олинган санаси бўйича (камайиб борувчи тартибда)"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid ""
 "Registration with inCruises can only be done using Roman/Latin alphabet "
 "letters (A-Z)."
@@ -13074,7 +13131,7 @@ msgstr "Асосий саҳифага қайтиш"
 msgid "Review"
 msgstr "Кўриб чиқиш"
 
-#: components/weekly-competition.vue pages/competition.vue
+#: pages/competition.vue components/weekly-competition.vue
 #: competition/index.html
 msgid "Reward"
 msgstr "Мукофот"
@@ -13299,7 +13356,7 @@ msgstr ""
 msgid "Search Parameters"
 msgstr "Қидирув параметрлари"
 
-#: components/countdown.vue components/membership_countdown.vue pages/reach.vue
+#: pages/reach.vue components/countdown.vue components/membership_countdown.vue
 #: components/compensation/countdown.vue
 msgid "seconds"
 msgstr "сония"
@@ -13702,7 +13759,7 @@ msgstr "Рўйхатдан ўтиш"
 msgid "Singapore"
 msgstr "Сингапур"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 msgid "Single"
 msgstr "Ёлғиз"
 
@@ -13841,7 +13898,7 @@ msgstr "Афсус, бизда ушбу йўналиш бўйича меҳмон
 msgid "Sorry, we couldn't find any room available for your selection."
 msgstr "Кечирасиз, истагингизга кўра мавжуд хоналарни топа олмадик."
 
-#: pages/admin_signup_flow.vue track_results/index.html
+#: pages/admin_signup_flow.vue pages/track_results.vue track_results/index.html
 msgid "Sorting"
 msgstr "Саралаш"
 
@@ -13946,7 +14003,7 @@ msgstr "Штат/Вилоят"
 msgid "State/Province:"
 msgstr "Штат/Вилоят:"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 #: components/checkout/ItalianStep.vue
 msgid "State/Region"
 msgstr "Штат/Ҳудуд"
@@ -13991,8 +14048,8 @@ msgstr "Статистика"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: negative_balances/index.html
 msgid "Status"
 msgstr "Мақом"
 
@@ -14000,7 +14057,7 @@ msgstr "Мақом"
 msgid "status, you will pay"
 msgstr "мақомида қуйидаги суммани тўлайсиз"
 
-#: pages/contacts.vue track_results/index.html
+#: pages/contacts.vue pages/track_results.vue track_results/index.html
 msgid "Street Address:"
 msgstr "Кўча манзили:"
 
@@ -14269,7 +14326,7 @@ msgstr "Тавсиялар"
 msgid "That agreement does not exist in your selected language."
 msgstr "Ушбу битим сиз танлаган тилда мавжуд эмас."
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid ""
 "That email address has not been invited to inCruises. Kindly get back to the "
 "independent Partner that referred you or try another email that was invited. "
@@ -14309,7 +14366,7 @@ msgstr "Сиз киритган картанинг амал қилиш мудд�
 msgid "The card number you entered is not valid."
 msgstr "Сиз киритган карта рақами нотўғри."
 
-#: components/confirm-recurring.vue pages/invoices.vue
+#: pages/invoices.vue components/confirm-recurring.vue
 msgid "The cardholder name is required."
 msgstr "Карта эгасининг исмини кўрсатиш талаб этилади."
 
@@ -15065,7 +15122,7 @@ msgstr "Ушбу ой"
 msgid "This Month's Compensation"
 msgstr "Ушбу ойнинг компенсацияси"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid ""
 "This name in Roman/Latin alphabet letters (A-Z) will be used for cruise "
 "bookings and with commission payments providers and must be in this format."
@@ -15125,7 +15182,8 @@ msgstr "Ушбу фойдаланувчининг ҳозирда фаол кру
 msgid "This user currently inactive."
 msgstr "Ушбу фойдаланувчи ҳозирда фаол эмас."
 
-#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: pages/team_rankings.vue pages/track_results.vue
+#: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue old_compensation/index.html
 #: track_results/index.html
 msgid "This user does not have an active membership"
@@ -15135,7 +15193,8 @@ msgstr "Ушбу фойдаланувчи фаол аъзоликка эга э�
 msgid "This user has a pending invoice."
 msgstr "Ушбу фойдаланувчида кутаётган ҳисоблар мавжуд."
 
-#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: pages/team_rankings.vue pages/track_results.vue
+#: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue old_compensation/index.html
 #: track_results/index.html
 msgid "This user has an active member membership"
@@ -15525,6 +15584,12 @@ msgstr "Жами ялпи сумма (ҚҚС билан):"
 msgid "Total Members ({{count}})"
 msgstr "Жами Аъзолар ({{count}})"
 
+#: pages/track_results.vue
+#, fuzzy
+#| msgid "Total Members ({{count}})"
+msgid "Total Members (%{ count })"
+msgstr "Жами Аъзолар ({{count}})"
+
 #: pages/my_cruise_savings.vue
 msgid "Total Membership Dues Paid"
 msgstr "Жами тўланган Аъзолик тўловлари"
@@ -15578,7 +15643,7 @@ msgstr "Жами Бонус баллари"
 msgid "Total Team Members"
 msgstr "Жами Жамоа Аъзолари"
 
-#: pages/booking.vue invoices/invoice_statement.html
+#: pages/booking.vue pages/track_results.vue invoices/invoice_statement.html
 #: receipts/builders_bonus.html receipts/commission_statement.html
 #: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
 #: receipts/invoice.html receipts/italian_receipt.html
@@ -15795,9 +15860,9 @@ msgstr "Икки ой олдин жами"
 msgid "Two Weeks Prior Contest"
 msgstr "Мусобақадан икки ҳафта олдин"
 
-#: pages/admin_user.vue pages/receipts.vue negative_balances/index.html
-#: old_compensation/index.html receipts/index.html reports/index.html
-#: track_results/index.html
+#: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
+#: old_compensation/index.html negative_balances/index.html receipts/index.html
+#: reports/index.html track_results/index.html
 msgid "Type"
 msgstr "Тур"
 
@@ -16178,8 +16243,8 @@ msgstr "Италияда бизнес юритиш учун Италия сав�
 msgid "View Itinerary"
 msgstr "Маршрутни кўриш"
 
-#: pages/contacts.vue pages/team_rankings.vue components/media/media_list.vue
-#: track_results/index.html
+#: pages/contacts.vue pages/team_rankings.vue pages/track_results.vue
+#: components/media/media_list.vue track_results/index.html
 msgid "View More"
 msgstr "Батафсил"
 
@@ -16336,10 +16401,10 @@ msgstr ""
 msgid "Watch the demo of the inCruises App with WhatsUp!"
 msgstr "WhatsUp қўшилган inCruises иловаси намойишини томоша қилинг!"
 
-#: pages/cruises.vue components/public/Testimonials.vue pages/public/about.vue
-#: pages/public/index.vue pages/public/leadership.vue
-#: pages/public/membership.vue pages/public/mission.vue
-#: pages/public/partnership.vue
+#: pages/cruises.vue pages/public/about.vue pages/public/index.vue
+#: pages/public/leadership.vue pages/public/membership.vue
+#: pages/public/mission.vue pages/public/partnership.vue
+#: components/public/Testimonials.vue
 msgid "Watch Video"
 msgstr "Видеони кўриш"
 
@@ -16822,7 +16887,7 @@ msgstr "эскириб қолган ва сизнинг иловангиз би�
 msgid "Who is our target market?"
 msgstr "Мақсадли бозоримиз ким?"
 
-#: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: pages/additional_info.vue pages/settings.vue components/info-reminder.vue
 msgid "Widowed"
 msgstr "Бева"
 
@@ -16916,8 +16981,8 @@ msgstr "Йил"
 msgid "Yeongdong-eup, Korea"
 msgstr "Ёндон-ип, Корея"
 
-#: components/info-reminder.vue pages/email_address.vue pages/invoices.vue
-#: agreements/italian_addendum_agreement.html
+#: pages/email_address.vue pages/invoices.vue pages/track_results.vue
+#: components/info-reminder.vue agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
 #: agreements/ukrainian_addendum_agreement.html
@@ -17149,7 +17214,7 @@ msgstr ""
 "\t\t\t\t\t\t\tчиқарган етакчилар ўз жамоасининг мазкур ойдаги жами янги "
 "ишлаб чиқариш ҳажмидан 5% ишлаб топадилар."
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "You can find the correct name in your passport and/or your national ID."
 msgstr ""
 "Сиз паспортингизда ёки шахсингизни тасдиқловчи миллий ҳужжатингиздаги "
@@ -17223,7 +17288,7 @@ msgstr ""
 "\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
 "\">бу ерда</a>боғланинг"
 
-#: components/info-reminder.vue pages/settings.vue
+#: pages/settings.vue components/info-reminder.vue
 msgid ""
 "You cannot change your country. Please contact support\n"
 "\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
@@ -17859,7 +17924,7 @@ msgstr ""
 msgid "Your Email Trackers"
 msgstr "Электрон почтангиз трекерлари"
 
-#: components/public/JoinModal.vue pages/public/signup.vue
+#: pages/public/signup.vue components/public/JoinModal.vue
 msgid "Your emails don't match, please fix and try again."
 msgstr ""
 "Сизнинг электрон почтангиз мос келмади, илтимос, тузатиб, қайта уриниб "
@@ -17976,7 +18041,7 @@ msgstr ""
 "\t\t\t\t\t\t. Унгача сиз inCruises ҳамкори сифатида тўлиқ ишга киришиш учун "
 "кутиб туришингиз лозим."
 
-#: pages/settings.vue components/public/JoinModal.vue pages/public/signup.vue
+#: pages/settings.vue pages/public/signup.vue components/public/JoinModal.vue
 msgid ""
 "Your password must have a minimum of 8 characters, and have at least 1 "
 "letter and 1 number."
@@ -26808,9 +26873,6 @@ msgstr ""
 #~ msgid "Spotlight"
 #~ msgstr "Прожектор"
 
-#~ msgid "Active Team Partners"
-#~ msgstr "Фаол жамоа Ҳамкорлари"
-
 #~ msgid "Click here to see all Rank Achievement levels."
 #~ msgstr "Ютуқлар рейтингининг барча даражаларини кўриш учун бу ерга босинг."
 
@@ -28642,9 +28704,6 @@ msgstr ""
 
 #~ msgid "Passport Country:"
 #~ msgstr "Паспортдаги мамлакат:"
-
-#~ msgid "{{lang}}"
-#~ msgstr "{{lang}}"
 
 #~ msgid ""
 #~ "<i class=\"fe fe-log-in\"></i>\n"
