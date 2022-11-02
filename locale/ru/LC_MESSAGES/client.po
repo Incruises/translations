@@ -137,7 +137,8 @@ msgstr ""
 msgid ", and their next billing date is on %{ next_billing }."
 msgstr ", и их следующая дата оплаты счёта %{ next_billing }."
 
-#: pages/track_results.vue
+#: pages/track_results.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
 msgid ", they have been paying for"
 msgstr ", они уже платят на протяжении"
 
@@ -165,19 +166,6 @@ msgstr ""
 "months_paid }}</span>\n"
 "\t\t\t\t\t\t\tмесяц(ев)"
 
-#: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
-msgid ""
-", they have been paying for\n"
-"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
-"months_paid }}</span>\n"
-"\t\t\t\t\t\t\tmonth(s)"
-msgstr ""
-", они заплатили за\n"
-"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
-"months_paid }}</span>\n"
-"\t\t\t\t\t\t\tмесяц(ев)"
-
 #: old_compensation/index.html
 msgid ""
 ", they have been paying for\n"
@@ -198,7 +186,8 @@ msgstr ", вам необходимо минимум"
 msgid ". If all terms below are met, you will receive"
 msgstr ". Если все нижеприведённые условия выполнены, то вы получите"
 
-#: pages/track_results.vue
+#: pages/track_results.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
 msgid ". They were active for"
 msgstr ". Они были активны на протяжении"
 
@@ -226,19 +215,6 @@ msgstr ""
 "months_paid }}</span>\n"
 "\t\t\t\t\t\t\tмесяц(ев), прежде чем перестал платить"
 
-#: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
-msgid ""
-". They were active for\n"
-"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
-"months_paid }}</span>\n"
-"\t\t\t\t\t\t\tmonth(s) before they stopped paying"
-msgstr ""
-". Он был активен\n"
-"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
-"months_paid }}</span>\n"
-"\t\t\t\t\t\t\tмесяц(ев) прежде, чем прекратил платить"
-
 #: old_compensation/index.html
 msgid ""
 ". They were active for\n"
@@ -250,6 +226,12 @@ msgstr ""
 "\t\t\t\t\t\t<span class=\"text-green open-bold\">{{selectedUser.months_paid}}"
 "</span>\n"
 "\t\t\t\t\t\tмесяц(ев), прежде чем он перестал платить"
+
+#: components/compensation/builders_bonus.vue
+#, fuzzy
+#| msgid "Who is our target market?"
+msgid ". This means you are on target to make"
+msgstr "Каков наш целевой рынок?"
 
 #: pages/price_match_guarantee.vue
 msgid ". You find a lower publicly available rate the next day for"
@@ -927,6 +909,12 @@ msgstr "%{ name }, теперь давайте загрузим Ваши кон�
 msgid "%{ night } Nights"
 msgstr "%{ night } ночей"
 
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid "Total Number of Members"
+msgid "%{ numMembers } Members"
+msgstr "Общее Количество Членов Клуба"
+
 #: pages/hotels.vue
 msgid "%{ roomCount } rooms, %{ guestCount } guests"
 msgstr "%{ roomCount } комнат, %{ guestCount } гостей"
@@ -1532,40 +1520,6 @@ msgstr ""
 "\t\t\t\t\t\t<strong>{{5 - quick_actions[10]}} Члена(-ов) Клуба </strong>,\n"
 "\t\t\t\t\t\tчтобы в следующем месяце освободиться от уплаты Членского Взноса "
 "в размере $100"
-
-#: components/compensation/active_partner_modal.vue
-msgid ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\tBecome an Active Partner by referring 1 direct Member this month."
-msgstr ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\tПолучите статус Активного Партнёра, подписав в этом месяце 1 Члена "
-"Клуба напрямую."
-
-#: components/compensation/active_partner_modal.vue
-msgid ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\tBecome eligible to receive Recurring Income by referring 5 direct "
-"Members and helping one of them also to become Membership free."
-msgstr ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\tЗаработайте возможность получать Рекуррентную Компенсацию, подписав "
-"5 Членов Клуба напрямую и помогите одному из них тоже получить статус "
-"\"Бесплатное Членство\"."
-
-#: components/compensation/active_partner_modal.vue
-msgid ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\tYou're only\n"
-"\t\t\t\t<strong>{{ 5 - parseInt(quickActions[10] || 0) }} Members</strong>\n"
-"\t\t\t\taway from getting your next month's Membership dues of $100 waived"
-msgstr ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\tОсталось подписать всего\n"
-"\t\t\t\t<strong>{{ 5 - parseInt(quickActions[10] || 0) }} Члена(-ов) Клуба</"
-"strong>,\n"
-"\t\t\t\tчтобы в следующем месяце освободиться от уплаты Членского Взноса в "
-"размере $100"
 
 #: pages/reservations.vue
 msgid ""
@@ -3295,8 +3249,8 @@ msgstr "Альтернативный e-mail"
 msgid "Alternate Phone"
 msgstr "Альтернативный Телефон"
 
-#: pages/builders_base.vue pages/public/leadership.vue
-#: controllers/old_compensation.js
+#: pages/builders_base.vue components/compensation/leadership_bonus.vue
+#: pages/public/leadership.vue controllers/old_compensation.js
 msgid "Ambassador Board of Directors"
 msgstr "Амбассадор-Борд-Директор"
 
@@ -3310,7 +3264,7 @@ msgstr "Результаты Амбассадора"
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
 #: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -3810,6 +3764,10 @@ msgstr ""
 "Explorer также работают правильно и вы можете, сделать оплату  Кредитными "
 "Картами и PayPal. Спасибо, и извините за неудобства."
 
+#: components/compensation/builders_bonus.vue
+msgid "At this point, your builder percentage is"
+msgstr ""
+
 #: pages/growth_calculator.vue
 msgid ""
 "At this potential rank, you will also qualify for the 5% New Business "
@@ -3849,6 +3807,17 @@ msgstr "Доступные Приглашения"
 #: pages/reward_points.vue
 msgid "Available Rewards"
 msgstr "Доступные вознаграждения"
+
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fa fa-square-o\"></i>You're only {{5 - quick_actions[10]}} "
+#| "Member away from getting your next month's Membership dues of $100 waived"
+msgid "away from getting your next month's Membership dues of $100 waived"
+msgstr ""
+"<i class=\"fa fa-square-o\"></i>Осталось подписать всего {{5 - "
+"quick_actions[10]}} Члена(-ов) Клуба, чтобы в следующем месяце освободиться "
+"от уплаты Членского Взноса в размере $100"
 
 #: agreements/national_director_agreement.html
 msgid "b. Confidentiality."
@@ -3985,6 +3954,32 @@ msgstr ""
 msgid "Become a Partner"
 msgstr "Стать Партнером Клуба"
 
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-clock mr-2\"></i>\n"
+#| "\t\t\t\tBecome an Active Partner by referring 1 direct Member this month."
+msgid "Become an Active Partner by referring 1 direct Member this month."
+msgstr ""
+"<i class=\"far fa-clock mr-2\"></i>\n"
+"\t\t\t\tПолучите статус Активного Партнёра, подписав в этом месяце 1 Члена "
+"Клуба напрямую."
+
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-clock mr-2\"></i>\n"
+#| "\t\t\t\tBecome eligible to receive Recurring Income by referring 5 direct "
+#| "Members and helping one of them also to become Membership free."
+msgid ""
+"Become eligible to receive Recurring Income by referring 5 direct Members "
+"and helping one of them also to become Membership free."
+msgstr ""
+"<i class=\"far fa-clock mr-2\"></i>\n"
+"\t\t\t\tЗаработайте возможность получать Рекуррентную Компенсацию, подписав "
+"5 Членов Клуба напрямую и помогите одному из них тоже получить статус "
+"\"Бесплатное Членство\"."
+
 #: components/payout/brightwell/brightwell-review.vue
 msgid "Before completing the transfer review all the information."
 msgstr "Проверьте все данные перед подтверждением перевода."
@@ -4091,7 +4086,7 @@ msgid "Board Type"
 msgstr "Тип питания"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus"
 msgstr "Бонус"
 
@@ -4125,7 +4120,7 @@ msgstr ""
 "баллов)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus not earned yet."
 msgstr "Бонус еще не получен."
 
@@ -4563,8 +4558,8 @@ msgstr ""
 "Вы можете заказать поездки для других, и не путешествовать самостоятельно?"
 
 #: pages/booking.vue pages/checkout.vue pages/connect.vue pages/email.vue
-#: pages/invoices.vue components/payout/euro-conversion.vue
-#: components/booking/add-cd-user.vue
+#: pages/invoices.vue components/booking/add-cd-user.vue
+#: components/payout/euro-conversion.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -9276,8 +9271,8 @@ msgstr "Последние 7 Дней"
 msgid "Last Month"
 msgstr "Последний Месяц"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr "В прошлом месяце Лидерский Бонус был запрошен и ожидает утверждения."
 
@@ -9990,11 +9985,13 @@ msgstr "Месяц До Даты"
 msgid "Month-to-Date"
 msgstr "Месяц До Даты"
 
-#: pages/track_results.vue
+#: pages/track_results.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
 msgid "month(s)"
 msgstr "месяц(ев)"
 
-#: pages/track_results.vue
+#: pages/track_results.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
 msgid "month(s) before they stopped paying"
 msgstr "месяц(ев), перед тем как перестали платить"
 
@@ -10302,8 +10299,8 @@ msgstr ""
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
 #: components/welcome/members-modal.vue competition/index.html
-#: invoices/invoice_statement.html new_ranks/index.html
-#: negative_balances/index.html receipts/booking_receipt.html
+#: invoices/invoice_statement.html negative_balances/index.html
+#: new_ranks/index.html receipts/booking_receipt.html
 #: receipts/builders_bonus.html receipts/commission_statement.html
 #: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
 #: receipts/instant_bonus_statement.html receipts/invoice.html
@@ -10494,8 +10491,8 @@ msgstr "Новые Партнеры за этот Месяц (10 Уровней)
 
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/top_producers.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/top_producers.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "New Production"
 msgstr "Новый Оборот"
 
@@ -10965,6 +10962,10 @@ msgid ""
 msgstr ""
 "с момента вашего бронирования в inStays, то вы можете получить разницу в "
 "виде Бонусных Баллов."
+
+#: components/compensation/builders_bonus.vue
+msgid "off of each directs volume."
+msgstr ""
 
 #: pages/info_center.vue
 msgid "Official Team Partners"
@@ -12644,12 +12645,12 @@ msgid "Product Director"
 msgstr "Директор по продукту"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production"
 msgstr "Продуктивность"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production Details Last Month"
 msgstr "Детали производства в Прошлом Месяце"
 
@@ -12734,12 +12735,12 @@ msgid "Qualified"
 msgstr "Квалифицированные"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Prod."
 msgstr "Квалифицированная Прод."
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Production"
 msgstr "Квалифицированная Продуктивность"
 
@@ -13134,7 +13135,7 @@ msgid "Required"
 msgstr "Необходимо к заполнению"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Requirement"
 msgstr "Требование"
 
@@ -14178,8 +14179,9 @@ msgstr "Штат/Регион"
 msgid "Statement Date"
 msgstr "Дата Отчёта"
 
-#: components/compensation/statements.vue old_compensation/index.html
+#: components/compensation/statements.vue
 #: old_refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html
 msgid "Statements"
 msgstr "Отчёты"
 
@@ -14202,8 +14204,8 @@ msgstr "Статистика"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: negative_balances/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html
 msgid "Status"
 msgstr "Статус"
 
@@ -15724,7 +15726,7 @@ msgid "total"
 msgstr "всего"
 
 #: pages/hotels_booking.vue receipts/italian_commission.html
-#: receipts/italian_receipt.html track_growth/index.html upgrade/index.html
+#: receipts/italian_receipt.html upgrade/index.html track_growth/index.html
 msgid "Total"
 msgstr "Всего"
 
@@ -15846,6 +15848,10 @@ msgstr "Всего:"
 #: components/compensation/member_activations.vue
 msgid "TOTAL:"
 msgstr "ВСЕГО:"
+
+#: components/compensation/top_producers.vue
+msgid "TOTAL: $%{ production }"
+msgstr ""
 
 #: components/compensation/builders_bonus.vue
 msgid "TOTALS:"
@@ -17675,8 +17681,8 @@ msgstr ""
 "получение уведомления об успешном платеже может занять от нескольких минут "
 "до 24 часов."
 
-#: pages/growth_calculator.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html
 msgid "You have earned a greater bonus."
 msgstr "Вы получили высший бонус."
 
@@ -17904,6 +17910,10 @@ msgstr ""
 #: pages/growth_calculator.vue
 msgid "You would not receive a rank with these potential parameters."
 msgstr "Вы бы не достигли ранга с данными потенциальными параметрами."
+
+#: components/compensation/active_partner_modal.vue
+msgid "You're only"
+msgstr ""
 
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
@@ -26470,6 +26480,42 @@ msgstr ""
 "Вам нужно  набрать 11 баллов для выигрыша. Первые 5 ТОП Лидеров с наибольшим "
 "количеством баллов выиграют Билет GoPro."
 
+#~ msgid ""
+#~ ", they have been paying for\n"
+#~ "\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
+#~ "months_paid }}</span>\n"
+#~ "\t\t\t\t\t\t\tmonth(s)"
+#~ msgstr ""
+#~ ", они заплатили за\n"
+#~ "\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
+#~ "months_paid }}</span>\n"
+#~ "\t\t\t\t\t\t\tмесяц(ев)"
+
+#~ msgid ""
+#~ ". They were active for\n"
+#~ "\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
+#~ "months_paid }}</span>\n"
+#~ "\t\t\t\t\t\t\tmonth(s) before they stopped paying"
+#~ msgstr ""
+#~ ". Он был активен\n"
+#~ "\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
+#~ "months_paid }}</span>\n"
+#~ "\t\t\t\t\t\t\tмесяц(ев) прежде, чем прекратил платить"
+
+#~ msgid ""
+#~ "<i class=\"far fa-clock mr-2\"></i>\n"
+#~ "\t\t\t\tYou're only\n"
+#~ "\t\t\t\t<strong>{{ 5 - parseInt(quickActions[10] || 0) }} Members</"
+#~ "strong>\n"
+#~ "\t\t\t\taway from getting your next month's Membership dues of $100 waived"
+#~ msgstr ""
+#~ "<i class=\"far fa-clock mr-2\"></i>\n"
+#~ "\t\t\t\tОсталось подписать всего\n"
+#~ "\t\t\t\t<strong>{{ 5 - parseInt(quickActions[10] || 0) }} Члена(-ов) "
+#~ "Клуба</strong>,\n"
+#~ "\t\t\t\tчтобы в следующем месяце освободиться от уплаты Членского Взноса "
+#~ "в размере $100"
+
 #~ msgid "Inactive"
 #~ msgstr "Неактивный"
 
@@ -30119,14 +30165,6 @@ msgstr ""
 #~ msgstr ""
 #~ "<i class=\"fa fa-square-o\"></i>Получите статус Активного Партнёра, "
 #~ "подписав 3-х Членов Клуба напрямую."
-
-#~ msgid ""
-#~ "<i class=\"fa fa-square-o\"></i>You're only {{5 - quick_actions[10]}} "
-#~ "Member away from getting your next month's Membership dues of $100 waived"
-#~ msgstr ""
-#~ "<i class=\"fa fa-square-o\"></i>Осталось подписать всего {{5 - "
-#~ "quick_actions[10]}} Члена(-ов) Клуба, чтобы в следующем месяце "
-#~ "освободиться от уплаты Членского Взноса в размере $100"
 
 #~ msgid ""
 #~ "<i class=\"fas fa-question-circle\"></i> Click here to access our Support "

@@ -120,7 +120,8 @@ msgstr ""
 msgid ", and their next billing date is on %{ next_billing }."
 msgstr "，并且他们的下一个结算日期是 %{ next_billing }。"
 
-#: pages/track_results.vue
+#: pages/track_results.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
 msgid ", they have been paying for"
 msgstr "，他们 一直在支付"
 
@@ -148,18 +149,6 @@ msgstr ""
 "months_paid }}</span>\n"
 "\t\t\t\t\t\t\t個月的費用"
 
-#: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
-msgid ""
-", they have been paying for\n"
-"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
-"months_paid }}</span>\n"
-"\t\t\t\t\t\t\tmonth(s)"
-msgstr ""
-"，他们已经支付了\n"
-"<span class=\"text-green open-bold\">{{ selectedUser.months_paid }}</span>\n"
-"个月的费用"
-
 #: old_compensation/index.html
 msgid ""
 ", they have been paying for\n"
@@ -179,7 +168,8 @@ msgstr ", 您至少需要"
 msgid ". If all terms below are met, you will receive"
 msgstr ". 如果满足以下所有条款，您将收到"
 
-#: pages/track_results.vue
+#: pages/track_results.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
 msgid ". They were active for"
 msgstr ". 他们活跃于"
 
@@ -207,19 +197,6 @@ msgstr ""
 "months_paid }}</span>\n"
 "\t\t\t\t\t\t\t個月內處於有效狀態"
 
-#: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
-msgid ""
-". They were active for\n"
-"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
-"months_paid }}</span>\n"
-"\t\t\t\t\t\t\tmonth(s) before they stopped paying"
-msgstr ""
-"。在他們停止付款之前，在\n"
-"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{selectedUser."
-"months_paid }}</span>\n"
-"\t\t\t\t\t\t\t個月內處於有效狀態"
-
 #: old_compensation/index.html
 msgid ""
 ". They were active for\n"
@@ -231,6 +208,12 @@ msgstr ""
 "\t\t\t\t\t\t<span class=\"text-green open-bold\">{{selectedUser.months_paid}}"
 "</span>\n"
 "\t\t\t\t\t\t個月內處於有效狀態"
+
+#: components/compensation/builders_bonus.vue
+#, fuzzy
+#| msgid "Who is our target market?"
+msgid ". This means you are on target to make"
+msgstr "誰是我們的目標市場？"
 
 #: pages/price_match_guarantee.vue
 msgid ". You find a lower publicly available rate the next day for"
@@ -858,6 +841,12 @@ msgstr "%{ name }, 現在請導入您的聯繫人"
 msgid "%{ night } Nights"
 msgstr "%{ night } 晚"
 
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid "Total Number of Members"
+msgid "%{ numMembers } Members"
+msgstr "會員總數"
+
 #: pages/hotels.vue
 msgid "%{ roomCount } rooms, %{ guestCount } guests"
 msgstr "%{ roomCount } 房間, %{ guestCount } 客人"
@@ -1437,36 +1426,6 @@ msgstr ""
 "<i class=\"far fa-clock mr-2\"></i>\n"
 "\t\t\t\t\t\t您只差\n"
 "\t\t\t\t\t\t<strong>{{5 - quick_actions[10]}} 会员</strong>\n"
-"\t\t\t\t\t\t便可以在下个月缴纳会员费时免去100美元"
-
-#: components/compensation/active_partner_modal.vue
-msgid ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\tBecome an Active Partner by referring 1 direct Member this month."
-msgstr ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\t本月推荐 1 位直接会员成为活跃合作伙伴。"
-
-#: components/compensation/active_partner_modal.vue
-msgid ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\tBecome eligible to receive Recurring Income by referring 5 direct "
-"Members and helping one of them also to become Membership free."
-msgstr ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\t通过推荐 5 位直接会员并帮助其中一位也成为免费会员，就有资格获得经常性"
-"收入。"
-
-#: components/compensation/active_partner_modal.vue
-msgid ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\tYou're only\n"
-"\t\t\t\t<strong>{{ 5 - parseInt(quickActions[10] || 0) }} Members</strong>\n"
-"\t\t\t\taway from getting your next month's Membership dues of $100 waived"
-msgstr ""
-"<i class=\"far fa-clock mr-2\"></i>\n"
-"\t\t\t\t\t\t您只差\n"
-"\t\t\t\t\t\t<strong>{{ 5 - parseInt(quickActions[10] || 0) }} 会员</strong>\n"
 "\t\t\t\t\t\t便可以在下个月缴纳会员费时免去100美元"
 
 #: pages/reservations.vue
@@ -3131,8 +3090,8 @@ msgstr "備用電子郵箱"
 msgid "Alternate Phone"
 msgstr "備用電話號碼"
 
-#: pages/builders_base.vue pages/public/leadership.vue
-#: controllers/old_compensation.js
+#: pages/builders_base.vue components/compensation/leadership_bonus.vue
+#: pages/public/leadership.vue controllers/old_compensation.js
 msgid "Ambassador Board of Directors"
 msgstr "大使董事會"
 
@@ -3146,7 +3105,7 @@ msgstr "大使追踪"
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
 #: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -3592,6 +3551,10 @@ msgstr ""
 "錄; 最好是Chrome. Safari, Firefox, Internet Explorer它們都可以通過信用卡和"
 "PayPal支付。給您來帶的不便，敬請見諒，謝謝。"
 
+#: components/compensation/builders_bonus.vue
+msgid "At this point, your builder percentage is"
+msgstr ""
+
 #: pages/growth_calculator.vue
 msgid ""
 "At this potential rank, you will also qualify for the 5% New Business "
@@ -3629,6 +3592,16 @@ msgstr "可用邀請"
 #: pages/reward_points.vue
 msgid "Available Rewards"
 msgstr "可用獎勵"
+
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fa fa-square-o\"></i>You're only {{5 - quick_actions[10]}} "
+#| "Member away from getting your next month's Membership dues of $100 waived"
+msgid "away from getting your next month's Membership dues of $100 waived"
+msgstr ""
+"<i class=\"fa fa-square-o\"></i>您只差{{5 - quick_actions[10]}} 位會員就可以"
+"在下個月繳納會員費時免去$100"
 
 #: agreements/national_director_agreement.html
 msgid "b. Confidentiality."
@@ -3754,6 +3727,30 @@ msgstr "成為會員並享受我們的獨家優惠，比如精選夢幻獎勵郵
 msgid "Become a Partner"
 msgstr "成為合夥人"
 
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-clock mr-2\"></i>\n"
+#| "\t\t\t\tBecome an Active Partner by referring 1 direct Member this month."
+msgid "Become an Active Partner by referring 1 direct Member this month."
+msgstr ""
+"<i class=\"far fa-clock mr-2\"></i>\n"
+"\t\t\t\t本月推荐 1 位直接会员成为活跃合作伙伴。"
+
+#: components/compensation/active_partner_modal.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-clock mr-2\"></i>\n"
+#| "\t\t\t\tBecome eligible to receive Recurring Income by referring 5 direct "
+#| "Members and helping one of them also to become Membership free."
+msgid ""
+"Become eligible to receive Recurring Income by referring 5 direct Members "
+"and helping one of them also to become Membership free."
+msgstr ""
+"<i class=\"far fa-clock mr-2\"></i>\n"
+"\t\t\t\t通过推荐 5 位直接会员并帮助其中一位也成为免费会员，就有资格获得经常性"
+"收入。"
+
 #: components/payout/brightwell/brightwell-review.vue
 msgid "Before completing the transfer review all the information."
 msgstr "在完成转移之前检查所有信息。"
@@ -3855,7 +3852,7 @@ msgid "Board Type"
 msgstr "板型"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus"
 msgstr "獎金"
 
@@ -3887,7 +3884,7 @@ msgid "Bonus Locked (Need {{5 - weeklyBonus.data.weekly_points}} more points)"
 msgstr "獎金已鎖定 (Need {{5 - weeklyBonus.data.weekly_points}} more points)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus not earned yet."
 msgstr "未獲得獎金。"
 
@@ -4287,8 +4284,8 @@ msgid "Can you book travel for others and NOT travel yourself?"
 msgstr "您可以在自己不旅行的情況下為別人預訂旅行嗎？"
 
 #: pages/booking.vue pages/checkout.vue pages/connect.vue pages/email.vue
-#: pages/invoices.vue components/payout/euro-conversion.vue
-#: components/booking/add-cd-user.vue
+#: pages/invoices.vue components/booking/add-cd-user.vue
+#: components/payout/euro-conversion.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -8678,8 +8675,8 @@ msgstr "最後7天"
 msgid "Last Month"
 msgstr "上個月"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr "上個月的領導獎金已申請，正在等待支付。"
 
@@ -9366,11 +9363,13 @@ msgstr "月累計"
 msgid "Month-to-Date"
 msgstr "月累計"
 
-#: pages/track_results.vue
+#: pages/track_results.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
 msgid "month(s)"
 msgstr "月"
 
-#: pages/track_results.vue
+#: pages/track_results.vue components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
 msgid "month(s) before they stopped paying"
 msgstr "他们停止付款前的几个月"
 
@@ -9648,8 +9647,8 @@ msgstr ""
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
 #: components/welcome/members-modal.vue competition/index.html
-#: invoices/invoice_statement.html new_ranks/index.html
-#: negative_balances/index.html receipts/booking_receipt.html
+#: invoices/invoice_statement.html negative_balances/index.html
+#: new_ranks/index.html receipts/booking_receipt.html
 #: receipts/builders_bonus.html receipts/commission_statement.html
 #: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
 #: receipts/instant_bonus_statement.html receipts/invoice.html
@@ -9827,8 +9826,8 @@ msgstr "本月新的合作夥伴（10級）"
 
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/top_producers.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/top_producers.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "New Production"
 msgstr "新產品"
 
@@ -10277,6 +10276,10 @@ msgid ""
 "of your inStays booking, you can receive a credit for the difference in "
 "Reward Points."
 msgstr "在您的 inStays 预订中，您可以获得奖励积分差额的积分。"
+
+#: components/compensation/builders_bonus.vue
+msgid "off of each directs volume."
+msgstr ""
 
 #: pages/info_center.vue
 msgid "Official Team Partners"
@@ -11832,12 +11835,12 @@ msgid "Product Director"
 msgstr "產品總監"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production"
 msgstr "生產"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production Details Last Month"
 msgstr "上個月生产详情"
 
@@ -11918,12 +11921,12 @@ msgid "Qualified"
 msgstr "符合资格"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Prod."
 msgstr "合格的產品。"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Production"
 msgstr "合格的產品"
 
@@ -12305,7 +12308,7 @@ msgid "Required"
 msgstr "必需的"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Requirement"
 msgstr "要求"
 
@@ -13315,8 +13318,9 @@ msgstr "國家/地區"
 msgid "Statement Date"
 msgstr "聲明日期"
 
-#: components/compensation/statements.vue old_compensation/index.html
+#: components/compensation/statements.vue
 #: old_refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html
 msgid "Statements"
 msgstr "聲明"
 
@@ -13339,8 +13343,8 @@ msgstr "統計數據"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: negative_balances/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html
 msgid "Status"
 msgstr "狀態"
 
@@ -14698,7 +14702,7 @@ msgid "total"
 msgstr "合計"
 
 #: pages/hotels_booking.vue receipts/italian_commission.html
-#: receipts/italian_receipt.html track_growth/index.html upgrade/index.html
+#: receipts/italian_receipt.html upgrade/index.html track_growth/index.html
 msgid "Total"
 msgstr "合計"
 
@@ -14820,6 +14824,10 @@ msgstr "合計："
 #: components/compensation/member_activations.vue
 msgid "TOTAL:"
 msgstr "总共："
+
+#: components/compensation/top_producers.vue
+msgid "TOTAL: $%{ production }"
+msgstr ""
 
 #: components/compensation/builders_bonus.vue
 msgid "TOTALS:"
@@ -16494,8 +16502,8 @@ msgstr ""
 "您選擇使用SafetyPay®付款。根據付款類型，我們可能需要幾分鐘到24小時才能收到您"
 "成功付款的通知。"
 
-#: pages/growth_calculator.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html
 msgid "You have earned a greater bonus."
 msgstr "您已經獲得了更多的獎金。"
 
@@ -16696,6 +16704,10 @@ msgstr "您将无法更改姓名或修改此预订。"
 #: pages/growth_calculator.vue
 msgid "You would not receive a rank with these potential parameters."
 msgstr "您將不會獲得具有這些潛在參數的排名。"
+
+#: components/compensation/active_partner_modal.vue
+msgid "You're only"
+msgstr ""
 
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
@@ -24230,6 +24242,41 @@ msgid ""
 "GoPro Ticket."
 msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門票。"
 
+#~ msgid ""
+#~ ", they have been paying for\n"
+#~ "\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
+#~ "months_paid }}</span>\n"
+#~ "\t\t\t\t\t\t\tmonth(s)"
+#~ msgstr ""
+#~ "，他们已经支付了\n"
+#~ "<span class=\"text-green open-bold\">{{ selectedUser.months_paid }}</"
+#~ "span>\n"
+#~ "个月的费用"
+
+#~ msgid ""
+#~ ". They were active for\n"
+#~ "\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedUser."
+#~ "months_paid }}</span>\n"
+#~ "\t\t\t\t\t\t\tmonth(s) before they stopped paying"
+#~ msgstr ""
+#~ "。在他們停止付款之前，在\n"
+#~ "\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{selectedUser."
+#~ "months_paid }}</span>\n"
+#~ "\t\t\t\t\t\t\t個月內處於有效狀態"
+
+#~ msgid ""
+#~ "<i class=\"far fa-clock mr-2\"></i>\n"
+#~ "\t\t\t\tYou're only\n"
+#~ "\t\t\t\t<strong>{{ 5 - parseInt(quickActions[10] || 0) }} Members</"
+#~ "strong>\n"
+#~ "\t\t\t\taway from getting your next month's Membership dues of $100 waived"
+#~ msgstr ""
+#~ "<i class=\"far fa-clock mr-2\"></i>\n"
+#~ "\t\t\t\t\t\t您只差\n"
+#~ "\t\t\t\t\t\t<strong>{{ 5 - parseInt(quickActions[10] || 0) }} 会员</"
+#~ "strong>\n"
+#~ "\t\t\t\t\t\t便可以在下个月缴纳会员费时免去100美元"
+
 #~ msgid "Inactive"
 #~ msgstr "非活跃"
 
@@ -27416,13 +27463,6 @@ msgstr "您需要11分才能獲勝積分最高的5個領導者將獲得GoPro門�
 #~ "<i class=\"fa fa-square-o\"></i>Become an Active Partner by referring 3 "
 #~ "direct Members."
 #~ msgstr "<i class=\"fa fa-square-o\"></i>通過推薦3位直接會員成為合作夥伴."
-
-#~ msgid ""
-#~ "<i class=\"fa fa-square-o\"></i>You're only {{5 - quick_actions[10]}} "
-#~ "Member away from getting your next month's Membership dues of $100 waived"
-#~ msgstr ""
-#~ "<i class=\"fa fa-square-o\"></i>您只差{{5 - quick_actions[10]}} 位會員就可"
-#~ "以在下個月繳納會員費時免去$100"
 
 #~ msgid ""
 #~ "<i class=\"fas fa-question-circle\"></i> Click here to access our Support "
