@@ -579,6 +579,13 @@ msgstr ""
 "{{ reformatStringCurrencyAmount(confirmationDetails.quote.receiveAmount) }} "
 "{{ confirmationDetails.quote.destinationCurrencyISO3Code }}"
 
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"{{ this.transferDetails.transferMethod == 'CASH_PICKUP' ? 'Cash pickup' : "
+"'Bank transfer' }}"
+msgstr ""
+
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
 msgstr "{{ tips[cruise.lineId].note }}."
@@ -587,6 +594,7 @@ msgstr "{{ tips[cruise.lineId].note }}."
 msgid "{{ transferDetails.amountToSend }}"
 msgstr "{{ transferDetails.amountToSend }}"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
 msgid ""
@@ -627,6 +635,12 @@ msgid ""
 msgstr ""
 "{{ transferDetails.transferFee }} {{ transferDetails."
 "sourceCountryAndCurrency.currency.code }}"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+msgid ""
+"{{ transferDetails.transferMethod == 'CASH_PICKUP' ? 'via cash pickup.' : "
+"'via bank transfer.' }}"
+msgstr ""
 
 #: components/payout/brightwell/brightwell-review.vue
 msgid "{{ transferField.hintText }}"
@@ -3294,7 +3308,7 @@ msgstr "Результати Амбасадора"
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
 #: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -3910,8 +3924,7 @@ msgstr "Банківський рахунок"
 msgid "Bank Details"
 msgstr "Банківські реквізити"
 
-#: components/payout/brightwell/brightwell-recipient-account-details.vue
-#: components/payout/brightwell/brightwell-review.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "Bank transfer"
 msgstr "Банківський переказ"
 
@@ -4092,7 +4105,7 @@ msgid "Board Type"
 msgstr "Тип харчування"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Bonus"
 msgstr "Бонус"
 
@@ -4126,7 +4139,7 @@ msgstr ""
 "балів)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Bonus not earned yet."
 msgstr "Бонус ще не отримано."
 
@@ -4641,6 +4654,12 @@ msgstr "Оплата Готівкою"
 msgid "Cash Pickup"
 msgstr "Забрати готівкою"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Cash Pickup"
+msgid "Cash Pickup Location"
+msgstr "Забрати готівкою"
+
 #: pages/checkout.vue
 msgid "Cash/Bank Transfer"
 msgstr "Готівковий/Банківський переказ"
@@ -4809,6 +4828,12 @@ msgstr "Виберіть"
 msgid "Choose a local CSV file"
 msgstr "Оберіть локальний  CSV файл"
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+msgid ""
+"Choose a location from one of our supported partners for a cash pickup "
+"transfer."
+msgstr ""
+
 #: reports/index.html
 msgid "Choose a Quick Report"
 msgstr "Обрати Швидкий Звіт"
@@ -4856,8 +4881,9 @@ msgstr "Відвідані міста"
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue old_compensation/index.html
-#: receipts/italian_receipt.html
+#: components/compensation/residual_bonus.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#: old_compensation/index.html receipts/italian_receipt.html
 msgid "City"
 msgstr "Місто"
 
@@ -5267,6 +5293,9 @@ msgid "Contest Timeline:"
 msgstr "Терміни конкурсу:"
 
 #: pages/courses.vue pages/italian_onboarding.vue pages/leadership_academy.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-recipient-details.vue
 #: components/payout/brightwell/brightwell-transfer-details.vue
 #: courses/view.html
 msgid "Continue"
@@ -5350,6 +5379,7 @@ msgstr "Відвідані країни"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue components/public/JoinModal.vue
 #: pages/public/signup.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
 #: receipts/italian_receipt.html reports/index.html track_results/index.html
@@ -7159,6 +7189,16 @@ msgstr "Функції"
 #: pages/welcome.vue
 msgid "Fundraising Campaign for Mercy Ships"
 msgstr "Кампанія зі збору коштів для Mercy Ships"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid ""
+#| "NOTE: Please allow up to -- {{ confirmationDetails.quote.deliverySLA."
+#| "name }} -- to complete."
+msgid "Funds availability: {{ confirmationDetails.quote.deliverySLA.name }}."
+msgstr ""
+"ВАЖЛИВО: Просимо допустити до -- {{ confirmationDetails.quote.deliverySLA."
+"name }} -- для завершення."
 
 #: components/user/functions.vue
 msgid "Funds have been added. Transaction successfully completed"
@@ -9285,8 +9325,8 @@ msgstr "Останній підходящий"
 msgid "Last Month"
 msgstr "Попередній Місяць"
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr ""
 "Запит на отримання Лідерського Бонусу за минулий місяць надіслано та очікує "
@@ -9562,6 +9602,12 @@ msgstr "Завантаження..."
 #: receipts/hotel_booking_receipt.html
 msgid "Location"
 msgstr "Локація"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Location Details"
+msgstr "Подробиці Запрошення"
 
 #: pages/admin_user_id.vue
 msgid "Logged in as user!"
@@ -10493,8 +10539,8 @@ msgstr "Нові Партнери за Цей Місяць (10 Рівнів)"
 
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/top_producers.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/top_producers.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "New Production"
 msgstr "Нова Продукція"
 
@@ -10600,14 +10646,6 @@ msgstr "Наступний Крок"
 #: pages/reward_points.vue
 msgid "Next Year"
 msgstr "Наступний Рік"
-
-#: components/payout/brightwell/brightwell-recipient-details.vue
-msgid "Next: Recipient's Bank Details"
-msgstr "Далі: Банківські реквізити одержувача"
-
-#: components/payout/brightwell/brightwell-recipient-account-details.vue
-msgid "Next: Review"
-msgstr "Далі: Огляд"
 
 #: pages/hotels.vue
 msgid "night"
@@ -11660,6 +11698,16 @@ msgstr "Сплатити, використовуючи Бонусні Бали"
 msgid "Pay with Bank"
 msgstr "Оплатити через Банківський рахунок"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+msgid "Payer"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Depart Location"
+msgid "Payer Location"
+msgstr "Місце Відправлення"
+
 #: pages/checkout.vue
 msgid "Payment Agreement"
 msgstr "Платіжна Угода"
@@ -12116,6 +12164,20 @@ msgid ""
 msgstr ""
 "Будь ласка, відключіть проксі і знову поверніться на цю сторінку. Якщо ви "
 "вважаєте, що це помилка, зверніться до Служби Підтримки."
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid ""
+#| "Please review 'Recipient Bank Details' for accuracy as inaccurate and "
+#| "incomplete information may result in delay, cancellation and/or return of "
+#| "funds."
+msgid ""
+"Please review 'Location Details' for accuracy as inaccurate and incomplete "
+"information may result in delay, cancellation and/or return of funds."
+msgstr ""
+"Будь ласка, перевірте \"Дані банку одержувача\", оскільки неточна або "
+"неповна інформація може призвести до затримки, скасування або повернення "
+"платежу."
 
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 msgid ""
@@ -12633,12 +12695,12 @@ msgid "Product Director"
 msgstr "Директор з продукту"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Production"
 msgstr "Продуктивність"
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Production Details Last Month"
 msgstr "Деталі Продуктивності Минулого Місяця"
 
@@ -12723,12 +12785,12 @@ msgid "Qualified"
 msgstr "Кваліфіковані"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Qualified Prod."
 msgstr "Кваліфікаційна Прод."
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Qualified Production"
 msgstr "Кваліфікаційна Продуктивність"
 
@@ -13107,7 +13169,7 @@ msgid "Required"
 msgstr "Необхідно заповнити"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Requirement"
 msgstr "Вимога"
 
@@ -13515,13 +13577,37 @@ msgstr "Вибрати все"
 msgid "Select Cabin"
 msgstr "Обрати Каюту"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select Cabin"
+msgid "Select city"
+msgstr "Обрати Каюту"
+
 #: pages/tax_report.vue
 msgid "Select Option"
+msgstr "Оберіть Опцію"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Selected"
+msgid "Select payer"
+msgstr "Вибрано"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select Option"
+msgid "Select payer location"
 msgstr "Оберіть Опцію"
 
 #: pages/facebook_marketing.vue
 msgid "Select post language:"
 msgstr "Оберіть Мову Публікації:"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select a Category to View"
+msgid "Select state or province"
+msgstr "Оберіть Категорію для Перегляду"
 
 #: pages/resources.vue
 msgid "Select Subcategories"
@@ -14114,6 +14200,7 @@ msgid "State:"
 msgstr "Статус:"
 
 #: components/translations/placeholders.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "State/Province"
 msgstr "Штат/Регіон"
 
@@ -14142,9 +14229,8 @@ msgstr "Держава/Регіон"
 msgid "Statement Date"
 msgstr "Дата Заяви"
 
-#: components/compensation/statements.vue
+#: components/compensation/statements.vue old_compensation/index.html
 #: old_refund_protocol/remove_weeklybonus_modal.html
-#: old_compensation/index.html
 msgid "Statements"
 msgstr "Заяви"
 
@@ -14167,8 +14253,8 @@ msgstr "Статистика"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_refund_protocol/leadership_bonus_modal.html
-#: old_compensation/index.html
+#: negative_balances/index.html old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Status"
 msgstr "Статус"
 
@@ -15565,6 +15651,14 @@ msgstr ""
 "Щоб здійснити запит на нарахування, відвідайте свою сторінку Служби "
 "Підтримки ("
 
+#: components/payout/brightwell/brightwell-transfer-details.vue
+msgid ""
+"To see a full list of supported cash pickup partner locations please refer "
+"to this document:\n"
+"\t\t<a target=\"_blank\" href=\"./files/Cash_Pickup_Locations.pdf\" class="
+"\"bold\">Cash Pickup Partner Locations.</a>"
+msgstr ""
+
 #: pages/invoices.vue
 msgid ""
 "To update the preferred currency, please select a recurring profile and then "
@@ -15885,6 +15979,7 @@ msgstr "Переказ на Рахунок Payoneer"
 msgid "Transfer To Payquicker Account"
 msgstr "Переклад На Payquicker Аккаунт"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
 #: components/payout/brightwell/brightwell-transfer-details.vue
@@ -16230,10 +16325,6 @@ msgstr "Підтвердити свій номер телефону"
 #: pages/settings.vue
 msgid "Verify your Phone Number"
 msgstr "Підтвердити свій номер телефону"
-
-#: components/payout/brightwell/brightwell-confirmation.vue
-msgid "via bank transfer."
-msgstr "банківським переказом."
 
 #: resources/index.html
 msgid "Video, Images, and Other Links"
@@ -17557,8 +17648,8 @@ msgstr ""
 "повідомлення про успішний переказ може зайняти від декількох хвилин до 24 "
 "годин."
 
-#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
-#: old_compensation/index.html
+#: pages/growth_calculator.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "You have earned a greater bonus."
 msgstr "Ви заробили більший бонус."
 
@@ -26227,6 +26318,15 @@ msgid ""
 msgstr ""
 "Вам потрібно 11 балів, щоб виграти. ТОП-5 Лідерів з найбільшою кількістю "
 "балів виграють Квиток на GoPro."
+
+#~ msgid "Next: Recipient's Bank Details"
+#~ msgstr "Далі: Банківські реквізити одержувача"
+
+#~ msgid "Next: Review"
+#~ msgstr "Далі: Огляд"
+
+#~ msgid "via bank transfer."
+#~ msgstr "банківським переказом."
 
 #~ msgid "Let's Do It Again!"
 #~ msgstr "Зробимо це знову!"

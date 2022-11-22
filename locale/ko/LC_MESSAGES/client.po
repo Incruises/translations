@@ -562,6 +562,13 @@ msgstr ""
 "{{ reformatStringCurrencyAmount(confirmationDetails.quote.receiveAmount) }} "
 "{{ confirmationDetails.quote.destinationCurrencyISO3Code }}"
 
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"{{ this.transferDetails.transferMethod == 'CASH_PICKUP' ? 'Cash pickup' : "
+"'Bank transfer' }}"
+msgstr ""
+
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
 msgstr "{{ tips[cruise.lineId].note }}."
@@ -570,6 +577,7 @@ msgstr "{{ tips[cruise.lineId].note }}."
 msgid "{{ transferDetails.amountToSend }}"
 msgstr "{{ transferDetails.amountToSend }}"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
 msgid ""
@@ -610,6 +618,12 @@ msgid ""
 msgstr ""
 "{{ transferDetails.transferFee }} {{ transferDetails."
 "sourceCountryAndCurrency.currency.code }}"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+msgid ""
+"{{ transferDetails.transferMethod == 'CASH_PICKUP' ? 'via cash pickup.' : "
+"'via bank transfer.' }}"
+msgstr ""
 
 #: components/payout/brightwell/brightwell-review.vue
 msgid "{{ transferField.hintText }}"
@@ -3212,7 +3226,7 @@ msgstr "앰버서더 추적"
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
 #: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -3794,8 +3808,7 @@ msgstr "은행 계정"
 msgid "Bank Details"
 msgstr "은행 상세 정보"
 
-#: components/payout/brightwell/brightwell-recipient-account-details.vue
-#: components/payout/brightwell/brightwell-review.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "Bank transfer"
 msgstr "은행 송금"
 
@@ -3971,7 +3984,7 @@ msgid "Board Type"
 msgstr "보드 타입"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Bonus"
 msgstr "보너스"
 
@@ -4003,7 +4016,7 @@ msgid "Bonus Locked (Need {{5 - weeklyBonus.data.weekly_points}} more points)"
 msgstr "보너스 잠금 (Need {{5 - weeklyBonus.data.weekly_points}} more points)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Bonus not earned yet."
 msgstr "해당 보너스를 아직 수령하지 않았습니다."
 
@@ -4502,6 +4515,12 @@ msgstr "현금 결제"
 msgid "Cash Pickup"
 msgstr "현금 픽업"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Cash Pickup"
+msgid "Cash Pickup Location"
+msgstr "현금 픽업"
+
 #: pages/checkout.vue
 msgid "Cash/Bank Transfer"
 msgstr "현금/은행 송금"
@@ -4662,6 +4681,12 @@ msgstr "선택하십시오"
 msgid "Choose a local CSV file"
 msgstr "로컬 CSV 파일 선택하십시오"
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+msgid ""
+"Choose a location from one of our supported partners for a cash pickup "
+"transfer."
+msgstr ""
+
 #: reports/index.html
 msgid "Choose a Quick Report"
 msgstr "간편 보고서 선택"
@@ -4709,8 +4734,9 @@ msgstr "방문한 도시들"
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue old_compensation/index.html
-#: receipts/italian_receipt.html
+#: components/compensation/residual_bonus.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#: old_compensation/index.html receipts/italian_receipt.html
 msgid "City"
 msgstr "도시"
 
@@ -5112,6 +5138,9 @@ msgid "Contest Timeline:"
 msgstr "경연 기간:"
 
 #: pages/courses.vue pages/italian_onboarding.vue pages/leadership_academy.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-recipient-details.vue
 #: components/payout/brightwell/brightwell-transfer-details.vue
 #: courses/view.html
 msgid "Continue"
@@ -5195,6 +5224,7 @@ msgstr "방문한 국가들"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue components/public/JoinModal.vue
 #: pages/public/signup.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
 #: receipts/italian_receipt.html reports/index.html track_results/index.html
@@ -6719,11 +6749,11 @@ msgid ""
 msgstr ""
 "귀하의 재정 보호를 위해 (INCRUISES INTERNATIONAL LLC는 트러스트마이트래블의 "
 "회원이 되었으며 회원 번호는 (TMT56252)입니다. INCRUISES INTERNATIONAL LLC에 "
-"지불된 모든 고객의 돈은 트러스트 마이 트래블로 보호됩니다. 이는 당사의 "
-"재정적 실패가 발생할 경우,\n"
+"지불된 모든 고객의 돈은 트러스트 마이 트래블로 보호됩니다. 이는 당사의 재정"
+"적 실패가 발생할 경우,\n"
 "     타 서비스 제공업체( 예를 들자면, 크루즈 \n"
-"     선사)에 확인번호를 제공한 예정된 크루즈 예약에 대해, 사전 이용, 만료 "
-"또는 적용되지 않은 INCRUISES INTERNATIONAL LLC에 지불한 금액에 대해 환불받게 "
+"     선사)에 확인번호를 제공한 예정된 크루즈 예약에 대해, 사전 이용, 만료 또"
+"는 적용되지 않은 INCRUISES INTERNATIONAL LLC에 지불한 금액에 대해 환불받게 "
 "될 것임을 의미합니다."
 
 #: layouts/default.html
@@ -6940,6 +6970,16 @@ msgstr "기능"
 #: pages/welcome.vue
 msgid "Fundraising Campaign for Mercy Ships"
 msgstr "머시쉽을 위한 모금 운동"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid ""
+#| "NOTE: Please allow up to -- {{ confirmationDetails.quote.deliverySLA."
+#| "name }} -- to complete."
+msgid "Funds availability: {{ confirmationDetails.quote.deliverySLA.name }}."
+msgstr ""
+"주의: 완료되도록 -- {{ confirmationDetails.quote.deliverySLA.name }} -- 최대"
+"한 허용하십시오."
 
 #: components/user/functions.vue
 msgid "Funds have been added. Transaction successfully completed"
@@ -8962,8 +9002,8 @@ msgstr "마지막 적격"
 msgid "Last Month"
 msgstr "지난 달"
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr "지난 달의 리더십 보너스가 요청되었으며 지불 보류 중입니다."
 
@@ -9233,6 +9273,12 @@ msgstr "로딩..."
 #: receipts/hotel_booking_receipt.html
 msgid "Location"
 msgstr "위치"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Location Details"
+msgstr "가입안내 세부정보"
 
 #: pages/admin_user_id.vue
 msgid "Logged in as user!"
@@ -10139,8 +10185,8 @@ msgstr "이 달의 신규 파트너(10레벨)"
 
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/top_producers.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/top_producers.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "New Production"
 msgstr "신규 매출액"
 
@@ -10248,14 +10294,6 @@ msgstr "다음 단계"
 #: pages/reward_points.vue
 msgid "Next Year"
 msgstr "다음 해"
-
-#: components/payout/brightwell/brightwell-recipient-details.vue
-msgid "Next: Recipient's Bank Details"
-msgstr "다음: 수취인의 은행 세부 정보"
-
-#: components/payout/brightwell/brightwell-recipient-account-details.vue
-msgid "Next: Review"
-msgstr "다음: 검토"
 
 #: pages/hotels.vue
 msgid "night"
@@ -11265,6 +11303,16 @@ msgstr "리워드 포인트를 사용하여 결제"
 msgid "Pay with Bank"
 msgstr "은행으로 지불"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+msgid "Payer"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Depart Location"
+msgid "Payer Location"
+msgstr "출발 장소"
+
 #: pages/checkout.vue
 msgid "Payment Agreement"
 msgstr "지불 계약"
@@ -11698,6 +11746,19 @@ msgid ""
 msgstr ""
 "프록시를 제거하고이 페이지를 다시 방문하십시오. 오류라고 생각되면 지원 담당자"
 "에게 문의하십시오."
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid ""
+#| "Please review 'Recipient Bank Details' for accuracy as inaccurate and "
+#| "incomplete information may result in delay, cancellation and/or return of "
+#| "funds."
+msgid ""
+"Please review 'Location Details' for accuracy as inaccurate and incomplete "
+"information may result in delay, cancellation and/or return of funds."
+msgstr ""
+"정확하지 않거나 불완전한 정보로 인해 지연, 취소 및/또는 자금 반환이 발생할 "
+"수 있으므로 '수취인 은행 세부 정보'를 검토하여 정확성을 확인하십시오."
 
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 msgid ""
@@ -12200,12 +12261,12 @@ msgid "Product Director"
 msgstr "제품 디렉터"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Production"
 msgstr "매출액"
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Production Details Last Month"
 msgstr "지난달 매출액 세부 정보"
 
@@ -12287,12 +12348,12 @@ msgid "Qualified"
 msgstr "인증"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Qualified Prod."
 msgstr "공인 매출액."
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Qualified Production"
 msgstr "공인 매출액"
 
@@ -12662,7 +12723,7 @@ msgid "Required"
 msgstr "요구 매출액"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Requirement"
 msgstr "요구 매출액"
 
@@ -13064,13 +13125,37 @@ msgstr "모두 선택"
 msgid "Select Cabin"
 msgstr "객실 선택"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select Cabin"
+msgid "Select city"
+msgstr "객실 선택"
+
 #: pages/tax_report.vue
 msgid "Select Option"
+msgstr "옵션 선택"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Selected"
+msgid "Select payer"
+msgstr "선택"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select Option"
+msgid "Select payer location"
 msgstr "옵션 선택"
 
 #: pages/facebook_marketing.vue
 msgid "Select post language:"
 msgstr "언어 선택 :"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select a Category to View"
+msgid "Select state or province"
+msgstr "게시  목록 선택"
 
 #: pages/resources.vue
 msgid "Select Subcategories"
@@ -13657,6 +13742,7 @@ msgid "State:"
 msgstr "상태:"
 
 #: components/translations/placeholders.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "State/Province"
 msgstr "주/지역"
 
@@ -13685,9 +13771,8 @@ msgstr "주/지역"
 msgid "Statement Date"
 msgstr "입출금 날짜"
 
-#: components/compensation/statements.vue
+#: components/compensation/statements.vue old_compensation/index.html
 #: old_refund_protocol/remove_weeklybonus_modal.html
-#: old_compensation/index.html
 msgid "Statements"
 msgstr "내역서"
 
@@ -13710,8 +13795,8 @@ msgstr "통계"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_refund_protocol/leadership_bonus_modal.html
-#: old_compensation/index.html
+#: negative_balances/index.html old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Status"
 msgstr "현황"
 
@@ -15021,6 +15106,14 @@ msgstr "계속하려면 생년월일을 확인하십시오:"
 msgid "To request a credit, visit your Support page ("
 msgstr "크레딧을 요청하려면 다음 지원 페이지를 방문하십시오 ("
 
+#: components/payout/brightwell/brightwell-transfer-details.vue
+msgid ""
+"To see a full list of supported cash pickup partner locations please refer "
+"to this document:\n"
+"\t\t<a target=\"_blank\" href=\"./files/Cash_Pickup_Locations.pdf\" class="
+"\"bold\">Cash Pickup Partner Locations.</a>"
+msgstr ""
+
 #: pages/invoices.vue
 msgid ""
 "To update the preferred currency, please select a recurring profile and then "
@@ -15335,6 +15428,7 @@ msgstr "페이오니어 계정으로 이체"
 msgid "Transfer To Payquicker Account"
 msgstr "Payquicker 계정으로 이체"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
 #: components/payout/brightwell/brightwell-transfer-details.vue
@@ -15675,10 +15769,6 @@ msgstr "귀하의 휴대폰 번호를 인증받으십시오"
 #: pages/settings.vue
 msgid "Verify your Phone Number"
 msgstr "귀하의 전화번호를 인증받으십시오"
-
-#: components/payout/brightwell/brightwell-confirmation.vue
-msgid "via bank transfer."
-msgstr "은행 송금을 통해."
 
 #: resources/index.html
 msgid "Video, Images, and Other Links"
@@ -16930,8 +17020,8 @@ msgstr ""
 "귀하는 SafetyPay®로 지불하도록 선택했습니다. 지불 유형에 따라 귀하가 지불 완"
 "료를 통지받는데 몇 분에서 24 시간까지 걸릴 수 있습니다."
 
-#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
-#: old_compensation/index.html
+#: pages/growth_calculator.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "You have earned a greater bonus."
 msgstr "귀하는 더 많은 보너스를 얻었습니다."
 
@@ -25258,6 +25348,15 @@ msgid ""
 msgstr ""
 "자격을 얻으려면 11 점이 필요합니다. 가장 많은 점수를 얻은 최고 5명의 리더가 "
 "고프로티켓을 획득합니다."
+
+#~ msgid "Next: Recipient's Bank Details"
+#~ msgstr "다음: 수취인의 은행 세부 정보"
+
+#~ msgid "Next: Review"
+#~ msgstr "다음: 검토"
+
+#~ msgid "via bank transfer."
+#~ msgstr "은행 송금을 통해."
 
 #~ msgid "Let's Do It Again!"
 #~ msgstr "다시 해 봅시다!"

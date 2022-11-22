@@ -587,6 +587,13 @@ msgstr ""
 "{{ reformatStringCurrencyAmount(confirmationDetails.quote.receiveAmount) }} "
 "{{ confirmationDetails.quote.destinationCurrencyISO3Code }}"
 
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"{{ this.transferDetails.transferMethod == 'CASH_PICKUP' ? 'Cash pickup' : "
+"'Bank transfer' }}"
+msgstr ""
+
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
 msgstr "{{ tips[cruise.lineId].note }}."
@@ -595,6 +602,7 @@ msgstr "{{ tips[cruise.lineId].note }}."
 msgid "{{ transferDetails.amountToSend }}"
 msgstr "{{ transferDetails.amountToSend }}"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
 msgid ""
@@ -635,6 +643,12 @@ msgid ""
 msgstr ""
 "{{ transferDetails.transferFee }} {{ transferDetails."
 "sourceCountryAndCurrency.currency.code }}"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+msgid ""
+"{{ transferDetails.transferMethod == 'CASH_PICKUP' ? 'via cash pickup.' : "
+"'via bank transfer.' }}"
+msgstr ""
 
 #: components/payout/brightwell/brightwell-review.vue
 msgid "{{ transferField.hintText }}"
@@ -3292,7 +3306,7 @@ msgstr "Monitorizare Ambasador"
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
 #: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -3911,8 +3925,7 @@ msgstr "Cont bancar"
 msgid "Bank Details"
 msgstr "Detalii bancare"
 
-#: components/payout/brightwell/brightwell-recipient-account-details.vue
-#: components/payout/brightwell/brightwell-review.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "Bank transfer"
 msgstr "Transfer bancar"
 
@@ -4095,7 +4108,7 @@ msgid "Board Type"
 msgstr "Tipul de îmbarcare"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Bonus"
 msgstr "Bonus"
 
@@ -4127,7 +4140,7 @@ msgid "Bonus Locked (Need {{5 - weeklyBonus.data.weekly_points}} more points)"
 msgstr "Bonus blocat (Need {{5 - weeklyBonus.data.weekly_points}} more points)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Bonus not earned yet."
 msgstr "Nu aţi câştigat acest bonus încă."
 
@@ -4648,6 +4661,12 @@ msgstr "Plată în bani lichizi"
 msgid "Cash Pickup"
 msgstr "Ridicare numerar"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Cash Pickup"
+msgid "Cash Pickup Location"
+msgstr "Ridicare numerar"
+
 #: pages/checkout.vue
 msgid "Cash/Bank Transfer"
 msgstr "Numerar/Transfer bancar"
@@ -4816,6 +4835,12 @@ msgstr "Alege"
 msgid "Choose a local CSV file"
 msgstr "Alege un fişier CSV"
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+msgid ""
+"Choose a location from one of our supported partners for a cash pickup "
+"transfer."
+msgstr ""
+
 #: reports/index.html
 msgid "Choose a Quick Report"
 msgstr "Alege un Raport rapid"
@@ -4863,8 +4888,9 @@ msgstr "Orașe vizitate"
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue old_compensation/index.html
-#: receipts/italian_receipt.html
+#: components/compensation/residual_bonus.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#: old_compensation/index.html receipts/italian_receipt.html
 msgid "City"
 msgstr "Oraş"
 
@@ -5279,6 +5305,9 @@ msgid "Contest Timeline:"
 msgstr "Cronologia concursului:"
 
 #: pages/courses.vue pages/italian_onboarding.vue pages/leadership_academy.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-recipient-details.vue
 #: components/payout/brightwell/brightwell-transfer-details.vue
 #: courses/view.html
 msgid "Continue"
@@ -5362,6 +5391,7 @@ msgstr "Țări vizitate"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue components/public/JoinModal.vue
 #: pages/public/signup.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
 #: receipts/italian_receipt.html reports/index.html track_results/index.html
@@ -7172,6 +7202,16 @@ msgstr "Funcții"
 #: pages/welcome.vue
 msgid "Fundraising Campaign for Mercy Ships"
 msgstr "Campanie de strângere de fonduri pentru Mercy Ships"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid ""
+#| "NOTE: Please allow up to -- {{ confirmationDetails.quote.deliverySLA."
+#| "name }} -- to complete."
+msgid "Funds availability: {{ confirmationDetails.quote.deliverySLA.name }}."
+msgstr ""
+"NOTĂ: Te rugăm să permiți până la -- {{ confirmationDetails.quote."
+"deliverySLA.name }} -- să fie finalizat."
 
 #: components/user/functions.vue
 msgid "Funds have been added. Transaction successfully completed"
@@ -9302,8 +9342,8 @@ msgstr "Ultimul eligibil"
 msgid "Last Month"
 msgstr "Luna trecută"
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr ""
 "A fost cerut Bonusul de Conducere de luna trecută, iar plata sa este în "
@@ -9581,6 +9621,12 @@ msgstr "Se încarcă..."
 #: receipts/hotel_booking_receipt.html
 msgid "Location"
 msgstr "Locație"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Location Details"
+msgstr "Detaliile invitaţiei"
 
 #: pages/admin_user_id.vue
 msgid "Logged in as user!"
@@ -10515,8 +10561,8 @@ msgstr "Parteneri noi luna aceasta (10 niveluri)"
 
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/top_producers.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/top_producers.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "New Production"
 msgstr "Producţie nouă"
 
@@ -10627,14 +10673,6 @@ msgstr "Pasul următor"
 #: pages/reward_points.vue
 msgid "Next Year"
 msgstr "Anul următor"
-
-#: components/payout/brightwell/brightwell-recipient-details.vue
-msgid "Next: Recipient's Bank Details"
-msgstr "Urmează: Detaliile bancare ale destinatarului"
-
-#: components/payout/brightwell/brightwell-recipient-account-details.vue
-msgid "Next: Review"
-msgstr "Următorul: Recenzie"
 
 #: pages/hotels.vue
 msgid "night"
@@ -11700,6 +11738,16 @@ msgstr "Plătește folosind puncte de recompensă"
 msgid "Pay with Bank"
 msgstr "Plăteşte prin bancă"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+msgid "Payer"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Depart Location"
+msgid "Payer Location"
+msgstr "Localitatea de plecare"
+
 #: pages/checkout.vue
 msgid "Payment Agreement"
 msgstr "Acord de plată"
@@ -12154,6 +12202,20 @@ msgid ""
 msgstr ""
 "Eliminați proxy-ul și vizitați din nou această pagină. Dacă credeți că este "
 "o greșeală, vă rugăm să luați legătura cu personalul nostru de asistență."
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid ""
+#| "Please review 'Recipient Bank Details' for accuracy as inaccurate and "
+#| "incomplete information may result in delay, cancellation and/or return of "
+#| "funds."
+msgid ""
+"Please review 'Location Details' for accuracy as inaccurate and incomplete "
+"information may result in delay, cancellation and/or return of funds."
+msgstr ""
+"Te rugăm să verifici „Detaliile bancare ale destinatarului” pentru "
+"exactitate, deoarece informațiile inexacte și incomplete pot duce la "
+"întârziere, anulare și/sau returnare a fondurilor."
 
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 msgid ""
@@ -12669,12 +12731,12 @@ msgid "Product Director"
 msgstr "Director de Produs"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Production"
 msgstr "Producţie"
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Production Details Last Month"
 msgstr "Detaliile de producţie din luna trecută"
 
@@ -12758,12 +12820,12 @@ msgid "Qualified"
 msgstr "Calificat"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Qualified Prod."
 msgstr "Producţie calificată."
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Qualified Production"
 msgstr "Producţie calificată"
 
@@ -13145,7 +13207,7 @@ msgid "Required"
 msgstr "Necesar"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Requirement"
 msgstr "Cerinţă"
 
@@ -13558,13 +13620,37 @@ msgstr "Selectează tot"
 msgid "Select Cabin"
 msgstr "Selectează cabina"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select Cabin"
+msgid "Select city"
+msgstr "Selectează cabina"
+
 #: pages/tax_report.vue
 msgid "Select Option"
+msgstr "Selectează opţiunea"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Selected"
+msgid "Select payer"
+msgstr "Selectat"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select Option"
+msgid "Select payer location"
 msgstr "Selectează opţiunea"
 
 #: pages/facebook_marketing.vue
 msgid "Select post language:"
 msgstr "Selectați limba de publicare:"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select a Category to View"
+msgid "Select state or province"
+msgstr "Selectează o categorie"
 
 #: pages/resources.vue
 msgid "Select Subcategories"
@@ -14161,6 +14247,7 @@ msgid "State:"
 msgstr "Cabină:"
 
 #: components/translations/placeholders.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "State/Province"
 msgstr "Stat/Provincie"
 
@@ -14189,9 +14276,8 @@ msgstr "Stat/Regiune"
 msgid "Statement Date"
 msgstr "Data extrasului de cont"
 
-#: components/compensation/statements.vue
+#: components/compensation/statements.vue old_compensation/index.html
 #: old_refund_protocol/remove_weeklybonus_modal.html
-#: old_compensation/index.html
 msgid "Statements"
 msgstr "Extrasele de cont"
 
@@ -14214,8 +14300,8 @@ msgstr "Statistici"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_refund_protocol/leadership_bonus_modal.html
-#: old_compensation/index.html
+#: negative_balances/index.html old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Status"
 msgstr "Stare"
 
@@ -15628,6 +15714,14 @@ msgstr "Pentru a continua, te rugăm să confirmi data ta de naştere:"
 msgid "To request a credit, visit your Support page ("
 msgstr "Pentru a solicita un credit, vizitează pagina ta de asistență ("
 
+#: components/payout/brightwell/brightwell-transfer-details.vue
+msgid ""
+"To see a full list of supported cash pickup partner locations please refer "
+"to this document:\n"
+"\t\t<a target=\"_blank\" href=\"./files/Cash_Pickup_Locations.pdf\" class="
+"\"bold\">Cash Pickup Partner Locations.</a>"
+msgstr ""
+
 #: pages/invoices.vue
 msgid ""
 "To update the preferred currency, please select a recurring profile and then "
@@ -15947,6 +16041,7 @@ msgstr "Transferă în contul Payoneer"
 msgid "Transfer To Payquicker Account"
 msgstr "Transferă în contul Payquicker"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
 #: components/payout/brightwell/brightwell-transfer-details.vue
@@ -16292,10 +16387,6 @@ msgstr "Verifică numărul tău de telefon mobil"
 #: pages/settings.vue
 msgid "Verify your Phone Number"
 msgstr "Verifică numărul tău de telefon"
-
-#: components/payout/brightwell/brightwell-confirmation.vue
-msgid "via bank transfer."
-msgstr "prin transfer bancar."
 
 #: resources/index.html
 msgid "Video, Images, and Other Links"
@@ -17610,8 +17701,8 @@ msgstr ""
 "dura de la câteva minute la 24 de ore până ce vom fi notificaţi că aţi "
 "efectuat cu succes plata."
 
-#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
-#: old_compensation/index.html
+#: pages/growth_calculator.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "You have earned a greater bonus."
 msgstr "Aţi câştigat un bonus mai mare."
 
@@ -26300,6 +26391,15 @@ msgid ""
 msgstr ""
 "Ai nevoie de 11 puncte pentru a câştiga. Conducătorii din TOP 5 care au cele "
 "mai multe puncte vor câştiga un bilet GoPro."
+
+#~ msgid "Next: Recipient's Bank Details"
+#~ msgstr "Urmează: Detaliile bancare ale destinatarului"
+
+#~ msgid "Next: Review"
+#~ msgstr "Următorul: Recenzie"
+
+#~ msgid "via bank transfer."
+#~ msgstr "prin transfer bancar."
 
 #~ msgid "Let's Do It Again!"
 #~ msgstr "Să o facem din nou!"

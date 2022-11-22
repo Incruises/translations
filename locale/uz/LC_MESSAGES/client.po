@@ -585,6 +585,13 @@ msgstr ""
 "{{ reformatStringCurrencyAmount(confirmationDetails.quote.receiveAmount) }} "
 "{{ confirmationDetails.quote.destinationCurrencyISO3Code }}"
 
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-review.vue
+msgid ""
+"{{ this.transferDetails.transferMethod == 'CASH_PICKUP' ? 'Cash pickup' : "
+"'Bank transfer' }}"
+msgstr ""
+
 #: components/booking/agreements.vue
 msgid "{{ tips[cruise.lineId].note }}."
 msgstr "{{ tips[cruise.lineId].note }}."
@@ -593,6 +600,7 @@ msgstr "{{ tips[cruise.lineId].note }}."
 msgid "{{ transferDetails.amountToSend }}"
 msgstr "{{ transferDetails.amountToSend }}"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
 msgid ""
@@ -633,6 +641,12 @@ msgid ""
 msgstr ""
 "{{ transferDetails.transferFee }} {{ transferDetails."
 "sourceCountryAndCurrency.currency.code }}"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+msgid ""
+"{{ transferDetails.transferMethod == 'CASH_PICKUP' ? 'via cash pickup.' : "
+"'via bank transfer.' }}"
+msgstr ""
 
 #: components/payout/brightwell/brightwell-review.vue
 msgid "{{ transferField.hintText }}"
@@ -3272,7 +3286,7 @@ msgstr "Амбассадор натижалари"
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
 #: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -3885,8 +3899,7 @@ msgstr "Банк ҳисоби"
 msgid "Bank Details"
 msgstr "Банк реквизитлари"
 
-#: components/payout/brightwell/brightwell-recipient-account-details.vue
-#: components/payout/brightwell/brightwell-review.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "Bank transfer"
 msgstr "Банк ўтказмаси"
 
@@ -4072,7 +4085,7 @@ msgid "Board Type"
 msgstr "Овқатланиш тури"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Bonus"
 msgstr "Бонус"
 
@@ -4105,7 +4118,7 @@ msgstr ""
 "Бонус блокланган (Need {{5 - weeklyBonus.data.weekly_points}} more points)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Bonus not earned yet."
 msgstr "Бонус хали қўлга киритилмади."
 
@@ -4619,6 +4632,12 @@ msgstr "Нақд тўлов"
 msgid "Cash Pickup"
 msgstr "Нақд пул олиш"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Cash Pickup"
+msgid "Cash Pickup Location"
+msgstr "Нақд пул олиш"
+
 #: pages/checkout.vue
 msgid "Cash/Bank Transfer"
 msgstr "Нақд/Банк ўтказмаси"
@@ -4786,6 +4805,12 @@ msgstr "Танлаш"
 msgid "Choose a local CSV file"
 msgstr "Маҳаллий CSV файлни танлаш"
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+msgid ""
+"Choose a location from one of our supported partners for a cash pickup "
+"transfer."
+msgstr ""
+
 #: reports/index.html
 msgid "Choose a Quick Report"
 msgstr "Тезкор ҳисоботни танлаш"
@@ -4833,8 +4858,9 @@ msgstr "Ташриф буюрилган шаҳарлар"
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue old_compensation/index.html
-#: receipts/italian_receipt.html
+#: components/compensation/residual_bonus.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#: old_compensation/index.html receipts/italian_receipt.html
 msgid "City"
 msgstr "Шаҳар"
 
@@ -5248,6 +5274,9 @@ msgid "Contest Timeline:"
 msgstr "Мусобақа хронологияси:"
 
 #: pages/courses.vue pages/italian_onboarding.vue pages/leadership_academy.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-recipient-details.vue
 #: components/payout/brightwell/brightwell-transfer-details.vue
 #: courses/view.html
 msgid "Continue"
@@ -5331,6 +5360,7 @@ msgstr "Ташриф буюрилган мамлакатлар"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue components/public/JoinModal.vue
 #: pages/public/signup.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
 #: receipts/italian_receipt.html reports/index.html track_results/index.html
@@ -7130,6 +7160,16 @@ msgstr "Функциялар"
 #: pages/welcome.vue
 msgid "Fundraising Campaign for Mercy Ships"
 msgstr "Mercy Ships учун маблағ йиғиш кампанияси"
+
+#: components/payout/brightwell/brightwell-confirmation.vue
+#, fuzzy
+#| msgid ""
+#| "NOTE: Please allow up to -- {{ confirmationDetails.quote.deliverySLA."
+#| "name }} -- to complete."
+msgid "Funds availability: {{ confirmationDetails.quote.deliverySLA.name }}."
+msgstr ""
+"ИЗОҲ: Илтимос, тугаллаш учун -- {{ confirmationDetails.quote.deliverySLA."
+"name }} -- кўрсатинг."
 
 #: components/user/functions.vue
 msgid "Funds have been added. Transaction successfully completed"
@@ -9241,8 +9281,8 @@ msgstr "Сўнгги ҳуқуқ"
 msgid "Last Month"
 msgstr "Ўтган ой"
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr ""
 "Ўтган ойнинг Етакчилик бонуси сўралди ва тўлов амалга оширилишини кутмоқда."
@@ -9516,6 +9556,12 @@ msgstr "Юкланмоқда..."
 #: receipts/hotel_booking_receipt.html
 msgid "Location"
 msgstr "Жойлашуви"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Location Details"
+msgstr "Таклиф маълумотлари"
 
 #: pages/admin_user_id.vue
 msgid "Logged in as user!"
@@ -10443,8 +10489,8 @@ msgstr "Ушбу ойдаги Янги Ҳамкорлар (10 босқич)"
 
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/top_producers.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/top_producers.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "New Production"
 msgstr "Янги ишлаб чиқариш"
 
@@ -10553,14 +10599,6 @@ msgstr "Кейинги босқич"
 #: pages/reward_points.vue
 msgid "Next Year"
 msgstr "Кейинги йил"
-
-#: components/payout/brightwell/brightwell-recipient-details.vue
-msgid "Next: Recipient's Bank Details"
-msgstr "Сўнгра: Олувчининг банк маълумотлари"
-
-#: components/payout/brightwell/brightwell-recipient-account-details.vue
-msgid "Next: Review"
-msgstr "Сўнгра: Кўриб чиқиш"
 
 #: pages/hotels.vue
 msgid "night"
@@ -11609,6 +11647,16 @@ msgstr "Бонус балларидан фойдаланиб тўлаш"
 msgid "Pay with Bank"
 msgstr "Банк орқали тўлаш"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+msgid "Payer"
+msgstr ""
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Depart Location"
+msgid "Payer Location"
+msgstr "Жўнаш жойи"
+
 #: pages/checkout.vue
 msgid "Payment Agreement"
 msgstr "Тўлов шартномаси"
@@ -12062,6 +12110,20 @@ msgid ""
 msgstr ""
 "Илтимос, прокси-серверни ўчиринг ва мазкур саҳифага қайтинг. Агар буни хато "
 "деб ҳисобласангиз, илтимос, ёрдамчи ходимларимизга мурожаат этинг."
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid ""
+#| "Please review 'Recipient Bank Details' for accuracy as inaccurate and "
+#| "incomplete information may result in delay, cancellation and/or return of "
+#| "funds."
+msgid ""
+"Please review 'Location Details' for accuracy as inaccurate and incomplete "
+"information may result in delay, cancellation and/or return of funds."
+msgstr ""
+"Илтимос, “Олувчининг банк реквизитларини” текширинг, чунки аниқ ва тўлиқ "
+"бўлмаган маълумот маблағларнинг кечикиши, бекор бўлиши ва/ёки қайтарилишига "
+"сабаб бўлиши мумкин."
 
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 msgid ""
@@ -12575,12 +12637,12 @@ msgid "Product Director"
 msgstr "Маҳсулот бўйича директор"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Production"
 msgstr "Ишлаб чиқариш"
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Production Details Last Month"
 msgstr "Ўтган ойдаги ишлаб чиқариш тафсилотлари"
 
@@ -12665,12 +12727,12 @@ msgid "Qualified"
 msgstr "Квалификацияланди"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Qualified Prod."
 msgstr "Малакали прод."
 
-#: components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Qualified Production"
 msgstr "Квалификацияланган ишлаб чиқариш"
 
@@ -13049,7 +13111,7 @@ msgid "Required"
 msgstr "Талаб этилади"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 msgid "Requirement"
 msgstr "Талаб"
 
@@ -13458,13 +13520,37 @@ msgstr "Барчасини танлаш"
 msgid "Select Cabin"
 msgstr "Каютани танлаш"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select Cabin"
+msgid "Select city"
+msgstr "Каютани танлаш"
+
 #: pages/tax_report.vue
 msgid "Select Option"
+msgstr "Вариантни танлаш"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Selected"
+msgid "Select payer"
+msgstr "Танланган"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select Option"
+msgid "Select payer location"
 msgstr "Вариантни танлаш"
 
 #: pages/facebook_marketing.vue
 msgid "Select post language:"
 msgstr "Пост тилини танлаш:"
+
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
+#, fuzzy
+#| msgid "Select a Category to View"
+msgid "Select state or province"
+msgstr "Кўриш тоифасини танлаш"
 
 #: pages/resources.vue
 msgid "Select Subcategories"
@@ -14058,6 +14144,7 @@ msgid "State:"
 msgstr "Штат:"
 
 #: components/translations/placeholders.vue
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "State/Province"
 msgstr "Штат/Вилоят"
 
@@ -14086,9 +14173,8 @@ msgstr "Штат/Ҳудуд"
 msgid "Statement Date"
 msgstr "Ҳисобот санаси"
 
-#: components/compensation/statements.vue
+#: components/compensation/statements.vue old_compensation/index.html
 #: old_refund_protocol/remove_weeklybonus_modal.html
-#: old_compensation/index.html
 msgid "Statements"
 msgstr "Ҳисоботлар"
 
@@ -14111,8 +14197,8 @@ msgstr "Статистика"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_refund_protocol/leadership_bonus_modal.html
-#: old_compensation/index.html
+#: negative_balances/index.html old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Status"
 msgstr "Мақом"
 
@@ -15497,6 +15583,14 @@ msgstr "Давом этиш учун илтимос, туғилган санан
 msgid "To request a credit, visit your Support page ("
 msgstr "Тўловни сўраш учун Қўллаб-қувватлаш саҳифасига ўтинг ("
 
+#: components/payout/brightwell/brightwell-transfer-details.vue
+msgid ""
+"To see a full list of supported cash pickup partner locations please refer "
+"to this document:\n"
+"\t\t<a target=\"_blank\" href=\"./files/Cash_Pickup_Locations.pdf\" class="
+"\"bold\">Cash Pickup Partner Locations.</a>"
+msgstr ""
+
 #: pages/invoices.vue
 msgid ""
 "To update the preferred currency, please select a recurring profile and then "
@@ -15817,6 +15911,7 @@ msgstr "Payoneer даги ҳисоб рақамга ўтказиш"
 msgid "Transfer To Payquicker Account"
 msgstr "Payquicker даги ҳисоб рақамга ўтказиш"
 
+#: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
 #: components/payout/brightwell/brightwell-transfer-details.vue
@@ -16162,12 +16257,6 @@ msgstr "Мобиль телефонингиз рақамини тасдиқла�
 #: pages/settings.vue
 msgid "Verify your Phone Number"
 msgstr "Телефон рақамингизни тасдиқланг"
-
-#: components/payout/brightwell/brightwell-confirmation.vue
-#, fuzzy
-#| msgid "Cash/Bank Transfer"
-msgid "via bank transfer."
-msgstr "банк ўтказмаси орқали."
 
 #: resources/index.html
 msgid "Video, Images, and Other Links"
@@ -17484,8 +17573,8 @@ msgstr ""
 "жараён муваффақиятли амалга оширилганини сизга маълум қилишимиз учун бир "
 "неча дақиқадан то 24 соатга қадар вақт талаб этилади."
 
-#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
-#: old_compensation/index.html
+#: pages/growth_calculator.vue old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "You have earned a greater bonus."
 msgstr "Сиз каттароқ бонусни қўлга киритдингиз."
 
@@ -26150,6 +26239,17 @@ msgid ""
 msgstr ""
 "Ютиш учун сизга 11 балл етмаяпти. Энг юқори балларга эга 5 та етакчи GoPro "
 "тадбирига чипта ютиб олади."
+
+#~ msgid "Next: Recipient's Bank Details"
+#~ msgstr "Сўнгра: Олувчининг банк маълумотлари"
+
+#~ msgid "Next: Review"
+#~ msgstr "Сўнгра: Кўриб чиқиш"
+
+#, fuzzy
+#~| msgid "Cash/Bank Transfer"
+#~ msgid "via bank transfer."
+#~ msgstr "банк ўтказмаси орқали."
 
 #~ msgid "Let's Do It Again!"
 #~ msgstr "Келинг, буни яна такрорлаймиз!"
