@@ -600,20 +600,28 @@ msgstr "{{ transferDetails.amountToSend }}"
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
+#| "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 msgid ""
 "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
-"\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.destinationCountryAndCurrency.country.code}`\">"
+"\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgstr ""
 "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
 "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
 "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
+#| "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 msgid ""
 "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
-"\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.destinationCountryAndCurrency.country.code}`\">"
+"\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgstr ""
 "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
 "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
@@ -1726,9 +1734,13 @@ msgstr ""
 "plau comprova la teva safata d'entrada i segueix l'enllaç proporcionat</span>"
 
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.sourceCountryAndCurrency.country.code}`\">\n"
+#| "\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
 msgid ""
-"<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.sourceCountryAndCurrency.country.code}`\">\n"
+"<img class=\"flag\" :src=\"sourceCountryFlagImg\">\n"
 "\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
 msgstr ""
 "<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
@@ -3473,9 +3485,9 @@ msgstr "Seguiment aAmbassador"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
-#: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
-#: receipts/new_residual_bonus_statement.html
+#: components/payout/wallet-transfers.vue
+#: old_refund_protocol/leadership_bonus_modal.html negative_balances/index.html
+#: old_compensation/index.html receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
 msgid "Amount"
@@ -4277,7 +4289,7 @@ msgid "Board Type"
 msgstr "Tipus d'embarcament"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus"
 msgstr "Bonificació"
 
@@ -4311,7 +4323,7 @@ msgstr ""
 "punts)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus not earned yet."
 msgstr "Bons encara no guanyats."
 
@@ -4768,6 +4780,7 @@ msgstr "Pot reservar viatges per altres i NO viatjar?"
 #: pages/booking.vue pages/checkout.vue pages/connect.vue pages/email.vue
 #: pages/invoices.vue components/booking/add-cd-user.vue
 #: components/payout/euro-conversion.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -5195,10 +5208,9 @@ msgstr "Configuració del Client"
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/signup.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
-#: components/global_convention/event_info.vue
-#: components/public/FooterLinks.vue components/public/JoinModal.vue
-#: components/public/Testimonials.vue connect/index.html
+#: components/compensation/residual_bonus.vue components/public/FooterLinks.vue
+#: components/public/JoinModal.vue components/public/Testimonials.vue
+#: components/global_convention/event_info.vue connect/index.html
 #: old_compensation/index.html
 msgid "Close"
 msgstr "Tancar"
@@ -5224,7 +5236,7 @@ msgid "Co-founder of CitiSolutions Financial Limited in Spain, Ireland and UK"
 msgstr ""
 "Cofundador de CitiSolutions Financial Limited a Espanya, Irlanda i Regne Unit"
 
-#: reports/index.html receipts/commission_statement.html
+#: receipts/commission_statement.html reports/index.html
 msgid "Commission"
 msgstr "Comissió"
 
@@ -5299,8 +5311,8 @@ msgid "Compression"
 msgstr "Compressió"
 
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: components/payout/birthday-modal.vue reports/index.html
-#: receipts/booking_receipt.html
+#: components/payout/birthday-modal.vue receipts/booking_receipt.html
+#: reports/index.html
 msgid "Confirm"
 msgstr "Confirmar"
 
@@ -5582,7 +5594,7 @@ msgstr "Països Visitats"
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
-#: reports/index.html track_results/index.html receipts/italian_receipt.html
+#: receipts/italian_receipt.html reports/index.html track_results/index.html
 msgid "Country"
 msgstr "País"
 
@@ -6074,7 +6086,7 @@ msgstr "Data d'entrega"
 msgid "Depart"
 msgstr "Sortir"
 
-#: components/reservation.vue reports/index.html receipts/booking_receipt.html
+#: components/reservation.vue receipts/booking_receipt.html reports/index.html
 msgid "Depart Date"
 msgstr "Data de Sortida"
 
@@ -6960,6 +6972,7 @@ msgstr ""
 "enviar i intenta-ho de nou."
 
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "Failed to update account. Please check the data entered and try again."
 msgstr ""
 "No s'ha pogut actualitzar el compte. Si us plau, comprova les dades "
@@ -9543,8 +9556,8 @@ msgstr "Últim Elegible"
 msgid "Last Month"
 msgstr "El mes passat"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr ""
 "S'ha sol·licitat la Bonificació de Lideratge del mes passat i està pendent "
@@ -9746,8 +9759,8 @@ msgstr ""
 "trobes un preu publicat més econòmic disponible públicament per al teu "
 "mateix hotel, dates exactes i categoria d'habitació reservat dins de"
 
-#: pages/reach.vue pages/track_results.vue track_results/index.html
-#: receipts/team_residual_bonus_statement.html
+#: pages/reach.vue pages/track_results.vue
+#: receipts/team_residual_bonus_statement.html track_results/index.html
 msgid "Level"
 msgstr "Nivell"
 
@@ -9808,8 +9821,8 @@ msgid "Load Level"
 msgstr "Nivell de Càrrega"
 
 #: pages/receipts.vue pages/track_results.vue pages/webinar_recordings.vue
-#: components/payout/wallet-transfers.vue reports/index.html
-#: track_results/index.html receipts/index.html
+#: components/payout/wallet-transfers.vue receipts/index.html
+#: reports/index.html track_results/index.html
 msgid "Load More"
 msgstr "Carrega més"
 
@@ -9831,12 +9844,11 @@ msgid "Logged in as user!"
 msgstr "Sessió iniciada com a usuari!"
 
 #: pages/public/signup.vue pages/login/login.vue components/blog/navbar.vue
-#: components/payout/hyperwallet-withdraw.vue
+#: components/public/Header.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
-#: components/payout/payoneer-withdraw.vue components/public/Header.vue
-#: communications/index.html communications/view.html
-#: income_disclosure/index.html live/index.html login/index.html
-#: unsubscribe/index.html
+#: components/payout/payoneer-withdraw.vue communications/index.html
+#: communications/view.html income_disclosure/index.html live/index.html
+#: login/index.html unsubscribe/index.html
 msgid "Login"
 msgstr "Inici de Sessió"
 
@@ -10576,13 +10588,12 @@ msgstr ""
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
 #: components/welcome/members-modal.vue competition/index.html
-#: invoices/invoice_statement.html negative_balances/index.html
-#: new_ranks/index.html reports/index.html track_results/index.html
-#: receipts/booking_receipt.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/italian_receipt.html
-#: receipts/kickstart_bonus_statement.html
+#: invoices/invoice_statement.html new_ranks/index.html
+#: negative_balances/index.html receipts/booking_receipt.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -10591,7 +10602,8 @@ msgstr ""
 #: receipts/residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
 #: receipts/travel_challenge_statement.html
-#: receipts/weekly_bonus_statement.html
+#: receipts/weekly_bonus_statement.html reports/index.html
+#: track_results/index.html
 msgid "Name"
 msgstr "Nom"
 
@@ -10763,8 +10775,8 @@ msgstr "Nous Socis Aquest Mes (10 nivells)"
 
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/top_producers.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/top_producers.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "New Production"
 msgstr "Nova producció"
 
@@ -12226,7 +12238,7 @@ msgstr ""
 msgid "Please click CONTINUE to review the course material again."
 msgstr "Si us plau, clica CONTINUAR per tornar a revisar el material del curs."
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Please complete all required information."
 msgstr "Si us plau, completa tota la informació requerida."
 
@@ -12863,7 +12875,7 @@ msgstr "Política de Privacitat"
 msgid "Privacy Policy licenses."
 msgstr "Llicències de política de privacitat."
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Problem with the cruise line."
 msgstr "Problema amb la línia de creuers."
 
@@ -12919,12 +12931,12 @@ msgid "Product Director"
 msgstr "Director de producte"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production"
 msgstr "Producció"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production Details Last Month"
 msgstr "Detalls de la producció el Mes Passat"
 
@@ -13012,12 +13024,12 @@ msgid "Qualified"
 msgstr "Qualificat"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Prod."
 msgstr "Producte qualificat."
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Production"
 msgstr "Producció Qualificada"
 
@@ -13167,7 +13179,7 @@ msgstr "Factures"
 msgid "Receipt ID"
 msgstr "Identificador de rebut"
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Receipt successfully added"
 msgstr "Rebut afegit amb èxit"
 
@@ -13364,6 +13376,12 @@ msgstr "Eliminar la Bonificació de lideratge"
 msgid "Remove Registration"
 msgstr "Eliminar Registre"
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+#, fuzzy
+#| msgid "Delete recipient account"
+msgid "Rename recipient account"
+msgstr "Eliminar el compte del destinatari"
+
 #: pages/email_address.vue
 msgid "Repeat the process for each Email Client you use."
 msgstr ""
@@ -13406,7 +13424,7 @@ msgid "Required"
 msgstr "Requerit"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Requirement"
 msgstr "Requisit"
 
@@ -13685,6 +13703,7 @@ msgid "sample"
 msgstr "exemple"
 
 #: pages/settings.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "Save"
 msgstr "Desar"
 
@@ -14481,8 +14500,9 @@ msgstr "Estat / regió"
 msgid "Statement Date"
 msgstr "Data de l'Extracte"
 
-#: components/compensation/statements.vue old_compensation/index.html
+#: components/compensation/statements.vue
 #: old_refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html
 msgid "Statements"
 msgstr "Extractes"
 
@@ -14505,8 +14525,8 @@ msgstr "Estadístiques"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html negative_balances/index.html
+#: old_compensation/index.html
 msgid "Status"
 msgstr "Estat"
 
@@ -16045,8 +16065,8 @@ msgstr "Els millors productors d'aquest mes"
 msgid "total"
 msgstr "total"
 
-#: pages/hotels_booking.vue track_growth/index.html upgrade/index.html
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: pages/hotels_booking.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html track_growth/index.html upgrade/index.html
 msgid "Total"
 msgstr "Total"
 
@@ -16153,10 +16173,10 @@ msgid "Total Team Members"
 msgstr "Total de Membres de l'Equip"
 
 #: pages/booking.vue pages/track_results.vue invoices/invoice_statement.html
-#: track_results/index.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/instant_bonus_statement.html receipts/invoice.html
-#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
+#: receipts/invoice.html receipts/italian_receipt.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -16165,7 +16185,7 @@ msgstr "Total de Membres de l'Equip"
 #: receipts/residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
 #: receipts/travel_challenge_statement.html
-#: receipts/weekly_bonus_statement.html
+#: receipts/weekly_bonus_statement.html track_results/index.html
 msgid "Total:"
 msgstr "Total:"
 
@@ -16374,8 +16394,8 @@ msgid "Two Weeks Prior Contest"
 msgstr "Dues setmanes Abans del Concurs"
 
 #: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
-#: negative_balances/index.html reports/index.html track_results/index.html
-#: receipts/index.html
+#: negative_balances/index.html receipts/index.html reports/index.html
+#: track_results/index.html
 msgid "Type"
 msgstr "Escriu"
 
@@ -17845,10 +17865,9 @@ msgstr "No tens cap Enllaç de Referència:"
 msgid "You Do Not Have Access To That Page"
 msgstr "No tens accés a aquesta pàgina"
 
-#: pages/admin_user_id.vue components/user/basic-info.vue
-#: components/user/functions.vue
+#: pages/admin_user_id.vue components/admin_booking/manual_booking.vue
+#: components/user/basic-info.vue components/user/functions.vue
 #: components/user/partner-refund-and-compress.vue
-#: components/admin_booking/manual_booking.vue
 msgid "You do not have access to this function."
 msgstr "No tens accés a aquesta funció."
 
@@ -17964,8 +17983,8 @@ msgstr ""
 "trigar de diversos minuts a les 24 hores perquè se'ns notifiqui el pagament "
 "satisfactori."
 
-#: pages/growth_calculator.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html
 msgid "You have earned a greater bonus."
 msgstr "Heu obtingut un avantatge més gran."
 

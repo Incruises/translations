@@ -598,20 +598,28 @@ msgstr "{{ transferDetails.amountToSend }}"
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
+#| "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 msgid ""
 "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
-"\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.destinationCountryAndCurrency.country.code}`\">"
+"\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgstr ""
 "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
 "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
 "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
+#| "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 msgid ""
 "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
-"\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.destinationCountryAndCurrency.country.code}`\">"
+"\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgstr ""
 "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
 "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
@@ -1726,9 +1734,13 @@ msgstr ""
 "имэйлээр очсон холбоосыг дарж баталгаажуулна уу.</span>"
 
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.sourceCountryAndCurrency.country.code}`\">\n"
+#| "\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
 msgid ""
-"<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.sourceCountryAndCurrency.country.code}`\">\n"
+"<img class=\"flag\" :src=\"sourceCountryFlagImg\">\n"
 "\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
 msgstr ""
 "<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
@@ -3410,9 +3422,9 @@ msgstr "Элчин сайд цолонд хүрэх"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
-#: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
-#: receipts/new_residual_bonus_statement.html
+#: components/payout/wallet-transfers.vue
+#: old_refund_protocol/leadership_bonus_modal.html negative_balances/index.html
+#: old_compensation/index.html receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
 msgid "Amount"
@@ -4214,7 +4226,7 @@ msgid "Board Type"
 msgstr "Үйлчилгээний төрөл"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus"
 msgstr "Бонус"
 
@@ -4248,7 +4260,7 @@ msgstr ""
 "хэрэгтэй)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus not earned yet."
 msgstr "Одоогоор бонус аваагүй байна."
 
@@ -4701,6 +4713,7 @@ msgstr "Би өөрөө аялахгүйгээр бусдын өмнөөс ая�
 #: pages/booking.vue pages/checkout.vue pages/connect.vue pages/email.vue
 #: pages/invoices.vue components/booking/add-cd-user.vue
 #: components/payout/euro-conversion.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -5125,10 +5138,9 @@ msgstr "Үйлчлүүлэгчийн тохиргоо"
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/signup.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
-#: components/global_convention/event_info.vue
-#: components/public/FooterLinks.vue components/public/JoinModal.vue
-#: components/public/Testimonials.vue connect/index.html
+#: components/compensation/residual_bonus.vue components/public/FooterLinks.vue
+#: components/public/JoinModal.vue components/public/Testimonials.vue
+#: components/global_convention/event_info.vue connect/index.html
 #: old_compensation/index.html
 msgid "Close"
 msgstr "Хаах"
@@ -5155,7 +5167,7 @@ msgstr ""
 "Англи, Ирланд, Испани дах CitiSolutions Financial Limited Группыг хамтран "
 "үүсгэн байгуулагч"
 
-#: reports/index.html receipts/commission_statement.html
+#: receipts/commission_statement.html reports/index.html
 msgid "Commission"
 msgstr "Орлого шагнал"
 
@@ -5229,8 +5241,8 @@ msgid "Compression"
 msgstr "Шахалт"
 
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: components/payout/birthday-modal.vue reports/index.html
-#: receipts/booking_receipt.html
+#: components/payout/birthday-modal.vue receipts/booking_receipt.html
+#: reports/index.html
 msgid "Confirm"
 msgstr "Баталгаажуулах"
 
@@ -5509,7 +5521,7 @@ msgstr "Аялсан Улс орнууд"
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
-#: reports/index.html track_results/index.html receipts/italian_receipt.html
+#: receipts/italian_receipt.html reports/index.html track_results/index.html
 msgid "Country"
 msgstr "Улс Орон"
 
@@ -5999,7 +6011,7 @@ msgstr "Илгээх өдөр"
 msgid "Depart"
 msgstr "Явах"
 
-#: components/reservation.vue reports/index.html receipts/booking_receipt.html
+#: components/reservation.vue receipts/booking_receipt.html reports/index.html
 msgid "Depart Date"
 msgstr "Явах өдөр"
 
@@ -6878,6 +6890,7 @@ msgstr ""
 "үү."
 
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "Failed to update account. Please check the data entered and try again."
 msgstr ""
 "Бүртгэлийг шинэчлэхэд алдаа гарлаа. Оруулсан мэдээллийг шалгаад дахин хийнэ "
@@ -9466,8 +9479,8 @@ msgstr "Хамгийн сүүлд идэвхтэй байсан"
 msgid "Last Month"
 msgstr "Өмнөх сар"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr ""
 "Өмнөх сарын Лидерийн Шагналыг авах хүсэлт гаргасан бөгөөд төлбөр хүлээгдэж "
@@ -9670,8 +9683,8 @@ msgstr ""
 "өгөөрэй. *Хэрэв та уг зочид буудалд, тухайн хугацаанд, ижил өрөөний ангилалд "
 "олон нийтэд өгсөн үнээс хямд үнэ олвол"
 
-#: pages/reach.vue pages/track_results.vue track_results/index.html
-#: receipts/team_residual_bonus_statement.html
+#: pages/reach.vue pages/track_results.vue
+#: receipts/team_residual_bonus_statement.html track_results/index.html
 msgid "Level"
 msgstr "Үе"
 
@@ -9732,8 +9745,8 @@ msgid "Load Level"
 msgstr "Ачааллах Үе"
 
 #: pages/receipts.vue pages/track_results.vue pages/webinar_recordings.vue
-#: components/payout/wallet-transfers.vue reports/index.html
-#: track_results/index.html receipts/index.html
+#: components/payout/wallet-transfers.vue receipts/index.html
+#: reports/index.html track_results/index.html
 msgid "Load More"
 msgstr "Цааш нь үзэх"
 
@@ -9755,12 +9768,11 @@ msgid "Logged in as user!"
 msgstr "Хэрэглэгчээр нэвтрэн орсон байна!"
 
 #: pages/public/signup.vue pages/login/login.vue components/blog/navbar.vue
-#: components/payout/hyperwallet-withdraw.vue
+#: components/public/Header.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
-#: components/payout/payoneer-withdraw.vue components/public/Header.vue
-#: communications/index.html communications/view.html
-#: income_disclosure/index.html live/index.html login/index.html
-#: unsubscribe/index.html
+#: components/payout/payoneer-withdraw.vue communications/index.html
+#: communications/view.html income_disclosure/index.html live/index.html
+#: login/index.html unsubscribe/index.html
 msgid "Login"
 msgstr "Нэвтрэх"
 
@@ -10497,13 +10509,12 @@ msgstr ""
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
 #: components/welcome/members-modal.vue competition/index.html
-#: invoices/invoice_statement.html negative_balances/index.html
-#: new_ranks/index.html reports/index.html track_results/index.html
-#: receipts/booking_receipt.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/italian_receipt.html
-#: receipts/kickstart_bonus_statement.html
+#: invoices/invoice_statement.html new_ranks/index.html
+#: negative_balances/index.html receipts/booking_receipt.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -10512,7 +10523,8 @@ msgstr ""
 #: receipts/residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
 #: receipts/travel_challenge_statement.html
-#: receipts/weekly_bonus_statement.html
+#: receipts/weekly_bonus_statement.html reports/index.html
+#: track_results/index.html
 msgid "Name"
 msgstr "Нэр"
 
@@ -10681,8 +10693,8 @@ msgstr "Энэ сарын Шинэ Түншүүд (10 үе хүртэлх)"
 
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/top_producers.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/top_producers.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "New Production"
 msgstr "Шинэ Борлуулалт"
 
@@ -12137,7 +12149,7 @@ msgid "Please click CONTINUE to review the course material again."
 msgstr ""
 "Сургалтын материалыг дахин харахын тулд ҮРГЭЛЖЛҮҮЛЭХ товчин дээр дарна уу."
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Please complete all required information."
 msgstr "Хэрэгтэй бүх мэдээллүүдийг оруулна уу:"
 
@@ -12761,7 +12773,7 @@ msgstr "Нууцлалын Бодлого"
 msgid "Privacy Policy licenses."
 msgstr "Нууцлалын Бодлого."
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Problem with the cruise line."
 msgstr "Круиз аялалын компаниудтай холбоотой асуудал байна."
 
@@ -12817,12 +12829,12 @@ msgid "Product Director"
 msgstr "Бүтээгдхүүний албаны Захирал"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production"
 msgstr "Борлуулалт"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production Details Last Month"
 msgstr "Өмнөх сарын борлуулалтын мэдээлэл"
 
@@ -12911,12 +12923,12 @@ msgid "Qualified"
 msgstr "Болзол хангасан"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Prod."
 msgstr "Шаардлага хангасан Борлуулалт."
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Production"
 msgstr "Шаардлага хангасан Борлуулалт"
 
@@ -13062,7 +13074,7 @@ msgstr "Тооцооны баримт"
 msgid "Receipt ID"
 msgstr "Тооцооны баримтны дугаар"
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Receipt successfully added"
 msgstr "Тасалбар амжилттай нэмэгдээ"
 
@@ -13256,6 +13268,12 @@ msgstr "Манлайллын Бонусыг арилгах"
 msgid "Remove Registration"
 msgstr "Бүртгэлийг арилгах"
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+#, fuzzy
+#| msgid "Delete recipient account"
+msgid "Rename recipient account"
+msgstr "Хүлээн авагчийн бүртгэлийг устгах"
+
 #: pages/email_address.vue
 msgid "Repeat the process for each Email Client you use."
 msgstr "Энэ дарааллыг имэйлийн харилцагч бүрт давтан хийнэ."
@@ -13296,7 +13314,7 @@ msgid "Required"
 msgstr "Заавал бичих ёстой"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Requirement"
 msgstr "Шаардлага"
 
@@ -13573,6 +13591,7 @@ msgid "sample"
 msgstr "жишээ"
 
 #: pages/settings.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "Save"
 msgstr "Хадгалах"
 
@@ -14360,8 +14379,9 @@ msgstr "Муж/Бүс"
 msgid "Statement Date"
 msgstr "Төлбөрийн огноо"
 
-#: components/compensation/statements.vue old_compensation/index.html
+#: components/compensation/statements.vue
 #: old_refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html
 msgid "Statements"
 msgstr "Мэдэгдэл"
 
@@ -14384,8 +14404,8 @@ msgstr "Статистик"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html negative_balances/index.html
+#: old_compensation/index.html
 msgid "Status"
 msgstr "Статус"
 
@@ -15882,8 +15902,8 @@ msgstr "Энэ сарын шилдэг борлуулагч нар"
 msgid "total"
 msgstr "нийт"
 
-#: pages/hotels_booking.vue track_growth/index.html upgrade/index.html
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: pages/hotels_booking.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html track_growth/index.html upgrade/index.html
 msgid "Total"
 msgstr "Нийт"
 
@@ -15990,10 +16010,10 @@ msgid "Total Team Members"
 msgstr "Нийт багийн гишүүд"
 
 #: pages/booking.vue pages/track_results.vue invoices/invoice_statement.html
-#: track_results/index.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/instant_bonus_statement.html receipts/invoice.html
-#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
+#: receipts/invoice.html receipts/italian_receipt.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -16002,7 +16022,7 @@ msgstr "Нийт багийн гишүүд"
 #: receipts/residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
 #: receipts/travel_challenge_statement.html
-#: receipts/weekly_bonus_statement.html
+#: receipts/weekly_bonus_statement.html track_results/index.html
 msgid "Total:"
 msgstr "Нийт:"
 
@@ -16211,8 +16231,8 @@ msgid "Two Weeks Prior Contest"
 msgstr "Хоёр долоо хоногийн өмнөх уралдаан"
 
 #: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
-#: negative_balances/index.html reports/index.html track_results/index.html
-#: receipts/index.html
+#: negative_balances/index.html receipts/index.html reports/index.html
+#: track_results/index.html
 msgid "Type"
 msgstr "Төрөл"
 
@@ -17669,10 +17689,9 @@ msgstr "Танд Элсүүлэх холбоос байхгүй байна:"
 msgid "You Do Not Have Access To That Page"
 msgstr "Та тэр хуудсанд зочлох эрх байхгүй байна"
 
-#: pages/admin_user_id.vue components/user/basic-info.vue
-#: components/user/functions.vue
+#: pages/admin_user_id.vue components/admin_booking/manual_booking.vue
+#: components/user/basic-info.vue components/user/functions.vue
 #: components/user/partner-refund-and-compress.vue
-#: components/admin_booking/manual_booking.vue
 msgid "You do not have access to this function."
 msgstr "Танд энэ функцэд хандах эрх байхгүй байна."
 
@@ -17788,8 +17807,8 @@ msgstr ""
 "хамааран, таны төлбөр амжилттай төлөгдсөнийг бидэнд мэдэгдэх хугацаа цөөн "
 "минутаас 24 цаг хүртэл байж болно."
 
-#: pages/growth_calculator.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html
 msgid "You have earned a greater bonus."
 msgstr "Та илүү их бонус авлаа."
 

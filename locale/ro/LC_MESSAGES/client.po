@@ -607,20 +607,28 @@ msgstr "{{ transferDetails.amountToSend }}"
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
+#| "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 msgid ""
 "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
-"\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.destinationCountryAndCurrency.country.code}`\">"
+"\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgstr ""
 "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
 "   <img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
 "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
+#| "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 msgid ""
 "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
-"\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.destinationCountryAndCurrency.country.code}`\">"
+"\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgstr ""
 "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
 "   <img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
@@ -1738,9 +1746,13 @@ msgstr ""
 "rugăm să te uiţi în inbox şi să dai click pe linkul trimis.</span>"
 
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.sourceCountryAndCurrency.country.code}`\">\n"
+#| "\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
 msgid ""
-"<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.sourceCountryAndCurrency.country.code}`\">\n"
+"<img class=\"flag\" :src=\"sourceCountryFlagImg\">\n"
 "\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
 msgstr ""
 "<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
@@ -3443,9 +3455,9 @@ msgstr "Monitorizare Ambasador"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
-#: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
-#: receipts/new_residual_bonus_statement.html
+#: components/payout/wallet-transfers.vue
+#: old_refund_protocol/leadership_bonus_modal.html negative_balances/index.html
+#: old_compensation/index.html receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
 msgid "Amount"
@@ -4247,7 +4259,7 @@ msgid "Board Type"
 msgstr "Tipul de îmbarcare"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus"
 msgstr "Bonus"
 
@@ -4279,7 +4291,7 @@ msgid "Bonus Locked (Need {{5 - weeklyBonus.data.weekly_points}} more points)"
 msgstr "Bonus blocat (Need {{5 - weeklyBonus.data.weekly_points}} more points)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus not earned yet."
 msgstr "Nu aţi câştigat acest bonus încă."
 
@@ -4737,6 +4749,7 @@ msgstr "Poţi să rezervi călătorii pentru alţii şi să NU călătoreşti tu
 #: pages/booking.vue pages/checkout.vue pages/connect.vue pages/email.vue
 #: pages/invoices.vue components/booking/add-cd-user.vue
 #: components/payout/euro-conversion.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -5167,10 +5180,9 @@ msgstr "Configurare Client"
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/signup.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
-#: components/global_convention/event_info.vue
-#: components/public/FooterLinks.vue components/public/JoinModal.vue
-#: components/public/Testimonials.vue connect/index.html
+#: components/compensation/residual_bonus.vue components/public/FooterLinks.vue
+#: components/public/JoinModal.vue components/public/Testimonials.vue
+#: components/global_convention/event_info.vue connect/index.html
 #: old_compensation/index.html
 msgid "Close"
 msgstr "Închide"
@@ -5197,7 +5209,7 @@ msgstr ""
 "Co-fondator al CitiSolutions Financial Limited în Spania, Irlanda şi Regatul "
 "Unit"
 
-#: reports/index.html receipts/commission_statement.html
+#: receipts/commission_statement.html reports/index.html
 msgid "Commission"
 msgstr "Comision"
 
@@ -5273,8 +5285,8 @@ msgid "Compression"
 msgstr "Comprimare"
 
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: components/payout/birthday-modal.vue reports/index.html
-#: receipts/booking_receipt.html
+#: components/payout/birthday-modal.vue receipts/booking_receipt.html
+#: reports/index.html
 msgid "Confirm"
 msgstr "Confirmă"
 
@@ -5555,7 +5567,7 @@ msgstr "Țări vizitate"
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
-#: reports/index.html track_results/index.html receipts/italian_receipt.html
+#: receipts/italian_receipt.html reports/index.html track_results/index.html
 msgid "Country"
 msgstr "Ţara"
 
@@ -6047,7 +6059,7 @@ msgstr "Data livrării"
 msgid "Depart"
 msgstr "Pleacă"
 
-#: components/reservation.vue reports/index.html receipts/booking_receipt.html
+#: components/reservation.vue receipts/booking_receipt.html reports/index.html
 msgid "Depart Date"
 msgstr "Data plecării"
 
@@ -6940,6 +6952,7 @@ msgstr ""
 "încerci din nou."
 
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "Failed to update account. Please check the data entered and try again."
 msgstr ""
 "Nu s-a putut actualiza contul. Verifică datele introduse și încearcă din nou."
@@ -9540,8 +9553,8 @@ msgstr "Ultimul eligibil"
 msgid "Last Month"
 msgstr "Luna trecută"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr ""
 "A fost cerut Bonusul de Conducere de luna trecută, iar plata sa este în "
@@ -9744,8 +9757,8 @@ msgstr ""
 "inStays. *Dacă apoi găsești un preț făcut public mai mic pentru același "
 "hotel, datele exacte și categoria de cameră rezervată"
 
-#: pages/reach.vue pages/track_results.vue track_results/index.html
-#: receipts/team_residual_bonus_statement.html
+#: pages/reach.vue pages/track_results.vue
+#: receipts/team_residual_bonus_statement.html track_results/index.html
 msgid "Level"
 msgstr "Nivel"
 
@@ -9806,8 +9819,8 @@ msgid "Load Level"
 msgstr "Încarcă Nivel"
 
 #: pages/receipts.vue pages/track_results.vue pages/webinar_recordings.vue
-#: components/payout/wallet-transfers.vue reports/index.html
-#: track_results/index.html receipts/index.html
+#: components/payout/wallet-transfers.vue receipts/index.html
+#: reports/index.html track_results/index.html
 msgid "Load More"
 msgstr "Încarcă mai mult"
 
@@ -9829,12 +9842,11 @@ msgid "Logged in as user!"
 msgstr "Autentificat ca utilizator!"
 
 #: pages/public/signup.vue pages/login/login.vue components/blog/navbar.vue
-#: components/payout/hyperwallet-withdraw.vue
+#: components/public/Header.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
-#: components/payout/payoneer-withdraw.vue components/public/Header.vue
-#: communications/index.html communications/view.html
-#: income_disclosure/index.html live/index.html login/index.html
-#: unsubscribe/index.html
+#: components/payout/payoneer-withdraw.vue communications/index.html
+#: communications/view.html income_disclosure/index.html live/index.html
+#: login/index.html unsubscribe/index.html
 msgid "Login"
 msgstr "Login"
 
@@ -10581,13 +10593,12 @@ msgstr ""
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
 #: components/welcome/members-modal.vue competition/index.html
-#: invoices/invoice_statement.html negative_balances/index.html
-#: new_ranks/index.html reports/index.html track_results/index.html
-#: receipts/booking_receipt.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/italian_receipt.html
-#: receipts/kickstart_bonus_statement.html
+#: invoices/invoice_statement.html new_ranks/index.html
+#: negative_balances/index.html receipts/booking_receipt.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -10596,7 +10607,8 @@ msgstr ""
 #: receipts/residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
 #: receipts/travel_challenge_statement.html
-#: receipts/weekly_bonus_statement.html
+#: receipts/weekly_bonus_statement.html reports/index.html
+#: track_results/index.html
 msgid "Name"
 msgstr "Nume"
 
@@ -10766,8 +10778,8 @@ msgstr "Parteneri noi luna aceasta (10 niveluri)"
 
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/top_producers.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/top_producers.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "New Production"
 msgstr "Producţie nouă"
 
@@ -12247,7 +12259,7 @@ msgid "Please click CONTINUE to review the course material again."
 msgstr ""
 "Vă rugăm să daţi click pe CONTINUĂ pentru a revedea materialul cursului."
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Please complete all required information."
 msgstr "Te rugăm să introduci toate informaţiile cerute."
 
@@ -12885,7 +12897,7 @@ msgstr "Politica de confidenţialitate"
 msgid "Privacy Policy licenses."
 msgstr "Politica de confidențialitate licențe."
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Problem with the cruise line."
 msgstr "Problemă cu linia de croazieră."
 
@@ -12941,12 +12953,12 @@ msgid "Product Director"
 msgstr "Director de Produs"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production"
 msgstr "Producţie"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production Details Last Month"
 msgstr "Detaliile de producţie din luna trecută"
 
@@ -13034,12 +13046,12 @@ msgid "Qualified"
 msgstr "Calificat"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Prod."
 msgstr "Producţie calificată."
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Production"
 msgstr "Producţie calificată"
 
@@ -13191,7 +13203,7 @@ msgstr "Chitanţă"
 msgid "Receipt ID"
 msgstr "ID-ul chitanţei"
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Receipt successfully added"
 msgstr "Chitanța adăugată cu succes"
 
@@ -13389,6 +13401,12 @@ msgstr "Şterge Bonusul de Conducere"
 msgid "Remove Registration"
 msgstr "Șterge Înregistrarea"
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+#, fuzzy
+#| msgid "Delete recipient account"
+msgid "Rename recipient account"
+msgstr "Ștergeți contul destinatarului"
+
 #: pages/email_address.vue
 msgid "Repeat the process for each Email Client you use."
 msgstr ""
@@ -13430,7 +13448,7 @@ msgid "Required"
 msgstr "Necesar"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Requirement"
 msgstr "Cerinţă"
 
@@ -13709,6 +13727,7 @@ msgid "sample"
 msgstr "exemplu"
 
 #: pages/settings.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "Save"
 msgstr "Salvează"
 
@@ -14505,8 +14524,9 @@ msgstr "Stat/Regiune"
 msgid "Statement Date"
 msgstr "Data extrasului de cont"
 
-#: components/compensation/statements.vue old_compensation/index.html
+#: components/compensation/statements.vue
 #: old_refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html
 msgid "Statements"
 msgstr "Extrasele de cont"
 
@@ -14529,8 +14549,8 @@ msgstr "Statistici"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html negative_balances/index.html
+#: old_compensation/index.html
 msgid "Status"
 msgstr "Stare"
 
@@ -16071,8 +16091,8 @@ msgstr "Producători de top luna aceasta"
 msgid "total"
 msgstr "total"
 
-#: pages/hotels_booking.vue track_growth/index.html upgrade/index.html
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: pages/hotels_booking.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html track_growth/index.html upgrade/index.html
 msgid "Total"
 msgstr "Total"
 
@@ -16179,10 +16199,10 @@ msgid "Total Team Members"
 msgstr "Total membri în echipă"
 
 #: pages/booking.vue pages/track_results.vue invoices/invoice_statement.html
-#: track_results/index.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/instant_bonus_statement.html receipts/invoice.html
-#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
+#: receipts/invoice.html receipts/italian_receipt.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -16191,7 +16211,7 @@ msgstr "Total membri în echipă"
 #: receipts/residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
 #: receipts/travel_challenge_statement.html
-#: receipts/weekly_bonus_statement.html
+#: receipts/weekly_bonus_statement.html track_results/index.html
 msgid "Total:"
 msgstr "Total:"
 
@@ -16399,8 +16419,8 @@ msgid "Two Weeks Prior Contest"
 msgstr "Concurs de două săptămâni înainte"
 
 #: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
-#: negative_balances/index.html reports/index.html track_results/index.html
-#: receipts/index.html
+#: negative_balances/index.html receipts/index.html reports/index.html
+#: track_results/index.html
 msgid "Type"
 msgstr "Tip"
 
@@ -17872,10 +17892,9 @@ msgstr "Nu ai un link de recomandare:"
 msgid "You Do Not Have Access To That Page"
 msgstr "Nu aveţi acces la această pagină"
 
-#: pages/admin_user_id.vue components/user/basic-info.vue
-#: components/user/functions.vue
+#: pages/admin_user_id.vue components/admin_booking/manual_booking.vue
+#: components/user/basic-info.vue components/user/functions.vue
 #: components/user/partner-refund-and-compress.vue
-#: components/admin_booking/manual_booking.vue
 msgid "You do not have access to this function."
 msgstr "Nu ai acces la această funcție."
 
@@ -17992,8 +18011,8 @@ msgstr ""
 "dura de la câteva minute la 24 de ore până ce vom fi notificaţi că aţi "
 "efectuat cu succes plata."
 
-#: pages/growth_calculator.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html
 msgid "You have earned a greater bonus."
 msgstr "Aţi câştigat un bonus mai mare."
 

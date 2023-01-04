@@ -603,20 +603,28 @@ msgstr "{{ transferDetails.amountToSend }}"
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
+#| "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 msgid ""
 "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
-"\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.destinationCountryAndCurrency.country.code}`\">"
+"\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgstr ""
 "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
 "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
 "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
+#| "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.destinationCountryAndCurrency.country.code}`\">"
 msgid ""
 "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
-"\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.destinationCountryAndCurrency.country.code}`\">"
+"\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgstr ""
 "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
 "\t\t\t<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
@@ -1736,9 +1744,13 @@ msgstr ""
 "илтимос, почта қутингизни текшириб, тақдим этилган ҳаволага ўтинг.</span>"
 
 #: components/payout/brightwell/brightwell-review.vue
+#, fuzzy
+#| msgid ""
+#| "<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
+#| "${transferDetails.sourceCountryAndCurrency.country.code}`\">\n"
+#| "\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
 msgid ""
-"<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
-"${transferDetails.sourceCountryAndCurrency.country.code}`\">\n"
+"<img class=\"flag\" :src=\"sourceCountryFlagImg\">\n"
 "\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
 msgstr ""
 "<img class=\"flag\" :src=\"`https://countryflagsapi.com/svg/"
@@ -3481,9 +3493,9 @@ msgstr "Амбассадор натижалари"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
-#: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
-#: receipts/new_residual_bonus_statement.html
+#: components/payout/wallet-transfers.vue
+#: old_refund_protocol/leadership_bonus_modal.html negative_balances/index.html
+#: old_compensation/index.html receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
 msgid "Amount"
@@ -4281,7 +4293,7 @@ msgid "Board Type"
 msgstr "Овқатланиш тури"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus"
 msgstr "Бонус"
 
@@ -4314,7 +4326,7 @@ msgstr ""
 "Бонус блокланган (Need {{5 - weeklyBonus.data.weekly_points}} more points)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus not earned yet."
 msgstr "Бонус хали қўлга киритилмади."
 
@@ -4769,6 +4781,7 @@ msgstr "Ўзингиз саёҳатга чиқмасдан, бошқалар у�
 #: pages/booking.vue pages/checkout.vue pages/connect.vue pages/email.vue
 #: pages/invoices.vue components/booking/add-cd-user.vue
 #: components/payout/euro-conversion.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -5198,10 +5211,9 @@ msgstr "Мижоз конфигурацияси"
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/signup.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
-#: components/global_convention/event_info.vue
-#: components/public/FooterLinks.vue components/public/JoinModal.vue
-#: components/public/Testimonials.vue connect/index.html
+#: components/compensation/residual_bonus.vue components/public/FooterLinks.vue
+#: components/public/JoinModal.vue components/public/Testimonials.vue
+#: components/global_convention/event_info.vue connect/index.html
 #: old_compensation/index.html
 msgid "Close"
 msgstr "Ёпиш"
@@ -5228,7 +5240,7 @@ msgstr ""
 "Испания, Ирландия ва Буюк Британияда CitiSolutions Financial Limited "
 "ҳаммуассиси"
 
-#: reports/index.html receipts/commission_statement.html
+#: receipts/commission_statement.html reports/index.html
 msgid "Commission"
 msgstr "Комиссион мукофотлар"
 
@@ -5304,8 +5316,8 @@ msgid "Compression"
 msgstr "Сиқиш"
 
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: components/payout/birthday-modal.vue reports/index.html
-#: receipts/booking_receipt.html
+#: components/payout/birthday-modal.vue receipts/booking_receipt.html
+#: reports/index.html
 msgid "Confirm"
 msgstr "Тасдиқлаш"
 
@@ -5586,7 +5598,7 @@ msgstr "Ташриф буюрилган мамлакатлар"
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
-#: reports/index.html track_results/index.html receipts/italian_receipt.html
+#: receipts/italian_receipt.html reports/index.html track_results/index.html
 msgid "Country"
 msgstr "Мамлакат"
 
@@ -6076,7 +6088,7 @@ msgstr "Етказиб бериш санаси"
 msgid "Depart"
 msgstr "Жўнаш"
 
-#: components/reservation.vue reports/index.html receipts/booking_receipt.html
+#: components/reservation.vue receipts/booking_receipt.html reports/index.html
 msgid "Depart Date"
 msgstr "Жўнаш санаси"
 
@@ -6962,6 +6974,7 @@ msgstr ""
 "уриниб кўринг."
 
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "Failed to update account. Please check the data entered and try again."
 msgstr ""
 "Ҳисобни янгилашнинг имкони бўлмади. Илтимос, киритилган маълумотларни "
@@ -9532,8 +9545,8 @@ msgstr "Сўнгги ҳуқуқ"
 msgid "Last Month"
 msgstr "Ўтган ой"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr ""
 "Ўтган ойнинг Етакчилик бонуси сўралди ва тўлов амалга оширилишини кутмоқда."
@@ -9732,8 +9745,8 @@ msgstr ""
 "платформаси орқали меҳмонхона ёки курорт буюртмасини тасдиқланг. *Агар "
 "inStays билан буюртма берганингиздан сўнг"
 
-#: pages/reach.vue pages/track_results.vue track_results/index.html
-#: receipts/team_residual_bonus_statement.html
+#: pages/reach.vue pages/track_results.vue
+#: receipts/team_residual_bonus_statement.html track_results/index.html
 msgid "Level"
 msgstr "Даража"
 
@@ -9794,8 +9807,8 @@ msgid "Load Level"
 msgstr "Даражани юклаш"
 
 #: pages/receipts.vue pages/track_results.vue pages/webinar_recordings.vue
-#: components/payout/wallet-transfers.vue reports/index.html
-#: track_results/index.html receipts/index.html
+#: components/payout/wallet-transfers.vue receipts/index.html
+#: reports/index.html track_results/index.html
 msgid "Load More"
 msgstr "Батафсил"
 
@@ -9817,12 +9830,11 @@ msgid "Logged in as user!"
 msgstr "Тизимга фойдаланувчи сифатида кирилди!"
 
 #: pages/public/signup.vue pages/login/login.vue components/blog/navbar.vue
-#: components/payout/hyperwallet-withdraw.vue
+#: components/public/Header.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
-#: components/payout/payoneer-withdraw.vue components/public/Header.vue
-#: communications/index.html communications/view.html
-#: income_disclosure/index.html live/index.html login/index.html
-#: unsubscribe/index.html
+#: components/payout/payoneer-withdraw.vue communications/index.html
+#: communications/view.html income_disclosure/index.html live/index.html
+#: login/index.html unsubscribe/index.html
 msgid "Login"
 msgstr "Кириш"
 
@@ -10561,13 +10573,12 @@ msgstr ""
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
 #: components/welcome/members-modal.vue competition/index.html
-#: invoices/invoice_statement.html negative_balances/index.html
-#: new_ranks/index.html reports/index.html track_results/index.html
-#: receipts/booking_receipt.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/italian_receipt.html
-#: receipts/kickstart_bonus_statement.html
+#: invoices/invoice_statement.html new_ranks/index.html
+#: negative_balances/index.html receipts/booking_receipt.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -10576,7 +10587,8 @@ msgstr ""
 #: receipts/residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
 #: receipts/travel_challenge_statement.html
-#: receipts/weekly_bonus_statement.html
+#: receipts/weekly_bonus_statement.html reports/index.html
+#: track_results/index.html
 msgid "Name"
 msgstr "Исми"
 
@@ -10749,8 +10761,8 @@ msgstr "Ушбу ойдаги Янги Ҳамкорлар (10 босқич)"
 
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/top_producers.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/top_producers.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "New Production"
 msgstr "Янги ишлаб чиқариш"
 
@@ -12215,7 +12227,7 @@ msgid "Please click CONTINUE to review the course material again."
 msgstr ""
 "Илтимос, курс материалларини кўриб чиқиш учун ДАВОМ ЭТИШ тугмасини босинг."
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Please complete all required information."
 msgstr "Илтимос, барча керакли маълумотларни тўлдиринг."
 
@@ -12850,7 +12862,7 @@ msgstr "Маҳфийлик"
 msgid "Privacy Policy licenses."
 msgstr "Маҳфийлик сиёсати лицензиялари."
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Problem with the cruise line."
 msgstr "Круиз линияси билан муаммо."
 
@@ -12906,12 +12918,12 @@ msgid "Product Director"
 msgstr "Маҳсулот бўйича директор"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production"
 msgstr "Ишлаб чиқариш"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production Details Last Month"
 msgstr "Ўтган ойдаги ишлаб чиқариш тафсилотлари"
 
@@ -13000,12 +13012,12 @@ msgid "Qualified"
 msgstr "Квалификацияланди"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Prod."
 msgstr "Малакали прод."
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Production"
 msgstr "Квалификацияланган ишлаб чиқариш"
 
@@ -13156,7 +13168,7 @@ msgstr "Квитанция"
 msgid "Receipt ID"
 msgstr "Квитанция ID"
 
-#: components/user/functions.vue components/admin_booking/manual_booking.vue
+#: components/admin_booking/manual_booking.vue components/user/functions.vue
 msgid "Receipt successfully added"
 msgstr "Квитанция муваффақиятли қўшилди"
 
@@ -13353,6 +13365,12 @@ msgstr "Етакчилик бонусини ўчириш"
 msgid "Remove Registration"
 msgstr "Регистрацияни ўчириш"
 
+#: components/payout/brightwell/brightwell-recipient-account.vue
+#, fuzzy
+#| msgid "Delete recipient account"
+msgid "Rename recipient account"
+msgstr "Олувчи ҳисобини ўчириш"
+
 #: pages/email_address.vue
 msgid "Repeat the process for each Email Client you use."
 msgstr "Ҳар бир Электрон почта мижози учун ушбу жараённи такрорланг."
@@ -13393,7 +13411,7 @@ msgid "Required"
 msgstr "Талаб этилади"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Requirement"
 msgstr "Талаб"
 
@@ -13671,6 +13689,7 @@ msgid "sample"
 msgstr "намуна"
 
 #: pages/settings.vue
+#: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "Save"
 msgstr "Сақлаш"
 
@@ -14463,8 +14482,9 @@ msgstr "Штат/Ҳудуд"
 msgid "Statement Date"
 msgstr "Ҳисобот санаси"
 
-#: components/compensation/statements.vue old_compensation/index.html
+#: components/compensation/statements.vue
 #: old_refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html
 msgid "Statements"
 msgstr "Ҳисоботлар"
 
@@ -14487,8 +14507,8 @@ msgstr "Статистика"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html negative_balances/index.html
+#: old_compensation/index.html
 msgid "Status"
 msgstr "Мақом"
 
@@ -16011,8 +16031,8 @@ msgstr "Ушбу ойдаги Топ ишлаб чиқарувчилар"
 msgid "total"
 msgstr "жами"
 
-#: pages/hotels_booking.vue track_growth/index.html upgrade/index.html
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: pages/hotels_booking.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html track_growth/index.html upgrade/index.html
 msgid "Total"
 msgstr "Жами"
 
@@ -16119,10 +16139,10 @@ msgid "Total Team Members"
 msgstr "Жами Жамоа Аъзолари"
 
 #: pages/booking.vue pages/track_results.vue invoices/invoice_statement.html
-#: track_results/index.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/instant_bonus_statement.html receipts/invoice.html
-#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
+#: receipts/invoice.html receipts/italian_receipt.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -16131,7 +16151,7 @@ msgstr "Жами Жамоа Аъзолари"
 #: receipts/residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
 #: receipts/travel_challenge_statement.html
-#: receipts/weekly_bonus_statement.html
+#: receipts/weekly_bonus_statement.html track_results/index.html
 msgid "Total:"
 msgstr "Жами:"
 
@@ -16340,8 +16360,8 @@ msgid "Two Weeks Prior Contest"
 msgstr "Мусобақадан икки ҳафта олдин"
 
 #: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
-#: negative_balances/index.html reports/index.html track_results/index.html
-#: receipts/index.html
+#: negative_balances/index.html receipts/index.html reports/index.html
+#: track_results/index.html
 msgid "Type"
 msgstr "Тур"
 
@@ -17817,10 +17837,9 @@ msgstr "Реферал ҳаволангиз мавжуд эмас:"
 msgid "You Do Not Have Access To That Page"
 msgstr "Сизда ушбу саҳифага кириш ҳуқуқи йўқ"
 
-#: pages/admin_user_id.vue components/user/basic-info.vue
-#: components/user/functions.vue
+#: pages/admin_user_id.vue components/admin_booking/manual_booking.vue
+#: components/user/basic-info.vue components/user/functions.vue
 #: components/user/partner-refund-and-compress.vue
-#: components/admin_booking/manual_booking.vue
 msgid "You do not have access to this function."
 msgstr "Сизда ушбу функциядан фойдаланиш ҳуқуқи йўқ."
 
@@ -17935,8 +17954,8 @@ msgstr ""
 "жараён муваффақиятли амалга оширилганини сизга маълум қилишимиз учун бир "
 "неча дақиқадан то 24 соатга қадар вақт талаб этилади."
 
-#: pages/growth_calculator.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html
 msgid "You have earned a greater bonus."
 msgstr "Сиз каттароқ бонусни қўлга киритдингиз."
 
