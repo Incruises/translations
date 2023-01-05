@@ -451,7 +451,7 @@ msgstr ""
 "民：3日間] [ ネヴァダ州住民：3日間] [ ヴァージニア州住民：7日間] [ ワシントン"
 "州住民：7日間 ] [ ウィスコンシン州住民：15日間 ] [日本在住: 20日間]"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid "{{ (profile.data.currency || 'USD').toUpperCase() }}"
 msgstr "{{ (profile.data.currency || 'USD').toUpperCase() }}"
 
@@ -1540,14 +1540,6 @@ msgstr ""
 "<i class=\"fe fe-check\"></i>\n"
 "\t\t\t\t\t\t\t\tチケットを終了"
 
-#: pages/invoices.vue
-msgid ""
-"<i class=\"fe fe-credit-card noicon mr-2 \"></i>\n"
-"\t\t\t\t\t\t\t\t\t\tPay Invoice"
-msgstr ""
-"<i class=\"fe fe-credit-card noicon mr-2 \"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t請求書を支払う"
-
 #: components/support/TicketViewer.vue
 msgid ""
 "<i class=\"fe fe-edit\"></i>\n"
@@ -1555,14 +1547,6 @@ msgid ""
 msgstr ""
 "<i class=\"fe fe-edit\"></i>\n"
 "\t\t\t\t\t\t\t\t管理者メモ"
-
-#: pages/invoices.vue
-msgid ""
-"<i class=\"fe fe-file-text noicon mr-2\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\tView Invoice"
-msgstr ""
-"<i class=\"fe fe-file-text noicon mr-2\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t請求書を表示"
 
 #: components/payout/brightwell/brightwell-review.vue
 msgid ""
@@ -1639,7 +1623,7 @@ msgstr ""
 "<i class=\"fe fe-paperclip\"></i>\n"
 "\t\t\t\t\t週間インセンティブPDF"
 
-#: components/confirm-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid ""
 "<i class=\"fe fe-trash-2\"></i>\n"
 "\t\t\t\tDelete Recurring Profile"
@@ -2854,7 +2838,7 @@ msgstr ""
 "ただし、パートナーになることを選択した場合は、あなたの企業実体または法人を通"
 "じて給料を受け取ることができます。"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid ""
 "A recurring payment you added is pending validation from the bank. This page "
 "will automatically update once the bank finishes their validation."
@@ -2914,6 +2898,12 @@ msgstr "すべてに同意"
 msgid "Accept Booking Terms &amp; Conditions"
 msgstr "予約条件に &amp; 同意する"
 
+#: components/recurring/add-recurring.vue
+#, fuzzy
+#| msgid "Accept Booking Terms &amp; Conditions"
+msgid "Accept Recurring Billing Profile Terms &amp; Conditions"
+msgstr "予約条件に &amp; 同意する"
+
 #: pages/reach.vue
 msgid "Accepted Invitations"
 msgstr "受け入れられた招待状"
@@ -2955,8 +2945,8 @@ msgstr "行動"
 #: pages/admin_restricted_paybonus.vue pages/contacts.vue
 #: pages/convention_manager.vue components/compensation/leadership_bonus.vue
 #: components/compensation/statements.vue components/top_bar/Connect.vue
-#: certificates/index.html certificates/view.html old_compensation/index.html
-#: negative_balances/index.html reports/index.html
+#: certificates/index.html certificates/view.html negative_balances/index.html
+#: old_compensation/index.html reports/index.html
 msgid "Actions"
 msgstr "行動"
 
@@ -3018,14 +3008,22 @@ msgstr "今月のアクティブチームメンバー"
 msgid "Active until:"
 msgstr "アクティブ最終日："
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
+#, fuzzy
+#| msgid ""
+#| "Add a\n"
+#| "\t\t\t\t\t\t\t<strong>second card</strong>\n"
+#| "\t\t\t\t\t\t\tfor further peace of mind, and please check your card(s) "
+#| "frequently to make sure they are\n"
+#| "\t\t\t\t\t\t\t<strong>not expired</strong>\n"
+#| "\t\t\t\t\t\t\tor near expiry."
 msgid ""
 "Add a\n"
-"\t\t\t\t\t\t\t<strong>second card</strong>\n"
-"\t\t\t\t\t\t\tfor further peace of mind, and please check your card(s) "
+"\t\t\t\t\t\t\t\t<strong>second card</strong>\n"
+"\t\t\t\t\t\t\t\tfor further peace of mind, and please check your card(s) "
 "frequently to make sure they are\n"
-"\t\t\t\t\t\t\t<strong>not expired</strong>\n"
-"\t\t\t\t\t\t\tor near expiry."
+"\t\t\t\t\t\t\t\t<strong>not expired</strong>\n"
+"\t\t\t\t\t\t\t\tor near expiry."
 msgstr ""
 "万が一に備え\n"
 "\t\t\t\t\t\t\t<strong>2枚目のカード</strong>\n"
@@ -3033,7 +3031,7 @@ msgstr ""
 "\t\t\t\t\t\t\t<strong>失効</strong>\n"
 "\t\t\t\t\t\t\tしていたり、有効期限が迫っていないかを定期的にご確認ください。"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid "Add Card"
 msgstr "カードを追加"
 
@@ -3049,7 +3047,7 @@ msgstr "ゲストを追加する"
 msgid "Add inCruises Passenger"
 msgstr "inCruisesのゲストを追加"
 
-#: components/confirm-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "Add Later"
 msgstr "後で追加する"
 
@@ -3065,7 +3063,8 @@ msgstr "乗客を追加"
 msgid "Add Recurring Card"
 msgstr "定期払いのカードを追加"
 
-#: pages/invoices.vue components/confirm-recurring.vue
+#: components/recurring/add-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "Add Recurring Profile"
 msgstr "定期払いの情報を追加"
 
@@ -3085,7 +3084,7 @@ msgstr "サイトマップに追加"
 msgid "Add User Booking"
 msgstr "ユーザー予約を追加"
 
-#: components/confirm-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid ""
 "Add your Recurring Profile to get the Trust My Travel (TMT) Protection "
 "Guarantee"
@@ -3332,13 +3331,20 @@ msgstr ""
 "すべての支払いは、14日間の返金保証によってリスクがなく、バックアップされてい"
 "ます。"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
+#, fuzzy
+#| msgid ""
+#| "All your recurring payments are\n"
+#| "\t\t\t\t\t\t\t<strong>processed and guaranteed</strong>\n"
+#| "\t\t\t\t\t\t\tby\n"
+#| "\t\t\t\t\t\t\t<strong>TrustMyTravel (TMT)</strong>\n"
+#| "\t\t\t\t\t\t\t."
 msgid ""
 "All your recurring payments are\n"
-"\t\t\t\t\t\t\t<strong>processed and guaranteed</strong>\n"
-"\t\t\t\t\t\t\tby\n"
-"\t\t\t\t\t\t\t<strong>TrustMyTravel (TMT)</strong>\n"
-"\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t\t<strong>processed and guaranteed</strong>\n"
+"\t\t\t\t\t\t\t\tby\n"
+"\t\t\t\t\t\t\t\t<strong>TrustMyTravel (TMT)</strong>\n"
+"\t\t\t\t\t\t\t\t."
 msgstr ""
 "すべての定期払いのお支払いは\n"
 "\t\t\t\t\t\t\t<strong>TrustMyTravel (TMT)</strong>\n"
@@ -3392,12 +3398,13 @@ msgid "Ambassador Tracking"
 msgstr "アンバサダーの追跡"
 
 #: pages/growth_calculator.vue pages/hotels_booking.vue pages/invoices.vue
-#: components/mercy-ship-modals.vue components/payout/wallet-transfers.vue
+#: components/mercy-ship-modals.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue
-#: components/compensation/statements.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html negative_balances/index.html
+#: components/compensation/statements.vue
+#: components/payout/wallet-transfers.vue negative_balances/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -3971,7 +3978,8 @@ msgstr "ハイライトに戻る"
 msgid "Back to your Directs"
 msgstr "あなたの直紹介者にもどる"
 
-#: pages/invoices.vue components/confirm-recurring.vue
+#: components/recurring/add-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "BACK UP"
 msgstr "バックアップ"
 
@@ -4467,6 +4475,28 @@ msgstr ""
 msgid "By Mail"
 msgstr "メール"
 
+#: components/recurring/add-recurring.vue
+msgid ""
+"By setting up your recurring billing profile, you agree that\n"
+"\t\t\t\t\t<strong>inCruises</strong>\n"
+"\t\t\t\t\twill automatically use this form of payment to keep your\n"
+"\t\t\t\t\t<strong>Membership</strong>\n"
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<strong>Partnership</strong>\n"
+"\t\t\t\t\tActive until you cancel. For\n"
+"\t\t\t\t\t<strong>Partner-Members</strong>\n"
+"\t\t\t\t\tthis includes monthly\n"
+"\t\t\t\t\t<strong>Membership</strong>\n"
+"\t\t\t\t\tpayments\n"
+"\t\t\t\t\t<strong>($100 USD/month)</strong>\n"
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<strong>Partner</strong>\n"
+"\t\t\t\t\tRenewals\n"
+"\t\t\t\t\t<strong>($95 USD/ every 6 months)</strong>\n"
+"\t\t\t\t\tYou may cancel at any time to avoid future charges. To cancel, go "
+"to invoices select your card and click “delete card”."
+msgstr ""
+
 #: components/checkout/Processor2For1.vue
 msgid ""
 "By using this form of payment, we will convert your 2 For 1 points into 1 "
@@ -4646,7 +4676,7 @@ msgstr "自分自身が行かずに他の人のために旅行を予約できま
 
 #: pages/booking.vue pages/checkout.vue pages/connect.vue pages/email.vue
 #: pages/invoices.vue components/booking/add-cd-user.vue
-#: components/payout/euro-conversion.vue
+#: components/payout/euro-conversion.vue components/recurring/add-recurring.vue
 #: components/payout/brightwell/brightwell-recipient-account.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
@@ -4692,23 +4722,23 @@ msgstr "キャンセルに関する注意事項"
 msgid "Cancelled"
 msgstr "キャンセル済み"
 
-#: pages/invoices.vue components/confirm-recurring.vue
-#: components/checkout/CardStep.vue
+#: components/checkout/CardStep.vue components/recurring/add-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "Card CVC/CVV:"
 msgstr "カードのCCV/CVV番号："
 
-#: pages/invoices.vue components/confirm-recurring.vue
-#: components/checkout/CardStep.vue
+#: components/checkout/CardStep.vue components/recurring/add-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "Card Expiration:"
 msgstr "カードの有効期限："
 
-#: pages/invoices.vue components/confirm-recurring.vue
-#: components/checkout/CardStep.vue
+#: components/checkout/CardStep.vue components/recurring/add-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "Card Name:"
 msgstr "カードの契約者名："
 
-#: pages/invoices.vue components/confirm-recurring.vue
-#: components/checkout/CardStep.vue
+#: components/checkout/CardStep.vue components/recurring/add-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "Card Number:"
 msgstr "カード番号："
 
@@ -5057,20 +5087,19 @@ msgstr "クライアントの構成"
 
 #: pages/booking.vue pages/connect.vue pages/convention_manager.vue
 #: pages/cruises.vue pages/global_summit_2023.vue pages/global_summit_dr.vue
-#: pages/global_summit_tracking.vue pages/hotels_details.vue pages/invoices.vue
-#: pages/reach.vue pages/referral_links.vue pages/resources.vue
-#: pages/reward_points.vue pages/welcome.vue
-#: components/global-summit-reminder.vue components/tmt-modal.vue
-#: components/weekly-competition.vue pages/public/about.vue
-#: pages/public/index.vue pages/public/leadership.vue
+#: pages/global_summit_tracking.vue pages/hotels_details.vue pages/reach.vue
+#: pages/referral_links.vue pages/resources.vue pages/reward_points.vue
+#: pages/welcome.vue components/global-summit-reminder.vue
+#: components/tmt-modal.vue components/weekly-competition.vue
+#: pages/public/about.vue pages/public/index.vue pages/public/leadership.vue
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/signup.vue
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
 #: components/global_convention/event_info.vue
 #: components/public/FooterLinks.vue components/public/JoinModal.vue
-#: components/public/Testimonials.vue
-#: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue connect/index.html
-#: old_compensation/index.html
+#: components/public/Testimonials.vue components/recurring/add-recurring.vue
+#: connect/index.html old_compensation/index.html
 msgid "Close"
 msgstr "閉じる"
 
@@ -5096,7 +5125,7 @@ msgstr ""
 "スペイン、アイルランド、英国のシティソリューション ファイナンシャル有限会社の"
 "創設者"
 
-#: receipts/commission_statement.html reports/index.html
+#: reports/index.html receipts/commission_statement.html
 msgid "Commission"
 msgstr "報酬"
 
@@ -5170,8 +5199,8 @@ msgid "Compression"
 msgstr "コンプレッション"
 
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: components/payout/birthday-modal.vue receipts/booking_receipt.html
-#: reports/index.html
+#: components/payout/birthday-modal.vue reports/index.html
+#: receipts/booking_receipt.html
 msgid "Confirm"
 msgstr "確認"
 
@@ -5231,7 +5260,7 @@ msgstr "VAT番号の確認"
 msgid "Confirm Weekly Bonus Checkout"
 msgstr "ウィークリーボーナスの精算を確認する"
 
-#: components/confirm-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid ""
 "Confirm your Recurring Profile to get the Trust My Travel (TMT) Protection "
 "Guarantee"
@@ -5447,15 +5476,15 @@ msgstr "訪れた国"
 #: pages/settings.vue pages/team_rankings.vue pages/track_results.vue
 #: components/info-reminder.vue components/mercy-ship-modals.vue
 #: components/weekly-competition.vue pages/public/signup.vue
-#: components/checkout/ItalianStep.vue components/public/JoinModal.vue
+#: components/checkout/ItalianStep.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
-#: components/compensation/residual_bonus.vue
+#: components/compensation/residual_bonus.vue components/public/JoinModal.vue
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
-#: competition/index.html new_ranks/index.html old_compensation/index.html
-#: receipts/italian_receipt.html reports/index.html track_results/index.html
+#: competition/index.html old_compensation/index.html new_ranks/index.html
+#: reports/index.html receipts/italian_receipt.html track_results/index.html
 msgid "Country"
 msgstr "国"
 
@@ -5790,8 +5819,8 @@ msgid "Data Fields"
 msgstr "データ項目"
 
 #: pages/contacts.vue pages/email.vue pages/email_notifications.vue
-#: pages/reward_points.vue components/payout/wallet-transfers.vue
-#: components/compensation/statements.vue email_notifications/index.html
+#: pages/reward_points.vue components/compensation/statements.vue
+#: components/payout/wallet-transfers.vue email_notifications/index.html
 #: layouts/default.html negative_balances/index.html
 msgid "Date"
 msgstr "日付"
@@ -5913,7 +5942,8 @@ msgstr "デッキ:"
 msgid "Deductions"
 msgstr "お支払金額"
 
-#: pages/invoices.vue components/confirm-recurring.vue
+#: components/recurring/add-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "DEFAULT"
 msgstr "標準設定"
 
@@ -5929,7 +5959,7 @@ msgstr "削除"
 msgid "Delete Account"
 msgstr "アカウント削除"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid "Delete Card"
 msgstr "カードを削除"
 
@@ -5945,7 +5975,7 @@ msgstr "納期日"
 msgid "Depart"
 msgstr "出発"
 
-#: components/reservation.vue receipts/booking_receipt.html reports/index.html
+#: components/reservation.vue reports/index.html receipts/booking_receipt.html
 msgid "Depart Date"
 msgstr "出発日"
 
@@ -6148,7 +6178,7 @@ msgid "Disclosure"
 msgstr "開示："
 
 #: pages/account_setup.vue pages/cards.vue pages/invite.vue pages/settings.vue
-#: certificates/index.html certificates/view.html cards/index.html
+#: cards/index.html certificates/index.html certificates/view.html
 msgid "Display Name"
 msgstr "ディスプレイネームの名前"
 
@@ -6354,7 +6384,7 @@ msgstr ""
 msgid "Driver's License"
 msgstr "運転免許証"
 
-#: pages/invoices.vue invoices/invoice_statement.html
+#: invoices/invoice_statement.html
 msgid "Due Date"
 msgstr "期日"
 
@@ -6518,7 +6548,7 @@ msgstr "編集"
 msgid "Edit Leaders"
 msgstr "リーダーの編集"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid "Edit Recurring Method"
 msgstr "定期払いの設定"
 
@@ -7234,8 +7264,8 @@ msgstr "出港地: %{ from }"
 msgid "FSG"
 msgstr "FSG"
 
-#: pages/cards.vue pages/invite.vue certificates/index.html
-#: certificates/view.html cards/index.html import/index.html
+#: pages/cards.vue pages/invite.vue cards/index.html certificates/index.html
+#: certificates/view.html import/index.html
 msgid "Full Name"
 msgstr "フルネーム"
 
@@ -7709,7 +7739,8 @@ msgstr ""
 msgid "HR Director"
 msgstr "人事ディレクター"
 
-#: pages/invoices.vue components/covid-disclaimer-reminder.vue
+#: components/covid-disclaimer-reminder.vue
+#: components/recurring/add-recurring.vue
 msgid "I Accept"
 msgstr "同意します"
 
@@ -8332,7 +8363,7 @@ msgstr ""
 "銀行振り込みを選択した場合は、通知に数分から数時間かかることがあります。 支払"
 "いが決済されたら、お知らせいたします。"
 
-#: components/confirm-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid ""
 "If you do not wish to update your info then you must delete your recurring "
 "profile and add it again in the invoices pages if you wish to continue "
@@ -9260,8 +9291,8 @@ msgstr "日本語"
 #: pages/public/partnership.vue pages/public/reviews.vue
 #: pages/public/signup.vue components/blog/navbar.vue
 #: components/public/Header.vue components/public/JoinModal.vue
-#: communications/index.html communications/view.html live/index.html
-#: income_disclosure/index.html unsubscribe/index.html
+#: communications/index.html communications/view.html
+#: income_disclosure/index.html live/index.html unsubscribe/index.html
 msgid "Join Now"
 msgstr "いますぐ参加"
 
@@ -9608,8 +9639,8 @@ msgid "Load Level"
 msgstr "レベルを読み込む"
 
 #: pages/receipts.vue pages/track_results.vue pages/webinar_recordings.vue
-#: components/payout/wallet-transfers.vue receipts/index.html
-#: reports/index.html track_results/index.html
+#: components/payout/wallet-transfers.vue reports/index.html
+#: receipts/index.html track_results/index.html
 msgid "Load More"
 msgstr "もっと読み込む"
 
@@ -9630,12 +9661,13 @@ msgstr "場所の詳細"
 msgid "Logged in as user!"
 msgstr "ユーザーとしてログインしました！"
 
-#: pages/public/signup.vue pages/login/login.vue components/blog/navbar.vue
+#: pages/login/login.vue pages/public/signup.vue components/blog/navbar.vue
 #: components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
 #: components/payout/payoneer-withdraw.vue components/public/Header.vue
-#: communications/index.html communications/view.html live/index.html
-#: income_disclosure/index.html login/index.html unsubscribe/index.html
+#: communications/index.html communications/view.html
+#: income_disclosure/index.html live/index.html login/index.html
+#: unsubscribe/index.html
 msgid "Login"
 msgstr "ログイン"
 
@@ -9669,7 +9701,7 @@ msgstr "最安値"
 msgid "Lowest Stars First"
 msgstr "最も星の評価が低い順"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid "Make Default Card"
 msgstr "支払いカードの設定"
 
@@ -10363,8 +10395,8 @@ msgstr ""
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
 #: components/welcome/members-modal.vue competition/index.html
-#: invoices/invoice_statement.html new_ranks/index.html
-#: negative_balances/index.html receipts/booking_receipt.html
+#: invoices/invoice_statement.html negative_balances/index.html
+#: new_ranks/index.html reports/index.html receipts/booking_receipt.html
 #: receipts/builders_bonus.html receipts/commission_statement.html
 #: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
 #: receipts/instant_bonus_statement.html receipts/invoice.html
@@ -10377,8 +10409,7 @@ msgstr ""
 #: receipts/residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
 #: receipts/travel_challenge_statement.html
-#: receipts/weekly_bonus_statement.html reports/index.html
-#: track_results/index.html
+#: receipts/weekly_bonus_statement.html track_results/index.html
 msgid "Name"
 msgstr "名前"
 
@@ -11765,10 +11796,6 @@ msgstr "保留中の請求書"
 msgid "Pending invoices"
 msgstr "保留中の請求書"
 
-#: pages/invoices.vue
-msgid "Pending Invoices"
-msgstr "保留中の請求書"
-
 #: pages/track_results.vue track_results/index.html
 msgid "Pending Invoices:"
 msgstr "保留中の請求書："
@@ -11914,7 +11941,8 @@ msgstr "下記をチェックしてあなたの国が正しいことを確認し
 msgid "Please check below and confirm your state is correct."
 msgstr "下記をチェックしてあなたの州が正しいことを確認してください。"
 
-#: pages/invoices.vue components/confirm-recurring.vue
+#: components/recurring/add-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "Please check the expiration date you entered."
 msgstr "入力した有効期限をご確認ください。"
 
@@ -12230,7 +12258,7 @@ msgstr "担当部署を選択してください"
 msgid "Please select one of the following options:"
 msgstr "次のオプションから1つ選択して下さい："
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid "Please select preferred currency."
 msgstr "ご希望の通貨を選択してください。"
 
@@ -12467,7 +12495,7 @@ msgstr "クルーズご出発前 &amp; 乗船時のプロトコル"
 msgid "Pre-Qualified"
 msgstr "仮要件達成"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid "Preferred Currency:"
 msgstr "ご希望の通貨："
 
@@ -12731,7 +12759,7 @@ msgstr ""
 msgid "Push Blast"
 msgstr "プッシュ通知する"
 
-#: components/confirm-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid ""
 "Put your inCruises Membership on recurring billing and never worry about "
 "paying a monthly invoice again; while getting the complete TMT guarantee and "
@@ -12945,8 +12973,14 @@ msgstr "受信者"
 msgid "Record Locator"
 msgstr "ロケーターを記録する"
 
-#: pages/invoices.vue reports/index.html
+#: components/recurring/add-recurring.vue reports/index.html
 msgid "Recurring Billing"
+msgstr "定期払い"
+
+#: components/recurring/add-recurring.vue
+#, fuzzy
+#| msgid "Recurring Billing"
+msgid "Recurring Billing Agreement"
 msgstr "定期払い"
 
 #: pages/compensation.vue components/compensation/residual_bonus.vue
@@ -12958,7 +12992,7 @@ msgid "Recurring Income (for ongoing team Membership payments)"
 msgstr ""
 "リカーリング収入（チームの継続的なメンバーシップの支払いに対するボーナス）"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid "Recurring Payment Method Pending Validation"
 msgstr "承認待ちの定期払いの支払い方法"
 
@@ -13785,15 +13819,24 @@ msgstr ""
 msgid "Setting Saved!"
 msgstr "設定が保存されました！"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
+#, fuzzy
+#| msgid ""
+#| "Setting up a Recurring Payment card helps ensure all your\n"
+#| "\t\t\t\t\t\t\t<strong>inCruises</strong>\n"
+#| "\t\t\t\t\t\t\tpayments are made\n"
+#| "\t\t\t\t\t\t\t<strong>on-time</strong>\n"
+#| "\t\t\t\t\t\t\tand\n"
+#| "\t\t\t\t\t\t\t<strong>hassle-free</strong>\n"
+#| "\t\t\t\t\t\t\t."
 msgid ""
 "Setting up a Recurring Payment card helps ensure all your\n"
-"\t\t\t\t\t\t\t<strong>inCruises</strong>\n"
-"\t\t\t\t\t\t\tpayments are made\n"
-"\t\t\t\t\t\t\t<strong>on-time</strong>\n"
-"\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t<strong>hassle-free</strong>\n"
-"\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t\t<strong>inCruises</strong>\n"
+"\t\t\t\t\t\t\t\tpayments are made\n"
+"\t\t\t\t\t\t\t\t<strong>on-time</strong>\n"
+"\t\t\t\t\t\t\t\tand\n"
+"\t\t\t\t\t\t\t\t<strong>hassle-free</strong>\n"
+"\t\t\t\t\t\t\t\t."
 msgstr ""
 "定期払いのお支払いに利用するカードを設定することで、\n"
 "\t\t\t\t\t\t\t<strong>inCruises</strong>\n"
@@ -13851,11 +13894,16 @@ msgstr "就航: %{ shipLaunched }"
 msgid "Ship Name"
 msgstr "船の名前"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
+#, fuzzy
+#| msgid ""
+#| "Should your cards on file fail\n"
+#| "\t\t\t\t\t\t\t<em>(we only attempt default &amp; backup card)</em>\n"
+#| "\t\t\t\t\t\t\twe will try your inCruises wallet to pay for your invoice."
 msgid ""
 "Should your cards on file fail\n"
-"\t\t\t\t\t\t\t<em>(we only attempt default &amp; backup card)</em>\n"
-"\t\t\t\t\t\t\twe will try your inCruises wallet to pay for your invoice."
+"\t\t\t\t\t\t\t\t<em>(we only attempt default &amp; backup card)</em>\n"
+"\t\t\t\t\t\t\t\twe will try your inCruises wallet to pay for your invoice."
 msgstr ""
 "万が一、登録したカードで決済ができなかった場合\n"
 "\t\t\t\t\t\t\t<em>（デフォルト &amp; バックアップのカードのみ決済を試みます）"
@@ -14238,8 +14286,8 @@ msgstr "統計データ"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
-#: negative_balances/index.html
+#: negative_balances/index.html old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Status"
 msgstr "ステータス"
 
@@ -14280,6 +14328,7 @@ msgid "Submit Code"
 msgstr "コードを送信"
 
 #: components/checkout/ProcessorNexio.vue
+#: components/recurring/add-recurring.vue
 msgid "Submit Payment"
 msgstr "支払いを送信する"
 
@@ -14295,7 +14344,7 @@ msgstr "ピクセルIDを送信する"
 msgid "Submit Ticket"
 msgstr "チケットを送信"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid "Subscription Agreement"
 msgstr "加入（サブスクリプション）契約"
 
@@ -14589,7 +14638,8 @@ msgstr "入力されたカードの有効期限は、正しくありません。
 msgid "The card number you entered is not valid."
 msgstr "入力されたカード番号は、正しくありません。"
 
-#: pages/invoices.vue components/confirm-recurring.vue
+#: components/recurring/add-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "The cardholder name is required."
 msgstr "カード保有者の名前が必要です。"
 
@@ -15110,7 +15160,7 @@ msgstr ""
 "この予約は払い戻しができません。また、手続き後のキャンセルや返金もできませ"
 "ん。"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid ""
 "This card will be used to bill your for any and all pending invoices "
 "generated by inCruises to maintain your Membership and Partnership status "
@@ -15658,7 +15708,7 @@ msgstr ""
 "\t\t<a target=\"_blank\" href=\"./files/Cash_Pickup_Locations.pdf\" class="
 "\"bold\">現金の受取ができるパートナー所在地</a>"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid ""
 "To update the preferred currency, please select a recurring profile and then "
 "choose a currency."
@@ -16050,7 +16100,7 @@ msgid "Two Weeks Prior Contest"
 msgstr "2週間のコンテスト"
 
 #: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
-#: negative_balances/index.html receipts/index.html reports/index.html
+#: negative_balances/index.html reports/index.html receipts/index.html
 #: track_results/index.html
 msgid "Type"
 msgstr "タイプ"
@@ -16111,7 +16161,7 @@ msgstr "私たちのメーリングリストから購読を中止します。"
 msgid "Until: %{ return }"
 msgstr "最終日: %{ return }"
 
-#: components/confirm-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "Update Later"
 msgstr "後でアップデートする"
 
@@ -16123,7 +16173,7 @@ msgstr "通知設定を更新"
 msgid "Update Pixel ID"
 msgstr "ピクセルIDをアップデート"
 
-#: components/confirm-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid "Update Recurring Profile"
 msgstr "定期払いの情報をアップデートする"
 
@@ -16733,7 +16783,7 @@ msgstr ""
 "ナーが面白みを持って楽しい時間を過ごすための環境を作り出すために一生懸命取り"
 "組んでいます。"
 
-#: components/confirm-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid ""
 "We need you to confirm your details by re-entering your card, or enter a new "
 "card to get your monthly Membership paid via Trust My Travel (TMT)."
@@ -17369,7 +17419,7 @@ msgstr ""
 "パスポートや政府発行の身分証明書などで、あなたの正しい名前の表記方法を確認で"
 "きます。"
 
-#: pages/invoices.vue
+#: components/recurring/add-recurring.vue
 msgid "You can now choose your preferred currency for recurring billing."
 msgstr "定期払い決済にご希望の通貨を選択できます。"
 
@@ -17736,7 +17786,7 @@ msgstr "アドレスの自動設定から必ず青のアドレスをクリック
 msgid "You must have a minimum balance of $50 to transfer funds."
 msgstr "送金するには、＄５０ドル以上の残高が必要です。"
 
-#: components/confirm-recurring.vue
+#: components/recurring/confirm-recurring.vue
 msgid ""
 "You must make a decision about your recurring profile before continuing. We "
 "strongly recommend you update your recurring information so you do not "
@@ -17945,11 +17995,6 @@ msgstr ""
 "残高とは、会員資格の支払い金額 x 2 から、使用したリワードポイントを差し引いた"
 "ものです。ゴールドカードでは、リワードポイント残高の100%を、クルーズ予約合計"
 "金額の50%まで使用することができます。登録後14日間は、利用可能な残高は0です。"
-
-#: pages/invoices.vue
-msgid ""
-"Your bank transfer has initiated and should be completed within a few days."
-msgstr "銀行振込が開始されました、数日以内に完了する見込みです。"
 
 #: pages/booking.vue
 msgid ""
@@ -26157,6 +26202,28 @@ msgid ""
 msgstr ""
 "勝つには11ポイントが必要です。最もポイントの高いトップ5のリーダーがGoProチ"
 "ケットを獲得します。"
+
+#~ msgid ""
+#~ "<i class=\"fe fe-credit-card noicon mr-2 \"></i>\n"
+#~ "\t\t\t\t\t\t\t\t\t\tPay Invoice"
+#~ msgstr ""
+#~ "<i class=\"fe fe-credit-card noicon mr-2 \"></i>\n"
+#~ "\t\t\t\t\t\t\t\t\t\t請求書を支払う"
+
+#~ msgid ""
+#~ "<i class=\"fe fe-file-text noicon mr-2\"></i>\n"
+#~ "\t\t\t\t\t\t\t\t\t\tView Invoice"
+#~ msgstr ""
+#~ "<i class=\"fe fe-file-text noicon mr-2\"></i>\n"
+#~ "\t\t\t\t\t\t\t\t\t\t請求書を表示"
+
+#~ msgid "Pending Invoices"
+#~ msgstr "保留中の請求書"
+
+#~ msgid ""
+#~ "Your bank transfer has initiated and should be completed within a few "
+#~ "days."
+#~ msgstr "銀行振込が開始されました、数日以内に完了する見込みです。"
 
 #~ msgid "%{portLength} Ports. Click here to filter ports"
 #~ msgstr ""
