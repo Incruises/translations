@@ -101,36 +101,44 @@ msgstr ""
 msgid "- Travel for 50% off"
 msgstr "- Viajar con un 50% de descuento"
 
-#: track_results/index.html
-msgid ""
-", and their next billing date is on {{ $filters.date(selectedAffiliate."
-"next_billing, 'MMM dd, yyyy')}}."
-msgstr ""
-", y su próxima fecha de facturación es {{ $filters.date(selectedAffiliate."
-"next_billing, 'MMM dd, yyyy')}}."
-
-#: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
-msgid ""
-", and their next billing date is on {{ $filters.date(selectedUser."
-"next_billing, 'MMM dd, yyyy') }}."
-msgstr ""
-", y su próxima fecha de facturación es en {{ $filters.date(selectedUser."
-"next_billing, 'MMM dd, yyyy') }}."
-
-#: old_compensation/index.html
-msgid ""
-", and their next billing date is on {{ $filters.date(selectedUser."
-"next_billing, 'MMM dd, yyyy')}}."
-msgstr ""
-", y su próxima fecha de facturación es en {{ $filters.date(selectedUser."
-"next_billing, 'MMM dd, yyyy')}}."
-
 #: pages/team_rankings.vue
 msgid ""
 ", and their next billing date is on {{ selectedContact.info.next_billing }}."
 msgstr ""
 ", y su próxima fecha de pago es en {{selectedContact.info.next_billing }}."
+
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue
+#, fuzzy
+#| msgid ""
+#| ", and their next billing date is on {{selectedUser.next_billing | "
+#| "date:'MMM dd, yyyy'}}."
+msgid ""
+", and their next billing date is on {{ selectedUser.next_billing | date('MMM "
+"dd, yyyy') }}."
+msgstr ""
+", y su próxima fecha de facturación es en {{selectedUser.next_billing | "
+"date:'MMM dd, yyyy'}}."
+
+#: track_results/index.html
+#, fuzzy
+#| msgid ""
+#| ", and their next billing date is on {{selectedUser.next_billing | "
+#| "date:'MMM dd, yyyy'}}."
+msgid ""
+", and their next billing date is on {{selectedAffiliate.next_billing | "
+"date:'MMM dd, yyyy'}}."
+msgstr ""
+", y su próxima fecha de facturación es en {{selectedUser.next_billing | "
+"date:'MMM dd, yyyy'}}."
+
+#: old_compensation/index.html
+msgid ""
+", and their next billing date is on {{selectedUser.next_billing | date:'MMM "
+"dd, yyyy'}}."
+msgstr ""
+", y su próxima fecha de facturación es en {{selectedUser.next_billing | "
+"date:'MMM dd, yyyy'}}."
 
 #: pages/track_results.vue
 msgid ", and their next billing date is on %{ next_billing }."
@@ -154,15 +162,21 @@ msgstr ""
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tmes(es)"
 
 #: pages/team_rankings.vue
+#, fuzzy
+#| msgid ""
+#| ", they have been paying for\n"
+#| "\t\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedContact."
+#| "info.months_paid }}</span>\n"
+#| "\t\t\t\t\t\t\t\tmonth(s)"
 msgid ""
 ", they have been paying for\n"
-"\t\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedContact.info."
+"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedContact.info."
 "months_paid }}</span>\n"
-"\t\t\t\t\t\t\t\tmonth(s)"
+"\t\t\t\t\t\t\tmonth(s)"
 msgstr ""
 ", han estado pagando durante\n"
-"\t\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ "
-"selectedContact.info.months_paid }}</span>\n"
+"\t\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedContact.info."
+"months_paid }}</span>\n"
 "\t\t\t\t\t\t\t\tmes(es)"
 
 #: old_compensation/index.html
@@ -215,9 +229,9 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\tmonth(s) before they stopped paying"
 msgid ""
 ". They were active for\n"
-"\t\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedContact.info."
+"\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedContact.info."
 "months_paid }}</span>\n"
-"\t\t\t\t\t\t\t\tmonth(s) before they stopped paying"
+"\t\t\t\t\t\t\tmonth(s) before they stopped paying"
 msgstr ""
 ". Estuvo activo(a) durante\n"
 "\t\t\t\t\t\t\t\t<span class=\"text-green open-bold\">{{ selectedContact.info."
@@ -235,6 +249,10 @@ msgstr ""
 "\t\t\t\t\t\t<span class=\"text-green open-bold\">{{selectedUser.months_paid}}"
 "</span>\n"
 "\t\t\t\t\t\tmes(es) antes de dejar de pagar"
+
+#: components/compensation/builders_bonus.vue
+msgid ". This means you are on target to make"
+msgstr ". Esto significa que estás en el objetivo de hacer"
 
 #: pages/price_match_guarantee.vue
 msgid ". You find a lower publicly available rate the next day for"
@@ -387,10 +405,6 @@ msgstr ""
 msgid "{{ (profile.data.currency || 'USD').toUpperCase() }}"
 msgstr "{{ (profile.data.currency || 'USD').toUpperCase() }}"
 
-#: pages/courses.vue
-msgid "{{ $filters.capitalize(question.type) }}"
-msgstr "{{ $filters.capitalize(question.type) }}"
-
 #: pages/agreements.vue
 msgid "{{ agreement.name }}"
 msgstr "{{ agreement.name }}"
@@ -439,13 +453,6 @@ msgstr "{{ course.name }}"
 msgid "{{ error.message }} {{ error.description }}"
 msgstr "{{ error.message }} {{ error.description }}"
 
-#: pages/admin_department.vue pages/admin_permission_group.vue
-#: components/admin_management/admin_departments.vue
-#: components/admin_management/admin_permission_groups.vue
-#: components/user/departments.vue components/user/permissions.vue
-msgid "{{ errorMessage }}"
-msgstr "{{ errorMessage }}"
-
 #: pages/track_results.vue
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
@@ -457,6 +464,10 @@ msgstr "{{ question.question }}"
 #: pages/courses.vue
 msgid "{{ question.reason }}"
 msgstr "{{ question.reason }}"
+
+#: pages/courses.vue
+msgid "{{ question.type | capitalize }}"
+msgstr "{{ question.type | capitalize }}"
 
 #: components/payout/brightwell/brightwell-review.vue
 msgid "{{ recipientAccountField.name }}"
@@ -535,7 +546,7 @@ msgstr "{{ transferDetails.amountToSend }}"
 #| "\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgid ""
 "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
-"\t\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
+"\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgstr ""
 "{{ transferDetails.destinationCountryAndCurrency.country.name }}\n"
 "\t\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
@@ -547,7 +558,7 @@ msgstr ""
 #| "\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgid ""
 "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
-"\t\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
+"\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
 msgstr ""
 "{{ transferDetails.destinationCountryAndCurrency.currency.code }}\n"
 "\t\t\t\t<img class=\"flag\" :src=\"destinationCountryFlagImg\">"
@@ -774,6 +785,10 @@ msgstr "# de boletos con Primera Respuesta"
 msgid "#{{ confirmationDetails.confirmationNumber }}"
 msgstr "#{{ confirmationDetails.confirmationNumber }}"
 
+#: pages/courses.vue
+msgid "%{ correct } correct out of %{ questions }"
+msgstr "%{ correct } correcto de %{ questions }"
+
 #: components/reservation.vue
 msgid "%{ guests } Guests"
 msgstr "%{ guests } Huéspedes"
@@ -781,6 +796,12 @@ msgstr "%{ guests } Huéspedes"
 #: pages/book.vue pages/hotels.vue
 msgid "%{ length } results match your criteria."
 msgstr "%{ length } los resultados coinciden con sus criterios."
+
+#: pages/partner_success.vue
+#, fuzzy
+#| msgid "{{ country }}"
+msgid "%{ name } from %{ country }"
+msgstr "{{ country }}"
 
 #: pages/account_setup.vue
 msgid "%{ name }, consider upgrading to our Connect Suite."
@@ -870,17 +891,9 @@ msgid "© 2015 to Present inGroup International. All rights reserved."
 msgstr ""
 "© 2015 para presentar inGroup International. Todos los derechos reservados."
 
-#: components/admin_management/admin_departments.vue
-msgid "+ Add Department"
-msgstr "+ Agregar Departamento"
-
 #: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "+ Add new account"
 msgstr "+ Agregar nueva cuenta"
-
-#: components/admin_management/admin_permission_groups.vue
-msgid "+ Add Permission Group"
-msgstr "+ Agregar grupo de permisos"
 
 #: pages/email.vue
 msgid ""
@@ -933,9 +946,9 @@ msgstr ""
 #| "planning and savings for your family's vacations."
 msgid ""
 "<a href=\"/about\" target=\"_blank\">inCruises</a>\n"
-"\t\t\t\t\t\t\t\t\tis an exclusive travel club that takes you to the high "
-"seas on a budget and completely changes the game when it comes to planning "
-"and savings for your family's vacations."
+"\t\t\t\t\t\t\t\tis an exclusive travel club that takes you to the high seas "
+"on a budget and completely changes the game when it comes to planning and "
+"savings for your family's vacations."
 msgstr ""
 "<a href=\"/about\" target=\"_blank\">inCruises</a>\n"
 "\t\t\t\t\t\t\t\t\tes un exclusivo club de viajes que te lleva a las "
@@ -950,7 +963,7 @@ msgstr ""
 #| "you travel — today."
 msgid ""
 "<a href=\"/about\" target=\"_blank\">Learn more</a>\n"
-"\t\t\t\t\t\t\t\t\tabout how inCruises can change your life — and the way you "
+"\t\t\t\t\t\t\t\tabout how inCruises can change your life — and the way you "
 "travel — today."
 msgstr ""
 "<a href=\"/about\" target=\"_blank\">Learn more</a>\n"
@@ -1104,21 +1117,20 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t\t</b>"
 msgid ""
 "<b>\n"
-"\t\t\t\t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon"
-"\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" stroke-width=\"2\" "
-"stroke=\"currentColor\" fill=\"none\" stroke-linecap=\"round\" stroke-"
-"linejoin=\"round\">\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none"
+"\t\t\t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon\" "
+"width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" stroke-width=\"2\" stroke="
+"\"currentColor\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin="
+"\"round\">\n"
+"\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none"
 "\"></path>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"9\"></circle>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"></"
+"\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"9\"></circle>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"></line>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"></"
 "line>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t<line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"></"
-"line>\n"
-"\t\t\t\t\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\t\t\t\t\t<span v-translate=\"\">Pre-cruise &amp; Onboard "
+"\t\t\t\t\t\t\t\t\t\t</svg>\n"
+"\t\t\t\t\t\t\t\t\t\t<span v-translate=\"\">Pre-cruise &amp; Onboard "
 "Protocols</span>\n"
-"\t\t\t\t\t\t\t\t\t\t</b>"
+"\t\t\t\t\t\t\t\t\t</b>"
 msgstr ""
 "<b>\n"
 "\t\t\t\t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon"
@@ -1168,8 +1180,8 @@ msgstr "<em>Desliza para ver más</em>"
 #| "\t\t\t\t\t\t\trecordings"
 msgid ""
 "<i class=\"fa fa-check text-green\"></i>\n"
-"\t\t\t\t\t\t\t<span class=\"emphasize\">12 hour</span>\n"
-"\t\t\t\t\t\t\trecordings"
+"\t\t\t\t\t\t<span class=\"emphasize\">12 hour</span>\n"
+"\t\t\t\t\t\trecordings"
 msgstr ""
 "<i class=\"fa fa-check text-green\"></i>\n"
 "\t\t\t\t\t\t\t<span class=\"emphasize\">12 horas</span>\n"
@@ -1183,8 +1195,8 @@ msgstr ""
 #| "\t\t\t\t\t\t\trecordings"
 msgid ""
 "<i class=\"fa fa-check text-green\"></i>\n"
-"\t\t\t\t\t\t\t<span class=\"emphasize\">24 hour</span>\n"
-"\t\t\t\t\t\t\trecordings"
+"\t\t\t\t\t\t<span class=\"emphasize\">24 hour</span>\n"
+"\t\t\t\t\t\trecordings"
 msgstr ""
 "<i class=\"fa fa-check text-green\"></i>\n"
 "\t\t\t\t\t\t\t<span class=\"emphasize\">24 horas</span>\n"
@@ -1197,7 +1209,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tLive Streaming (e.g. Facebook)"
 msgid ""
 "<i class=\"fa fa-check text-green\"></i>\n"
-"\t\t\t\t\t\t\tLive Streaming (e.g. Facebook)"
+"\t\t\t\t\t\tLive Streaming (e.g. Facebook)"
 msgstr ""
 "<i class=\"fa fa-check text-green\"></i>\n"
 "\t\t\t\t\t\t\tTransmisión en Vivo (e.g. Facebook)"
@@ -1339,10 +1351,10 @@ msgstr ""
 #: pages/connect.vue
 msgid ""
 "<i class=\"fa fa-times text-red\"></i>\n"
-"\t\t\t\t\t\t\tNo Live Streaming"
+"\t\t\t\t\t\tNo Live Streaming"
 msgstr ""
 "<i class=\"fa fa-times text-red\"></i>\n"
-"\t\t\t\t\t\t\tNo incluye Transmisión en vivo"
+"      No incluye Transmisión en vivo"
 
 #: pages/connect.vue
 #, fuzzy
@@ -1351,7 +1363,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tNo recording available"
 msgid ""
 "<i class=\"fa fa-times text-red\"></i>\n"
-"\t\t\t\t\t\t\tNo recording available"
+"\t\t\t\t\t\tNo recording available"
 msgstr ""
 "<i class=\"fa fa-times text-red\"></i>\n"
 "\t\t\t\t\t\t\tNo hay grabaciones disponibles"
@@ -1363,7 +1375,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tNo Storage"
 msgid ""
 "<i class=\"fa fa-times text-red\"></i>\n"
-"\t\t\t\t\t\t\tNo Storage"
+"\t\t\t\t\t\tNo Storage"
 msgstr ""
 "<i class=\"fa fa-times text-red\"></i>\n"
 "\t\t\t\t\t\t\tNo incluye Almacenamiento"
@@ -1399,7 +1411,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tClick here to view a video explaining more."
 msgid ""
 "<i class=\"fa fa-video-camera\"></i>\n"
-"\t\t\t\t\t\t\tClick here to view a video explaining more."
+"\t\t\t\t\t\tClick here to view a video explaining more."
 msgstr ""
 "<i class=\"fa fa-video-camera\"></i>\n"
 "\t\t\t\t\t\t\tHaz clic aquí para ver un vídeo con más detalles."
@@ -1411,7 +1423,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t\t\tShare"
 msgid ""
 "<i class=\"fa icon-facebook mrs\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\tShare"
+"\t\t\t\t\t\t\t\t\t\tShare"
 msgstr ""
 "<i class=\"fa icon-facebook mrs\"></i>\n"
 "\t\t\t\t\t\t\t\t\t\t\tCompartir"
@@ -1431,7 +1443,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t\tTweet"
 msgid ""
 "<i class=\"fa icon-twitter mrs\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\tTweet"
+"\t\t\t\t\t\t\t\t\t\tTweet"
 msgstr ""
 "<i class=\"fa icon-twitter mrs\"></i>\n"
 "\t\t\t\t\t\t\t\t\t\t\tTweet"
@@ -1459,7 +1471,7 @@ msgstr "<i class=\"fal fa-ticket-alt mr-1\"></i> Eliminar Registro"
 #| "\t\t\t\t\t\t\t\tBegin Import"
 msgid ""
 "<i class=\"far fa-address-book mr-1\"></i>\n"
-"\t\t\t\t\t\t\t\tBegin Import"
+"\t\t\t\t\t\t\tBegin Import"
 msgstr ""
 "<i class=\"far fa-address-book mr-1\"></i>\n"
 "\t\t\t\t\t\t\t\tInicia Importación"
@@ -1531,7 +1543,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tHotels"
 msgid ""
 "<i class=\"fas fa-hotel mr-1\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tHotels"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\tHotels"
 msgstr ""
 "<i class=\"fas fa-hotel mr-1\"></i>\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tHoteles"
@@ -1543,7 +1555,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tDestinations"
 msgid ""
 "<i class=\"fas fa-map mr-1\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tDestinations"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\tDestinations"
 msgstr ""
 "<i class=\"fas fa-map mr-1\"></i>\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tDestinos"
@@ -1555,7 +1567,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tZones"
 msgid ""
 "<i class=\"fas fa-map-pin mr-1\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tZones"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\tZones"
 msgstr ""
 "<i class=\"fas fa-map-pin mr-1\"></i>\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tZonas"
@@ -1567,7 +1579,7 @@ msgstr ""
 #| "\t\t\tGet Help"
 msgid ""
 "<i class=\"fas fa-question-circle\"></i>\n"
-"\t\t\tGet Help"
+"\t\tGet Help"
 msgstr ""
 "<i class=\"fas fa-question-circle\"></i>\n"
 "\t\t\tObtener Ayuda"
@@ -1579,7 +1591,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\tClose Ticket"
 msgid ""
 "<i class=\"fe fe-check\"></i>\n"
-"\t\t\t\t\t\t\t\t\tClose Ticket"
+"\t\t\t\t\t\t\t\tClose Ticket"
 msgstr ""
 "<i class=\"fe fe-check\"></i>\n"
 "\t\t\t\t\t\t\t\t\tCerrar Ticket"
@@ -1591,7 +1603,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t\t\tPay Invoice"
 msgid ""
 "<i class=\"fe fe-credit-card noicon mr-2 \"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\tPay Invoice"
+"\t\t\t\t\t\t\t\t\t\tPay Invoice"
 msgstr ""
 "<i class=\"fe fe-credit-card noicon mr-2 \"></i>\n"
 "\t\t\t\t\t\t\t\t\t\t\tPagar Factura"
@@ -1603,7 +1615,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\tAdmin Note"
 msgid ""
 "<i class=\"fe fe-edit\"></i>\n"
-"\t\t\t\t\t\t\t\t\tAdmin Note"
+"\t\t\t\t\t\t\t\tAdmin Note"
 msgstr ""
 "<i class=\"fe fe-edit\"></i>\n"
 "\t\t\t\t\t\t\t\t\tNota de Admin"
@@ -1615,7 +1627,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t\t\tView Invoice"
 msgid ""
 "<i class=\"fe fe-file-text noicon mr-2\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\tView Invoice"
+"\t\t\t\t\t\t\t\t\t\tView Invoice"
 msgstr ""
 "<i class=\"fe fe-file-text noicon mr-2\"></i>\n"
 "\t\t\t\t\t\t\t\t\t\t\tVer Factura"
@@ -1631,9 +1643,9 @@ msgstr ""
 #| "</label>"
 msgid ""
 "<i class=\"fe fe-info font-weight-bold\" style=\"color:#007bff\"></i>\n"
-"\t\t\t<label class=\"font-weight-bold text-end text-left\" v-translate="
+"\t\t<label class=\"font-weight-bold text-end text-left\" v-translate="
 "\"\">Almost there...</label>\n"
-"\t\t\t<label class=\"text-end text-left\" style=\"padding-left:1rem\" v-"
+"\t\t<label class=\"text-end text-left\" style=\"padding-left:1rem\" v-"
 "translate=\"\">Before completing the transfer review all the information.</"
 "label>"
 msgstr ""
@@ -1655,7 +1667,7 @@ msgstr "<i class=\"fe fe-link\"></i> Visita el Enlace del Evento"
 #| "\t\t\t\t\tSend Invitation"
 msgid ""
 "<i class=\"fe fe-mail mr-1\"></i>\n"
-"\t\t\t\t\tSend Invitation"
+"\t\t\t\tSend Invitation"
 msgstr ""
 "<i class=\"fe fe-mail mr-1\"></i>\n"
 "\t\t\t\t\tEnviar invitación"
@@ -1667,7 +1679,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\tComment"
 msgid ""
 "<i class=\"fe fe-message-circle\"></i>\n"
-"\t\t\t\t\t\t\t\t\tComment"
+"\t\t\t\t\t\t\t\tComment"
 msgstr ""
 "<i class=\"fe fe-message-circle\"></i>\n"
 "\t\t\t\t\t\t\t\t\tComentario"
@@ -1679,7 +1691,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\tDismiss"
 msgid ""
 "<i class=\"fe fe-minimize\"></i>\n"
-"\t\t\t\t\t\t\t\t\tDismiss"
+"\t\t\t\t\t\t\t\tDismiss"
 msgstr ""
 "<i class=\"fe fe-minimize\"></i>\n"
 "\t\t\t\t\t\t\t\t\tOmitir"
@@ -1691,7 +1703,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\tAttachment"
 msgid ""
 "<i class=\"fe fe-paperclip\"></i>\n"
-"\t\t\t\t\t\t\t\t\tAttachment"
+"\t\t\t\t\t\t\t\tAttachment"
 msgstr ""
 "<i class=\"fe fe-paperclip\"></i>\n"
 "\t\t\t\t\t\t\t\t\tAdjunto"
@@ -1699,18 +1711,18 @@ msgstr ""
 #: pages/support.vue
 msgid ""
 "<i class=\"fe fe-paperclip\"></i>\n"
-"\t\t\t\t\t\t\t\tAdd Attachment"
-msgstr ""
-"<i class=\"fe fe-paperclip\"></i>\n"
-"\t\t\t\t\t\t\t\tAñadir Adjunto"
-
-#: components/support/AdminCreateTicket.vue
-msgid ""
-"<i class=\"fe fe-paperclip\"></i>\n"
 "\t\t\t\t\t\t\tAdd Attachment"
 msgstr ""
 "<i class=\"fe fe-paperclip\"></i>\n"
 "\t\t\t\t\t\t\tAñadir Adjunto"
+
+#: components/support/AdminCreateTicket.vue
+msgid ""
+"<i class=\"fe fe-paperclip\"></i>\n"
+"\t\t\t\t\t\tAdd Attachment"
+msgstr ""
+"<i class=\"fe fe-paperclip\"></i>\n"
+"\t\t\t\t\t\tAñadir Adjunto"
 
 #: components/weekly-competition.vue
 #, fuzzy
@@ -1719,7 +1731,7 @@ msgstr ""
 #| "\t\t\t\t\t\tWeekly Incentive PDF"
 msgid ""
 "<i class=\"fe fe-paperclip\"></i>\n"
-"\t\t\t\t\t\tWeekly Incentive PDF"
+"\t\t\t\t\tWeekly Incentive PDF"
 msgstr ""
 "<i class=\"fe fe-paperclip\"></i>\n"
 "\t\t\t\t\t\tPDF de Incentivo Semanal"
@@ -1731,7 +1743,7 @@ msgstr ""
 #| "\t\t\t\t\tDelete Recurring Profile"
 msgid ""
 "<i class=\"fe fe-trash-2\"></i>\n"
-"\t\t\t\t\tDelete Recurring Profile"
+"\t\t\t\tDelete Recurring Profile"
 msgstr ""
 "<i class=\"fe fe-trash-2\"></i>\n"
 "\t\t\t\t\tBorrar Perfil Recurrente"
@@ -1741,28 +1753,10 @@ msgstr ""
 #| msgid ""
 #| "<i class=\"fe fe-tv mr-2\"></i>\n"
 #| "\t\t\t\t\t\t\t\t\t\t\t\t\tWatch"
-msgid ""
-"<i class=\"fe fe-tv mr-2\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t\tWatch"
+msgid "<i class=\"fe fe-tv mr-2\"></i>Watch"
 msgstr ""
 "<i class=\"fe fe-tv mr-2\"></i>\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\tVer"
-
-#: pages/italian_onboarding.vue
-msgid ""
-"<i class=\"fe fe-upload mr-2\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\tUpload New Photo"
-msgstr ""
-"<i class=\"fe fe-upload mr-2\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\tCargar Nueva Foto"
-
-#: pages/italian_onboarding.vue
-msgid ""
-"<i class=\"fe fe-upload mr-2\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\tUpload Photo ID"
-msgstr ""
-"<i class=\"fe fe-upload mr-2\"></i>\n"
-"\t\t\t\t\t\t\t\t\t\t\tCargar ID de Foto"
 
 #: pages/italian_onboarding.vue
 msgid ""
@@ -1776,6 +1770,22 @@ msgstr ""
 msgid ""
 "<i class=\"fe fe-upload mr-2\"></i>\n"
 "\t\t\t\t\t\t\t\t\t\tUpload Photo ID"
+msgstr ""
+"<i class=\"fe fe-upload mr-2\"></i>\n"
+"          Cargar ID de Foto"
+
+#: pages/italian_onboarding.vue
+msgid ""
+"<i class=\"fe fe-upload mr-2\"></i>\n"
+"\t\t\t\t\t\t\t\t\tUpload New Photo"
+msgstr ""
+"<i class=\"fe fe-upload mr-2\"></i>\n"
+"\t\t\t\t\t\t\t\t\tCargar Nueva Foto"
+
+#: pages/italian_onboarding.vue
+msgid ""
+"<i class=\"fe fe-upload mr-2\"></i>\n"
+"\t\t\t\t\t\t\t\t\tUpload Photo ID"
 msgstr ""
 "<i class=\"fe fe-upload mr-2\"></i>\n"
 "          Cargar ID de Foto"
@@ -1815,7 +1825,7 @@ msgstr "<i>AI response:</i>"
 #| "\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
 msgid ""
 "<img class=\"flag\" :src=\"sourceCountryFlagImg\">\n"
-"\t\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
+"\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
 msgstr ""
 "<img class=\"flag\" :src=\"sourceCountryFlagImg\">\n"
 "\t\t\t\t{{ transferDetails.sourceCountryAndCurrency.currency.code }}"
@@ -1829,9 +1839,9 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t</p>"
 msgid ""
 "<p class=\"m-0\">\n"
-"\t\t\t\t\t\t\t\t\t\t\t{{ user.oneForOneBalance }}\n"
-"\t\t\t\t\t\t\t\t\t\t\t<sub style=\"font-weight: 500\">1 For 1</sub>\n"
-"\t\t\t\t\t\t\t\t\t\t</p>"
+"\t\t\t\t\t\t\t\t\t\t{{ user.oneForOneBalance }}\n"
+"\t\t\t\t\t\t\t\t\t\t<sub style=\"font-weight: 500\">1 For 1</sub>\n"
+"\t\t\t\t\t\t\t\t\t</p>"
 msgstr ""
 "<p class=\"m-0\">\n"
 "\t\t\t\t\t\t\t\t\t\t\t{{ user.oneForOneBalance }}\n"
@@ -1847,9 +1857,9 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t</p>"
 msgid ""
 "<p class=\"m-0\">\n"
-"\t\t\t\t\t\t\t\t\t\t\t{{ user.twoForOneBalance }}\n"
-"\t\t\t\t\t\t\t\t\t\t\t<sub style=\"font-weight: 500\">2 For 1</sub>\n"
-"\t\t\t\t\t\t\t\t\t\t</p>"
+"\t\t\t\t\t\t\t\t\t\t{{ user.twoForOneBalance }}\n"
+"\t\t\t\t\t\t\t\t\t\t<sub style=\"font-weight: 500\">2 For 1</sub>\n"
+"\t\t\t\t\t\t\t\t\t</p>"
 msgstr ""
 "<p class=\"m-0\">\n"
 "\t\t\t\t\t\t\t\t\t\t\t{{ user.twoForOneBalance }}\n"
@@ -1879,18 +1889,6 @@ msgstr ""
 "arriba.\n"
 "\t\t\t\t\t\t\t\t</small>"
 
-#: pages/courses.vue
-#, fuzzy
-#| msgid ""
-#| "<span class=\"course-name\" v-translate=\"\">Course:</span>\n"
-#| "\t\t\t\t\t\t\t\t\t\t\t<span v-translate=\"\">{{ course.name }}</span>"
-msgid ""
-"<span class=\"course-name\" v-translate=\"\">Course:</span>\n"
-"\t\t\t\t\t\t\t\t\t\t\t<span v-translate=\"\">{{ course.name }}</span>"
-msgstr ""
-"<span class=\"course-name\" v-translate=\"\">Curso:</span>\n"
-"\t\t\t\t\t\t\t\t\t\t\t<span v-translate=\"\">{{ course.name }}</span>"
-
 #: pages/connect.vue
 #, fuzzy
 #| msgid ""
@@ -1898,7 +1896,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tMeeting Room"
 msgid ""
 "<span class=\"emphasize\">1</span>\n"
-"\t\t\t\t\t\t\tMeeting Room"
+"\t\t\t\t\t\tMeeting Room"
 msgstr ""
 "<span class=\"emphasize\">1</span>\n"
 "\t\t\t\t\t\t\tSala de Reunión"
@@ -1918,7 +1916,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tMeeting Rooms"
 msgid ""
 "<span class=\"emphasize\">10</span>\n"
-"\t\t\t\t\t\t\tMeeting Rooms"
+"\t\t\t\t\t\tMeeting Rooms"
 msgstr ""
 "<span class=\"emphasize\">10</span>\n"
 "\t\t\t\t\t\t\tSalas de Reunión"
@@ -1938,7 +1936,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tParticipants"
 msgid ""
 "<span class=\"emphasize\">1500</span>\n"
-"\t\t\t\t\t\t\tParticipants"
+"\t\t\t\t\t\tParticipants"
 msgstr ""
 "<span class=\"emphasize\">1500</span>\n"
 "\t\t\t\t\t\t\tParticipantes"
@@ -1966,7 +1964,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tof storage"
 msgid ""
 "<span class=\"emphasize\">300 MB</span>\n"
-"\t\t\t\t\t\t\tof storage"
+"\t\t\t\t\t\tof storage"
 msgstr ""
 "<span class=\"emphasize\">300 MB</span>\n"
 "\t\t\t\t\t\t\tde almacenamiento"
@@ -1986,7 +1984,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tmeetings"
 msgid ""
 "<span class=\"emphasize\">45 minute</span>\n"
-"\t\t\t\t\t\t\tmeetings"
+"\t\t\t\t\t\tmeetings"
 msgstr ""
 "<span class=\"emphasize\">Reuniones de</span>\n"
 "\t\t\t\t\t\t\thasta 45 minutos"
@@ -2006,7 +2004,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tMeeting Rooms"
 msgid ""
 "<span class=\"emphasize\">5</span>\n"
-"\t\t\t\t\t\t\tMeeting Rooms"
+"\t\t\t\t\t\tMeeting Rooms"
 msgstr ""
 "<span class=\"emphasize\">5</span>\n"
 "\t\t\t\t\t\t\tSalas de Reunión"
@@ -2018,7 +2016,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tParticipants"
 msgid ""
 "<span class=\"emphasize\">5</span>\n"
-"\t\t\t\t\t\t\tParticipants"
+"\t\t\t\t\t\tParticipants"
 msgstr ""
 "<span class=\"emphasize\">5</span>\n"
 "\t\t\t\t\t\t\tParticipantes"
@@ -2038,7 +2036,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tof storage"
 msgid ""
 "<span class=\"emphasize\">500 MB</span>\n"
-"\t\t\t\t\t\t\tof storage"
+"\t\t\t\t\t\tof storage"
 msgstr ""
 "<span class=\"emphasize\">500 MB</span>\n"
 "\t\t\t\t\t\t\tde almacenamiento"
@@ -2058,7 +2056,7 @@ msgstr ""
 #| "\t\t\t\t\t\t\tParticipants"
 msgid ""
 "<span class=\"emphasize\">500</span>\n"
-"\t\t\t\t\t\t\tParticipants"
+"\t\t\t\t\t\tParticipants"
 msgstr ""
 "<span class=\"emphasize\">500</span>\n"
 "\t\t\t\t\t\t\tParticipantes"
@@ -2074,10 +2072,10 @@ msgstr ""
 #: pages/connect.vue
 msgid ""
 "<span class=\"emphasize\">Unlimited</span>\n"
-"\t\t\t\t\t\t\tmeeting time"
+"\t\t\t\t\t\tmeeting time"
 msgstr ""
-"<span class=\"emphasize\">Reuniones</span>\n"
-"\t\t\t\t\t\t\tilimitadas"
+"<span class=\"emphasize\">Reuniones </span>\n"
+"      ilimitadas"
 
 #: power_tools_upgrade/index.html
 msgid ""
@@ -2094,7 +2092,7 @@ msgstr ""
 #| "\t\t\t\t\t<span v-translate=\"\">Destination country</span>"
 msgid ""
 "<span class=\"mr-1\" style=\"color:red\">*</span>\n"
-"\t\t\t\t\t<span v-translate=\"\">Destination country</span>"
+"\t\t\t\t<span v-translate=\"\">Destination country</span>"
 msgstr ""
 "<span class=\"mr-1\" style=\"color:red\">*</span>\n"
 "\t\t\t\t\t<span v-translate=\"\">País de destino</span>"
@@ -2106,7 +2104,7 @@ msgstr ""
 #| "\t\t\t\t\t<span v-translate=\"\">Transfer type</span>"
 msgid ""
 "<span class=\"mr-1\" style=\"color:red\">*</span>\n"
-"\t\t\t\t\t<span v-translate=\"\">Transfer type</span>"
+"\t\t\t\t<span v-translate=\"\">Transfer type</span>"
 msgstr ""
 "<span class=\"mr-1\" style=\"color:red\">*</span>\n"
 "\t\t\t\t\t<span v-translate=\"\">Tipo de transferencia</span>"
@@ -2120,9 +2118,9 @@ msgstr ""
 #| "\t\t\t\t\t\t\tCompose new Email"
 msgid ""
 "<span class=\"mr-3\">\n"
-"\t\t\t\t\t\t\t\t<i class=\"fe fe-edit\"></i>\n"
-"\t\t\t\t\t\t\t</span>\n"
-"\t\t\t\t\t\t\tCompose new Email"
+"\t\t\t\t\t\t\t<i class=\"fe fe-edit\"></i>\n"
+"\t\t\t\t\t\t</span>\n"
+"\t\t\t\t\t\tCompose new Email"
 msgstr ""
 "<span class=\"mr-3\">\n"
 "\t\t\t\t\t\t\t\t<i class=\"fe fe-edit\"></i>\n"
@@ -2141,11 +2139,11 @@ msgstr ""
 #| "\t\t\t\t\t\tyour initial activation."
 msgid ""
 "<span class=\"text-orange\">NOTE:</span>\n"
-"\t\t\t\t\t\tActivating as a Partner early in a month gives you an advantage "
+"\t\t\t\t\tActivating as a Partner early in a month gives you an advantage "
 "for Fast Start as you will have additional time to add Members and Partners "
 "to your team and build momentum and ongoing membership payments going into "
 "your first full calendar month, which is the month following\n"
-"\t\t\t\t\t\tyour initial activation."
+"\t\t\t\t\tyour initial activation."
 msgstr ""
 "<span class=\"text-orange\">NOTA:</span>\n"
 "\t\t\t\t\t\tLa Activación como Socio a principios de un mes te brinda una "
@@ -2162,8 +2160,8 @@ msgstr ""
 #| "the bonus is earned."
 msgid ""
 "<span class=\"text-orange\">NOTE:</span>\n"
-"\t\t\t\t\t\tThis one-time bonus is paid on the 7th of the following month "
-"the bonus is earned."
+"\t\t\t\t\tThis one-time bonus is paid on the 7th of the following month the "
+"bonus is earned."
 msgstr ""
 "<span class=\"text-orange\">NOTA:</span>\n"
 "\t\t\t\t\t\tEste bono único se paga el día 7 del mes siguiente al que se "
@@ -2179,7 +2177,7 @@ msgstr ""
 msgid ""
 "<span class=\"tooltip-bottom\" :tooltip=\"$gettext('Allow payout provider to "
 "be available for users')\"><i class=\"fas fa-question-circle\"></i></span>\n"
-"\t\t\t\t\t\t\t\t\tEnable"
+"\t\t\t\t\t\t\t\tEnable"
 msgstr ""
 "<span class=\"tooltip-bottom\" :tooltip=\"$gettext('Allow payout provider to "
 "be available for users')\"><i class=\"fas fa-question-circle\"></i></span>\n"
@@ -2196,7 +2194,7 @@ msgid ""
 "<span class=\"tooltip-bottom\" :tooltip=\"$gettext('Timeframe for enforcing "
 "\\'Period Transfer Limit\\' - (Hourly)')\"><i class=\"fas fa-question-circle"
 "\"></i></span>\n"
-"\t\t\t\t\t\t\t\t\tTransfer Period"
+"\t\t\t\t\t\t\t\tTransfer Period"
 msgstr ""
 "<span class=\"tooltip-bottom\" :tooltip=\"$gettext('Timeframe for enforcing "
 "\\'Period Transfer Limit\\' - (Hourly)')\"><i class=\"fas fa-question-circle"
@@ -2215,7 +2213,7 @@ msgid ""
 "<span class=\"tooltip-bottom\" :tooltip=\"$gettext('Total amount limit each "
 "user will be allowed to withdraw within a weekend (Friday-Sunday) - (Nearest "
 "whole value)')\"><i class=\"fas fa-question-circle\"></i></span>\n"
-"\t\t\t\t\t\t\t\t\tWeekend Transfer Limit"
+"\t\t\t\t\t\t\t\tWeekend Transfer Limit"
 msgstr ""
 "<span class=\"tooltip-bottom\" :tooltip=\"$gettext('Límite de la cantidad "
 "total que cada usuario podrá retirar dentro de un fin de semana (viernes -"
@@ -2235,7 +2233,7 @@ msgid ""
 "<span class=\"tooltip-bottom\" :tooltip=\"$gettext('Total amount limit each "
 "user will be allowed to withdraw within the given \\'Transfer Period\\' - "
 "(Nearest whole value)')\"><i class=\"fas fa-question-circle\"></i></span>\n"
-"\t\t\t\t\t\t\t\t\tPeriod Transfer Limit"
+"\t\t\t\t\t\t\t\tPeriod Transfer Limit"
 msgstr ""
 "<span class=\"tooltip-bottom\" :tooltip=\"$gettext('Límite de cantidad total "
 "que cada usuario podrá retirar dentro de dado \\ Período de transferencia \\ "
@@ -2261,6 +2259,18 @@ msgstr ""
 "\t\t\t\t\t\t\t\t\tTodos los derechos reservados.\n"
 "\t\t\t\t\t\t\t\t</span>"
 
+#: pages/courses.vue
+#, fuzzy
+#| msgid ""
+#| "<span class=\"course-name\" v-translate=\"\">Course:</span>\n"
+#| "\t\t\t\t\t\t\t\t\t\t\t<span v-translate=\"\">{{ course.name }}</span>"
+msgid ""
+"<span v-translate=\"\">Course:</span>\n"
+"\t\t\t\t\t\t\t\t\t\t<span v-translate=\"\">{{ course.name }}</span>"
+msgstr ""
+"<span class=\"course-name\" v-translate=\"\">Curso:</span>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<span v-translate=\"\">{{ course.name }}</span>"
+
 #: pages/public/mission.vue
 #, fuzzy
 #| msgid ""
@@ -2270,7 +2280,7 @@ msgstr ""
 #| "fun, be pampered and entertained."
 msgid ""
 "<strong style=\"font-size: 36px;\">C</strong>\n"
-"\t\t\t\t\t\treate affordable, luxury cruising experiences, for our members "
+"\t\t\t\t\treate affordable, luxury cruising experiences, for our members "
 "through our exclusive offer, allowing people to save money, have fun, be "
 "pampered and entertained."
 msgstr ""
@@ -2287,7 +2297,7 @@ msgstr ""
 #| "meaningful moments shared with family and friends."
 msgid ""
 "<strong style=\"font-size: 36px;\">E</strong>\n"
-"\t\t\t\t\t\tnhance your free time through travel so you can enjoy meaningful "
+"\t\t\t\t\tnhance your free time through travel so you can enjoy meaningful "
 "moments shared with family and friends."
 msgstr ""
 "<strong style=\"font-size: 36px;\">E</strong>\n"
@@ -2302,8 +2312,8 @@ msgstr ""
 #| "discovering the world and it’s amazing far-reaching destinations."
 msgid ""
 "<strong style=\"font-size: 36px;\">I</strong>\n"
-"\t\t\t\t\t\tnspire you to cruise smarter, relax and recharge while "
-"discovering the world and it’s amazing far-reaching destinations."
+"\t\t\t\t\tnspire you to cruise smarter, relax and recharge while discovering "
+"the world and it’s amazing far-reaching destinations."
 msgstr ""
 "<strong style=\"font-size: 36px;\">I</strong>\n"
 "\t\t\t\t\t\tnspirarte a viajar en crucero de manera inteligente, relajarte y "
@@ -2318,9 +2328,9 @@ msgstr ""
 #| "vacations savings to help create memorable cruising experiences."
 msgid ""
 "<strong style=\"font-size: 36px;\">R</strong>\n"
-"\t\t\t\t\t\teward you in exchange for your member fees with innovative "
-"Reward Points. Reward Points double the purchasing power of your vacations "
-"savings to help create memorable cruising experiences."
+"\t\t\t\t\teward you in exchange for your member fees with innovative Reward "
+"Points. Reward Points double the purchasing power of your vacations savings "
+"to help create memorable cruising experiences."
 msgstr ""
 "<strong style=\"font-size: 36px;\">R</strong>\n"
 "\t\t\t\t\t\tecompensarle a cambio de sus cuotas de miembro con Puntos de "
@@ -2336,7 +2346,7 @@ msgstr ""
 #| "Causes like Make-A-Wish."
 msgid ""
 "<strong style=\"font-size: 36px;\">S</strong>\n"
-"\t\t\t\t\t\tupport important causes you care about all around the world. "
+"\t\t\t\t\tupport important causes you care about all around the world. "
 "Causes like Make-A-Wish."
 msgstr ""
 "<strong style=\"font-size: 36px;\">S</strong>\n"
@@ -2351,7 +2361,7 @@ msgstr ""
 #| "impact the lives of millions worldwide."
 msgid ""
 "<strong style=\"font-size: 36px;\">U</strong>\n"
-"\t\t\t\t\t\tnleash a powerful business opportunity for you to positively "
+"\t\t\t\t\tnleash a powerful business opportunity for you to positively "
 "impact the lives of millions worldwide."
 msgstr ""
 "<strong style=\"font-size: 36px;\">U</strong>\n"
@@ -2369,8 +2379,8 @@ msgstr ""
 #| "will earn the attached DOUBLE DIGIT banner in your name.</span>"
 msgid ""
 "<strong v-translate=\"\">Double Digit Banner</strong>\n"
-"\t\t\t\t\t\t\t<span>-</span>\n"
-"\t\t\t\t\t\t\t<span v-translate=\"\">When you enroll 1 New Partner in "
+"\t\t\t\t\t\t<span>-</span>\n"
+"\t\t\t\t\t\t<span v-translate=\"\">When you enroll 1 New Partner in "
 "November, and Your Total Team enrolls 10 NEW Partners down 5 levels, you "
 "will earn the attached DOUBLE DIGIT banner in your name.</span>"
 msgstr ""
@@ -2390,8 +2400,8 @@ msgstr ""
 #| "you will earn the attached QUADRUPLE DIGIT banner in your name.</span>"
 msgid ""
 "<strong v-translate=\"\">Quadruple Digit Banner</strong>\n"
-"\t\t\t\t\t\t\t<span>-</span>\n"
-"\t\t\t\t\t\t\t<span v-translate=\"\">When you enroll 1 New Partner in "
+"\t\t\t\t\t\t<span>-</span>\n"
+"\t\t\t\t\t\t<span v-translate=\"\">When you enroll 1 New Partner in "
 "November, and Your Total Team enrolls 1000 NEW Partners down 15 levels, you "
 "will earn the attached QUADRUPLE DIGIT banner in your name.</span>"
 msgstr ""
@@ -2411,8 +2421,8 @@ msgstr ""
 #| "you will earn the attached TRIPLE DIGIT banner in your name.</span>"
 msgid ""
 "<strong v-translate=\"\">Triple Digit Banner</strong>\n"
-"\t\t\t\t\t\t\t<span>-</span>\n"
-"\t\t\t\t\t\t\t<span v-translate=\"\">When you enroll 1 New Partner in "
+"\t\t\t\t\t\t<span>-</span>\n"
+"\t\t\t\t\t\t<span v-translate=\"\">When you enroll 1 New Partner in "
 "November, and Your Total Team enrolls 100 NEW Partners down 10 levels, you "
 "will earn the attached TRIPLE DIGIT banner in your name.</span>"
 msgstr ""
@@ -2459,9 +2469,9 @@ msgstr ""
 #| "\t\t\t\t\t\tMember up to 10 levels"
 msgid ""
 "<strong>1 point</strong>\n"
-"\t\t\t\t\t\t\tfor each\n"
-"\t\t\t\t\t\t\t<strong>NEW</strong>\n"
-"\t\t\t\t\t\t\tMember up to 10 levels"
+"\t\t\t\t\t\tfor each\n"
+"\t\t\t\t\t\t<strong>NEW</strong>\n"
+"\t\t\t\t\t\tMember up to 10 levels"
 msgstr ""
 "<strong>1 punto</strong>\n"
 "      por cada\n"
@@ -2477,9 +2487,9 @@ msgstr ""
 #| "\t\t\t\t\t\tPartner up to 10 levels"
 msgid ""
 "<strong>2 points</strong>\n"
-"\t\t\t\t\t\t\tfor each\n"
-"\t\t\t\t\t\t\t<strong>NEW</strong>\n"
-"\t\t\t\t\t\t\tPartner up to 10 levels"
+"\t\t\t\t\t\tfor each\n"
+"\t\t\t\t\t\t<strong>NEW</strong>\n"
+"\t\t\t\t\t\tPartner up to 10 levels"
 msgstr ""
 "<strong>2 puntos</strong>\n"
 "      por cada\n"
@@ -2495,9 +2505,9 @@ msgstr ""
 #| "\t\t\t\t\t\tDirect Member"
 msgid ""
 "<strong>3 points</strong>\n"
-"\t\t\t\t\t\t\tfor each\n"
-"\t\t\t\t\t\t\t<strong>NEW</strong>\n"
-"\t\t\t\t\t\t\tDirect Member"
+"\t\t\t\t\t\tfor each\n"
+"\t\t\t\t\t\t<strong>NEW</strong>\n"
+"\t\t\t\t\t\tDirect Member"
 msgstr ""
 "<strong>3 puntos</strong>\n"
 "      por cada\n"
@@ -2513,9 +2523,9 @@ msgstr ""
 #| "\t\t\t\t\t\tPartner-Member up to 10 levels"
 msgid ""
 "<strong>3 points</strong>\n"
-"\t\t\t\t\t\t\tfor each\n"
-"\t\t\t\t\t\t\t<strong>NEW</strong>\n"
-"\t\t\t\t\t\t\tPartner-Member up to 10 levels"
+"\t\t\t\t\t\tfor each\n"
+"\t\t\t\t\t\t<strong>NEW</strong>\n"
+"\t\t\t\t\t\tPartner-Member up to 10 levels"
 msgstr ""
 "<strong>3 puntos</strong>\n"
 "      por cada\n"
@@ -2531,9 +2541,9 @@ msgstr ""
 #| "\t\t\t\t\t\tDirect Partner"
 msgid ""
 "<strong>5 points</strong>\n"
-"\t\t\t\t\t\t\tfor each\n"
-"\t\t\t\t\t\t\t<strong>NEW</strong>\n"
-"\t\t\t\t\t\t\tDirect Partner"
+"\t\t\t\t\t\tfor each\n"
+"\t\t\t\t\t\t<strong>NEW</strong>\n"
+"\t\t\t\t\t\tDirect Partner"
 msgstr ""
 "<strong>5 puntos</strong>\n"
 "      por cada\n"
@@ -2549,9 +2559,9 @@ msgstr ""
 #| "\t\t\t\t\t\tDirect Partner-Member"
 msgid ""
 "<strong>8 points</strong>\n"
-"\t\t\t\t\t\t\tfor each\n"
-"\t\t\t\t\t\t\t<strong>NEW</strong>\n"
-"\t\t\t\t\t\t\tDirect Partner-Member"
+"\t\t\t\t\t\tfor each\n"
+"\t\t\t\t\t\t<strong>NEW</strong>\n"
+"\t\t\t\t\t\tDirect Partner-Member"
 msgstr ""
 "<strong>8 puntos</strong>\n"
 "      por cada\n"
@@ -2577,7 +2587,7 @@ msgstr ""
 #| "\t\t\t\t\t\tis a Proud Member of"
 msgid ""
 "<strong>INGROUP INTERNATIONAL LLC</strong>\n"
-"\t\t\t\t\t\t\tis a Proud Member of"
+"\t\t\t\t\t\tis a Proud Member of"
 msgstr ""
 "<strong>INGROUP INTERNATIONAL LLC</strong>\n"
 "\t\t\t\t\t\tes Miembro con orgullo de"
@@ -2590,7 +2600,7 @@ msgstr ""
 #| "Washington under each state’s seller of travel regulations."
 msgid ""
 "<strong>inGroup International</strong>\n"
-"\t\t\t\t\t\t\tis a registered seller of travel in California, Florida, and "
+"\t\t\t\t\t\tis a registered seller of travel in California, Florida, and "
 "Washington under each state’s seller of travel regulations."
 msgstr ""
 "<strong>inGroup International</strong>\n"
@@ -2610,13 +2620,13 @@ msgstr ""
 #| "\t\t\t\t\t."
 msgid ""
 "<strong>Maintain</strong>\n"
-"\t\t\t\t\t\tyour MD rank through the\n"
-"\t\t\t\t\t\t<strong>next calendar month</strong>\n"
-"\t\t\t\t\t\tand your\n"
-"\t\t\t\t\t\t<strong>up-line sponsor</strong>\n"
-"\t\t\t\t\t\tgets a\n"
-"\t\t\t\t\t\t<strong>matching one-time $500.00 bonus</strong>\n"
-"\t\t\t\t\t\t."
+"\t\t\t\t\tyour MD rank through the\n"
+"\t\t\t\t\t<strong>next calendar month</strong>\n"
+"\t\t\t\t\tand your\n"
+"\t\t\t\t\t<strong>up-line sponsor</strong>\n"
+"\t\t\t\t\tgets a\n"
+"\t\t\t\t\t<strong>matching one-time $500.00 bonus</strong>\n"
+"\t\t\t\t\t."
 msgstr ""
 "<strong>Mantén</strong>\n"
 "\t\t\t\t\tel rango de MD durante el\n"
@@ -2629,19 +2639,19 @@ msgstr ""
 
 #: pages/invoices.vue
 msgid ""
-"<strong>You can earn 200 ( 2 for 1) Reward Points right now by making a $100 "
-"Membership payment!</strong>\n"
-"\t\t\t\t\t\t\tAlways pay your Membership payments as soon as you can and "
-"fully maximize your Member rewards."
+"<strong>You can earn another 200 ( 2 for 1) Reward Points right now by "
+"making a $100 Membership payment!</strong>\n"
+"\t\t\t\t\t\tAlways pay your Membership payments as soon as you can and fully "
+"maximize your Member rewards."
 msgstr ""
 
 #: pages/welcome.vue
 msgid ""
-"<strong>You can earn 200 ( 2 for 1) Reward Points right now by making a $100 "
-"Membership payment!</strong>\n"
-"\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\tAlways pay your Membership payments as soon as you can and "
-"fully maximize your Member rewards."
+"<strong>You can earn another 200 ( 2 for 1) Reward Points right now by "
+"making a $100 Membership payment!</strong>\n"
+"\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\tAlways pay your Membership payments as soon as you can and fully "
+"maximize your Member rewards."
 msgstr ""
 
 #: Menu.vue
@@ -2662,18 +2672,18 @@ msgstr ""
 #| "\t\t\t\t\tLogout"
 msgid ""
 "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\">\n"
-"\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-"
+"\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-"
 "linejoin=\"round\" stroke-width=\"1.5\" d=\"M15.75 8.75L19.25 12L15.75 "
 "15.25\"></path>\n"
-"\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-"
+"\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-"
 "linejoin=\"round\" stroke-width=\"1.5\" d=\"M19 12H10.75\"></path>\n"
-"\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-"
+"\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-"
 "linejoin=\"round\" stroke-width=\"1.5\" d=\"M15.25 4.75H6.75C5.64543 4.75 "
 "4.75 5.64543 4.75 6.75V17.25C4.75 18.3546 5.64543 19.25 6.75 19.25H15.25\"></"
 "path>\n"
-"\t\t\t\t\t\t</svg>\n"
+"\t\t\t\t\t</svg>\n"
 "\n"
-"\t\t\t\t\t\tLogout"
+"\t\t\t\t\tLogout"
 msgstr ""
 "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\">\n"
 "\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-"
@@ -2715,7 +2725,7 @@ msgstr "${{statement.data.amount}}"
 msgid "$1,000 travel cash"
 msgstr ""
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$10,000 in total team production in any given month.<br><br> Senior "
 "Marketing Director automatically earn our TRAVEL BONUS OF $1,000 each and "
@@ -2733,7 +2743,7 @@ msgstr ""
 "Tarifa de activación de $ 100 (solo al activar tu membresía) y $100 por mes, "
 "sin contratos a largo plazo. Puedes cancelar en cualquier momento."
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$100,000 in total team production in any given month.<br><br> International "
 "Directors automatically earn our FREEDOM BONUS of $10,000 each and every "
@@ -2747,7 +2757,7 @@ msgstr ""
 msgid "$20/month value ($240 annually)"
 msgstr "Un valor de $20/mes o $240/anual"
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$25,000 in total team production in any given month.<br><br> Regional "
 "Directors automatically earn our FINANCIAL COMMITMENT BONUS OF $2,500 each "
@@ -2757,7 +2767,7 @@ msgstr ""
 "Regional Directors ganan automáticamente nuestro BONO DE COMPROMISO "
 "FINANCIERO de $2,500 cada mes que se mantienen calificando."
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$250,000 in total team production in any given month.<br><br> Executive "
 "Directors automatically earn our INDEPENDENCE BONUS of $25,000 each and "
@@ -2767,7 +2777,7 @@ msgstr ""
 "EXECUTIVE DIRECTORS ganan automáticamente nuestro BONO DE INDEPENDENCIA de "
 "$25,000 cada mes que se mantienen calificando."
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$3,000 in total team production in any given month.<br><br> Marketing "
 "Director automatically earn our CAR BONUS OF $300 each and every month they "
@@ -2781,7 +2791,7 @@ msgstr ""
 msgid "$475 USD"
 msgstr "$475 USD"
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid ""
 "$50,000 in total team production in any given month.<br><br> National "
 "Marketing Directors automatically earn our LUXURY BONUS OF $5,000 each and "
@@ -2794,6 +2804,18 @@ msgstr ""
 #: pages/price_match_guarantee.vue
 msgid "$500 USD"
 msgstr "$500 USD"
+
+#: controllers/old_compensation.js
+msgid ""
+"$550,000 in total team production in any given month.<br><br> Board of "
+"Directors Members automatically earn our DREAM LIFE BONUS of $55,000 each "
+"and every month they remain qualified and they also get to share in our 5% "
+"Global Market Bonus Pool."
+msgstr ""
+"$550.000 en producción total de equipo en un mes determinado.<br><br> "
+"Miembros de BOARD OF DIRECTORS ganan automáticamente nuestro BONO DE VIDA DE "
+"ENSUEÑO de $55,000 cada mes que se mantienen calificando y también comparten "
+"nuestro Bono Global del 5%."
 
 #: pages/titles.vue
 msgid ""
@@ -3157,8 +3179,8 @@ msgstr "7 Días"
 #| "\t\t\t\t\t\tship."
 msgid ""
 "7 nights cruise (cabin for two) on the\n"
-"\t\t\t\t\t\t\t<strong>Costa Venezia</strong>\n"
-"\t\t\t\t\t\t\tship."
+"\t\t\t\t\t\t<strong>Costa Venezia</strong>\n"
+"\t\t\t\t\t\tship."
 msgstr ""
 "7 noches en crucero (camarote para dos) en el\n"
 "\t\t\t\t\t\t<strong>barco</strong>\n"
@@ -3323,12 +3345,6 @@ msgstr "Fecha de creación de cuenta"
 msgid "Account has been deducted. Transaction successfully completed"
 msgstr "La cuenta ha sido deducida. Transacción completada con éxito"
 
-#: pages/admin_department.vue pages/admin_permission_group.vue
-#, fuzzy
-#| msgid "Account Data Id"
-msgid "Account ID"
-msgstr "ID de Información de Cuenta"
-
 #: pages/account_setup.vue controllers/menu_page.js
 msgid "Account Setup"
 msgstr "Configuración de la Cuenta"
@@ -3434,11 +3450,11 @@ msgstr "Activo hasta:"
 #| "\t\t\t\t\t\t\t\tor near expiry."
 msgid ""
 "Add a\n"
-"\t\t\t\t\t\t\t\t\t<strong>second card</strong>\n"
-"\t\t\t\t\t\t\t\t\tfor further peace of mind, and please check your card(s) "
+"\t\t\t\t\t\t\t\t<strong>second card</strong>\n"
+"\t\t\t\t\t\t\t\tfor further peace of mind, and please check your card(s) "
 "frequently to make sure they are\n"
-"\t\t\t\t\t\t\t\t\t<strong>not expired</strong>\n"
-"\t\t\t\t\t\t\t\t\tor near expiry."
+"\t\t\t\t\t\t\t\t<strong>not expired</strong>\n"
+"\t\t\t\t\t\t\t\tor near expiry."
 msgstr ""
 "Agrega una\n"
 "\t\t\t\t\t\t\t\t<strong>segunda tarjeta</strong>\n"
@@ -3454,12 +3470,6 @@ msgstr "Añadir Tarjeta"
 #: pages/apps.vue apps/index.html
 msgid "Add Contacts"
 msgstr "Añadir Contactos"
-
-#: components/admin_management/admin_departments.vue
-#, fuzzy
-#| msgid "Department"
-msgid "Add Department"
-msgstr "Departamento"
 
 #: pages/hotels_booking.vue
 msgid "Add Guest"
@@ -3480,12 +3490,6 @@ msgstr "Agregar Líderes"
 #: pages/booking.vue components/booking/add-cd-user.vue
 msgid "Add Passenger"
 msgstr "Agregar Pasajero"
-
-#: components/admin_management/admin_permission_groups.vue
-#, fuzzy
-#| msgid "+ Add Permission Group"
-msgid "Add Permission Group"
-msgstr "+ Agregar grupo de permisos"
 
 #: TopBar.vue
 msgid "Add Recurring Card"
@@ -3551,9 +3555,9 @@ msgstr ""
 
 #: components/info-reminder.vue pages/additional_info.vue
 #: pages/convention_manager.vue pages/settings.vue
+#: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
-#: components/checkout/ItalianStep.vue old_compensation/index.html
+#: components/compensation/residual_bonus.vue old_compensation/index.html
 #: receipts/italian_receipt.html
 msgid "Address"
 msgstr "Dirección"
@@ -3623,12 +3627,6 @@ msgstr "Soporte de Admin"
 msgid "Admin View"
 msgstr "Panel de Admin"
 
-#: pages/admin_management.vue
-#, fuzzy
-#| msgid "Admin Menu"
-msgid "Admins"
-msgstr "Menu de Admin"
-
 #: pages/booking.vue
 msgid "Adult"
 msgstr "Adulto"
@@ -3667,9 +3665,10 @@ msgid "Agreements and Important Forms"
 msgstr "Acuerdos y Formularios Importantes"
 
 #: pages/admin_support_analytics.vue pages/checkout.vue pages/info_center.vue
-#: pages/leadership_academy.vue pages/reservations.vue pages/team_rankings.vue
-#: pages/track_results.vue components/user/timeline.vue export/index.html
-#: reports/index.html track_results/index.html
+#: pages/leadership_academy.vue pages/partner_success.vue
+#: pages/reservations.vue pages/team_rankings.vue pages/track_results.vue
+#: components/user/timeline.vue export/index.html reports/index.html
+#: track_results/index.html
 msgid "All"
 msgstr "Todos"
 
@@ -3698,10 +3697,6 @@ msgstr "Todos los campos son requeridos."
 #| msgid "ALL IN 2023"
 msgid "ALL IN"
 msgstr "ALL IN 2023"
-
-#: pages/welcome.vue
-msgid "All In '23"
-msgstr ""
 
 #: pages/communications.vue pages/resources.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
@@ -3798,10 +3793,10 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t."
 msgid ""
 "All your recurring payments are\n"
-"\t\t\t\t\t\t\t\t\t<strong>processed and guaranteed</strong>\n"
-"\t\t\t\t\t\t\t\t\tby\n"
-"\t\t\t\t\t\t\t\t\t<strong>TrustMyTravel (TMT)</strong>\n"
-"\t\t\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t\t<strong>processed and guaranteed</strong>\n"
+"\t\t\t\t\t\t\t\tby\n"
+"\t\t\t\t\t\t\t\t<strong>TrustMyTravel (TMT)</strong>\n"
+"\t\t\t\t\t\t\t\t."
 msgstr ""
 "Todos tus pagos recurrentes están\n"
 "\t\t\t\t\t\t\t\t<strong>procesados y garantizados</strong>\n"
@@ -3846,7 +3841,7 @@ msgid "Alternate Phone"
 msgstr "Teléfono Alternativo"
 
 #: pages/builders_base.vue components/compensation/leadership_bonus.vue
-#: pages/public/leadership.vue
+#: pages/public/leadership.vue controllers/old_compensation.js
 msgid "Ambassador Board of Directors"
 msgstr "Ambassador Board of Directors"
 
@@ -3861,7 +3856,7 @@ msgstr "Seguimiento Ambassador"
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
 #: components/payout/wallet-transfers.vue negative_balances/index.html
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -4149,21 +4144,9 @@ msgstr ""
 "restablecer tu contraseña para tener acceso a tu servidor, no podrás\n"
 "\t\t\t\t\t\trecibir el correo para el restablecimiento de contraseña."
 
-#: pages/admin_department.vue
-msgid ""
-"Are you sure you want to delete this department? This action will remove "
-"this department from all admins."
-msgstr ""
-
 #: pages/convention_manager.vue
 msgid "Are you sure you want to delete this event?"
 msgstr "¿Seguro que quieres eliminar este evento?"
-
-#: pages/admin_permission_group.vue
-msgid ""
-"Are you sure you want to delete this permission group? This action will "
-"remove this permission group from all admins and departments."
-msgstr ""
 
 #: old_compensation/index.html
 msgid ""
@@ -4196,10 +4179,10 @@ msgstr ""
 #: pages/reward_points.vue
 msgid ""
 "Are you sure you'd like to transfer\n"
-"\t\t\t\t\t\t\t<strong>%{ amount }</strong>\n"
-"\t\t\t\t\t\t\t1 for 1 reward points from your balance to\n"
-"\t\t\t\t\t\t\t<strong>%{name}</strong>\n"
-"\t\t\t\t\t\t\t?"
+"\t\t\t\t\t\t<strong>%{ amount }</strong>\n"
+"\t\t\t\t\t\t1 for 1 reward points from your balance to\n"
+"\t\t\t\t\t\t<strong>%{name}</strong>\n"
+"\t\t\t\t\t\t?"
 msgstr ""
 
 #: pages/my_cruise_savings.vue
@@ -4359,8 +4342,8 @@ msgstr ""
 #| "\t\t\t\t\twith as many people as possible. We:"
 msgid ""
 "At inCruises®, our mission is to\n"
-"\t\t\t\t\t\t<strong>C.R.U.I.S.E</strong>\n"
-"\t\t\t\t\t\twith as many people as possible. We:"
+"\t\t\t\t\t<strong>C.R.U.I.S.E</strong>\n"
+"\t\t\t\t\twith as many people as possible. We:"
 msgstr ""
 "En inCruises®, nuestra misión es\n"
 "     <strong>VIAJAR EN CRUCERO</strong>\n"
@@ -4408,17 +4391,8 @@ msgstr ""
 "disculpa las molestias."
 
 #: components/compensation/builders_bonus.vue
-msgid ""
-"At this point, your builder percentage is\n"
-"\t\t\t\t\t\t<strong>\n"
-"\t\t\t\t\t\t\t%{buildersPercentage}%\n"
-"\t\t\t\t\t\t</strong>\n"
-"\t\t\t\t\t\t. This means you are on target to make\n"
-"\t\t\t\t\t\t<strong>\n"
-"\t\t\t\t\t\t\t%{buildersPercentage}%\n"
-"\t\t\t\t\t\t</strong>\n"
-"\t\t\t\t\t\toff of each directs volume."
-msgstr ""
+msgid "At this point, your builder percentage is"
+msgstr "En este punto, su porcentaje de Constructor es"
 
 #: pages/growth_calculator.vue
 msgid ""
@@ -4557,7 +4531,7 @@ msgstr "Información Básica"
 msgid "Basic Training"
 msgstr "Formación Básica"
 
-#: pages/courses.vue reports/index.html
+#: pages/courses.vue reports/index.html controllers/courses.js
 msgid "Basic Training Courses"
 msgstr "Cursos de Formación Básica"
 
@@ -4588,7 +4562,7 @@ msgid ""
 "cruises, half-off cruises, or totally free cruises. inCruises is EXclusive, "
 "but it's also INclusive. If you have friends and family members who want to "
 "get in on the action, you can personally\n"
-"\t\t\t\t\t\t\t\toversee their inCruises experience. If the inCruises reviews "
+"\t\t\t\t\t\t\toversee their inCruises experience. If the inCruises reviews "
 "tell us anything, it's that people really love this company and what it can "
 "do for their families and their bank accounts."
 msgstr ""
@@ -4726,7 +4700,7 @@ msgid "Blue Reward Card"
 msgstr "Tarjeta de Recompensa Blue"
 
 #: pages/builders_base.vue pages/global_summit_dr.vue
-#: components/compensation/leadership_bonus.vue
+#: components/compensation/leadership_bonus.vue controllers/old_compensation.js
 msgid "Board of Directors"
 msgstr "Board of Directors"
 
@@ -4734,11 +4708,15 @@ msgstr "Board of Directors"
 msgid "BOARD OF DIRECTORS AMBASSADOR"
 msgstr "BOARD OF DIRECTORS AMBASSADOR"
 
+#: controllers/old_refund_protocol.js
+msgid "Board of Directors Bonus"
+msgstr "Bono del Comité de Directores"
+
 #: reports/index.html
 msgid "Board of Directors Member"
 msgstr "Miembro del Comité de Directores"
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid "BOARD OF DIRECTORS MEMBER"
 msgstr "BOARD OF DIRECTORS MEMBERS"
 
@@ -4753,7 +4731,7 @@ msgid "Board Type"
 msgstr "Tipo de Board"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus"
 msgstr "Bono"
 
@@ -4786,7 +4764,7 @@ msgstr ""
 "Bono Bloqueado (Necesitas {{5 - weeklyBonus.data.weekly_points}} más puntos)"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Bonus not earned yet."
 msgstr "Bono aún no ganado."
 
@@ -4952,13 +4930,13 @@ msgid ""
 "signatures and electronic records in connection with this agreement. "
 "Electronic signatures are legally valid and recognized by law. Clicking on "
 "\"I ACCEPT\", and providing my social security number [if\n"
-"\t\t\t\t\t\t\t\tyou’re a legal resident or Citizen of the United States of "
+"\t\t\t\t\t\t\tyou’re a legal resident or Citizen of the United States of "
 "America] is the electronic equivalent of signing my name. Any record "
 "containing an electronic signature is deemed to have been signed by me and "
 "constitutes an original when printed from electronic records\n"
-"\t\t\t\t\t\t\t\testablished and maintained by INGROUP INTERNATIONAL LLC or "
-"its agents in the normal course of business. My signature on any such "
-"documents will appear and be noted as an electronic signature."
+"\t\t\t\t\t\t\testablished and maintained by INGROUP INTERNATIONAL LLC or its "
+"agents in the normal course of business. My signature on any such documents "
+"will appear and be noted as an electronic signature."
 msgstr ""
 "A continuación, al hacer clic en \"ACEPTO\" estoy dando mi consentimiento en "
 "el marco de este acuerdo para el uso de la firma electrónica y documentos "
@@ -5001,11 +4979,11 @@ msgstr ""
 msgid ""
 "By clicking Join Now, you're confirming that you're at least 18 years of age "
 "and that you've read and agree with our\n"
-"\t\t\t\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
+"\t\t\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
 "Service</a>\n"
-"\t\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy "
-"Policy</a>"
+"\t\t\t\t\t\t\tand\n"
+"\t\t\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy Policy</"
+"a>"
 msgstr ""
 "Al registrarte, estás confirmando que tienes al menos 18 años de edad y que "
 "has leído y estás de acuerdo con nuestros\n"
@@ -5016,50 +4994,21 @@ msgstr ""
 "Privacidad</a>"
 
 #: pages/public/signup.vue
-#, fuzzy
-#| msgid ""
-#| "By clicking Join Now, you're confirming that you're at least 18 years of "
-#| "age and that you've read and agree with our\n"
-#| "\t\t\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
-#| "Service</a>\n"
-#| "\t\t\t\t\t\t\tand\n"
-#| "\t\t\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy "
-#| "Policy</a>"
 msgid ""
 "By clicking Join Now, you're confirming that you're at least 18 years of age "
 "and that you've read and agree with our\n"
-"\t\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
-"Service</a>\n"
-"\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy Policy</a>"
+"\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of Service</"
+"a>\n"
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy Policy</a>"
 msgstr ""
 "Al registrarte, estás confirmando que tienes al menos 18 años de edad y que "
 "has leído y estás de acuerdo con nuestros\n"
-"\t\t\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Términos de "
+"\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Términos de "
 "Servicio</a>\n"
-"\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Política de "
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Política de "
 "Privacidad</a>"
-
-#: login/index.html
-#, fuzzy
-#| msgid ""
-#| "By clicking login you agree to the terms of the <a class=\"text-black\" "
-#| "target=\"_blank\" href=\"{{partner_agreement}}\">Independent Business "
-#| "Partner Agreement</a> and the <a class=\"text-black\" href="
-#| "\"{{member_agreement}}\" target=\"_blank\">Cruise Membership Agreement</a>"
-msgid ""
-"By clicking login you agree to the terms of the\n"
-"\t\t\t\t\t\t\t\t<a class=\"text-black\" target=\"_blank\" href="
-"\"{{partner_agreement}}\">Independent Business Partner Agreement</a>\n"
-"\t\t\t\t\t\t\t\tand the\n"
-"\t\t\t\t\t\t\t\t<a class=\"text-black\" href=\"{{member_agreement}}\" target="
-"\"_blank\">Cruise Membership Agreement</a>"
-msgstr ""
-"Al proceder, estarás aceptando estar de acuerdo con nuestro <a class=\"text-"
-"black\" target=\"_blank\" href=\"{{partner_agreement}}\">Contrato de Socio "
-"Independiente</a> y con el <a class=\"text-black\" href="
-"\"{{member_agreement}}\" target=\"_blank\">Acuerdo de Miembro de Cruceros</a>"
 
 #: pages/login/login.vue
 #, fuzzy
@@ -5073,10 +5022,10 @@ msgstr ""
 #| "a>"
 msgid ""
 "By clicking login you agree to the terms of the\n"
-"\t\t\t\t\t\t\t<a id=\"memberAgreement\" class=\"text-black\" target=\"_blank"
-"\" href=\"%{memberAgreement}\">Club Membership Agreement</a>\n"
-"\t\t\t\t\t\t\tand the\n"
-"\t\t\t\t\t\t\t<a id=\"partnerAgreement\" class=\"text-black\" href="
+"\t\t\t\t\t\t<a id=\"memberAgreement\" class=\"text-black\" target=\"_blank\" "
+"href=\"%{memberAgreement}\">Club Membership Agreement</a>\n"
+"\t\t\t\t\t\tand the\n"
+"\t\t\t\t\t\t<a id=\"partnerAgreement\" class=\"text-black\" href="
 "\"%{partnerAgreement}\" target=\"_blank\">Independent Partner Agreement</a>"
 msgstr ""
 "Al proceder, estarás aceptando estar de acuerdo con nuestro\n"
@@ -5085,6 +5034,24 @@ msgstr ""
 "\t\t\t\t\t\ty el\n"
 "\t\t\t\t\t\t<a id=\"partnerAgreement\" class=\"text-black\" href="
 "\"%{partnerAgreement}\" target=\"_blank\">Contrato de Socio Independiente</a>"
+
+#: login/index.html
+#, fuzzy
+#| msgid ""
+#| "By clicking login you agree to the terms of the <a class=\"text-black\" "
+#| "target=\"_blank\" href=\"{{partner_agreement}}\">Independent Business "
+#| "Partner Agreement</a> and the <a class=\"text-black\" href="
+#| "\"{{member_agreement}}\" target=\"_blank\">Cruise Membership Agreement</a>"
+msgid ""
+"By clicking login you agree to the terms of the <a class=\"text-black\" "
+"target=\"_blank\" href=\"{{partner_agreement}}\">Independent Business "
+"Partner Agreement</a> and the <a class=\"text-black\" href="
+"\"{{member_agreement}}\" target=\"_blank\">Cruise Membership Agreement</a>"
+msgstr ""
+"Al proceder, estarás aceptando estar de acuerdo con nuestro <a class=\"text-"
+"black\" target=\"_blank\" href=\"{{partner_agreement}}\">Contrato de Socio "
+"Independiente</a> y con el <a class=\"text-black\" href="
+"\"{{member_agreement}}\" target=\"_blank\">Acuerdo de Miembro de Cruceros</a>"
 
 #: pages/booking.vue
 #, fuzzy
@@ -5100,7 +5067,7 @@ msgid ""
 "Conditions including any cancellation fees that may apply. Also by "
 "accepting, I release inCruises from any and all liability for any damages, "
 "including but no limited to monetary losses\n"
-"\t\t\t\t\t\t\t\t\t\tthat may result due to interruption or cancellation of "
+"\t\t\t\t\t\t\t\t\tthat may result due to interruption or cancellation of "
 "these travel plans."
 msgstr ""
 "Al completar mi reserva, entiendo y acepto todos los Términos y Condiciones "
@@ -5137,23 +5104,23 @@ msgstr "Por Correo"
 #| "go to invoices select your card and click “delete card”."
 msgid ""
 "By setting up your recurring billing profile, you agree that\n"
-"\t\t\t\t\t\t<strong>inCruises</strong>\n"
-"\t\t\t\t\t\twill automatically use this form of payment to keep your\n"
-"\t\t\t\t\t\t<strong>Membership</strong>\n"
-"\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t<strong>Partnership</strong>\n"
-"\t\t\t\t\t\tActive until you cancel. For\n"
-"\t\t\t\t\t\t<strong>Partner-Members</strong>\n"
-"\t\t\t\t\t\tthis includes monthly\n"
-"\t\t\t\t\t\t<strong>Membership</strong>\n"
-"\t\t\t\t\t\tpayments\n"
-"\t\t\t\t\t\t<strong>($100 USD/month)</strong>\n"
-"\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t<strong>Partner</strong>\n"
-"\t\t\t\t\t\tRenewals\n"
-"\t\t\t\t\t\t<strong>($95 USD/ every 6 months)</strong>\n"
-"\t\t\t\t\t\tYou may cancel at any time to avoid future charges. To cancel, "
-"go to invoices select your card and click “delete card”."
+"\t\t\t\t\t<strong>inCruises</strong>\n"
+"\t\t\t\t\twill automatically use this form of payment to keep your\n"
+"\t\t\t\t\t<strong>Membership</strong>\n"
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<strong>Partnership</strong>\n"
+"\t\t\t\t\tActive until you cancel. For\n"
+"\t\t\t\t\t<strong>Partner-Members</strong>\n"
+"\t\t\t\t\tthis includes monthly\n"
+"\t\t\t\t\t<strong>Membership</strong>\n"
+"\t\t\t\t\tpayments\n"
+"\t\t\t\t\t<strong>($100 USD/month)</strong>\n"
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<strong>Partner</strong>\n"
+"\t\t\t\t\tRenewals\n"
+"\t\t\t\t\t<strong>($95 USD/ every 6 months)</strong>\n"
+"\t\t\t\t\tYou may cancel at any time to avoid future charges. To cancel, go "
+"to invoices select your card and click “delete card”."
 msgstr ""
 "Al configurar tu perfil de pago recurrente, aceptas que\n"
 "\t\t\t\t\t<strong>inCruises</strong>\n"
@@ -5362,13 +5329,9 @@ msgstr ""
 "¿Puedes realizar la reserva de un viaje para otras personas y NO viajar con "
 "ellos?"
 
-#: pages/admin_department.vue pages/admin_permission_group.vue
 #: pages/booking.vue pages/checkout.vue pages/connect.vue pages/email.vue
-#: pages/invoices.vue components/admin_management/admin_departments.vue
-#: components/admin_management/admin_permission_groups.vue
-#: components/booking/add-cd-user.vue components/recurring/add-recurring.vue
-#: components/payout/euro-conversion.vue components/user/departments.vue
-#: components/user/permissions.vue
+#: pages/invoices.vue components/booking/add-cd-user.vue
+#: components/payout/euro-conversion.vue components/recurring/add-recurring.vue
 #: components/payout/brightwell/brightwell-recipient-account.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
@@ -5477,7 +5440,7 @@ msgstr "Tipo de Categoría"
 #| "address }}</span>"
 msgid ""
 "CC:\n"
-"\t\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ message.cc[0]."
+"\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ message.cc[0]."
 "address }}</span>"
 msgstr ""
 "CC:\n"
@@ -5685,9 +5648,9 @@ msgid "Cities Visited"
 msgstr "Ciudades Visitadas"
 
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
+#: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue
-#: components/checkout/ItalianStep.vue
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: old_compensation/index.html receipts/italian_receipt.html
 msgid "City"
@@ -5789,14 +5752,15 @@ msgstr "Configuración de Cliente"
 #: components/global-summit-reminder.vue components/tmt-modal.vue
 #: components/weekly-competition.vue pages/booking.vue pages/connect.vue
 #: pages/convention_manager.vue pages/cruises.vue pages/global_summit_dr.vue
-#: pages/global_summit_tracking.vue pages/hotels_details.vue pages/reach.vue
-#: pages/referral_links.vue pages/resources.vue pages/reward_points.vue
-#: pages/welcome.vue components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue
+#: pages/global_summit_tracking.vue pages/hotels_details.vue
+#: pages/partner_success.vue pages/reach.vue pages/referral_links.vue
+#: pages/resources.vue pages/reward_points.vue pages/welcome.vue
 #: components/global_convention/event_info.vue
-#: components/recurring/add-recurring.vue components/public/FooterLinks.vue
+#: components/compensation/leadership_bonus.vue
+#: components/compensation/residual_bonus.vue components/public/FooterLinks.vue
 #: components/public/JoinModal.vue components/public/Testimonials.vue
-#: pages/public/about.vue pages/public/index.vue pages/public/leadership.vue
+#: components/recurring/add-recurring.vue pages/public/about.vue
+#: pages/public/index.vue pages/public/leadership.vue
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/signup.vue connect/index.html
 #: old_compensation/index.html
@@ -5828,15 +5792,6 @@ msgid "Co-founder of CitiSolutions Financial Limited in Spain, Ireland and UK"
 msgstr ""
 "Co-fundador de CitiSolutions Financial Limited en España, Irlanda y el Reino "
 "Unido"
-
-#: pages/admin_department.vue pages/admin_permission_group.vue
-#: components/admin_management/admin_departments.vue
-#: components/admin_management/admin_permission_groups.vue
-#: components/user/departments.vue components/user/permissions.vue
-#, fuzzy
-#| msgid "Zip Code"
-msgid "Code"
-msgstr "Código Postal"
 
 #: receipts/commission_statement.html reports/index.html
 msgid "Commission"
@@ -5885,6 +5840,10 @@ msgstr "Período de Compensación"
 msgid "Compensation Program"
 msgstr "Programa de Compensación"
 
+#: controllers/competition.js
+msgid "Competition"
+msgstr "Competencia"
+
 #: export/index.html reports/index.html
 msgid "Completed"
 msgstr "Completado"
@@ -5910,7 +5869,6 @@ msgid "Compression"
 msgstr "Compresión"
 
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: pages/admin_department.vue pages/admin_permission_group.vue
 #: components/payout/birthday-modal.vue receipts/booking_receipt.html
 #: reports/index.html
 msgid "Confirm"
@@ -6194,13 +6152,14 @@ msgstr "Países Visitados"
 #: components/weekly-competition.vue pages/additional_info.vue
 #: pages/admin_user.vue pages/builders_base.vue pages/competition.vue
 #: pages/contacts.vue pages/global_summit_2023.vue pages/global_summit_dr.vue
-#: pages/global_summit_tracking.vue pages/new_ranks.vue pages/reach.vue
-#: pages/referral_links.vue pages/settings.vue pages/team_rankings.vue
-#: pages/track_results.vue components/compensation/builders_bonus.vue
+#: pages/global_summit_tracking.vue pages/new_ranks.vue
+#: pages/partner_success.vue pages/reach.vue pages/referral_links.vue
+#: pages/settings.vue pages/team_rankings.vue pages/track_results.vue
+#: components/checkout/ItalianStep.vue
+#: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
-#: components/compensation/residual_bonus.vue
-#: components/checkout/ItalianStep.vue components/public/JoinModal.vue
+#: components/compensation/residual_bonus.vue components/public/JoinModal.vue
 #: pages/public/signup.vue
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
@@ -6621,7 +6580,7 @@ msgstr "Fecha:"
 #: old_refund_protocol/remove_weeklybonus_modal.html
 #, fuzzy
 #| msgid "Date: {{statement.created | date:'MMM dd, yyyy'}}"
-msgid "Date: {{ $filters.date(statement.created, 'MMM dd, yyyy')}}"
+msgid "Date: {{statement.created | date:'MMM dd, yyyy'}}"
 msgstr "Fecha: {{statement.created | date:'MMM dd, yyyy'}}"
 
 #: old_compensation/index.html
@@ -6705,18 +6664,6 @@ msgstr "Borrar cuenta"
 msgid "Delete Card"
 msgstr "Borrar Tarjeta"
 
-#: pages/admin_department.vue
-#, fuzzy
-#| msgid "Department"
-msgid "Delete Department"
-msgstr "Departamento"
-
-#: pages/admin_permission_group.vue
-#, fuzzy
-#| msgid "+ Add Permission Group"
-msgid "Delete Permission Group"
-msgstr "+ Agregar grupo de permisos"
-
 #: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "Delete recipient account"
 msgstr "Eliminar cuenta de destinatario"
@@ -6749,10 +6696,6 @@ msgstr "departamento"
 msgid "Department"
 msgstr "Departamento"
 
-#: components/admin_management/admin_departments.vue
-msgid "Department identifier. e.g. my_new_department"
-msgstr ""
-
 #: pages/admin_support_analytics.vue
 msgid "Department Name"
 msgstr "Nombre del Departamento"
@@ -6760,12 +6703,6 @@ msgstr "Nombre del Departamento"
 #: pages/price_match_guarantee.vue
 msgid "department."
 msgstr "departamento."
-
-#: pages/admin_management.vue pages/admin_user_id.vue
-#, fuzzy
-#| msgid "Department"
-msgid "Departments"
-msgstr "Departamento"
 
 #: receipts/booking_receipt.html
 msgid "Departs From"
@@ -6948,8 +6885,8 @@ msgid "Disclosure"
 msgstr "Información"
 
 #: pages/account_setup.vue pages/cards.vue pages/certificates.vue
-#: pages/invite.vue pages/settings.vue cards/index.html certificates/index.html
-#: certificates/view.html
+#: pages/invite.vue pages/settings.vue certificates/index.html
+#: certificates/view.html cards/index.html
 msgid "Display Name"
 msgstr "Mostrar Nombre"
 
@@ -7114,8 +7051,8 @@ msgstr "Descargar credencial como .png"
 msgid ""
 "Download business cards you can take to your local printers. You can edit "
 "the information that appears on the card in\n"
-"\t\t\t\t\t\t<a href=\"/settings\">settings</a>\n"
-"\t\t\t\t\t\t."
+"\t\t\t\t\t<a href=\"/settings\">settings</a>\n"
+"\t\t\t\t\t."
 msgstr ""
 "Descargar tarjetas de visita que puedes llevar a tu imprenta local. Puedes "
 "editar la información que aparece en la tarjeta en\n"
@@ -7147,6 +7084,12 @@ msgstr "Descargar CSV"
 #: pages/cards.vue cards/index.html
 msgid "Download Images as .png"
 msgstr "Descarga images como .png"
+
+#: pages/partner_success.vue
+#, fuzzy
+#| msgid "Download as PDF"
+msgid "Download PDF"
+msgstr "Descargar como PDF"
 
 #: export/index.html
 msgid "Download Pending CSV"
@@ -7309,8 +7252,8 @@ msgstr ""
 msgid ""
 "Earn a $500.00 Marketing Director Bonus! When you reach MD before the end of "
 "your\n"
-"\t\t\t\t\t\t<strong>first full calendar month</strong>\n"
-"\t\t\t\t\t\t."
+"\t\t\t\t\t<strong>first full calendar month</strong>\n"
+"\t\t\t\t\t."
 msgstr ""
 "¡Obtén un bono de Marketing Director de $500.00! Cuando llegues a MD antes "
 "del final de tu\n"
@@ -7330,7 +7273,7 @@ msgid ""
 "your direct Partners each week. To be eligible to claim your weekly bonus "
 "your direct Partners must have 3 member activations and you must personally "
 "sponsor at least 1 NEW direct Member or Partner\n"
-"\t\t\t\t\t\t\tMember during the qualifying week."
+"\t\t\t\t\t\tMember during the qualifying week."
 msgstr ""
 "Obten un bono equivalente a la cantidad de bonos instantáneos ganados por "
 "todos tus Socios directos cada semana. Para poder reclamar tu bono semanal, "
@@ -7383,21 +7326,9 @@ msgstr "Editar"
 msgid "Edit %{bookingId}"
 msgstr "Editar %{bookingId}"
 
-#: pages/admin_department.vue
-#, fuzzy
-#| msgid "Department"
-msgid "Edit Department"
-msgstr "Departamento"
-
 #: pages/convention_manager.vue
 msgid "Edit Leaders"
 msgstr "Editar Líderes"
-
-#: pages/admin_permission_group.vue
-#, fuzzy
-#| msgid "+ Add Permission Group"
-msgid "Edit Permission Group"
-msgstr "+ Agregar grupo de permisos"
 
 #: components/recurring/add-recurring.vue
 msgid "Edit Recurring Method"
@@ -7600,12 +7531,17 @@ msgstr "Excluyendo Equipos"
 
 #: pages/builders_base.vue pages/global_summit_dr.vue
 #: components/compensation/leadership_bonus.vue reports/index.html
+#: controllers/old_compensation.js
 msgid "Executive Director"
 msgstr "Director Ejecutivo"
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid "EXECUTIVE DIRECTOR"
 msgstr "EXECUTIVE DIRECTOR"
+
+#: controllers/old_refund_protocol.js
+msgid "Executive Director Bonus"
+msgstr "Bono de Director Ejecutivo"
 
 #: pages/public/leadership.vue
 msgid "Executive Team"
@@ -7907,8 +7843,8 @@ msgid ""
 "For security purposes, you should generate a new password for each Email "
 "Client that you are setting up. To generate a new password, begin by adding "
 "a\n"
-"\t\t\t\t\t\t\t\t\t\t\t<strong>description</strong>\n"
-"\t\t\t\t\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t\t\t\t<strong>description</strong>\n"
+"\t\t\t\t\t\t\t\t\t\t."
 msgstr ""
 "Por razones de seguridad, debes generar una nueva contraseña por Cada "
 "Cliente de correo electrónico que estás configurando. Para generar una nueva "
@@ -7941,11 +7877,11 @@ msgid ""
 "Trust My Travel and our membership number is (TMT56252). All client payments "
 "to INCRUISES INTERNATIONAL LLC are protected by Trust My Travel. This means "
 "in the unlikely event of our financial failure,\n"
-"\t\t\t\t\t\tyou will receive a refund for any payments made to INCRUISES "
+"\t\t\t\t\tyou will receive a refund for any payments made to INCRUISES "
 "INTERNATIONAL LLC and were not previously utilized, expired, or applied "
 "towards an upcoming cruise booking, for which a confirmation number has been "
 "delivered by a Third Party Service Provider (for example, a cruise\n"
-"\t\t\t\t\t\tline)."
+"\t\t\t\t\tline)."
 msgstr ""
 "Para que estés protegido financieramente, (INCRUISES INTERNATIONAL LLC) es "
 "miembro de Trust My Travel y nuestro número de membresía es (TMT56252). "
@@ -8027,11 +7963,11 @@ msgid ""
 "Trust My Travel and our membership number is (TMT56252). All client payments "
 "to INGROUP INTERNATIONAL LLC are protected by Trust My Travel. This means in "
 "the unlikely event of our financial\n"
-"\t\t\t\t\t\t\t\tfailure, you will receive a refund for any payments made to "
+"\t\t\t\t\t\t\tfailure, you will receive a refund for any payments made to "
 "INGROUP INTERNATIONAL LLC and were not previously utilized, expired, or "
 "applied towards an upcoming cruise booking, for which a confirmation number "
 "has been delivered by a Third Party Service Provider (for\n"
-"\t\t\t\t\t\t\t\texample, a cruise line)."
+"\t\t\t\t\t\t\texample, a cruise line)."
 msgstr ""
 "Para que estés protegido financieramente, (INGROUP INTERNATIONAL LLC) es "
 "miembro de Trust My Travel y nuestro número de membresía es (TMT56252). "
@@ -8061,11 +7997,11 @@ msgid ""
 "Trust My Travel and our membership number is (TMT56252). All client payments "
 "to INGROUP INTERNATIONAL LLC are protected by Trust My Travel. This means in "
 "the unlikely event of our financial failure,\n"
-"\t\t\t\t\t\t\tyou will receive a refund for any payments made to INGROUP "
+"\t\t\t\t\t\tyou will receive a refund for any payments made to INGROUP "
 "INTERNATIONAL LLC and were not previously utilized, expired, or applied "
 "towards an upcoming cruise booking, for which a confirmation number has been "
 "delivered by a Third Party Service Provider (for example, a\n"
-"\t\t\t\t\t\t\tcruise line)."
+"\t\t\t\t\t\tcruise line)."
 msgstr ""
 "Para que estés protegido financieramente, (INGROUP INTERNATIONAL LLC) es "
 "miembro de Trust My Travel y nuestro número de membresía es (TMT56252). "
@@ -8130,8 +8066,8 @@ msgid ""
 "$125,000 donation to this life-saving cause. We kindly invite you to join us "
 "by individually giving generously whatever you can and collectively match "
 "our contribution. This will raise a combined total of\n"
-"\t\t\t\t\t\tat least $250,000. Together we have done it before and together "
-"we can do it again!"
+"\t\t\t\t\tat least $250,000. Together we have done it before and together we "
+"can do it again!"
 msgstr ""
 "Frank y yo estamos emocionados por anunciar que inCruises ha hecho una "
 "donación inicial de $125,000 a esta causa que salva vidas. Te invitamos "
@@ -8193,7 +8129,7 @@ msgstr "Del 1 de Octubre al 31 de Marzo de 2022"
 #| "\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ from }}</span>"
 msgid ""
 "From:\n"
-"\t\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ from }}</span>"
+"\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ from }}</span>"
 msgstr ""
 "Desde:\n"
 "\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ desde }}</span>"
@@ -8206,8 +8142,9 @@ msgstr "De: %{ from }"
 msgid "FSG"
 msgstr "FSG"
 
-#: pages/cards.vue pages/certificates.vue pages/invite.vue cards/index.html
-#: certificates/index.html certificates/view.html import/index.html
+#: pages/cards.vue pages/certificates.vue pages/invite.vue
+#: certificates/index.html certificates/view.html cards/index.html
+#: import/index.html
 msgid "Full Name"
 msgstr "Nombre y Apellido"
 
@@ -8536,7 +8473,7 @@ msgstr ""
 #| "\">https://www.incruises.com/support</a>"
 msgid ""
 "Here's a direct link:\n"
-"\t\t\t\t\t\t<a href=\"https://www.incruises.com/support\" target=\"_blank"
+"\t\t\t\t\t<a href=\"https://www.incruises.com/support\" target=\"_blank"
 "\">https://www.incruises.com/support</a>"
 msgstr ""
 "Este es el enlace directo:\n"
@@ -8585,7 +8522,7 @@ msgid ""
 "Member has had the opportunity to make their first invoice payment. Since "
 "New Members do not receive their first invoice until 30 days after "
 "Activation and have 90 days to pay that invoice,\n"
-"\t\t\t\t\t\t\t\t\tthe time range needed for a Historical QBI is 10 calendar "
+"\t\t\t\t\t\t\t\tthe time range needed for a Historical QBI is 10 calendar "
 "months."
 msgstr ""
 "El QBI histórico se calcula utilizando el último período de 6 meses en el "
@@ -8793,33 +8730,6 @@ msgstr "Acepto"
 msgid "I Accept."
 msgstr "Acepto."
 
-#: components/payout/partner-consent.vue
-#, fuzzy
-#| msgid ""
-#| "I agree to allow inCruises to use my personal data as per the\n"
-#| "\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy Policy</"
-#| "a>\n"
-#| "\t\t\t\t\tand\n"
-#| "\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
-#| "Service</a>\n"
-#| "\t\t\t\t\t."
-msgid ""
-"I agree to allow inCruises to use my personal data as per the\n"
-"\t\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy Policy</"
-"a>\n"
-"\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
-"Service</a>\n"
-"\t\t\t\t\t\t."
-msgstr ""
-"Acepto permitir a inCruises el uso de mis datos personales según su\n"
-"\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Política de "
-"Privacidad</a>\n"
-"\t\t\t\t\tand\n"
-"\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of Service</"
-"a>\n"
-"\t\t\t\t\t."
-
 #: old_compensation/index.html
 msgid ""
 "I agree to allow inCruises to use my personal data as per the\n"
@@ -8835,6 +8745,32 @@ msgstr ""
 "a>\n"
 "\t\t\t\t\tand\n"
 "\t\t\t\t\t<a href=\"{{termsOfService}}\" target=\"_blank\">Terms of Service</"
+"a>\n"
+"\t\t\t\t\t."
+
+#: components/payout/partner-consent.vue
+#, fuzzy
+#| msgid ""
+#| "I agree to allow inCruises to use my personal data as per the\n"
+#| "\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy Policy</"
+#| "a>\n"
+#| "\t\t\t\t\tand\n"
+#| "\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
+#| "Service</a>\n"
+#| "\t\t\t\t\t."
+msgid ""
+"I agree to allow inCruises to use my personal data as per the\n"
+"\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy Policy</a>\n"
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of Service</"
+"a>\n"
+"\t\t\t\t\t."
+msgstr ""
+"Acepto permitir a inCruises el uso de mis datos personales según su\n"
+"\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Política de "
+"Privacidad</a>\n"
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of Service</"
 "a>\n"
 "\t\t\t\t\t."
 
@@ -8931,12 +8867,12 @@ msgstr "NO CONSIENTO, NI ACEPTO"
 #| "\t\t\t\t\t."
 msgid ""
 "I have read and agree with the\n"
-"\t\t\t\t\t\t<a href=\"%{partnerAgreement}\" target=\"_blank\">Partner "
+"\t\t\t\t\t<a href=\"%{partnerAgreement}\" target=\"_blank\">Partner "
 "Agreement</a>\n"
-"\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t<a href=\"%{policiesProcedures}\" target=\"_blank\">Policies and "
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<a href=\"%{policiesProcedures}\" target=\"_blank\">Policies and "
 "Procedures Manual</a>\n"
-"\t\t\t\t\t\t."
+"\t\t\t\t\t."
 msgstr ""
 "He leído y estoy de acuerdo con el\n"
 "\t\t\t\t\t<a href=\"%{partnerAgreement}\" target=\"_blank\">Contrato de "
@@ -8978,12 +8914,12 @@ msgstr ""
 #| "bound by these agreements."
 msgid ""
 "I have read the\n"
-"\t\t\t\t\t\t\t\t<a target=\"_blank\" href="
-"\"%{partnerAgreement}\">Independent Contractor Agreement for Partners</a>\n"
-"\t\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t\t<a target=\"_blank\" href=\"%{memberAgreement}\">Cruise "
+"\t\t\t\t\t\t\t<a target=\"_blank\" href=\"%{partnerAgreement}\">Independent "
+"Contractor Agreement for Partners</a>\n"
+"\t\t\t\t\t\t\tand\n"
+"\t\t\t\t\t\t\t<a target=\"_blank\" href=\"%{memberAgreement}\">Cruise "
 "Membership Agreement</a>\n"
-"\t\t\t\t\t\t\t\t. Selecting \"I Accept\" here serves as my acceptance to be "
+"\t\t\t\t\t\t\t. Selecting \"I Accept\" here serves as my acceptance to be "
 "bound by these agreements."
 msgstr ""
 "He leído el\n"
@@ -9070,7 +9006,7 @@ msgid ""
 "during this restart period decide which ships will sail and from where. "
 "Itineraries may change at any time. My cruise could be cancelled and I will "
 "be alert for any emails I may receive\n"
-"\t\t\t\t\t\t\t\tnotifying me in the event that this occurs."
+"\t\t\t\t\t\t\tnotifying me in the event that this occurs."
 msgstr ""
 "Entiendo que una reserva no significa un embarque garantizado. Las líneas de "
 "cruceros durante este período de reinicio deciden qué barcos navegarán y "
@@ -9393,8 +9329,8 @@ msgid ""
 "protocols and travel restrictions enforced by the cruise lines and/or "
 "governments worldwide due to COVID-19, you wish to be considered for a "
 "refund, please create a ticket in our Support Platform\n"
-"\t\t\t\t\t\tunder the \"Account Questions\" and a supervisor will review "
-"your case for refund eligibility."
+"\t\t\t\t\tunder the \"Account Questions\" and a supervisor will review your "
+"case for refund eligibility."
 msgstr ""
 "Si debido a la situación actual de la industria global de cruceros "
 "relacionada con los protocolos y las restricciones de viaje impuestas por "
@@ -9497,8 +9433,8 @@ msgstr ""
 #| "\t\t\t\t\t\t."
 msgid ""
 "If you have any questions, please feel free to contact support,\n"
-"\t\t\t\t\t\t\t<a href=\"/support\">https://incruises.com/support</a>\n"
-"\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t<a href=\"/support\">https://incruises.com/support</a>\n"
+"\t\t\t\t\t\t."
 msgstr ""
 "Si tienes preguntas, por favor ten la libertad de contactar a soporte,\n"
 "      <a href=\"/support\">https://incruises.com/support</a>\n"
@@ -9809,7 +9745,7 @@ msgid ""
 "identity document with a photo. Please note the photo must match the photo "
 "provided for your Saleman's badge. Acceptable documents are a passport, "
 "driver's license or a national ID.\n"
-"\t\t\t\t\t\t\t\t\t\t\tOur admin team will review your document and accept it "
+"\t\t\t\t\t\t\t\t\t\tOur admin team will review your document and accept it "
 "before you can continue your work as an inCruises Partner."
 msgstr ""
 "Para acceder a nuestro sitio web y poner en marcha tu negocio debes subir un "
@@ -9998,9 +9934,9 @@ msgid ""
 "see the world on a budget. inCruises is set up so that when you sign up, you "
 "become an exclusive club Partner Member and the perks start rolling in right "
 "away. As a club Partner Member, you\n"
-"\t\t\t\t\t\t\t\thave the opportunity to grow and bring your friends and "
-"family along as part of your team. Just like in a real marketing department, "
-"the more team members you oversee, the more earning potential you have."
+"\t\t\t\t\t\t\thave the opportunity to grow and bring your friends and family "
+"along as part of your team. Just like in a real marketing department, the "
+"more team members you oversee, the more earning potential you have."
 msgstr ""
 "inCruises es beneficioso para cualquiera que quiera ganar unos ingresos "
 "extra y ver el mundo pagando mucho menos del coste real. inCruises está "
@@ -10076,15 +10012,15 @@ msgid ""
 "InCruises Support AI Beta is designed to try and answer your questions right "
 "away, the following response is generated by AI trained by our very own "
 "support staff from previous support tickets.\n"
-"\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\tIf it answers your question then you can proceed with the "
+"\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\tIf it answers your question then you can proceed with the "
 "\"Question Answered\" button, however if the response is not relevant or "
 "does not fulfill your support request you can then proceed with creating a "
 "ticket.\n"
-"\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\tPlease be aware that this is a Beta and the support requests "
+"\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\tPlease be aware that this is a Beta and the support requests "
 "might not be answered entirely correct, if you have any doubts please "
 "proceed creating a support ticket."
 msgstr ""
@@ -10108,8 +10044,8 @@ msgid ""
 "and big commercials and gives it right back to you. By essentially letting "
 "you become a Partner of the inCruises marketing team, you have the chance to "
 "not only cruise for free, but open the\n"
-"\t\t\t\t\t\t\t\tworld to your friends and family and earn big while you're "
-"at it. Everyone who works with inCruises loves it — just take a look at the "
+"\t\t\t\t\t\t\tworld to your friends and family and earn big while you're at "
+"it. Everyone who works with inCruises loves it — just take a look at the "
 "inCruises reviews."
 msgstr ""
 "inCruises toma el dinero que normalmente gastaría en publicidades llamativas "
@@ -10261,13 +10197,17 @@ msgstr ""
 "que toda la familia disfrute"
 
 #: pages/builders_base.vue components/compensation/leadership_bonus.vue
-#: reports/index.html
+#: reports/index.html controllers/old_compensation.js
 msgid "International Director"
 msgstr "Director Internacional"
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid "INTERNATIONAL DIRECTOR"
 msgstr "INTERNATIONAL DIRECTOR"
+
+#: controllers/old_refund_protocol.js
+msgid "International Director Bonus"
+msgstr "Bono de Director Internacional"
 
 #: pages/settings.vue
 msgid ""
@@ -10653,8 +10593,8 @@ msgstr "Último Elegible"
 msgid "Last Month"
 msgstr "Último Mes"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr ""
 "Bono de Liderazgo del mes pasado se ha solicitado y está pendiente de pago."
@@ -10743,15 +10683,14 @@ msgstr "Bono de Liderazgo Mes Anterior"
 #: old_refund_protocol/leadership_bonus_modal.html
 #, fuzzy
 #| msgid ""
-#| "Leadership Bonus Last Month ({{firstDayLastMonth | date:'MM-dd-yyyy'}} - "
-#| "{{lastDayLastMonth | date:'MM-dd-yyyy'}})"
+#| "Leadership Bonus Last Month (New Production) ({{firstDayLastMonth | date: "
+#| "'MM/dd/yyyy'}} - {{lastDayLastMonth | date: 'MM/dd/yyyy'}})"
 msgid ""
-"Leadership Bonus Last Month ({{ $filters.date($filters."
-"date(firstDayLastMonth, 'MM-dd-yyyy')}} - {{lastDayLastMonth, 'MM-dd-"
-"yyyy')}})"
+"Leadership Bonus Last Month ({{firstDayLastMonth | date:'MM-dd-yyyy'}} - "
+"{{lastDayLastMonth | date:'MM-dd-yyyy'}})"
 msgstr ""
-"Bono de Liderazgo del mes pasado ({{firstDayLastMonth | date:'MM-dd-yyyy'}} "
-"- {{lastDayLastMonth | date:'MM-dd-yyyy'}})"
+"Bono de Liderazgo del mes pasado (Nueva Producción) ({{firstDayLastMonth | "
+"date: 'MM/dd/yyyy'}} - {{lastDayLastMonth | date: 'MM/dd/yyyy'}})"
 
 #: old_compensation/index.html
 msgid ""
@@ -10800,9 +10739,9 @@ msgstr "Saber Más"
 #| "\t\t\t\t\t\t\t\ttoday."
 msgid ""
 "Learn more about all the\n"
-"\t\t\t\t\t\t\t\t\t<a href=\"/about\" target=\"_blank\">opportunities offered "
+"\t\t\t\t\t\t\t\t<a href=\"/about\" target=\"_blank\">opportunities offered "
 "by inCruises</a>\n"
-"\t\t\t\t\t\t\t\t\ttoday."
+"\t\t\t\t\t\t\t\ttoday."
 msgstr ""
 "Obtén más información acerca de todas las\n"
 "\t\t\t\t\t\t\t\t<a href=\"/about\" target=\"_blank\">oportunidades que "
@@ -10823,14 +10762,14 @@ msgstr ""
 #| "\t\t\t\t\t."
 msgid ""
 "Learn more about our\n"
-"\t\t\t\t\t\t<a href=\"/leadership\">Leadership Team</a>\n"
-"\t\t\t\t\t\t,\n"
-"\t\t\t\t\t\t<a href=\"/mission\">Our Mission</a>\n"
-"\t\t\t\t\t\t,\n"
-"\t\t\t\t\t\t<a href=\"/values\">Our Values</a>\n"
-"\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t<a href=\"/causes\">Our Causes</a>\n"
-"\t\t\t\t\t\t."
+"\t\t\t\t\t<a href=\"/leadership\">Leadership Team</a>\n"
+"\t\t\t\t\t,\n"
+"\t\t\t\t\t<a href=\"/mission\">Our Mission</a>\n"
+"\t\t\t\t\t,\n"
+"\t\t\t\t\t<a href=\"/values\">Our Values</a>\n"
+"\t\t\t\t\tand\n"
+"\t\t\t\t\t<a href=\"/causes\">Our Causes</a>\n"
+"\t\t\t\t\t."
 msgstr ""
 "Aprenda más acerca de nuestro\n"
 "     <a href=\"/leadership\">Equipo Ejecutivo</a>\n"
@@ -10979,13 +10918,12 @@ msgstr "Detalles de la ubicación"
 msgid "Logged in as user!"
 msgstr "¡Sesión iniciada como usuario!"
 
-#: components/blog/navbar.vue components/public/Header.vue
-#: components/payout/hyperwallet-withdraw.vue
+#: components/blog/navbar.vue components/payout/hyperwallet-withdraw.vue
 #: components/payout/ipayout-withdraw.vue
-#: components/payout/payoneer-withdraw.vue pages/login/login.vue
-#: pages/public/signup.vue communications/index.html communications/view.html
-#: income_disclosure/index.html live/index.html login/index.html
-#: unsubscribe/index.html
+#: components/payout/payoneer-withdraw.vue components/public/Header.vue
+#: pages/login/login.vue pages/public/signup.vue communications/index.html
+#: communications/view.html income_disclosure/index.html login/index.html
+#: live/index.html unsubscribe/index.html
 msgid "Login"
 msgstr "Iniciar Sesión"
 
@@ -11052,42 +10990,6 @@ msgstr ""
 msgid "Male"
 msgstr "Hombre"
 
-#: pages/admin_department.vue pages/admin_permission_group.vue
-#, fuzzy
-#| msgid "Management"
-msgid "Manage Admins"
-msgstr "Administración"
-
-#: pages/admin_department.vue
-#, fuzzy
-#| msgid "Manage Subscriptions"
-msgid "Manage Permission Groups"
-msgstr "Administrar Suscripciones"
-
-#: pages/admin_permission_group.vue
-#, fuzzy
-#| msgid "Manage Subscriptions"
-msgid "Manage Permissions"
-msgstr "Administrar Suscripciones"
-
-#: components/user/departments.vue
-#, fuzzy
-#| msgid "Please select department"
-msgid "Manage User Departments"
-msgstr "Por favor seleccionar departamento"
-
-#: components/user/permissions.vue
-#, fuzzy
-#| msgid "Manage Subscriptions"
-msgid "Manage User Permission Groups"
-msgstr "Administrar Suscripciones"
-
-#: components/user/permissions.vue
-#, fuzzy
-#| msgid "Manage Subscriptions"
-msgid "Manage User Permissions"
-msgstr "Administrar Suscripciones"
-
 #: controllers/menu_page.js
 msgid "Manage your Partner and Member subscriptions"
 msgstr "Administra tus suscripciones de tus Socio y Miembro"
@@ -11095,12 +10997,6 @@ msgstr "Administra tus suscripciones de tus Socio y Miembro"
 #: pages/admin_booking.vue
 msgid "Management"
 msgstr "Administración"
-
-#: components/user/permissions.vue
-#, fuzzy
-#| msgid "Manage Subscriptions"
-msgid "Manager User Permissions"
-msgstr "Administrar Suscripciones"
 
 #: pages/public/causes.vue
 msgid ""
@@ -11125,12 +11021,17 @@ msgstr "MARKETING"
 
 #: pages/builders_base.vue pages/powerup.vue pages/settings.vue
 #: components/compensation/leadership_bonus.vue reports/index.html
+#: controllers/old_compensation.js
 msgid "Marketing Director"
 msgstr "Director de Marketing"
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid "MARKETING DIRECTOR"
 msgstr "MARKETING DIRECTOR"
+
+#: controllers/old_refund_protocol.js
+msgid "Marketing Director Bonus"
+msgstr "Bono de Director de Marketing"
 
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 msgid "Married"
@@ -11332,13 +11233,13 @@ msgid ""
 "Membership payments and Partner Program Activation fees: Membership payments "
 "and Partner Program Activation fees are fully refundable within 14 days of "
 "purchase and are never transferable. Refunds must be requested to\n"
-"\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
-"\">https://incruises.com/support</a>\n"
-"\t\t\t\t\tby opening a support ticket. The support ticket must detail your "
+"\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank\">https://"
+"incruises.com/support</a>\n"
+"\t\t\t\tby opening a support ticket. The support ticket must detail your "
 "current email on our system and include your full name, mobile telephone "
 "number and reason for the refund request. You must receive a confirmation "
 "from us as proof that your ticket was received by us on a timely\n"
-"\t\t\t\t\tmanner."
+"\t\t\t\tmanner."
 msgstr ""
 "Pagos de membresía y tarifas de Activación del Programa de Socios: los pagos "
 "de Membresía y las tarifas de Activación del Programa de Socios son "
@@ -11405,9 +11306,9 @@ msgid ""
 "the world, providing humanitarian aid like free healthcare, community "
 "development projects, community health education, mental health programs, "
 "agriculture projects, and palliative care for\n"
-"\t\t\t\t\t\tterminally ill patients. Mercy Ships has operated in more than "
-"57 developing nations and 18 developed nations around the world, with a "
-"current focus on the countries of Africa."
+"\t\t\t\t\tterminally ill patients. Mercy Ships has operated in more than 57 "
+"developing nations and 18 developed nations around the world, with a current "
+"focus on the countries of Africa."
 msgstr ""
 "Mercy Ships actualmente opera el buque hospital no gubernamental más grande "
 "del mundo, brindando ayuda humanitaria como atención médica gratuita, "
@@ -11567,8 +11468,7 @@ msgid ""
 "to board your cruise. This may include a mandatory pre-boarding health "
 "screening or require all adults guests who are traveling on specific ships "
 "and/or destinations be fully\n"
-"\t\t\t\t\t\t\t\t\t\t\tvaccinated against COVID-19 and may vary by cruise "
-"line."
+"\t\t\t\t\t\t\t\t\t\tvaccinated against COVID-19 and may vary by cruise line."
 msgstr ""
 "La mayoría de las líneas de cruceros tienen requisitos específicos de salud "
 "y seguridad que debe cumplir para abordar su crucero. Esto puede incluir un "
@@ -11851,15 +11751,13 @@ msgstr ""
 "renovado para seguir creciendo, tú y los socios de tu equipo."
 
 #: components/birthday-modal.vue components/mercy-ship-modals.vue
-#: components/weekly-competition.vue pages/admin_department.vue
-#: pages/admin_permission_group.vue pages/admin_user.vue
-#: pages/banner_tracking.vue pages/builders_base.vue pages/competition.vue
-#: pages/contacts.vue pages/convention_manager.vue pages/duplicator.vue
-#: pages/global_summit_2023.vue pages/global_summit_dr.vue
-#: pages/global_summit_tracking.vue pages/new_ranks.vue pages/reach.vue
-#: pages/settings.vue pages/team_rankings.vue pages/track_results.vue
-#: components/admin_management/admin_departments.vue
-#: components/admin_management/admin_permission_groups.vue
+#: components/weekly-competition.vue pages/admin_partner_success.vue
+#: pages/admin_user.vue pages/banner_tracking.vue pages/builders_base.vue
+#: pages/competition.vue pages/contacts.vue pages/convention_manager.vue
+#: pages/duplicator.vue pages/global_summit_2023.vue pages/global_summit_dr.vue
+#: pages/global_summit_tracking.vue pages/new_ranks.vue
+#: pages/partner_success.vue pages/reach.vue pages/settings.vue
+#: pages/team_rankings.vue pages/track_results.vue
 #: components/compensation/account_status.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
@@ -11868,8 +11766,7 @@ msgstr ""
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
 #: components/skeleton_loaders/card_animation.vue
-#: components/welcome/members-modal.vue components/user/departments.vue
-#: components/user/permissions.vue competition/index.html
+#: components/welcome/members-modal.vue competition/index.html
 #: invoices/invoice_statement.html negative_balances/index.html
 #: new_ranks/index.html receipts/booking_receipt.html
 #: receipts/builders_bonus.html receipts/commission_statement.html
@@ -11948,10 +11845,11 @@ msgstr "Nombre:"
 
 #: pages/builders_base.vue pages/settings.vue
 #: components/compensation/leadership_bonus.vue reports/index.html
+#: controllers/old_compensation.js
 msgid "National Director"
 msgstr "Director Nacional"
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid "NATIONAL DIRECTOR"
 msgstr "NATIONAL DIRECTOR"
 
@@ -11962,6 +11860,10 @@ msgstr "Anexo al Rango de National Director"
 #: agreements/national_director_agreement.html
 msgid "NATIONAL DIRECTOR ADDENDUM"
 msgstr "ANEXO AL RANGO DE NATIONAL DIRECTOR"
+
+#: controllers/old_refund_protocol.js
+msgid "National Director Bonus"
+msgstr "Bono de Director Nacional"
 
 #: pages/global_summit_2023.vue pages/global_summit_dr.vue
 #, fuzzy
@@ -12051,8 +11953,8 @@ msgstr "Nuevos Socios Este Mes (10 Niveles)"
 #: pages/builders_base.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/top_producers.vue
-#: components/skeleton_loaders/card_animation.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/skeleton_loaders/card_animation.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "New Production"
 msgstr "Nueva producción"
 
@@ -12121,6 +12023,14 @@ msgstr "Noticias e Información Importante"
 msgid "Next"
 msgstr "Próximo"
 
+#: email_notifications/index.html
+msgid ""
+"Next\n"
+"\t\t\tMonth"
+msgstr ""
+"Próximo\n"
+"\t\t\tMes"
+
 #: pages/team_rankings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue old_compensation/index.html
@@ -12135,8 +12045,7 @@ msgstr "Próxima Fecha de Facturación:"
 #: subscriptions/index.html
 #, fuzzy
 #| msgid "Next Billing Date: {{subscription.expires | date:'MMM dd, yyyy'}}"
-msgid ""
-"Next Billing Date: {{ $filters.date(subscription.expires, 'MMM dd, yyyy')}}"
+msgid "Next Billing Date: {{subscription.expires | date:'MMM dd, yyyy'}}"
 msgstr ""
 "Fecha de la Siguiente facturación: {{subscription.expires | date:'MMM dd, "
 "yyyy'}}"
@@ -12431,7 +12340,7 @@ msgstr ""
 msgid "Notes:"
 msgstr "Notas:"
 
-#: pages/notification_settings.vue
+#: pages/notification_settings.vue controllers/notification_settings.js
 msgid "Notification Settings"
 msgstr "Ajustes de Notificaciones"
 
@@ -12520,9 +12429,17 @@ msgstr ""
 msgid "Off"
 msgstr "Apagado"
 
+#: components/compensation/builders_bonus.vue
+msgid "off of each directs volume."
+msgstr "fuera de cada volumen directo."
+
 #: pages/info_center.vue
 msgid "Official Team Partners"
 msgstr "Socios de Equipo Oficiales"
+
+#: controllers/old_compensation.js
+msgid "Old Compensation"
+msgstr "Compensación Antigua"
 
 #: pages/email_notifications.vue email_notifications/index.html
 msgid "Older"
@@ -13034,6 +12951,18 @@ msgstr "Socio"
 msgid "Partner Status"
 msgstr "Estado de Socio"
 
+#: pages/partner_success.vue
+#, fuzzy
+#| msgid "Partner Access Only"
+msgid "Partner Success"
+msgstr "Acceso a Socios Únicamente"
+
+#: pages/welcome.vue
+#, fuzzy
+#| msgid "Partner Access Only"
+msgid "Partner Success:"
+msgstr "Acceso a Socios Únicamente"
+
 #: components/mercy-ship-modals.vue
 msgid "Partner Team Contribution:"
 msgstr "Contribución de Equipo de Socio:"
@@ -13076,8 +13005,9 @@ msgstr "Socios-Miembros"
 msgid "Partner:"
 msgstr "Socio:"
 
-#: pages/referral_links.vue components/compensation/residual_bonus.vue
-#: reports/index.html track_growth/index.html
+#: pages/partner_success.vue pages/referral_links.vue
+#: components/compensation/residual_bonus.vue reports/index.html
+#: track_growth/index.html
 msgid "Partners"
 msgstr "Socios"
 
@@ -13089,8 +13019,8 @@ msgstr "Socios"
 #| "\t\t\t\t\t\t\t\t\t<small>(10 Levels)</small>"
 msgid ""
 "Partners\n"
-"\t\t\t\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\t\t\t\t<small>(10 Levels)</small>"
+"\t\t\t\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\t\t\t\t<small>(10 Levels)</small>"
 msgstr ""
 "Socios\n"
 "\t\t\t\t\t\t\t\t\t<br>\n"
@@ -13104,8 +13034,8 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t<small>(15 Levels)</small>"
 msgid ""
 "Partners\n"
-"\t\t\t\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\t\t\t\t<small>(15 Levels)</small>"
+"\t\t\t\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\t\t\t\t<small>(15 Levels)</small>"
 msgstr ""
 "Socios\n"
 "\t\t\t\t\t\t\t\t\t<br>\n"
@@ -13119,8 +13049,8 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t<small>(5 Levels)</small>"
 msgid ""
 "Partners\n"
-"\t\t\t\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\t\t\t\t<small>(5 Levels)</small>"
+"\t\t\t\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\t\t\t\t<small>(5 Levels)</small>"
 msgstr ""
 "Socios\n"
 "\t\t\t\t\t\t\t\t\t<br>\n"
@@ -13287,10 +13217,6 @@ msgstr "Estadísticas de Revisión de Pagos"
 msgid "Payout"
 msgstr "Pagar"
 
-#: components/payout/brightwell/brightwell-withdraw.vue
-msgid "Payout provider is currently unavailable."
-msgstr ""
-
 #: pages/public/payment_terms.vue
 msgid "Pembroke Pines, FL 33027 USA"
 msgstr "Pembroke Pines, FL 33027  EUA"
@@ -13377,26 +13303,6 @@ msgstr "Porcentaje de Crecimiento Requerido"
 #: pages/powerup.vue
 msgid "Percentage Growth"
 msgstr "Crecimiento de Porcentaje"
-
-#: pages/admin_permission_group.vue
-msgid "Permission Group cannot be modified"
-msgstr ""
-
-#: components/admin_management/admin_permission_groups.vue
-msgid "Permission group identifier. e.g. my_new_permission_group"
-msgstr ""
-
-#: pages/admin_management.vue
-#, fuzzy
-#| msgid "+ Add Permission Group"
-msgid "Permission Groups"
-msgstr "+ Agregar grupo de permisos"
-
-#: pages/admin_management.vue pages/admin_user_id.vue
-#, fuzzy
-#| msgid "Commission"
-msgid "Permissions"
-msgstr "Comisión"
 
 #: components/compensation/weekly_bonus.vue
 msgid "Personal Direct Activations Last Week"
@@ -13503,8 +13409,8 @@ msgstr "POR FAVOR TENER EN CUENTA"
 msgid ""
 "Please be advised that %{country} residents are subject to a %{percent}% tax "
 "withholding each year in amounts over $%{after}.00 USD. You have withdrawn\n"
-"\t\t\t\t\t<strong>$%{totalWithdrawn}</strong>\n"
-"\t\t\t\t\tthis year."
+"\t\t\t\t<strong>$%{totalWithdrawn}</strong>\n"
+"\t\t\t\tthis year."
 msgstr ""
 "Por favor considera que %{country} los residentes están sujetos a "
 "%{percent}% retención de impuestos anual en montos superiores a $%{after}.00 "
@@ -13553,24 +13459,6 @@ msgstr "Por favor elige el tipo de reserva que deseas hacer:"
 msgid "Please click"
 msgstr "Por favor haz click"
 
-#: pages/public/pricing.vue
-#, fuzzy
-#| msgid ""
-#| "Please click\n"
-#| "\t\t\t\t\t\t\t<a href=\"%{tmtFinancialProtection}\" target=\"_blank"
-#| "\">here</a>\n"
-#| "\t\t\t\t\t\t\tfor more information on your financial protection."
-msgid ""
-"Please click\n"
-"\t\t\t\t\t\t\t\t<a href=\"%{tmtFinancialProtection}\" target=\"_blank"
-"\">here</a>\n"
-"\t\t\t\t\t\t\t\tfor more information on your financial protection."
-msgstr ""
-"Por favor da click aquí\n"
-"\t\t\t\t\t\t <a href=\"%{tmtFinancialProtection}\" target=\"_blank\">here</"
-"a>\n"
-" \t\t\t\t\t\t para más información de su protección financiera."
-
 #: layouts/default.html layouts/default_no_nav.html
 msgid ""
 "Please click\n"
@@ -13582,6 +13470,24 @@ msgstr ""
 "\t\t\t\t\t\t\t<a href=\"{{tmtFinancialProtection}}\" target=\"_blank\">aquí</"
 "a>\n"
 "\t\t\t\t\t\t\tpara más información de tu protección financiera."
+
+#: pages/public/pricing.vue
+#, fuzzy
+#| msgid ""
+#| "Please click\n"
+#| "\t\t\t\t\t\t\t<a href=\"%{tmtFinancialProtection}\" target=\"_blank"
+#| "\">here</a>\n"
+#| "\t\t\t\t\t\t\tfor more information on your financial protection."
+msgid ""
+"Please click\n"
+"\t\t\t\t\t\t\t<a href=\"%{tmtFinancialProtection}\" target=\"_blank\">here</"
+"a>\n"
+"\t\t\t\t\t\t\tfor more information on your financial protection."
+msgstr ""
+"Por favor da click aquí\n"
+"\t\t\t\t\t\t <a href=\"%{tmtFinancialProtection}\" target=\"_blank\">here</"
+"a>\n"
+" \t\t\t\t\t\t para más información de su protección financiera."
 
 #: courses/view.html
 msgid "Please click CONTINUE to begin the course."
@@ -13746,9 +13652,9 @@ msgstr "Proporcione un destino válido antes de buscar"
 #| "\t\t\t\tfor complete details."
 msgid ""
 "Please read your\n"
-"\t\t\t\t\t<a href=\"%{memberAgreement}\" target=\"_blank\">Membership "
+"\t\t\t\t<a href=\"%{memberAgreement}\" target=\"_blank\">Membership "
 "Agreement</a>\n"
-"\t\t\t\t\tfor complete details."
+"\t\t\t\tfor complete details."
 msgstr ""
 "Favor de leer tu\n"
 "    <a href=\"%{memberAgreement}\" target=\"_blank\">Acuerdo de Membresía</"
@@ -13802,7 +13708,7 @@ msgid ""
 "information may result in delay, cancellation and/or return of funds. Some "
 "information may be populated from verified documents provided. If any "
 "information is incorrect please reach out to support to have it\n"
-"\t\t\tcorrected."
+"\t\tcorrected."
 msgstr ""
 "Por favor revise los 'Detalles del destinatario' para verificar la "
 "precisión, ya que la información inexacta e incompleta puede resultar en "
@@ -14097,10 +14003,6 @@ msgstr "Planes de Power Tools"
 msgid "Powerup"
 msgstr "Powerup"
 
-#: pages/welcome.vue
-msgid "Powerup:"
-msgstr "Powerup:"
-
 #: pages/public/payment_terms.vue
 msgid "Prat de la Creu, 59-65 Esc.A pis 1 despatx 1"
 msgstr "Prat de la Creu, 59-65 Esc.A pis 1 despatx 1"
@@ -14150,6 +14052,14 @@ msgstr "Vista previa de Factura"
 #: pages/email.vue pages/leadership_academy.vue
 msgid "Previous"
 msgstr "Previa"
+
+#: email_notifications/index.html
+msgid ""
+"Previous\n"
+"\t\t\tMonth"
+msgstr ""
+"Mes\n"
+"\t\t\tAnterior"
 
 #: pages/email_notifications.vue components/payout/wallet-transfers.vue
 #: email_notifications/index.html old_compensation/index.html
@@ -14310,12 +14220,12 @@ msgid "Product Director"
 msgstr "Director de Producto"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production"
 msgstr "Producción"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Production Details Last Month"
 msgstr "Detalle de Producción del Mes Pasado"
 
@@ -14407,12 +14317,12 @@ msgid "Qualified"
 msgstr "Calificado"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Prod."
 msgstr "Producción Calificada"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/compensation/leadership_bonus.vue
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Qualified Production"
 msgstr "Produccion Calificada"
 
@@ -14481,28 +14391,12 @@ msgstr "Rango:"
 #| "\t\t\t\t\t\tbasis."
 msgid ""
 "Rankings are updated on an\n"
-"\t\t\t\t\t\t\t<strong>hourly</strong>\n"
-"\t\t\t\t\t\t\tbasis."
+"\t\t\t\t\t\t<strong>hourly</strong>\n"
+"\t\t\t\t\t\tbasis."
 msgstr ""
 "Las clasificaciones se actualizan\n"
 "\t\t\t\t\t\t<strong>cada hora</strong>\n"
 "\t\t\t\t\t\t."
-
-#: pages/competition.vue
-#, fuzzy
-#| msgid ""
-#| "Rankings update every 30 minutes. Check out the competition rules\n"
-#| "\t\t\t\t<a href=\"%{incentivePDF}\" target=\"_blank\">here</a>\n"
-#| "\t\t\t\t."
-msgid ""
-"Rankings update every 30 minutes. Check out the competition rules\n"
-"\t\t\t\t\t<a href=\"%{incentivePDF}\" target=\"_blank\">here</a>\n"
-"\t\t\t\t\t."
-msgstr ""
-"El ranking se actualiza cada 30 minutos. Echa un vistazo a las reglas de la "
-"Competencia\n"
-"\t\t\t\t<a href=\"%{incentivePDF}\" target=\"_blank\">aquí</a>\n"
-"\t\t\t\t."
 
 #: competition/index.html
 msgid ""
@@ -14514,6 +14408,22 @@ msgstr ""
 "    de la Competencia <a href=\"{{incentivePDF}}\" target=\"_blank\">aquí</"
 "a>\n"
 "    ."
+
+#: pages/competition.vue
+#, fuzzy
+#| msgid ""
+#| "Rankings update every 30 minutes. Check out the competition rules\n"
+#| "\t\t\t\t<a href=\"%{incentivePDF}\" target=\"_blank\">here</a>\n"
+#| "\t\t\t\t."
+msgid ""
+"Rankings update every 30 minutes. Check out the competition rules\n"
+"\t\t\t\t<a href=\"%{incentivePDF}\" target=\"_blank\">here</a>\n"
+"\t\t\t\t."
+msgstr ""
+"El ranking se actualiza cada 30 minutos. Echa un vistazo a las reglas de la "
+"Competencia\n"
+"\t\t\t\t<a href=\"%{incentivePDF}\" target=\"_blank\">aquí</a>\n"
+"\t\t\t\t."
 
 #: receipts/hotel_booking_receipt.html
 msgid "Rate Comments"
@@ -14687,6 +14597,10 @@ msgstr "El reembolso ha sido presentado. Transacción completada con éxito"
 msgid "Refund Policy"
 msgstr "Política de Reembolso"
 
+#: controllers/old_refund_protocol.js
+msgid "Refund Protocol"
+msgstr "Protocolo de Reembolso"
+
 #: controllers/refund_protocol_stats.js
 msgid "Refund Protocol Stats"
 msgstr "Estadísticas del protocolo de reembolso"
@@ -14715,13 +14629,17 @@ msgstr "Estado/Provincia:"
 
 #: pages/builders_base.vue pages/global_summit_dr.vue pages/powerup.vue
 #: pages/settings.vue components/compensation/leadership_bonus.vue
-#: reports/index.html
+#: reports/index.html controllers/old_compensation.js
 msgid "Regional Director"
 msgstr "Director Regional"
 
-#: pages/titles.vue
+#: pages/titles.vue controllers/old_compensation.js
 msgid "REGIONAL DIRECTOR"
 msgstr "REGIONAL DIRECTOR"
+
+#: controllers/old_refund_protocol.js
+msgid "Regional Director Bonus"
+msgstr "Bono de Director Regional"
 
 #: pages/global_summit_dr.vue
 msgid "Regional Directors and above with the highest number of total points."
@@ -14815,7 +14733,7 @@ msgid "Required"
 msgstr "Requerido"
 
 #: pages/growth_calculator.vue components/compensation/leadership_bonus.vue
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_refund_protocol/leadership_bonus_modal.html old_compensation/index.html
 msgid "Requirement"
 msgstr "Requisito"
 
@@ -15103,12 +15021,9 @@ msgstr "Credencial de Ventas"
 msgid "sample"
 msgstr "ejemplo"
 
-#: pages/admin_department.vue pages/admin_permission_group.vue
-#: pages/settings.vue components/admin_booking/cruise_bookings.vue
+#: pages/admin_partner_success.vue pages/settings.vue
+#: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
-#: components/admin_management/admin_departments.vue
-#: components/admin_management/admin_permission_groups.vue
-#: components/user/departments.vue components/user/permissions.vue
 #: components/payout/brightwell/brightwell-recipient-account.vue
 msgid "Save"
 msgstr "Guardar"
@@ -15226,13 +15141,6 @@ msgstr "Revisa tu potencial"
 msgid "See your status"
 msgstr "Revisa tu status"
 
-#: pages/admin_department.vue pages/admin_permission_group.vue
-#: components/user/departments.vue components/user/permissions.vue
-#, fuzzy
-#| msgid "Selected"
-msgid "Select"
-msgstr "Seleccionado:"
-
 #: pages/competition.vue competition/index.html
 msgid "Select a Category to View"
 msgstr "Seleccionar una Categoría"
@@ -15245,8 +15153,7 @@ msgstr "Selecciona el Periodo de Tiempo"
 msgid "Select a User Type"
 msgstr "Selecciona el tipo de Usuario"
 
-#: pages/admin_department.vue pages/admin_permission_group.vue pages/book.vue
-#: components/user/departments.vue components/user/permissions.vue
+#: pages/book.vue
 msgid "Select All"
 msgstr "Seleccionar Todo"
 
@@ -15407,12 +15314,18 @@ msgstr "Directores de Crecimiento de Territorio y Gerentes Senior"
 
 #: pages/builders_base.vue pages/powerup.vue pages/settings.vue
 #: components/compensation/leadership_bonus.vue reports/index.html
+#: controllers/old_compensation.js
 msgid "Senior Marketing Director"
 msgstr "Director Senior de Marketing"
 
 #: pages/titles.vue certificates/senior-marketing-manager.html
+#: controllers/old_compensation.js
 msgid "SENIOR MARKETING DIRECTOR"
 msgstr "SENIOR MARKETING DIRECTOR"
+
+#: controllers/old_refund_protocol.js
+msgid "Senior Marketing Director Bonus"
+msgstr "Bono de Director Senior de Marketing"
 
 #: pages/booking.vue
 msgid ""
@@ -15458,8 +15371,8 @@ msgstr "Septiembre"
 #| "\t\t\t\t\t\t\t\t\t\t\t."
 msgid ""
 "Set up your display name\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/settings\" target=\"_blank\">here</a>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t\t\t\t\t<a href=\"/settings\" target=\"_blank\">here</a>\n"
+"\t\t\t\t\t\t\t\t\t\t\t."
 msgstr ""
 "Configura tu nombre de pantalla\n"
 "               <a href=\"/settings\" target=\"_blank\">aquí</a>."
@@ -15473,9 +15386,9 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t\t\t\t."
 msgid ""
 "Set up your referral link\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"/referral_links\" target=\"_blank\">here</"
+"\t\t\t\t\t\t\t\t\t\t\t<a href=\"/referral_links\" target=\"_blank\">here</"
 "a>\n"
-"\t\t\t\t\t\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t\t\t\t\t."
 msgstr ""
 "Confitura tu enlace de referido\n"
 "\t\t\t\t\t\t\t\t\t\t\t<a href=\"/referral_links\" target=\"_blank\">aquí</"
@@ -15498,12 +15411,12 @@ msgstr "¡Configuración guardada!"
 #| "\t\t\t\t\t\t\t\t."
 msgid ""
 "Setting up a Recurring Payment card helps ensure all your\n"
-"\t\t\t\t\t\t\t\t\t<strong>inCruises</strong>\n"
-"\t\t\t\t\t\t\t\t\tpayments are made\n"
-"\t\t\t\t\t\t\t\t\t<strong>on-time</strong>\n"
-"\t\t\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t\t\t<strong>hassle-free</strong>\n"
-"\t\t\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t\t<strong>inCruises</strong>\n"
+"\t\t\t\t\t\t\t\tpayments are made\n"
+"\t\t\t\t\t\t\t\t<strong>on-time</strong>\n"
+"\t\t\t\t\t\t\t\tand\n"
+"\t\t\t\t\t\t\t\t<strong>hassle-free</strong>\n"
+"\t\t\t\t\t\t\t\t."
 msgstr ""
 "Configurar una tarjeta de pago recurrente ayuda a garantizar que todos tus "
 "pagos de\n"
@@ -15574,8 +15487,8 @@ msgstr "Nombre del Barco"
 #| "\t\t\t\t\t\t\t\twe will try your inCruises wallet to pay for your invoice."
 msgid ""
 "Should your cards on file fail\n"
-"\t\t\t\t\t\t\t\t\t<em>(we only attempt default &amp; backup card)</em>\n"
-"\t\t\t\t\t\t\t\t\twe will try your inCruises wallet to pay for your invoice."
+"\t\t\t\t\t\t\t\t<em>(we only attempt default &amp; backup card)</em>\n"
+"\t\t\t\t\t\t\t\twe will try your inCruises wallet to pay for your invoice."
 msgstr ""
 "Si tus tarjetas registradas fallan\n"
 "\t\t\t\t\t\t\t\t<em>(solo intentamos la tarjeta predeterminada &amp; de "
@@ -15735,15 +15648,15 @@ msgstr "Número de Seguridad Social"
 msgid ""
 "Some banks may charge additional fees upon deposit. Foreign taxes may apply. "
 "By continuing you agree to\n"
-"\t\t\t<a target=\"_blank\" href=\"https://files.incruises.com/files/"
+"\t\t<a target=\"_blank\" href=\"https://files.incruises.com/files/"
 "en/504EN_TERMS_OF_SERVICE.pdf\" class=\"dimmer-content text-muted\">Terms of "
 "Use</a>\n"
-"\t\t\tand\n"
-"\t\t\t<a target=\"_blank\" href=\"https://files.incruises.com/files/"
+"\t\tand\n"
+"\t\t<a target=\"_blank\" href=\"https://files.incruises.com/files/"
 "en/505EN_PRIVACY_POLICY.pdf\" class=\"dimmer-content text-muted\">Privacy "
 "Policy.</a>\n"
-"\t\t\tYou also agree to\n"
-"\t\t\t<a target=\"_blank\" href=\"./files/RR_Privacy_Policy.pdf\" class="
+"\t\tYou also agree to\n"
+"\t\t<a target=\"_blank\" href=\"./files/RR_Privacy_Policy.pdf\" class="
 "\"dimmer-content text-muted\">ReadyRemit User Privacy Policy.</a>"
 msgstr ""
 "Algunos bancos pueden cobrar tarifas adicionales al depositar. Pueden "
@@ -15902,8 +15815,8 @@ msgstr "Empieza"
 #| "\t\t\t\t\t\t\t\tand create personalized group chats."
 msgid ""
 "Start chatting (WhatsUp!)\n"
-"\t\t\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\t\t\tand create personalized group chats."
+"\t\t\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\t\t\tand create personalized group chats."
 msgstr ""
 "Comienza a chatear (WhatsUp!)\n"
 "\t\t\t\t\t\t\t\t<br>\n"
@@ -15975,8 +15888,9 @@ msgstr "Estado/Provincia"
 msgid "Statement Date"
 msgstr "Fecha del Extracto"
 
-#: components/compensation/statements.vue old_compensation/index.html
+#: components/compensation/statements.vue
 #: old_refund_protocol/remove_weeklybonus_modal.html
+#: old_compensation/index.html
 msgid "Statements"
 msgstr "Extractos"
 
@@ -15999,8 +15913,8 @@ msgstr "Estadísticas"
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: negative_balances/index.html old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: negative_balances/index.html old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html
 msgid "Status"
 msgstr "Estatus"
 
@@ -16438,6 +16352,10 @@ msgstr "Fecha en que el usuario pagó por activarse como Miembro."
 msgid "The date the user paid to activate and become a Partner."
 msgstr "Fecha en el que el usuario pagó por activarse como Socio."
 
+#: pages/partner_success.vue
+msgid "The director results are not available at the moment"
+msgstr ""
+
 #: pages/public/values.vue
 msgid ""
 "The DNA of our company will be good, honest people who attract other good "
@@ -16506,7 +16424,7 @@ msgstr ""
 #| "\t\t\t\t<strong>$50.00</strong>"
 msgid ""
 "The minimum amount needed to transfer is\n"
-"\t\t\t\t\t<strong>$50.00</strong>"
+"\t\t\t\t<strong>$50.00</strong>"
 msgstr ""
 "La cantidad mínima requerida para transferir es de\n"
 "\t\t\t\t<strong>$50.00</strong>"
@@ -16974,9 +16892,9 @@ msgid ""
 "Volume produced by your direct Partner teams with a lower rank than you, up "
 "to the International Director level. This group is what we call your "
 "“Builders Base”. This bonus will pay you a\n"
-"\t\t\t\t\t\t\t\t\tset percentage of all the Activation volume produced by "
-"your Builders Base. The percentage is determined by the total monthly "
-"Builders Base Activation Volume achieved."
+"\t\t\t\t\t\t\t\tset percentage of all the Activation volume produced by your "
+"Builders Base. The percentage is determined by the total monthly Builders "
+"Base Activation Volume achieved."
 msgstr ""
 "Esta bonificación recompensa a los líderes de rango (MD y superior) por el "
 "Volumen de Activación total del equipo producido por tus equipos de Socios "
@@ -17103,8 +17021,8 @@ msgid ""
 "and needs to take into account ALL income you have obtained during this year "
 "from all related business activities. Partners working under the "
 "\"occasional basis\" status are not VAT registered,\n"
-"\t\t\t\t\t\t\t\tthus the commissions paid to these Partners ARE NOT subject "
-"to the VAT nor be eligible for social contributions."
+"\t\t\t\t\t\t\tthus the commissions paid to these Partners ARE NOT subject to "
+"the VAT nor be eligible for social contributions."
 msgstr ""
 "Estos ingresos no se limitan solo a las ganancias que obtienes de inCruises® "
 "y deben tomarse en cuenta TODOS los ingresos que hayas obtenido durante este "
@@ -17273,7 +17191,7 @@ msgstr "Esta es una venta Final"
 #| "\t\t\t\t\t\t\t\t\t<u>{{ agent_name }}</u>"
 msgid ""
 "This ticket is currently being viewed by\n"
-"\t\t\t\t\t\t\t\t\t\t<u>{{ agent_name }}</u>"
+"\t\t\t\t\t\t\t\t\t<u>{{ agent_name }}</u>"
 msgstr ""
 "Este boleto está siendo visto por\n"
 "\t\t\t\t\t\t\t\t\t<u>{{ agent_name }}</u>"
@@ -17374,9 +17292,9 @@ msgstr "Pregunta:"
 #| "\t\t\t\t\t\t\t<u>{{ modalData.dateRange }}</u>"
 msgid ""
 "Tickets for\n"
-"\t\t\t\t\t\t\t\t<u>{{ modalData.userName }}</u>\n"
-"\t\t\t\t\t\t\t\ton\n"
-"\t\t\t\t\t\t\t\t<u>{{ modalData.dateRange }}</u>"
+"\t\t\t\t\t\t\t<u>{{ modalData.userName }}</u>\n"
+"\t\t\t\t\t\t\ton\n"
+"\t\t\t\t\t\t\t<u>{{ modalData.dateRange }}</u>"
 msgstr ""
 "Tickets para\n"
 "\t\t\t\t\t\t\t<u>{{ modalData.userName }}</u>\n"
@@ -17445,11 +17363,12 @@ msgstr "Cronología"
 msgid "Times are shown in your local time zone."
 msgstr "Los horarios se muestran en tu zona horaria local."
 
-#: pages/admin_user.vue pages/banner_tracking.vue pages/builders_base.vue
+#: pages/admin_partner_success.vue pages/admin_user.vue
+#: pages/banner_tracking.vue pages/builders_base.vue
 #: pages/global_summit_2023.vue pages/global_summit_dr.vue
 #: pages/global_summit_tracking.vue pages/new_ranks.vue
-#: components/compensation/builders_bonus.vue new_ranks/index.html
-#: reports/index.html
+#: pages/partner_success.vue components/compensation/builders_bonus.vue
+#: new_ranks/index.html reports/index.html
 msgid "Title"
 msgstr "Título"
 
@@ -17543,8 +17462,7 @@ msgstr ""
 #| "support</a>"
 msgid ""
 "To delete your Member and/or Partner account you must contact our support "
-"staff at:\n"
-"\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"staff at: <a href=\"https://incruises.com/support\">https://incruises.com/"
 "support</a>"
 msgstr ""
 "Para borrar tu cuenta de Miembro y/o Socio, debes contactar a nuestro equipo "
@@ -17565,48 +17483,6 @@ msgid "To earn Team Leadership Bonus a rank leader must:"
 msgstr "Bono de Liderazgo del Mes Pasado"
 
 #: pages/receipts.vue
-#, fuzzy
-#| msgid ""
-#| "To ensure account authenticity,\n"
-#| "\t\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
-#| "\t\t\t\t\t\t\t\tand\n"
-#| "\t\t\t\t\t\t\t\t<strong>Member</strong>\n"
-#| "\t\t\t\t\t\t\t\tActivations are subject to review by the Operations Team. "
-#| "Additional identification documentation may be requested as a part of "
-#| "this process. (for eg.\n"
-#| "\t\t\t\t\t\t\t\t<i>passport</i>\n"
-#| "\t\t\t\t\t\t\t\tand\n"
-#| "\t\t\t\t\t\t\t\t<i>DNI</i>\n"
-#| "\t\t\t\t\t\t\t\t) Please acknowledge that you understand and will respond "
-#| "to additional requests if necessary."
-msgid ""
-"To ensure account authenticity,\n"
-"\t\t\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
-"\t\t\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t\t\t<strong>Member</strong>\n"
-"\t\t\t\t\t\t\t\t\tActivations are subject to review by the Operations Team. "
-"Additional identification documentation may be requested as a part of this "
-"process. (for eg.\n"
-"\t\t\t\t\t\t\t\t\t<i>passport</i>\n"
-"\t\t\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t\t\t<i>DNI</i>\n"
-"\t\t\t\t\t\t\t\t\t) Please acknowledge that you understand and will respond "
-"to additional requests if necessary."
-msgstr ""
-"Para garantizar la autenticidad de la cuenta,\n"
-"\t\t\t\t\t\t\t\t<strong>Todos los Socios</strong>\n"
-"\t\t\t\t\t\t\t\ty\n"
-"\t\t\t\t\t\t\t\t<strong>Miembros</strong>\n"
-"\t\t\t\t\t\t\t\tLas activaciones están sujetas a revisión por parte del "
-"equipo de operaciones. Se puede solicitar documentación de identificación "
-"adicional como parte de este proceso. (por ej.\n"
-"\t\t\t\t\t\t\t\t<i>pasaporte</i>\n"
-"\t\t\t\t\t\t\t\ty\n"
-"\t\t\t\t\t\t\t\t<i>DNI</i>\n"
-"\t\t\t\t\t\t\t\t) Por favor, reconoce que entiende sy responderás a "
-"solicitudes adicionales si es necesario."
-
-#: pages/account_setup.vue
 msgid ""
 "To ensure account authenticity,\n"
 "\t\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
@@ -17632,6 +17508,34 @@ msgstr ""
 "\t\t\t\t\t\t\t\ty\n"
 "\t\t\t\t\t\t\t\t<i>DNI</i>\n"
 "\t\t\t\t\t\t\t\t) Por favor, reconoce que entiende sy responderás a "
+"solicitudes adicionales si es necesario."
+
+#: pages/account_setup.vue
+msgid ""
+"To ensure account authenticity,\n"
+"\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
+"\t\t\t\t\t\t\tand\n"
+"\t\t\t\t\t\t\t<strong>Member</strong>\n"
+"\t\t\t\t\t\t\tActivations are subject to review by the Operations Team. "
+"Additional identification documentation may be requested as a part of this "
+"process. (for eg.\n"
+"\t\t\t\t\t\t\t<i>passport</i>\n"
+"\t\t\t\t\t\t\tand\n"
+"\t\t\t\t\t\t\t<i>DNI</i>\n"
+"\t\t\t\t\t\t\t) Please acknowledge that you understand and will respond to "
+"additional requests if necessary."
+msgstr ""
+"Para garantizar la autenticidad de la cuenta, las Activaciones de\n"
+"\t\t\t\t\t\t\t<strong>Todos los Socios</strong>\n"
+"\t\t\t\t\t\t\ty\n"
+"\t\t\t\t\t\t\t<strong>Miembros</strong>\n"
+"\t\t\t\t\t\t\testán sujetas a revisión por parte del Equipo de Operaciones. "
+"Se puede solicitar documentación de identificación adicional como parte de "
+"este proceso. (por ej\n"
+"\t\t\t\t\t\t\t<i>pasaporte</i>\n"
+"\t\t\t\t\t\t\te\n"
+"\t\t\t\t\t\t\t<i>identificación oficial</i>\n"
+"\t\t\t\t\t\t\t) Por favor, reconoce que entiendes y responderás a "
 "solicitudes adicionales si es necesario."
 
 #: pages/price_match_guarantee.vue
@@ -17712,7 +17616,7 @@ msgstr "Para solicitar un crédito, visite su Página de Soporte ("
 msgid ""
 "To see a full list of supported cash pickup partner locations please refer "
 "to this document:\n"
-"\t\t\t<a target=\"_blank\" href=\"./files/Cash_Pickup_Locations.pdf\" class="
+"\t\t<a target=\"_blank\" href=\"./files/Cash_Pickup_Locations.pdf\" class="
 "\"bold\">Cash Pickup Partner Locations.</a>"
 msgstr ""
 "Para ver una lista completa de ubicaciones de socios de recolección de "
@@ -17759,7 +17663,7 @@ msgstr "Para:"
 #| "address }}</span>"
 msgid ""
 "To:\n"
-"\t\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ message.to[0]."
+"\t\t\t\t\t\t\t<span class=\"text-blue font-italic\">{{ message.to[0]."
 "address }}</span>"
 msgstr ""
 "Para:\n"
@@ -18638,10 +18542,10 @@ msgstr "Retiro de cartera"
 #| "\t\t\t\t\t\t</label>"
 msgid ""
 "Wallet Withdrawal Limits\n"
-"\t\t\t\t\t\t\t<label class=\"small\" style=\"width:100%\" v-translate=\"\">\n"
-"\t\t\t\t\t\t\t\tAdjust withdrawal limts for any available wallet payout "
+"\t\t\t\t\t\t<label class=\"small\" style=\"width:100%\" v-translate=\"\">\n"
+"\t\t\t\t\t\t\tAdjust withdrawal limts for any available wallet payout "
 "provider. To allow for 'Unlimited' please set the value to 0.\n"
-"\t\t\t\t\t\t\t</label>"
+"\t\t\t\t\t\t</label>"
 msgstr ""
 "Límites de retiros de cartera\n"
 "\t\t\t\t\t\t<label class=\"small\" style=\"width:100%\" v-translate=\"\">\n"
@@ -18803,8 +18707,8 @@ msgstr ""
 #| "\t\t\t\t\t\tA MISSION!"
 msgid ""
 "WE HAVE\n"
-"\t\t\t\t\t\t\t<br>\n"
-"\t\t\t\t\t\t\tA MISSION!"
+"\t\t\t\t\t\t<br>\n"
+"\t\t\t\t\t\tA MISSION!"
 msgstr ""
 "¡TENEMOS\n"
 "      <br>\n"
@@ -18980,11 +18884,11 @@ msgstr "Puntos Semanales"
 msgid "Weekly Top Producers"
 msgstr "Productores Semanales Top"
 
-#: Menu.vue pages/receipts.vue receipts/index.html
+#: Menu.vue pages/receipts.vue receipts/index.html controllers/welcome.js
 msgid "Welcome"
 msgstr "Bienvenido"
 
-#: pages/welcome.vue
+#: pages/welcome.vue controllers/welcome.js
 msgid "Welcome Back"
 msgstr "Bienvenido"
 
@@ -19008,7 +18912,7 @@ msgid ""
 "business leaders who aspire to “show the way” to those who partner with them "
 "in pursuit of the inCruises Vision: Improve and enrich the lives of others. "
 "Leadership Academy courses\n"
-"\t\t\t\t\t\t\t\t\tencompass two core values of developing the art of "
+"\t\t\t\t\t\t\t\tencompass two core values of developing the art of "
 "leadership: personal growth and growing others. The thrust of each course is "
 "not so much training as it is imparting. Imparting wisdom that gives clear "
 "perception so that you can be merchants of hope."
@@ -19164,9 +19068,9 @@ msgid ""
 "Builders Base Bonus on the 15th of each month. If you do not have a "
 "Historical QBI or if your Historical QBI is less than 72%, you will not be "
 "paid a Builders Base Bonus immediately. When\n"
-"\t\t\t\t\t\t\t\t\tand how much you are paid becomes dependent on your Month "
-"to Month QBI for that specific month. As soon as that month's QBI reaches "
-"72% or more, you receive 100% of your Builders Base for that month."
+"\t\t\t\t\t\t\t\tand how much you are paid becomes dependent on your Month to "
+"Month QBI for that specific month. As soon as that month's QBI reaches 72% "
+"or more, you receive 100% of your Builders Base for that month."
 msgstr ""
 "Cuando tengas un QBI histórico del 72 % o más, se te pagará el 100 % de tu "
 "Bono Base de Constructores el día 15 de cada mes. Si no tienes un QBI "
@@ -19325,7 +19229,7 @@ msgid ""
 "class hotels and resorts. This lets you book land-based vacations and pre- "
 "and post-cruise hotels at the best publicly available rates. Your vacation "
 "purchasing power is amplified when you use\n"
-"\t\t\t\t\t\t\t\tReward Points."
+"\t\t\t\t\t\t\tReward Points."
 msgstr ""
 "Con inStays, los Miembros del Club pueden canjear Puntos de Recompensa por "
 "miles de hoteles y resorts de clase mundial. Esto te permite reservar "
@@ -19393,7 +19297,7 @@ msgstr "Si"
 msgid ""
 "Yes\n"
 "\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img class=\"tmt ml-2\" ng-if="
-"\"selectedAffiliate.pm_type == 'tmt'\" width=\"30\" src=\"/images/"
+"\"selectedAffiliate.pm_type == 'tmt'\" width=\"30px\" src=\"/images/"
 "TMT_INCRUISES_LOGO.png\" alt=\"\">"
 msgstr ""
 "Sí\n"
@@ -19642,7 +19546,7 @@ msgstr "Solo se puede buscar un máximo de 30 noches."
 #| "\t\t\t\t<a href=\"/reach\">REACH page.</a>"
 msgid ""
 "You can track your completed invitations and invite others from the\n"
-"\t\t\t\t\t<a href=\"/reach\">REACH page.</a>"
+"\t\t\t\t<a href=\"/reach\">REACH page.</a>"
 msgstr ""
 "Puedes darle seguimiento a tus invitaciones completadas e invitar a otros "
 "desde la\n"
@@ -19688,15 +19592,10 @@ msgstr ""
 msgid "You can't book Global Destination Cruises yet."
 msgstr "Todavía no puedes reservar cruceros de Global Destination Cruises"
 
-#: pages/additional_info.vue
-#, fuzzy
-#| msgid ""
-#| "You cannot change your country. Please contact support\n"
-#| "\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
-#| "\">here</a>"
+#: pages/additional_info.vue pages/settings.vue
 msgid ""
 "You cannot change your country. Please contact support\n"
-"\t\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
+"\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
 "\">here</a>"
 msgstr ""
 "No es posible cambiar tu país. Porfavor contacta a nuestro equipo de "
@@ -19704,15 +19603,15 @@ msgstr ""
 "\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
 "\">here</a>"
 
-#: components/info-reminder.vue pages/settings.vue
+#: components/info-reminder.vue
 msgid ""
 "You cannot change your country. Please contact support\n"
-"\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
+"\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
 "\">here</a>"
 msgstr ""
-"No es posible cambiar tu país. Porfavor contacta a nuestro equipo de "
+"No es posible cambiar tu país. Por favor contacta a nuestro departamento de "
 "soporte\n"
-"\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
+"\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
 "\">here</a>"
 
 #: pages/settings.vue
@@ -19797,9 +19696,9 @@ msgstr "No tienes ninguna cuenta de destinatario guardada."
 #| "\t\t\t\t\t\t\t."
 msgid ""
 "You don't have a display name! Set it up\n"
-"\t\t\t\t\t\t\t\t<a href=\"/settings\" target=\"_blank\" v-translate="
-"\"\">here</a>\n"
-"\t\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t<a href=\"/settings\" target=\"_blank\" v-translate=\"\">here</"
+"a>\n"
+"\t\t\t\t\t\t\t."
 msgstr ""
 "No tienes un nombre de pantalla! Configúralo\n"
 "\t\t\t\t\t\t\t<a href=\"/settings\" target=\"_blank\" v-translate=\"\">here</"
@@ -19910,8 +19809,8 @@ msgstr ""
 "de varios minutos a 24 horas para que se nos notifiquen que tu pago ha "
 "tenido exitoso."
 
-#: pages/growth_calculator.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: pages/growth_calculator.vue old_refund_protocol/leadership_bonus_modal.html
+#: old_compensation/index.html
 msgid "You have earned a greater bonus."
 msgstr "Has ganado un bono más grande."
 
@@ -20048,9 +19947,9 @@ msgstr ""
 msgid ""
 "You must remain an active Member through embarkation/boarding of this cruise "
 "as per the\n"
-"\t\t\t\t\t\t<a target=\"_blank\" :href=\"membershipAgreement\">inCruises "
+"\t\t\t\t\t<a target=\"_blank\" :href=\"membershipAgreement\">inCruises "
 "Membership Agreement</a>\n"
-"\t\t\t\t\t\t."
+"\t\t\t\t\t."
 msgstr ""
 "Debes seguir siendo un Miembro activo durante el embarque/abordaje de este "
 "crucero de acuerdo con el\n"
@@ -20112,8 +20011,8 @@ msgstr "Necesitas un nuevo Miembro directo para desbloquear esta semana."
 #: pages/reward_points.vue
 msgid ""
 "You need a verified phone number to transfer reward points.\n"
-"\t\t\t\t\t\t\t\t<a href=\"/settings\" target=\"_blank\">Click here</a>\n"
-"\t\t\t\t\t\t\t\tto visit the Settings page to complete this step."
+"\t\t\t\t\t\t\t<a href=\"/settings\" target=\"_blank\">Click here</a>\n"
+"\t\t\t\t\t\t\tto visit the Settings page to complete this step."
 msgstr ""
 
 #: components/mercy-ship-modals.vue
@@ -20178,12 +20077,12 @@ msgstr ""
 #| "\t\t\t\t\t\t\t\t."
 msgid ""
 "You've been invited to inCruises®\n"
-"\t\t\t\t\t\t\t\t\t<span class=\"referrer_name\" v-if=\"affiliateInfo."
+"\t\t\t\t\t\t\t\t<span class=\"referrer_name\" v-if=\"affiliateInfo."
 "display_name\">by {{ affiliateInfo.display_name }}</span>\n"
-"\t\t\t\t\t\t\t\t\t<span class=\"referrer_name\" v-else-if=\"affiliateInfo."
+"\t\t\t\t\t\t\t\t<span class=\"referrer_name\" v-else-if=\"affiliateInfo."
 "first_name\">by {{ affiliateInfo.first_name + ' ' + affiliateInfo."
 "last_name }}</span>\n"
-"\t\t\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t\t."
 msgstr ""
 "Te han invitado a inCruises®\n"
 "\t\t\t\t\t\t\t\t<span class=\"referrer_name\" v-if=\"affiliateInfo."
@@ -20212,15 +20111,15 @@ msgstr "Has sido invitado a inCruises® por"
 #| "\t\t\t\t\t\t\t."
 msgid ""
 "You've been invited to inCruises® by\n"
-"\t\t\t\t\t\t\t\t<span class=\"referrer_name\" v-if=\"affiliateInfo."
-"display_name\">\n"
-"\t\t\t\t\t\t\t\t\t{{ affiliateInfo.display_name }}\n"
-"\t\t\t\t\t\t\t\t</span>\n"
-"\t\t\t\t\t\t\t\t<span class=\"referrer_name\" v-else=\"\">\n"
-"\t\t\t\t\t\t\t\t\t{{ affiliateInfo.first_name + ' ' + affiliateInfo."
+"\t\t\t\t\t\t\t<span class=\"referrer_name\" v-if=\"affiliateInfo.display_name"
+"\">\n"
+"\t\t\t\t\t\t\t\t{{ affiliateInfo.display_name }}\n"
+"\t\t\t\t\t\t\t</span>\n"
+"\t\t\t\t\t\t\t<span class=\"referrer_name\" v-else=\"\">\n"
+"\t\t\t\t\t\t\t\t{{ affiliateInfo.first_name + ' ' + affiliateInfo."
 "last_name }}\n"
-"\t\t\t\t\t\t\t\t</span>\n"
-"\t\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t</span>\n"
+"\t\t\t\t\t\t\t."
 msgstr ""
 "Has sido invitado a inCruises® por\n"
 "\t\t\t\t\t\t\t<span class=\"referrer_name\" v-if=\"affiliateInfo.display_name"
@@ -20351,15 +20250,15 @@ msgstr ""
 #| "\t\t\t\t\t\t."
 msgid ""
 "Your contacts will be imported to\n"
-"\t\t\t\t\t\t\t<strong>Pending Invites</strong>\n"
-"\t\t\t\t\t\t\tin your Contact Manager. They will be automatically placed in "
+"\t\t\t\t\t\t<strong>Pending Invites</strong>\n"
+"\t\t\t\t\t\tin your Contact Manager. They will be automatically placed in "
 "our\n"
-"\t\t\t\t\t\t\t<strong>Invited List</strong>\n"
-"\t\t\t\t\t\t\tand they can register on our site any time they want. You can "
+"\t\t\t\t\t\t<strong>Invited List</strong>\n"
+"\t\t\t\t\t\tand they can register on our site any time they want. You can "
 "email them from your own email client OR you can send them an email invite "
 "through our own\n"
-"\t\t\t\t\t\t\t<a href=\"/invite\">invitation system</a>\n"
-"\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t<a href=\"/invite\">invitation system</a>\n"
+"\t\t\t\t\t\t."
 msgstr ""
 "Tus contactos serán importados a\n"
 "\t\t\t\t\t\t<strong>Invitaciones  pendientes</strong>\n"
@@ -20423,8 +20322,8 @@ msgstr ""
 msgid ""
 "Your email has already been configured and cannot be changed here. If you "
 "wish to change it please contact\n"
-"\t\t\t\t\t\t\t\t<a href=\"/support\" target=\"_blank\">support</a>\n"
-"\t\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t<a href=\"/support\" target=\"_blank\">support</a>\n"
+"\t\t\t\t\t\t\t."
 msgstr ""
 "Su correo electrónico ya ha sido configurado y no se puede cambiar aquí. Si "
 "desea cambiarlo por favor contacte\n"
@@ -20545,10 +20444,10 @@ msgstr "TU NOMBRE AQUÍ"
 msgid ""
 "Your partner onboarding is now complete. An admin will review your "
 "information within the\n"
-"\t\t\t\t\t\t\t<strong>next 24 hours and receive an email with your status</"
+"\t\t\t\t\t\t<strong>next 24 hours and receive an email with your status</"
 "strong>\n"
-"\t\t\t\t\t\t\t. Until then you will have to wait to access the full "
-"inCruises partner experience."
+"\t\t\t\t\t\t. Until then you will have to wait to access the full inCruises "
+"partner experience."
 msgstr ""
 "Tu incorporación de socio está completa. Un administrador revisará tu "
 "información dentro de las\n"
@@ -20653,11 +20552,11 @@ msgstr "Tus Facturas"
 msgid ""
 "Your referral link has already been configured and cannot be changed here. "
 "To change it please visit our\n"
-"\t\t\t\t\t\t\t\t<a href=\"/referral_links\" target=\"_blank\">Referral "
-"Links</a>\n"
-"\t\t\t\t\t\t\t\tpage or contact\n"
-"\t\t\t\t\t\t\t\t<a href=\"/support\" target=\"_blank\">support</a>\n"
-"\t\t\t\t\t\t\t\t."
+"\t\t\t\t\t\t\t<a href=\"/referral_links\" target=\"_blank\">Referral Links</"
+"a>\n"
+"\t\t\t\t\t\t\tpage or contact\n"
+"\t\t\t\t\t\t\t<a href=\"/support\" target=\"_blank\">support</a>\n"
+"\t\t\t\t\t\t\t."
 msgstr ""
 "Tu link de referidos ya se configuró y no se puede cambiar aquí. Para "
 "cambiarlo, por favor, visite nuestro\n"
@@ -20728,9 +20627,9 @@ msgstr "Tu retiro se está procesando, por favor espera."
 #| "\t\t\t."
 msgid ""
 "Your withdrawal was not successful, please try again or contact support at\n"
-"\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+"\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
 "support</a>\n"
-"\t\t\t\t."
+"\t\t\t."
 msgstr ""
 "Tu retiro no fue exitoso, por favor inténtalo nuevamente o contacta a "
 "soporte en\n"
@@ -28671,203 +28570,269 @@ msgstr ""
 "Necesitas 11 puntos para ganar. Los 5 TOP Líderes con más puntos ganarán una "
 "entrada para GoPro."
 
-#, fuzzy
-#~| msgid ""
-#~| ", and their next billing date is on {{selectedUser.next_billing | "
-#~| "date:'MMM dd, yyyy'}}."
 #~ msgid ""
-#~ ", and their next billing date is on {{ selectedUser.next_billing | "
-#~ "date('MMM dd, yyyy') }}."
+#~ ", and their next billing date is on {{ $filters.date(selectedAffiliate."
+#~ "next_billing, 'MMM dd, yyyy')}}."
 #~ msgstr ""
-#~ ", y su próxima fecha de facturación es en {{selectedUser.next_billing | "
-#~ "date:'MMM dd, yyyy'}}."
-
-#, fuzzy
-#~| msgid ""
-#~| ", and their next billing date is on {{selectedUser.next_billing | "
-#~| "date:'MMM dd, yyyy'}}."
-#~ msgid ""
-#~ ", and their next billing date is on {{selectedAffiliate.next_billing | "
-#~ "date:'MMM dd, yyyy'}}."
-#~ msgstr ""
-#~ ", y su próxima fecha de facturación es en {{selectedUser.next_billing | "
-#~ "date:'MMM dd, yyyy'}}."
+#~ ", y su próxima fecha de facturación es {{ $filters.date(selectedAffiliate."
+#~ "next_billing, 'MMM dd, yyyy')}}."
 
 #~ msgid ""
-#~ ", and their next billing date is on {{selectedUser.next_billing | "
-#~ "date:'MMM dd, yyyy'}}."
+#~ ", and their next billing date is on {{ $filters.date(selectedUser."
+#~ "next_billing, 'MMM dd, yyyy') }}."
 #~ msgstr ""
-#~ ", y su próxima fecha de facturación es en {{selectedUser.next_billing | "
-#~ "date:'MMM dd, yyyy'}}."
+#~ ", y su próxima fecha de facturación es en {{ $filters.date(selectedUser."
+#~ "next_billing, 'MMM dd, yyyy') }}."
 
-#~ msgid ". This means you are on target to make"
-#~ msgstr ". Esto significa que estás en el objetivo de hacer"
+#~ msgid ""
+#~ ", and their next billing date is on {{ $filters.date(selectedUser."
+#~ "next_billing, 'MMM dd, yyyy')}}."
+#~ msgstr ""
+#~ ", y su próxima fecha de facturación es en {{ $filters.date(selectedUser."
+#~ "next_billing, 'MMM dd, yyyy')}}."
 
-#~ msgid "{{ question.type | capitalize }}"
-#~ msgstr "{{ question.type | capitalize }}"
+#~ msgid "{{ $filters.capitalize(question.type) }}"
+#~ msgstr "{{ $filters.capitalize(question.type) }}"
 
-#~ msgid "%{ correct } correct out of %{ questions }"
-#~ msgstr "%{ correct } correcto de %{ questions }"
+#~ msgid "{{ errorMessage }}"
+#~ msgstr "{{ errorMessage }}"
+
+#~ msgid "+ Add Department"
+#~ msgstr "+ Agregar Departamento"
+
+#~ msgid "+ Add Permission Group"
+#~ msgstr "+ Agregar grupo de permisos"
 
 #~ msgid ""
 #~ "<i class=\"fa fa-times text-red\"></i>\n"
-#~ "\t\t\t\t\t\tNo Live Streaming"
+#~ "\t\t\t\t\t\t\tNo Live Streaming"
 #~ msgstr ""
 #~ "<i class=\"fa fa-times text-red\"></i>\n"
-#~ "      No incluye Transmisión en vivo"
+#~ "\t\t\t\t\t\t\tNo incluye Transmisión en vivo"
 
 #~ msgid ""
 #~ "<i class=\"fe fe-paperclip\"></i>\n"
-#~ "\t\t\t\t\t\tAdd Attachment"
+#~ "\t\t\t\t\t\t\t\tAdd Attachment"
 #~ msgstr ""
 #~ "<i class=\"fe fe-paperclip\"></i>\n"
-#~ "\t\t\t\t\t\tAñadir Adjunto"
+#~ "\t\t\t\t\t\t\t\tAñadir Adjunto"
 
 #~ msgid ""
 #~ "<i class=\"fe fe-upload mr-2\"></i>\n"
-#~ "\t\t\t\t\t\t\t\t\tUpload New Photo"
+#~ "\t\t\t\t\t\t\t\t\t\t\tUpload New Photo"
 #~ msgstr ""
 #~ "<i class=\"fe fe-upload mr-2\"></i>\n"
-#~ "\t\t\t\t\t\t\t\t\tCargar Nueva Foto"
+#~ "\t\t\t\t\t\t\t\t\t\t\tCargar Nueva Foto"
 
 #~ msgid ""
 #~ "<i class=\"fe fe-upload mr-2\"></i>\n"
-#~ "\t\t\t\t\t\t\t\t\tUpload Photo ID"
+#~ "\t\t\t\t\t\t\t\t\t\t\tUpload Photo ID"
 #~ msgstr ""
 #~ "<i class=\"fe fe-upload mr-2\"></i>\n"
-#~ "          Cargar ID de Foto"
+#~ "\t\t\t\t\t\t\t\t\t\t\tCargar ID de Foto"
 
 #~ msgid ""
 #~ "<span class=\"emphasize\">Unlimited</span>\n"
-#~ "\t\t\t\t\t\tmeeting time"
+#~ "\t\t\t\t\t\t\tmeeting time"
 #~ msgstr ""
-#~ "<span class=\"emphasize\">Reuniones </span>\n"
-#~ "      ilimitadas"
+#~ "<span class=\"emphasize\">Reuniones</span>\n"
+#~ "\t\t\t\t\t\t\tilimitadas"
 
-#~ msgid ""
-#~ "$550,000 in total team production in any given month.<br><br> Board of "
-#~ "Directors Members automatically earn our DREAM LIFE BONUS of $55,000 each "
-#~ "and every month they remain qualified and they also get to share in our "
-#~ "5% Global Market Bonus Pool."
-#~ msgstr ""
-#~ "$550.000 en producción total de equipo en un mes determinado.<br><br> "
-#~ "Miembros de BOARD OF DIRECTORS ganan automáticamente nuestro BONO DE VIDA "
-#~ "DE ENSUEÑO de $55,000 cada mes que se mantienen calificando y también "
-#~ "comparten nuestro Bono Global del 5%."
+#, fuzzy
+#~| msgid "Account Data Id"
+#~ msgid "Account ID"
+#~ msgstr "ID de Información de Cuenta"
 
-#~ msgid "At this point, your builder percentage is"
-#~ msgstr "En este punto, su porcentaje de Constructor es"
+#, fuzzy
+#~| msgid "Department"
+#~ msgid "Add Department"
+#~ msgstr "Departamento"
 
-#~ msgid "Board of Directors Bonus"
-#~ msgstr "Bono del Comité de Directores"
+#, fuzzy
+#~| msgid "+ Add Permission Group"
+#~ msgid "Add Permission Group"
+#~ msgstr "+ Agregar grupo de permisos"
 
-#~ msgid ""
-#~ "By clicking Join Now, you're confirming that you're at least 18 years of "
-#~ "age and that you've read and agree with our\n"
-#~ "\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
-#~ "Service</a>\n"
-#~ "\t\t\t\t\tand\n"
-#~ "\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy Policy</"
-#~ "a>"
-#~ msgstr ""
-#~ "Al registrarte, estás confirmando que tienes al menos 18 años de edad y "
-#~ "que has leído y estás de acuerdo con nuestros\n"
-#~ "\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Términos de "
-#~ "Servicio</a>\n"
-#~ "\t\t\t\t\tand\n"
-#~ "\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Política de "
-#~ "Privacidad</a>"
-
-#~ msgid "Competition"
-#~ msgstr "Competencia"
-
-#~ msgid "Executive Director Bonus"
-#~ msgstr "Bono de Director Ejecutivo"
-
-#~ msgid "International Director Bonus"
-#~ msgstr "Bono de Director Internacional"
+#, fuzzy
+#~| msgid "Admin Menu"
+#~ msgid "Admins"
+#~ msgstr "Menu de Admin"
 
 #, fuzzy
 #~| msgid ""
-#~| "Leadership Bonus Last Month (New Production) ({{firstDayLastMonth | "
-#~| "date: 'MM/dd/yyyy'}} - {{lastDayLastMonth | date: 'MM/dd/yyyy'}})"
+#~| "By clicking Join Now, you're confirming that you're at least 18 years of "
+#~| "age and that you've read and agree with our\n"
+#~| "\t\t\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
+#~| "Service</a>\n"
+#~| "\t\t\t\t\t\t\tand\n"
+#~| "\t\t\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy "
+#~| "Policy</a>"
 #~ msgid ""
-#~ "Leadership Bonus Last Month ({{firstDayLastMonth | date:'MM-dd-yyyy'}} - "
-#~ "{{lastDayLastMonth | date:'MM-dd-yyyy'}})"
+#~ "By clicking Join Now, you're confirming that you're at least 18 years of "
+#~ "age and that you've read and agree with our\n"
+#~ "\t\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Terms of "
+#~ "Service</a>\n"
+#~ "\t\t\t\t\t\tand\n"
+#~ "\t\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Privacy "
+#~ "Policy</a>"
 #~ msgstr ""
-#~ "Bono de Liderazgo del mes pasado (Nueva Producción) ({{firstDayLastMonth "
-#~ "| date: 'MM/dd/yyyy'}} - {{lastDayLastMonth | date: 'MM/dd/yyyy'}})"
+#~ "Al registrarte, estás confirmando que tienes al menos 18 años de edad y "
+#~ "que has leído y estás de acuerdo con nuestros\n"
+#~ "\t\t\t\t\t\t\t<a href=\"%{termsOfService}\" target=\"_blank\">Términos de "
+#~ "Servicio</a>\n"
+#~ "\t\t\t\t\t\t\tand\n"
+#~ "\t\t\t\t\t\t\t<a href=\"%{privacyPolicy}\" target=\"_blank\">Política de "
+#~ "Privacidad</a>"
 
-#~ msgid "Marketing Director Bonus"
-#~ msgstr "Bono de Director de Marketing"
+#, fuzzy
+#~| msgid "Zip Code"
+#~ msgid "Code"
+#~ msgstr "Código Postal"
 
-#~ msgid "National Director Bonus"
-#~ msgstr "Bono de Director Nacional"
+#, fuzzy
+#~| msgid "Department"
+#~ msgid "Delete Department"
+#~ msgstr "Departamento"
 
+#, fuzzy
+#~| msgid "+ Add Permission Group"
+#~ msgid "Delete Permission Group"
+#~ msgstr "+ Agregar grupo de permisos"
+
+#, fuzzy
+#~| msgid "Department"
+#~ msgid "Departments"
+#~ msgstr "Departamento"
+
+#, fuzzy
+#~| msgid "Department"
+#~ msgid "Edit Department"
+#~ msgstr "Departamento"
+
+#, fuzzy
+#~| msgid "+ Add Permission Group"
+#~ msgid "Edit Permission Group"
+#~ msgstr "+ Agregar grupo de permisos"
+
+#, fuzzy
+#~| msgid ""
+#~| "Leadership Bonus Last Month ({{firstDayLastMonth | date:'MM-dd-yyyy'}} - "
+#~| "{{lastDayLastMonth | date:'MM-dd-yyyy'}})"
 #~ msgid ""
-#~ "Next\n"
-#~ "\t\t\tMonth"
+#~ "Leadership Bonus Last Month ({{ $filters.date($filters."
+#~ "date(firstDayLastMonth, 'MM-dd-yyyy')}} - {{lastDayLastMonth, 'MM-dd-"
+#~ "yyyy')}})"
 #~ msgstr ""
-#~ "Próximo\n"
-#~ "\t\t\tMes"
+#~ "Bono de Liderazgo del mes pasado ({{firstDayLastMonth | date:'MM-dd-"
+#~ "yyyy'}} - {{lastDayLastMonth | date:'MM-dd-yyyy'}})"
 
-#~ msgid "off of each directs volume."
-#~ msgstr "fuera de cada volumen directo."
+#, fuzzy
+#~| msgid "Management"
+#~ msgid "Manage Admins"
+#~ msgstr "Administración"
 
-#~ msgid "Old Compensation"
-#~ msgstr "Compensación Antigua"
+#, fuzzy
+#~| msgid "Manage Subscriptions"
+#~ msgid "Manage Permission Groups"
+#~ msgstr "Administrar Suscripciones"
 
-#~ msgid ""
-#~ "Previous\n"
-#~ "\t\t\tMonth"
-#~ msgstr ""
-#~ "Mes\n"
-#~ "\t\t\tAnterior"
+#, fuzzy
+#~| msgid "Manage Subscriptions"
+#~ msgid "Manage Permissions"
+#~ msgstr "Administrar Suscripciones"
 
-#~ msgid "Refund Protocol"
-#~ msgstr "Protocolo de Reembolso"
+#, fuzzy
+#~| msgid "Please select department"
+#~ msgid "Manage User Departments"
+#~ msgstr "Por favor seleccionar departamento"
 
-#~ msgid "Regional Director Bonus"
-#~ msgstr "Bono de Director Regional"
+#, fuzzy
+#~| msgid "Manage Subscriptions"
+#~ msgid "Manage User Permission Groups"
+#~ msgstr "Administrar Suscripciones"
 
-#~ msgid "Senior Marketing Director Bonus"
-#~ msgstr "Bono de Director Senior de Marketing"
+#, fuzzy
+#~| msgid "Manage Subscriptions"
+#~ msgid "Manage User Permissions"
+#~ msgstr "Administrar Suscripciones"
 
+#, fuzzy
+#~| msgid "Manage Subscriptions"
+#~ msgid "Manager User Permissions"
+#~ msgstr "Administrar Suscripciones"
+
+#, fuzzy
+#~| msgid "+ Add Permission Group"
+#~ msgid "Permission Groups"
+#~ msgstr "+ Agregar grupo de permisos"
+
+#, fuzzy
+#~| msgid "Commission"
+#~ msgid "Permissions"
+#~ msgstr "Comisión"
+
+#~ msgid "Powerup:"
+#~ msgstr "Powerup:"
+
+#, fuzzy
+#~| msgid "Selected"
+#~ msgid "Select"
+#~ msgstr "Seleccionado:"
+
+#, fuzzy
+#~| msgid ""
+#~| "To ensure account authenticity,\n"
+#~| "\t\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
+#~| "\t\t\t\t\t\t\t\tand\n"
+#~| "\t\t\t\t\t\t\t\t<strong>Member</strong>\n"
+#~| "\t\t\t\t\t\t\t\tActivations are subject to review by the Operations "
+#~| "Team. Additional identification documentation may be requested as a part "
+#~| "of this process. (for eg.\n"
+#~| "\t\t\t\t\t\t\t\t<i>passport</i>\n"
+#~| "\t\t\t\t\t\t\t\tand\n"
+#~| "\t\t\t\t\t\t\t\t<i>DNI</i>\n"
+#~| "\t\t\t\t\t\t\t\t) Please acknowledge that you understand and will "
+#~| "respond to additional requests if necessary."
 #~ msgid ""
 #~ "To ensure account authenticity,\n"
-#~ "\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
-#~ "\t\t\t\t\t\t\tand\n"
-#~ "\t\t\t\t\t\t\t<strong>Member</strong>\n"
-#~ "\t\t\t\t\t\t\tActivations are subject to review by the Operations Team. "
-#~ "Additional identification documentation may be requested as a part of "
-#~ "this process. (for eg.\n"
-#~ "\t\t\t\t\t\t\t<i>passport</i>\n"
-#~ "\t\t\t\t\t\t\tand\n"
-#~ "\t\t\t\t\t\t\t<i>DNI</i>\n"
-#~ "\t\t\t\t\t\t\t) Please acknowledge that you understand and will respond "
-#~ "to additional requests if necessary."
+#~ "\t\t\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
+#~ "\t\t\t\t\t\t\t\t\tand\n"
+#~ "\t\t\t\t\t\t\t\t\t<strong>Member</strong>\n"
+#~ "\t\t\t\t\t\t\t\t\tActivations are subject to review by the Operations "
+#~ "Team. Additional identification documentation may be requested as a part "
+#~ "of this process. (for eg.\n"
+#~ "\t\t\t\t\t\t\t\t\t<i>passport</i>\n"
+#~ "\t\t\t\t\t\t\t\t\tand\n"
+#~ "\t\t\t\t\t\t\t\t\t<i>DNI</i>\n"
+#~ "\t\t\t\t\t\t\t\t\t) Please acknowledge that you understand and will "
+#~ "respond to additional requests if necessary."
 #~ msgstr ""
-#~ "Para garantizar la autenticidad de la cuenta, las Activaciones de\n"
-#~ "\t\t\t\t\t\t\t<strong>Todos los Socios</strong>\n"
-#~ "\t\t\t\t\t\t\ty\n"
-#~ "\t\t\t\t\t\t\t<strong>Miembros</strong>\n"
-#~ "\t\t\t\t\t\t\testán sujetas a revisión por parte del Equipo de "
-#~ "Operaciones. Se puede solicitar documentación de identificación adicional "
-#~ "como parte de este proceso. (por ej\n"
-#~ "\t\t\t\t\t\t\t<i>pasaporte</i>\n"
-#~ "\t\t\t\t\t\t\te\n"
-#~ "\t\t\t\t\t\t\t<i>identificación oficial</i>\n"
-#~ "\t\t\t\t\t\t\t) Por favor, reconoce que entiendes y responderás a "
+#~ "Para garantizar la autenticidad de la cuenta,\n"
+#~ "\t\t\t\t\t\t\t\t<strong>Todos los Socios</strong>\n"
+#~ "\t\t\t\t\t\t\t\ty\n"
+#~ "\t\t\t\t\t\t\t\t<strong>Miembros</strong>\n"
+#~ "\t\t\t\t\t\t\t\tLas activaciones están sujetas a revisión por parte del "
+#~ "equipo de operaciones. Se puede solicitar documentación de identificación "
+#~ "adicional como parte de este proceso. (por ej.\n"
+#~ "\t\t\t\t\t\t\t\t<i>pasaporte</i>\n"
+#~ "\t\t\t\t\t\t\t\ty\n"
+#~ "\t\t\t\t\t\t\t\t<i>DNI</i>\n"
+#~ "\t\t\t\t\t\t\t\t) Por favor, reconoce que entiende sy responderás a "
 #~ "solicitudes adicionales si es necesario."
 
+#, fuzzy
+#~| msgid ""
+#~| "You cannot change your country. Please contact support\n"
+#~| "\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
+#~| "\">here</a>"
 #~ msgid ""
 #~ "You cannot change your country. Please contact support\n"
-#~ "\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
-#~ "\">here</a>"
+#~ "\t\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target="
+#~ "\"_blank\">here</a>"
 #~ msgstr ""
-#~ "No es posible cambiar tu país. Por favor contacta a nuestro departamento "
-#~ "de soporte\n"
-#~ "\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
+#~ "No es posible cambiar tu país. Porfavor contacta a nuestro equipo de "
+#~ "soporte\n"
+#~ "\t\t\t\t\t\t\t\t<a href=\"https://incruises.com/support\" target=\"_blank"
 #~ "\">here</a>"
 
 #~ msgid "ALL IN 2023"
