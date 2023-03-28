@@ -395,11 +395,17 @@ msgstr "(с оплатой в Кошелёк inCruises)"
 msgid "(Partner full legal name), an individual residing at"
 msgstr "(Полное имя партнера), лицо, проживающее по адресу"
 
+#: pages/receipts.vue
+msgid ""
+") Please acknowledge that you understand and will respond to additional "
+"requests if necessary."
+msgstr ""
+
 #: components/price_match_guarantee/hotels.vue
 msgid "), and send a new ticket to the"
 msgstr "), и отправьте новый тикет в"
 
-#: receipts/receipt.html
+#: components/receipts/receipt.vue receipts/receipt.html
 msgid ""
 "[ Alaska Residents: 5 days ] [ Kentucky&nbsp;Residents: 3 days ] [ Missouri "
 "Residents: 3 days ] [ Nevada Residents: 3 days ] [ Virginia Residents: 7 "
@@ -792,6 +798,13 @@ msgstr "# первых отвеченных тикетов"
 msgid "#{{ confirmationDetails.confirmationNumber }}"
 msgstr "#{{ confirmationDetails.confirmationNumber }}"
 
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/travel_challenge_statement.vue
+#, fuzzy
+#| msgid "in Reward Points"
+msgid "%{ amount } Reward Points"
+msgstr "Бонусными Баллами"
+
 #: components/reservation.vue
 msgid "%{ guests } Guests"
 msgstr "%{ guests } Гостей"
@@ -853,6 +866,18 @@ msgstr "%{ numMembers } Членов Клуба"
 #: components/reservation.vue
 msgid "%{ passengers } Passengers"
 msgstr "%{ passengers } Пассажиров"
+
+#: components/receipts/hotel_booking_receipt.vue
+#, fuzzy
+#| msgid "in Reward Points"
+msgid "%{ points_used } Reward Points"
+msgstr "Бонусными Баллами"
+
+#: components/receipts/booking_receipt.vue
+#, fuzzy
+#| msgid "(2 for 1) Reward Points"
+msgid "%{ price } / 2 For 1 Reward Points"
+msgstr "Бонусные Баллы (2 к 1)"
 
 #: pages/checkout.vue
 msgid "%{adults} Adults"
@@ -2962,7 +2987,6 @@ msgid "Achieved"
 msgstr "Достигнуто"
 
 #: components/birthday-modal.vue pages/invoices.vue pages/receipts.vue
-#: receipts/index.html
 msgid "Action"
 msgstr "Действие"
 
@@ -2997,9 +3021,17 @@ msgid "activation fee (only when activating your membership) and"
 msgstr "взнос за активацию (только когда вы активируете своё Членство) и"
 
 #: pages/competition.vue components/compensation/builders_bonus.vue
-#: components/compensation/leadership_bonus.vue receipts/builders_bonus.html
+#: components/compensation/leadership_bonus.vue
+#: components/receipts/builders_bonus.vue receipts/builders_bonus.html
 msgid "Activations"
 msgstr "Активации"
+
+#: pages/receipts.vue
+msgid ""
+"Activations are subject to review by the Operations Team. Additional "
+"identification documentation may be requested as a part of this process. "
+"(for eg."
+msgstr ""
 
 #: components/compensation/account_status.vue
 msgid "Activations This Month"
@@ -3199,7 +3231,8 @@ msgstr ""
 #: pages/convention_manager.vue pages/settings.vue
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue old_compensation/index.html
+#: components/compensation/residual_bonus.vue
+#: components/receipts/italian_receipt.vue old_compensation/index.html
 #: receipts/italian_receipt.html
 msgid "Address"
 msgstr "Адрес"
@@ -3220,7 +3253,8 @@ msgstr "Адрес 2:"
 msgid "Address 2:"
 msgstr "Адрес 2:"
 
-#: pages/booking.vue receipts/italian_commission.html
+#: pages/booking.vue components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
 #: receipts/italian_receipt.html
 msgid "Address:"
 msgstr "Адрес:"
@@ -3303,11 +3337,12 @@ msgstr "ДОСТУПНЫМИ"
 msgid "Age of children:"
 msgstr "Возраст детей:"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Agency Reference"
 msgstr "Справка об агентстве"
 
-#: components/compensation/account_status.vue
+#: pages/receipts.vue components/compensation/account_status.vue
 msgid "Agree"
 msgstr "Согласен"
 
@@ -3343,6 +3378,38 @@ msgstr "Все дети должны быть младше 18-ти лет."
 msgid "All cruise lines"
 msgstr "Все круизные линии"
 
+#: components/receipts/booking_receipt.vue
+#, fuzzy
+#| msgid ""
+#| "<b style=\"color: red\">IMPORTANT NOTICE:</b>  All cruise lines now "
+#| "require online web check-in prior to embarkation. Failure to complete in "
+#| "advance can result in denied boarding. Please see online check-in link "
+#| "below your booking receipt data. You must click to access and enter all "
+#| "required personal information\n"
+#| "\t\t\t\tno later than 48-72 hours prior to departure depending on the "
+#| "cruise line. Web check-in opens 45-60 days prior depending on the cruise "
+#| "line. Completed check-in for ALL passengers in the cabin is REQUIRED to "
+#| "issue boarding pass."
+msgid ""
+"All cruise lines now require online web check-in prior to embarkation. "
+"Failure to complete in advance can result in denied boarding. Please see "
+"online check-in link below your booking receipt data. You must click to "
+"access and enter all required personal information no later\n"
+"\t\t\t\t\t\tthan 48-72 hours prior to departure depending on the cruise "
+"line. Web check-in opens 45-60 days prior depending on the cruise line. "
+"Completed check-in for ALL passengers in the cabin is REQUIRED to issue "
+"boarding pass."
+msgstr ""
+"<b style=\"color: red\">ВАЖНО:</b>  Все круизные компании теперь требуют "
+"совершения онлайн-регистрации до посадки на борт. Отсутствие предварительной "
+"онлайн-регистрации может привести к отказу в размещении на борту. Просим "
+"пользоваться ссылкой на онлайн-регистрацию под данными Вашего бронирования. "
+"Вам необходимо войти и ввести всю требуемую информацию о себе\n"
+"\t\t\t\tне позднее 48 либо 72 часов до отправления, в зависимости от "
+"круизной компании. Онлайн-регистрация открывается за 45-60 дней в "
+"зависимости от круизной компании. Для оформления посадочного талона онлайн-"
+"регистрация ОБЯЗАТЕЛЬНА для ВСЕХ пассажиров каюты."
+
 #: pages/resources.vue resources/index.html
 msgid "All Documents"
 msgstr "Все Документы"
@@ -3368,6 +3435,12 @@ msgid ""
 msgstr ""
 "Лидеры, находящиеся в топ-100 рейтинга лидеров на 31 марта 2023 года, "
 "заработают бонус в размере 10% от всех заработанных к этой дате МЛС-очков."
+
+#: pages/receipts.vue
+#, fuzzy
+#| msgid "All Partners"
+msgid "All Partner"
+msgstr "Все Партнёры"
 
 #: pages/growth_calculator.vue
 msgid "All Partners"
@@ -3521,7 +3594,10 @@ msgstr "Результаты Амбассадора"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
-#: components/payout/wallet-transfers.vue negative_balances/index.html
+#: components/payout/wallet-transfers.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/weekly_bonus_statement.vue negative_balances/index.html
 #: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
@@ -3529,7 +3605,7 @@ msgstr "Результаты Амбассадора"
 msgid "Amount"
 msgstr "Сумма"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Amount paid:"
 msgstr "Оплаченная сумма:"
 
@@ -3537,7 +3613,7 @@ msgstr "Оплаченная сумма:"
 msgid "Amount you want to transfer in dollars."
 msgstr "Сумма, которую вы хотите передать в долларах."
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Amounts expressed in Euros"
 msgstr "Суммы, выраженные в евро"
 
@@ -3634,7 +3710,7 @@ msgid "Analytics data is not language specific."
 msgstr "Данные аналитики в разных языках не различаются."
 
 #: pages/allin23.vue pages/global_summit_2023.vue pages/global_summit_dr.vue
-#: pages/public/leadership.vue
+#: pages/receipts.vue pages/public/leadership.vue
 msgid "and"
 msgstr "и"
 
@@ -3891,7 +3967,7 @@ msgstr "Прибытие"
 msgid "Arrival Date:"
 msgstr "Дата прибытия:"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Arrival Times"
 msgstr "Время Прибытия"
 
@@ -3899,11 +3975,11 @@ msgstr "Время Прибытия"
 msgid "Arrive"
 msgstr "Прибытие"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Article Code"
 msgstr "Код статьи"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Article Description"
 msgstr "Описание статьи"
 
@@ -4246,7 +4322,9 @@ msgstr "BACK UP"
 msgid "Balance"
 msgstr "Баланс"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Balance:"
 msgstr "Баланс:"
 
@@ -4382,7 +4460,7 @@ msgstr ""
 "С 1 января 2023 года по 31 августа 2023 года вы можете заработать следующее "
 "количество МЛС-очков:"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Bill to:"
 msgstr "Счёт для:"
 
@@ -4453,6 +4531,7 @@ msgstr "ЧЛЕНЫ СОВЕТА ДИРЕКТОРОВ"
 msgid "Board of Directors:"
 msgstr "Борд-Директора:"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Board Type"
 msgstr "Тип питания"
@@ -4466,8 +4545,14 @@ msgstr "Бонус"
 msgid "Bonus achieved!"
 msgstr "Бонус достигнут!"
 
-#: components/compensation/builders_bonus.vue receipts/builders_bonus.html
-#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
+#: components/compensation/builders_bonus.vue
+#: components/receipts/builders_bonus.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: receipts/builders_bonus.html receipts/daily_member_activation.html
+#: receipts/instant_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 msgid "Bonus Amount"
@@ -4504,6 +4589,8 @@ msgstr "Бонус ещё не достигнут."
 msgid "Bonus not earned yet."
 msgstr "Бонус еще не получен."
 
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 msgid "Bonus Paid For"
@@ -4550,7 +4637,7 @@ msgstr "Забронируйте своё следующее путешеств�
 msgid "Booked"
 msgstr "Забронировано"
 
-#: components/admin_booking/cruise_bookings.vue receipts/index.html
+#: components/admin_booking/cruise_bookings.vue
 msgid "Booking"
 msgstr "Бронирование"
 
@@ -4558,10 +4645,13 @@ msgstr "Бронирование"
 msgid "Booking Cost"
 msgstr "Стоимость бронирования"
 
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Booking Receipt"
 msgstr "Квитанция Бронирования"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Booking Reference"
 msgstr "Номер бронирования"
@@ -4616,11 +4706,11 @@ msgstr "Бонус Фундамент Бизнеса (за новый коман
 msgid "Builders Base:"
 msgstr "Фундамент Бизнеса:"
 
-#: receipts/builders_bonus.html
+#: components/receipts/builders_bonus.vue receipts/builders_bonus.html
 msgid "Builders Bonus"
 msgstr "Бонус Фундамент"
 
-#: receipts/builders_bonus.html
+#: components/receipts/builders_bonus.vue receipts/builders_bonus.html
 msgid "Builders bonus maxes out at $30,000*"
 msgstr "Максимальная сумма бонуса \"Фундамент Бизнеса\" составляет $30 000*"
 
@@ -4883,7 +4973,7 @@ msgstr "c. Срок осуществления"
 msgid "C<small>ERTIFICATE OF</small> C<small>OMPLETION</small>"
 msgstr "C<small>ЕРТИФИКАТ О</small> ЗА<small>ВЕРШЕНИИ</small>"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cabin"
 msgstr "Каюта"
 
@@ -4895,7 +4985,7 @@ msgstr "Категория каюты:"
 msgid "Cabin Code"
 msgstr "Код каюты"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cabin Price"
 msgstr "Цена Каюты"
 
@@ -4923,7 +5013,8 @@ msgstr "Кабо-Сан-Лукас, Мексика | Международный 
 msgid "Calendar"
 msgstr "Календарь"
 
-#: pages/reports.vue receipts/monthly_member_activation.html
+#: pages/reports.vue components/receipts/monthly_member_activation.vue
+#: receipts/monthly_member_activation.html
 msgid "Calendar Month"
 msgstr "Календарный месяц"
 
@@ -5068,7 +5159,7 @@ msgstr "Отменить Понижение Вашего Power Tools Аккау�
 msgid "Cancel your Power Tools Subscription"
 msgstr "Отмена Вашей Power Tools Подписки"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cancellation Policy"
 msgstr "Политика Отмены"
 
@@ -5131,7 +5222,7 @@ msgstr "Наличные/Банковский перевод"
 msgid "Catalan"
 msgstr "Каталанский"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Category Type"
 msgstr "Тип Категории"
 
@@ -5190,6 +5281,7 @@ msgstr "Сертификаты"
 msgid "Change"
 msgstr "Изменить"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Check In"
 msgstr "Регистрация"
@@ -5206,6 +5298,7 @@ msgstr ""
 "Ознакомьтесь с нашей страницей \"Бронируйте и отправляйтесь в круиз с "
 "уверенностью\" для доступа к самым актуальным требованиям."
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Check Out"
 msgstr "Оформление"
@@ -5274,6 +5367,7 @@ msgstr "Ребёнок"
 msgid "Child #%{ childNumber } Birthdate"
 msgstr "Дата рождения ребёнка #%{ childNumber }"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Child Ages"
 msgstr "Возрасты ребёнка"
@@ -5357,6 +5451,7 @@ msgstr "Посещённые города"
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue
+#: components/receipts/italian_receipt.vue
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: old_compensation/index.html receipts/italian_receipt.html
 msgid "City"
@@ -5391,7 +5486,7 @@ msgstr "Очистить фильтры"
 msgid "Clear Selections"
 msgstr "Четкие Выборы"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Click Here to Check In"
 msgstr "Нажмите здесь для Регистрации"
 
@@ -5525,15 +5620,17 @@ msgstr ""
 msgid "Code"
 msgstr "Код"
 
-#: pages/reports.vue receipts/commission_statement.html reports/index.html
+#: pages/reports.vue components/receipts/commission_statement.vue
+#: receipts/commission_statement.html reports/index.html
 msgid "Commission"
 msgstr "Комиссионные"
 
+#: components/receipts/commission_statement.vue
 #: receipts/commission_statement.html
 msgid "Commission Statement"
 msgstr "Отчёт Комиссионных"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Commissions for \"door to door sales\" Law n. 173 dated 17 August 2005"
 msgstr ""
 "Комиссии в соответствии с законом о прямых продажах №173 от 17 августа 2005 "
@@ -5551,7 +5648,9 @@ msgstr "Взнос компании: $125 000"
 msgid "Company Presentation"
 msgstr "Презентация Компании"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Company register listing: RI/PRA/2021/455603/100"
 msgstr "Листинг компании в реестре: RI/PRA/2021/455603/100"
 
@@ -5600,7 +5699,8 @@ msgstr "Сжатие"
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
 #: pages/admin_department.vue pages/admin_permission_group.vue
 #: pages/reports.vue components/payout/birthday-modal.vue
-#: receipts/booking_receipt.html reports/index.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
+#: reports/index.html
 msgid "Confirm"
 msgstr "Подтвердить"
 
@@ -5763,9 +5863,23 @@ msgstr "Тариф комнаты \"Коннект\""
 msgid "Connect Plans"
 msgstr "Тарифы комнат \"Коннект\""
 
-#: receipts/builders_bonus.html receipts/commission_statement.html
-#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/kickstart_bonus_statement.html
+#: components/receipts/builders_bonus.vue
+#: components/receipts/commission_statement.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/receipt.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue receipts/builders_bonus.html
+#: receipts/commission_statement.html receipts/daily_member_activation.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -5886,7 +6000,7 @@ msgstr "Посещённые страны"
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue components/public/JoinModal.vue
-#: pages/public/signup.vue
+#: components/receipts/italian_receipt.vue pages/public/signup.vue
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
@@ -5898,7 +6012,7 @@ msgstr "Страна"
 msgid "Country Check"
 msgstr "Проверка страны"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Country of residence"
 msgstr "Страна проживания"
 
@@ -6000,7 +6114,7 @@ msgstr "с начислением на ваш счёт."
 msgid "Cruise Bookings"
 msgstr "Бронирования круизов"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cruise Confirmation"
 msgstr "Подтверждение Круиза"
 
@@ -6027,11 +6141,11 @@ msgstr "Круизный маршрут"
 msgid "Cruise Limits"
 msgstr "Круизные ограничения"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cruise Line"
 msgstr "Круизная Линия"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cruise Line Health &amp; Safety protocols"
 msgstr "Протоколы круизной линии в области безопасности и здравоохранения"
 
@@ -6124,7 +6238,7 @@ msgstr "Общее число Партнёров"
 msgid "Cumulative Registered Members"
 msgstr "Совместно зарегестрированные Члены Клуба"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Currency Amounts are reported in Euro"
 msgstr "Валюта представленных сумм - евро"
 
@@ -6169,6 +6283,7 @@ msgstr "Обычный"
 msgid "Custom Date Range"
 msgstr "Произвольный диапазон дат"
 
+#: components/receipts/commission_statement.vue
 #: receipts/commission_statement.html
 msgid "Customer Name"
 msgstr "Имя Клиента"
@@ -6231,6 +6346,12 @@ msgstr "d. Политика и Процедуры"
 msgid "Daily Activations"
 msgstr "Ежедневные Активации"
 
+#: components/receipts/daily_member_activation.vue
+#, fuzzy
+#| msgid "2 Member Activations"
+msgid "Daily Member Activations"
+msgstr "2 Активации Члена Клуба"
+
 #: Gender
 msgid "Dark"
 msgstr "Темный"
@@ -6272,15 +6393,15 @@ msgstr "Поля данных"
 msgid "Date"
 msgstr "Дата"
 
-#: pages/contacts.vue pages/receipts.vue receipts/index.html
+#: pages/contacts.vue pages/receipts.vue
 msgid "Date Ascending"
 msgstr "Дата по Возрастанию"
 
-#: pages/receipts.vue receipts/index.html
+#: pages/receipts.vue
 msgid "Date Created"
 msgstr "Дата Создана"
 
-#: pages/contacts.vue pages/receipts.vue receipts/index.html
+#: pages/contacts.vue pages/receipts.vue
 msgid "Date Descending"
 msgstr "Дата по Убыванию"
 
@@ -6351,7 +6472,8 @@ msgstr "Даты"
 msgid "Dates:"
 msgstr "Даты:"
 
-#: pages/booking.vue pages/my_cruise_savings.vue receipts/booking_receipt.html
+#: pages/booking.vue pages/my_cruise_savings.vue
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Day"
 msgstr "День"
 
@@ -6430,7 +6552,7 @@ msgstr "Удалить группу разрешений"
 msgid "Delete recipient account"
 msgstr "Удалить счёт получателя"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Delivery Date"
 msgstr "Дата поступления"
 
@@ -6438,7 +6560,8 @@ msgstr "Дата поступления"
 msgid "Depart"
 msgstr "Отправление"
 
-#: components/reservation.vue pages/reports.vue receipts/booking_receipt.html
+#: components/reservation.vue pages/reports.vue
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 #: reports/index.html
 msgid "Depart Date"
 msgstr "Дата Отправления"
@@ -6475,7 +6598,7 @@ msgstr "отдел."
 msgid "Departments"
 msgstr "Отделы"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Departs From"
 msgstr "Отправление Из"
 
@@ -6487,7 +6610,7 @@ msgstr "Отправление"
 msgid "Departure Date:"
 msgstr "Дата отправления:"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Departure Times"
 msgstr "Время Отправления"
 
@@ -6503,7 +6626,9 @@ msgstr ""
 "подробной информации."
 
 #: pages/convention_manager.vue pages/email_address.vue pages/reward_points.vue
-#: components/payout/wallet-transfers.vue layouts/default.html
+#: components/payout/wallet-transfers.vue
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue layouts/default.html
 #: negative_balances/index.html receipts/italian_commission.html
 #: receipts/italian_receipt.html
 msgid "Description"
@@ -6561,6 +6686,8 @@ msgid "Direct International Directors"
 msgstr "Прямые Интернациональные Директора"
 
 #: components/compensation/residual_bonus.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/weekly_bonus_statement.vue
 #: components/welcome/members-modal.vue export/index.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/residual_bonus_statement.html receipts/weekly_bonus_statement.html
@@ -6784,6 +6911,7 @@ msgid "Downline limit must be set between 1 and 50."
 msgstr "Уровень нижестоящих Членов должен быть установлен между 1-го и 50-ти."
 
 #: components/compensation/residual_bonus.vue
+#: components/receipts/daily_member_activation.vue
 #: receipts/daily_member_activation.html
 msgid "Downline Name"
 msgstr "Имя Нижестоящего"
@@ -6796,6 +6924,7 @@ msgstr "Выбрать ниже по рангу"
 msgid "Downlines"
 msgstr "Нижестоящие по рангам"
 
+#: components/receipts/instant_bonus_statement.vue
 #: receipts/instant_bonus_statement.html
 msgid "Downlines Names"
 msgstr "Имена Нижестоящих"
@@ -7494,7 +7623,7 @@ msgstr "Не удалось обновить пользовательский о
 msgid "Failed to update user permissions."
 msgstr "Не удалось обновить пользовательские права."
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "FAQ"
 msgstr "Вопрос-Ответ"
 
@@ -8125,7 +8254,7 @@ msgid ""
 msgstr ""
 "Чаевые включены в стоимость круиза. Чаевые не требуются и не ожидаются."
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Gratuity"
 msgstr "Награда"
 
@@ -8342,6 +8471,7 @@ msgstr ""
 msgid "Historical QBI Report"
 msgstr "Отчёт по Историческому QBI (ИКБ)"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Holder Name"
 msgstr "Имя держателя"
@@ -8354,10 +8484,6 @@ msgstr "Host:"
 msgid "Hotel and Cruise Offers"
 msgstr "Круизные и гостиничные предложения"
 
-#: receipts/index.html
-msgid "Hotel Booking"
-msgstr "Бронирование отеля"
-
 #: pages/admin_booking.vue
 msgid "Hotel Bookings"
 msgstr "Бронирования отелей"
@@ -8366,6 +8492,7 @@ msgstr "Бронирования отелей"
 msgid "Hotel bookings are not available in your country at this time."
 msgstr "В настоящее время в вашей стране бронирование отелей недоступно."
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Info"
 msgstr "Информация об отеле"
@@ -8378,6 +8505,7 @@ msgstr "Название отеля (A-Z)"
 msgid "Hotel Name (Z-A)"
 msgstr "Название отеля (Z-A)"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Phone #"
 msgstr "# Телефона отеля"
@@ -8386,6 +8514,7 @@ msgstr "# Телефона отеля"
 msgid "Hotel Search"
 msgstr "Поиск отеля"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Website"
 msgstr "Веб-сайт отеля"
@@ -9702,7 +9831,7 @@ msgstr ""
 "Импорт контактов из Yahoo, Outlook, Google или даже файл CSV для дальнейшего "
 "расширения вашего охвата приглашённых."
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Important Cruise Line Information"
 msgstr "Важная Информация Круизной Линии"
 
@@ -9723,7 +9852,11 @@ msgstr ""
 msgid "Important Information"
 msgstr "Важная информация"
 
-#: receipts/receipt.html
+#: components/receipts/booking_receipt.vue
+msgid "IMPORTANT NOTICE:"
+msgstr ""
+
+#: components/receipts/receipt.vue receipts/receipt.html
 msgid "Important Refund Disclosure:"
 msgstr "Важная Информация О Возврате Средств:"
 
@@ -10030,7 +10163,9 @@ msgstr ""
 "семью, и подобно настоящей маркетинговой отрасли, чем больше членов команды "
 "вы набираете, тем больше растет потенциал ваших доходов."
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "InCruises Italian Branch"
 msgstr "Итальянские отделение inCruises"
 
@@ -10183,7 +10318,7 @@ msgstr ""
 "inCruises® – эксклюзивный туристический клуб, основанный на членстве и "
 "работающий только по приглашению."
 
-#: receipts/receipt.html
+#: components/receipts/receipt.vue receipts/receipt.html
 msgid ""
 "inCruises® provides FULL, no questions asked, REFUNDS, if the request is "
 "received by our staff no later 14 days from the day of purchase. Residents "
@@ -10264,6 +10399,7 @@ msgstr "Вставьте своё сообщение..."
 msgid "Inside"
 msgstr "Внутренняя"
 
+#: components/receipts/instant_bonus_statement.vue
 #: receipts/instant_bonus_statement.html
 msgid "Instant Bonus Statement"
 msgstr "Отчёт Мгновенного Бонуса"
@@ -10280,7 +10416,7 @@ msgstr "Гарантия соответствия цены inStays"
 msgid "Instructions"
 msgstr "Инструкции"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Insurance"
 msgstr "Страховка"
 
@@ -10357,11 +10493,14 @@ msgstr "Вас пригласили в inCruises®."
 msgid "Inviter"
 msgstr "Приглашение"
 
+#: components/receipts/invoice.vue components/receipts/italian_commission.vue
 #: receipts/invoice.html receipts/italian_commission.html
 msgid "Invoice"
 msgstr "Счет"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Invoice Date"
 msgstr "Дата счёта"
 
@@ -10373,7 +10512,7 @@ msgstr "ID Счета"
 msgid "INVOICE ID"
 msgstr "ИДЕНТИФИКАТОР СЧЕТА"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Invoice Number"
 msgstr "Номер счёта"
 
@@ -10393,7 +10532,7 @@ msgstr "Оплаченные счета"
 msgid "Invoices Pending"
 msgstr "Ожидающие оплаты счета"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Invoicing Address:"
 msgstr "Адрес выставления счёта:"
 
@@ -10528,15 +10667,17 @@ msgstr "Бейдж торгового агента в Италии"
 msgid "Italian Speaking Global Markets"
 msgstr "Международный рынок итальянского языка"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Italy"
 msgstr "Италия"
 
-#: receipts/receipt.html
+#: components/receipts/receipt.vue receipts/receipt.html
 msgid "Item"
 msgstr "Пункт"
 
-#: pages/booking.vue pages/cruise.vue
+#: pages/booking.vue pages/cruise.vue components/receipts/booking_receipt.vue
 msgid "Itinerary"
 msgstr "Маршрут"
 
@@ -10615,6 +10756,7 @@ msgstr "Кавалерово, Турция"
 msgid "Key"
 msgstr "Ключ"
 
+#: components/receipts/kickstart_bonus_statement.vue
 #: receipts/kickstart_bonus_statement.html
 msgid "Kickstart Bonus Statement"
 msgstr "Отчёт о Стартовом Бонусе"
@@ -10806,6 +10948,7 @@ msgstr ""
 "Лидерский бонус за прошлый месяц (новый товарооборот) ({{firstDayLastMonth | "
 "date: 'MM/dd/yyyy'}} - {{lastDayLastMonth | date: 'MM/dd/yyyy'}})"
 
+#: components/receipts/leadership_bonus_statement.vue
 #: receipts/leadership_bonus_statement.html
 msgid "Leadership Bonus Statement"
 msgstr "Отчёт о Лидерском Бонусе"
@@ -10884,7 +11027,9 @@ msgstr "Покинуть курс"
 msgid "LEGAL"
 msgstr "ЮРИДИЧЕСКИЕ"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid ""
 "Legal seat: Metro Office Park, Suite 500, Guaynabo, Puerto Rico, USA, 00968"
 msgstr ""
@@ -10983,7 +11128,7 @@ msgstr "Загрузить ещё"
 
 #: pages/receipts.vue pages/reports.vue pages/track_results.vue
 #: pages/webinar_recordings.vue components/payout/wallet-transfers.vue
-#: receipts/index.html reports/index.html track_results/index.html
+#: reports/index.html track_results/index.html
 msgid "Load More"
 msgstr "Загрузить Еще"
 
@@ -10991,6 +11136,7 @@ msgstr "Загрузить Еще"
 msgid "Loading..."
 msgstr "Загрузка..."
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Location"
 msgstr "Локация"
@@ -11194,7 +11340,8 @@ msgstr "Конференц-Комнаты"
 msgid "Meetings"
 msgstr "Встречи"
 
-#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: pages/receipts.vue pages/team_rankings.vue
+#: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue pages/public/pricing.vue
 #: old_compensation/index.html subscriptions/index.html upgrade/index.html
 msgid "Member"
@@ -11518,6 +11665,7 @@ msgstr "Месячных Активаций"
 msgid "Monthly Competition"
 msgstr "Ежемесячный Конкурс"
 
+#: components/receipts/monthly_member_activation.vue
 #: receipts/monthly_member_activation.html
 msgid "Monthly Member Activations"
 msgstr "Месячных Активаций Членов Клуба"
@@ -11842,6 +11990,22 @@ msgstr ""
 #: components/compensation/residual_bonus.vue
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
+#: components/receipts/booking_receipt.vue
+#: components/receipts/builders_bonus.vue
+#: components/receipts/commission_statement.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/invoice.vue components/receipts/italian_receipt.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/receipt.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue
 #: components/skeleton_loaders/card_animation.vue
 #: components/user/department.vue components/user/departments.vue
 #: components/user/permission-group.vue components/user/permissions.vue
@@ -11975,6 +12139,12 @@ msgstr ""
 msgid "Negative Balances"
 msgstr "Негативный Баланс"
 
+#: components/receipts/italian_commission.vue
+#, fuzzy
+#| msgid "Net Commission:"
+msgid "Net Commission Due:"
+msgstr "Чистая комиссия:"
+
 #: components/payout/euro-conversion.vue
 msgid "Net Commission:"
 msgstr "Чистая комиссия:"
@@ -12101,7 +12271,6 @@ msgid "News and Important Information"
 msgstr "Новости и важная информация"
 
 #: pages/email.vue pages/leadership_academy.vue pages/receipts.vue
-#: receipts/index.html
 msgid "Next"
 msgstr "Следующий"
 
@@ -12410,7 +12579,7 @@ msgstr ""
 msgid "Notes"
 msgstr "Заметки"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Notes:"
 msgstr "Примечание:"
 
@@ -12663,11 +12832,11 @@ msgstr "или более в Активационном Объёме Фунда�
 msgid "Orange Month means partially counts towards Historical QBI"
 msgstr "Оранжевый месяц означает частичный учёт в Исторический QBI (ИКБ)"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Order Notes:"
 msgstr "Примечание к заказу:"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Order Number"
 msgstr "Номер заказа"
 
@@ -12756,6 +12925,27 @@ msgstr "OVERALL BUSINESS STRATEGY - SILVER AWARD"
 msgid "Overview"
 msgstr "Обзор"
 
+#: components/receipts/booking_receipt.vue
+#: components/receipts/builders_bonus.vue
+#: components/receipts/commission_statement.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/receipt.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue
+#, fuzzy
+#| msgid "Menu Page"
+msgid "Page"
+msgstr "Страница Меню"
+
 #: components/price_match_guarantee/cruises.vue
 msgid ""
 "page and send a new ticket to the ”Cruise Booking Questions” department."
@@ -12799,7 +12989,7 @@ msgstr "Партнёры с выплатами в текущем месяце"
 msgid "Paid Plans"
 msgstr "Оплаченный План"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Paid:"
 msgstr "Оплачено:"
 
@@ -13178,7 +13368,7 @@ msgstr "Количество Партнеров"
 msgid "Partner Date"
 msgstr "Дата Партнерства"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Partner ID"
 msgstr "ID Партнёра"
 
@@ -13277,7 +13467,7 @@ msgstr ""
 "тайну inGroup International, в течение срока действия настоящего Дополнения "
 "ПАРТНЕР принимает на себя следующие обязательства:"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Partner VAT / Tax Code"
 msgstr "Код налога/НДС Партнёра"
 
@@ -13366,9 +13556,16 @@ msgstr "Пассажир #%{passengerNo}"
 msgid "Passenger count"
 msgstr "Количество пассажиров"
 
-#: components/admin_booking/cruise_bookings.vue receipts/booking_receipt.html
+#: components/admin_booking/cruise_bookings.vue
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Passengers"
 msgstr "Пассажиры"
+
+#: pages/receipts.vue
+#, fuzzy
+#| msgid "Passport"
+msgid "passport"
+msgstr "Паспорт"
 
 #: pages/additional_info.vue
 msgid "Passport"
@@ -13435,6 +13632,12 @@ msgstr "Оплатить, используя Бонусные Баллы"
 msgid "Pay with Bank"
 msgstr "Оплатить через Банковский счет"
 
+#: components/receipts/hotel_booking_receipt.vue
+msgid ""
+"Payable through %{ supplier_name }, acting as agent for the service "
+"operating company, details of which can be provided upon request."
+msgstr ""
+
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "Payer"
 msgstr "Плательщик"
@@ -13447,7 +13650,7 @@ msgstr "Местоположение плательщика"
 msgid "Payment Agreement"
 msgstr "Платёжным Соглашением"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Payment Date:"
 msgstr "Дата платежа:"
 
@@ -13827,7 +14030,7 @@ msgstr ""
 "Просим обратиться к \"Руководству по Политике и процедурам\" для более "
 "полной информации. В нём говорится:"
 
-#: pages/reach.vue pages/receipts.vue receipts/index.html
+#: pages/reach.vue pages/receipts.vue
 msgid "Please do not show me this video again."
 msgstr "Пожалуйста, не показывать больше данное видео."
 
@@ -14194,11 +14397,11 @@ msgstr "Популярные направления"
 msgid "Port"
 msgstr "Порт"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Port Charges"
 msgstr "Портовые Сборы"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Port of Call"
 msgstr "Порт Захода"
 
@@ -14354,7 +14557,9 @@ msgid "Previous Year"
 msgstr "Предыдущий Год"
 
 #: pages/booking.vue components/booking/category.vue
-#: receipts/hotel_booking_receipt.html receipts/receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/receipt.vue receipts/hotel_booking_receipt.html
+#: receipts/receipt.html
 msgid "Price"
 msgstr "Стоимость"
 
@@ -14370,7 +14575,9 @@ msgstr "Цена не включает налоги и сборы"
 msgid "Price Higher on Top"
 msgstr "Дороже наверху"
 
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Price Information"
 msgstr "Информация о Ценах"
 
@@ -14471,7 +14678,9 @@ msgstr ""
 "информации. Если вы не перенаправлены мгновенно, вы можете уйти и подождать "
 "сообщения о завершении процесса."
 
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Processing Fee"
 msgstr "Комиссия за обработку"
 
@@ -14487,6 +14696,7 @@ msgstr "Произведите необходимый <strong>Итоговый �
 msgid "Produce the required overall <strong>Sales Volume</strong>."
 msgstr "Произведите необходимый общий <strong>Объём Продаж</strong>."
 
+#: components/receipts/new_producer_bonus_statement.vue
 #: receipts/new_producer_bonus_statement.html
 msgid "Producer Bonus Statement"
 msgstr "Отчёт Продюсер Бонуса"
@@ -14550,7 +14760,7 @@ msgstr "Поставщик"
 msgid "Proxy Detected"
 msgstr "Прокси-Сервер Обнаружил"
 
-#: receipts/receipt.html
+#: components/receipts/receipt.vue receipts/receipt.html
 msgid ""
 "Puerto Rico Residents: Members can cancel and request a refund up to 7 days. "
 "Partners and Partner Members can cancel and request a refund up to 90 days "
@@ -14689,6 +14899,7 @@ msgstr ""
 "\t\t\t\t<a href=\"{{incentivePDF}}\" target=\"_blank\">здесь</a>\n"
 "\t\t\t\t."
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Rate Comments"
 msgstr "Оценить комментарии"
@@ -14740,11 +14951,12 @@ msgstr "Причина"
 msgid "Reattained"
 msgstr "Восстановлено"
 
+#: components/receipts/italian_receipt.vue components/receipts/receipt.vue
 #: receipts/italian_receipt.html receipts/receipt.html
 msgid "Receipt"
 msgstr "Квитанция"
 
-#: pages/receipts.vue receipts/index.html
+#: pages/receipts.vue
 msgid "Receipt ID"
 msgstr "Идентификатор получателя"
 
@@ -14821,6 +15033,10 @@ msgstr "Перенаправляем Вас на страницу BoaCompra."
 #: components/checkout/ProcessorIngenico.vue
 msgid "Redirecting you over to Ingenico."
 msgstr "Перенаправляем Вас на страницу  Ingenico."
+
+#: components/receipts/hotel_booking_receipt.vue
+msgid "Reference: %{ hotelbeds_reference }"
+msgstr ""
 
 #: pages/account_setup.vue pages/admin_user.vue pages/team_rankings.vue
 #: components/compensation/leadership_bonus.vue
@@ -15036,15 +15252,17 @@ msgstr "Требуется Аутентификация:"
 msgid "Resend Code"
 msgstr "Отправить код повторно"
 
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Reservation Details"
 msgstr "Детали Брони"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Reservation Number"
 msgstr "Номер Брони"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Reservation Status"
 msgstr "Статус Брони"
 
@@ -15102,7 +15320,7 @@ msgstr "Результаты являются окончательными."
 msgid "Results are updated every 24 hours."
 msgstr "Результаты обновляются каждые 24 часа."
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Return Date"
 msgstr "Дата Возвращения"
 
@@ -15201,7 +15419,8 @@ msgstr ""
 msgid "Reward Points Logs"
 msgstr "Журнал Бонусных Баллов"
 
-#: pages/my_cruise_savings.vue receipts/booking_receipt.html
+#: pages/my_cruise_savings.vue components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Reward Points Used"
 msgstr "Использовано Бонусных Баллов"
@@ -15237,6 +15456,7 @@ msgstr "Номер комнаты:"
 msgid "Room Stay Facilities"
 msgstr "Удобства размещения в номере"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Room Type"
 msgstr "Тип номера"
@@ -15280,6 +15500,7 @@ msgstr "Русский"
 msgid "Russian Speaking Global Markets"
 msgstr "Международный рынок русского языка"
 
+#: components/receipts/commission_statement.vue
 #: receipts/commission_statement.html
 msgid "Sale Amount"
 msgstr "Сумма Продажи"
@@ -15548,7 +15769,7 @@ msgstr "Лицензия Seller of Travel"
 msgid "Seller Of Travel"
 msgstr "Лицензия Seller of Travel"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Seller:"
 msgstr "Продавец:"
 
@@ -15749,7 +15970,9 @@ msgstr ""
 msgid "Share by email"
 msgstr "Поделиться по электронной почте"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Share capital: societa' costituita in base a leggi di altro stato"
 msgstr ""
 "Уставной капитал: компания, созданная на основании законодательства другого "
@@ -15773,7 +15996,7 @@ msgstr "Удобства"
 msgid "Ship Launch: %{ shipLaunched }"
 msgstr "Лайнер спущен на воду: %{ shipLaunched }"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Ship Name"
 msgstr "Название Лайнера"
 
@@ -15906,7 +16129,7 @@ msgstr ""
 msgid "so far. I have accumulated"
 msgstr "к настоящему моменту. Я уже накопил"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Social Contribution"
 msgstr "Социальные отчисления"
 
@@ -16145,10 +16368,26 @@ msgstr "Штат/Регион:"
 msgid "State/Region"
 msgstr "Штат/Регион"
 
-#: receipts/booking_receipt.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/kickstart_bonus_statement.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/builders_bonus.vue
+#: components/receipts/commission_statement.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/receipt.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue receipts/booking_receipt.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -16353,7 +16592,8 @@ msgstr "Перенаправить меня к странице обновлен
 msgid "Tashkent, Uzbekistan"
 msgstr "Ташкент, Узбекистан"
 
-#: pages/tax_report.vue receipts/booking_receipt.html
+#: pages/tax_report.vue components/receipts/booking_receipt.vue
+#: receipts/booking_receipt.html
 msgid "Tax"
 msgstr "Налог"
 
@@ -16361,23 +16601,26 @@ msgstr "Налог"
 msgid "Tax ({{invoice.data.taxAmount * 100}}%):"
 msgstr "Налог ({{invoice.data.taxAmount * 100}}%):"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Tax Code:"
 msgstr "Налоговый код:"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Tax Code: 11949690967"
 msgstr "Налоговый код: 11949690967"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Taxable amount (78% of gross amount)"
 msgstr "Облагаемая налогом сумма (78% от общей суммы)"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Taxable amount for social contribution purposes"
 msgstr "Облагаемая налогом сумма для социальных отчислений"
 
-#: components/payout/euro-conversion.vue receipts/italian_receipt.html
+#: components/payout/euro-conversion.vue
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Taxable Amount:"
 msgstr "Налогооблагаемая сумма:"
 
@@ -16483,6 +16726,8 @@ msgstr "Зарегистрированных Членов Клуба в кома
 msgid "Team Registered Members MTD"
 msgstr "Зарегистрированных Членов Клуба в команде с начала месяца"
 
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
@@ -17798,7 +18043,7 @@ msgstr ""
 "о Членстве в Клубе, преимуществах и нашем уникальном предложении на <a "
 "href='/membership' target='_blank'>странице Членства в Клубе</a>."
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Ticket Contract"
 msgstr "Договор По Продаже Билетов"
 
@@ -18003,32 +18248,8 @@ msgid "To earn Team Leadership Bonus a rank leader must:"
 msgstr "Чтобы заработать Командный Лидерский бонус, лидер в ранге должен:"
 
 #: pages/receipts.vue
-msgid ""
-"To ensure account authenticity,\n"
-"\t\t\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
-"\t\t\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t\t\t<strong>Member</strong>\n"
-"\t\t\t\t\t\t\t\t\tActivations are subject to review by the Operations Team. "
-"Additional identification documentation may be requested as a part of this "
-"process. (for eg.\n"
-"\t\t\t\t\t\t\t\t\t<i>passport</i>\n"
-"\t\t\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t\t\t<i>DNI</i>\n"
-"\t\t\t\t\t\t\t\t\t) Please acknowledge that you understand and will respond "
-"to additional requests if necessary."
+msgid "To ensure account authenticity,"
 msgstr ""
-"Для обеспечения подлинности учётной записи,\n"
-"\t\t\t\t\t\t\t\t\t<strong>все Партнёрские</strong>\n"
-"\t\t\t\t\t\t\t\t\tи\n"
-"\t\t\t\t\t\t\t\t\t<strong>Членские</strong>\n"
-"\t\t\t\t\t\t\t\t\tАктивации подлежат проверке Операционным отделом. В "
-"соответствии с данным процессом может потребоваться предоставление "
-"дополнительных документов (таких как\n"
-"\t\t\t\t\t\t\t\t\t<i>паспорт</i>\n"
-"\t\t\t\t\t\t\t\t\tили\n"
-"\t\t\t\t\t\t\t\t\t<i>национальное удостоверение личности</i>\n"
-"\t\t\t\t\t\t\t\t\t) Подтвердите, пожалуйста, что вы это понимаете и при "
-"необходимости ответите на дополнительные запросы."
 
 #: pages/account_setup.vue
 msgid ""
@@ -18228,7 +18449,10 @@ msgid "total"
 msgstr "всего"
 
 #: pages/hotels_booking.vue pages/track_growth.vue
-#: components/price_match_guarantee/cruises.vue receipts/booking_receipt.html
+#: components/price_match_guarantee/cruises.vue
+#: components/receipts/booking_receipt.vue
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/booking_receipt.html
 #: receipts/italian_commission.html receipts/italian_receipt.html
 #: track_growth/index.html upgrade/index.html
 msgid "Total"
@@ -18238,7 +18462,7 @@ msgstr "Всего"
 msgid "TOTAL"
 msgstr "ВСЕГО"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Total (including VAT):"
 msgstr "Всего (включая НДС):"
 
@@ -18275,7 +18499,7 @@ msgstr "Всего правильных ответов при проверке"
 msgid "Total Exam incorrects"
 msgstr "Всего неправильных ответов при проверке"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Total gross amount (including VAT):"
 msgstr "Общая стоимость (включая НДС):"
 
@@ -18300,7 +18524,9 @@ msgstr "Итоговая экономия благодаря Членству в
 msgid "Total Number of Members"
 msgstr "Общее Количество Членов Клуба"
 
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Total Out Of Pocket"
 msgstr "Итого доплатить"
 
@@ -18344,11 +18570,25 @@ msgstr "Всего Бонусных Баллов"
 msgid "Total Team Members"
 msgstr "Всего Членов Клуба в команде"
 
-#: pages/booking.vue pages/track_results.vue invoices/invoice_statement.html
-#: receipts/builders_bonus.html receipts/commission_statement.html
-#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/italian_receipt.html
-#: receipts/kickstart_bonus_statement.html
+#: pages/booking.vue pages/track_results.vue
+#: components/receipts/builders_bonus.vue
+#: components/receipts/commission_statement.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/invoice.vue components/receipts/italian_receipt.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/receipt.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue
+#: invoices/invoice_statement.html receipts/builders_bonus.html
+#: receipts/commission_statement.html receipts/daily_member_activation.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -18520,6 +18760,7 @@ msgstr ""
 msgid "TRAVEL ADVISOR AGENCY CATEGORY"
 msgstr "TRAVEL ADVISOR AGENCY CATEGORY"
 
+#: components/receipts/travel_challenge_statement.vue
 #: receipts/travel_challenge_statement.html
 msgid "Travel Challenge Bonus Statement"
 msgstr "Отчёт Travel Бонуса"
@@ -18528,7 +18769,7 @@ msgstr "Отчёт Travel Бонуса"
 msgid "Travel Documentation"
 msgstr "Туристическая Документация"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Travel Documents"
 msgstr "Круизная документация"
 
@@ -18586,8 +18827,8 @@ msgid "Two Weeks Prior Contest"
 msgstr "Две недели до конкурса"
 
 #: pages/admin_user.vue pages/receipts.vue pages/reports.vue
-#: pages/track_results.vue negative_balances/index.html receipts/index.html
-#: reports/index.html track_results/index.html
+#: pages/track_results.vue negative_balances/index.html reports/index.html
+#: track_results/index.html
 msgid "Type"
 msgstr "Тип"
 
@@ -18614,7 +18855,9 @@ msgstr "Уникальный Членский Код"
 msgid "Unit or Apt #"
 msgstr "Корп./Кв."
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Unit Price"
 msgstr "Цена за единицу"
 
@@ -18807,14 +19050,22 @@ msgstr "Ванкувер, Канада"
 msgid "VAT Number"
 msgstr "Номер плательщика НДС"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "VAT Tax"
 msgstr "Налог НДС"
 
-#: components/payout/euro-conversion.vue receipts/italian_commission.html
+#: components/payout/euro-conversion.vue
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
 #: receipts/italian_receipt.html
 msgid "VAT:"
 msgstr "НДС:"
+
+#: components/receipts/hotel_booking_receipt.vue
+msgid "VAT: %{ supplier_vat }"
+msgstr ""
 
 #: pages/settings.vue
 msgid ""
@@ -18988,7 +19239,7 @@ msgstr "Посмотреть тарифы"
 msgid "View Previous Compensation"
 msgstr "Просмотреть Предыдущую Компенсацию"
 
-#: pages/my_cruise_savings.vue pages/receipts.vue receipts/index.html
+#: pages/my_cruise_savings.vue pages/receipts.vue
 msgid "View Receipt"
 msgstr "Посмотреть Квитанцию"
 
@@ -19057,7 +19308,7 @@ msgid "VIP Data"
 msgstr "VIP-данные"
 
 #: pages/builders_base.vue components/compensation/builders_bonus.vue
-#: receipts/builders_bonus.html
+#: components/receipts/builders_bonus.vue receipts/builders_bonus.html
 msgid "Volume"
 msgstr "Объём"
 
@@ -19403,6 +19654,7 @@ msgstr "Еженедельное / Ежемесячное Отслеживани
 msgid "Weekly / Monthly Competition:"
 msgstr "Еженедельный/Ежемесячный Конкурс:"
 
+#: components/receipts/weekly_bonus_statement.vue
 #: receipts/weekly_bonus_statement.html
 msgid "Weekly Bonus Statement"
 msgstr "Еженедельный Бонусный Отчет"
@@ -19428,7 +19680,7 @@ msgstr "Еженедельные Баллы"
 msgid "Weekly Top Producers"
 msgstr "Еженедельные Топ Производители"
 
-#: Menu.vue pages/receipts.vue receipts/index.html
+#: Menu.vue pages/receipts.vue
 msgid "Welcome"
 msgstr "Приветствуем"
 
@@ -19805,7 +20057,7 @@ msgid ""
 msgstr ""
 "С такими потенциальными параметрами вы можете заработать до $210 000 в месяц."
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid ""
 "Withholding Tax (23% on the basis of Article 25-bis Presidential Decree n. "
 "600 del 29 September 1973)"
@@ -20806,7 +21058,15 @@ msgstr ""
 "Ваша корзина активна в течение 15 минут. Вы должны закончить своё "
 "бронирование до %{date}."
 
-#: receipts/invoice.html receipts/kickstart_bonus_statement.html
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue receipts/invoice.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
@@ -20890,7 +21150,9 @@ msgstr ""
 msgid "YOUR CRUISE SAVINGS GUARANTEE"
 msgstr "ВАША ГАРАНТИЯ ЭКОНОМИИ НА КРУИЗАХ"
 
-#: receipts/invoice.html receipts/kickstart_bonus_statement.html
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue receipts/invoice.html
+#: receipts/kickstart_bonus_statement.html
 msgid "Your Direct"
 msgstr "Ваши Личные"
 
@@ -21011,7 +21273,15 @@ msgstr "Ваши Вебинарные Комнаты"
 msgid "Your Mercy Ships contribution was successfully received."
 msgstr "Пожертвование для Mercy Ships было успешно получено."
 
-#: receipts/invoice.html receipts/kickstart_bonus_statement.html
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue receipts/invoice.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
@@ -21116,7 +21386,7 @@ msgstr ""
 "активированных вами и вашей командой Членов Клуба, которые ещё также и "
 "оплатили свой первый счёт."
 
-#: pages/receipts.vue receipts/index.html
+#: pages/receipts.vue
 msgid "Your Receipts"
 msgstr "Ваши Квитанции"
 
@@ -31054,6 +31324,36 @@ msgid ""
 "better journey with inCruises. "
 msgstr ""
 
+#~ msgid "Hotel Booking"
+#~ msgstr "Бронирование отеля"
+
+#~ msgid ""
+#~ "To ensure account authenticity,\n"
+#~ "\t\t\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
+#~ "\t\t\t\t\t\t\t\t\tand\n"
+#~ "\t\t\t\t\t\t\t\t\t<strong>Member</strong>\n"
+#~ "\t\t\t\t\t\t\t\t\tActivations are subject to review by the Operations "
+#~ "Team. Additional identification documentation may be requested as a part "
+#~ "of this process. (for eg.\n"
+#~ "\t\t\t\t\t\t\t\t\t<i>passport</i>\n"
+#~ "\t\t\t\t\t\t\t\t\tand\n"
+#~ "\t\t\t\t\t\t\t\t\t<i>DNI</i>\n"
+#~ "\t\t\t\t\t\t\t\t\t) Please acknowledge that you understand and will "
+#~ "respond to additional requests if necessary."
+#~ msgstr ""
+#~ "Для обеспечения подлинности учётной записи,\n"
+#~ "\t\t\t\t\t\t\t\t\t<strong>все Партнёрские</strong>\n"
+#~ "\t\t\t\t\t\t\t\t\tи\n"
+#~ "\t\t\t\t\t\t\t\t\t<strong>Членские</strong>\n"
+#~ "\t\t\t\t\t\t\t\t\tАктивации подлежат проверке Операционным отделом. В "
+#~ "соответствии с данным процессом может потребоваться предоставление "
+#~ "дополнительных документов (таких как\n"
+#~ "\t\t\t\t\t\t\t\t\t<i>паспорт</i>\n"
+#~ "\t\t\t\t\t\t\t\t\tили\n"
+#~ "\t\t\t\t\t\t\t\t\t<i>национальное удостоверение личности</i>\n"
+#~ "\t\t\t\t\t\t\t\t\t) Подтвердите, пожалуйста, что вы это понимаете и при "
+#~ "необходимости ответите на дополнительные запросы."
+
 #~ msgid "Share Webinar Recording"
 #~ msgstr "Поделиться записью вебинара"
 
@@ -33391,28 +33691,6 @@ msgstr ""
 
 #~ msgid "Western Union"
 #~ msgstr "Western Union"
-
-#~ msgid ""
-#~ "<b style=\"color: red\">IMPORTANT NOTICE:</b>  All cruise lines now "
-#~ "require online web check-in prior to embarkation. Failure to complete in "
-#~ "advance can result in denied boarding. Please see online check-in link "
-#~ "below your booking receipt data. You must click to access and enter all "
-#~ "required personal information\n"
-#~ "\t\t\t\tno later than 48-72 hours prior to departure depending on the "
-#~ "cruise line. Web check-in opens 45-60 days prior depending on the cruise "
-#~ "line. Completed check-in for ALL passengers in the cabin is REQUIRED to "
-#~ "issue boarding pass."
-#~ msgstr ""
-#~ "<b style=\"color: red\">ВАЖНО:</b>  Все круизные компании теперь требуют "
-#~ "совершения онлайн-регистрации до посадки на борт. Отсутствие "
-#~ "предварительной онлайн-регистрации может привести к отказу в размещении "
-#~ "на борту. Просим пользоваться ссылкой на онлайн-регистрацию под данными "
-#~ "Вашего бронирования. Вам необходимо войти и ввести всю требуемую "
-#~ "информацию о себе\n"
-#~ "\t\t\t\tне позднее 48 либо 72 часов до отправления, в зависимости от "
-#~ "круизной компании. Онлайн-регистрация открывается за 45-60 дней в "
-#~ "зависимости от круизной компании. Для оформления посадочного талона "
-#~ "онлайн-регистрация ОБЯЗАТЕЛЬНА для ВСЕХ пассажиров каюты."
 
 #~ msgid ""
 #~ "Become an inCruises Member and enjoy the benefits of our exclusive "

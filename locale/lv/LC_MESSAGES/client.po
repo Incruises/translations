@@ -379,11 +379,17 @@ msgstr "(iemaksāts inCruises Maciņā)"
 msgid "(Partner full legal name), an individual residing at"
 msgstr "(Partnera pilnais legālais vārds), ar privāto atrašanās vietu"
 
+#: pages/receipts.vue
+msgid ""
+") Please acknowledge that you understand and will respond to additional "
+"requests if necessary."
+msgstr ""
+
 #: components/price_match_guarantee/hotels.vue
 msgid "), and send a new ticket to the"
 msgstr "), un nosūtītu biļeti uz"
 
-#: receipts/receipt.html
+#: components/receipts/receipt.vue receipts/receipt.html
 msgid ""
 "[ Alaska Residents: 5 days ] [ Kentucky&nbsp;Residents: 3 days ] [ Missouri "
 "Residents: 3 days ] [ Nevada Residents: 3 days ] [ Virginia Residents: 7 "
@@ -770,6 +776,13 @@ msgstr "# biļešu skaits, uz kurām vispirms tika atbildēts"
 msgid "#{{ confirmationDetails.confirmationNumber }}"
 msgstr "#{{ confirmationDetails.confirmationNumber }}"
 
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/travel_challenge_statement.vue
+#, fuzzy
+#| msgid "in Reward Points"
+msgid "%{ amount } Reward Points"
+msgstr "Balvu Punktos"
+
 #: components/reservation.vue
 msgid "%{ guests } Guests"
 msgstr "%{ guests } Viesi"
@@ -829,6 +842,18 @@ msgstr "%{ numMembers } Biedri"
 #: components/reservation.vue
 msgid "%{ passengers } Passengers"
 msgstr "%{ passengers } Pasažieri"
+
+#: components/receipts/hotel_booking_receipt.vue
+#, fuzzy
+#| msgid "in Reward Points"
+msgid "%{ points_used } Reward Points"
+msgstr "Balvu Punktos"
+
+#: components/receipts/booking_receipt.vue
+#, fuzzy
+#| msgid "(2 for 1) Reward Points"
+msgid "%{ price } / 2 For 1 Reward Points"
+msgstr "(2 par 1) Balvu Punkti"
 
 #: pages/checkout.vue
 msgid "%{adults} Adults"
@@ -2908,7 +2933,6 @@ msgid "Achieved"
 msgstr "Sasniegts"
 
 #: components/birthday-modal.vue pages/invoices.vue pages/receipts.vue
-#: receipts/index.html
 msgid "Action"
 msgstr "Darbība"
 
@@ -2943,9 +2967,17 @@ msgid "activation fee (only when activating your membership) and"
 msgstr "aktivizācijas maksa (tikai aktivizējot savu Biedru Dalību) un"
 
 #: pages/competition.vue components/compensation/builders_bonus.vue
-#: components/compensation/leadership_bonus.vue receipts/builders_bonus.html
+#: components/compensation/leadership_bonus.vue
+#: components/receipts/builders_bonus.vue receipts/builders_bonus.html
 msgid "Activations"
 msgstr "Aktivizācijas"
+
+#: pages/receipts.vue
+msgid ""
+"Activations are subject to review by the Operations Team. Additional "
+"identification documentation may be requested as a part of this process. "
+"(for eg."
+msgstr ""
 
 #: components/compensation/account_status.vue
 msgid "Activations This Month"
@@ -3137,7 +3169,8 @@ msgstr ""
 #: pages/convention_manager.vue pages/settings.vue
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
-#: components/compensation/residual_bonus.vue old_compensation/index.html
+#: components/compensation/residual_bonus.vue
+#: components/receipts/italian_receipt.vue old_compensation/index.html
 #: receipts/italian_receipt.html
 msgid "Address"
 msgstr "Adrese"
@@ -3158,7 +3191,8 @@ msgstr "Adrese 2"
 msgid "Address 2:"
 msgstr "Uzruna 2:"
 
-#: pages/booking.vue receipts/italian_commission.html
+#: pages/booking.vue components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
 #: receipts/italian_receipt.html
 msgid "Address:"
 msgstr "Uzruna:"
@@ -3240,11 +3274,12 @@ msgstr "PIEEJAMS"
 msgid "Age of children:"
 msgstr "Bērnu vecums:"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Agency Reference"
 msgstr "Aģentūras Ieteikums"
 
-#: components/compensation/account_status.vue
+#: pages/receipts.vue components/compensation/account_status.vue
 msgid "Agree"
 msgstr "Piekrītu"
 
@@ -3280,6 +3315,38 @@ msgstr "Visiem bērniem jābūt jaunākiem par 18 gadiem."
 msgid "All cruise lines"
 msgstr "Visas kruīza līnijas"
 
+#: components/receipts/booking_receipt.vue
+#, fuzzy
+#| msgid ""
+#| "<b style=\"color: red\">IMPORTANT NOTICE:</b>  All cruise lines now "
+#| "require online web check-in prior to embarkation. Failure to complete in "
+#| "advance can result in denied boarding. Please see online check-in link "
+#| "below your booking receipt data. You must click to access and enter all "
+#| "required personal information\n"
+#| "\t\t\t\tno later than 48-72 hours prior to departure depending on the "
+#| "cruise line. Web check-in opens 45-60 days prior depending on the cruise "
+#| "line. Completed check-in for ALL passengers in the cabin is REQUIRED to "
+#| "issue boarding pass."
+msgid ""
+"All cruise lines now require online web check-in prior to embarkation. "
+"Failure to complete in advance can result in denied boarding. Please see "
+"online check-in link below your booking receipt data. You must click to "
+"access and enter all required personal information no later\n"
+"\t\t\t\t\t\tthan 48-72 hours prior to departure depending on the cruise "
+"line. Web check-in opens 45-60 days prior depending on the cruise line. "
+"Completed check-in for ALL passengers in the cabin is REQUIRED to issue "
+"boarding pass."
+msgstr ""
+"<b style=\"color: red\">SVARĪGS PAZIŅOJUMS:</b> visām kruīza līnijām ir "
+"nepieciešama\"check in\" tiešsaistē pirms iekāpšanas. Ja tas netiek izdarīts "
+"iepriekš, iekāpšana var tikt atteikta. Lūdzu, skatiet tiešsaistes \"check-in"
+"\" saiti zem rezervācijas saņemšanas datiem. Jānoklikšķina, lai piekļūtu un "
+"ievadītu visu nepieciešamo personisko informāciju\n"
+" ne vēlāk kā 48 –72 stundas pirms izlidošanas atkarībā no kruīza līnijas. "
+"Atkarībā no kruīza līnijas tīmeklī \"check-in\" tiek atvērta 45 –60 dienas "
+"iepriekš. Lai izsniegtu iekāpšanas atļauju, visiem pasažieriem salonā ir "
+"JĀVEIC formas aizpildīšana."
+
 #: pages/resources.vue resources/index.html
 msgid "All Documents"
 msgstr "Visi dokumenti"
@@ -3305,6 +3372,12 @@ msgid ""
 msgstr ""
 "Visi “Leaderboard” Top100 līderi 31,2023. gada martā saņems 10% prēmiju par "
 "visiem līdz šim nopelnītajiem GLS punktiem."
+
+#: pages/receipts.vue
+#, fuzzy
+#| msgid "All Partners"
+msgid "All Partner"
+msgstr "Visi Partneri"
 
 #: pages/growth_calculator.vue
 msgid "All Partners"
@@ -3456,7 +3529,10 @@ msgstr "Sūtņa/vēstnieka izsekošana"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
-#: components/payout/wallet-transfers.vue negative_balances/index.html
+#: components/payout/wallet-transfers.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/weekly_bonus_statement.vue negative_balances/index.html
 #: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
@@ -3464,7 +3540,7 @@ msgstr "Sūtņa/vēstnieka izsekošana"
 msgid "Amount"
 msgstr "Daudzums"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Amount paid:"
 msgstr "Samaksātā summa"
 
@@ -3472,7 +3548,7 @@ msgstr "Samaksātā summa"
 msgid "Amount you want to transfer in dollars."
 msgstr "Daudzums ko gribat pārskaitīt dolāros."
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Amounts expressed in Euros"
 msgstr "Summa EUR"
 
@@ -3566,7 +3642,7 @@ msgid "Analytics data is not language specific."
 msgstr "Analīzes dati nav saistīti ar konkrētu valodu."
 
 #: pages/allin23.vue pages/global_summit_2023.vue pages/global_summit_dr.vue
-#: pages/public/leadership.vue
+#: pages/receipts.vue pages/public/leadership.vue
 msgid "and"
 msgstr "un"
 
@@ -3816,7 +3892,7 @@ msgstr "Pienākšana"
 msgid "Arrival Date:"
 msgstr "Atgriešanās datums:"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Arrival Times"
 msgstr "Pienākšanas laiki"
 
@@ -3824,11 +3900,11 @@ msgstr "Pienākšanas laiki"
 msgid "Arrive"
 msgstr "Pienāk/ierodas"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Article Code"
 msgstr "Raksra kods"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Article Description"
 msgstr "Raksta/lietas apraksts"
 
@@ -4161,7 +4237,9 @@ msgstr "Saņemies"
 msgid "Balance"
 msgstr "Bilance"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Balance:"
 msgstr "Bilance:"
 
@@ -4292,7 +4370,7 @@ msgstr ""
 "Laikā starp Janvāri 1, 2023, un Augustu 31, 2023, jūs pelnāt sekojošus GLS "
 "punktus:"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Bill to:"
 msgstr "Rēķinu uz:"
 
@@ -4362,6 +4440,7 @@ msgstr "DIREKTORU VALDES BIEDRS"
 msgid "Board of Directors:"
 msgstr "Direktoru Valde:"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Board Type"
 msgstr "Valdes veids/tips"
@@ -4375,8 +4454,14 @@ msgstr "Bonuss"
 msgid "Bonus achieved!"
 msgstr "Bonuss sasniegts!"
 
-#: components/compensation/builders_bonus.vue receipts/builders_bonus.html
-#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
+#: components/compensation/builders_bonus.vue
+#: components/receipts/builders_bonus.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: receipts/builders_bonus.html receipts/daily_member_activation.html
+#: receipts/instant_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 msgid "Bonus Amount"
@@ -4412,6 +4497,8 @@ msgstr "Bonuss vēl nav sasniegts."
 msgid "Bonus not earned yet."
 msgstr "Bonuss vēl nav nopelnīts."
 
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 msgid "Bonus Paid For"
@@ -4458,7 +4545,7 @@ msgstr "Rezervējiet savu nākamā atvaļinājuma braucienu"
 msgid "Booked"
 msgstr "Rezervets"
 
-#: components/admin_booking/cruise_bookings.vue receipts/index.html
+#: components/admin_booking/cruise_bookings.vue
 msgid "Booking"
 msgstr "Rezervācija"
 
@@ -4466,10 +4553,13 @@ msgstr "Rezervācija"
 msgid "Booking Cost"
 msgstr "Rezervācijas Maksa"
 
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Booking Receipt"
 msgstr "Rezervējuma saņemšana"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Booking Reference"
 msgstr "Rezervējuma izziņa"
@@ -4522,11 +4612,11 @@ msgstr "Lietotāju Bāzes Bonuss(komandas jaunais apgrozījums)"
 msgid "Builders Base:"
 msgstr "Lietotāju Bāze:"
 
-#: receipts/builders_bonus.html
+#: components/receipts/builders_bonus.vue receipts/builders_bonus.html
 msgid "Builders Bonus"
 msgstr "Lietotaju Bonuss"
 
-#: receipts/builders_bonus.html
+#: components/receipts/builders_bonus.vue receipts/builders_bonus.html
 msgid "Builders bonus maxes out at $30,000*"
 msgstr "Lietotāju bonusi $30,000*"
 
@@ -4783,7 +4873,7 @@ msgstr "c. Izdzīvošana"
 msgid "C<small>ERTIFICATE OF</small> C<small>OMPLETION</small>"
 msgstr "C<small>ERTIFICATE OF</small> C<small>OMPLETION</small>"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cabin"
 msgstr "Kajīte"
 
@@ -4795,7 +4885,7 @@ msgstr "Kajītes kategorija:"
 msgid "Cabin Code"
 msgstr "Kajītes Kods"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cabin Price"
 msgstr "Kajītes cena"
 
@@ -4823,7 +4913,8 @@ msgstr "Cabo San Lucas, Meksika | Globālais Līderu Samits"
 msgid "Calendar"
 msgstr "Kalendārs"
 
-#: pages/reports.vue receipts/monthly_member_activation.html
+#: pages/reports.vue components/receipts/monthly_member_activation.vue
+#: receipts/monthly_member_activation.html
 msgid "Calendar Month"
 msgstr "Kalendārais Mēnesis"
 
@@ -4964,7 +5055,7 @@ msgstr "Atceliet izvēlēto apmaksas plānu"
 msgid "Cancel your Power Tools Subscription"
 msgstr "Pieņemto pilnvaru rīku atcelšana"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cancellation Policy"
 msgstr "Atcelšanas politika"
 
@@ -5027,7 +5118,7 @@ msgstr "Skaidras nauda/bankas pārvedums"
 msgid "Catalan"
 msgstr "Katalonietis"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Category Type"
 msgstr "Kategorijas tips"
 
@@ -5085,6 +5176,7 @@ msgstr "Sertifikāti"
 msgid "Change"
 msgstr "Mainīt"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Check In"
 msgstr "Iečekoties"
@@ -5101,6 +5193,7 @@ msgstr ""
 "Lai iegūtu piekļuvi visaktuālākajām prasībām, pārbaudiet mūsu Rezervāciju un "
 "Kruīzu lapu."
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Check Out"
 msgstr "Čekauts"
@@ -5169,6 +5262,7 @@ msgstr "Bērns"
 msgid "Child #%{ childNumber } Birthdate"
 msgstr "Bērns #%{ childNumber } Dzimšanas datums"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Child Ages"
 msgstr "Bērnu vecumi"
@@ -5252,6 +5346,7 @@ msgstr "Apmeklētās pilsētas"
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue
+#: components/receipts/italian_receipt.vue
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: old_compensation/index.html receipts/italian_receipt.html
 msgid "City"
@@ -5286,7 +5381,7 @@ msgstr "Notīrīt filtrus"
 msgid "Clear Selections"
 msgstr "Notīrīt atlases"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Click Here to Check In"
 msgstr "Uzklikšķini šeit lai iečekotos"
 
@@ -5418,15 +5513,17 @@ msgstr ""
 msgid "Code"
 msgstr "Kods"
 
-#: pages/reports.vue receipts/commission_statement.html reports/index.html
+#: pages/reports.vue components/receipts/commission_statement.vue
+#: receipts/commission_statement.html reports/index.html
 msgid "Commission"
 msgstr "Komisija"
 
+#: components/receipts/commission_statement.vue
 #: receipts/commission_statement.html
 msgid "Commission Statement"
 msgstr "Komisijas secinājums"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Commissions for \"door to door sales\" Law n. 173 dated 17 August 2005"
 msgstr "Komisijas maksa par “ pārdošanu” Likums n. 173, 2005. gada 17. augusts"
 
@@ -5442,7 +5539,9 @@ msgstr "Kompānijas ieguldījums: $125.000"
 msgid "Company Presentation"
 msgstr "Kompānijas Prezentācija"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Company register listing: RI/PRA/2021/455603/100"
 msgstr "Kompānijas reģistra saraksts: RI/PRA/2021/455603/100"
 
@@ -5491,7 +5590,8 @@ msgstr "Kompresija"
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
 #: pages/admin_department.vue pages/admin_permission_group.vue
 #: pages/reports.vue components/payout/birthday-modal.vue
-#: receipts/booking_receipt.html reports/index.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
+#: reports/index.html
 msgid "Confirm"
 msgstr "Apstiprināt"
 
@@ -5656,9 +5756,23 @@ msgstr "Connect Plāns"
 msgid "Connect Plans"
 msgstr "Connect plāni"
 
-#: receipts/builders_bonus.html receipts/commission_statement.html
-#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/kickstart_bonus_statement.html
+#: components/receipts/builders_bonus.vue
+#: components/receipts/commission_statement.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/receipt.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue receipts/builders_bonus.html
+#: receipts/commission_statement.html receipts/daily_member_activation.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -5779,7 +5893,7 @@ msgstr "Apmeklētās Valstis"
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue components/public/JoinModal.vue
-#: pages/public/signup.vue
+#: components/receipts/italian_receipt.vue pages/public/signup.vue
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
@@ -5791,7 +5905,7 @@ msgstr "Valsts"
 msgid "Country Check"
 msgstr "Valsts pārbaude"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Country of residence"
 msgstr "Dzīvesvietas Valsts"
 
@@ -5893,7 +6007,7 @@ msgstr "tiek ieskaitīts atpakaļ kontā."
 msgid "Cruise Bookings"
 msgstr "Kruīza rezervācijas"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cruise Confirmation"
 msgstr "Kruīza apstiprinājums"
 
@@ -5920,11 +6034,11 @@ msgstr "Kruīza maršruts"
 msgid "Cruise Limits"
 msgstr "Kruīzu Limiti"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cruise Line"
 msgstr "Kruīza līnija"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Cruise Line Health &amp; Safety protocols"
 msgstr "Kruīzu Līnijas Veselības &amp; Drošibas protokoli"
 
@@ -6017,7 +6131,7 @@ msgstr "Kumaulatīvie Partneri"
 msgid "Cumulative Registered Members"
 msgstr "Kopā reģistrētie biedri"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Currency Amounts are reported in Euro"
 msgstr "Naudas summām jābūt EUR"
 
@@ -6062,6 +6176,7 @@ msgstr "Muita"
 msgid "Custom Date Range"
 msgstr "Pielāgots datumu diapazons"
 
+#: components/receipts/commission_statement.vue
 #: receipts/commission_statement.html
 msgid "Customer Name"
 msgstr "Klienta vārds"
@@ -6122,6 +6237,12 @@ msgstr "d. Politikas un procedūras"
 msgid "Daily Activations"
 msgstr "Ikdienas Aktivizācijas"
 
+#: components/receipts/daily_member_activation.vue
+#, fuzzy
+#| msgid "2 Member Activations"
+msgid "Daily Member Activations"
+msgstr "2 Biedru Aktivizācijas"
+
 #: Gender
 msgid "Dark"
 msgstr "Tumšs"
@@ -6162,15 +6283,15 @@ msgstr "Datu lauki"
 msgid "Date"
 msgstr "Datums"
 
-#: pages/contacts.vue pages/receipts.vue receipts/index.html
+#: pages/contacts.vue pages/receipts.vue
 msgid "Date Ascending"
 msgstr "Datums augošā secībā"
 
-#: pages/receipts.vue receipts/index.html
+#: pages/receipts.vue
 msgid "Date Created"
 msgstr "Izveides datums"
 
-#: pages/contacts.vue pages/receipts.vue receipts/index.html
+#: pages/contacts.vue pages/receipts.vue
 msgid "Date Descending"
 msgstr "Datums dilstošā secībā"
 
@@ -6241,7 +6362,8 @@ msgstr "Datumi"
 msgid "Dates:"
 msgstr "Datumi:"
 
-#: pages/booking.vue pages/my_cruise_savings.vue receipts/booking_receipt.html
+#: pages/booking.vue pages/my_cruise_savings.vue
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Day"
 msgstr "Diena"
 
@@ -6318,7 +6440,7 @@ msgstr "Izdzēst Atļauju Grupu"
 msgid "Delete recipient account"
 msgstr "Dzēst adresāta kontu"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Delivery Date"
 msgstr "Piegādes datums"
 
@@ -6326,7 +6448,8 @@ msgstr "Piegādes datums"
 msgid "Depart"
 msgstr "Atiet"
 
-#: components/reservation.vue pages/reports.vue receipts/booking_receipt.html
+#: components/reservation.vue pages/reports.vue
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 #: reports/index.html
 msgid "Depart Date"
 msgstr "Atiešanas datums"
@@ -6363,7 +6486,7 @@ msgstr "departaments."
 msgid "Departments"
 msgstr "Departamenti"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Departs From"
 msgstr "Atiet no"
 
@@ -6375,7 +6498,7 @@ msgstr "Atiešana"
 msgid "Departure Date:"
 msgstr "Atiešanas datums:"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Departure Times"
 msgstr "Atiešanas laiki"
 
@@ -6390,7 +6513,9 @@ msgstr ""
 "ceļojumu dokumentācijas dokumentu."
 
 #: pages/convention_manager.vue pages/email_address.vue pages/reward_points.vue
-#: components/payout/wallet-transfers.vue layouts/default.html
+#: components/payout/wallet-transfers.vue
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue layouts/default.html
 #: negative_balances/index.html receipts/italian_commission.html
 #: receipts/italian_receipt.html
 msgid "Description"
@@ -6448,6 +6573,8 @@ msgid "Direct International Directors"
 msgstr "Tiešie Starptautiskie Direktori"
 
 #: components/compensation/residual_bonus.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/weekly_bonus_statement.vue
 #: components/welcome/members-modal.vue export/index.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/residual_bonus_statement.html receipts/weekly_bonus_statement.html
@@ -6668,6 +6795,7 @@ msgid "Downline limit must be set between 1 and 50."
 msgstr "Lejuplīnijas ierobežojums ir jāiestata no 1 līdz 50."
 
 #: components/compensation/residual_bonus.vue
+#: components/receipts/daily_member_activation.vue
 #: receipts/daily_member_activation.html
 msgid "Downline Name"
 msgstr "Lejuplīnijas nosaukums"
@@ -6680,6 +6808,7 @@ msgstr "Zemāk minētā atlase"
 msgid "Downlines"
 msgstr "Zemākās līnijas"
 
+#: components/receipts/instant_bonus_statement.vue
 #: receipts/instant_bonus_statement.html
 msgid "Downlines Names"
 msgstr "Zemāko līniju nosaukumi"
@@ -7372,7 +7501,7 @@ msgstr "Neizdevās atjaunināt lietotāja nodaļu."
 msgid "Failed to update user permissions."
 msgstr "Neizdevās atjaunināt lietotāja atļaujas."
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "FAQ"
 msgstr "jautājums"
 
@@ -7992,7 +8121,7 @@ msgstr ""
 "Naudas balvas tiek iekļautas kruīza apmaksā.Dzeramnauda nav nepieciešama "
 "nedz gaidīta."
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Gratuity"
 msgstr "Balva/Prēmija"
 
@@ -8211,6 +8340,7 @@ msgstr ""
 msgid "Historical QBI Report"
 msgstr "Vēsturiskā QBI pārskats"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Holder Name"
 msgstr "Īpašnieka/nomnieka/turētāja nosaukums"
@@ -8223,10 +8353,6 @@ msgstr "Resursdators:"
 msgid "Hotel and Cruise Offers"
 msgstr "Viesnīcu un Kruīzu Piedāvājumi"
 
-#: receipts/index.html
-msgid "Hotel Booking"
-msgstr "Viesnīcas rezervācija"
-
 #: pages/admin_booking.vue
 msgid "Hotel Bookings"
 msgstr "Viesnīcas rezervācijas"
@@ -8235,6 +8361,7 @@ msgstr "Viesnīcas rezervācijas"
 msgid "Hotel bookings are not available in your country at this time."
 msgstr "Jūsu valstī patreiz nav iespējamas viesnīcu rezervācijas."
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Info"
 msgstr "Informācija par viesnīcu"
@@ -8247,6 +8374,7 @@ msgstr "Viesnīcas nosaukums(A-Z)"
 msgid "Hotel Name (Z-A)"
 msgstr "Viesnīcas nosaukums (Z-A)"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Phone #"
 msgstr "Viesnīcas Telefons#"
@@ -8255,6 +8383,7 @@ msgstr "Viesnīcas Telefons#"
 msgid "Hotel Search"
 msgstr "Meklēt Viesnīcas"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Website"
 msgstr "Viesnīcas tīmekļa vietne"
@@ -9517,7 +9646,7 @@ msgstr ""
 "Importējiet savas kontaktpersonas no Yahoo, Outlook, Google vai pat CSV "
 "faila, lai vēl vairāk palielinātu jūsu mārketinga sasniegumus."
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Important Cruise Line Information"
 msgstr "Svarīga Kruīza līnijas informācija"
 
@@ -9537,7 +9666,11 @@ msgstr ""
 msgid "Important Information"
 msgstr "Svarīga informācija"
 
-#: receipts/receipt.html
+#: components/receipts/booking_receipt.vue
+msgid "IMPORTANT NOTICE:"
+msgstr ""
+
+#: components/receipts/receipt.vue receipts/receipt.html
 msgid "Important Refund Disclosure:"
 msgstr "Svarīga informācijas atklāšana par finansējumu:"
 
@@ -9831,7 +9964,9 @@ msgstr ""
 "sastāvā. Tieši tāpat kā īstā mārketinga nodaļā, jo vairāk komandas biedru "
 "jūs pārraugāt, jo lielāks ir jūsu peļņas potenciāls."
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "InCruises Italian Branch"
 msgstr "InCruises Itālijas filiāle/zars"
 
@@ -9977,7 +10112,7 @@ msgstr ""
 msgid "inCruises® is an invitation-only exclusive membership travel club."
 msgstr "inCruises ir ekskluzīvs dalības tūrisma klubs."
 
-#: receipts/receipt.html
+#: components/receipts/receipt.vue receipts/receipt.html
 msgid ""
 "inCruises® provides FULL, no questions asked, REFUNDS, if the request is "
 "received by our staff no later 14 days from the day of purchase. Residents "
@@ -10056,6 +10191,7 @@ msgstr "Ievieto savu ziņojumu ..."
 msgid "Inside"
 msgstr "Iekšējā kajīte"
 
+#: components/receipts/instant_bonus_statement.vue
 #: receipts/instant_bonus_statement.html
 msgid "Instant Bonus Statement"
 msgstr "Paziņojums par momentānu Bonusu"
@@ -10072,7 +10208,7 @@ msgstr "inStays Cenu Atbilstīabs Garantija"
 msgid "Instructions"
 msgstr "Instrukcijas"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Insurance"
 msgstr "Apdrošināšana"
 
@@ -10146,11 +10282,14 @@ msgstr "Esat uzaicināts uz inCruises."
 msgid "Inviter"
 msgstr "Uzaicinātājs"
 
+#: components/receipts/invoice.vue components/receipts/italian_commission.vue
 #: receipts/invoice.html receipts/italian_commission.html
 msgid "Invoice"
 msgstr "Rēķins"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Invoice Date"
 msgstr "Rēķina datums"
 
@@ -10162,7 +10301,7 @@ msgstr "Rēķina ID"
 msgid "INVOICE ID"
 msgstr "RĒĶINA ID"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Invoice Number"
 msgstr "Rēķina numurs"
 
@@ -10182,7 +10321,7 @@ msgstr "Rēķini Samaksāti"
 msgid "Invoices Pending"
 msgstr "Gaidošie Rēķini"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Invoicing Address:"
 msgstr "Rēķina adrese:"
 
@@ -10311,15 +10450,17 @@ msgstr "Itāļu žetons"
 msgid "Italian Speaking Global Markets"
 msgstr "Itāļu valodā runājošie globālie tirgi"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Italy"
 msgstr "Itālija"
 
-#: receipts/receipt.html
+#: components/receipts/receipt.vue receipts/receipt.html
 msgid "Item"
 msgstr "Ziņa"
 
-#: pages/booking.vue pages/cruise.vue
+#: pages/booking.vue pages/cruise.vue components/receipts/booking_receipt.vue
 msgid "Itinerary"
 msgstr "Maršruts"
 
@@ -10398,6 +10539,7 @@ msgstr "Kavalerova,Turcija"
 msgid "Key"
 msgstr "Atslēga/galvenais"
 
+#: components/receipts/kickstart_bonus_statement.vue
 #: receipts/kickstart_bonus_statement.html
 msgid "Kickstart Bonus Statement"
 msgstr "Kickstart prēmijas pārskats"
@@ -10585,6 +10727,7 @@ msgstr ""
 "Pēdējā mēneša vadības prēmija (Jaunās reģistrācijas)({{firstDayLastMonth | "
 "date: 'MM/dd/yyyy'}} - {{lastDayLastMonth | date: 'MM/dd/yyyy'}})"
 
+#: components/receipts/leadership_bonus_statement.vue
 #: receipts/leadership_bonus_statement.html
 msgid "Leadership Bonus Statement"
 msgstr "Līderu prēmijas pārskats"
@@ -10663,7 +10806,9 @@ msgstr "Atstāj kursu"
 msgid "LEGAL"
 msgstr "Legāls"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid ""
 "Legal seat: Metro Office Park, Suite 500, Guaynabo, Puerto Rico, USA, 00968"
 msgstr ""
@@ -10762,7 +10907,7 @@ msgstr "Ielādēt/dot vairāk"
 
 #: pages/receipts.vue pages/reports.vue pages/track_results.vue
 #: pages/webinar_recordings.vue components/payout/wallet-transfers.vue
-#: receipts/index.html reports/index.html track_results/index.html
+#: reports/index.html track_results/index.html
 msgid "Load More"
 msgstr "Ielādēt vairāk"
 
@@ -10770,6 +10915,7 @@ msgstr "Ielādēt vairāk"
 msgid "Loading..."
 msgstr "Notiek ielāde..."
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Location"
 msgstr "Dzīves vieta"
@@ -10973,7 +11119,8 @@ msgstr "Vebināru telpas"
 msgid "Meetings"
 msgstr "Sapulces"
 
-#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: pages/receipts.vue pages/team_rankings.vue
+#: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue pages/public/pricing.vue
 #: old_compensation/index.html subscriptions/index.html upgrade/index.html
 msgid "Member"
@@ -11293,6 +11440,7 @@ msgstr "Ikmēneša Aktivizācijas"
 msgid "Monthly Competition"
 msgstr "Ikmēneša konkurence"
 
+#: components/receipts/monthly_member_activation.vue
 #: receipts/monthly_member_activation.html
 msgid "Monthly Member Activations"
 msgstr "Ikmēneša Biedru Aktivizācijas"
@@ -11603,6 +11751,22 @@ msgstr ""
 #: components/compensation/residual_bonus.vue
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
+#: components/receipts/booking_receipt.vue
+#: components/receipts/builders_bonus.vue
+#: components/receipts/commission_statement.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/invoice.vue components/receipts/italian_receipt.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/receipt.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue
 #: components/skeleton_loaders/card_animation.vue
 #: components/user/department.vue components/user/departments.vue
 #: components/user/permission-group.vue components/user/permissions.vue
@@ -11735,6 +11899,12 @@ msgstr ""
 msgid "Negative Balances"
 msgstr "Negatīvs atlikums"
 
+#: components/receipts/italian_commission.vue
+#, fuzzy
+#| msgid "Net Commission:"
+msgid "Net Commission Due:"
+msgstr "Neto Komisija/komisijas"
+
 #: components/payout/euro-conversion.vue
 msgid "Net Commission:"
 msgstr "Neto Komisija/komisijas"
@@ -11861,7 +12031,6 @@ msgid "News and Important Information"
 msgstr "Jaunumi un svarīga informācija"
 
 #: pages/email.vue pages/leadership_academy.vue pages/receipts.vue
-#: receipts/index.html
 msgid "Next"
 msgstr "Nākošais"
 
@@ -12169,7 +12338,7 @@ msgstr ""
 msgid "Notes"
 msgstr "Piezīmes"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Notes:"
 msgstr "Piezīmes:"
 
@@ -12417,11 +12586,11 @@ msgstr "vai vairāk Lietotāju Bāzes apjomā ="
 msgid "Orange Month means partially counts towards Historical QBI"
 msgstr "Oranžais mēnesis nozīmē daļēji skaitīt uz Vēsturisko QBI"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Order Notes:"
 msgstr "Pasūtījuma piezīmes:"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Order Number"
 msgstr "Pasūtījuma Numurs"
 
@@ -12509,6 +12678,27 @@ msgstr "KOPĒJĀ BIZNESA STRATĒĢIJA - SUDRABA BALVA"
 msgid "Overview"
 msgstr "Pārskats"
 
+#: components/receipts/booking_receipt.vue
+#: components/receipts/builders_bonus.vue
+#: components/receipts/commission_statement.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/receipt.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue
+#, fuzzy
+#| msgid "Menu Page"
+msgid "Page"
+msgstr "Izvēļņu lapa"
+
 #: components/price_match_guarantee/cruises.vue
 msgid ""
 "page and send a new ticket to the ”Cruise Booking Questions” department."
@@ -12552,7 +12742,7 @@ msgstr "Samaksājušie partneri šajā mēnesī"
 msgid "Paid Plans"
 msgstr "Apmaksas plāni"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Paid:"
 msgstr "Samaksāts:"
 
@@ -12903,7 +13093,7 @@ msgstr "Partnera konts"
 msgid "Partner Date"
 msgstr "Partnera datums"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Partner ID"
 msgstr "Partnera ID"
 
@@ -12996,7 +13186,7 @@ msgstr ""
 "pakļautību inGroup International KONFIDENCIĀLAI un komercslepenai "
 "informācijai, šā papildinājuma PARTNERIS darbības laikā piekrīt:"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Partner VAT / Tax Code"
 msgstr "Partnera PVN/nodokļu kods"
 
@@ -13086,9 +13276,16 @@ msgstr "Pasažieris #%{passengerNo}"
 msgid "Passenger count"
 msgstr "Pasažiera konts"
 
-#: components/admin_booking/cruise_bookings.vue receipts/booking_receipt.html
+#: components/admin_booking/cruise_bookings.vue
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Passengers"
 msgstr "Pasažieri"
+
+#: pages/receipts.vue
+#, fuzzy
+#| msgid "Passport"
+msgid "passport"
+msgstr "Pase"
 
 #: pages/additional_info.vue
 msgid "Passport"
@@ -13155,6 +13352,12 @@ msgstr "Maksā ,pielietojot Balvu Punktus"
 msgid "Pay with Bank"
 msgstr "Maksāt caur banku"
 
+#: components/receipts/hotel_booking_receipt.vue
+msgid ""
+"Payable through %{ supplier_name }, acting as agent for the service "
+"operating company, details of which can be provided upon request."
+msgstr ""
+
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "Payer"
 msgstr "Maksātājs"
@@ -13167,7 +13370,7 @@ msgstr "Maksātāja atrašanās vieta"
 msgid "Payment Agreement"
 msgstr "Apmaksas vienošanos"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Payment Date:"
 msgstr "Maksājuma datums:"
 
@@ -13539,7 +13742,7 @@ msgstr ""
 "Lūdzu apskatiet inCruises politikas un procedūras,lai iegūtu pilnīgu "
 "informāciju Tajā norādīts:"
 
-#: pages/reach.vue pages/receipts.vue receipts/index.html
+#: pages/reach.vue pages/receipts.vue
 msgid "Please do not show me this video again."
 msgstr "Lūdzu nerādi man šo video vēlreiz."
 
@@ -13906,11 +14109,11 @@ msgstr "Populārākie Galamērķi"
 msgid "Port"
 msgstr "Osta"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Port Charges"
 msgstr "Ostu nodokļi"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Port of Call"
 msgstr "Izsaukuma osta"
 
@@ -14063,7 +14266,9 @@ msgid "Previous Year"
 msgstr "Iepriekšējais gads"
 
 #: pages/booking.vue components/booking/category.vue
-#: receipts/hotel_booking_receipt.html receipts/receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/receipt.vue receipts/hotel_booking_receipt.html
+#: receipts/receipt.html
 msgid "Price"
 msgstr "Summa"
 
@@ -14079,7 +14284,9 @@ msgstr "Cenā netiek iekļauti Nodokļi un Maksas"
 msgid "Price Higher on Top"
 msgstr "Augstākā cena"
 
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Price Information"
 msgstr "cenas informācija"
 
@@ -14180,7 +14387,9 @@ msgstr ""
 "netiekat novirzīts, varat doties prom un gaidīt, līdz tiek pabeigts "
 "paziņojums par procesu."
 
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Processing Fee"
 msgstr "Noformēšanas maksa"
 
@@ -14196,6 +14405,7 @@ msgstr "Veic pieprasīto <strong>Kopējo Aktivizāciju Apjomu</strong>."
 msgid "Produce the required overall <strong>Sales Volume</strong>."
 msgstr "Veic prasīto kopējo <strong>Apgrozījuma Apjomu</strong>."
 
+#: components/receipts/new_producer_bonus_statement.vue
 #: receipts/new_producer_bonus_statement.html
 msgid "Producer Bonus Statement"
 msgstr "Producenta Bonusa paziņojums"
@@ -14259,7 +14469,7 @@ msgstr "Pakalpojumu sniedzējs"
 msgid "Proxy Detected"
 msgstr "Identificēts starpniekserveris"
 
-#: receipts/receipt.html
+#: components/receipts/receipt.vue receipts/receipt.html
 msgid ""
 "Puerto Rico Residents: Members can cancel and request a refund up to 7 days. "
 "Partners and Partner Members can cancel and request a refund up to 90 days "
@@ -14398,6 +14608,7 @@ msgstr ""
 "\t\t\t\t<a href=\"{{incentivePDF}}\" target=\"_blank\">here</a>\n"
 "\t\t\t\t."
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Rate Comments"
 msgstr "Tarifu/Cenu Komentāri"
@@ -14448,11 +14659,12 @@ msgstr "Iemesls"
 msgid "Reattained"
 msgstr "Atgūtais"
 
+#: components/receipts/italian_receipt.vue components/receipts/receipt.vue
 #: receipts/italian_receipt.html receipts/receipt.html
 msgid "Receipt"
 msgstr "Saņemšana"
 
-#: pages/receipts.vue receipts/index.html
+#: pages/receipts.vue
 msgid "Receipt ID"
 msgstr "Saņemšanas ID"
 
@@ -14529,6 +14741,10 @@ msgstr "Novirzu jūs uz BoaCompra."
 #: components/checkout/ProcessorIngenico.vue
 msgid "Redirecting you over to Ingenico."
 msgstr "Novirzīju tevi uz Ingenico."
+
+#: components/receipts/hotel_booking_receipt.vue
+msgid "Reference: %{ hotelbeds_reference }"
+msgstr ""
 
 #: pages/account_setup.vue pages/admin_user.vue pages/team_rankings.vue
 #: components/compensation/leadership_bonus.vue
@@ -14740,15 +14956,17 @@ msgstr "Nepieciešama autentifikācija:"
 msgid "Resend Code"
 msgstr "Atkārtoti nosūtīt kodu"
 
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Reservation Details"
 msgstr "Rezervācijas detaļas"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Reservation Number"
 msgstr "Rezervācjas numurs"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Reservation Status"
 msgstr "Rezervācijas statuss"
 
@@ -14806,7 +15024,7 @@ msgstr "Rzultāti ir galīgie."
 msgid "Results are updated every 24 hours."
 msgstr "Rezultāti tiek atjaunoti ik pēc 24 stundām."
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Return Date"
 msgstr "Atgriešanās datums"
 
@@ -14904,7 +15122,8 @@ msgstr ""
 msgid "Reward Points Logs"
 msgstr "Balvu Punktu uzskaitījums"
 
-#: pages/my_cruise_savings.vue receipts/booking_receipt.html
+#: pages/my_cruise_savings.vue components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Reward Points Used"
 msgstr "Izmantotie Balvu Punkti"
@@ -14940,6 +15159,7 @@ msgstr "Kajītes numurs:"
 msgid "Room Stay Facilities"
 msgstr "Kajītes/numuriņa ērtības"
 
+#: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Room Type"
 msgstr "Kajītes/numuriņa tips"
@@ -14983,6 +15203,7 @@ msgstr "Krievs"
 msgid "Russian Speaking Global Markets"
 msgstr "Krievu valodā runājošo globālie tirgi"
 
+#: components/receipts/commission_statement.vue
 #: receipts/commission_statement.html
 msgid "Sale Amount"
 msgstr "Pārdošanas summa"
@@ -15247,7 +15468,7 @@ msgstr "Ceļojuma pārdevējs"
 msgid "Seller Of Travel"
 msgstr "Ceļojuma pārdevējs"
 
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Seller:"
 msgstr "Pārdevējs:"
 
@@ -15446,7 +15667,9 @@ msgstr ""
 msgid "Share by email"
 msgstr "Kopīgot pa e-pastu"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Share capital: societa' costituita in base a leggi di altro stato"
 msgstr "Pamatkapitāls: societa costituita in base a leggi di altro stato"
 
@@ -15467,7 +15690,7 @@ msgstr "Kuģa Ertības"
 msgid "Ship Launch: %{ shipLaunched }"
 msgstr "Kuģa palaišana: %{ shipLaunched }"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Ship Name"
 msgstr "Kuģa nosaukums"
 
@@ -15599,7 +15822,7 @@ msgstr ""
 msgid "so far. I have accumulated"
 msgstr "tik tālu.Esmu uzkrājis"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Social Contribution"
 msgstr "Sociālais ieguldījums"
 
@@ -15834,10 +16057,26 @@ msgstr "Valsts/Province:"
 msgid "State/Region"
 msgstr "Valsts/Rajons"
 
-#: receipts/booking_receipt.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/kickstart_bonus_statement.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/builders_bonus.vue
+#: components/receipts/commission_statement.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/receipt.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue receipts/booking_receipt.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -16040,7 +16279,8 @@ msgstr "Apgreido mani."
 msgid "Tashkent, Uzbekistan"
 msgstr "Taškenta,Uzbekistāna"
 
-#: pages/tax_report.vue receipts/booking_receipt.html
+#: pages/tax_report.vue components/receipts/booking_receipt.vue
+#: receipts/booking_receipt.html
 msgid "Tax"
 msgstr "Nodoklis"
 
@@ -16048,23 +16288,26 @@ msgstr "Nodoklis"
 msgid "Tax ({{invoice.data.taxAmount * 100}}%):"
 msgstr "Nodokļi ({{invoice.data.taxAmount * 100}}%):"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Tax Code:"
 msgstr "Nodokļu kods:"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Tax Code: 11949690967"
 msgstr "Nodokļa Kods: 11949690967"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Taxable amount (78% of gross amount)"
 msgstr "Ar nodokli apliekamā summa (78% no bruto summas)"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Taxable amount for social contribution purposes"
 msgstr "Summa, kurai uzliek nodokli sociālo iemaksu vajadzībām"
 
-#: components/payout/euro-conversion.vue receipts/italian_receipt.html
+#: components/payout/euro-conversion.vue
+#: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Taxable Amount:"
 msgstr "Ar nodokli apliekamā summa:"
 
@@ -16169,6 +16412,8 @@ msgstr "Komandas reģistrētie biedri"
 msgid "Team Registered Members MTD"
 msgstr "Komandas reģistrētie biedri MTD"
 
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/team_residual_bonus_statement.html
@@ -17433,7 +17678,7 @@ msgstr ""
 "mūsu Biedru Dalību, priekšrocībām un par mūsu unikālo piedāvājumu mūsu <a "
 "href='membership ' target='_blank' >Membership page</a>."
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Ticket Contract"
 msgstr "Biļetes līgums"
 
@@ -17635,31 +17880,8 @@ msgid "To earn Team Leadership Bonus a rank leader must:"
 msgstr "Lai nopelnītu Komandas Līderu Bonusu līderim vajag:"
 
 #: pages/receipts.vue
-msgid ""
-"To ensure account authenticity,\n"
-"\t\t\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
-"\t\t\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t\t\t<strong>Member</strong>\n"
-"\t\t\t\t\t\t\t\t\tActivations are subject to review by the Operations Team. "
-"Additional identification documentation may be requested as a part of this "
-"process. (for eg.\n"
-"\t\t\t\t\t\t\t\t\t<i>passport</i>\n"
-"\t\t\t\t\t\t\t\t\tand\n"
-"\t\t\t\t\t\t\t\t\t<i>DNI</i>\n"
-"\t\t\t\t\t\t\t\t\t) Please acknowledge that you understand and will respond "
-"to additional requests if necessary."
+msgid "To ensure account authenticity,"
 msgstr ""
-"Lai nodrošinātu konta autentiskumu, \n"
-"\t\t<strong>Visu Partneru</strong> \n"
-"\t\tun \n"
-"\t\t<strong>Biedru</strong> \n"
-"\t\tAktivizācijas pārskata Operāciju komanda. Šajā procesā var tikt "
-"pieprasīta papildus identifikācijas dokumentācija. (piem. \n"
-"\t\t<i>pase</i> \n"
-"\t\tun \n"
-"\t\t<i>DNI</i> \n"
-"\t\t) Lūdzu aplieciniet,ka saprotat un vajadzības gadījumā atbildēsiet uz "
-"papildus pieprasījumiem."
 
 #: pages/account_setup.vue
 msgid ""
@@ -17853,7 +18075,10 @@ msgid "total"
 msgstr "kopā"
 
 #: pages/hotels_booking.vue pages/track_growth.vue
-#: components/price_match_guarantee/cruises.vue receipts/booking_receipt.html
+#: components/price_match_guarantee/cruises.vue
+#: components/receipts/booking_receipt.vue
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/booking_receipt.html
 #: receipts/italian_commission.html receipts/italian_receipt.html
 #: track_growth/index.html upgrade/index.html
 msgid "Total"
@@ -17863,7 +18088,7 @@ msgstr "Kopējais"
 msgid "TOTAL"
 msgstr "KOPĀ"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Total (including VAT):"
 msgstr "Kopā (ieskaitot PVN):"
 
@@ -17900,7 +18125,7 @@ msgstr "Eksāmena pareizās atbildes kopā"
 msgid "Total Exam incorrects"
 msgstr "Eksāmena nepareizās atbildes kopā"
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid "Total gross amount (including VAT):"
 msgstr "Kopējā bruto summa (ieskaitot PVN):"
 
@@ -17925,7 +18150,9 @@ msgstr "Kopējās realizētās Biedru dalības ietaupījumu iemaksas"
 msgid "Total Number of Members"
 msgstr "Kopējais biedru skaits"
 
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Total Out Of Pocket"
 msgstr "KOPĒJĀ KABATAS NAUDA"
 
@@ -17969,11 +18196,25 @@ msgstr "Kopējie Balvu Punkti"
 msgid "Total Team Members"
 msgstr "Kopā Komandas Biedri"
 
-#: pages/booking.vue pages/track_results.vue invoices/invoice_statement.html
-#: receipts/builders_bonus.html receipts/commission_statement.html
-#: receipts/daily_member_activation.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/italian_receipt.html
-#: receipts/kickstart_bonus_statement.html
+#: pages/booking.vue pages/track_results.vue
+#: components/receipts/builders_bonus.vue
+#: components/receipts/commission_statement.vue
+#: components/receipts/daily_member_activation.vue
+#: components/receipts/instant_bonus_statement.vue
+#: components/receipts/invoice.vue components/receipts/italian_receipt.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/monthly_member_activation.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/receipt.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue
+#: invoices/invoice_statement.html receipts/builders_bonus.html
+#: receipts/commission_statement.html receipts/daily_member_activation.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -18144,6 +18385,7 @@ msgstr ""
 msgid "TRAVEL ADVISOR AGENCY CATEGORY"
 msgstr "CEĻOJUMU KONSULTĀCIJU AĢENTŪRAS KATEGORIJA"
 
+#: components/receipts/travel_challenge_statement.vue
 #: receipts/travel_challenge_statement.html
 msgid "Travel Challenge Bonus Statement"
 msgstr "Travel Challenge bonusa paziņojums"
@@ -18152,7 +18394,7 @@ msgstr "Travel Challenge bonusa paziņojums"
 msgid "Travel Documentation"
 msgstr "Ceļošanas dokumentācija"
 
-#: receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Travel Documents"
 msgstr "Ceļošanas dokumenti"
 
@@ -18210,8 +18452,8 @@ msgid "Two Weeks Prior Contest"
 msgstr "Divu nedēļu iepriekšējais konkurss"
 
 #: pages/admin_user.vue pages/receipts.vue pages/reports.vue
-#: pages/track_results.vue negative_balances/index.html receipts/index.html
-#: reports/index.html track_results/index.html
+#: pages/track_results.vue negative_balances/index.html reports/index.html
+#: track_results/index.html
 msgid "Type"
 msgstr "Tips"
 
@@ -18238,7 +18480,9 @@ msgstr "Unikālais dalības kods"
 msgid "Unit or Apt #"
 msgstr "Vienība vai Apt #"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Unit Price"
 msgstr "Vienības cena"
 
@@ -18429,14 +18673,22 @@ msgstr "Vankūvera,Kanāda"
 msgid "VAT Number"
 msgstr "PVN numurs"
 
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "VAT Tax"
 msgstr "PVN nodoklis"
 
-#: components/payout/euro-conversion.vue receipts/italian_commission.html
+#: components/payout/euro-conversion.vue
+#: components/receipts/italian_commission.vue
+#: components/receipts/italian_receipt.vue receipts/italian_commission.html
 #: receipts/italian_receipt.html
 msgid "VAT:"
 msgstr "PVN:"
+
+#: components/receipts/hotel_booking_receipt.vue
+msgid "VAT: %{ supplier_vat }"
+msgstr ""
 
 #: pages/settings.vue
 msgid ""
@@ -18607,7 +18859,7 @@ msgstr "Apskati plānus"
 msgid "View Previous Compensation"
 msgstr "Apskati iepriekšējo kompensāciju"
 
-#: pages/my_cruise_savings.vue pages/receipts.vue receipts/index.html
+#: pages/my_cruise_savings.vue pages/receipts.vue
 msgid "View Receipt"
 msgstr "Skati saņemto"
 
@@ -18675,7 +18927,7 @@ msgid "VIP Data"
 msgstr "VIP Dati"
 
 #: pages/builders_base.vue components/compensation/builders_bonus.vue
-#: receipts/builders_bonus.html
+#: components/receipts/builders_bonus.vue receipts/builders_bonus.html
 msgid "Volume"
 msgstr "Apjoms"
 
@@ -19006,6 +19258,7 @@ msgstr "Iknedēļas/ikmēneša konkurences pārbaude"
 msgid "Weekly / Monthly Competition:"
 msgstr "Iknedēļas/ikmēneša konkurence:"
 
+#: components/receipts/weekly_bonus_statement.vue
 #: receipts/weekly_bonus_statement.html
 msgid "Weekly Bonus Statement"
 msgstr "Iknedēļas bonusa secinājums"
@@ -19031,7 +19284,7 @@ msgstr "Nedēļas punkti"
 msgid "Weekly Top Producers"
 msgstr "Nedēļas producentu tops"
 
-#: Menu.vue pages/receipts.vue receipts/index.html
+#: Menu.vue pages/receipts.vue
 msgid "Welcome"
 msgstr "Laipni lūdzam"
 
@@ -19398,7 +19651,7 @@ msgid ""
 msgstr ""
 "Izmantojot šos iespējamos parametrus, varat nopelnīt līdz $210.000 mēnesī."
 
-#: receipts/italian_commission.html
+#: components/receipts/italian_commission.vue receipts/italian_commission.html
 msgid ""
 "Withholding Tax (23% on the basis of Article 25-bis Presidential Decree n. "
 "600 del 29 September 1973)"
@@ -20352,7 +20605,15 @@ msgid ""
 msgstr ""
 "Jūsu grozs ir aktīvs 15 minūtes, jums rezervācija ir jābeidz pirms %{date}."
 
-#: receipts/invoice.html receipts/kickstart_bonus_statement.html
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue receipts/invoice.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
@@ -20431,7 +20692,9 @@ msgstr ""
 msgid "YOUR CRUISE SAVINGS GUARANTEE"
 msgstr "JŪSU KRUĪZU IETAUPĪJUMU GARANTIJA"
 
-#: receipts/invoice.html receipts/kickstart_bonus_statement.html
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue receipts/invoice.html
+#: receipts/kickstart_bonus_statement.html
 msgid "Your Direct"
 msgstr "Tava pavēle"
 
@@ -20554,7 +20817,15 @@ msgstr "Jūsu Vebināru Telpas"
 msgid "Your Mercy Ships contribution was successfully received."
 msgstr "Jūsu Pateicības Kuģa ieguldījums tika veiksmīgi saņemts."
 
-#: receipts/invoice.html receipts/kickstart_bonus_statement.html
+#: components/receipts/invoice.vue
+#: components/receipts/kickstart_bonus_statement.vue
+#: components/receipts/leadership_bonus_statement.vue
+#: components/receipts/new_producer_bonus_statement.vue
+#: components/receipts/new_residual_bonus_statement.vue
+#: components/receipts/new_team_residual_bonus_statement.vue
+#: components/receipts/travel_challenge_statement.vue
+#: components/receipts/weekly_bonus_statement.vue receipts/invoice.html
+#: receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/new_producer_bonus_statement.html
 #: receipts/new_residual_bonus_statement.html
@@ -20658,7 +20929,7 @@ msgstr ""
 "Jūsu QBI (Biznesa Kvalitātes Indekss) parāda jūsu un jūsu komandas jauno "
 "Aktivizēto Biedru procentuālo attiecību, kuri arī apmaksā viņu pirmo rēķinu."
 
-#: pages/receipts.vue receipts/index.html
+#: pages/receipts.vue
 msgid "Your Receipts"
 msgstr "Jūsu kvītis"
 
@@ -30031,8 +30302,8 @@ msgstr ""
 "Argentinā, Adrian ir guvis nākamo rangu!\n"
 "\n"
 "\n"
-"Adrian vienmēr sveicina mani tāpat kā uz skatuves savā labākajā angļu valodā:"
-" “Michael, es tevi mīlu!”\n"
+"Adrian vienmēr sveicina mani tāpat kā uz skatuves savā labākajā angļu "
+"valodā: “Michael, es tevi mīlu!”\n"
 "\n"
 "\n"
 "Adrian, vīrs, es tevi mīlu vairāk!\n"
@@ -30666,6 +30937,35 @@ msgid ""
 "business model offers. Without a doubt, Kyon Rae Kim has started a much "
 "better journey with inCruises. "
 msgstr ""
+
+#~ msgid "Hotel Booking"
+#~ msgstr "Viesnīcas rezervācija"
+
+#~ msgid ""
+#~ "To ensure account authenticity,\n"
+#~ "\t\t\t\t\t\t\t\t\t<strong>All Partner</strong>\n"
+#~ "\t\t\t\t\t\t\t\t\tand\n"
+#~ "\t\t\t\t\t\t\t\t\t<strong>Member</strong>\n"
+#~ "\t\t\t\t\t\t\t\t\tActivations are subject to review by the Operations "
+#~ "Team. Additional identification documentation may be requested as a part "
+#~ "of this process. (for eg.\n"
+#~ "\t\t\t\t\t\t\t\t\t<i>passport</i>\n"
+#~ "\t\t\t\t\t\t\t\t\tand\n"
+#~ "\t\t\t\t\t\t\t\t\t<i>DNI</i>\n"
+#~ "\t\t\t\t\t\t\t\t\t) Please acknowledge that you understand and will "
+#~ "respond to additional requests if necessary."
+#~ msgstr ""
+#~ "Lai nodrošinātu konta autentiskumu, \n"
+#~ "\t\t<strong>Visu Partneru</strong> \n"
+#~ "\t\tun \n"
+#~ "\t\t<strong>Biedru</strong> \n"
+#~ "\t\tAktivizācijas pārskata Operāciju komanda. Šajā procesā var tikt "
+#~ "pieprasīta papildus identifikācijas dokumentācija. (piem. \n"
+#~ "\t\t<i>pase</i> \n"
+#~ "\t\tun \n"
+#~ "\t\t<i>DNI</i> \n"
+#~ "\t\t) Lūdzu aplieciniet,ka saprotat un vajadzības gadījumā atbildēsiet uz "
+#~ "papildus pieprasījumiem."
 
 #~ msgid "Share Webinar Recording"
 #~ msgstr "Dalies ar Vebināra ierakstiem"
@@ -32950,28 +33250,6 @@ msgstr ""
 
 #~ msgid "Western Union"
 #~ msgstr "Rietumu Savinība"
-
-#~ msgid ""
-#~ "<b style=\"color: red\">IMPORTANT NOTICE:</b>  All cruise lines now "
-#~ "require online web check-in prior to embarkation. Failure to complete in "
-#~ "advance can result in denied boarding. Please see online check-in link "
-#~ "below your booking receipt data. You must click to access and enter all "
-#~ "required personal information\n"
-#~ "\t\t\t\tno later than 48-72 hours prior to departure depending on the "
-#~ "cruise line. Web check-in opens 45-60 days prior depending on the cruise "
-#~ "line. Completed check-in for ALL passengers in the cabin is REQUIRED to "
-#~ "issue boarding pass."
-#~ msgstr ""
-#~ "<b style=\"color: red\">SVARĪGS PAZIŅOJUMS:</b> visām kruīza līnijām ir "
-#~ "nepieciešama\"check in\" tiešsaistē pirms iekāpšanas. Ja tas netiek "
-#~ "izdarīts iepriekš, iekāpšana var tikt atteikta. Lūdzu, skatiet "
-#~ "tiešsaistes \"check-in\" saiti zem rezervācijas saņemšanas datiem. "
-#~ "Jānoklikšķina, lai piekļūtu un ievadītu visu nepieciešamo personisko "
-#~ "informāciju\n"
-#~ " ne vēlāk kā 48 –72 stundas pirms izlidošanas atkarībā no kruīza līnijas. "
-#~ "Atkarībā no kruīza līnijas tīmeklī \"check-in\" tiek atvērta 45 –60 "
-#~ "dienas iepriekš. Lai izsniegtu iekāpšanas atļauju, visiem pasažieriem "
-#~ "salonā ir JĀVEIC formas aizpildīšana."
 
 #~ msgid ""
 #~ "Become an inCruises Member and enjoy the benefits of our exclusive "
