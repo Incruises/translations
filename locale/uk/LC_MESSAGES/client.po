@@ -475,12 +475,6 @@ msgstr "{{ course.description }}"
 msgid "{{ course.name }}"
 msgstr "{{ course.name }}"
 
-#: pages/book.vue
-#, fuzzy
-#| msgid "{{ errorMessage }}"
-msgid "{{ cruise.promotionMessage }}"
-msgstr "{{ errorMessage }}"
-
 #: components/payout/brightwell/brightwell-confirmation.vue
 msgid "{{ error.message }} {{ error.description }}"
 msgstr "{{ error.message }} {{ error.description }}"
@@ -798,11 +792,11 @@ msgstr "# Членів"
 msgid "# of Sales"
 msgstr "# Продажів"
 
-#: components/admin_support_analytics/analytics_info.vue
+#: pages/admin_support_analytics.vue
 msgid "# of tickets Closed"
 msgstr "# закритих тікетів"
 
-#: components/admin_support_analytics/analytics_info.vue
+#: pages/admin_support_analytics.vue
 msgid "# of tickets First Responded to"
 msgstr "# перших тікетів за якими було отримано відповіді"
 
@@ -1540,7 +1534,7 @@ msgstr ""
 "\t\t\t\t\t\tщоб у наступному місяці звільнитися від сплати Членського Внеску "
 "у розмірі $100"
 
-#: layouts/hotels.html
+#: layouts/booking.html layouts/hotels.html
 msgid ""
 "<i class=\"far fa-home mr-1\"></i>\n"
 "\t\t\t\t\t\t\tDashboard"
@@ -1548,7 +1542,7 @@ msgstr ""
 "<i class=\"far fa-home mr-1\"></i>\n"
 "\t\t\t\t\t\t\tІнформаційна панель"
 
-#: layouts/hotels.html
+#: layouts/booking.html layouts/hotels.html
 msgid ""
 "<i class=\"far fa-hotel mr-1\"></i>\n"
 "\t\t\t\t\t\t\tHotels"
@@ -1556,7 +1550,7 @@ msgstr ""
 "<i class=\"far fa-hotel mr-1\"></i>\n"
 "\t\t\t\t\t\t\tГотелі"
 
-#: layouts/hotels.html
+#: layouts/booking.html layouts/hotels.html
 msgid ""
 "<i class=\"far fa-ship mr-1\"></i>\n"
 "\t\t\t\t\t\t\tCruises"
@@ -1600,6 +1594,18 @@ msgstr ""
 msgid ""
 "<i class=\"fe fe-check\"></i>\n"
 "\t\t\t\t\t\t\t\t\tClose Ticket"
+msgstr ""
+"<i class=\"fe fe-check\"></i>\n"
+"\t\t\t\t\t\t\t\t\tЗакрити тікет"
+
+#: components/support/TicketViewer.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"fe fe-check\"></i>\n"
+#| "\t\t\t\t\t\t\t\t\tClose Ticket"
+msgid ""
+"<i class=\"fe fe-check\"></i>\n"
+"\t\t\t\t\t\t\t\t\tSend Email"
 msgstr ""
 "<i class=\"fe fe-check\"></i>\n"
 "\t\t\t\t\t\t\t\t\tЗакрити тікет"
@@ -2613,12 +2619,6 @@ msgstr "14 грудня 2022 року: сніданок та виселення"
 msgid "150,000+ Global Destinations are Waiting for You!"
 msgstr "На вас чекають понад 150 000 міжнародних напрямків!"
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Password"
-msgid "1Password"
-msgstr "Пароль"
-
 #: pages/global_convention.vue
 msgid "1st Global Convention"
 msgstr "Перша Глобальна Конференція"
@@ -2791,10 +2791,6 @@ msgstr ""
 msgid "6 NEW Direct Partners"
 msgstr "6 НОВИХ Прямих Партнерів"
 
-#: pages/multi_factor.vue
-msgid "6-character code:*"
-msgstr ""
-
 #: components/agreements/national_director_agreement.vue
 #: agreements/national_director_agreement.html
 msgid "6. Severability."
@@ -2944,10 +2940,6 @@ msgstr "Про нас"
 msgid "About Us"
 msgstr "Про Нас"
 
-#: pages/hotels.vue
-msgid "Abu Dhabi"
-msgstr ""
-
 #: pages/account_setup.vue
 msgid "Accept"
 msgstr "Прийняти"
@@ -3017,12 +3009,11 @@ msgstr "Дія"
 
 #: pages/admin_certificates.vue pages/admin_restricted_paybonus.vue
 #: pages/certificates.vue pages/contacts.vue pages/convention_manager.vue
-#: pages/negative_balances.vue pages/reports.vue
-#: components/compensation/builders_bonus.vue
+#: pages/reports.vue components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/statements.vue components/top_bar/Connect.vue
-#: certificates/index.html certificates/view.html old_compensation/index.html
-#: reports/index.html
+#: certificates/index.html certificates/view.html negative_balances/index.html
+#: old_compensation/index.html reports/index.html
 msgid "Actions"
 msgstr "Дії"
 
@@ -3120,16 +3111,6 @@ msgstr ""
 msgid "Add Admins"
 msgstr "Додати адміністраторів"
 
-#: pages/settings.vue
-msgid ""
-"Add an extra layer of security to your account. To sign in, you'll need to "
-"provide a code along with your username and password."
-msgstr ""
-
-#: pages/multi_factor.vue
-msgid "Add Backup"
-msgstr ""
-
 #: components/recurring/add-recurring.vue
 msgid "Add Card"
 msgstr "Додайте Картку"
@@ -3187,7 +3168,7 @@ msgstr "Додати Бонусні Бали"
 msgid "Add Ship Lead Time"
 msgstr "Додати час постачання лайнера"
 
-#: pages/subscriptions.vue subscriptions/index.html
+#: subscriptions/index.html
 msgid "Add Subscription"
 msgstr "Додати Підписку"
 
@@ -3261,11 +3242,10 @@ msgstr ""
 
 #: components/info-reminder.vue pages/additional_info.vue
 #: pages/convention_manager.vue pages/settings.vue
-#: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue
-#: components/receipts/italian_receipt.vue old_compensation/index.html
-#: receipts/italian_receipt.html
+#: components/receipts/italian_receipt.vue components/checkout/ItalianStep.vue
+#: old_compensation/index.html receipts/italian_receipt.html
 msgid "Address"
 msgstr "Адреса"
 
@@ -3321,7 +3301,6 @@ msgid "Admin Menu"
 msgstr "Меню адміністратора"
 
 #: pages/admin_support_analytics.vue
-#: components/admin_support_analytics/analytics_info.vue
 msgid "Admin Name"
 msgstr "Ім'я адміністратора"
 
@@ -3386,10 +3365,6 @@ msgstr "Угоди"
 #: resources/index.html
 msgid "Agreements and Important Forms"
 msgstr "Угоди та Важливі Документи"
-
-#: Drop Down Destination List
-msgid "Alaska"
-msgstr "Аляска"
 
 #: pages/admin_support_analytics.vue pages/checkout.vue pages/info_center.vue
 #: pages/leadership_academy.vue pages/partner_success.vue pages/reports.vue
@@ -3566,12 +3541,6 @@ msgstr "Дозволені для використання Бонусні Бал
 msgid "Almost there..."
 msgstr "Майже готово..."
 
-#: pages/settings.vue
-msgid ""
-"Along with your email and password, you will be asked to verify your "
-"identity with one of the following methods."
-msgstr ""
-
 #: pages/track_results.vue track_results/index.html
 msgid "Alphabetical Asc"
 msgstr "За Алфавітом AСЦ"
@@ -3628,12 +3597,11 @@ msgstr "Результати Амбасадора"
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus.vue
 #: components/compensation/statements.vue
-#: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
 #: components/receipts/new_residual_bonus_statement.vue
 #: components/receipts/new_team_residual_bonus_statement.vue
-#: components/receipts/weekly_bonus_statement.vue old_compensation/index.html
-#: old_refund_protocol/leadership_bonus_modal.html
+#: components/receipts/weekly_bonus_statement.vue negative_balances/index.html
+#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
 #: receipts/new_residual_bonus_statement.html
 #: receipts/new_team_residual_bonus_statement.html
 #: receipts/weekly_bonus_statement.html
@@ -4094,10 +4062,6 @@ msgstr "Скільки бажаєте! Обмежень немає."
 msgid "as together we go"
 msgstr "оскільки разом ми йдемо"
 
-#: Drop Down Destination List
-msgid "Asia"
-msgstr "Азія"
-
 #: import/index.html
 msgid ""
 "Assign First Name, Last Name and Email Address to the correct columns below. "
@@ -4265,20 +4229,6 @@ msgstr "Присутні на заході"
 msgid "August"
 msgstr "Серпень"
 
-#: Drop Down Destination List
-msgid "Australia/New Zealand"
-msgstr "Австралія/Нова Зеландія"
-
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Requires Authentication:"
-msgid "Authentication App"
-msgstr "Необхідна Авторизація:"
-
-#: pages/settings.vue
-msgid "Authenticator App"
-msgstr ""
-
 #: pages/reward_points.vue
 msgid "Available 1 for 1 Points"
 msgstr "Доступно Балів 1 до 1"
@@ -4333,7 +4283,7 @@ msgstr "b. Національний Директор"
 msgid "b. Time of the Essence"
 msgstr "b. Термін Дії"
 
-#: pages/courses.vue pages/leadership_academy.vue pages/multi_factor.vue
+#: pages/courses.vue pages/leadership_academy.vue
 #: components/agreements/italian_agreement.vue
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
@@ -4365,15 +4315,8 @@ msgstr "Назад до своїх Прямих"
 msgid "BACK UP"
 msgstr "BACK UP"
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Back"
-msgid "Backup"
-msgstr "Назад"
-
-#: pages/negative_balances.vue pages/reward_points.vue
-#: components/negative_balances/wallet_balances_modal.vue
-#: components/payout/wallet-transfers.vue layouts/default.html
+#: pages/reward_points.vue components/payout/wallet-transfers.vue
+#: layouts/default.html negative_balances/index.html
 msgid "Balance"
 msgstr "Баланс"
 
@@ -4387,10 +4330,6 @@ msgstr "Баланс:"
 msgid "Balcony"
 msgstr "Балкон"
 
-#: pages/book.vue
-msgid "Baltics"
-msgstr "Прибалтика"
-
 #: components/payout/brightwell/brightwell-transfer-details.vue
 msgid "Bank Account"
 msgstr "Банківський рахунок"
@@ -4402,12 +4341,6 @@ msgstr "Банківські реквізити"
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 msgid "Bank transfer"
 msgstr "Банківський переказ"
-
-#: pages/hotels.vue
-#, fuzzy
-#| msgid "Barcelona, Spain"
-msgid "Barcelona"
-msgstr "Барселона, Іспанія"
 
 #: pages/admin_user_id.vue pages/track_results.vue track_results/index.html
 msgid "Basic Info"
@@ -4507,10 +4440,6 @@ msgstr "Нижче відображено статус ваших бронюва
 #: pages/reservations.vue
 msgid "Below you will find the status of your reservations."
 msgstr "Нижче відображено статус ваших бронювань."
-
-#: Drop Down Destination List
-msgid "Bermuda"
-msgstr "Бермудські Острови"
 
 #: pages/public/leadership.vue
 msgid ""
@@ -5176,13 +5105,9 @@ msgid "Can you book travel for others and NOT travel yourself?"
 msgstr ""
 "Чи можете ви забронювати подорож для інших, та НЕ подорожувати самостійно?"
 
-#: pages/book.vue
-msgid "Canada/New England"
-msgstr "Канада/Нова Англія"
-
 #: pages/admin_department.vue pages/admin_permission_group.vue
 #: pages/booking.vue pages/checkout.vue pages/connect.vue pages/email.vue
-#: pages/invoices.vue pages/reports.vue pages/subscriptions.vue
+#: pages/invoices.vue pages/reports.vue
 #: components/admin_management/admin_departments.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/agreements/italian_agreement.vue
@@ -5228,19 +5153,13 @@ msgstr "Скасувати вашу Power Tools Підписку"
 msgid "Cancellation Policy"
 msgstr "Політика Скасування"
 
-#: pages/settings.vue pages/subscriptions.vue subscriptions/index.html
+#: pages/settings.vue subscriptions/index.html
 msgid "Cancellation Warning"
 msgstr "Попередження про Скасування"
 
 #: components/reservation.vue
 msgid "Cancelled"
 msgstr "Скасовано"
-
-#: pages/hotels.vue
-#, fuzzy
-#| msgid "Cancel"
-msgid "Cancun"
-msgstr "Скасувати"
 
 #: components/checkout/CardStep.vue components/recurring/add-recurring.vue
 #: components/recurring/confirm-recurring.vue
@@ -5265,10 +5184,6 @@ msgstr "Номер Картки:"
 #: pages/cards.vue
 msgid "Cards"
 msgstr "Картки"
-
-#: Drop Down Destination List
-msgid "Caribbean"
-msgstr "Кариби"
 
 #: pages/global_summit_dr.vue
 msgid "Casa de Campo Global Leadership Summit 2022"
@@ -5354,12 +5269,6 @@ msgstr "Сертифікати"
 
 #: pages/email_address.vue pages/referral_links.vue
 msgid "Change"
-msgstr "Змінити"
-
-#: pages/settings.vue
-#, fuzzy
-#| msgid "Change"
-msgid "Change 2FA"
 msgstr "Змінити"
 
 #: components/receipts/hotel_booking_receipt.vue
@@ -5487,12 +5396,6 @@ msgstr ""
 msgid "Choose a Quick Report"
 msgstr "Обрати Швидкий Звіт"
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Choose Identification Type"
-msgid "Choose An Authentication Method"
-msgstr "Оберіть Метод Ідентифікації"
-
 #: components/booking/category.vue
 msgid "Choose Different Category"
 msgstr "Оберіть іншу категорію"
@@ -5512,12 +5415,6 @@ msgstr "Оберіть варіант харчування:"
 #: pages/additional_info.vue
 msgid "Choose Identification Type"
 msgstr "Оберіть Метод Ідентифікації"
-
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Choose room"
-msgid "Choose Method"
-msgstr "Обрати номер"
 
 #: pages/checkout.vue
 msgid "Choose Payment Type"
@@ -5540,10 +5437,9 @@ msgid "Cities Visited"
 msgstr "Відвідані міста"
 
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
-#: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue
-#: components/receipts/italian_receipt.vue
+#: components/receipts/italian_receipt.vue components/checkout/ItalianStep.vue
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: old_compensation/index.html receipts/italian_receipt.html
 msgid "City"
@@ -5659,8 +5555,8 @@ msgstr "Конфігурація Клієнта"
 #: components/compensation/residual_bonus.vue
 #: components/global_convention/event_info.vue
 #: components/price_match_guarantee/cruises.vue
-#: components/public/FooterLinks.vue components/public/JoinModal.vue
-#: components/public/Testimonials.vue components/recurring/add-recurring.vue
+#: components/recurring/add-recurring.vue components/public/FooterLinks.vue
+#: components/public/JoinModal.vue components/public/Testimonials.vue
 #: pages/public/about.vue pages/public/index.vue pages/public/leadership.vue
 #: pages/public/membership.vue pages/public/mission.vue
 #: pages/public/partnership.vue pages/public/signup.vue connect/index.html
@@ -5954,12 +5850,6 @@ msgstr "Тариф кімнати \"Коннект\""
 msgid "Connect Plans"
 msgstr "Тариф кімнат \"Коннект\""
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Connect Demo"
-msgid "Connect your app"
-msgstr "Connect Демо Версія"
-
 #: components/receipts/builders_bonus.vue
 #: components/receipts/commission_statement.vue
 #: components/receipts/daily_member_activation.vue
@@ -6044,10 +5934,6 @@ msgstr "Менеджер Конференції"
 msgid "Convert to other currencies"
 msgstr "Конвертувати в інші валюти"
 
-#: pages/multi_factor.vue
-msgid "Copied!"
-msgstr ""
-
 #: layouts/default.html layouts/default_no_nav.html
 msgid "Copy to Clipboard"
 msgstr "Скопіювати в буфер обміну"
@@ -6096,12 +5982,12 @@ msgstr "Відвідані країни"
 #: pages/global_summit_tracking.vue pages/new_ranks.vue
 #: pages/partner_success.vue pages/reach.vue pages/referral_links.vue
 #: pages/reports.vue pages/settings.vue pages/team_rankings.vue
-#: pages/track_results.vue components/checkout/ItalianStep.vue
-#: components/compensation/builders_bonus.vue
+#: pages/track_results.vue components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
-#: components/compensation/residual_bonus.vue components/public/JoinModal.vue
-#: components/receipts/italian_receipt.vue pages/public/signup.vue
+#: components/compensation/residual_bonus.vue
+#: components/receipts/italian_receipt.vue components/checkout/ItalianStep.vue
+#: components/public/JoinModal.vue pages/public/signup.vue
 #: components/payout/brightwell/brightwell-cash-pickup-location.vue
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 #: competition/index.html new_ranks/index.html old_compensation/index.html
@@ -6151,7 +6037,7 @@ msgstr "Сертифікат Курсу"
 msgid "Course Progress"
 msgstr "Прогрес курсу"
 
-#: pages/leadership_academy.vue
+#: pages/courses.vue pages/leadership_academy.vue
 msgid "Course: %{ name }"
 msgstr "Курс: %{ name }"
 
@@ -6191,7 +6077,7 @@ msgstr "Створити Обліковий Запис Payoneer"
 msgid "Create Support Ticket."
 msgstr "Створити тікет з підтримкою."
 
-#: components/admin_support_analytics/modals/show_ticket.vue
+#: pages/admin_support_analytics.vue
 msgid "Created"
 msgstr "Створено"
 
@@ -6370,12 +6256,6 @@ msgstr "Поточний План"
 msgid "Current Rank"
 msgstr "Поточний Ранг"
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Current Date"
-msgid "Current Step"
-msgstr "Поточна Дата"
-
 #: pages/competition.vue competition/index.html
 msgid "Current Week's Contest"
 msgstr "Конкурс Цього Тижня"
@@ -6465,7 +6345,7 @@ msgstr "2 Активації Члена Клубу:"
 msgid "Dark"
 msgstr "Темний"
 
-#: pages/compensation.vue layouts/booking.html
+#: pages/compensation.vue
 msgid "Dashboard"
 msgstr "Панель управління"
 
@@ -6497,9 +6377,8 @@ msgstr "Поля даних"
 
 #: pages/contacts.vue pages/email.vue pages/email_notifications.vue
 #: pages/reward_points.vue components/compensation/statements.vue
-#: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue email_notifications/index.html
-#: layouts/default.html
+#: layouts/default.html negative_balances/index.html
 msgid "Date"
 msgstr "Дата"
 
@@ -6594,7 +6473,7 @@ msgstr "День"
 msgid "days"
 msgstr "дні"
 
-#: pages/negative_balances.vue
+#: negative_balances/index.html
 msgid "Days In Negative"
 msgstr "Дні в Негативі"
 
@@ -6628,10 +6507,6 @@ msgstr "Палуб:"
 #: layouts/default.html
 msgid "Deductions"
 msgstr "Відрахування"
-
-#: pages/settings.vue
-msgid "Default"
-msgstr "По умолчанию"
 
 #: components/recurring/add-recurring.vue
 #: components/recurring/confirm-recurring.vue
@@ -6701,7 +6576,6 @@ msgid "Department identifier. e.g. my_new_department"
 msgstr "Ідентифікатор відділу. Наприклад: my_new_department"
 
 #: pages/admin_support_analytics.vue
-#: components/admin_support_analytics/analytics_info.vue
 msgid "Department Name"
 msgstr "Назва відділу"
 
@@ -6741,23 +6615,17 @@ msgstr ""
 "інформації."
 
 #: pages/convention_manager.vue pages/email_address.vue pages/reward_points.vue
-#: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
 #: components/receipts/italian_commission.vue
 #: components/receipts/italian_receipt.vue layouts/default.html
-#: receipts/italian_commission.html receipts/italian_receipt.html
+#: negative_balances/index.html receipts/italian_commission.html
+#: receipts/italian_receipt.html
 msgid "Description"
 msgstr "Опис"
 
 #: components/translations/placeholders.vue
 msgid "Description (ie. Outlook on Laptop)"
 msgstr "Опис (Переглянути на Ноутбуці)"
-
-#: pages/book.vue
-#, fuzzy
-#| msgid "description"
-msgid "destination"
-msgstr "опис"
 
 #: components/payout/brightwell/brightwell-transfer-details.vue
 msgid "Destination country"
@@ -6980,14 +6848,6 @@ msgstr ""
 "Чи можна враховувати власне Членство як 1 з 5 Членів Клубу для отримання "
 "Безкоштовного Членства?"
 
-#: pages/hotels.vue
-msgid "Doha"
-msgstr ""
-
-#: pages/hotels.vue
-msgid "Doha, Qatar"
-msgstr ""
-
 #: pages/public/causes.vue
 msgid "Donate"
 msgstr "Зробити пожертвування"
@@ -7059,12 +6919,6 @@ msgstr "Нижчестоящі за рангами"
 #: receipts/instant_bonus_statement.html
 msgid "Downlines Names"
 msgstr "Імена Нижчих за ієрархією"
-
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Download as JPG"
-msgid "Download as .txt file"
-msgstr "Завантажити у форматі JPG"
 
 #: certificates/index.html certificates/view.html
 msgid "Download as JPG"
@@ -7147,10 +7001,6 @@ msgstr ""
 #: pages/additional_info.vue
 msgid "Driver's License"
 msgstr "Водійські Права"
-
-#: pages/hotels.vue
-msgid "Dubai"
-msgstr ""
 
 #: pages/invoices.vue invoices/invoice_statement.html
 msgid "Due Date"
@@ -7529,14 +7379,6 @@ msgid "Enter the 6-digit code you received via phone to verify your transfer"
 msgstr ""
 "Для підтвердження переказу введіть 6-значний код, надісланий вам на телефон"
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Please enter your email and we will send you further instructions:"
-msgid "Enter your cell phone number and we will send you a verfication code."
-msgstr ""
-"Будь ласка, введіть адресу вашої електронної пошти, і ми надішлемо вам "
-"подальші інструкції:"
-
 #: components/payout/epayments-withdraw.vue
 msgid "ePayments ID (eg. 000-123456)"
 msgstr "ePayments ID (eg. 000-123456)"
@@ -7726,10 +7568,6 @@ msgstr "Зручності"
 msgid "Failed"
 msgstr "Помилка"
 
-#: pages/multi_factor.vue
-msgid "Failed to copy!"
-msgstr ""
-
 #: components/payout/brightwell/brightwell-recipient-account-details.vue
 msgid "Failed to create account. Please check the data entered and try again."
 msgstr ""
@@ -7858,12 +7696,6 @@ msgstr "Завершити"
 msgid "Financial Controller"
 msgstr "Фінансовий контролер"
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Finished"
-msgid "Finish"
-msgstr "Завершив"
-
 #: pages/account_setup.vue
 msgid "Finish Setup"
 msgstr "Завершити Налаштування"
@@ -7882,7 +7714,7 @@ msgstr "Ім'я"
 msgid "First Name:"
 msgstr "Ім'я:"
 
-#: components/admin_support_analytics/analytics_info.vue
+#: pages/admin_support_analytics.vue
 msgid "First Response"
 msgstr "Перша відповідь"
 
@@ -7898,7 +7730,7 @@ msgstr "Перша відповідь в сер."
 msgid "FIVE TIMES"
 msgstr "П'ЯТИКРАТНУ"
 
-#: pages/multi_factor.vue
+#: pages/login/login.vue
 msgid "flash"
 msgstr "мить"
 
@@ -8198,12 +8030,6 @@ msgid "From"
 msgstr "Від"
 
 #: pages/book.vue
-#, fuzzy
-#| msgid "From: %{ from }"
-msgid "From %{cruiseFrom}"
-msgstr "З: %{ from }"
-
-#: pages/book.vue
 msgid "From Month:"
 msgstr "Починаючи з місяця:"
 
@@ -8295,12 +8121,6 @@ msgstr "Створити Новий Пароль"
 #: webinar_recordings/index.html
 msgid "German"
 msgstr "Німецька"
-
-#: pages/multi_factor.vue
-msgid ""
-"Get codes from an app like Authy, 1Passowrd, Microsoft Authenticator, or "
-"Google Authenticator."
-msgstr ""
 
 #: components/top_bar/Connect.vue
 msgid "Get Connect"
@@ -8442,10 +8262,6 @@ msgstr "Вітаємо, ви закінчили курс, натисніть к�
 msgid "Greater bonus achieved."
 msgstr "Досягнуто більший бонус."
 
-#: pages/book.vue
-msgid "Greek Isles"
-msgstr "Грецькі Острови"
-
 #: components/compensation/qbi.vue
 msgid "Green Month means fully counts towards Historical QBI"
 msgstr "Зелений місяць означає повний облік в Історичному QBI (ІЯБ)"
@@ -8559,10 +8375,6 @@ msgid ""
 msgstr ""
 "Ви коли-небудь раніше відпочивали в круїзній подорожі (MSC, Costa, Carnival "
 "та ін.)?"
-
-#: Drop Down Destination List
-msgid "Hawaii"
-msgstr "Гаваї"
 
 #: controllers/reports.js
 msgid ""
@@ -8691,7 +8503,7 @@ msgstr "Пошук готелю"
 msgid "Hotel Website"
 msgstr "Веб-сайт готелю"
 
-#: pages/hotels.vue pages/reservations.vue layouts/booking.html
+#: pages/hotels.vue pages/reservations.vue
 msgid "Hotels"
 msgstr "Готелі"
 
@@ -9656,12 +9468,6 @@ msgstr ""
 "Якщо ви раніше бували в круїзі, то, будь ласка, дайте відповідь ще на 2 "
 "питання."
 
-#: pages/multi_factor.vue
-msgid ""
-"If you loose access to your default authenticator method, use one of these "
-"codes to regain access to your account."
-msgstr ""
-
 #: components/public/Faq.vue
 msgid ""
 "If you miss more than 3 monthly payments in a row your (2 for 1) Reward "
@@ -10054,12 +9860,6 @@ msgstr ""
 #: pages/allin23.vue
 msgid "in 2023!"
 msgstr "в 2023!"
-
-#: pages/multi_factor.vue
-msgid ""
-"In addition to your username and password, you'll have to enter a code "
-"(delivered via app or SMS) to sign in to your account."
-msgstr ""
 
 #: components/payout/euro-conversion.vue
 msgid "In addition, you were paid"
@@ -10540,17 +10340,9 @@ msgstr "Інформація надіслана"
 msgid "INGROUP INTERNATIONAL LLC"
 msgstr "INGROUP INTERNATIONAL LLC"
 
-#: pages/login/login.vue
-msgid "Input a 8-digit backup code"
-msgstr ""
-
 #: pages/settings.vue pages/login/login.vue
 msgid "Input the 6-digit code you received via phone"
 msgstr "Введіть 6-значний код, відправлений вам на телефон"
-
-#: pages/login/login.vue
-msgid "Input the code from the authenticator app."
-msgstr ""
 
 #: components/translations/placeholders.vue
 msgid "Insert Pixel ID here"
@@ -10737,10 +10529,6 @@ msgid "Is there any financial protection if inCruises went out of business?"
 msgstr ""
 "Чи існує будь-який фінансовий захист у випадку, якщо inCruises припинить "
 "свою діяльність?"
-
-#: pages/hotels.vue
-msgid "Istanbul"
-msgstr ""
 
 #: pages/checkout.vue upgrade/index.html
 msgid ""
@@ -11240,10 +11028,10 @@ msgstr ""
 msgid "Level"
 msgstr "Рівень"
 
-#: pages/negative_balances.vue
+#: negative_balances/index.html
 #, fuzzy
 #| msgid "Level {{$index + 1 }}"
-msgid "Level {{ index + 1 }}"
+msgid "Level {{$index + 1 }}"
 msgstr "Рівень {{$index + 1 }}"
 
 #: pages/reports.vue reports/index.html
@@ -11278,10 +11066,6 @@ msgstr "Світлий"
 msgid "Limassol, Cyprus"
 msgstr "Лімасол, Кіпр"
 
-#: pages/book.vue
-msgid "LIMITED-TIME INCREDIBLE OFFERS"
-msgstr ""
-
 #: reports/index.html
 msgid "Link (optional)"
 msgstr "Посилання (необов'язково)"
@@ -11295,11 +11079,11 @@ msgstr "Посилання скопійоване в буфер обміну"
 msgid "Live Web Broadcast"
 msgstr "Онлайн трансляція"
 
-#: pages/negative_balances.vue
+#: negative_balances/index.html
 msgid "Load"
 msgstr "Завантажити"
 
-#: pages/negative_balances.vue
+#: negative_balances/index.html
 msgid "Load Level"
 msgstr "Завантажити Рівень"
 
@@ -11376,17 +11160,6 @@ msgstr "Збережіть статус <strong>Активного Партне�
 #: pages/allin23.vue
 msgid "Make 2023 Your Year!"
 msgstr "Зробіть 2023 вашим роком!"
-
-#: pages/multi_factor.vue
-msgid ""
-"Make a copy of your codes. Store them using a password manager like\n"
-"\t\t\t\t\t\t\t\t\t<a href=\"https://www.lastpass.com/\" target=\"_new"
-"\">LastPass</a>\n"
-"\t\t\t\t\t\t\t\t\tor\n"
-"\t\t\t\t\t\t\t\t\t<a href=\"https://1password.com/\" target=\"_new\" v-"
-"translate=\"\">1Password</a>\n"
-"\t\t\t\t\t\t\t\t\t, or in an encrypted file."
-msgstr ""
 
 #: components/recurring/add-recurring.vue
 msgid "Make Default Card"
@@ -11521,10 +11294,6 @@ msgstr "МЕДІА"
 msgid "Media Director"
 msgstr "Медіа Директор"
 
-#: pages/book.vue
-msgid "Mediterranean"
-msgstr "Середземномор'я"
-
 #: components/top_bar/Connect.vue
 msgid "Meeting Room"
 msgstr "Конференц Кімната"
@@ -11537,7 +11306,7 @@ msgstr "Конференц Кімнати"
 msgid "Meetings"
 msgstr "Зустрічі"
 
-#: pages/receipts.vue pages/subscriptions.vue pages/team_rankings.vue
+#: pages/receipts.vue pages/team_rankings.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue pages/public/pricing.vue
 #: old_compensation/index.html subscriptions/index.html upgrade/index.html
@@ -11602,12 +11371,6 @@ msgstr ""
 #: pages/upgrade.vue pages/welcome.vue components/public/Header.vue
 msgid "Membership"
 msgstr "Членство"
-
-#: pages/book.vue
-#, fuzzy
-#| msgid "Membership Creation Date"
-msgid "Membership Appreciation Offers"
-msgstr "Дата Створення Членства"
 
 #: components/public/FooterDocs.vue
 msgid "Membership Brochure"
@@ -11759,22 +11522,6 @@ msgstr ""
 "Повідомлення розроблені для навчання та мотивування, і не забувайте "
 "завантажувати доступні матеріали, щоб підвищити рівень своїх віртуальних та "
 "живих заходів!"
-
-#: Drop Down Destination List
-msgid "Mexico"
-msgstr "Мексика"
-
-#: pages/hotels.vue
-#, fuzzy
-#| msgid "Miami, FL"
-msgid "Miami"
-msgstr "Маямі, штат Флорида"
-
-#: pages/hotels.vue
-#, fuzzy
-#| msgid "Miami, FL"
-msgid "Miami Area - FL"
-msgstr "Маямі, штат Флорида"
 
 #: pages/allin23.vue
 msgid "Michael \"Hutch\" Hutchison - Co-Founder and Co-CEO"
@@ -12191,10 +11938,10 @@ msgstr ""
 #: pages/admin_user.vue pages/banner_tracking.vue pages/builders_base.vue
 #: pages/competition.vue pages/contacts.vue pages/convention_manager.vue
 #: pages/duplicator.vue pages/global_summit_2023.vue pages/global_summit_dr.vue
-#: pages/global_summit_tracking.vue pages/negative_balances.vue
-#: pages/new_ranks.vue pages/partner_success.vue pages/reach.vue
-#: pages/reports.vue pages/settings.vue pages/team_rankings.vue
-#: pages/track_results.vue components/admin_management/admin_departments.vue
+#: pages/global_summit_tracking.vue pages/new_ranks.vue
+#: pages/partner_success.vue pages/reach.vue pages/reports.vue
+#: pages/settings.vue pages/team_rankings.vue pages/track_results.vue
+#: components/admin_management/admin_departments.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/compensation/account_status.vue
 #: components/compensation/builders_bonus.vue
@@ -12203,7 +11950,6 @@ msgstr ""
 #: components/compensation/residual_bonus.vue
 #: components/compensation/top_producers.vue
 #: components/compensation/weekly_bonus.vue
-#: components/negative_balances/uplines_modal.vue
 #: components/receipts/booking_receipt.vue
 #: components/receipts/builders_bonus.vue
 #: components/receipts/commission_statement.vue
@@ -12221,15 +11967,15 @@ msgstr ""
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue
 #: components/skeleton_loaders/card_animation.vue
-#: components/user/department.vue components/user/departments.vue
-#: components/user/permission-group.vue components/user/permissions.vue
-#: components/welcome/members-modal.vue competition/index.html
-#: invoices/invoice_statement.html new_ranks/index.html
-#: receipts/booking_receipt.html receipts/builders_bonus.html
-#: receipts/commission_statement.html receipts/daily_member_activation.html
-#: receipts/hotel_booking_receipt.html receipts/instant_bonus_statement.html
-#: receipts/invoice.html receipts/italian_receipt.html
-#: receipts/kickstart_bonus_statement.html
+#: components/welcome/members-modal.vue components/user/department.vue
+#: components/user/departments.vue components/user/permission-group.vue
+#: components/user/permissions.vue competition/index.html
+#: invoices/invoice_statement.html negative_balances/index.html
+#: new_ranks/index.html receipts/booking_receipt.html
+#: receipts/builders_bonus.html receipts/commission_statement.html
+#: receipts/daily_member_activation.html receipts/hotel_booking_receipt.html
+#: receipts/instant_bonus_statement.html receipts/invoice.html
+#: receipts/italian_receipt.html receipts/kickstart_bonus_statement.html
 #: receipts/leadership_bonus_statement.html
 #: receipts/monthly_member_activation.html
 #: receipts/new_producer_bonus_statement.html
@@ -12348,7 +12094,8 @@ msgstr ""
 "Потрібна додаткова інформація? Скачайте інформаційні матеріали в PDF, щоб "
 "дізнатися більше."
 
-#: pages/menu_page.vue pages/negative_balances.vue controllers/menu_page.js
+#: pages/menu_page.vue negative_balances/index.html controllers/menu_page.js
+#: controllers/negative_balances.js
 msgid "Negative Balances"
 msgstr "Негативний Баланс"
 
@@ -12483,8 +12230,7 @@ msgstr "Від новіших до старіших"
 msgid "News and Important Information"
 msgstr "Новини та Важлива Інформація"
 
-#: pages/email.vue pages/leadership_academy.vue pages/multi_factor.vue
-#: pages/receipts.vue
+#: pages/email.vue pages/leadership_academy.vue pages/receipts.vue
 msgid "Next"
 msgstr "Далі"
 
@@ -12503,12 +12249,6 @@ msgstr "Дата Наступної Оплати:"
 msgid "Next Billing Date: {{ subscription.expires | date : 'MMM dd, yyyy'}}"
 msgstr ""
 "Наступна дата оплати: {{ subscription.expires | date : 'MMM dd, yyyy'}}"
-
-#: pages/subscriptions.vue
-#, fuzzy
-#| msgid "Next Billing Date:"
-msgid "Next Billing Date: %{ expires }"
-msgstr "Дата Наступної Оплати:"
 
 #: pages/track_results.vue track_results/index.html
 msgid "Next Billing:"
@@ -12551,14 +12291,6 @@ msgstr "Ночей:"
 #: agreements/ukrainian_addendum_agreement.html track_results/index.html
 msgid "No"
 msgstr "Ні"
-
-#: pages/book.vue
-msgid ""
-"NO 90-day restrictions and NO limitations on bookings (book as many as you "
-"want even if you have another booking departing in the future). These "
-"Limited-Time Offers get sold out fast, so book your next vacation, TODAY "
-"with inCruises' LIMITED-TIME OFFERS."
-msgstr ""
 
 #: import/create.html
 msgid "No Contacts Found"
@@ -12966,12 +12698,6 @@ msgstr ""
 "Якщо ви отримали підтвердження бронювання круїзу на платформі inCruises і "
 "протягом 72 годин знайшли нижчу, опубліковану у відкритому доступі ціну, то "
 "використовуйте наступні критерії для порівняння:"
-
-#: pages/multi_factor.vue
-msgid ""
-"Once you have connected your app, enter your most recent 6 digit "
-"verification code:"
-msgstr ""
 
 #: pages/banner_tracking.vue
 msgid "One Direct"
@@ -14060,7 +13786,7 @@ msgstr "Індивідуальний податковий номер"
 msgid "Personal View"
 msgstr "Особистий Перегляд"
 
-#: pages/admin_user.vue pages/contacts.vue pages/negative_balances.vue
+#: pages/admin_user.vue pages/contacts.vue negative_balances/index.html
 msgid "Phone"
 msgstr "Телефон"
 
@@ -15076,8 +14802,7 @@ msgid "Quiz"
 msgstr "Опитування"
 
 #: components/weekly-competition.vue pages/competition.vue pages/powerup.vue
-#: pages/team_rankings.vue components/negative_balances/uplines_modal.vue
-#: competition/index.html
+#: pages/team_rankings.vue competition/index.html negative_balances/index.html
 msgid "Rank"
 msgstr "Ранг"
 
@@ -15165,9 +14890,8 @@ msgstr ""
 "Готові дізнатися, що вам потрібно знати, щоб досягти ВЕЛИКОГО успіху з "
 "inCruises? Відвідайте нашу відео-бібліотеку з записами вебінарів."
 
-#: pages/reward_points.vue
-#: components/negative_balances/wallet_balances_modal.vue
-#: components/payout/wallet-transfers.vue layouts/default.html
+#: pages/reward_points.vue components/payout/wallet-transfers.vue
+#: layouts/default.html negative_balances/index.html
 msgid "Reason"
 msgstr "Причина"
 
@@ -15191,10 +14915,6 @@ msgstr "Квитанцію успішно додано"
 #: Menu
 msgid "Receipts"
 msgstr "Квитанції"
-
-#: pages/multi_factor.vue
-msgid "Receive a unique code via SMS."
-msgstr ""
 
 #: pages/duplicator.vue
 msgid "Recent Invitations"
@@ -15223,12 +14943,6 @@ msgstr "Банківські реквізити одержувача"
 #: pages/email_tracking.vue
 msgid "Recipients"
 msgstr "Одержувачі"
-
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Reminded"
-msgid "Recommended"
-msgstr "Нагадав,Нагадування"
 
 #: components/reservation.vue
 msgid "Record Locator"
@@ -15486,12 +15200,6 @@ msgstr "Необхідна Авторизація:"
 msgid "Resend Code"
 msgstr "Надіслати код повторно"
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Resend Code"
-msgid "Resend SMS"
-msgstr "Надіслати код повторно"
-
 #: components/receipts/booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
@@ -15668,12 +15376,6 @@ msgstr "Використано Бонусних Балів"
 msgid "Rewards Points:"
 msgstr "Бонусні Бали:"
 
-#: pages/hotels.vue
-#, fuzzy
-#| msgid "Rio de Janeiro, Brazil"
-msgid "Rio de Janeiro"
-msgstr "Ріо-де-Жанейро, Бразилія"
-
 #: pages/allin23.vue pages/communications.vue pages/facebook_marketing.vue
 #: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
@@ -15684,10 +15386,6 @@ msgstr "Румунський"
 #: pages/public/leadership.vue
 msgid "Romanian Speaking Global Markets"
 msgstr "Міжнародний румуномовний ринок"
-
-#: pages/hotels.vue
-msgid "Rome"
-msgstr ""
 
 #: pages/hotels_booking.vue
 msgid "Room"
@@ -15718,7 +15416,7 @@ msgstr "Номери"
 msgid "Rooms:"
 msgstr "Номери:"
 
-#: components/admin_support_analytics/modals/show_ticket.vue
+#: pages/admin_support_analytics.vue
 msgid "Row count"
 msgstr "Кількість рядків"
 
@@ -15769,10 +15467,6 @@ msgstr "Бейдж торгового агента"
 #: components/translations/placeholders.vue
 msgid "sample"
 msgstr "приклад"
-
-#: pages/hotels.vue
-msgid "Santorini"
-msgstr ""
 
 #: pages/admin_department.vue pages/admin_partner_success.vue
 #: pages/admin_permission_group.vue pages/settings.vue
@@ -15863,10 +15557,6 @@ msgstr "Параметри пошуку"
 #: components/compensation/countdown.vue
 msgid "seconds"
 msgstr "секунди"
-
-#: pages/settings.vue
-msgid "Security"
-msgstr ""
 
 #: pages/menu_page.vue controllers/menu_page.js
 msgid ""
@@ -16096,12 +15786,6 @@ msgstr ""
 "зареєструються на нашому сайті, ви автоматично отримаєте бали. Ви можете "
 "надсилати необмежену кількість запрошень."
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Send"
-msgid "Send SMS"
-msgstr "Надіслати"
-
 #: pages/settings.vue
 msgid "Send Verification Email"
 msgstr "Надішліть Підтвердження Електронної Пошти"
@@ -16109,12 +15793,6 @@ msgstr "Надішліть Підтвердження Електронної П�
 #: old_refund_protocol/leadership_bonus_modal.html
 msgid "Send Warning"
 msgstr "Відправити Попередження"
-
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Pending"
-msgid "Sending"
-msgstr "В очікуванні"
 
 #: pages/public/leadership.vue
 msgid "Senior Managers and Territory Growth Directors"
@@ -16165,10 +15843,6 @@ msgstr "Сеул, Корея"
 #: pages/booking.vue
 msgid "September"
 msgstr "Вересень"
-
-#: pages/settings.vue
-msgid "Set Up 2FA"
-msgstr ""
 
 #: pages/invite.vue
 msgid ""
@@ -16301,12 +15975,6 @@ msgstr "Показати Лідерів Фундаменту Бізнесу"
 msgid "Show conversion always?"
 msgstr "Завжди показувати перетворення?"
 
-#: pages/admin_support_analytics.vue
-#, fuzzy
-#| msgid "Department"
-msgid "Show Department:"
-msgstr "Відділ"
-
 #: pages/welcome.vue
 msgid "Show Details"
 msgstr "Показати подробиці"
@@ -16378,12 +16046,6 @@ msgstr "Одинокий"
 #: components/covid-disclaimer-reminder.vue
 msgid "Skip For Now"
 msgstr "Пропустити на даний момент"
-
-#: pages/multi_factor.vue pages/settings.vue
-#, fuzzy
-#| msgid "SSL"
-msgid "SMS"
-msgstr "SSL"
 
 #: components/compensation/residual_bonus.vue
 msgid ""
@@ -16528,10 +16190,6 @@ msgstr "Вибачте, але для цього напрямку немає д�
 msgid "Sorry, we couldn't find any room available for your selection."
 msgstr "Вибачте, ми не змогли знайти доступні кімнати для вашого вибору."
 
-#: pages/hotels_details.vue
-msgid "Sorry, your search did not return any results."
-msgstr ""
-
 #: pages/admin_signup_flow.vue pages/track_results.vue track_results/index.html
 msgid "Sorting"
 msgstr "Класифікація"
@@ -16539,12 +16197,6 @@ msgstr "Класифікація"
 #: pages/admin_support_analytics.vue pages/book.vue pages/hotels.vue
 msgid "Sorting:"
 msgstr "Сортування:"
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "North America"
-msgid "South America"
-msgstr "Північна Америка"
 
 #: pages/allin23.vue pages/communications.vue pages/facebook_marketing.vue
 #: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
@@ -16713,9 +16365,10 @@ msgid "Stats"
 msgstr "Статистика"
 
 #: pages/contacts.vue pages/convention_manager.vue pages/growth_calculator.vue
-#: pages/negative_balances.vue components/compensation/leadership_bonus.vue
+#: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue invoices/invoice_statement.html
-#: old_compensation/index.html old_refund_protocol/leadership_bonus_modal.html
+#: negative_balances/index.html old_compensation/index.html
+#: old_refund_protocol/leadership_bonus_modal.html
 msgid "Status"
 msgstr "Статус"
 
@@ -16754,8 +16407,7 @@ msgid "Subject:"
 msgstr "Тема:"
 
 #: pages/account_setup.vue pages/additional_info.vue pages/certificates.vue
-#: pages/italian_onboarding.vue pages/multi_factor.vue
-#: components/payout/social-check.vue pages/login/login.vue
+#: pages/italian_onboarding.vue components/payout/social-check.vue
 #: certificates/index.html certificates/view.html
 msgid "Submit"
 msgstr "Надати"
@@ -16775,7 +16427,7 @@ msgstr ""
 "Надіслати Платіж\n"
 "Представити Платіж"
 
-#: pages/settings.vue
+#: pages/settings.vue pages/login/login.vue
 msgid "Submit Phone Number"
 msgstr "Надіслати номер телефону"
 
@@ -16869,15 +16521,6 @@ msgid ""
 "business."
 msgstr ""
 "Окиньте швидким поглядом все важливе, що стосується вашого бізнесу inCruises."
-
-#: pages/book.vue
-msgid ""
-"Take advantage of these LIMITED-TIME INCREDIBLE OFFERS and book a cruise "
-"departing in the next few days or weeks. These sailings allow you see MORE "
-"of the world, and to use MORE Reward Points than ever before, while "
-"receiving MORE in onboard credits to make your\n"
-"\t\t\t\t\t\t\t\t\tnext vacation even more memorable."
-msgstr ""
 
 #: pages/courses.vue courses/index.html
 msgid "Take Course"
@@ -17236,12 +16879,6 @@ msgstr ""
 
 #: pages/settings.vue
 msgid "The email you have entered is invalid."
-msgstr "Введена Вами електронна адреса недійсна."
-
-#: pages/unsubscribe.vue
-#, fuzzy
-#| msgid "The email you have entered is invalid."
-msgid "The email you have entered is not valid."
 msgstr "Введена Вами електронна адреса недійсна."
 
 #: pages/support.vue
@@ -17637,13 +17274,7 @@ msgstr "При здійсненні Вашої транзакції виникл
 msgid "There was an error inserting your courses status."
 msgstr "При встановленні статусу курсів виникла помилка."
 
-#: pages/book.vue
-#, fuzzy
-#| msgid "There was an error processing your request."
-msgid "There was an error loading featured cruises."
-msgstr "Під час обробки вашого запиту виникла помилка."
-
-#: pages/password.vue pages/unsubscribe.vue
+#: pages/password.vue
 msgid "There was an error processing your request."
 msgstr "Під час обробки вашого запиту виникла помилка."
 
@@ -17651,7 +17282,7 @@ msgstr "Під час обробки вашого запиту виникла п
 msgid "There was an error saving your courses status."
 msgstr "При збереженні статусу курсів виникла помилка."
 
-#: pages/multi_factor.vue pages/settings.vue
+#: pages/settings.vue
 msgid ""
 "There was an error sending an SMS message to that phone number, please try "
 "again."
@@ -17659,11 +17290,14 @@ msgstr ""
 "При відправці SMS-повідомлення на цей номер телефону виникла помилка, будь-"
 "ласка, спробуйте ще раз."
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "There was an error processing your request."
-msgid "There was an error trying to verify the phone number."
-msgstr "Під час обробки вашого запиту виникла помилка."
+#: pages/login/login.vue
+msgid ""
+"There was an error sending an SMS to this phone number, please make sure it "
+"is correct. If the problem persists please contact Support."
+msgstr ""
+"При відправці SMS-повідомлення на цей номер телефону виникла помилка. "
+"Переконайтеся, будь ласка, що номер введений вірно. Якщо ця проблема виникає "
+"постійно, будь ласка, зверніться до Служби Підтримки."
 
 #: pages/leadership_academy.vue
 msgid "There was an error updating your courses status."
@@ -18338,7 +17972,7 @@ msgstr ""
 msgid "Ticket Contract"
 msgstr "Договір З Продажу Квитків"
 
-#: components/admin_support_analytics/modals/show_ticket.vue
+#: pages/admin_support_analytics.vue
 msgid "Ticket ID"
 msgstr "ID тікета"
 
@@ -18346,7 +17980,7 @@ msgstr "ID тікета"
 msgid "Ticket Question:"
 msgstr "Питання з тікету:"
 
-#: components/admin_support_analytics/modals/show_ticket.vue
+#: pages/admin_support_analytics.vue
 #, fuzzy
 #| msgid ""
 #| "Tickets for\n"
@@ -18355,9 +17989,9 @@ msgstr "Питання з тікету:"
 #| "\t\t\t\t\t\t\t\t<u>{{ modalData.dateRange }}</u>"
 msgid ""
 "Tickets for\n"
-"\t\t\t\t\t<u>{{ data.name }}</u>\n"
-"\t\t\t\t\ton\n"
-"\t\t\t\t\t<u>{{ data.dateRange }}</u>"
+"\t\t\t\t\t\t\t\t<u>{{ modalData.userName }}</u>\n"
+"\t\t\t\t\t\t\t\ton\n"
+"\t\t\t\t\t\t\t\t<u>{{ modalData.dateRange }}</u>"
 msgstr ""
 "Тікети для\n"
 "\t\t\t\t\t\t\t\t<u>{{ modalData.userName }}</u>\n"
@@ -18405,7 +18039,7 @@ msgstr "Час, що залишився до кінця місяця."
 msgid "Time remaining before you can upgrade."
 msgstr "Час, що залишився до вашого оновлення."
 
-#: components/admin_support_analytics/analytics_info.vue
+#: pages/admin_support_analytics.vue
 msgid "Time to Close"
 msgstr "Час до закриття"
 
@@ -18520,22 +18154,6 @@ msgstr ""
 "Щоб видалити ваш inCruises акаунт, вам необхідно звернутися до служби "
 "підтримки за цим посиланням:\n"
 "\t\t\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
-"support</a>"
-
-#: pages/subscriptions.vue
-#, fuzzy
-#| msgid ""
-#| "To delete your Member and/or Partner account you must contact our support "
-#| "staff at:\n"
-#| "\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
-#| "support</a>"
-msgid ""
-"To delete your Member and/or Partner account you must contact our support "
-"staff at:"
-msgstr ""
-"Щоб видалити ваш акаунт Члена та/або Партнера, Вам необхідно звернутися до "
-"служби підтримки за посиланням:\n"
-"\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
 "support</a>"
 
 #: subscriptions/index.html
@@ -19080,8 +18698,7 @@ msgstr "TRAVEL ADVISOR AGENCY CATEGORY"
 msgid "Travel Challenge Bonus Statement"
 msgstr "Звіт,Заява Travel Бонус"
 
-#: pages/cruise.vue pages/travel_documentation.vue
-#: controllers/travel_documentation.js
+#: pages/cruise.vue controllers/travel_documentation.js
 msgid "Travel Documentation"
 msgstr "Документація для Подорожі"
 
@@ -19134,12 +18751,6 @@ msgstr "Увімкнути демо режим"
 msgid "Turn On Demo Mode"
 msgstr "Увімкнути Демо Режим"
 
-#: pages/multi_factor.vue pages/settings.vue
-#, fuzzy
-#| msgid "Requires Authentication:"
-msgid "Two Factor Authentication"
-msgstr "Необхідна Авторизація:"
-
 #: pages/track_growth.vue track_growth/index.html
 msgid "Two Month's Ago Total"
 msgstr "Всього за Минулі Два Місяці"
@@ -19149,8 +18760,7 @@ msgid "Two Weeks Prior Contest"
 msgstr "Два тижні до конкурсу"
 
 #: pages/admin_user.vue pages/receipts.vue pages/reports.vue
-#: pages/track_results.vue
-#: components/negative_balances/wallet_balances_modal.vue reports/index.html
+#: pages/track_results.vue negative_balances/index.html reports/index.html
 #: track_results/index.html
 msgid "Type"
 msgstr "Тип"
@@ -19203,11 +18813,11 @@ msgstr ""
 msgid "Unpaid Invoice"
 msgstr "Неоплачений Рахунок"
 
-#: pages/unsubscribe.vue unsubscribe/index.html
+#: unsubscribe/index.html
 msgid "Unsubscribe"
 msgstr "Відписатися"
 
-#: pages/unsubscribe.vue unsubscribe/index.html
+#: unsubscribe/index.html
 msgid "Unsubscribe from our mailing list:"
 msgstr "Відписатися від списку розсилки:"
 
@@ -19260,7 +18870,7 @@ msgstr "Оновити до Партнера"
 msgid "Upline"
 msgstr "Вищестоящий Спонсор"
 
-#: pages/negative_balances.vue
+#: negative_balances/index.html
 msgid "Uplines"
 msgstr "Вищестоящі Спонсори"
 
@@ -19291,10 +18901,6 @@ msgstr "Уральськ, Казахстан"
 #: components/us-state-reminder.vue
 msgid "US State Reminder"
 msgstr "Нагадування про штат США"
-
-#: pages/login/login.vue
-msgid "Use Backup Code"
-msgstr ""
 
 #: pages/account_setup.vue pages/apps.vue apps/index.html
 msgid "Use our Mobile App to:"
@@ -19359,12 +18965,6 @@ msgstr ""
 "Використовуючи %{totalAmountTwiceString}\n"
 "\t\t\t\t\t<sub>2 до 1</sub>"
 
-#: pages/multi_factor.vue
-msgid ""
-"Using an authenticator app like Authy, 1Password, Microsoft Authenticator or "
-"Google Authenticator, scan the QR code."
-msgstr ""
-
 #: pages/allin23.vue pages/communications.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
@@ -19417,12 +19017,6 @@ msgstr "Верифікація закінчилася невдачею"
 msgid "Verified"
 msgstr "Перевірено"
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Verified"
-msgid "Verify"
-msgstr "Перевірено"
-
 #: pages/settings.vue
 msgid "Verify Phone Number"
 msgstr "Підтвердити номер телефону"
@@ -19431,10 +19025,8 @@ msgstr "Підтвердити номер телефону"
 msgid "Verify Your Information"
 msgstr "Підтвердьте свої дані"
 
-#: pages/multi_factor.vue
-#, fuzzy
-#| msgid "Verify your Phone Number"
-msgid "Verify your phone number"
+#: pages/login/login.vue
+msgid "Verify your mobile phone number"
 msgstr "Підтвердити свій номер телефону"
 
 #: pages/settings.vue
@@ -19663,7 +19255,7 @@ msgstr "Підтримка адміністратора"
 msgid "Wallet"
 msgstr "Гаманець"
 
-#: pages/negative_balances.vue components/payout/wallet-balance.vue
+#: components/payout/wallet-balance.vue negative_balances/index.html
 msgid "Wallet Balance"
 msgstr "Баланс Гаманця"
 
@@ -19960,10 +19552,6 @@ msgstr ""
 "Ми створили цей Клуб для того, щоб зробити подорожі зручнішими, доступнішими "
 "і навіть вигідними для мільйонів людей по всьому світу."
 
-#: pages/settings.vue
-msgid "We will send a unique code to {{ user.mobile_phone }}"
-msgstr ""
-
 #: pages/email_address.vue
 msgid ""
 "We will then generate a safe and secure password for one (1) Email Client."
@@ -20005,7 +19593,8 @@ msgstr "Щотижневий Бонусний Звіт"
 msgid "Weekly Competition"
 msgstr "Щотижневі Змагання"
 
-#: pages/compensation.vue components/compensation/weekly_bonus.vue
+#: pages/compensation.vue components/compensation/info_modal.vue
+#: components/compensation/weekly_bonus.vue
 msgid "Weekly Matching Bonus"
 msgstr "Щотижневі Матчінг Бонуси"
 
@@ -20212,6 +19801,19 @@ msgstr ""
 "QBI (ІЯБ) у конкретний місяць. Як тільки QBI (ІЯБ) цього місяця досягне 72% "
 "або більше, ви отримаєте за цей місяць 100% вашого бонусу \"Фундамент Бізнесу"
 "\"."
+
+#: components/compensation/info_modal.vue
+msgid ""
+"When your direct Partners <strong>Activate 3+ Members</strong> in a week you "
+"can earn a <strong>100% MATCH</strong> of the <strong>Daily and Monthly "
+"Activation Bonuses</strong> they were paid that week. You must directly "
+"Activate at least 1 Member in the same week to be eligible."
+msgstr ""
+"Коли ваші прямі Партнери <strong>Активують 3+ Членів Клубу</strong> за один "
+"тиждень, ви можете заробити <strong>100% ВІДПОВІДНІСТЬ</strong> їх "
+"<strong>Щоденним та Щомісячним бонусам за Активації</strong> , які були їм "
+"виплачені цього тижня. Але щоб мати на це право, ви повинні безпосередньо "
+"активувати як мінімум одного Члена Клубу в той же тиждень."
 
 #: pages/global_summit_tracking.vue
 msgid "When?"
@@ -21655,7 +21257,7 @@ msgstr "Ваш обліковий запис Payoneer очікує на схва
 msgid "Your PayQuicker balance is:"
 msgstr "Ваш PayQuicker баланс:"
 
-#: pages/multi_factor.vue pages/settings.vue
+#: pages/settings.vue
 msgid "Your phone number has been successfully verified!"
 msgstr "Ваш номер телефону успішно підтверджено!"
 
@@ -21741,7 +21343,7 @@ msgstr "Результати вашого звіту з'являться в ці
 msgid "Your Sponsors"
 msgstr "Ваші Спонсори"
 
-#: pages/subscriptions.vue subscriptions/index.html
+#: subscriptions/index.html
 msgid "Your Subscriptions"
 msgstr "Ваші Підписки"
 
@@ -22721,6 +22323,10 @@ msgstr "Сантьяго, Чилі"
 #: Cruise Arrive
 msgid "Anchorage (Seward), AK"
 msgstr "(Анкоридж) Сьюард, штат Аляска"
+
+#: Cruise Arrive
+msgid "Asia"
+msgstr "Азія"
 
 #: Cruise Arrive
 msgid "Berlin (Rostock), Germany"
@@ -30406,136 +30012,6 @@ msgstr ""
 "Вам потрібно 11 балів, щоб виграти. ТОП-5 Лідерів з найбільшою кількістю "
 "балів виграють Квиток на GoPro."
 
-#: Drop Down Destination List
-msgid "Africa"
-msgstr ""
-
-#: Drop Down Destination List
-msgid "Canary Islands"
-msgstr ""
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "The Americas"
-msgid "Central America"
-msgstr "Америки"
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "Baltics"
-msgid "Baltic"
-msgstr "Прибалтика"
-
-#: Drop Down Destination List
-msgid "Europe"
-msgstr "Європа"
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "Mediterranean"
-msgid "Mediterranean Sea"
-msgstr "Середземномор'я"
-
-#: Drop Down Destination List
-msgid "Middle East"
-msgstr ""
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "Eastern Europe"
-msgid "Northern Europe"
-msgstr "Східна Європа"
-
-#: Drop Down Destination List
-msgid "Pacific"
-msgstr ""
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "Transaction details"
-msgid "Transatlantic"
-msgstr "Деталі транзакції"
-
-#: Drop Down Destination List
-msgid "Worldwide"
-msgstr ""
-
-#: Drop Down Destination List
-msgid "Bahamas"
-msgstr ""
-
-#: Drop Down Destination List
-msgid "Iberian Peninsula"
-msgstr ""
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "Black Reward Card"
-msgid "Black Sea"
-msgstr "Чорна Бонусна Картка"
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "Chinese"
-msgid "China"
-msgstr "Китайська"
-
-#: Drop Down Destination List
-msgid "Dubai & Emirates"
-msgstr ""
-
-#: Drop Down Destination List
-msgid "Egypt & Red Sea"
-msgstr ""
-
-#: Drop Down Destination List
-msgid "Fiji"
-msgstr ""
-
-#: Drop Down Destination List
-msgid "India"
-msgstr ""
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "Oceanview"
-msgid "Oceania"
-msgstr "Вид на океан"
-
-#: Drop Down Destination List
-msgid "Scandinavia"
-msgstr ""
-
-#: Drop Down Destination List
-msgid "Antarctica"
-msgstr ""
-
-#: Drop Down Destination List
-msgid "North America"
-msgstr "Північна Америка"
-
-#: Drop Down Destination List
-msgid "United Kingdom"
-msgstr ""
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "Panamá City, Panamá"
-msgid "Panama Canal"
-msgstr "Панама Сіті, Панама"
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "Sydney, Australia"
-msgid "Australasia"
-msgstr "Сідней, Австралія"
-
-#: Drop Down Destination List
-#, fuzzy
-#| msgid "Popular Destinations"
-msgid "Polar Regions"
-msgstr "Популярні напрямки"
-
 #: Partner Success Admin Text
 msgid ""
 "Sultana is so far the 2nd Board of Director to advance to the Ambassador "
@@ -31802,32 +31278,287 @@ msgid ""
 "better journey with inCruises. "
 msgstr ""
 
-#: Featured Cruises Promotions
-msgid "Save up to 25% with 1 for 1 RP"
-msgstr ""
+#, fuzzy
+#~| msgid "{{ errorMessage }}"
+#~ msgid "{{ cruise.promotionMessage }}"
+#~ msgstr "{{ errorMessage }}"
 
+#, fuzzy
+#~| msgid "Password"
+#~ msgid "1Password"
+#~ msgstr "Пароль"
+
+#~ msgid "Alaska"
+#~ msgstr "Аляска"
+
+#~ msgid "Australia/New Zealand"
+#~ msgstr "Австралія/Нова Зеландія"
+
+#, fuzzy
+#~| msgid "Requires Authentication:"
+#~ msgid "Authentication App"
+#~ msgstr "Необхідна Авторизація:"
+
+#, fuzzy
+#~| msgid "Back"
+#~ msgid "Backup"
+#~ msgstr "Назад"
+
+#~ msgid "Baltics"
+#~ msgstr "Прибалтика"
+
+#, fuzzy
+#~| msgid "Barcelona, Spain"
+#~ msgid "Barcelona"
+#~ msgstr "Барселона, Іспанія"
+
+#~ msgid "Bermuda"
+#~ msgstr "Бермудські Острови"
+
+#~ msgid "Canada/New England"
+#~ msgstr "Канада/Нова Англія"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "Cancun"
+#~ msgstr "Скасувати"
+
+#~ msgid "Caribbean"
+#~ msgstr "Кариби"
+
+#, fuzzy
+#~| msgid "Change"
+#~ msgid "Change 2FA"
+#~ msgstr "Змінити"
+
+#, fuzzy
+#~| msgid "Choose Identification Type"
+#~ msgid "Choose An Authentication Method"
+#~ msgstr "Оберіть Метод Ідентифікації"
+
+#, fuzzy
+#~| msgid "Choose room"
+#~ msgid "Choose Method"
+#~ msgstr "Обрати номер"
+
+#, fuzzy
+#~| msgid "Connect Demo"
+#~ msgid "Connect your app"
+#~ msgstr "Connect Демо Версія"
+
+#, fuzzy
+#~| msgid "Current Date"
+#~ msgid "Current Step"
+#~ msgstr "Поточна Дата"
+
+#~ msgid "Default"
+#~ msgstr "По умолчанию"
+
+#, fuzzy
+#~| msgid "description"
+#~ msgid "destination"
+#~ msgstr "опис"
+
+#, fuzzy
+#~| msgid "Download as JPG"
+#~ msgid "Download as .txt file"
+#~ msgstr "Завантажити у форматі JPG"
+
+#, fuzzy
+#~| msgid "Please enter your email and we will send you further instructions:"
 #~ msgid ""
-#~ "There was an error sending an SMS to this phone number, please make sure "
-#~ "it is correct. If the problem persists please contact Support."
+#~ "Enter your cell phone number and we will send you a verfication code."
 #~ msgstr ""
-#~ "При відправці SMS-повідомлення на цей номер телефону виникла помилка. "
-#~ "Переконайтеся, будь ласка, що номер введений вірно. Якщо ця проблема "
-#~ "виникає постійно, будь ласка, зверніться до Служби Підтримки."
+#~ "Будь ласка, введіть адресу вашої електронної пошти, і ми надішлемо вам "
+#~ "подальші інструкції:"
 
-#~ msgid "Verify your mobile phone number"
+#, fuzzy
+#~| msgid "Finished"
+#~ msgid "Finish"
+#~ msgstr "Завершив"
+
+#, fuzzy
+#~| msgid "From: %{ from }"
+#~ msgid "From %{cruiseFrom}"
+#~ msgstr "З: %{ from }"
+
+#~ msgid "Greek Isles"
+#~ msgstr "Грецькі Острови"
+
+#~ msgid "Hawaii"
+#~ msgstr "Гаваї"
+
+#~ msgid "Mediterranean"
+#~ msgstr "Середземномор'я"
+
+#, fuzzy
+#~| msgid "Membership Creation Date"
+#~ msgid "Membership Appreciation Offers"
+#~ msgstr "Дата Створення Членства"
+
+#~ msgid "Mexico"
+#~ msgstr "Мексика"
+
+#, fuzzy
+#~| msgid "Miami, FL"
+#~ msgid "Miami"
+#~ msgstr "Маямі, штат Флорида"
+
+#, fuzzy
+#~| msgid "Miami, FL"
+#~ msgid "Miami Area - FL"
+#~ msgstr "Маямі, штат Флорида"
+
+#, fuzzy
+#~| msgid "Next Billing Date:"
+#~ msgid "Next Billing Date: %{ expires }"
+#~ msgstr "Дата Наступної Оплати:"
+
+#, fuzzy
+#~| msgid "Reminded"
+#~ msgid "Recommended"
+#~ msgstr "Нагадав,Нагадування"
+
+#, fuzzy
+#~| msgid "Resend Code"
+#~ msgid "Resend SMS"
+#~ msgstr "Надіслати код повторно"
+
+#, fuzzy
+#~| msgid "Rio de Janeiro, Brazil"
+#~ msgid "Rio de Janeiro"
+#~ msgstr "Ріо-де-Жанейро, Бразилія"
+
+#, fuzzy
+#~| msgid "Send"
+#~ msgid "Send SMS"
+#~ msgstr "Надіслати"
+
+#, fuzzy
+#~| msgid "Pending"
+#~ msgid "Sending"
+#~ msgstr "В очікуванні"
+
+#, fuzzy
+#~| msgid "Department"
+#~ msgid "Show Department:"
+#~ msgstr "Відділ"
+
+#, fuzzy
+#~| msgid "SSL"
+#~ msgid "SMS"
+#~ msgstr "SSL"
+
+#, fuzzy
+#~| msgid "North America"
+#~ msgid "South America"
+#~ msgstr "Північна Америка"
+
+#, fuzzy
+#~| msgid "The email you have entered is invalid."
+#~ msgid "The email you have entered is not valid."
+#~ msgstr "Введена Вами електронна адреса недійсна."
+
+#, fuzzy
+#~| msgid "There was an error processing your request."
+#~ msgid "There was an error loading featured cruises."
+#~ msgstr "Під час обробки вашого запиту виникла помилка."
+
+#, fuzzy
+#~| msgid "There was an error processing your request."
+#~ msgid "There was an error trying to verify the phone number."
+#~ msgstr "Під час обробки вашого запиту виникла помилка."
+
+#, fuzzy
+#~| msgid ""
+#~| "To delete your Member and/or Partner account you must contact our "
+#~| "support staff at:\n"
+#~| "\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+#~| "support</a>"
+#~ msgid ""
+#~ "To delete your Member and/or Partner account you must contact our support "
+#~ "staff at:"
+#~ msgstr ""
+#~ "Щоб видалити ваш акаунт Члена та/або Партнера, Вам необхідно звернутися "
+#~ "до служби підтримки за посиланням:\n"
+#~ "\t\t\t\t<a href=\"https://incruises.com/support\">https://incruises.com/"
+#~ "support</a>"
+
+#, fuzzy
+#~| msgid "Requires Authentication:"
+#~ msgid "Two Factor Authentication"
+#~ msgstr "Необхідна Авторизація:"
+
+#, fuzzy
+#~| msgid "Verified"
+#~ msgid "Verify"
+#~ msgstr "Перевірено"
+
+#, fuzzy
+#~| msgid "Verify your Phone Number"
+#~ msgid "Verify your phone number"
 #~ msgstr "Підтвердити свій номер телефону"
 
-#~ msgid ""
-#~ "When your direct Partners <strong>Activate 3+ Members</strong> in a week "
-#~ "you can earn a <strong>100% MATCH</strong> of the <strong>Daily and "
-#~ "Monthly Activation Bonuses</strong> they were paid that week. You must "
-#~ "directly Activate at least 1 Member in the same week to be eligible."
-#~ msgstr ""
-#~ "Коли ваші прямі Партнери <strong>Активують 3+ Членів Клубу</strong> за "
-#~ "один тиждень, ви можете заробити <strong>100% ВІДПОВІДНІСТЬ</strong> їх "
-#~ "<strong>Щоденним та Щомісячним бонусам за Активації</strong> , які були "
-#~ "їм виплачені цього тижня. Але щоб мати на це право, ви повинні "
-#~ "безпосередньо активувати як мінімум одного Члена Клубу в той же тиждень."
+#, fuzzy
+#~| msgid "The Americas"
+#~ msgid "Central America"
+#~ msgstr "Америки"
+
+#, fuzzy
+#~| msgid "Baltics"
+#~ msgid "Baltic"
+#~ msgstr "Прибалтика"
+
+#~ msgid "Europe"
+#~ msgstr "Європа"
+
+#, fuzzy
+#~| msgid "Mediterranean"
+#~ msgid "Mediterranean Sea"
+#~ msgstr "Середземномор'я"
+
+#, fuzzy
+#~| msgid "Eastern Europe"
+#~ msgid "Northern Europe"
+#~ msgstr "Східна Європа"
+
+#, fuzzy
+#~| msgid "Transaction details"
+#~ msgid "Transatlantic"
+#~ msgstr "Деталі транзакції"
+
+#, fuzzy
+#~| msgid "Black Reward Card"
+#~ msgid "Black Sea"
+#~ msgstr "Чорна Бонусна Картка"
+
+#, fuzzy
+#~| msgid "Chinese"
+#~ msgid "China"
+#~ msgstr "Китайська"
+
+#, fuzzy
+#~| msgid "Oceanview"
+#~ msgid "Oceania"
+#~ msgstr "Вид на океан"
+
+#~ msgid "North America"
+#~ msgstr "Північна Америка"
+
+#, fuzzy
+#~| msgid "Panamá City, Panamá"
+#~ msgid "Panama Canal"
+#~ msgstr "Панама Сіті, Панама"
+
+#, fuzzy
+#~| msgid "Sydney, Australia"
+#~ msgid "Australasia"
+#~ msgstr "Сідней, Австралія"
+
+#, fuzzy
+#~| msgid "Popular Destinations"
+#~ msgid "Polar Regions"
+#~ msgstr "Популярні напрямки"
 
 #, fuzzy
 #~| msgid "inCruises Reviews"
