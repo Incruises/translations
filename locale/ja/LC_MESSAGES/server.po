@@ -244,9 +244,9 @@ msgid ""
 msgstr ""
 "<span style=\"color: #0074ba; font-size: 20px;\">より多くの </span><span "
 "style=\"color:#f19332; font-size: 20px;\">IN</span><span style=\"color: "
-"#0074ba; font-size: 20px;\">センティブや </span><span style=\"color: #f19332;"
-" font-size: 20px;\">IN</span><span style=\"color: #0074ba; font-size: 20px;\""
-">カム（収入）に興味はありますか？</span>"
+"#0074ba; font-size: 20px;\">センティブや </span><span style=\"color: "
+"#f19332; font-size: 20px;\">IN</span><span style=\"color: #0074ba; font-"
+"size: 20px;\">カム（収入）に興味はありますか？</span>"
 
 #: /app/apps/main/views/emails/invoices/senior_team_leader.html
 msgid ""
@@ -275,10 +275,10 @@ msgid ""
 "span><span>centive and helped a direct Partner do the same! This makes you a "
 "Senior Team Leader!</span>"
 msgstr ""
-"<span>inCruisesのパートナーとして登録後３０日以内にメンバーシップフリーという"
-" </span><span style=\"color: #f19332;\">IN</span><span>センティブを獲得し、直"
-"紹介パートナーにも同じことができるようサポートをします！そうするとあなたがシ"
-"ニアチームリーダーになります！</span>"
+"<span>inCruisesのパートナーとして登録後３０日以内にメンバーシップフリーとい"
+"う </span><span style=\"color: #f19332;\">IN</span><span>センティブを獲得し、"
+"直紹介パートナーにも同じことができるようサポートをします！そうするとあなたが"
+"シニアチームリーダーになります！</span>"
 
 #: /app/apps/main/views/emails/user/new_upline_direct.html
 msgid ""
@@ -489,16 +489,6 @@ msgstr "3人目のパートナーメンバー = $70 のインスタント ボー
 msgid "4th Partner Member = $80 Instant Pay Bonus"
 msgstr "4人目のパートナーメンバー = $80 のインスタント ボーナス"
 
-#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
-msgid ""
-"5 days before your due date we will create an invoice for %s which you will "
-"be able to pay via Credit or Debit Card, or even your inCruises Wallet "
-"Balance."
-msgstr ""
-"お支払い期日の5日前に、%s の請求書を作成します。このお支払いはクレジットカー"
-"ドやデビットカード、あるいはあなたのinCruisesウォレットからも支払うことができ"
-"ます。"
-
 #: /app/apps/main/views/emails/compensation/daily_member_activation.html
 #: /app/apps/main/views/emails/compensation/monthly_member_activation.html
 msgid "5-9 Member Activations:"
@@ -523,6 +513,12 @@ msgstr "8人目のパートナーメンバー = $120 のインスタント ボ�
 #: /app/apps/main/views/emails/bonus/instant_bonus.html
 msgid "9th Partner Member = $130 Instant Pay Bonus"
 msgstr "9人目のパートナーメンバー = $130 のインスタント ボーナス"
+
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+msgid ""
+"A %s invoice will be created 5 days before your Partnership Renewal due date "
+"and you will be notified via email."
+msgstr ""
 
 #: /app/apps/main/views/emails/compensation/daily_member_activation.html
 msgid ""
@@ -641,11 +637,17 @@ msgstr "Tourico情報を追加しました！"
 msgid "ADDITIONAL BONUS AMOUNT"
 msgstr "追加ボーナスの金額"
 
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid ""
+#| "Additionally, if your invoice remains unpaid for 30 days, we will proceed "
+#| "to move your referred Members and Partners to your sponsoring Partner. "
+#| "This move will not be able to be reversed in the future."
 msgid ""
-"Additionally, if your invoice remains unpaid for 30 days, we will proceed to "
-"move your referred Members and Partners to your sponsoring Partner. This "
-"move will not be able to be reversed in the future."
+"Additionally, if your invoice remains unpaid for 30 days your Partnership "
+"lapses entirely and your downline team passes to your upline sponsor. This "
+"action is irreversible."
 msgstr ""
 "さらに、あなたの請求書が30日間未払いのままである場合、あなたが紹介したメン"
 "バーとパートナーはあなたのスポンサーの直紹介者へと変更されます。 これは将来逆"
@@ -724,6 +726,7 @@ msgstr "アンバサダー ボーナスの収入通知"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "Amount Due"
 msgstr "料金"
@@ -797,6 +800,14 @@ msgstr "そしてこちらが非アクティブなメンバーのリストです
 msgid ""
 "And these are Pending Members (those that have pending unpaid invoices):"
 msgstr "未払いのメンバー（未払いの請求書を保留している方）は以下の通りです："
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid "In your home"
+msgid "and you are"
+msgstr "あなたの家で"
 
 #: /app/apps/main/views/emails/recurring/failed.html
 #: /app/apps/main/views/emails/recurring/payment_expired.html
@@ -918,6 +929,12 @@ msgstr ""
 msgid "Attention - Your Partner status is Inactive"
 msgstr "注意 - あなたのパートナーステータスは非アクティブです"
 
+#: /app/apps/main/controllers/invoices.js
+#, fuzzy
+#| msgid "Attention - Your Partner status is Inactive"
+msgid "Attention - Your Partner status is now Inactive"
+msgstr "注意 - あなたのパートナーステータスは非アクティブです"
+
 #: /app/apps/main/components/two_factor_auth.js
 msgid "Backup code used"
 msgstr ""
@@ -993,14 +1010,6 @@ msgstr "<small>コース修了</small> の<small>証明書</small>"
 #: /app/apps/main/views/emails/global_booking/new_booking.html
 msgid "Cabin"
 msgstr "キャビン"
-
-#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
-msgid ""
-"Can you believe it's almost been a year since you joined inCruises as a "
-"valued Partner?"
-msgstr ""
-"あなたが大切なパートナーとしてinCruisesに入会してからもう約1年が経過したなん"
-"て信じられますか？"
 
 #: /app/apps/main/views/emails/recurring/failed.html
 msgid "Card on file has expired"
@@ -1474,6 +1483,7 @@ msgstr "講座"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "Creation Date"
 msgstr "作成日"
@@ -1558,6 +1568,8 @@ msgstr "%sさんへ"
 #: /app/apps/main/views/emails/compensation/monthly_member_activation.html
 #: /app/apps/main/views/emails/compensation/new_leadership_title.html
 #: /app/apps/main/views/emails/compensation/weekly_bonus.html
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
 #: /app/apps/main/views/emails/invoices/senior_team_leader.html
 #: /app/apps/main/views/emails/recurring/failed.html
@@ -1715,6 +1727,7 @@ msgstr "ダウンラインの削除"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "Due Date"
 msgstr "期日"
@@ -1961,6 +1974,10 @@ msgstr ""
 #: /app/apps/main/views/certificates/style2.html
 msgid "has successfully completed the course program"
 msgstr "上記の講座において所定の課程を修了しました"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+msgid "have not paid"
+msgstr ""
 
 #: /app/apps/main/views/emails/contacts/invitation_personal_opinion.html
 msgid "Have you ever heard of inCruises?"
@@ -2349,14 +2366,6 @@ msgstr ""
 "問い合わせいただくか、当サイト内の「サポート」（右下の青色のタブ）をクリック"
 "してください。"
 
-#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
-msgid ""
-"If you have any questions regarding this process, please visit:<a href="
-"\"https://incruises.com/support\">https://incruises.com/support</a>"
-msgstr ""
-"ご不明な点がございましたら、<a href=\"https://incruises.com/support"
-"\">https://incruises.com/support</a>のリンクへアクセスしてください"
-
 #: /app/apps/main/views/emails/power_tools/downgrade.html
 #: /app/apps/main/views/emails/power_tools/upgrade.html
 msgid ""
@@ -2408,6 +2417,14 @@ msgstr ""
 #: /app/apps/main/controllers/account_data.js
 msgid "If you have cruised before, please answer the other two questions."
 msgstr "クルーズに行ったことがある場合、他の2つの質問に回答してください。"
+
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+msgid ""
+"If you have recurring billing set up on your account or if you have "
+"sufficient funds in your inCruises Wallet then the payment will be taken "
+"automatically. Otherwise you will be able to pay the invoice via Credit or "
+"Debit Card."
+msgstr ""
 
 #: /app/apps/main/views/emails/global_booking/post_booking_review.html
 msgid ""
@@ -2630,18 +2647,20 @@ msgstr ""
 "そうでない場合は、このクルーズはキャンセルされ、キャンセル料はこの予約の支払"
 "いに使用されたリワードポイントから差し引かれます。"
 
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
 msgid ""
-"In the event you no longer wish to continue as a Partner with inCruises and "
-"do not pay the renewal fee by your due date, you will no longer be eligible "
-"to refer any other Members and/or Partners and you will not receive "
-"commissions, bonuses, and/or rewards designed for active Partners, including "
-"earning free membership credits."
+"In the event you do not pay your Partner Renewal by your due date, your "
+"Partner status will change to"
 msgstr ""
-"InCruisesのパートナーとして継続したくない場合や、期限までに更新料を支払わない"
-"場合は、他のメンバーやパートナーを紹介する資格がなくなり、コミッション、ボー"
-"ナスやメンバーフリーといった有効会員向けに設計された特典を受け取ることはでき"
-"ません。"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid "Inactive Member"
+msgid "Inactive"
+msgstr "非アクティブなメンバー"
 
 #: /app/apps/main/controllers/user_functions.js
 msgid "Incorrect amount was supplied."
@@ -2859,6 +2878,7 @@ msgstr "請求書が発行されました - お支払い手続きをお願い致
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "Invoice Details:"
 msgstr "請求の詳細："
@@ -2875,6 +2895,7 @@ msgstr "inCruises®からの請求書！"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "Invoice Number"
 msgstr "請求書番号"
@@ -2882,6 +2903,12 @@ msgstr "請求書番号"
 #: /app/apps/main/controllers/invoices.js
 msgid "Invoice Past Due"
 msgstr "期限切れの請求書"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#, fuzzy
+#| msgid "Invoices"
+msgid "invoice."
+msgstr "請求書"
 
 #: /app/apps/main/controllers/ip_greylist.js
 msgid "IP Greylist ID not found."
@@ -2905,9 +2932,13 @@ msgid "It costs less than $400 to become a Partner/Member."
 msgstr "パートナー・メンバーになるための費用は400ドル未満です。"
 
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid ""
+#| "It's important that you pay attention to our upcoming emails with "
+#| "reminders regarding your Annual Partner Renewal fee."
 msgid ""
 "It's important that you pay attention to our upcoming emails with reminders "
-"regarding your Annual Partner Renewal fee."
+"regarding your Partner Renewal."
 msgstr ""
 "今後パートナーの年間更新料に関して再確認の電子メールを見逃さないようにご注意"
 "下さい。"
@@ -3258,6 +3289,11 @@ msgstr "リクエストされたIDは見つかりませんでした"
 msgid "No ID provided."
 msgstr "ID情報が入力されていません。"
 
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+msgid "no longer eligible"
+msgstr ""
+
 #: /app/apps/main/controllers/payments_review.js
 msgid "No matches found"
 msgstr "一致するものが見つかりません"
@@ -3273,6 +3309,10 @@ msgstr "ウィークリー ボーナスは見つかりませんでした。"
 #: /app/apps/main/controllers/blog_post.js
 msgid "Not data found"
 msgstr "データが見つかりません"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+msgid "not eligible"
+msgstr ""
 
 #: /app/apps/main/compensation/quick_start.js
 #: /app/apps/main/compensation/travel.js
@@ -3462,6 +3502,12 @@ msgstr "パートナー"
 #: /app/apps/main/components/invoices.js
 msgid "Partnership"
 msgstr "パートナーシップ"
+
+#: /app/apps/main/controllers/invoices.js
+#, fuzzy
+#| msgid "Your Annual Partner Renewal fee is coming up"
+msgid "Pay Your Partner Renewal Invoice To Become Active"
+msgstr "パートナー更新費の請求日が近づいています"
 
 #: /app/apps/main/views/emails/billing/recurring_failed_support.html
 #: /app/apps/main/views/emails/billing/recurring_success_support.html
@@ -3732,6 +3778,12 @@ msgstr ""
 "<strong>inCruises会員制クラブについて印象に残ったこと</strong>を、下記のレ"
 "ビューサイトに簡単にご投稿ください！"
 
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+msgid ""
+"Please take a moment to complete your payment now by clicking the button "
+"below:"
+msgstr ""
+
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 msgid ""
 "Please take a moment to complete your payment now. If after 5 days, this "
@@ -3953,6 +4005,10 @@ msgstr ""
 msgid "Removed power tools from user"
 msgstr "ユーザーから最強のパワーツールを削除済み"
 
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+msgid "Renewal"
+msgstr ""
+
 #: /app/apps/main/views/emails/contacts/reminders/upgrade_reminder.html
 msgid ""
 "Replace or increase your full-time income with a career in a trillion dollar "
@@ -4097,6 +4153,22 @@ msgid ""
 "Support team at:"
 msgstr ""
 "その他ご質問がある場合は、inCruisesのサポートチームへお問い合わせください。"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid ""
+#| "Should you have any questions, please reach out to your inCruises Support "
+#| "team at:<a href=\"https://www.incruises.com/support\">https://www."
+#| "incruises.com/support</a>."
+msgid ""
+"Should you have any other questions, please reach out to your inCruises "
+"Support team at: <a href=\"https://incruises.com/support\">https://incruises."
+"com/support</a>"
+msgstr ""
+"ご不明な点がございましたら、inCruisesサポートチーム<a href=\"https://"
+"incruises.com/support\">https://incruises.com/support</a>までご連絡ください。"
 
 #: /app/apps/main/views/emails/compensation/partner_status_active.html
 #: /app/apps/main/views/emails/compensation/partner_status_inactive.html
@@ -4260,6 +4332,7 @@ msgstr "シニアチームリーダー"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 #: /app/apps/main/controllers/export.js
 msgid "Status"
@@ -4456,6 +4529,7 @@ msgid "Thank you and best regards,"
 msgstr "誠にありがとうございます。何卒宜しくお願い致します。"
 
 #: /app/apps/main/views/emails/compensation/partner_status_inactive.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 msgid "Thank you for being part of the inCruises family."
 msgstr "inCruisesファミリーの一員になってくださり、ありがとうございます。"
 
@@ -4598,6 +4672,27 @@ msgstr ""
 "示されます。</b>このページにアクセスするには、こちらをクリックしてください："
 "https://www.incruises.com/compensation"
 
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#, fuzzy
+#| msgid ""
+#| "The easiest way to ensure you stay Active and never miss inCome or "
+#| "inCentives is to stay aware of your Partner status by logging into your "
+#| "Partner back office Compensation page where you can see your Active "
+#| "Partner status and the date it will expire. You can access it here: "
+#| "https://www.incruises.com/compensation"
+msgid ""
+"The easiest way to ensure you never miss INcome or INcentives is to stay "
+"aware of your Partner status by logging into your Partner back office "
+"dashboard where you can see your Active Partner status and the date it will "
+"expire. You can access it here: <a href=\"https://incruises.com/welcome"
+"\">https://incruises.com/welcome</a>"
+msgstr ""
+"アクティブなパートナーであり続けるために、また収入やインセンティブを逃さない"
+"ためには、パートナーバックオフィスの報酬ページにログインし、ご自分のパート"
+"ナーステータスと有効期限を確認することが最も簡単な方法です。このページは、"
+"https://www.incruises.com/compensation からアクセスできます。"
+
 #: /app/apps/main/views/emails/compensation/partner_status_active.html
 msgid ""
 "The easiest way to ensure you stay Active and never miss inCome or "
@@ -4635,6 +4730,7 @@ msgid "The formula for a six-figure income in our profession"
 msgstr "私たちの職業における８桁の収入を得る方法"
 
 #: /app/apps/main/views/emails/compensation/partner_status_inactive.html
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
 msgid "The good news is it's very simple to become Active again!"
 msgstr "良いニュースは、またアクティブになることがとてもシンプルなことです！"
 
@@ -5097,9 +5193,11 @@ msgid "This IP has been blocked!"
 msgstr "このIPはブロックされています！"
 
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
-msgid ""
-"This is a courtesy reminder that your annual Partner renewal fee of %s is "
-"coming soon."
+#, fuzzy
+#| msgid ""
+#| "This is a courtesy reminder that your annual Partner renewal fee of %s is "
+#| "coming soon."
+msgid "This is a courtesy reminder that your Partner Renewal is coming up."
 msgstr ""
 "これは、パートナーの年間更新料 %s の請求期日が近づいているお知らせです。"
 
@@ -5175,10 +5273,6 @@ msgstr "このユーザー名は既に使われています"
 msgid "Ticket Contract"
 msgstr "チケット契約"
 
-#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
-msgid "Time does fly when you're having FUN!"
-msgstr "楽しい時を過す時は時間があっという間に過ぎます！"
-
 #: /app/apps/main/controllers/login.js
 msgid "Time flies"
 msgstr "時間が飛ぶようにすぎる"
@@ -5189,6 +5283,12 @@ msgstr "期間"
 
 #: /app/apps/main/controllers/upgrade.js
 msgid "Time Sensitive Partner inCentive notice!"
+msgstr "パートナーインセンティブに関するタイムリーなお知らせ！"
+
+#: /app/apps/main/controllers/invoices.js
+#, fuzzy
+#| msgid "Time Sensitive Partner inCentive notice!"
+msgid "Time Sensitive Partner renewal notice!"
 msgstr "パートナーインセンティブに関するタイムリーなお知らせ！"
 
 #: /app/apps/main/views/emails/contacts/reminders/upgrade_reminder_3.html
@@ -5292,6 +5392,18 @@ msgid ""
 msgstr ""
 "リワードポイントの保留を解除するためには、全額 ($%s) をお支払いしていただく必"
 "要があります。"
+
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+msgid ""
+"to receive INcome or INcentives, including the Membership Free INcentive."
+msgstr ""
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#, fuzzy
+#| msgid "How inCruises INcome and INcentives work"
+msgid "to receive INcome or INcentives."
+msgstr "inCruisesのINcome（収入）とINセンティブの仕組み"
 
 #: /app/apps/main/views/emails/payments_review/referer.html
 msgid ""
@@ -5448,6 +5560,10 @@ msgstr "要確認 - 至急ご確認ください - メンバーシップの更新
 msgid "Urgent Message Regarding Your Support Request!"
 msgstr "サポートへのお問い合わせに関するメッセージを大至急ご確認ください！"
 
+#: /app/apps/main/queues/partner_invoice_five_before.process.js
+msgid "Urgent Partnership Renewal Notice"
+msgstr ""
+
 #: /app/apps/main/views/emails/invoices/now_free.html
 msgid ""
 "Use the filters to view those that are Active and those that are expired."
@@ -5504,6 +5620,8 @@ msgstr "あなたのメールアドレスを認証する"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "View and Pay Invoice"
 msgstr "請求書を表示して支払う"
@@ -5576,9 +5694,12 @@ msgstr ""
 "い。"
 
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid ""
+#| "We appreciate you and are looking forward to having you remain active as "
+#| "a Partner with inCruises."
 msgid ""
-"We appreciate you and are looking forward to having you remain active as a "
-"Partner with inCruises."
+"We appreciate you and look forward to a long and prosperous Partnership!"
 msgstr ""
 "私たちはあなたに感謝し、あなたがinCruisesのパートナーとして活動し続けることを"
 "楽しみにしています。"
@@ -6192,6 +6313,10 @@ msgstr ""
 "あなたは現在、まもなく出発するクルーズを予約されていますが、あなたのメンバー"
 "シップは現在有効ではないことが警告されています。"
 
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+msgid "You are Inactive because you"
+msgstr ""
+
 #: /app/apps/main/views/emails/compensation/partner_status_inactive.html
 msgid ""
 "You are Inactive because you are not currently meeting the Minimum "
@@ -6273,6 +6398,16 @@ msgstr ""
 "このメールを受信しているのは、inCruisesのパートナーシップのチャンスに関する詳"
 "細情報をリクエストされたからです。"
 
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#, fuzzy
+#| msgid ""
+#| "You are receiving this message because your Partner status is currently "
+#| "<b>Inactive</b> and you are <b>not eligible</b> to receive inCome."
+msgid "You are receiving this message because your Partner status is currently"
+msgstr ""
+"あなたのパートナーとしてのステータスが現在<b>非アクティブ</b>であり、収入を受"
+"け取る<b>資格がない</b>ため、このメッセージでお知らせしています。"
+
 #: /app/apps/main/views/emails/compensation/partner_status_inactive.html
 msgid ""
 "You are receiving this message because your Partner status is currently "
@@ -6314,6 +6449,12 @@ msgid ""
 "it.</p>"
 msgstr ""
 "あなたの世界的な到達範囲を活用し、それに値する収入を稼ぐことができます。</p>"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+msgid ""
+"You can make the $95 dollar Partner Renewal payment by clicking the button "
+"below:"
+msgstr ""
 
 #: /app/apps/main/views/emails/billing/tmt_upgrade.html
 msgid ""
@@ -6786,10 +6927,6 @@ msgstr "この請求書が支払われるまで、アカウントは無効にな
 msgid "Your affiliate link has been changed successfully"
 msgstr "あなたのアフィリエイトリンクは正常に変更されました"
 
-#: /app/apps/main/controllers/invoices.js
-msgid "Your Annual Partner Renewal fee is coming up"
-msgstr "パートナー更新費の請求日が近づいています"
-
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 msgid ""
 "Your annual Partner Renewal invoice has been created. You will find the "
@@ -6942,6 +7079,30 @@ msgid ""
 msgstr ""
 "あなたのオンボーディング情報がリセットされましたので、同意書とオンボーディン"
 "グの質問に再度ご記入ください。"
+
+#: /app/apps/main/controllers/invoices.js
+#, fuzzy
+#| msgid "Your Annual Partner Renewal fee is coming up"
+msgid "Your Partner renewal is coming up!"
+msgstr "パートナー更新費の請求日が近づいています"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#, fuzzy
+#| msgid "Partnership"
+msgid "your Partnership"
+msgstr "パートナーシップ"
+
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#, fuzzy
+#| msgid "Your ticket has been created."
+msgid "Your Partnership Renewal invoice has been created."
+msgstr "あなたのチケットが作成されました。"
+
+#: /app/apps/main/queues/partner_invoice_five_before.process.js
+#, fuzzy
+#| msgid "Your Annual Partner Renewal fee is coming up"
+msgid "Your Partnership Renewal is Payable Now"
+msgstr "パートナー更新費の請求日が近づいています"
 
 #: /app/apps/main/controllers/email_address.js
 msgid "Your password description cannot be empty"
@@ -18225,6 +18386,44 @@ msgstr ""
 msgid "Save up to 25% with 1 for 1 RP"
 msgstr "１倍のリワードポイントを使って最大２５％節約"
 
+#~ msgid ""
+#~ "5 days before your due date we will create an invoice for %s which you "
+#~ "will be able to pay via Credit or Debit Card, or even your inCruises "
+#~ "Wallet Balance."
+#~ msgstr ""
+#~ "お支払い期日の5日前に、%s の請求書を作成します。このお支払いはクレジット"
+#~ "カードやデビットカード、あるいはあなたのinCruisesウォレットからも支払うこ"
+#~ "とができます。"
+
+#~ msgid ""
+#~ "Can you believe it's almost been a year since you joined inCruises as a "
+#~ "valued Partner?"
+#~ msgstr ""
+#~ "あなたが大切なパートナーとしてinCruisesに入会してからもう約1年が経過したな"
+#~ "んて信じられますか？"
+
+#~ msgid ""
+#~ "If you have any questions regarding this process, please visit:<a href="
+#~ "\"https://incruises.com/support\">https://incruises.com/support</a>"
+#~ msgstr ""
+#~ "ご不明な点がございましたら、<a href=\"https://incruises.com/support"
+#~ "\">https://incruises.com/support</a>のリンクへアクセスしてください"
+
+#~ msgid ""
+#~ "In the event you no longer wish to continue as a Partner with inCruises "
+#~ "and do not pay the renewal fee by your due date, you will no longer be "
+#~ "eligible to refer any other Members and/or Partners and you will not "
+#~ "receive commissions, bonuses, and/or rewards designed for active "
+#~ "Partners, including earning free membership credits."
+#~ msgstr ""
+#~ "InCruisesのパートナーとして継続したくない場合や、期限までに更新料を支払わ"
+#~ "ない場合は、他のメンバーやパートナーを紹介する資格がなくなり、コミッショ"
+#~ "ン、ボーナスやメンバーフリーといった有効会員向けに設計された特典を受け取る"
+#~ "ことはできません。"
+
+#~ msgid "Time does fly when you're having FUN!"
+#~ msgstr "楽しい時を過す時は時間があっという間に過ぎます！"
+
 #~ msgid "That Facebook account is not linked to a inCruises account."
 #~ msgstr ""
 #~ "そのFacebookアカウントはインクルーズアカウントにリンクされていません。"
@@ -19045,9 +19244,6 @@ msgstr "１倍のリワードポイントを使って最大２５％節約"
 #~ msgstr ""
 #~ "あなたのチケットが作成されました。担当者が返信するまで今しばらくお待ちくだ"
 #~ "さい。"
-
-#~ msgid "Your ticket has been created."
-#~ msgstr "あなたのチケットが作成されました。"
 
 #~ msgid "Your ticket received a reply!"
 #~ msgstr "あなたのチケットへの返信が届きました！"

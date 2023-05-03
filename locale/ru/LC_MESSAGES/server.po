@@ -488,16 +488,6 @@ msgstr "3-ий Партнёр-Член = 70$ Мгновенный Бонус"
 msgid "4th Partner Member = $80 Instant Pay Bonus"
 msgstr "4-ый Партнёр-Член клуба = 80$ Мгновенный Бонус"
 
-#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
-msgid ""
-"5 days before your due date we will create an invoice for %s which you will "
-"be able to pay via Credit or Debit Card, or even your inCruises Wallet "
-"Balance."
-msgstr ""
-"За 5 дней до назначенного срока оплаты мы выставим счет на %s, который Вы "
-"сможете оплатить кредитной или дебетовой картой или же с помощью средств на "
-"Вашем Кошельке inCruises."
-
 #: /app/apps/main/views/emails/compensation/daily_member_activation.html
 #: /app/apps/main/views/emails/compensation/monthly_member_activation.html
 msgid "5-9 Member Activations:"
@@ -522,6 +512,12 @@ msgstr "8-ой Партнёр-Член = 120$ Мгновенный Бонус"
 #: /app/apps/main/views/emails/bonus/instant_bonus.html
 msgid "9th Partner Member = $130 Instant Pay Bonus"
 msgstr "9-ый Партнёр-Член = 130$ Мгновенный Бонус"
+
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+msgid ""
+"A %s invoice will be created 5 days before your Partnership Renewal due date "
+"and you will be notified via email."
+msgstr ""
 
 #: /app/apps/main/views/emails/compensation/daily_member_activation.html
 msgid ""
@@ -642,11 +638,17 @@ msgstr "Добавлена Tourico Информация!"
 msgid "ADDITIONAL BONUS AMOUNT"
 msgstr "СУММА ДОПОЛНИТЕЛЬНОГО БОНУСА"
 
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid ""
+#| "Additionally, if your invoice remains unpaid for 30 days, we will proceed "
+#| "to move your referred Members and Partners to your sponsoring Partner. "
+#| "This move will not be able to be reversed in the future."
 msgid ""
-"Additionally, if your invoice remains unpaid for 30 days, we will proceed to "
-"move your referred Members and Partners to your sponsoring Partner. This "
-"move will not be able to be reversed in the future."
+"Additionally, if your invoice remains unpaid for 30 days your Partnership "
+"lapses entirely and your downline team passes to your upline sponsor. This "
+"action is irreversible."
 msgstr ""
 "Кроме того, если ваш счет остается неоплаченным в течение 30 дней, мы "
 "переведем Ваших Членов и Партнеров к вашему Партнеру-Спонсору. И это не "
@@ -724,6 +726,7 @@ msgstr "Уведомление о поступившем бонусе Амбас
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "Amount Due"
 msgstr "Сумма задолженности"
@@ -801,6 +804,14 @@ msgstr "И это - Неактивные Члены Клуба:"
 msgid ""
 "And these are Pending Members (those that have pending unpaid invoices):"
 msgstr "И Члены Клуба с задолженностью (те, у кого есть неоплаченные счета):"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid "In your home"
+msgid "and you are"
+msgstr "У Вас дома"
 
 #: /app/apps/main/views/emails/recurring/failed.html
 #: /app/apps/main/views/emails/recurring/payment_expired.html
@@ -926,6 +937,12 @@ msgstr ""
 msgid "Attention - Your Partner status is Inactive"
 msgstr "Внимание! Ваш Партнёрский статус - Неактивный"
 
+#: /app/apps/main/controllers/invoices.js
+#, fuzzy
+#| msgid "Attention - Your Partner status is Inactive"
+msgid "Attention - Your Partner status is now Inactive"
+msgstr "Внимание! Ваш Партнёрский статус - Неактивный"
+
 #: /app/apps/main/components/two_factor_auth.js
 msgid "Backup code used"
 msgstr ""
@@ -1002,14 +1019,6 @@ msgstr "C<small>ЕРТИФИКАТ О</small> ЗА<small>ВЕРШЕНИИ</small
 #: /app/apps/main/views/emails/global_booking/new_booking.html
 msgid "Cabin"
 msgstr "Каюта"
-
-#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
-msgid ""
-"Can you believe it's almost been a year since you joined inCruises as a "
-"valued Partner?"
-msgstr ""
-"Можете ли Вы поверить, что прошел уже почти год с тех пор, как Вы "
-"присоединились к inCruises в качестве нашего высоко ценимого Партнера?"
 
 #: /app/apps/main/views/emails/recurring/failed.html
 msgid "Card on file has expired"
@@ -1479,6 +1488,7 @@ msgstr "Курс"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "Creation Date"
 msgstr "Дата создания"
@@ -1566,6 +1576,8 @@ msgstr "Уважаемый %s"
 #: /app/apps/main/views/emails/compensation/monthly_member_activation.html
 #: /app/apps/main/views/emails/compensation/new_leadership_title.html
 #: /app/apps/main/views/emails/compensation/weekly_bonus.html
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
 #: /app/apps/main/views/emails/invoices/senior_team_leader.html
 #: /app/apps/main/views/emails/recurring/failed.html
@@ -1726,6 +1738,7 @@ msgstr "Нижестоящие Удалены"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "Due Date"
 msgstr "Срок"
@@ -1980,6 +1993,10 @@ msgstr ""
 #: /app/apps/main/views/certificates/style2.html
 msgid "has successfully completed the course program"
 msgstr "успешно завершил программу курса"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+msgid "have not paid"
+msgstr ""
 
 #: /app/apps/main/views/emails/contacts/invitation_personal_opinion.html
 msgid "Have you ever heard of inCruises?"
@@ -2374,15 +2391,6 @@ msgstr ""
 "Поддержки на странице https://incruises.com/support или нажмите на кнопку "
 "\"Помощь\" (в правом нижнем углу экрана) на нашем сайте."
 
-#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
-msgid ""
-"If you have any questions regarding this process, please visit:<a href="
-"\"https://incruises.com/support\">https://incruises.com/support</a>"
-msgstr ""
-"Если у Вас есть какие либо вопросы касательно этого процесса, пожалуйста "
-"свяжитесь с нашей службой поддержки: <a href=\"https://incruises.com/support"
-"\">https://incruises.com/support</a>"
-
 #: /app/apps/main/views/emails/power_tools/downgrade.html
 #: /app/apps/main/views/emails/power_tools/upgrade.html
 msgid ""
@@ -2436,6 +2444,14 @@ msgstr ""
 #: /app/apps/main/controllers/account_data.js
 msgid "If you have cruised before, please answer the other two questions."
 msgstr "Если ранее бывали в круизе, то, пожалуйста, ответьте ещё на 2 вопроса."
+
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+msgid ""
+"If you have recurring billing set up on your account or if you have "
+"sufficient funds in your inCruises Wallet then the payment will be taken "
+"automatically. Otherwise you will be able to pay the invoice via Credit or "
+"Debit Card."
+msgstr ""
 
 #: /app/apps/main/views/emails/global_booking/post_booking_review.html
 msgid ""
@@ -2665,19 +2681,20 @@ msgstr ""
 "отменен, и все Бонусные Баллы, которые были использованы для этого "
 "бронирования, будут возвращены."
 
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
 msgid ""
-"In the event you no longer wish to continue as a Partner with inCruises and "
-"do not pay the renewal fee by your due date, you will no longer be eligible "
-"to refer any other Members and/or Partners and you will not receive "
-"commissions, bonuses, and/or rewards designed for active Partners, including "
-"earning free membership credits."
+"In the event you do not pay your Partner Renewal by your due date, your "
+"Partner status will change to"
 msgstr ""
-"В случае, если Вы больше не желаете оставаться Партнером inCruises и не "
-"будете оплачивать взнос за продление, Вы больше не будете иметь право "
-"подписывать  других Членов Клуба и/или Партнеров, а также перестанете "
-"получать комиссионные, бонусы и/или вознаграждения, предназначенные для "
-"активных Партнеров, включая получение бесплатных членских кредитов."
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid "Inactive Member"
+msgid "Inactive"
+msgstr "Неактивный Член Клуба"
 
 #: /app/apps/main/controllers/user_functions.js
 msgid "Incorrect amount was supplied."
@@ -2901,6 +2918,7 @@ msgstr "Счет Создан - Требуется Оплата"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "Invoice Details:"
 msgstr "Информация о счёте:"
@@ -2917,6 +2935,7 @@ msgstr "Счет от inCruises™!"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "Invoice Number"
 msgstr "Номер счёта"
@@ -2924,6 +2943,12 @@ msgstr "Номер счёта"
 #: /app/apps/main/controllers/invoices.js
 msgid "Invoice Past Due"
 msgstr "Счёт просрочен"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#, fuzzy
+#| msgid "Invoices"
+msgid "invoice."
+msgstr "Счета"
 
 #: /app/apps/main/controllers/ip_greylist.js
 msgid "IP Greylist ID not found."
@@ -2947,9 +2972,13 @@ msgid "It costs less than $400 to become a Partner/Member."
 msgstr "Это стоит меньше, чем $400, чтобы стать Партнером / Членом клуба."
 
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid ""
+#| "It's important that you pay attention to our upcoming emails with "
+#| "reminders regarding your Annual Partner Renewal fee."
 msgid ""
 "It's important that you pay attention to our upcoming emails with reminders "
-"regarding your Annual Partner Renewal fee."
+"regarding your Partner Renewal."
 msgstr ""
 "Важно обратить внимание на наши предстоящие письма с напоминаниями "
 "относительно Вашего Ежегодного Обновления Членства."
@@ -3301,6 +3330,11 @@ msgstr "Запрошенный Вами идентификатор не найд
 msgid "No ID provided."
 msgstr "Не предоставлен ID."
 
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+msgid "no longer eligible"
+msgstr ""
+
 #: /app/apps/main/controllers/payments_review.js
 msgid "No matches found"
 msgstr "Совпадений не найдено"
@@ -3316,6 +3350,10 @@ msgstr "Еженедельный бонус не обнаружен."
 #: /app/apps/main/controllers/blog_post.js
 msgid "Not data found"
 msgstr "Данные не найдены"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+msgid "not eligible"
+msgstr ""
 
 #: /app/apps/main/compensation/quick_start.js
 #: /app/apps/main/compensation/travel.js
@@ -3509,6 +3547,13 @@ msgstr "Партнер"
 #: /app/apps/main/components/invoices.js
 msgid "Partnership"
 msgstr "Партнёрство"
+
+#: /app/apps/main/controllers/invoices.js
+#, fuzzy
+#| msgid "Your Annual Partner Renewal fee is coming up"
+msgid "Pay Your Partner Renewal Invoice To Become Active"
+msgstr ""
+"Приближается срок оплаты Вашего ежегодного Партнерского взноса за продление"
 
 #: /app/apps/main/views/emails/billing/recurring_failed_support.html
 #: /app/apps/main/views/emails/billing/recurring_success_support.html
@@ -3791,6 +3836,12 @@ msgstr ""
 "отзывами о том, что вас впечатлило больше всего в вашем <strong> опыте "
 "Членства в Клубе inCruises!</strong>"
 
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+msgid ""
+"Please take a moment to complete your payment now by clicking the button "
+"below:"
+msgstr ""
+
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 msgid ""
 "Please take a moment to complete your payment now. If after 5 days, this "
@@ -4022,6 +4073,10 @@ msgstr ""
 msgid "Removed power tools from user"
 msgstr "Удаленные пользователем power tools"
 
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+msgid "Renewal"
+msgstr ""
+
 #: /app/apps/main/views/emails/contacts/reminders/upgrade_reminder.html
 msgid ""
 "Replace or increase your full-time income with a career in a trillion dollar "
@@ -4169,6 +4224,23 @@ msgid ""
 msgstr ""
 "Если у вас есть какие-либо вопросы, то обратитесь, пожалуйста, в Службу "
 "Поддержки inCruises здесь:"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid ""
+#| "Should you have any questions, please reach out to your inCruises Support "
+#| "team at:<a href=\"https://www.incruises.com/support\">https://www."
+#| "incruises.com/support</a>."
+msgid ""
+"Should you have any other questions, please reach out to your inCruises "
+"Support team at: <a href=\"https://incruises.com/support\">https://incruises."
+"com/support</a>"
+msgstr ""
+"В случае возникновения вопросов обращайтесь в Службу поддержки inCruises:<a "
+"href=\"https://www.incruises.com/support\">https://www.incruises.com/"
+"support</a>."
 
 #: /app/apps/main/views/emails/compensation/partner_status_active.html
 #: /app/apps/main/views/emails/compensation/partner_status_inactive.html
@@ -4338,6 +4410,7 @@ msgstr "СР. ЛИДЕР КОМАНДЫ"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 #: /app/apps/main/controllers/export.js
 msgid "Status"
@@ -4536,6 +4609,7 @@ msgid "Thank you and best regards,"
 msgstr "Спасибо и с наилучшими пожеланиями,"
 
 #: /app/apps/main/views/emails/compensation/partner_status_inactive.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 msgid "Thank you for being part of the inCruises family."
 msgstr "Спасибо, что являетесь частью семьи inCruises."
 
@@ -4676,6 +4750,29 @@ msgstr ""
 "его окончания</b>. Прямой доступ здесь: https://www.incruises.com/"
 "compensation"
 
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#, fuzzy
+#| msgid ""
+#| "The easiest way to ensure you stay Active and never miss inCome or "
+#| "inCentives is to stay aware of your Partner status by logging into your "
+#| "Partner back office Compensation page where you can see your Active "
+#| "Partner status and the date it will expire. You can access it here: "
+#| "https://www.incruises.com/compensation"
+msgid ""
+"The easiest way to ensure you never miss INcome or INcentives is to stay "
+"aware of your Partner status by logging into your Partner back office "
+"dashboard where you can see your Active Partner status and the date it will "
+"expire. You can access it here: <a href=\"https://incruises.com/welcome"
+"\">https://incruises.com/welcome</a>"
+msgstr ""
+"Самый простой способ гарантировать, что вы остаётесь Активным и никогда не "
+"упускаете возможность получения дохода и вознаграждений, - оставаться в "
+"курсе своего Партнёрского статуса. Сделать это можно, войдя в свой личный "
+"кабинет Партнёра на страницу Компенсация, на которой вы можете видеть свой "
+"Активный Партнёрский статус и дату его окончания. Прямой доступ здесь: "
+"https://www.incruises.com/compensation"
+
 #: /app/apps/main/views/emails/compensation/partner_status_active.html
 msgid ""
 "The easiest way to ensure you stay Active and never miss inCome or "
@@ -4715,6 +4812,7 @@ msgid "The formula for a six-figure income in our profession"
 msgstr "Формула для шестизначного дохода в нашей профессии"
 
 #: /app/apps/main/views/emails/compensation/partner_status_inactive.html
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
 msgid "The good news is it's very simple to become Active again!"
 msgstr ""
 "Хорошая новость заключается в том, что стать снова Активным очень просто!"
@@ -5191,9 +5289,11 @@ msgid "This IP has been blocked!"
 msgstr "Этот IP был заблокирован!"
 
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
-msgid ""
-"This is a courtesy reminder that your annual Partner renewal fee of %s is "
-"coming soon."
+#, fuzzy
+#| msgid ""
+#| "This is a courtesy reminder that your annual Partner renewal fee of %s is "
+#| "coming soon."
+msgid "This is a courtesy reminder that your Partner Renewal is coming up."
 msgstr ""
 "Позвольте Вам напомнить, что приближается срок оплаты Вашего ежегодного "
 "партнерского взноса за продление в размере %s."
@@ -5271,10 +5371,6 @@ msgstr "Это имя пользователя уже занято"
 msgid "Ticket Contract"
 msgstr "Договор По Продаже Билетов"
 
-#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
-msgid "Time does fly when you're having FUN!"
-msgstr "Время пролетает незаметно, когда проводишь его с УДОВОЛЬСТВИЕМ!"
-
 #: /app/apps/main/controllers/login.js
 msgid "Time flies"
 msgstr "Время летит"
@@ -5285,6 +5381,12 @@ msgstr "Промежуток времени"
 
 #: /app/apps/main/controllers/upgrade.js
 msgid "Time Sensitive Partner inCentive notice!"
+msgstr "Чувствительное ко времени уведомление о Партнёрском вознаграждении!"
+
+#: /app/apps/main/controllers/invoices.js
+#, fuzzy
+#| msgid "Time Sensitive Partner inCentive notice!"
+msgid "Time Sensitive Partner renewal notice!"
 msgstr "Чувствительное ко времени уведомление о Партнёрском вознаграждении!"
 
 #: /app/apps/main/views/emails/contacts/reminders/upgrade_reminder_3.html
@@ -5391,6 +5493,18 @@ msgid ""
 msgstr ""
 "Чтобы снять статус удержания на Ваши Бонусные Баллы, Вам потребуется  "
 "заплатить ($%s) в полном объеме."
+
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+msgid ""
+"to receive INcome or INcentives, including the Membership Free INcentive."
+msgstr ""
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#, fuzzy
+#| msgid "How inCruises INcome and INcentives work"
+msgid "to receive INcome or INcentives."
+msgstr "Как работает доход и вознаграждения inCruises"
 
 #: /app/apps/main/views/emails/payments_review/referer.html
 msgid ""
@@ -5550,6 +5664,10 @@ msgstr ""
 msgid "Urgent Message Regarding Your Support Request!"
 msgstr "Срочное сообщение по поводу вашего запроса в поддержку!"
 
+#: /app/apps/main/queues/partner_invoice_five_before.process.js
+msgid "Urgent Partnership Renewal Notice"
+msgstr ""
+
 #: /app/apps/main/views/emails/invoices/now_free.html
 msgid ""
 "Use the filters to view those that are Active and those that are expired."
@@ -5608,6 +5726,8 @@ msgstr "Подтвердите Ваш электронный адрес"
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
 #: /app/apps/main/views/emails/invoices/power_tools.html
 msgid "View and Pay Invoice"
 msgstr "Посмотреть и оплатить счёт"
@@ -5680,9 +5800,12 @@ msgstr ""
 "сделать сейчас."
 
 #: /app/apps/main/views/emails/invoices/partner_renewal_reminder.html
+#, fuzzy
+#| msgid ""
+#| "We appreciate you and are looking forward to having you remain active as "
+#| "a Partner with inCruises."
 msgid ""
-"We appreciate you and are looking forward to having you remain active as a "
-"Partner with inCruises."
+"We appreciate you and look forward to a long and prosperous Partnership!"
 msgstr ""
 "Мы признательны Вам и надеемся, что Вы останетесь с inCruises в качестве "
 "активного Партнера."
@@ -6315,6 +6438,10 @@ msgstr ""
 "В настоящее время вы забронировали круиз, который скоро стартует и мы "
 "Высылали Вам предупреждение, что ваше Членство больше не активно."
 
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+msgid "You are Inactive because you"
+msgstr ""
+
 #: /app/apps/main/views/emails/compensation/partner_status_inactive.html
 msgid ""
 "You are Inactive because you are not currently meeting the Minimum "
@@ -6400,6 +6527,16 @@ msgstr ""
 "Вы получили это письмо, так как запрашивали подробную информацию о "
 "возможностях программы Партнёрства inCruises."
 
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#, fuzzy
+#| msgid ""
+#| "You are receiving this message because your Partner status is currently "
+#| "<b>Inactive</b> and you are <b>not eligible</b> to receive inCome."
+msgid "You are receiving this message because your Partner status is currently"
+msgstr ""
+"Вы получили данное сообщение, потому что ваш Партнёрский статус в настоящий "
+"момент <b>Неактивный</b> и вы <b>не имеете права</b> на получение дохода."
+
 #: /app/apps/main/views/emails/compensation/partner_status_inactive.html
 msgid ""
 "You are receiving this message because your Partner status is currently "
@@ -6448,6 +6585,12 @@ msgid ""
 msgstr ""
 "Вы можете использовать ваши перелеты по всему миру и получать прибыль, "
 "которую вы заслуживаете от него.</p>"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+msgid ""
+"You can make the $95 dollar Partner Renewal payment by clicking the button "
+"below:"
+msgstr ""
 
 #: /app/apps/main/views/emails/billing/tmt_upgrade.html
 msgid ""
@@ -6928,11 +7071,6 @@ msgstr ""
 msgid "Your affiliate link has been changed successfully"
 msgstr "Ваша партнерская ссылка успешно изменена"
 
-#: /app/apps/main/controllers/invoices.js
-msgid "Your Annual Partner Renewal fee is coming up"
-msgstr ""
-"Приближается срок оплаты Вашего ежегодного Партнерского взноса за продление"
-
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 msgid ""
 "Your annual Partner Renewal invoice has been created. You will find the "
@@ -7090,6 +7228,32 @@ msgid ""
 msgstr ""
 "Ваши регистрационные данные были сброшены. Вы можете смело заполнить "
 "соглашение и ответить на регистрационные вопросы ещё раз."
+
+#: /app/apps/main/controllers/invoices.js
+#, fuzzy
+#| msgid "Your Annual Partner Renewal fee is coming up"
+msgid "Your Partner renewal is coming up!"
+msgstr ""
+"Приближается срок оплаты Вашего ежегодного Партнерского взноса за продление"
+
+#: /app/apps/main/views/emails/invoices/inactive_partnership.html
+#, fuzzy
+#| msgid "Partnership"
+msgid "your Partnership"
+msgstr "Партнёрство"
+
+#: /app/apps/main/views/emails/invoices/invoice_created_but_payment_failed.html
+#, fuzzy
+#| msgid "Your ticket has been created."
+msgid "Your Partnership Renewal invoice has been created."
+msgstr "Ваш тикет успешно создан."
+
+#: /app/apps/main/queues/partner_invoice_five_before.process.js
+#, fuzzy
+#| msgid "Your Annual Partner Renewal fee is coming up"
+msgid "Your Partnership Renewal is Payable Now"
+msgstr ""
+"Приближается срок оплаты Вашего ежегодного Партнерского взноса за продление"
 
 #: /app/apps/main/controllers/email_address.js
 msgid "Your password description cannot be empty"
@@ -18696,6 +18860,46 @@ msgstr ""
 msgid "Save up to 25% with 1 for 1 RP"
 msgstr "Экономьте до 25% с ББ 1 к 1"
 
+#~ msgid ""
+#~ "5 days before your due date we will create an invoice for %s which you "
+#~ "will be able to pay via Credit or Debit Card, or even your inCruises "
+#~ "Wallet Balance."
+#~ msgstr ""
+#~ "За 5 дней до назначенного срока оплаты мы выставим счет на %s, который Вы "
+#~ "сможете оплатить кредитной или дебетовой картой или же с помощью средств "
+#~ "на Вашем Кошельке inCruises."
+
+#~ msgid ""
+#~ "Can you believe it's almost been a year since you joined inCruises as a "
+#~ "valued Partner?"
+#~ msgstr ""
+#~ "Можете ли Вы поверить, что прошел уже почти год с тех пор, как Вы "
+#~ "присоединились к inCruises в качестве нашего высоко ценимого Партнера?"
+
+#~ msgid ""
+#~ "If you have any questions regarding this process, please visit:<a href="
+#~ "\"https://incruises.com/support\">https://incruises.com/support</a>"
+#~ msgstr ""
+#~ "Если у Вас есть какие либо вопросы касательно этого процесса, пожалуйста "
+#~ "свяжитесь с нашей службой поддержки: <a href=\"https://incruises.com/"
+#~ "support\">https://incruises.com/support</a>"
+
+#~ msgid ""
+#~ "In the event you no longer wish to continue as a Partner with inCruises "
+#~ "and do not pay the renewal fee by your due date, you will no longer be "
+#~ "eligible to refer any other Members and/or Partners and you will not "
+#~ "receive commissions, bonuses, and/or rewards designed for active "
+#~ "Partners, including earning free membership credits."
+#~ msgstr ""
+#~ "В случае, если Вы больше не желаете оставаться Партнером inCruises и не "
+#~ "будете оплачивать взнос за продление, Вы больше не будете иметь право "
+#~ "подписывать  других Членов Клуба и/или Партнеров, а также перестанете "
+#~ "получать комиссионные, бонусы и/или вознаграждения, предназначенные для "
+#~ "активных Партнеров, включая получение бесплатных членских кредитов."
+
+#~ msgid "Time does fly when you're having FUN!"
+#~ msgstr "Время пролетает незаметно, когда проводишь его с УДОВОЛЬСТВИЕМ!"
+
 #~ msgid "That Facebook account is not linked to a inCruises account."
 #~ msgstr "Эта учетная запись Facebook не связана с учетной записью inCruises."
 
@@ -19534,9 +19738,6 @@ msgstr "Экономьте до 25% с ББ 1 к 1"
 #~ msgid "Your ticket has been created and an admin will respond shortly."
 #~ msgstr ""
 #~ "Ваш тикет был успешно создан. Администратор ответит вам в ближайшее время."
-
-#~ msgid "Your ticket has been created."
-#~ msgstr "Ваш тикет успешно создан."
 
 #~ msgid "Your ticket received a reply!"
 #~ msgstr "На ваш тикет ответили!"
