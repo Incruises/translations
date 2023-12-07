@@ -1321,34 +1321,6 @@ msgstr ""
 "<b>Вы можете осуществлять бронирования с уверенностью, зная, что будете "
 "экономить с inCruises деньги в 100% случаев!</b>"
 
-#: components/admin_financial_cruising/cruise_bookings.vue
-msgid ""
-"<div class=\"flex justify-content-center align-items-center\">\n"
-"\t\t\t\t\t\t\t\t\t\tStatus\n"
-"\t\t\t\t\t\t\t\t\t\t<svg width=\"18\" height=\"18\" fill=\"none\" viewBox="
-"\"0 0 24 24\">\n"
-"\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" "
-"stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M19.25 4.75H4.75L9.31174 "
-"10.4522C9.59544 10.8068 9.75 11.2474 9.75 11.7016V18.25C9.75 18.8023 10.1977 "
-"19.25 10.75 19.25H13.25C13.8023 19.25 14.25 18.8023 14.25 "
-"18.25V11.7016C14.25 11.2474 14.4046 10.8068 14.6883 10.4522L19.25 4.75Z\"></"
-"path>\n"
-"\t\t\t\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\t\t\t</div>"
-msgstr ""
-"<div class=\"flex justify-content-center align-items-center\">\n"
-"\t\t\t\t\t\t\t\t\t\tСтатус\n"
-"\t\t\t\t\t\t\t\t\t\t<svg width=\"18\" height=\"18\" fill=\"none\" viewBox="
-"\"0 0 24 24\">\n"
-"\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" "
-"stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M19.25 4.75H4.75L9.31174 "
-"10.4522C9.59544 10.8068 9.75 11.2474 9.75 11.7016V18.25C9.75 18.8023 10.1977 "
-"19.25 10.75 19.25H13.25C13.8023 19.25 14.25 18.8023 14.25 "
-"18.25V11.7016C14.25 11.2474 14.4046 10.8068 14.6883 10.4522L19.25 4.75Z\"></"
-"path>\n"
-"\t\t\t\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\t\t\t</div>"
-
 #: pages/email.vue
 msgid ""
 "<div>[SUGGESTED MESSAGE PLEASE PERSONALIZE]</div><div>[${contact.name."
@@ -1574,6 +1546,16 @@ msgid ""
 msgstr ""
 "<i class=\"fa fa-times text-red\"></i>\n"
 "\t\t\t\t\tНет свободного места"
+
+#: components/admin_finance/modals/view_payments.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-ban\"></i>\n"
+#| "\t\tCancelled"
+msgid "<i class=\"fa fa-trash\"></i>"
+msgstr ""
+"<i class=\"far fa-ban\"></i>\n"
+"\t\tОтменено"
 
 #: pages/webinar_recordings.vue
 msgid ""
@@ -3425,7 +3407,8 @@ msgstr "Действие"
 #: pages/negative_balances.vue pages/reports.vue
 #: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
+#: components/admin_finance/payment_fulfillment.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/statements.vue
@@ -4147,9 +4130,21 @@ msgstr "Результаты Амбассадора"
 msgid "Amount"
 msgstr "Сумма"
 
+#: components/admin_finance/payment_fulfillment.vue
+#, fuzzy
+#| msgid "Amount paid:"
+msgid "Amount Already Paid"
+msgstr "Оплаченная сумма:"
+
 #: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Amount paid:"
 msgstr "Оплаченная сумма:"
+
+#: components/admin_finance/payment_fulfillment.vue
+#, fuzzy
+#| msgid "Remaining Amount to Pay"
+msgid "Amount to Pay"
+msgstr "Оставшаяся сумма к оплате"
 
 #: components/translations/placeholders.vue
 msgid "Amount you want to transfer in dollars."
@@ -5437,6 +5432,10 @@ msgstr "Бронирование"
 msgid "Booking Cost"
 msgstr "Стоимость бронирования"
 
+#: components/admin_finance/modals/view_payments.vue
+msgid "Booking Payments #{{ booking.global_booking_id }}"
+msgstr ""
+
 #: components/receipts/booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
@@ -6170,6 +6169,10 @@ msgstr "Изменить"
 #: pages/settings.vue
 msgid "Change 2FA Method"
 msgstr "Изменить способ 2FA"
+
+#: components/admin_finance/payment_fulfillment.vue
+msgid "Change Internal Price"
+msgstr ""
 
 #: pages/settings.vue
 msgid "Change Password"
@@ -7113,6 +7116,12 @@ msgstr "Дата Создания"
 msgid "Created:"
 msgstr "Создано:"
 
+#: components/admin_finance/payment_fulfillment.vue
+#, fuzzy
+#| msgid "Credit Cards"
+msgid "Credit Card"
+msgstr "Кредитные карты"
+
 #: components/checkout/ProcessorSafechargeEur.vue
 msgid "Credit or debit card"
 msgstr "Кредитная или дебетовая карта"
@@ -7121,11 +7130,13 @@ msgstr "Кредитная или дебетовая карта"
 msgid "credited back to your account."
 msgstr "с начислением на ваш счёт."
 
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
+#: components/admin_finance/payment_fulfillment.vue
 msgid "Cruise"
 msgstr "Круиз"
 
-#: pages/admin_booking.vue pages/admin_financial_cruising.vue
+#: pages/admin_booking.vue pages/admin_finance.vue
+#: pages/admin_financial_cruising.vue
 msgid "Cruise Bookings"
 msgstr "Бронирования круизов"
 
@@ -7161,7 +7172,10 @@ msgid "Cruise Limits"
 msgstr "Круизные ограничения"
 
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
-#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#: receipts/booking_receipt.html
 msgid "Cruise Line"
 msgstr "Круизная Линия"
 
@@ -9095,6 +9109,23 @@ msgstr "Заключительный Экзамен"
 #: pages/courses.vue courses/view.html
 msgid "Final Exam Results"
 msgstr "Результат Заключительного Экзамена"
+
+#: components/admin_finance/cruise_bookings.vue
+#, fuzzy
+#| msgid "Payment Date:"
+msgid "Final Payment Due Date"
+msgstr "Дата платежа:"
+
+#: components/admin_finance/payment_fulfillment.vue
+#, fuzzy
+#| msgid "Payment Date:"
+msgid "Final Payment Duedate"
+msgstr "Дата платежа:"
+
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+msgid "Final Payment for this booking."
+msgstr ""
 
 #: pages/elevate_registration.vue
 msgid "Finalize Your Registration"
@@ -12287,7 +12318,8 @@ msgstr "Информация"
 msgid "Info Center"
 msgstr "Инфо-центр"
 
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
+#: components/admin_finance/payment_fulfillment.vue
 msgid "Information"
 msgstr "Информация"
 
@@ -13416,6 +13448,10 @@ msgstr "Март"
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 msgid "Marital Status"
 msgstr "Семейный Статус"
+
+#: components/admin_finance/payment_fulfillment.vue
+msgid "Mark as Paid"
+msgstr ""
 
 #: resources/index.html
 msgid "MARKETING"
@@ -14581,6 +14617,13 @@ msgstr "Новые Партнёры в команде"
 msgid "New Ticket"
 msgstr "Новый тикет"
 
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#, fuzzy
+#| msgid "Total cost"
+msgid "New Total Cost"
+msgstr "Итоговая стоимость"
+
 #: pages/notifications.vue email_notifications/index.html
 msgid "Newer"
 msgstr "Новейший"
@@ -15136,6 +15179,12 @@ msgstr ""
 msgid "One-Time Password (OTP)"
 msgstr "Одноразовый пароль (OTP)"
 
+#: components/admin_finance/cruise_bookings.vue
+#, fuzzy
+#| msgid "Join Now"
+msgid "Online Now"
+msgstr "Присоединиться"
+
 #: components/public/FooterLinks.vue
 msgid "ONLINE TRAVEL SERVICES &amp; TRAVEL ADVISOR AGENCY CATEGORIES"
 msgstr "ONLINE TRAVEL SERVICES &amp; TRAVEL ADVISOR AGENCY CATEGORIES"
@@ -15411,13 +15460,19 @@ msgstr ""
 msgid "Page Data"
 msgstr "Данные страницы"
 
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
 msgid "Paid"
 msgstr "Оплачено"
 
 #: components/price_match_guarantee/cruises.vue
 msgid "Paid at Time of Booking"
 msgstr "Оплачено при бронировании"
+
+#: components/admin_finance/cruise_bookings.vue
+#, fuzzy
+#| msgid "All Bookings"
+msgid "Paid Bookings"
+msgstr "Все бронирования"
 
 #: pages/invoices.vue components/compensation/statements.vue
 msgid "Paid Date"
@@ -16157,6 +16212,12 @@ msgstr "Платёжным Соглашением"
 msgid "Payment Date:"
 msgstr "Дата платежа:"
 
+#: pages/admin_finance.vue
+#, fuzzy
+#| msgid "Payment Agreement"
+msgid "Payment Fulfillment"
+msgstr "Платёжным Соглашением"
+
 #: pages/convention_manager.vue
 msgid "Payment Link (Full url with HTTPS)"
 msgstr "Ссылка на Платеж (Полный URL с HTTPS)"
@@ -16200,7 +16261,7 @@ msgstr "Платёжный агент в настоящее время недо�
 msgid "Payout Review"
 msgstr "Обзор выплат"
 
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
 #: components/support/TicketList.vue components/welcome/members-modal.vue
 msgid "Pending"
 msgstr "В ожидании"
@@ -16256,6 +16317,12 @@ msgstr "Члены Клуба с задолженностью"
 #: components/compensation/qbi.vue
 msgid "Pending Members Report"
 msgstr "Отчёт о Членах Клуба с задолженностью"
+
+#: components/admin_finance/cruise_bookings.vue
+#, fuzzy
+#| msgid "Missing Payments"
+msgid "Pending Payments"
+msgstr "Просроченные платежи"
 
 #: pages/reports.vue reports/index.html
 msgid "Pending QBI Report"
@@ -17299,7 +17366,7 @@ msgstr ""
 "расходы могут быть не включены в стоимость"
 
 #: components/admin_booking/cruise_bookings.vue
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
 #: components/public/FooterLinks.vue layouts/default.html
 #: layouts/default_no_nav.html
 msgid "Pricing"
@@ -18140,6 +18207,13 @@ msgstr "Отправить SMS повторно"
 #: receipts/hotel_booking_receipt.html
 msgid "Reservation Details"
 msgstr "Детали Брони"
+
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#, fuzzy
+#| msgid "Reservations"
+msgid "Reservation ID"
+msgstr "Бронирования"
 
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Reservation Number"
@@ -19566,6 +19640,7 @@ msgid "Stats"
 msgstr "Статистика"
 
 #: pages/contacts.vue pages/convention_manager.vue pages/negative_balances.vue
+#: components/admin_finance/cruise_bookings.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue
 #: components/growth_calculator/potential_leadership.vue
@@ -22168,6 +22243,13 @@ msgstr "Всего Компенс."
 msgid "Total cost"
 msgstr "Итоговая стоимость"
 
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#, fuzzy
+#| msgid "Total cost"
+msgid "Total Cost"
+msgstr "Итоговая стоимость"
+
 #: pages/cruises_booking.vue pages/my_cruise_savings.vue
 msgid "Total Cruise Price"
 msgstr "Итоговая стоимость Круиза"
@@ -22231,12 +22313,26 @@ msgstr "Общее Количество Членов Клуба"
 msgid "Total Out Of Pocket"
 msgstr "Итого доплатить"
 
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#, fuzzy
+#| msgid "Total Price"
+msgid "Total Owed"
+msgstr "Итоговая стоимость"
+
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#, fuzzy
+#| msgid "Total Price"
+msgid "Total Paid Already"
+msgstr "Итоговая стоимость"
+
 #: components/partner-success-certificate.vue
 msgid "TOTAL PARTNERS"
 msgstr "ВСЕГО ПАРТНЁРОВ"
 
 #: pages/connect.vue pages/hotel_booking.vue pages/invoices.vue
-#: pages/upgrade.vue
+#: pages/upgrade.vue components/admin_finance/payment_fulfillment.vue
 msgid "Total Price"
 msgstr "Итоговая стоимость"
 
@@ -23117,6 +23213,10 @@ msgstr "Просмотры"
 #: pages/admin_user_id.vue
 msgid "VIP Data"
 msgstr "VIP-данные"
+
+#: pages/admin_finance.vue
+msgid "Virtual CC's"
+msgstr ""
 
 #: pages/builders_base.vue components/compensation/builders_bonus.vue
 #: components/receipts/builders_bonus.vue
@@ -37237,6 +37337,33 @@ msgstr "Круиз на Новогодних каникулах на 7 ноче�
 msgid "<div><br></div>"
 msgstr "<div><br></div>"
 
+#~ msgid ""
+#~ "<div class=\"flex justify-content-center align-items-center\">\n"
+#~ "\t\t\t\t\t\t\t\t\t\tStatus\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<svg width=\"18\" height=\"18\" fill=\"none\" viewBox="
+#~ "\"0 0 24 24\">\n"
+#~ "\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round"
+#~ "\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M19.25 "
+#~ "4.75H4.75L9.31174 10.4522C9.59544 10.8068 9.75 11.2474 9.75 "
+#~ "11.7016V18.25C9.75 18.8023 10.1977 19.25 10.75 19.25H13.25C13.8023 19.25 "
+#~ "14.25 18.8023 14.25 18.25V11.7016C14.25 11.2474 14.4046 10.8068 14.6883 "
+#~ "10.4522L19.25 4.75Z\"></path>\n"
+#~ "\t\t\t\t\t\t\t\t\t\t</svg>\n"
+#~ "\t\t\t\t\t\t\t\t\t</div>"
+#~ msgstr ""
+#~ "<div class=\"flex justify-content-center align-items-center\">\n"
+#~ "\t\t\t\t\t\t\t\t\t\tСтатус\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<svg width=\"18\" height=\"18\" fill=\"none\" viewBox="
+#~ "\"0 0 24 24\">\n"
+#~ "\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round"
+#~ "\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M19.25 "
+#~ "4.75H4.75L9.31174 10.4522C9.59544 10.8068 9.75 11.2474 9.75 "
+#~ "11.7016V18.25C9.75 18.8023 10.1977 19.25 10.75 19.25H13.25C13.8023 19.25 "
+#~ "14.25 18.8023 14.25 18.25V11.7016C14.25 11.2474 14.4046 10.8068 14.6883 "
+#~ "10.4522L19.25 4.75Z\"></path>\n"
+#~ "\t\t\t\t\t\t\t\t\t\t</svg>\n"
+#~ "\t\t\t\t\t\t\t\t\t</div>"
+
 #~ msgid "13-nights Mediterranean Cruise"
 #~ msgstr "Круиз по Средиземноморью на 13 ночей"
 
@@ -37410,9 +37537,6 @@ msgstr "<div><br></div>"
 
 #~ msgid "Choose Payment Type"
 #~ msgstr "Выберете Метод Оплаты"
-
-#~ msgid "Credit Cards"
-#~ msgstr "Кредитные карты"
 
 #~ msgid "Cryptocurrency"
 #~ msgstr "Криптовалюта"
@@ -37647,9 +37771,6 @@ msgstr "<div><br></div>"
 #~| msgid "Proceed with Cofirmation"
 #~ msgid "Proceed with Confirmation"
 #~ msgstr "Продолжить с подтверждением"
-
-#~ msgid "Remaining Amount to Pay"
-#~ msgstr "Оставшаяся сумма к оплате"
 
 #~ msgid "You will receieve a payment link to pay this amount within 3 days."
 #~ msgstr "Вы получите ссылку для оплаты данной суммы в течение 3-х дней."
@@ -38989,13 +39110,6 @@ msgstr "<div><br></div>"
 
 #~ msgid "Cruise Brochure"
 #~ msgstr "Круизная брошюра"
-
-#~ msgid ""
-#~ "<i class=\"far fa-ban\"></i>\n"
-#~ "\t\tCancelled"
-#~ msgstr ""
-#~ "<i class=\"far fa-ban\"></i>\n"
-#~ "\t\tОтменено"
 
 #~ msgid ""
 #~ "<i class=\"far fa-exclamation-circle\"></i>\n"

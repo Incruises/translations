@@ -1231,34 +1231,6 @@ msgid ""
 "with inCruises!</b>"
 msgstr "<b>您可以放心预订，因为您知道使用 inCruises 可以 100% 省钱！</b>"
 
-#: components/admin_financial_cruising/cruise_bookings.vue
-msgid ""
-"<div class=\"flex justify-content-center align-items-center\">\n"
-"\t\t\t\t\t\t\t\t\t\tStatus\n"
-"\t\t\t\t\t\t\t\t\t\t<svg width=\"18\" height=\"18\" fill=\"none\" viewBox="
-"\"0 0 24 24\">\n"
-"\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" "
-"stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M19.25 4.75H4.75L9.31174 "
-"10.4522C9.59544 10.8068 9.75 11.2474 9.75 11.7016V18.25C9.75 18.8023 10.1977 "
-"19.25 10.75 19.25H13.25C13.8023 19.25 14.25 18.8023 14.25 "
-"18.25V11.7016C14.25 11.2474 14.4046 10.8068 14.6883 10.4522L19.25 4.75Z\"></"
-"path>\n"
-"\t\t\t\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\t\t\t</div>"
-msgstr ""
-"<div class=\"flex justify-content-center align-items-center\">\n"
-"\t\t\t\t\t\t\t\t\t\t状态\n"
-"\t\t\t\t\t\t\t\t\t\t<svg width=\"18\" height=\"18\" fill=\"none\" viewBox="
-"\"0 0 24 24\">\n"
-"\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round\" "
-"stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M19.25 4.75H4.75L9.31174 "
-"10.4522C9.59544 10.8068 9.75 11.2474 9.75 11.7016V18.25C9.75 18.8023 10.1977 "
-"19.25 10.75 19.25H13.25C13.8023 19.25 14.25 18.8023 14.25 "
-"18.25V11.7016C14.25 11.2474 14.4046 10.8068 14.6883 10.4522L19.25 4.75Z\"></"
-"path>\n"
-"\t\t\t\t\t\t\t\t\t\t</svg>\n"
-"\t\t\t\t\t\t\t\t\t</div>"
-
 #: pages/email.vue
 msgid ""
 "<div>[SUGGESTED MESSAGE PLEASE PERSONALIZE]</div><div>[${contact.name."
@@ -1481,6 +1453,16 @@ msgid ""
 msgstr ""
 "<i class=\"fa fa-times text-red\"></i>\n"
 "\t\t\t\t\t沒有存儲"
+
+#: components/admin_finance/modals/view_payments.vue
+#, fuzzy
+#| msgid ""
+#| "<i class=\"far fa-ban\"></i>\n"
+#| "\t\tCancelled"
+msgid "<i class=\"fa fa-trash\"></i>"
+msgstr ""
+"<i class=\"far fa-ban\"></i>\n"
+"取消"
 
 #: pages/webinar_recordings.vue
 msgid ""
@@ -3262,7 +3244,8 @@ msgstr "操作"
 #: pages/negative_balances.vue pages/reports.vue
 #: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
+#: components/admin_finance/payment_fulfillment.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/statements.vue
@@ -3950,9 +3933,21 @@ msgstr "大使追踪"
 msgid "Amount"
 msgstr "數量"
 
+#: components/admin_finance/payment_fulfillment.vue
+#, fuzzy
+#| msgid "Amount paid:"
+msgid "Amount Already Paid"
+msgstr "支付的金额："
+
 #: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Amount paid:"
 msgstr "支付的金额："
+
+#: components/admin_finance/payment_fulfillment.vue
+#, fuzzy
+#| msgid "Remaining Amount to Pay"
+msgid "Amount to Pay"
+msgstr "剩余支付金额"
 
 #: components/translations/placeholders.vue
 msgid "Amount you want to transfer in dollars."
@@ -5133,6 +5128,10 @@ msgstr "預定"
 msgid "Booking Cost"
 msgstr "预订费用"
 
+#: components/admin_finance/modals/view_payments.vue
+msgid "Booking Payments #{{ booking.global_booking_id }}"
+msgstr ""
+
 #: components/receipts/booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
@@ -5818,6 +5817,10 @@ msgstr "改變"
 #: pages/settings.vue
 msgid "Change 2FA Method"
 msgstr "改变2FA方法"
+
+#: components/admin_finance/payment_fulfillment.vue
+msgid "Change Internal Price"
+msgstr ""
 
 #: pages/settings.vue
 msgid "Change Password"
@@ -6742,6 +6745,12 @@ msgstr "創建日期"
 msgid "Created:"
 msgstr "已创建："
 
+#: components/admin_finance/payment_fulfillment.vue
+#, fuzzy
+#| msgid "Credit Cards"
+msgid "Credit Card"
+msgstr "信用卡"
+
 #: components/checkout/ProcessorSafechargeEur.vue
 msgid "Credit or debit card"
 msgstr "信用卡或借記卡"
@@ -6750,11 +6759,13 @@ msgstr "信用卡或借記卡"
 msgid "credited back to your account."
 msgstr "记回您的帐户。"
 
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
+#: components/admin_finance/payment_fulfillment.vue
 msgid "Cruise"
 msgstr "邮轮·"
 
-#: pages/admin_booking.vue pages/admin_financial_cruising.vue
+#: pages/admin_booking.vue pages/admin_finance.vue
+#: pages/admin_financial_cruising.vue
 msgid "Cruise Bookings"
 msgstr "邮轮预定"
 
@@ -6788,7 +6799,10 @@ msgid "Cruise Limits"
 msgstr "巡航限制"
 
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
-#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/booking_receipt.vue
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#: receipts/booking_receipt.html
 msgid "Cruise Line"
 msgstr "郵輪航線"
 
@@ -8629,6 +8643,23 @@ msgstr "最終測試"
 #: pages/courses.vue courses/view.html
 msgid "Final Exam Results"
 msgstr "最終測試結果"
+
+#: components/admin_finance/cruise_bookings.vue
+#, fuzzy
+#| msgid "Payment Date:"
+msgid "Final Payment Due Date"
+msgstr "支付日期："
+
+#: components/admin_finance/payment_fulfillment.vue
+#, fuzzy
+#| msgid "Payment Date:"
+msgid "Final Payment Duedate"
+msgstr "支付日期："
+
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+msgid "Final Payment for this booking."
+msgstr ""
 
 #: pages/elevate_registration.vue
 msgid "Finalize Your Registration"
@@ -11481,7 +11512,8 @@ msgstr "信息"
 msgid "Info Center"
 msgstr "信息中心"
 
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
+#: components/admin_finance/payment_fulfillment.vue
 msgid "Information"
 msgstr "信息"
 
@@ -12560,6 +12592,10 @@ msgstr "三月"
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 msgid "Marital Status"
 msgstr "婚姻狀況"
+
+#: components/admin_finance/payment_fulfillment.vue
+msgid "Mark as Paid"
+msgstr ""
 
 #: resources/index.html
 msgid "MARKETING"
@@ -13659,6 +13695,13 @@ msgstr "新的團隊合作夥伴"
 msgid "New Ticket"
 msgstr "新票"
 
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#, fuzzy
+#| msgid "Total cost"
+msgid "New Total Cost"
+msgstr "总消耗"
+
 #: pages/notifications.vue email_notifications/index.html
 msgid "Newer"
 msgstr "較新的"
@@ -14187,6 +14230,12 @@ msgstr "一名或多名會員有有效的航行或待處理的發票。"
 msgid "One-Time Password (OTP)"
 msgstr "一次性密码 (OTP)"
 
+#: components/admin_finance/cruise_bookings.vue
+#, fuzzy
+#| msgid "Join Now"
+msgid "Online Now"
+msgstr "現在加入"
+
 #: components/public/FooterLinks.vue
 msgid "ONLINE TRAVEL SERVICES &amp; TRAVEL ADVISOR AGENCY CATEGORIES"
 msgstr "在线旅游服务 &amp; 旅行顾问机构类别"
@@ -14445,13 +14494,19 @@ msgstr "页面并将新票发送到“邮轮预订问题”部门。"
 msgid "Page Data"
 msgstr "頁面數據"
 
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
 msgid "Paid"
 msgstr "已支付"
 
 #: components/price_match_guarantee/cruises.vue
 msgid "Paid at Time of Booking"
 msgstr "预订时支付"
+
+#: components/admin_finance/cruise_bookings.vue
+#, fuzzy
+#| msgid "All Bookings"
+msgid "Paid Bookings"
+msgstr "所有预定"
 
 #: pages/invoices.vue components/compensation/statements.vue
 msgid "Paid Date"
@@ -15100,6 +15155,12 @@ msgstr "付款协议"
 msgid "Payment Date:"
 msgstr "支付日期："
 
+#: pages/admin_finance.vue
+#, fuzzy
+#| msgid "Payment Agreement"
+msgid "Payment Fulfillment"
+msgstr "付款协议"
+
 #: pages/convention_manager.vue
 msgid "Payment Link (Full url with HTTPS)"
 msgstr "付款鏈接（帶有HTTPS的完整URL）"
@@ -15142,7 +15203,7 @@ msgstr "付款提供商当前不可用。"
 msgid "Payout Review"
 msgstr "付款审核"
 
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
 #: components/support/TicketList.vue components/welcome/members-modal.vue
 msgid "Pending"
 msgstr "待办"
@@ -15198,6 +15259,12 @@ msgstr "待定會員"
 #: components/compensation/qbi.vue
 msgid "Pending Members Report"
 msgstr "待处理的会员报告"
+
+#: components/admin_finance/cruise_bookings.vue
+#, fuzzy
+#| msgid "Missing Payments"
+msgid "Pending Payments"
+msgstr "遺失付款"
 
 #: pages/reports.vue reports/index.html
 msgid "Pending QBI Report"
@@ -16182,7 +16249,7 @@ msgid ""
 msgstr "价格是每个客舱的总价。 根据双重占用税，费用和港口费用可能不包括在内"
 
 #: components/admin_booking/cruise_bookings.vue
-#: components/admin_financial_cruising/cruise_bookings.vue
+#: components/admin_finance/cruise_bookings.vue
 #: components/public/FooterLinks.vue layouts/default.html
 #: layouts/default_no_nav.html
 msgid "Pricing"
@@ -16990,6 +17057,13 @@ msgstr "重发短信"
 #: receipts/hotel_booking_receipt.html
 msgid "Reservation Details"
 msgstr "預定詳情"
+
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#, fuzzy
+#| msgid "Reservations"
+msgid "Reservation ID"
+msgstr "預定"
 
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Reservation Number"
@@ -18378,6 +18452,7 @@ msgid "Stats"
 msgstr "統計數據"
 
 #: pages/contacts.vue pages/convention_manager.vue pages/negative_balances.vue
+#: components/admin_finance/cruise_bookings.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/residual_bonus.vue
 #: components/growth_calculator/potential_leadership.vue
@@ -20723,6 +20798,13 @@ msgstr "總報酬。"
 msgid "Total cost"
 msgstr "总消耗"
 
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#, fuzzy
+#| msgid "Total cost"
+msgid "Total Cost"
+msgstr "总消耗"
+
 #: pages/cruises_booking.vue pages/my_cruise_savings.vue
 msgid "Total Cruise Price"
 msgstr "郵輪價格總額"
@@ -20786,12 +20868,26 @@ msgstr "會員總數"
 msgid "Total Out Of Pocket"
 msgstr "總支出"
 
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#, fuzzy
+#| msgid "Total Price"
+msgid "Total Owed"
+msgstr "總價"
+
+#: components/admin_finance/modals/add_payment.vue
+#: components/admin_finance/modals/update_payment.vue
+#, fuzzy
+#| msgid "Total Price"
+msgid "Total Paid Already"
+msgstr "總價"
+
 #: components/partner-success-certificate.vue
 msgid "TOTAL PARTNERS"
 msgstr "合作伙伴总数"
 
 #: pages/connect.vue pages/hotel_booking.vue pages/invoices.vue
-#: pages/upgrade.vue
+#: pages/upgrade.vue components/admin_finance/payment_fulfillment.vue
 msgid "Total Price"
 msgstr "總價"
 
@@ -21641,6 +21737,10 @@ msgstr "觀看次數"
 #: pages/admin_user_id.vue
 msgid "VIP Data"
 msgstr "VIP數據"
+
+#: pages/admin_finance.vue
+msgid "Virtual CC's"
+msgstr ""
 
 #: pages/builders_base.vue components/compensation/builders_bonus.vue
 #: components/receipts/builders_bonus.vue
@@ -34149,6 +34249,33 @@ msgstr "7晚北欧邮轮"
 msgid "<div><br></div>"
 msgstr "<div><br></div>"
 
+#~ msgid ""
+#~ "<div class=\"flex justify-content-center align-items-center\">\n"
+#~ "\t\t\t\t\t\t\t\t\t\tStatus\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<svg width=\"18\" height=\"18\" fill=\"none\" viewBox="
+#~ "\"0 0 24 24\">\n"
+#~ "\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round"
+#~ "\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M19.25 "
+#~ "4.75H4.75L9.31174 10.4522C9.59544 10.8068 9.75 11.2474 9.75 "
+#~ "11.7016V18.25C9.75 18.8023 10.1977 19.25 10.75 19.25H13.25C13.8023 19.25 "
+#~ "14.25 18.8023 14.25 18.25V11.7016C14.25 11.2474 14.4046 10.8068 14.6883 "
+#~ "10.4522L19.25 4.75Z\"></path>\n"
+#~ "\t\t\t\t\t\t\t\t\t\t</svg>\n"
+#~ "\t\t\t\t\t\t\t\t\t</div>"
+#~ msgstr ""
+#~ "<div class=\"flex justify-content-center align-items-center\">\n"
+#~ "\t\t\t\t\t\t\t\t\t\t状态\n"
+#~ "\t\t\t\t\t\t\t\t\t\t<svg width=\"18\" height=\"18\" fill=\"none\" viewBox="
+#~ "\"0 0 24 24\">\n"
+#~ "\t\t\t\t\t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-linecap=\"round"
+#~ "\" stroke-linejoin=\"round\" stroke-width=\"1.5\" d=\"M19.25 "
+#~ "4.75H4.75L9.31174 10.4522C9.59544 10.8068 9.75 11.2474 9.75 "
+#~ "11.7016V18.25C9.75 18.8023 10.1977 19.25 10.75 19.25H13.25C13.8023 19.25 "
+#~ "14.25 18.8023 14.25 18.25V11.7016C14.25 11.2474 14.4046 10.8068 14.6883 "
+#~ "10.4522L19.25 4.75Z\"></path>\n"
+#~ "\t\t\t\t\t\t\t\t\t\t</svg>\n"
+#~ "\t\t\t\t\t\t\t\t\t</div>"
+
 #~ msgid "13-nights Mediterranean Cruise"
 #~ msgstr "13晚地中海邮轮"
 
@@ -34321,9 +34448,6 @@ msgstr "<div><br></div>"
 
 #~ msgid "Choose Payment Type"
 #~ msgstr "選擇付款類型"
-
-#~ msgid "Credit Cards"
-#~ msgstr "信用卡"
 
 #~ msgid "Cryptocurrency"
 #~ msgstr "加密货币"
@@ -34531,9 +34655,6 @@ msgstr "<div><br></div>"
 
 #~ msgid "Proceed with Confirmation"
 #~ msgstr "确认后继续"
-
-#~ msgid "Remaining Amount to Pay"
-#~ msgstr "剩余支付金额"
 
 #~ msgid "You will receieve a payment link to pay this amount within 3 days."
 #~ msgstr "您将收到一个付款链接，用于在 3 天内支付此金额。"
@@ -35756,13 +35877,6 @@ msgstr "<div><br></div>"
 
 #~ msgid "Cruise Brochure"
 #~ msgstr "郵輪手冊"
-
-#~ msgid ""
-#~ "<i class=\"far fa-ban\"></i>\n"
-#~ "\t\tCancelled"
-#~ msgstr ""
-#~ "<i class=\"far fa-ban\"></i>\n"
-#~ "取消"
 
 #~ msgid ""
 #~ "<i class=\"far fa-exclamation-circle\"></i>\n"
