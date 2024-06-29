@@ -48,7 +48,8 @@ msgstr "10"
 msgid "2023"
 msgstr "БАЙГУУЛААРАЙ"
 
-#: pages/courses.vue
+#: pages/courses.vue pages/intours_details.vue
+#: components/reservations/tour-details.vue
 msgid "_ctx"
 msgstr "_ctx"
 
@@ -267,6 +268,10 @@ msgid ""
 msgstr ""
 "\"Хэрэв та Карибын тэнгист хамгийн анх удаа, хамгийн шилдэг, хамгийн сайхан "
 "аялал хийхийг хүсч байвал Каса де Кампо таныг хүлээж байна.\""
+
+#: pages/intours_confirmation.vue
+msgid "({{ traveler.ageBand }})"
+msgstr ""
 
 #: pages/hotel_booking.vue
 msgid "(1 For 1)"
@@ -532,6 +537,12 @@ msgstr "{{ getRecipientAccountFieldName(recipientAccountField) }}"
 msgid "{{ getRecipientAccountFieldValue(recipientAccountField) }}"
 msgstr "{{ getRecipientAccountFieldValue(recipientAccountField) }}"
 
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "{{ videoDescription }}"
+msgid "{{ getTravelerDescription() }}"
+msgstr "{{ videoDescription }}"
+
 #: components/accordion.vue
 msgid "{{ item.body }}"
 msgstr "{{ item.body }}"
@@ -540,9 +551,25 @@ msgstr "{{ item.body }}"
 msgid "{{ item.title }}"
 msgstr "{{ item.title }}"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "{{ course.description }}"
+msgid "{{ itineraryItem.description }}"
+msgstr "{{ course.description }}"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "{{ itineraryItem.pointOfInterestLocation.location.name }}"
+msgstr ""
+
 #: pages/reports.vue pages/track_results.vue
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
+
+#: pages/intours_details.vue
+msgid ""
+"{{ pricingInfo.ageBands.length == 1 ? $gettext('TRAVELER') : ageBand."
+"ageBand }} {{ ageBand.label }}"
+msgstr ""
 
 #: pages/courses.vue
 msgid "{{ question.question }}"
@@ -890,10 +917,6 @@ msgstr "%{ cd_used } Шагналын Оноонууд"
 msgid "%{ city }"
 msgstr "%{ хот }"
 
-#: components/reservation.vue
-msgid "%{ guests } Guests"
-msgstr "%{ guests } Зорчигчид"
-
 #: pages/cruises.vue pages/hotels.vue
 msgid "%{ length } results match your criteria."
 msgstr "Таны хайлтанд %{ length } сонголт байна."
@@ -934,14 +957,10 @@ msgstr "%{ name } одоо таны харилцагч нарын хаягийг
 msgid "%{ night } Nights"
 msgstr "%{ night } Шөнө"
 
-#: components/reservation.vue pages/cruise.vue
-#: components/cruises_booking/cruise-header-details.vue
+#: pages/cruise.vue components/cruises_booking/cruise-header-details.vue
+#: components/reservations/reservation-card.vue
 msgid "%{ nights } Nights"
 msgstr "%{ nights } Шөнө"
-
-#: components/reservation.vue
-msgid "%{ passengers } Passengers"
-msgstr "%{ passengers } Зорчигч"
 
 #: components/receipts/hotel_booking_receipt.vue
 msgid "%{ points_used } Reward Points"
@@ -962,6 +981,24 @@ msgstr "%{ start } to %{ end }"
 #: pages/hotel_booking.vue
 msgid "%{ state }"
 msgstr "%{ аймаг }"
+
+#: components/reservations/tour-search.vue
+msgid "%{activitiesNum} activities"
+msgstr ""
+
+#: components/reservations/tour-search.vue
+msgid "%{activitiesNum} activities found"
+msgstr ""
+
+#: components/reservations/reservation-card.vue
+msgid "%{adultCount} Adults · %{childCount} Childs"
+msgstr ""
+
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "%{ passengers } Passengers"
+msgid "%{adultCount} passengers"
+msgstr "%{ passengers } Зорчигч"
 
 #: components/compensation/residual_bonus.vue
 msgid "%{currentMonthName} Recurring Bonus"
@@ -1015,6 +1052,12 @@ msgstr "+ Зөвшөөрлийн бүлэг нэмэх"
 #: pages/admin_permission_group.vue
 msgid "+ Add Permissions"
 msgstr "+ Зөвшөөрлүүд нэмэх"
+
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "+150 Activities"
+msgstr "Үйлдэлүүд"
 
 #: pages/email.vue
 msgid ""
@@ -1098,6 +1141,13 @@ msgstr ""
 "<%- gettext(\"Personal=\"\" growth=\"\" and=\"\" development=\"\" is=\"\" "
 "the=\"\" core=\"\" of=\"\" a=\"\" leader's=\"\" success.\")=\"\" %=\"\"> </%-"
 ">"
+
+#: components/reservations/tour-details.vue
+msgid ""
+"<a :href=\"`${voucherInfo.url}`\" class=\"grow shrink\" target=\"_blank\"> "
+"<Button class=\"rounded-xl\" size=\"medium\" :label=\"$gettext('Get Your "
+"Ticket')\" :full=\"true\" base=\"solid\" variant=\"primary\"/> </a>"
+msgstr ""
 
 #: pages/public/reviews.vue
 msgid ""
@@ -1500,6 +1550,10 @@ msgid ""
 msgstr ""
 "<img class=\"flag\" :src=\"sourceCountryFlagImg\"/> {{ transferDetails."
 "sourceCountryAndCurrency.currency.code }}"
+
+#: components/tours/details/available-plans.vue
+msgid "<MapPin/> Pickup point"
+msgstr ""
 
 #: components/cruises_booking/reward-points-confirm-step.vue
 #: components/cruises_booking/reward-points-step.vue
@@ -2003,6 +2057,24 @@ msgstr ""
 "<strong>Дэлгэрэнгүй мэдээлэл</strong>: %{adults} Том хүн, %{children} Хүүхэд "
 "| %{nights} Шөнийн тоо"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>%{ hotelName }</strong>"
+msgid "<strong>Pickup Point</strong>:"
+msgstr "<strong>%{ зочид буудлын нэр }</strong>"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>Departing on</strong>: %{ cruiseOn }"
+msgid "<strong>Start Date</strong>: %{ startDate }"
+msgstr "<strong>Хөлөг хөдлөх</strong>: %{ cruiseOn }"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>Departing on</strong>: %{ cruiseOn }"
+msgid "<strong>Start Time</strong>: %{ startTime }"
+msgstr "<strong>Хөлөг хөдлөх</strong>: %{ cruiseOn }"
+
 #: pages/elevate.vue
 msgid ""
 "<svg style=\"fill: #c0c0c0\" id=\"Layer_1\" width=\"20\" xmlns=\"http://www."
@@ -2214,6 +2286,12 @@ msgstr "1:1 Шагналын Онооны Баланс"
 msgid "1 for 1 Reward Points Logs"
 msgstr "1:1 Шагналын Онооны мэдээлэл"
 
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "1 for 1 Reward Points Match"
+msgid "1 for 1 reward points match"
+msgstr "Авсан (1:1) Шагналын Оноо"
+
 #: components/cruise/cruise_savings_info.vue
 msgid "1 for 1 Reward Points Match"
 msgstr "Авсан (1:1) Шагналын Оноо"
@@ -2418,6 +2496,12 @@ msgstr "10 үе хүртэл Шинэ Түнш Гишүүний идэвхжүү
 #: pages/builders_base.vue
 msgid "30% bonus"
 msgstr "30%-ийн урамшуулал"
+
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "150,000+ Global Destinations are Waiting for You!"
+msgid "300,000+ Tours and experiences are waiting for you"
+msgstr "Дэлхийн 150,000 гаруй газрууд таныг хүлээж байна!"
 
 #: income_disclosure/index.html
 msgid "4 - 6 months"
@@ -2664,6 +2748,12 @@ msgstr ""
 msgid "About"
 msgstr "Тухай"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Login Activity"
+msgid "About This Activity"
+msgstr "Нэвтрэх үйлдэл"
+
 #: Footer.vue components/public/FooterLinks.vue pages/public/about.vue
 msgid "About Us"
 msgstr "Бидний тухай"
@@ -2672,7 +2762,8 @@ msgstr "Бидний тухай"
 msgid "Abu Dhabi"
 msgstr "Абу Даби"
 
-#: pages/account_setup.vue components/inchat/disclaimer_modal.vue
+#: pages/account_setup.vue pages/intours_confirmation.vue
+#: components/inchat/disclaimer_modal.vue
 msgid "Accept"
 msgstr "Зөвшөөрч байна"
 
@@ -2828,10 +2919,6 @@ msgstr "Энэ сарын Идэвхжүүлэлтүүд"
 msgid "Active"
 msgstr "Идэвхтэй"
 
-#: pages/reservations.vue
-msgid "Active Bookings"
-msgstr "Идэвхтэй захиалгууд"
-
 #: pages/track_results.vue
 msgid "Active Members"
 msgstr "Идэвхтэй Гишүүд"
@@ -2860,6 +2947,12 @@ msgstr "Идэвхтэй байх хугацаа:"
 
 #: components/inchat/emoji/emoji_modal.vue
 msgid "Activities"
+msgstr "Үйлдэлүүд"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "Activities found"
 msgstr "Үйлдэлүүд"
 
 #: components/inchat/user_room_actions.vue components/user/user_notes.vue
@@ -3016,6 +3109,18 @@ msgstr ""
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Added"
 msgstr "Нэмэгдсэн"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Additional Details"
+msgstr "Урилгын дэлгэрэнгүй"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Additional Info"
+msgid "Additional info"
+msgstr "Нэмэлт мэдээлэл"
 
 #: components/info-reminder.vue pages/receipts.vue
 msgid "Additional Info"
@@ -3242,15 +3347,11 @@ msgid "Alipay"
 msgstr "Alipay"
 
 #: pages/admin_support_analytics.vue pages/hotels.vue pages/info_center.vue
-#: pages/leadership_academy.vue pages/reports.vue pages/reservations.vue
-#: pages/team_rankings.vue pages/track_results.vue components/user/timeline.vue
-#: reports/index.html track_results/index.html
+#: pages/leadership_academy.vue pages/reports.vue pages/team_rankings.vue
+#: pages/track_results.vue components/user/timeline.vue reports/index.html
+#: track_results/index.html
 msgid "All"
 msgstr "Бүх"
-
-#: pages/reservations.vue
-msgid "All Bookings"
-msgstr "Бүх захиалгууд"
 
 #: pages/admin_blog.vue pages/resources.vue components/blog/blog_list.vue
 msgid "All Categories"
@@ -3354,6 +3455,12 @@ msgstr "Та бүх асуултуудад зөв хариулсан байна"
 #: pages/global_summit_2024.vue
 msgid "All Ranks"
 msgstr "Бүх цол зэргүүд"
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "Reservations"
+msgid "All Reservations"
+msgstr "Захиалгууд"
 
 #: pages/admin_blog.vue
 msgid "All Sections"
@@ -3822,7 +3929,8 @@ msgstr "Хэрэглэх боломж"
 msgid "Applicant Signature"
 msgstr "Өргөдөл гаргагчийн гарын үсэг"
 
-#: pages/checkout.vue
+#: components/filter-chip-range.vue pages/checkout.vue
+#: pages/intours_details.vue components/tours/intours_results.vue
 msgid "Apply"
 msgstr "Хүсэлт гаргах"
 
@@ -4120,9 +4228,21 @@ msgstr ""
 msgid "Astana, Kazakhstan"
 msgstr "Астана, Казахстан Улс"
 
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "data"
+msgid "at"
+msgstr "мэдээлэл"
+
 #: pages/email.vue
 msgid "At"
 msgstr "Энд"
+
+#: components/reservations/tour-search.vue
+#, fuzzy
+#| msgid "Arrive Time"
+msgid "at %{arriveTime}"
+msgstr "Ирэх цаг"
 
 #: components/covid-disclaimer-reminder.vue
 msgid ""
@@ -4314,6 +4434,12 @@ msgstr "Боломжит Баланс"
 msgid "Available Cabins"
 msgstr "Захиалах боломжтой өрөөнүүд"
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Available Cabins"
+msgid "Available plans"
+msgstr "Захиалах боломжтой өрөөнүүд"
+
 #: pages/reward_points.vue
 msgid "Available Rewards"
 msgstr "Боломжит Шагналууд"
@@ -4367,8 +4493,8 @@ msgstr "б. National Director"
 msgid "b. Time of the Essence"
 msgstr "б. Түргэлэх шаардлагатай хугацаа"
 
-#: pages/courses.vue pages/leadership_academy.vue pages/multi_factor.vue
-#: components/agreements/italian_agreement.vue
+#: pages/courses.vue pages/intours_details.vue pages/leadership_academy.vue
+#: pages/multi_factor.vue components/agreements/italian_agreement.vue
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
 #: components/onboarding/address-step.vue
@@ -4377,6 +4503,8 @@ msgstr "б. Түргэлэх шаардлагатай хугацаа"
 #: components/onboarding/import-contacts.vue
 #: components/onboarding/recurring-payment-step.vue
 #: components/onboarding/referral-link-step.vue
+#: components/reservations/tour-details.vue
+#: components/reservations/tour-search.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
 #: components/payout/brightwell/recipient-card-details.vue
@@ -4560,10 +4688,6 @@ msgstr ""
 #: pages/menu_page.vue
 msgid "Below you will find the status of your hotels & cruise reservations."
 msgstr "Далайн аялал болон зочид буудлын захиалгуудыг харах."
-
-#: pages/reservations.vue
-msgid "Below you will find the status of your reservations."
-msgstr "Өөрийн захиалгуудыг харах."
 
 #: Drop Down Destination List
 msgid "Bermuda"
@@ -4836,7 +4960,7 @@ msgstr ""
 "Коста компаний сүүлчийн мөчийн гайхалтай саналуудыг ашиглан энэ зун + намрын "
 "аялалаа захиалаарай!"
 
-#: pages/hotels_details.vue
+#: pages/hotels_details.vue components/tours/details/available-plans.vue
 msgid "Book now"
 msgstr "Захиалга хийх"
 
@@ -4856,7 +4980,7 @@ msgstr "ЗАХИАЛГАА ИТГЭЛТЭЙГЭЭР ХИЙГЭЭРЭЙ"
 msgid "Book with Reward Points, have total confidence!"
 msgstr "Шагналын Оноогоо ашиглан захиалгаа итгэлтэйгээр хийгээрэй!"
 
-#: components/reservation.vue
+#: components/reservations/reservation-card.vue
 msgid "Booked"
 msgstr "Захиалга хийгдсэн"
 
@@ -4873,12 +4997,14 @@ msgid "Booking Payments #{{ booking.global_booking_id }}"
 msgstr "Захиалгын төлбөрүүд #{{ booking.global_booking_id }}"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Booking Receipt"
 msgstr "Захиалгын Тасалбар"
 
 #: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Booking Reference"
 msgstr "Захиалгын мэдээлэл"
@@ -4892,10 +5018,17 @@ msgstr "Захиалгын тайлан"
 msgid "Booking Review"
 msgstr "Захиалгыг харах"
 
-#: pages/admin_booking.vue
+#: pages/admin_booking.vue components/admin_booking/admin_booking_stats.vue
 msgid "Booking Stats"
 msgstr "Захиалгын мэдээлэл"
 
+#: pages/intours_confirmation.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Booking Cost"
+msgid "Booking summary"
+msgstr "Захиалгын үнэ"
+
+#: pages/intours_confirmation.vue
 #: components/cruises_booking/confirmation-step.vue
 msgid "Booking Terms & Conditions"
 msgstr "Захиалгын Нөхцөлүүд"
@@ -5070,6 +5203,13 @@ msgstr ""
 "\"%{partnerAgreement}\" target=\"_blank\">Бие даасан Түншийн Гэрээ</a>ний "
 "заалтуудыг бүрэн хүлээн зөвшөөрч байгаа хэрэг болно."
 
+#: pages/reservations.vue
+msgid ""
+"By clicking on “Search tours”, easily explore tours and activities matching "
+"your booked cruise dates and destinations!"
+msgstr ""
+
+#: pages/intours_confirmation.vue
 #: components/cruises_booking/confirmation-step.vue
 msgid ""
 "By completing my booking, I understand and accept all associated Terms and "
@@ -5377,8 +5517,9 @@ msgstr "Канад/Шинэ Англи"
 #: components/fast-growing-legs.vue pages/admin_department.vue
 #: pages/admin_permission.vue pages/admin_permission_group.vue
 #: pages/checkout.vue pages/connect.vue pages/cruises_booking.vue
-#: pages/email.vue pages/invoices.vue pages/reports.vue pages/settings.vue
-#: pages/subscriptions.vue components/admin_booking/admin_cruise_featured.vue
+#: pages/email.vue pages/intours_details.vue pages/invoices.vue
+#: pages/reports.vue pages/settings.vue pages/subscriptions.vue
+#: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
 #: components/admin_management/admin_departments.vue
@@ -5439,15 +5580,11 @@ msgstr "Цуцлалтын Бодлого"
 msgid "Cancellation Warning"
 msgstr "Цуцлах Сэрэмжлүүлэг"
 
-#: components/reservation.vue
+#: components/reservations/reservation-card.vue
 msgid "Cancelled"
 msgstr "Цуцлагдсан"
 
-#: components/reservation.vue
-msgid "CANCELLED"
-msgstr "ЦУЦЛАГДСАН"
-
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Cancun"
 msgstr "Канчун"
 
@@ -5530,6 +5667,17 @@ msgstr "Бэлэн мөнгө авах газар"
 #: webinar_recordings/index.html
 msgid "Catalan"
 msgstr "Каталан хэл"
+
+#: components/welcome_tours_modal.vue pages/intours.vue
+#: components/reservations/tour-search.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Category"
+msgid "category"
+msgstr "Төрөл"
+
+#: components/tours/intours_results.vue
+msgid "Category"
+msgstr "Төрөл"
 
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Category Type"
@@ -5634,6 +5782,10 @@ msgid ""
 "conventions."
 msgstr ""
 "Вебинар, уулзалт, бүс нутгийн семинарууд гэх мэт арга хэмжээнүүдийг шалгах."
+
+#: components/welcome_tours_modal.vue
+msgid "Check out the following perfect pairing tours we have for you:"
+msgstr ""
 
 #: pages/welcome.vue
 msgid ""
@@ -5794,6 +5946,7 @@ msgid "Choose your referrer:"
 msgstr "Спонсороо сонгоно уу:"
 
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Cities Visited"
 msgstr "Аялсан хотуудын тоо"
 
@@ -5820,6 +5973,12 @@ msgstr "Хот:"
 msgid "Claim Connect 5"
 msgstr "Конект 5 хэрэглэх"
 
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Insurance"
+msgid "Claim Insurance"
+msgstr "Даатгал"
+
 #: power_tools_upgrade/index.html
 msgid "Claim Power Tools"
 msgstr "Хүчирхэг Хэрэгсэлүүд Төлөвлөгөөг хэрэглэх"
@@ -5827,6 +5986,14 @@ msgstr "Хүчирхэг Хэрэгсэлүүд Төлөвлөгөөг хэрэ�
 #: Gender
 msgid "Classic"
 msgstr "Сонгодог"
+
+#: components/filter-chip-range.vue
+msgid "clear"
+msgstr ""
+
+#: components/filter-chip-dropdown.vue components/tours/intours_results.vue
+msgid "Clear"
+msgstr ""
 
 #: pages/cruises.vue pages/hotels.vue
 msgid "Clear All Filters"
@@ -5932,6 +6099,18 @@ msgstr "Энд дарж бүртгүүлнэ үү"
 msgid "click here to start"
 msgstr "Энд дарж эхлүүнэ үү"
 
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Click here to view Cancellation Policy"
+msgid "Click here to view meeting point"
+msgstr "Энд дарж Цуцлах Бодлогыг харна уу"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Click here to learn more"
+msgid "Click here to view voucher"
+msgstr "Энд дарж дэлгэрэнгүй мэдээлэл авна уу."
+
 #: components/inchat/lists/room_list.vue
 msgid "Click to create a group."
 msgstr "Бүлэг үүсгэх"
@@ -5966,6 +6145,12 @@ msgstr "Үйлчлүүлэгчийн тохиргоо"
 #: old_compensation/index.html
 msgid "Close"
 msgstr "Хаах"
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "More Details"
+msgid "Close Details"
+msgstr "Дэлгэрэнгүй мэдээлэл"
 
 #: pages/hotels.vue
 msgid "Close Filter"
@@ -6121,6 +6306,12 @@ msgstr "Баталгаажуулах"
 #: pages/reward_points.vue
 msgid "Confirm Amount"
 msgstr "Дүнг баталгаажуулах"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Funds availability:"
+msgid "Confirm availability"
+msgstr "Боломжит мөнгөн дүн."
 
 #: components/birthdate-reminder.vue components/payout/birthday-modal.vue
 msgid "Confirm Birthdate"
@@ -6333,6 +6524,12 @@ msgstr "Захиагаар холбогдох:"
 msgid "Contact Information"
 msgstr "Холбоо барих мэдээлэл"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Contact Information"
+msgid "Contact Information And Tour Details"
+msgstr "Холбоо барих мэдээлэл"
+
 #: Footer.vue components/public/FooterLinks.vue pages/public/contact.vue
 msgid "Contact Us"
 msgstr "Холбоо барих"
@@ -6381,6 +6578,12 @@ msgstr "Үргэлжлүүлэх"
 #: components/checkout/ProcessorTrustly.vue
 msgid "Continue Payment Below"
 msgstr "Доорхи төлбөрийг үргэлжлүүлэх"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Continue to Checkout"
+msgid "Continue to checkout"
+msgstr "Төлбөр гүйцэтгэх"
 
 #: pages/upgrade.vue
 msgid "Continue to Checkout"
@@ -6731,15 +6934,13 @@ msgstr ""
 "Гүйцэтгэх Захирал"
 
 #: BookingTopBar.vue HotelsTopBar.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
 #: components/navigation/mobile-menu-booking.vue
 msgid "Cruises"
 msgstr "Далайн аялал"
 
-#: components/admin_booking/admin_booking_stats.vue
-msgid "Cruises & Hotels Stats"
-msgstr "Далайн аялал, зочид буудлуудын тоон үзүүлэлтүүд"
-
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Cruises Booked"
 msgstr "Захиалсан аялалын тоо"
 
@@ -6965,10 +7166,12 @@ msgstr "мэдээлэл"
 msgid "Data Fields"
 msgstr "Мэдээлэл"
 
-#: pages/contacts.vue pages/email.vue pages/notifications.vue
-#: pages/reward_points.vue components/compensation/statements.vue
+#: pages/contacts.vue pages/email.vue pages/intours_details.vue
+#: pages/notifications.vue pages/reward_points.vue
+#: components/compensation/statements.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/settings_page/login-activity.vue email_notifications/index.html
 msgid "Date"
 msgstr "Огноо"
@@ -7203,16 +7406,11 @@ msgstr "Демо элсүүлэх холбоос"
 msgid "Depart"
 msgstr "Явах"
 
-#: components/reservation.vue pages/reports.vue
-#: components/admin_booking/admin_cruise_featured.vue
+#: pages/reports.vue components/admin_booking/admin_cruise_featured.vue
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 #: reports/index.html
 msgid "Depart Date"
 msgstr "Явах өдөр"
-
-#: components/reservation.vue
-msgid "Depart Location"
-msgstr "Хөдлөх Боомт"
 
 #: pages/global_summit_tracking.vue
 msgid "Departing from: Istanbul, Turkey"
@@ -7278,7 +7476,8 @@ msgstr "Урьдчилгаа мөнгө"
 msgid "description"
 msgstr "тайлбар"
 
-#: pages/convention_manager.vue pages/email_address.vue pages/reward_points.vue
+#: pages/convention_manager.vue pages/email_address.vue
+#: pages/intours_details.vue pages/reward_points.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
 #: components/receipts/italian_commission.vue
@@ -7299,6 +7498,12 @@ msgstr "Тайлбар:"
 msgid "destination"
 msgstr "аялах газар"
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "destination"
+msgid "Destination"
+msgstr "аялах газар"
+
 #: components/payout/brightwell/review.vue
 #: components/payout/brightwell/transfer-details.vue
 msgid "Destination country"
@@ -7311,6 +7516,12 @@ msgstr "Хүлээн авах мөнгөн тэмдэгт"
 #: pages/builders_base.vue
 msgid "detailed below."
 msgstr "доорх дэлгэрэнгүй."
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "QBI Details"
+msgid "Details"
+msgstr "QBI Индексийн тухай"
 
 #: components/settings_page/login-activity.vue
 msgid "Device"
@@ -7477,6 +7688,10 @@ msgstr "Хямдрал:"
 msgid "Discover"
 msgstr "Нээх"
 
+#: components/welcome_tours_modal.vue
+msgid "Discover Tours For Your Upcoming Cruise!"
+msgstr ""
+
 #: pages/account_setup.vue pages/cards.vue pages/certificates.vue
 #: pages/invite.vue pages/settings.vue cards/index.html certificates/index.html
 #: certificates/view.html
@@ -7563,6 +7778,12 @@ msgstr "Доха"
 #: pages/hotels.vue
 msgid "Doha, Qatar"
 msgstr "Доха, Катар"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "Do not show this again"
+msgid "Don't show again"
+msgstr "Энэ мэдэгдэлийг дахин бүү харуул"
 
 #: pages/welcome.vue pages/public/causes.vue
 msgid "Donate"
@@ -7777,6 +7998,10 @@ msgstr ""
 "Дюпликетор бүх үйлдлийн системийн ухаалаг гар утас, таблет компьютер, "
 "компьютер дээр ашиглах боломжтой."
 
+#: components/tours/intours_results.vue
+msgid "Duration"
+msgstr "Хугацаа"
+
 #: income_disclosure/index.html
 msgid "During the month of"
 msgstr "Сарын турш"
@@ -7971,6 +8196,7 @@ msgstr "Нэмэхэд хялбар:"
 #: pages/convention_manager.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 #: components/settings_page/modify-saved-passengers.vue
 msgid "Edit"
 msgstr "Засварлах"
@@ -8072,6 +8298,12 @@ msgstr "Болзол хангасан"
 #: Menu
 msgid "Email"
 msgstr "Имэйл"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Link (optional)"
+msgid "Email (optional)"
+msgstr "Холбоос (бичихгүй байж болно)"
 
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
@@ -8234,6 +8466,12 @@ msgstr "Захиалгат элсүүлэх холбоос"
 msgid "Enter your date of birth"
 msgstr "Төрсөн огноо"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Insert your email..."
+msgid "Enter your email"
+msgstr "Имэйл хаягаа бичнэ үү..."
+
 #: components/onboarding/address-step.vue
 msgid "Enter Zip Code"
 msgstr "Зип код"
@@ -8279,6 +8517,12 @@ msgstr "Шинэчлэлтийн алдаа"
 #: pages/cruise_spotlight.vue
 msgid "Error loading videos, please reload the page!"
 msgstr "Хуудсыг ачааллахад алдаа гарлаа. Дахин ачааллана уу!"
+
+#: pages/intours_details.vue
+msgid ""
+"Error ocurred trying to hold your booking. Please check your selection and "
+"try again."
+msgstr ""
 
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
 msgid "Error saving data"
@@ -8504,6 +8748,12 @@ msgstr ""
 "Дэлхийн тэргүүлэгч брэндүүдийн мянга мянган амралтын сонголтуудаас хүссэн "
 "газраа сонгох."
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Explore More"
+msgid "Explore By Category"
+msgstr "Цааш нь судлах"
+
 #: components/welcome/explore-more.vue
 msgid "Explore More"
 msgstr "Цааш нь судлах"
@@ -8557,14 +8807,6 @@ msgstr "Фэйсбүүк пиксел"
 #: pages/hotels_details.vue
 msgid "Facilities"
 msgstr "Байгууламжууд"
-
-#: components/reservation.vue
-msgid "Failed"
-msgstr "Болсонгүй"
-
-#: components/reservation.vue
-msgid "FAILED"
-msgstr "БОЛСОНГҮЙ"
 
 #: pages/multi_factor.vue
 msgid "Failed to copy!"
@@ -8680,6 +8922,12 @@ msgstr "Онцлох аялалууд"
 msgid "Favorite Hotels"
 msgstr "Онцлох буудлууд"
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Favorite Hotels"
+msgid "Favorite Tours"
+msgstr "Онцлох буудлууд"
+
 #: pages/admin_booking.vue components/admin_booking/admin_cruise_featured.vue
 msgid "Featured Cruises"
 msgstr "Онцолсон аялалууд"
@@ -8718,7 +8966,7 @@ msgstr "Зочид буудлын нэрээр филтер хэрэглэх.."
 msgid "Filtering"
 msgstr "Филтер"
 
-#: pages/reports.vue reports/index.html
+#: pages/reports.vue components/tours/intours_results.vue reports/index.html
 msgid "Filters"
 msgstr "Филтерүүд"
 
@@ -8767,6 +9015,10 @@ msgstr "Санхүүгийн зохицуулагч"
 msgid "Find Hotels"
 msgstr "Зочид буудал хайх"
 
+#: components/reservations/tour-search.vue
+msgid "Find the perfect pairing for your “%{reservationName}” Cruise Itinerary"
+msgstr ""
+
 #: pages/multi_factor.vue components/onboarding/final-step.vue
 msgid "Finish"
 msgstr "Дуусгах"
@@ -8780,8 +9032,9 @@ msgid "Finished"
 msgstr "Дуусгах"
 
 #: pages/admin_restricted_paybonus.vue pages/global_summit_2023.vue
-#: pages/global_summit_2024.vue pages/hotel_booking.vue pages/invite.vue
-#: pages/settings.vue components/public/JoinModal.vue
+#: pages/global_summit_2024.vue pages/hotel_booking.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -8931,6 +9184,10 @@ msgstr ""
 #: pages/login/login.vue login/index.html
 msgid "Forgot Password?"
 msgstr "Нууц үгээ мартсан уу?"
+
+#: components/tours/intours_results.vue
+msgid "formattedTime"
+msgstr ""
 
 #: pages/email_tracking.vue
 msgid "Forwarded"
@@ -9146,6 +9403,12 @@ msgstr "Харах"
 #: pages/duplicator.vue connect/index.html
 msgid "Get Started Now!"
 msgstr "Одоо эхэлье!"
+
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Your Tickets"
+msgid "Get Your Ticket"
+msgstr "Таны тусламжийн хүсэлтүүд"
 
 #: components/public/FooterLinks.vue
 msgid "Global 100"
@@ -9482,6 +9745,12 @@ msgstr "Шатлал"
 msgid "High Monthly Gross Earnings"
 msgstr "Сарын хамгийн их орлого"
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Highest Price"
+msgid "High to Low Price"
+msgstr "Хамгийн өндөр үнэ"
+
 #: pages/hotels.vue
 msgid "Highest Price"
 msgstr "Хамгийн өндөр үнэ"
@@ -9503,6 +9772,7 @@ msgid "Historical QBI Report"
 msgstr "\"Түүхэн\" QBI Индексийн тайлан"
 
 #: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Holder Name"
 msgstr "Эзэмшигчийн нэр"
@@ -9572,6 +9842,7 @@ msgid "Hotelbeds"
 msgstr "Hotelbeds"
 
 #: BookingTopBar.vue HotelsTopBar.vue pages/hotels.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
 #: components/navigation/mobile-menu-booking.vue
 msgid "Hotels"
 msgstr "Зочид буудал"
@@ -9581,6 +9852,7 @@ msgid "hotels and saved a total of"
 msgstr "удаа хийсэн бөгөөд энэ бүхэнд нийт"
 
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Hotels Booked"
 msgstr "Захиалсан зочид буудлын тоо"
 
@@ -9961,6 +10233,12 @@ msgstr ""
 #: components/payout/partner-consent.vue old_compensation/index.html
 msgid "I DON'T CONSENT OR AGREE"
 msgstr "БИ ЗӨВШӨӨРӨХГҮЙ БАЙНА"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "I don't see my pickup location"
+msgstr "Бэлэн мөнгө авах газар"
 
 #: components/agreements/partner_code_of_conduct_agreement.vue
 msgid ""
@@ -11636,6 +11914,12 @@ msgstr ""
 msgid "Independent Partner Agreement"
 msgstr "Бие даасан Түншийн Гэрээ"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Reminded"
+msgid "index"
+msgstr "Сануулсан"
+
 #: receipts/team_residual_bonus_statement.html
 msgid "Indirect Members"
 msgstr "Шууд биш Гишүүд"
@@ -11747,6 +12031,7 @@ msgid "inStays Price Match Guarantee"
 msgstr "inStays-ийн Үнийн тохиргоо"
 
 #: pages/courses.vue pages/email_address.vue pages/leadership_academy.vue
+#: components/reservations/tour-details.vue
 msgid "Instructions"
 msgstr "Зааварчилгаа"
 
@@ -12060,8 +12345,10 @@ msgstr "Итали"
 msgid "Item"
 msgstr "Бараа"
 
-#: pages/cruise.vue components/cruises_booking/itinerary-modal.vue
+#: pages/cruise.vue pages/intours_details.vue
+#: components/cruises_booking/itinerary-modal.vue
 #: components/receipts/booking_receipt.vue
+#: components/reservations/tour-details.vue
 msgid "Itinerary"
 msgstr "Аялалын маршрут"
 
@@ -12205,6 +12492,7 @@ msgstr "Өөрийн төлбөрийн картын мэдээллийг үрг
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 msgid "Key"
 msgstr "Түлхүүр"
 
@@ -12329,8 +12617,9 @@ msgstr ""
 "байна."
 
 #: pages/admin_restricted_paybonus.vue pages/global_summit_2023.vue
-#: pages/global_summit_2024.vue pages/hotel_booking.vue pages/invite.vue
-#: pages/settings.vue components/public/JoinModal.vue
+#: pages/global_summit_2024.vue pages/hotel_booking.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -12655,6 +12944,10 @@ msgstr "Холбоос сануулагдлаа"
 msgid "Links"
 msgstr "Холбоосууд"
 
+#: pages/intours_confirmation.vue
+msgid "List any specific needs"
+msgstr ""
+
 #: components/checkout/ProcessorNetcents.vue
 msgid "Litecoin"
 msgstr "Litecoin"
@@ -12686,7 +12979,8 @@ msgstr "Цааш нь харах"
 #: pages/admin_partner_success.vue pages/invoices.vue pages/partner_success.vue
 #: pages/receipts.vue pages/reports.vue pages/track_results.vue
 #: pages/webinar_recordings.vue components/payout/wallet-transfers.vue
-#: reports/index.html track_results/index.html
+#: components/tours/intours_results.vue reports/index.html
+#: track_results/index.html
 msgid "Load More"
 msgstr "Цааш нь харах"
 
@@ -12707,6 +13001,12 @@ msgstr "Таны байршлын мэдээлэл тодорхой бус ба�
 #: components/payout/brightwell/cash-pickup-location.vue
 msgid "Location Details"
 msgstr "Байршлын дэлгэрэнгүй мэдээлэл"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Location"
+msgid "Locations"
+msgstr "Байршил"
 
 #: components/inchat/user_room_actions.vue
 msgid "Lock Group"
@@ -12777,6 +13077,12 @@ msgstr "Гарах"
 #: income_disclosure/index.html
 msgid "Low Monthly Gross Earnings"
 msgstr "Сарын хамгийн бага орлого"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Lowest Price"
+msgid "Low to High Price"
+msgstr "Хамгийн бага үнэ"
 
 #: pages/hotels.vue
 msgid "Lowest Price"
@@ -12973,6 +13279,12 @@ msgstr "Mastercard MXN"
 msgid "Mastermind Training"
 msgstr "Мастер Сэтгэлгээ сургалт"
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Reward Points"
+msgid "Match Reward Points"
+msgstr "Шагналын Оноо"
+
 #: old_compensation/index.html
 msgid "Max Compensation Bonus"
 msgstr "Хамгийн их шагналын урамшуулал"
@@ -12991,6 +13303,12 @@ msgstr "Файлын хэмжээ 25mb-аас хэтэрч болохгүй"
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Max Lead Time"
 msgstr "Захиалах хамгийн их хугацаа"
+
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Price"
+msgid "Max Price"
+msgstr "Үнэ"
 
 #: components/payout/italian_info.vue
 msgid ""
@@ -13059,6 +13377,16 @@ msgstr "Цолны болзол:"
 #: components/top_bar/Connect.vue
 msgid "Meeting Info"
 msgstr "Уулзалтын мэдээлэл"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Meeting Info"
+msgid "Meeting Point"
+msgstr "Уулзалтын мэдээлэл"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "Meeting Point And Pickup Details"
+msgstr ""
 
 #: components/top_bar/Connect.vue
 msgid "Meeting Room"
@@ -13303,9 +13631,25 @@ msgstr "Майкл Хачисон - Хамтран-Үүсгэн байгуула
 msgid "Min Lead Time"
 msgstr "Захиалах хамгийн бага хугацаа"
 
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Cabin Price"
+msgid "Min Price"
+msgstr "Өрөөний Үнэ"
+
 #: components/compensation/recurring_income_levels.vue
 msgid "Minimum Earned Bonus Amount"
 msgstr "Авсан хамгийн бага урамшуулал"
+
+#: components/tours/intours_results.vue
+msgid "Minimum price cannot be greater than maximum price"
+msgstr ""
+
+#: pages/intours_details.vue
+msgid ""
+"Minimum: {{ ageBand.minTravelersPerBooking }}, Maximum: {{ ageBand."
+"maxTravelersPerBooking }}"
+msgstr ""
 
 #: components/inchat/user/user_create_room.vue
 msgid "Minimun of participants is 2."
@@ -13357,6 +13701,12 @@ msgstr "Гар утасны дугаар"
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Mobile Phone is required."
 msgstr "Гар утасны дугаараа бичнэ үү."
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "New Ticket"
+msgid "Mobile Ticket"
+msgstr "Шинэ тусламжийн хүсэлт илгээх"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
 #: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
@@ -13741,6 +14091,18 @@ msgstr "Нэр өвөрмөц, хэрэглэж болохуйц байх ёст
 msgid "Must be unique and available."
 msgstr "Нэр өвөрмөц, хэрэглэж болохуйц байх ёстой."
 
+#: components/reservations/my-bookings.vue
+#, fuzzy
+#| msgid "All Bookings"
+msgid "My bookings"
+msgstr "Бүх захиалгууд"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Contact Information"
+msgid "My Contact Information"
+msgstr "Холбоо барих мэдээлэл"
+
 #: pages/titles.vue
 msgid "My Cruise Savings"
 msgstr "Миний далайн аялалын хэмнэлтүүд"
@@ -13760,6 +14122,12 @@ msgid ""
 msgstr ""
 "Өөрийнхөө болон багийн хамтрагчдынхаа өсөлтийг хангахын тулд та байнга "
 "зочилж, шинэ шийдэмгий сэтгэлээр байгаарай гэж чин сэтгэлээсээ найдаж байна."
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "My Travel Savings"
+msgid "My travel savings"
+msgstr "Миний аялалын хэмнэлтүүд"
 
 #: components/birthday-modal.vue components/fast-growing-legs.vue
 #: components/mercy-ship-modals.vue components/weekly-competition.vue
@@ -13801,6 +14169,7 @@ msgstr ""
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/qualified_residual_bonus.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -13948,12 +14317,6 @@ msgstr "Иргэний үнэмлэхний дугаар"
 msgid "Nationality:"
 msgstr "Иргэншил:"
 
-#: components/reservation.vue
-msgid "Need a <span class=\"bold\"> hotel/resort </span> to stay?"
-msgstr ""
-"Танд <span class=\"bold\"> зочид буудал/амралтын газар </span> хэрэгтэй "
-"байна уу?"
-
 #: components/hotels/perfect_pairings.vue
 msgid "Need a <span class=\"text-green\">hotel/resort</span> to stay?"
 msgstr ""
@@ -13999,6 +14362,12 @@ msgstr "Хувьчлан элсүүлсэн шинэ Түншүүд"
 #: components/inchat/user/user_create_room.vue
 msgid "New Group {{ selectedNamespace }}"
 msgstr "Шинэ групп {{ selectedNamespace }}"
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "No Display Name available."
+msgid "New inTours Feature available!"
+msgstr "Хэрэглэгчийн нэр байхгүй байна."
 
 #: pages/resources.vue components/growth_calculator/potential_leadership.vue
 msgid "New Members"
@@ -14239,9 +14608,23 @@ msgstr "Шимтгэл байхгүй!"
 msgid "No Recurring Billing"
 msgstr "Давтамжит төлбөрийн арга тохируулаагүй"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "No redemption point - this is a direct entry ticket"
+msgstr ""
+
 #: components/user/directs.vue
 msgid "No Search Results"
 msgstr "Хайлтанд илэрц гарсангүй"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "The entered authentication code is invalid. Please try again."
+msgid "No tour recommendations found for this cruise. Please try again."
+msgstr "Таны оруулсан баталгаажуулах код буруу байна. Дахин бичнэ үү."
+
+#: components/tours/intours_results.vue
+msgid "No tours found for the selected destination and date range"
+msgstr ""
 
 #: components/booking/add-cd-user.vue
 msgid "No user found with that membership code."
@@ -14423,6 +14806,12 @@ msgstr "Уриагүй байна"
 #: components/membership_countdown.vue
 msgid "Not Membership Free"
 msgstr "Та ҮНЭГҮЙ Гишүүнчлэлтэй болоогүй байна"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "Donate Now"
+msgid "Not Now"
+msgstr "Хандив өгөх"
 
 #: pages/duplicator.vue
 msgid "Not Opened"
@@ -14777,9 +15166,21 @@ msgstr "Нээгдсэн: {{ formatDate(invite.lastViewDate) }}"
 msgid "Opened!"
 msgstr "Нээгдсэн!"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Created by:"
+msgid "Operated by"
+msgstr "Үүсгэгдсэн:"
+
 #: pages/public/leadership.vue
 msgid "Operations Director"
 msgstr "Үйл ажиллагаа эрхэлсэн Захирал"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Action"
+msgid "Option"
+msgstr "Үйлдэл"
 
 #: pages/account_setup.vue
 msgid ""
@@ -14881,7 +15282,7 @@ msgstr "Бидний үнэт зүйлс"
 msgid "OUR VISION"
 msgstr "БИДНИЙ АЛСЫН ХАРАА"
 
-#: components/reservation.vue pages/hotel_booking.vue
+#: pages/hotel_booking.vue
 msgid "Out of Pocket"
 msgstr "Өөрөөс төлсөн мөнгөн дүнг"
 
@@ -14952,6 +15353,7 @@ msgstr "Багцууд"
 #: components/receipts/new_residual_bonus_statement.vue
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue
 msgid "Page"
@@ -15587,6 +15989,10 @@ msgstr "Нууц үгнүүд"
 msgid "Passwords do not match!"
 msgstr "Нууц үг таарахгүй байна!"
 
+#: components/reservations/reservation-card.vue
+msgid "Past"
+msgstr ""
+
 #: pages/elevate.vue
 msgid "Pay Here"
 msgstr "Төлбөр төлөх"
@@ -15793,6 +16199,10 @@ msgstr "сар бүр төлнө. Гэрээ байхгүй. Дуртай үед
 msgid "per night"
 msgstr "нэг хоногт"
 
+#: components/tours/tour-card.vue
+msgid "Per person"
+msgstr ""
+
 #: pages/track_growth.vue track_growth/index.html
 msgid "Percent Growth Needed"
 msgstr "Өсөлтийн хувь хэрэгтэй"
@@ -15867,7 +16277,8 @@ msgid "Personal View"
 msgstr "Хувьчлан харах"
 
 #: pages/admin_user.vue pages/contacts.vue pages/elevate_registration.vue
-#: pages/global_summit_2023.vue pages/negative_balances.vue
+#: pages/global_summit_2023.vue pages/intours_confirmation.vue
+#: pages/negative_balances.vue
 #: components/cruises_booking/passenger-info-step.vue
 msgid "Phone"
 msgstr "Утасны дугаар"
@@ -15904,6 +16315,24 @@ msgstr "Зураг"
 #: components/payout/brightwell/review.vue
 msgid "Pickup details"
 msgstr "Авах тухай мэдээлэл"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup location"
+msgstr "Бэлэн мөнгө авах газар"
+
+#: pages/intours_confirmation.vue components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup Location"
+msgstr "Бэлэн мөнгө авах газар"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup Locations"
+msgstr "Бэлэн мөнгө авах газар"
 
 #: components/checkout/ProcessorBoacompra.vue
 msgid "Pix"
@@ -16065,6 +16494,12 @@ msgstr ""
 "Эдгээр чухал материалуудыг татаж аваад өөрийн онлайн болон бусад арга "
 "хэмжээнүүдэд хэрэглээрэй."
 
+#: pages/intours_confirmation.vue
+msgid ""
+"Please ensure the contact information provided is accurate, as it will be "
+"used for notifications and updates regarding your booked tour."
+msgstr ""
+
 #: components/onboarding/recurring-payment-step.vue
 msgid "Please enter a card for recurring payments."
 msgstr "Давтамжит төлбөрийн картыг оруулна уу."
@@ -16174,6 +16609,12 @@ msgstr "Имэйл хаягаа бичнэ үү."
 msgid "Please enter your email and we will send you further instructions:"
 msgstr "Имэйл хаягаа бичнэ үү, бид танд дэлгэрэнгүй зааврыг явуулах болно:"
 
+#: pages/intours_confirmation.vue components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Please enter your Email"
+msgid "Please enter your pickup location"
+msgstr "Имэйл хаягаа бичнэ үү"
+
 #: components/booking/add-cd-user.vue
 msgid "Please enter your second member 'Unique Membership Code'."
 msgstr "Хоёрдох гишүүний \"Гишүүнчлэлийн дугаар\"-ыг оруулна уу."
@@ -16253,7 +16694,14 @@ msgstr ""
 "Эхлэх огноо болон дуусах огноог оруулна уу. Хэрэв үгүй бол хуудасны дээд "
 "хэсэгт байгаа филтерийг дахин тохируулна уу."
 
-#: pages/hotels.vue
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Please provide a valid destination before searching"
+msgid "Please provide a date range before searching"
+msgstr "Хайлт хийхээс өмнө очих газраа зөв оруулна уу"
+
+#: pages/hotels.vue components/tours/intours_landing.vue
+#: components/tours/intours_results.vue
 msgid "Please provide a valid destination before searching"
 msgstr "Хайлт хийхээс өмнө очих газраа зөв оруулна уу"
 
@@ -16543,12 +16991,24 @@ msgstr "Далайн аялалын мэдээллийг цуглуулж бай
 msgid "Please wait while we gather all available hotels..."
 msgstr "Бүх зочид буудлын мэдээллийг цуглуулж байна, түр хүлээнэ үү..."
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Please wait while we gather all available hotels..."
+msgid "Please wait while we gather all available tours..."
+msgstr "Бүх зочид буудлын мэдээллийг цуглуулж байна, түр хүлээнэ үү..."
+
 #: pages/cruise.vue
 msgid "Please wait while we gather cruise trip information..."
 msgstr "Аялалын мэдээллийг цуглуулж байна, түр хүлээнэ үү..."
 
 #: pages/hotel_booking.vue pages/hotels_details.vue
 msgid "Please wait while we gather Hotel details."
+msgstr "Зочид буудлын мэдээллийг цуглуулж байна. Түр хүлээнэ үү..."
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Please wait while we gather Hotel details."
+msgid "Please wait while we gather tour details..."
 msgstr "Зочид буудлын мэдээллийг цуглуулж байна. Түр хүлээнэ үү..."
 
 #: pages/checkout.vue
@@ -16578,7 +17038,7 @@ msgstr "оноо"
 msgid "Points"
 msgstr "Оноо"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Popular Destinations"
 msgstr "Алдартай газрууд"
 
@@ -16628,6 +17088,12 @@ msgstr "Шуудангийн Код:"
 #: components/growth_calculator/potential_recurring.vue
 msgid "Potential Active Levels"
 msgstr "Боломжит идэвхтэй үеүүд"
+
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Potential Future Membership Savings"
+msgid "Potential future membership savings"
+msgstr "Гишүүнчлэлээр хэмнэх хэмнэлтүүд"
 
 #: components/cruise/cruise_savings_info.vue
 msgid "Potential Future Membership Savings"
@@ -16754,14 +17220,20 @@ msgstr "Өмнөх жил"
 msgid "Previously used passenger:"
 msgstr "Өмнө нь захиалж байсан зорчигч:"
 
+#: components/filter-chip-range.vue
 #: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/booking/category.vue
 #: components/receipts/hotel_booking_receipt.vue
-#: components/receipts/receipt.vue receipts/hotel_booking_receipt.html
+#: components/receipts/receipt.vue components/receipts/tour_booking_receipt.vue
+#: components/tours/intours_results.vue receipts/hotel_booking_receipt.html
 #: receipts/receipt.html
 msgid "Price"
 msgstr "Үнэ"
+
+#: components/tours/intours_results.vue
+msgid "Price cannot be negative"
+msgstr ""
 
 #: components/receipts/booking_receipt.vue
 msgid "Price Code"
@@ -16780,7 +17252,8 @@ msgid "Price Higher on Top"
 msgstr "Хамгийн үнэтэй нь эхэнд бичигдэнэ"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Price Information"
 msgstr "Үнийн Мэдээлэл"
@@ -16797,6 +17270,12 @@ msgstr "Үнийн тохиргоо"
 msgid "PRICE MATCH GUARANTEE!"
 msgstr "ҮНИЙН ТОХИРГОО!"
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Result Limit must be a number!"
+msgid "Price must be a number"
+msgstr "Үр дүнгийн хязгаар тоо байх ёстой!"
+
 #: pages/hotel_booking.vue
 msgid "Price per night:"
 msgstr "Нэг шөнийн үнэ:"
@@ -16804,6 +17283,12 @@ msgstr "Нэг шөнийн үнэ:"
 #: pages/convention_manager.vue
 msgid "Price per Ticket"
 msgstr "Нэг билетний Үнэ"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Price Range:"
+msgid "Price Range"
+msgstr "Үнийн хязгаар:"
 
 #: pages/hotels.vue
 msgid "Price Range per Night:"
@@ -16834,6 +17319,12 @@ msgstr ""
 #: pages/email_tracking.vue
 msgid "Printed"
 msgstr "Хэвлэгдсэн"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Archived Tickets"
+msgid "Printed Ticket"
+msgstr "Архивлагдсан тусламжийн хүсэлтүүд"
 
 #: components/booking/cabin_categories.vue
 msgid ""
@@ -17144,7 +17635,7 @@ msgstr "Болзол хангасан Гишүүд"
 msgid "Quality of Business Index (QBI)"
 msgstr "Бизнесийн Чанарын Индекс (QBI)"
 
-#: pages/leadership_academy.vue
+#: pages/intours_confirmation.vue pages/leadership_academy.vue
 msgid "question"
 msgstr "асуулт"
 
@@ -17377,13 +17868,9 @@ msgstr "Хүлээн авагчийн банкны мэдээллүүд"
 msgid "Recipients"
 msgstr "Хүлээн авагчид"
 
-#: pages/multi_factor.vue
+#: pages/multi_factor.vue components/tours/intours_results.vue
 msgid "Recommended"
 msgstr "Санал болгосон"
-
-#: components/reservation.vue
-msgid "Record Locator"
-msgstr "Захиалгын дугаар"
 
 #: pages/reports.vue
 #: components/admin_territory_directors/territory_directors.vue
@@ -17430,6 +17917,22 @@ msgstr "Давтамжит төлбөрийн борлуулалт"
 #: pages/track_results.vue track_results/index.html
 msgid "Recurring:"
 msgstr "Давтамжит төлбөр:"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Perception"
+msgid "Redemption"
+msgstr "Ойлголт"
+
+#: components/reservations/tour-details.vue
+msgid "Redemption Type"
+msgstr ""
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Room Type"
+msgid "Redeption Type"
+msgstr "Өрөөний төрөл"
 
 #: components/checkout/ProcessorBoacompra.vue
 msgid "Redirecting you over to BoaCompra."
@@ -17501,6 +18004,12 @@ msgstr "Төлбөр буцаах Тайлангийн Мэдээлэл"
 #: pages/payment_protection.vue
 msgid "Refundable Amount"
 msgstr "Буцаан олгох дүн"
+
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Reminded"
+msgid "Refunded"
+msgstr "Сануулсан"
 
 #: components/covid-disclaimer-reminder.vue
 msgid ""
@@ -17716,7 +18225,8 @@ msgid "Resend SMS"
 msgstr "Мессеж дахин илгээх"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Reservation Details"
 msgstr "Захиалгын Дэлгэрэнгүй"
@@ -17934,7 +18444,7 @@ msgstr "Шагналын Онооны урамшуулал:"
 msgid "Rewards Points:"
 msgstr "Шагналын Оноо:"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Rio de Janeiro"
 msgstr "Рио Де Жанеро"
 
@@ -17962,7 +18472,7 @@ msgstr "Румын хэл"
 msgid "Romanian Speaking Global Markets"
 msgstr "Румын хэлтэй улс орнууд"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Rome"
 msgstr "Ром"
 
@@ -18109,7 +18619,7 @@ msgstr "Борлуулагчийн тэмдэг"
 msgid "sample"
 msgstr "жишээ"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Santorini"
 msgstr "Санторини"
 
@@ -18118,6 +18628,7 @@ msgstr "Санторини"
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 #: components/admin_management/admin_departments.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -18152,12 +18663,14 @@ msgid "SAVINGS GUARANTEE!"
 msgstr "ХЭМНЭЛТИЙН БАТАЛГАА"
 
 #: pages/communications.vue pages/contacts.vue pages/cruises.vue
-#: pages/hotels.vue pages/hotels_details.vue pages/notifications.vue
-#: pages/resources.vue pages/track_growth.vue pages/webinar_recordings.vue
-#: components/blog/blog_list.vue components/inchat/search/search-people.vue
-#: communications/index.html communications/view.html
-#: email_notifications/index.html track_growth/index.html
-#: webinar_recordings/index.html
+#: pages/hotels.vue pages/hotels_details.vue pages/intours_confirmation.vue
+#: pages/notifications.vue pages/resources.vue pages/track_growth.vue
+#: pages/webinar_recordings.vue components/blog/blog_list.vue
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#: components/inchat/search/search-people.vue
+#: components/tours/details/available-plans.vue communications/index.html
+#: communications/view.html email_notifications/index.html
+#: track_growth/index.html webinar_recordings/index.html
 msgid "Search"
 msgstr "Хайлт"
 
@@ -18168,6 +18681,13 @@ msgstr "Далайн аялал, зочид буудал, амралтын га�
 #: pages/hotels.vue components/translations/placeholders.vue
 msgid "Search by city or hotel"
 msgstr "Зочид буудал болон хотоор хайх"
+
+#: pages/intours.vue components/tours/intours_landing.vue
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Search by date"
+msgid "Search by Destination"
+msgstr "Өдрөөр хайх"
 
 #: resources/index.html
 msgid "Search Documents.."
@@ -18192,10 +18712,6 @@ msgstr "Нэр болон имэйлээр хайх"
 #: pages/hotels.vue
 msgid "Search Hotels and Cities:"
 msgstr "Зочид буудал болон хотуудаар хайх:"
-
-#: components/reservation.vue
-msgid "Search InStays"
-msgstr "InStays-ээс хайх"
 
 #: pages/invite.vue components/translations/placeholders.vue
 msgid "Search Name or Email"
@@ -18238,6 +18754,13 @@ msgstr "Өрөө хайх"
 msgid "Search this month..."
 msgstr "Энэ сарын хайлт..."
 
+#: components/welcome_tours_modal.vue
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Search users"
+msgid "Search Tours"
+msgstr "Хэрэглэгч хайх"
+
 #: components/inchat/user_list_inchat.vue
 msgid "Search users"
 msgstr "Хэрэглэгч хайх"
@@ -18271,7 +18794,14 @@ msgstr "Өөрийн хэл дээр харах:"
 msgid "See List"
 msgstr "Жагсаалт харах"
 
-#: components/cards/menu-page-card.vue
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "See More"
+msgid "See more"
+msgstr "Цааш нь унших"
+
+#: pages/reservations.vue components/cards/menu-page-card.vue
+#: components/reservations/tour-search.vue
 msgid "See More"
 msgstr "Цааш нь унших"
 
@@ -18320,9 +18850,11 @@ msgid "See your certificate here!"
 msgstr "Таны гэрчилгээ"
 
 #: pages/admin_department.vue pages/admin_permission_group.vue
-#: components/onboarding/address-step.vue components/user/department.vue
-#: components/user/departments.vue components/user/permission-assignation.vue
+#: pages/intours_confirmation.vue components/onboarding/address-step.vue
+#: components/user/department.vue components/user/departments.vue
+#: components/user/permission-assignation.vue
 #: components/user/permission-group.vue
+#: components/tours/details/available-plans.vue
 msgid "Select"
 msgstr "Сонгох"
 
@@ -18346,6 +18878,12 @@ msgstr "Гишүүний төрөл"
 #: pages/cruises.vue components/user/departments.vue
 msgid "Select All"
 msgstr "Бүгдийг сонгох"
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Select Option"
+msgid "Select an option"
+msgstr "Сонголт"
 
 #: components/booking/category.vue
 msgid "Select Cabin"
@@ -18401,6 +18939,12 @@ msgstr "Ямар төрлийн имэйл хүлээн авахаа чагтл�
 #: pages/team_rankings.vue
 msgid "Select Time Period"
 msgstr "Хугацаа сонгох"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Select payer"
+msgid "Select travelers"
+msgstr "Төлөгч сонгох"
 
 #: pages/cards.vue cards/index.html
 msgid "Select your name format:"
@@ -18628,6 +19172,12 @@ msgid ""
 msgstr ""
 "<a href=\"/referral_links\" target=\"_blank\">Энд</a> дарж өөрийн элсүүлэх "
 "холбоосыг үүсгэнэ үү."
+
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+msgid ""
+"Set your price range per person, based on double occupancy to filter cruise "
+"options."
+msgstr ""
 
 #: pages/onboarding.vue
 msgid "Set Your Referral Link"
@@ -19167,6 +19717,7 @@ msgstr "Муж/Бүс"
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/qualified_residual_bonus.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue receipts/booking_receipt.html
 #: receipts/commission_statement.html receipts/daily_member_activation.html
@@ -19200,7 +19751,7 @@ msgstr ""
 "Өрөөний эхлэх үнэ <currency-convert ng-attr-value="
 "\"{{cruisePrice(cruise)}}\" hide=\"true\"/>"
 
-#: pages/admin_user_id.vue
+#: pages/admin_user_id.vue pages/reservations.vue
 msgid "Stats"
 msgstr "Статистик"
 
@@ -19302,10 +19853,6 @@ msgstr "Таны Гишүүнчлэл"
 msgid "Success"
 msgstr "Амжилт"
 
-#: components/reservation.vue
-msgid "SUCCESSFUL"
-msgstr "АМЖИЛТТАЙ"
-
 #: pages/reports.vue reports/index.html
 msgid "Successful Growth"
 msgstr "Амжилттай өсөлт"
@@ -19351,6 +19898,12 @@ msgstr "Супер Билдерс Бэйс Урамшуулал"
 msgid "Super Builders Bonus"
 msgstr "Супер Билдерс Урамшуулал"
 
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Agency Reference"
+msgid "Supplier Reference"
+msgstr "Агентлагийн мэдээлэл"
+
 #: pages/settings.vue pages/support.vue
 #: components/price_match_guarantee/cruises.vue layouts/no_navigation.html
 #: layouts/compiled/no_navigation.html
@@ -19364,11 +19917,6 @@ msgstr "Тусламжийн албаны Захирал"
 #: components/navigation/notifications.vue
 msgid "Support Replied"
 msgstr "Тусламжаас хариулагдсан"
-
-#: components/reservation.vue
-msgid "Support staff has been alerted and is working on getting this resolved."
-msgstr ""
-"Туслах ажилтнуудад анхааруулга өгч, энэ асуудлыг шийдвэрлэхээр ажиллаж байна."
 
 #: pages/admin_user_id.vue
 msgid "Support Tickets"
@@ -19602,7 +20150,8 @@ msgstr "Утас: 1-888-396-7285"
 msgid "Terms"
 msgstr "Нөхцөлүүд"
 
-#: pages/elevate.vue pages/payment_protection.vue
+#: pages/elevate.vue pages/intours_confirmation.vue
+#: pages/payment_protection.vue
 msgid "Terms and Conditions"
 msgstr "Үйлчилгээний Нөхцөл"
 
@@ -20235,9 +20784,21 @@ msgstr ""
 msgid "There are no published courses."
 msgstr "Нийтлэгдсэн сургалт байхгүй байна."
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "There are no results for this search."
+msgid "There are no results for these parameters."
+msgstr "Хайланд илэрц гарсангүй."
+
 #: pages/hotels.vue
 msgid "There are no results for this search."
 msgstr "Хайланд илэрц гарсангүй."
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "There was a problem with your promotion code. Please try again."
+msgid "There are no tour recommendations right now. Please try again later."
+msgstr "Таны урамшууллын кодонд асуудал гарлаа. Дахин бичнэ үү."
 
 #: components/public/Faq.vue
 msgid ""
@@ -20384,6 +20945,26 @@ msgstr "Таны хүсэлтэнд алдаа заалаа. Хайлтаа да
 #: pages/global_summit_2023.vue
 msgid "There was an error. Plaese reload the page."
 msgstr "Алдаа гарсан учраас хуудсыг дахин ачааллана уу."
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There was a problem with your promotion code. Please try again."
+msgid "There was an issue continueing with your booking. Please try again."
+msgstr "Таны урамшууллын кодонд асуудал гарлаа. Дахин бичнэ үү."
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There has been an error. Please reload the page and try again."
+msgid ""
+"There was an issue initializing your checkout. Please reaload the page and "
+"try again."
+msgstr "Алдаа гарлаа. Хуудсыг дахин ачааллана уу."
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There was an error with your request, please try again."
+msgid "There was an issue initializing your checkout. Please try again."
+msgstr "Таны хүсэлтэнд алдаа заалаа. Хайлтаа дахин хийнэ үү."
 
 #: pages/payout.vue
 msgid "There was an issue processing your payout. Please contact support."
@@ -20594,6 +21175,7 @@ msgstr "Тэд"
 msgid "Things like:"
 msgstr "Доорх зүйлүүд:"
 
+#: pages/intours_confirmation.vue pages/intours_details.vue
 #: components/booking/limited_time_offer_card.vue
 #: components/compensation/account_status.vue
 msgid "this"
@@ -20689,6 +21271,10 @@ msgstr ""
 "Энэ үйлдэл нь энэ зөвшөөрлийн бүлгийг энэ хэлтэс болон бүх админаас хасах "
 "болно."
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "This Activity Includes"
+msgstr ""
+
 #: components/agreements/national_director_agreement.vue
 msgid ""
 "This Addendum (the “Addendum”) constitutes an addendum to the inCruises "
@@ -20752,6 +21338,12 @@ msgstr ""
 #: pages/builders_base.vue
 msgid "This bonus rewards rank leaders"
 msgstr "Энэхүү урамшуулал нь цолтой манлайлагч нарыг"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "This booking is non-refundable."
+msgid "This booking is non-refunable."
+msgstr "Энэ захиалганд төлбөр буцаан олголт хийгдэхгүй."
 
 #: components/booking/agreements.vue
 msgid ""
@@ -21235,11 +21827,27 @@ msgstr "Билетийн ID"
 msgid "Ticket Question:"
 msgstr "Асуулт:"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "Tickets can be redeemed at this product's starting point"
+msgstr ""
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid ""
+"Tickets can be redeemed from a location other than the product's starting "
+"point"
+msgstr ""
+
 #: components/admin_support_analytics/modals/show_ticket.vue
 msgid "Tickets for <u>{{ data.name }}</u> on <u>{{ data.dateRange }}</u>"
 msgstr ""
 "Тусламжийн хүсэлтүүд <u>{{ data.name }}</u> өдрүүд <u>{{ data.dateRange }}</"
 "u>"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid ""
+"Tickets will be delivered post-booking by email; or, physically delivered to "
+"the customer or the customer's hotel"
+msgstr ""
 
 #: pages/global_summit_2024.vue
 msgid "Tiebreaker"
@@ -21248,6 +21856,16 @@ msgstr "Тэнцсэн тохиолдолд"
 #: pages/global_summit_2023.vue pages/global_summit_dr.vue
 msgid "Tiebreaker:"
 msgstr "Тэнцсэн тохиолдолд:"
+
+#: Course Answers
+msgid "Time"
+msgstr "Цаг хугацаа"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Departure"
+msgid "Time Before Departure"
+msgstr "Явах"
 
 #: pages/track_growth.vue track_growth/index.html
 msgid "Time Frame"
@@ -21682,6 +22300,12 @@ msgstr "Board of Directors цолтой шилдэг 7 хүн амралтын �
 msgid "Top 8 Executive Directors - Win the stay."
 msgstr "Executive Director цолтой шилдэг 8 хүн амралтын газар байрлах эрх."
 
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "Top Activities"
+msgstr "Үйлдэлүүд"
+
 #: pages/partner_success.vue
 msgid "Top Partners"
 msgstr "Шилдэг Түнш нар"
@@ -21694,11 +22318,13 @@ msgstr "Шилдэг борлуулагч нар"
 msgid "total"
 msgstr "нийт"
 
-#: pages/hotel_booking.vue pages/payment_protection.vue pages/track_growth.vue
+#: pages/hotel_booking.vue pages/intours_confirmation.vue
+#: pages/payment_protection.vue pages/track_growth.vue
 #: components/compensation/qbi.vue components/price_match_guarantee/cruises.vue
 #: components/receipts/booking_receipt.vue
 #: components/receipts/italian_commission.vue
-#: components/receipts/italian_receipt.vue receipts/booking_receipt.html
+#: components/receipts/italian_receipt.vue
+#: components/reservations/tour-details.vue receipts/booking_receipt.html
 #: receipts/italian_commission.html receipts/italian_receipt.html
 #: track_growth/index.html upgrade/index.html
 msgid "Total"
@@ -21799,9 +22425,21 @@ msgstr "Нийт Гишүүд ({{count}})"
 msgid "Total Members (%{ count })"
 msgstr "Нийт Гишүүд (%{ count })"
 
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Total Membership Dues Paid"
+msgid "Total membership dues paid"
+msgstr "Гишүүнчлэлд төлсөн нийт дүн"
+
 #: components/cruise/cruise_savings_info.vue
 msgid "Total Membership Dues Paid"
 msgstr "Гишүүнчлэлд төлсөн нийт дүн"
+
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Total Membership Savings Realized"
+msgid "Total membership savings realized"
+msgstr "Гишүүнчлэлээр хэмнэсэн нийт хэмнэлт"
 
 #: components/cruise/cruise_savings_info.vue
 msgid "Total Membership Savings Realized"
@@ -21924,6 +22562,31 @@ msgstr "НИЙТ:"
 #: components/install-pwa-banner.vue
 msgid "Touch"
 msgstr "Хүрэх"
+
+#: pages/admin_booking.vue components/admin_booking/tour_bookings.vue
+#, fuzzy
+#| msgid "Future Bookings"
+msgid "Tour Bookings"
+msgstr "Ирээдүйн захиалга"
+
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "More Details"
+msgid "Tour Details"
+msgstr "Дэлгэрэнгүй мэдээлэл"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "More Info"
+msgid "Tour Info"
+msgstr "Дэлгэрэнгүй Мэдээлэл"
+
+#: BookingTopBar.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
+#, fuzzy
+#| msgid "hours"
+msgid "Tours"
+msgstr "цаг"
 
 #: Menu
 msgid "Track Growth"
@@ -22102,6 +22765,24 @@ msgstr "Аялал!"
 msgid "Travel places"
 msgstr "Аялах газрууд"
 
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "TRAVEL"
+msgid "TRAVELER"
+msgstr "ТА"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Cash Pickup"
+msgid "Traveler Pickup"
+msgstr "Бэлэн мөнгөөр авах"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Travel places"
+msgid "Travelers"
+msgstr "Аялах газрууд"
+
 #: pages/public/reviews.vue
 msgid ""
 "Traveling is the best thing that happens to us, and inCruises gives us that "
@@ -22188,6 +22869,10 @@ msgstr "UnionPay"
 #: pages/reward_points.vue pages/settings.vue
 msgid "Unique Membership Code"
 msgstr "Миний гишүүнчлэлийн дугаар"
+
+#: pages/intours_confirmation.vue
+msgid "Unit"
+msgstr ""
 
 #: components/info-reminder.vue
 msgid "Unit or Apt #"
@@ -22576,6 +23261,7 @@ msgstr "Узбек хэл"
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 msgid "Value"
 msgstr "Үнэт зүйлс"
 
@@ -22625,6 +23311,12 @@ msgstr "Баталгаажуулах"
 #: pages/settings.vue
 msgid "Verify Phone Number"
 msgstr "Утасны дугаар баталгаажуулах"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Transfer details"
+msgid "Verify tour details"
+msgstr "Гүйлгээний дэлгэрэнгүй мэдээллүүд"
 
 #: components/checkout/ItalianStep.vue
 msgid "Verify Your Information"
@@ -22755,6 +23447,12 @@ msgstr "Жагсаалтыг харах"
 msgid "View More"
 msgstr "Цааш нь харах"
 
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "View More"
+msgid "View More Photos"
+msgstr "Цааш нь харах"
+
 #: notification_settings/index.html
 msgid "View Notifications"
 msgstr "Мэдэгдэл харах"
@@ -22779,13 +23477,10 @@ msgstr "Багцуудыг харах"
 msgid "View Previous Compensation"
 msgstr "Өмнөх Шагналуудыг харах"
 
-#: pages/receipts.vue
+#: pages/receipts.vue components/reservations/reservation-card.vue
+#: components/reservations/tour-details.vue
 msgid "View Receipt"
 msgstr "Баримт харах"
-
-#: components/reservation.vue
-msgid "View Refund Form"
-msgstr "Төлбөр буцаах маягт харах"
 
 #: components/booking/cabin_categories.vue
 msgid "View Rooms"
@@ -22884,6 +23579,12 @@ msgstr "Хэмжээ"
 #: pages/builders_base.vue
 msgid "Volume is not final"
 msgstr "Хэмжээ тооцогдож дуусаагүй байна"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Touch"
+msgid "Voucher"
+msgstr "Хүрэх"
 
 #: components/support/TicketList.vue
 msgid "Waiting for Support"
@@ -23174,6 +23875,10 @@ msgstr ""
 "Та картны мэдээллээ дахин оруулах, эсвэл сар бүрийн Гишүүнчлэлийн төлбөрөө "
 "Trust My Travel (TMT)-аар дамжуулан төлөх үүднээс шинэ картны мэдээллээ "
 "оруулна уу."
+
+#: components/welcome_tours_modal.vue
+msgid "We noticed you have an upcoming cruise booked:"
+msgstr ""
 
 #: pages/public/causes.vue
 msgid ""
@@ -24259,6 +24964,12 @@ msgstr "Танд энэ функцэд хандах эрх байхгүй бай
 msgid "You do not have any conversation."
 msgstr "Танд ямар нэг ярицлагын түүх байхгүй байна."
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "You do not have any saved recipient accounts."
+msgid "You do not have any favorite tours"
+msgstr "Танд харилцагчийн бүртгэл байхгүй байна."
+
 #: components/payout/brightwell/recipient-account.vue
 msgid "You do not have any saved recipient accounts."
 msgstr "Танд харилцагчийн бүртгэл байхгүй байна."
@@ -24859,6 +25570,12 @@ msgstr ""
 msgid "Your Bonus"
 msgstr "Таны урамшуулал"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Your booking session has expired. Please start over."
+msgid "Your booking has expired. Please try again."
+msgstr "Таны захиалгын хугацаа дууссан байна. Дахин эхэлнэ үү."
+
 #: components/receipts/booking_receipt.vue
 msgid ""
 "Your booking reference number is {{ bookingDetails.cruise_confirmation }}. "
@@ -25035,6 +25752,10 @@ msgid ""
 "Your first transfer to PayQuicker is subject to a $4 USD card issuing charge."
 msgstr ""
 "PayQuicker руу шилжүүлсэн эхний төлбөрөөс Картны хураамж $4 тооцогдох болно."
+
+#: components/tours/intours_landing.vue
+msgid "Your from must be earlier than your to date"
+msgstr ""
 
 #: components/mercy-ship-modals.vue
 msgid ""
@@ -32670,10 +33391,6 @@ msgid "Energy"
 msgstr "Эрч хүч"
 
 #: Course Answers
-msgid "Time"
-msgstr "Цаг хугацаа"
-
-#: Course Answers
 msgid ""
 "Spend long stretches of time focused on their craft. Refuse to pick up every "
 "incoming phone call."
@@ -37361,6 +38078,53 @@ msgstr "7 шөнийн Тарантогоос хөдлөх зүүн Газар �
 msgid "10% off Virgin Voyage"
 msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 
+#~ msgid "%{ guests } Guests"
+#~ msgstr "%{ guests } Зорчигчид"
+
+#~ msgid "Active Bookings"
+#~ msgstr "Идэвхтэй захиалгууд"
+
+#~ msgid "Below you will find the status of your reservations."
+#~ msgstr "Өөрийн захиалгуудыг харах."
+
+#~ msgid "CANCELLED"
+#~ msgstr "ЦУЦЛАГДСАН"
+
+#~ msgid "Cruises & Hotels Stats"
+#~ msgstr "Далайн аялал, зочид буудлуудын тоон үзүүлэлтүүд"
+
+#~ msgid "Depart Location"
+#~ msgstr "Хөдлөх Боомт"
+
+#~ msgid "Failed"
+#~ msgstr "Болсонгүй"
+
+#~ msgid "FAILED"
+#~ msgstr "БОЛСОНГҮЙ"
+
+#~ msgid "Need a <span class=\"bold\"> hotel/resort </span> to stay?"
+#~ msgstr ""
+#~ "Танд <span class=\"bold\"> зочид буудал/амралтын газар </span> хэрэгтэй "
+#~ "байна уу?"
+
+#~ msgid "Record Locator"
+#~ msgstr "Захиалгын дугаар"
+
+#~ msgid "Search InStays"
+#~ msgstr "InStays-ээс хайх"
+
+#~ msgid "SUCCESSFUL"
+#~ msgstr "АМЖИЛТТАЙ"
+
+#~ msgid ""
+#~ "Support staff has been alerted and is working on getting this resolved."
+#~ msgstr ""
+#~ "Туслах ажилтнуудад анхааруулга өгч, энэ асуудлыг шийдвэрлэхээр ажиллаж "
+#~ "байна."
+
+#~ msgid "View Refund Form"
+#~ msgstr "Төлбөр буцаах маягт харах"
+
 #~ msgid "Europe and Central Asia"
 #~ msgstr "Европ болон Төв Ази"
 
@@ -37629,9 +38393,6 @@ msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 #~ msgid "Again, <strong>Super Builders Base Bonus</strong> is uncapped!"
 #~ msgstr ""
 #~ "Мөн, Супер Билдерс Бэйс урамшууллын</strong> хэмжээ хязгааргүй боллоо!"
-
-#~ msgid "My Travel Savings"
-#~ msgstr "Миний аялалын хэмнэлтүүд"
 
 #~ msgid ""
 #~ "Please click <a href=\"%{tmtFinancialProtection}\" target=\"_blank"
@@ -39285,9 +40046,6 @@ msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 #~ msgid "Book Last Minute"
 #~ msgstr "Та энэ зун намрын цагаар Коста компаниас зарласан"
 
-#~ msgid "Donate Now"
-#~ msgstr "Хандив өгөх"
-
 #~ msgid "Go to page"
 #~ msgstr "Хуудас руу очих"
 
@@ -39708,9 +40466,6 @@ msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 
 #~ msgid "Cruise Itinerary"
 #~ msgstr "Круиз аялалын маршрут"
-
-#~ msgid "Departure"
-#~ msgstr "Явах"
 
 #~ msgid "InCruises Membership Savings"
 #~ msgstr "InCruises гишүүнчлэлийн хэмнэлтүүд"
@@ -41328,9 +42083,6 @@ msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 #~ msgid "Click here to filter nights"
 #~ msgstr "Энд дарж шөнийн тоог сонгоно уу"
 
-#~ msgid "Price Range:"
-#~ msgstr "Үнийн хязгаар:"
-
 #~ msgid ""
 #~ "<span class=\"h3\">${{ calculateNightlyRate(hotel.sellingRate) }}</span>\n"
 #~ "\t\t\t\t\t\t\t\t\t\t\t\t<sub v-translate=\"\">/ night</sub>"
@@ -42081,9 +42833,6 @@ msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 #~ msgid "Rewards"
 #~ msgstr "Шагналууд"
 
-#~ msgid "Search by date"
-#~ msgstr "Өдрөөр хайх"
-
 #~ msgid ""
 #~ "Success as an inCruises Partner can be measured in a variety of ways. To "
 #~ "some people, success will be meeting and networking with like-minded "
@@ -42143,9 +42892,6 @@ msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 
 #~ msgid "TO TRAVEL"
 #~ msgstr "ОРЛОГО ОЛ"
-
-#~ msgid "TRAVEL"
-#~ msgstr "ТА"
 
 #~ msgid ""
 #~ "We believe you can! By launching your business and successfully referring "
@@ -42979,9 +43725,6 @@ msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 
 #~ msgid "Child #{{ index + 1 }} Age"
 #~ msgstr "Child #{{ index + 1 }} Нас"
-
-#~ msgid "Category"
-#~ msgstr "Төрөл"
 
 #~ msgid "Western Union"
 #~ msgstr "Western Union"
@@ -46356,9 +47099,6 @@ msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 #~ msgid "Adding to Watch List"
 #~ msgstr "Үзэх жагсаалтад нэмэх"
 
-#~ msgid "Arrive Time"
-#~ msgstr "Ирэх цаг"
-
 #~ msgid "Availability and Checkout"
 #~ msgstr "Боломжтой байдал ба Төлбөр тооцоо"
 
@@ -46401,9 +47141,6 @@ msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 #~ msgid "Classes And Services"
 #~ msgstr "Төрөл ба Үйлчилгээнүүд"
 
-#~ msgid "Click here to view Cancellation Policy"
-#~ msgstr "Энд дарж Цуцлах Бодлогыг харна уу"
-
 #~ msgid "Cruise Booking Agreement"
 #~ msgstr "Круиз аялал захиалах Гэрээ"
 
@@ -46415,9 +47152,6 @@ msgstr "Virgin Voyage аялалын 10%-ийн хямдрал"
 
 #~ msgid "Dining"
 #~ msgstr "Оройн хоол"
-
-#~ msgid "Duration"
-#~ msgstr "Хугацаа"
 
 #~ msgid "Gender"
 #~ msgstr "Хүйс"

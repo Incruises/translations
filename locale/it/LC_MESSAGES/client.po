@@ -51,7 +51,8 @@ msgstr "10"
 msgid "2023"
 msgstr "2023"
 
-#: pages/courses.vue
+#: pages/courses.vue pages/intours_details.vue
+#: components/reservations/tour-details.vue
 msgid "_ctx"
 msgstr "_ctx"
 
@@ -279,6 +280,10 @@ msgid ""
 msgstr ""
 "\"Se vuoi il meglio, il massimo e il primo dei Caraibi, è ciò che ti aspetta "
 "a Casa de Campo\""
+
+#: pages/intours_confirmation.vue
+msgid "({{ traveler.ageBand }})"
+msgstr ""
 
 #: pages/hotel_booking.vue
 msgid "(1 For 1)"
@@ -543,6 +548,12 @@ msgstr "{{ getRecipientAccountFieldName(recipientAccountField) }}"
 msgid "{{ getRecipientAccountFieldValue(recipientAccountField) }}"
 msgstr "{{ getRecipientAccountFieldValue(recipientAccountField) }}"
 
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "{{ videoDescription }}"
+msgid "{{ getTravelerDescription() }}"
+msgstr "{{ videoDescription }}"
+
 #: components/accordion.vue
 msgid "{{ item.body }}"
 msgstr "{{ item.body }}"
@@ -551,9 +562,25 @@ msgstr "{{ item.body }}"
 msgid "{{ item.title }}"
 msgstr "{{ item.title }}"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "{{ course.description }}"
+msgid "{{ itineraryItem.description }}"
+msgstr "{{ course.description }}"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "{{ itineraryItem.pointOfInterestLocation.location.name }}"
+msgstr ""
+
 #: pages/reports.vue pages/track_results.vue
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
+
+#: pages/intours_details.vue
+msgid ""
+"{{ pricingInfo.ageBands.length == 1 ? $gettext('TRAVELER') : ageBand."
+"ageBand }} {{ ageBand.label }}"
+msgstr ""
 
 #: pages/courses.vue
 msgid "{{ question.question }}"
@@ -902,10 +929,6 @@ msgstr "%{ cd_used } in Crediti Premio"
 msgid "%{ city }"
 msgstr "%{ city }"
 
-#: components/reservation.vue
-msgid "%{ guests } Guests"
-msgstr "%{ guests } Ospiti"
-
 #: pages/cruises.vue pages/hotels.vue
 msgid "%{ length } results match your criteria."
 msgstr "%{ length } risultati corrispondono ai tuoi criteri."
@@ -948,14 +971,10 @@ msgstr "%{ name }, adesso importiamo i tuoi contatti"
 msgid "%{ night } Nights"
 msgstr "%{ night } Notti"
 
-#: components/reservation.vue pages/cruise.vue
-#: components/cruises_booking/cruise-header-details.vue
+#: pages/cruise.vue components/cruises_booking/cruise-header-details.vue
+#: components/reservations/reservation-card.vue
 msgid "%{ nights } Nights"
 msgstr "%{ nights } Notti"
-
-#: components/reservation.vue
-msgid "%{ passengers } Passengers"
-msgstr "%{ passengers } Passeggeri"
 
 #: components/receipts/hotel_booking_receipt.vue
 msgid "%{ points_used } Reward Points"
@@ -976,6 +995,24 @@ msgstr "%{ start } a %{ end }"
 #: pages/hotel_booking.vue
 msgid "%{ state }"
 msgstr "%{ state }"
+
+#: components/reservations/tour-search.vue
+msgid "%{activitiesNum} activities"
+msgstr ""
+
+#: components/reservations/tour-search.vue
+msgid "%{activitiesNum} activities found"
+msgstr ""
+
+#: components/reservations/reservation-card.vue
+msgid "%{adultCount} Adults · %{childCount} Childs"
+msgstr ""
+
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "%{ passengers } Passengers"
+msgid "%{adultCount} passengers"
+msgstr "%{ passengers } Passeggeri"
 
 #: components/compensation/residual_bonus.vue
 msgid "%{currentMonthName} Recurring Bonus"
@@ -1029,6 +1066,12 @@ msgstr "+ Aggiungi gruppo permessi"
 #: pages/admin_permission_group.vue
 msgid "+ Add Permissions"
 msgstr "+ Aggiungi permessi"
+
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "+150 Activities"
+msgstr "Attività"
 
 #: pages/email.vue
 msgid ""
@@ -1113,6 +1156,13 @@ msgstr ""
 "<%- gettext(\"La=\"\" crescita=\"\" e=\"\" lo=\"\" sviluppo=\"\" personale="
 "\"\" sono=\"\" il=\"\" cuore=\"\" del=\"\" successo=\"\" di=\"\" un=\"\" "
 "leader.\")=\"\" %=\"\"> </%->"
+
+#: components/reservations/tour-details.vue
+msgid ""
+"<a :href=\"`${voucherInfo.url}`\" class=\"grow shrink\" target=\"_blank\"> "
+"<Button class=\"rounded-xl\" size=\"medium\" :label=\"$gettext('Get Your "
+"Ticket')\" :full=\"true\" base=\"solid\" variant=\"primary\"/> </a>"
+msgstr ""
 
 #: pages/public/reviews.vue
 msgid ""
@@ -1520,6 +1570,10 @@ msgid ""
 msgstr ""
 "<img class=\"flag\" :src=\"sourceCountryFlagImg\"/> {{ transferDetails."
 "sourceCountryAndCurrency.currency.code }}"
+
+#: components/tours/details/available-plans.vue
+msgid "<MapPin/> Pickup point"
+msgstr ""
 
 #: components/cruises_booking/reward-points-confirm-step.vue
 #: components/cruises_booking/reward-points-step.vue
@@ -2032,6 +2086,24 @@ msgstr ""
 "<strong>Ulteriori informazioni</strong>: %{adults} Adulti, %{children} "
 "Bambini| %{nights} Notti"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>%{ hotelName }</strong>"
+msgid "<strong>Pickup Point</strong>:"
+msgstr "<strong>%{ hotelName }</strong>"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>Departing on</strong>: %{ cruiseOn }"
+msgid "<strong>Start Date</strong>: %{ startDate }"
+msgstr "<strong>In partenza il</strong>: %{ cruiseOn }"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>Departing on</strong>: %{ cruiseOn }"
+msgid "<strong>Start Time</strong>: %{ startTime }"
+msgstr "<strong>In partenza il</strong>: %{ cruiseOn }"
+
 #: pages/elevate.vue
 msgid ""
 "<svg style=\"fill: #c0c0c0\" id=\"Layer_1\" width=\"20\" xmlns=\"http://www."
@@ -2238,6 +2310,12 @@ msgstr "Saldo Crediti Premi 1 per 1"
 #: pages/reward_points.vue
 msgid "1 for 1 Reward Points Logs"
 msgstr "Registro dei Crediti Premio 1 per 1"
+
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "1 for 1 Reward Points Match"
+msgid "1 for 1 reward points match"
+msgstr "Corrispondenza in Crediti Premio 1 per 1"
 
 #: components/cruise/cruise_savings_info.vue
 msgid "1 for 1 Reward Points Match"
@@ -2448,6 +2526,13 @@ msgstr ""
 #: pages/builders_base.vue
 msgid "30% bonus"
 msgstr "Bonus del 30%"
+
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "150,000+ Global Destinations are Waiting for You!"
+msgid "300,000+ Tours and experiences are waiting for you"
+msgstr ""
+"Ci sono più di 150.000 destinazioni in tutto il mondo che ti aspettano!"
 
 #: income_disclosure/index.html
 msgid "4 - 6 months"
@@ -2695,6 +2780,12 @@ msgstr ""
 msgid "About"
 msgstr "Info"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Login Activity"
+msgid "About This Activity"
+msgstr "Attività di accesso"
+
 #: Footer.vue components/public/FooterLinks.vue pages/public/about.vue
 msgid "About Us"
 msgstr "Chi siamo"
@@ -2703,7 +2794,8 @@ msgstr "Chi siamo"
 msgid "Abu Dhabi"
 msgstr "Abu Dhabi"
 
-#: pages/account_setup.vue components/inchat/disclaimer_modal.vue
+#: pages/account_setup.vue pages/intours_confirmation.vue
+#: components/inchat/disclaimer_modal.vue
 msgid "Accept"
 msgstr "Acconsento"
 
@@ -2860,10 +2952,6 @@ msgstr "Attivazioni di questo mese"
 msgid "Active"
 msgstr "Attivo"
 
-#: pages/reservations.vue
-msgid "Active Bookings"
-msgstr "Prenotazioni attive"
-
 #: pages/track_results.vue
 msgid "Active Members"
 msgstr "Membri attivi"
@@ -2892,6 +2980,12 @@ msgstr "Attivo fino a:"
 
 #: components/inchat/emoji/emoji_modal.vue
 msgid "Activities"
+msgstr "Attività"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "Activities found"
 msgstr "Attività"
 
 #: components/inchat/user_room_actions.vue components/user/user_notes.vue
@@ -3048,6 +3142,18 @@ msgstr ""
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Added"
 msgstr "Aggiunto"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Additional Details"
+msgstr "Dettagli dell'invito"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Additional Info"
+msgid "Additional info"
+msgstr "Informazioni aggiuntive"
 
 #: components/info-reminder.vue pages/receipts.vue
 msgid "Additional Info"
@@ -3274,15 +3380,11 @@ msgid "Alipay"
 msgstr "Alipay"
 
 #: pages/admin_support_analytics.vue pages/hotels.vue pages/info_center.vue
-#: pages/leadership_academy.vue pages/reports.vue pages/reservations.vue
-#: pages/team_rankings.vue pages/track_results.vue components/user/timeline.vue
-#: reports/index.html track_results/index.html
+#: pages/leadership_academy.vue pages/reports.vue pages/team_rankings.vue
+#: pages/track_results.vue components/user/timeline.vue reports/index.html
+#: track_results/index.html
 msgid "All"
 msgstr "Tutto"
-
-#: pages/reservations.vue
-msgid "All Bookings"
-msgstr "Tutte le prenotazioni"
 
 #: pages/admin_blog.vue pages/resources.vue components/blog/blog_list.vue
 msgid "All Categories"
@@ -3390,6 +3492,12 @@ msgstr "Tutte le risposte sono corrette"
 #: pages/global_summit_2024.vue
 msgid "All Ranks"
 msgstr "Tutti i ranghi"
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "Reservations"
+msgid "All Reservations"
+msgstr "Prenotazioni"
 
 #: pages/admin_blog.vue
 msgid "All Sections"
@@ -3861,7 +3969,8 @@ msgstr "Applicabilità"
 msgid "Applicant Signature"
 msgstr "Firma del richiedente"
 
-#: pages/checkout.vue
+#: components/filter-chip-range.vue pages/checkout.vue
+#: pages/intours_details.vue components/tours/intours_results.vue
 msgid "Apply"
 msgstr "Applica"
 
@@ -4159,9 +4268,21 @@ msgstr ""
 msgid "Astana, Kazakhstan"
 msgstr "Astana, Kazakistan"
 
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "data"
+msgid "at"
+msgstr "dati"
+
 #: pages/email.vue
 msgid "At"
 msgstr "A"
+
+#: components/reservations/tour-search.vue
+#, fuzzy
+#| msgid "Arrive Time"
+msgid "at %{arriveTime}"
+msgstr "Orario di arrivo"
 
 #: components/covid-disclaimer-reminder.vue
 msgid ""
@@ -4354,6 +4475,12 @@ msgstr "Saldo disponibile"
 msgid "Available Cabins"
 msgstr "Cabine disponibili"
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Available Cabins"
+msgid "Available plans"
+msgstr "Cabine disponibili"
+
 #: pages/reward_points.vue
 msgid "Available Rewards"
 msgstr "Premi disponibili"
@@ -4410,8 +4537,8 @@ msgstr "b. Direttore Nazionale"
 msgid "b. Time of the Essence"
 msgstr "b. Tempo è essenziale"
 
-#: pages/courses.vue pages/leadership_academy.vue pages/multi_factor.vue
-#: components/agreements/italian_agreement.vue
+#: pages/courses.vue pages/intours_details.vue pages/leadership_academy.vue
+#: pages/multi_factor.vue components/agreements/italian_agreement.vue
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
 #: components/onboarding/address-step.vue
@@ -4420,6 +4547,8 @@ msgstr "b. Tempo è essenziale"
 #: components/onboarding/import-contacts.vue
 #: components/onboarding/recurring-payment-step.vue
 #: components/onboarding/referral-link-step.vue
+#: components/reservations/tour-details.vue
+#: components/reservations/tour-search.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
 #: components/payout/brightwell/recipient-card-details.vue
@@ -4606,10 +4735,6 @@ msgstr ""
 msgid "Below you will find the status of your hotels & cruise reservations."
 msgstr ""
 "Qui sotto troverai lo stato delle tue prenotazioni di crociere e hotel."
-
-#: pages/reservations.vue
-msgid "Below you will find the status of your reservations."
-msgstr "Qui sotto troverai lo stato delle tue prenotazioni."
 
 #: Drop Down Destination List
 msgid "Bermuda"
@@ -4879,7 +5004,7 @@ msgstr ""
 "Prenota all'ultimo minuto le INcredibili offerte di crociere Costa e viaggia "
 "quest'estate e in autunno!"
 
-#: pages/hotels_details.vue
+#: pages/hotels_details.vue components/tours/details/available-plans.vue
 msgid "Book now"
 msgstr "Prenota ora"
 
@@ -4899,7 +5024,7 @@ msgstr "PRENOTA CON FIDUCIA"
 msgid "Book with Reward Points, have total confidence!"
 msgstr "Prenota con i Crediti Premio, in tutta tranquillità!"
 
-#: components/reservation.vue
+#: components/reservations/reservation-card.vue
 msgid "Booked"
 msgstr "Prenotato"
 
@@ -4916,12 +5041,14 @@ msgid "Booking Payments #{{ booking.global_booking_id }}"
 msgstr "Pagamenti prenotazione #{{ booking.global_booking_id }}"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Booking Receipt"
 msgstr "Ricevuta della prenotazione"
 
 #: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Booking Reference"
 msgstr "Codice della prenotazione"
@@ -4935,10 +5062,17 @@ msgstr "Resoconto prenotazione"
 msgid "Booking Review"
 msgstr "Riepilogo della prenotazione"
 
-#: pages/admin_booking.vue
+#: pages/admin_booking.vue components/admin_booking/admin_booking_stats.vue
 msgid "Booking Stats"
 msgstr "Statistiche delle prenotazioni"
 
+#: pages/intours_confirmation.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Booking Cost"
+msgid "Booking summary"
+msgstr "Costo della prenotazione"
+
+#: pages/intours_confirmation.vue
 #: components/cruises_booking/confirmation-step.vue
 msgid "Booking Terms & Conditions"
 msgstr "Termini e condizioni di prenotazione"
@@ -5113,6 +5247,13 @@ msgstr ""
 "\"%{partnerAgreement}\" target=\"_blank\">Contratto con Partner "
 "Indipendente</a>"
 
+#: pages/reservations.vue
+msgid ""
+"By clicking on “Search tours”, easily explore tours and activities matching "
+"your booked cruise dates and destinations!"
+msgstr ""
+
+#: pages/intours_confirmation.vue
 #: components/cruises_booking/confirmation-step.vue
 msgid ""
 "By completing my booking, I understand and accept all associated Terms and "
@@ -5422,8 +5563,9 @@ msgstr "Canada/Nuova Inghilterra"
 #: components/fast-growing-legs.vue pages/admin_department.vue
 #: pages/admin_permission.vue pages/admin_permission_group.vue
 #: pages/checkout.vue pages/connect.vue pages/cruises_booking.vue
-#: pages/email.vue pages/invoices.vue pages/reports.vue pages/settings.vue
-#: pages/subscriptions.vue components/admin_booking/admin_cruise_featured.vue
+#: pages/email.vue pages/intours_details.vue pages/invoices.vue
+#: pages/reports.vue pages/settings.vue pages/subscriptions.vue
+#: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
 #: components/admin_management/admin_departments.vue
@@ -5484,15 +5626,11 @@ msgstr "Politica di annullamento"
 msgid "Cancellation Warning"
 msgstr "Avviso di annullamento"
 
-#: components/reservation.vue
+#: components/reservations/reservation-card.vue
 msgid "Cancelled"
 msgstr "Annullato"
 
-#: components/reservation.vue
-msgid "CANCELLED"
-msgstr "ANNULLATO"
-
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Cancun"
 msgstr "Cancun"
 
@@ -5575,6 +5713,17 @@ msgstr "Luogo di ritiro dei contanti"
 #: webinar_recordings/index.html
 msgid "Catalan"
 msgstr "Catalano"
+
+#: components/welcome_tours_modal.vue pages/intours.vue
+#: components/reservations/tour-search.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Category"
+msgid "category"
+msgstr "Categoria"
+
+#: components/tours/intours_results.vue
+msgid "Category"
+msgstr "Categoria"
 
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Category Type"
@@ -5682,6 +5831,10 @@ msgid ""
 msgstr ""
 "Scopri i nostri prossimi eventi, tra cui i webinar, le riunioni e i convegni "
 "regionali."
+
+#: components/welcome_tours_modal.vue
+msgid "Check out the following perfect pairing tours we have for you:"
+msgstr ""
 
 #: pages/welcome.vue
 msgid ""
@@ -5842,6 +5995,7 @@ msgid "Choose your referrer:"
 msgstr "Scegli il tuo sponsor:"
 
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Cities Visited"
 msgstr "Città visitate"
 
@@ -5868,6 +6022,12 @@ msgstr "Città:"
 msgid "Claim Connect 5"
 msgstr "Richiedi Connect 5"
 
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Insurance"
+msgid "Claim Insurance"
+msgstr "Assicurazione"
+
 #: power_tools_upgrade/index.html
 msgid "Claim Power Tools"
 msgstr "Richiedi i tuoi Power Tools"
@@ -5875,6 +6035,14 @@ msgstr "Richiedi i tuoi Power Tools"
 #: Gender
 msgid "Classic"
 msgstr "Classico"
+
+#: components/filter-chip-range.vue
+msgid "clear"
+msgstr ""
+
+#: components/filter-chip-dropdown.vue components/tours/intours_results.vue
+msgid "Clear"
+msgstr ""
 
 #: pages/cruises.vue pages/hotels.vue
 msgid "Clear All Filters"
@@ -5980,6 +6148,18 @@ msgstr "Clicca qui per registrarti"
 msgid "click here to start"
 msgstr "clicca qui per iniziare"
 
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Click here to view Cancellation Policy"
+msgid "Click here to view meeting point"
+msgstr "Clicca qui per vedere la Politica di Annullamento"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Click here to learn more"
+msgid "Click here to view voucher"
+msgstr "Per saperne di più, clicca qui"
+
 #: components/inchat/lists/room_list.vue
 msgid "Click to create a group."
 msgstr "Clicca per creare un gruppo."
@@ -6014,6 +6194,12 @@ msgstr "Configurazione del client"
 #: old_compensation/index.html
 msgid "Close"
 msgstr "Chiudi"
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "More Details"
+msgid "Close Details"
+msgstr "Altri dettagli"
 
 #: pages/hotels.vue
 msgid "Close Filter"
@@ -6170,6 +6356,12 @@ msgstr "Conferma"
 #: pages/reward_points.vue
 msgid "Confirm Amount"
 msgstr "Conferma quantitativo"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Funds availability:"
+msgid "Confirm availability"
+msgstr "Disponibilità di denaro:"
 
 #: components/birthdate-reminder.vue components/payout/birthday-modal.vue
 msgid "Confirm Birthdate"
@@ -6383,6 +6575,12 @@ msgstr "Contatto via posta:"
 msgid "Contact Information"
 msgstr "Informazioni di contatto"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Contact Information"
+msgid "Contact Information And Tour Details"
+msgstr "Informazioni di contatto"
+
 #: Footer.vue components/public/FooterLinks.vue pages/public/contact.vue
 msgid "Contact Us"
 msgstr "Contattaci"
@@ -6431,6 +6629,12 @@ msgstr "Continua"
 #: components/checkout/ProcessorTrustly.vue
 msgid "Continue Payment Below"
 msgstr "Continua il pagamento sotto"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Continue to Checkout"
+msgid "Continue to checkout"
+msgstr "Continua e procedi all'acquisto"
 
 #: pages/upgrade.vue
 msgid "Continue to Checkout"
@@ -6777,15 +6981,13 @@ msgid "Cruise, hosted by inGroups Co-Founder and Co-CEO"
 msgstr ", ospitata dal Co-Fondatore e Co-CEO di inGroups"
 
 #: BookingTopBar.vue HotelsTopBar.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
 #: components/navigation/mobile-menu-booking.vue
 msgid "Cruises"
 msgstr "Crociere"
 
-#: components/admin_booking/admin_booking_stats.vue
-msgid "Cruises & Hotels Stats"
-msgstr "Statistiche su crociere e hotel"
-
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Cruises Booked"
 msgstr "Crociere prenotate"
 
@@ -7013,10 +7215,12 @@ msgstr "dati"
 msgid "Data Fields"
 msgstr "Campi dati"
 
-#: pages/contacts.vue pages/email.vue pages/notifications.vue
-#: pages/reward_points.vue components/compensation/statements.vue
+#: pages/contacts.vue pages/email.vue pages/intours_details.vue
+#: pages/notifications.vue pages/reward_points.vue
+#: components/compensation/statements.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/settings_page/login-activity.vue email_notifications/index.html
 msgid "Date"
 msgstr "Data"
@@ -7251,16 +7455,11 @@ msgstr "Referral Link dimostrativo"
 msgid "Depart"
 msgstr "Parte"
 
-#: components/reservation.vue pages/reports.vue
-#: components/admin_booking/admin_cruise_featured.vue
+#: pages/reports.vue components/admin_booking/admin_cruise_featured.vue
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 #: reports/index.html
 msgid "Depart Date"
 msgstr "Data di partenza"
-
-#: components/reservation.vue
-msgid "Depart Location"
-msgstr "Località di partenza"
 
 #: pages/global_summit_tracking.vue
 msgid "Departing from: Istanbul, Turkey"
@@ -7326,7 +7525,8 @@ msgstr "Depositi"
 msgid "description"
 msgstr "descrizione"
 
-#: pages/convention_manager.vue pages/email_address.vue pages/reward_points.vue
+#: pages/convention_manager.vue pages/email_address.vue
+#: pages/intours_details.vue pages/reward_points.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
 #: components/receipts/italian_commission.vue
@@ -7347,6 +7547,12 @@ msgstr "Descrizione:"
 msgid "destination"
 msgstr "destinazione"
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "destination"
+msgid "Destination"
+msgstr "destinazione"
+
 #: components/payout/brightwell/review.vue
 #: components/payout/brightwell/transfer-details.vue
 msgid "Destination country"
@@ -7359,6 +7565,12 @@ msgstr "Valuta di destinazione"
 #: pages/builders_base.vue
 msgid "detailed below."
 msgstr "di seguito illustrati."
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "QBI Details"
+msgid "Details"
+msgstr "Dati sul QBI"
 
 #: components/settings_page/login-activity.vue
 msgid "Device"
@@ -7523,6 +7735,10 @@ msgstr "Sconto:"
 msgid "Discover"
 msgstr "Scopri"
 
+#: components/welcome_tours_modal.vue
+msgid "Discover Tours For Your Upcoming Cruise!"
+msgstr ""
+
 #: pages/account_setup.vue pages/cards.vue pages/certificates.vue
 #: pages/invite.vue pages/settings.vue cards/index.html certificates/index.html
 #: certificates/view.html
@@ -7614,6 +7830,12 @@ msgstr "Doha"
 #: pages/hotels.vue
 msgid "Doha, Qatar"
 msgstr "Doha, Qatar"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "Do not show this again"
+msgid "Don't show again"
+msgstr "Non mostrare più questo messaggio"
 
 #: pages/welcome.vue pages/public/causes.vue
 msgid "Donate"
@@ -7829,6 +8051,10 @@ msgstr ""
 "Duplicator funziona su dispositivi mobili e su qualsiasi tipo di computer, "
 "tablet e sistema operativo."
 
+#: components/tours/intours_results.vue
+msgid "Duration"
+msgstr "Durata"
+
 #: income_disclosure/index.html
 msgid "During the month of"
 msgstr "Durante il mese di"
@@ -8028,6 +8254,7 @@ msgstr "Facile da aggiungere:"
 #: pages/convention_manager.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 #: components/settings_page/modify-saved-passengers.vue
 msgid "Edit"
 msgstr "Modifica"
@@ -8127,6 +8354,12 @@ msgstr "Idoneo"
 #: Menu
 msgid "Email"
 msgstr "Email"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Link (optional)"
+msgid "Email (optional)"
+msgstr "Link (opzionale)"
 
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
@@ -8287,6 +8520,12 @@ msgstr "Inserisci il tuo referral link personalizzato"
 msgid "Enter your date of birth"
 msgstr "Inserisci la tua data di nascita"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Insert your email..."
+msgid "Enter your email"
+msgstr "Inserisci la tua email qui..."
+
 #: components/onboarding/address-step.vue
 msgid "Enter Zip Code"
 msgstr "Inserisci il codice postale"
@@ -8333,6 +8572,12 @@ msgstr "Errore"
 msgid "Error loading videos, please reload the page!"
 msgstr ""
 "Errore nel caricamento dei video, ti preghiamo di ricaricare la pagina!"
+
+#: pages/intours_details.vue
+msgid ""
+"Error ocurred trying to hold your booking. Please check your selection and "
+"try again."
+msgstr ""
 
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
 msgid "Error saving data"
@@ -8560,6 +8805,12 @@ msgstr ""
 "Scopri un mondo di possibilità per le vacanze, letteralmente migliaia di "
 "strutture dei principali marchi mondiali."
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Explore More"
+msgid "Explore By Category"
+msgstr "Scopri di più"
+
 #: components/welcome/explore-more.vue
 msgid "Explore More"
 msgstr "Scopri di più"
@@ -8613,14 +8864,6 @@ msgstr "Pixel di Facebook"
 #: pages/hotels_details.vue
 msgid "Facilities"
 msgstr "Servizi"
-
-#: components/reservation.vue
-msgid "Failed"
-msgstr "Non andato a buon fine"
-
-#: components/reservation.vue
-msgid "FAILED"
-msgstr "NON RIUSCITO"
 
 #: pages/multi_factor.vue
 msgid "Failed to copy!"
@@ -8735,6 +8978,12 @@ msgstr "Crociere preferite"
 msgid "Favorite Hotels"
 msgstr "Hotel preferiti"
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Favorite Hotels"
+msgid "Favorite Tours"
+msgstr "Hotel preferiti"
+
 #: pages/admin_booking.vue components/admin_booking/admin_cruise_featured.vue
 msgid "Featured Cruises"
 msgstr "Crociere in evidenza"
@@ -8773,7 +9022,7 @@ msgstr "Filtra per nome dell'hotel."
 msgid "Filtering"
 msgstr "Filtri"
 
-#: pages/reports.vue reports/index.html
+#: pages/reports.vue components/tours/intours_results.vue reports/index.html
 msgid "Filters"
 msgstr "Filtri"
 
@@ -8822,6 +9071,10 @@ msgstr "Financial Controller"
 msgid "Find Hotels"
 msgstr "Trova hotel"
 
+#: components/reservations/tour-search.vue
+msgid "Find the perfect pairing for your “%{reservationName}” Cruise Itinerary"
+msgstr ""
+
 #: pages/multi_factor.vue components/onboarding/final-step.vue
 msgid "Finish"
 msgstr "Termina"
@@ -8835,8 +9088,9 @@ msgid "Finished"
 msgstr "Terminato"
 
 #: pages/admin_restricted_paybonus.vue pages/global_summit_2023.vue
-#: pages/global_summit_2024.vue pages/hotel_booking.vue pages/invite.vue
-#: pages/settings.vue components/public/JoinModal.vue
+#: pages/global_summit_2024.vue pages/hotel_booking.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -8989,6 +9243,10 @@ msgstr ""
 #: pages/login/login.vue login/index.html
 msgid "Forgot Password?"
 msgstr "Password dimenticata?"
+
+#: components/tours/intours_results.vue
+msgid "formattedTime"
+msgstr ""
 
 #: pages/email_tracking.vue
 msgid "Forwarded"
@@ -9205,6 +9463,12 @@ msgstr "Vai alle classifiche"
 #: pages/duplicator.vue connect/index.html
 msgid "Get Started Now!"
 msgstr "Inizia subito!"
+
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Your Tickets"
+msgid "Get Your Ticket"
+msgstr "I tuoi ticket"
 
 #: components/public/FooterLinks.vue
 msgid "Global 100"
@@ -9544,6 +9808,12 @@ msgstr "Gerarchia"
 msgid "High Monthly Gross Earnings"
 msgstr "Guadagno lordo mensile elevato"
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Highest Price"
+msgid "High to Low Price"
+msgstr "Prezzo più alto"
+
 #: pages/hotels.vue
 msgid "Highest Price"
 msgstr "Prezzo più alto"
@@ -9565,6 +9835,7 @@ msgid "Historical QBI Report"
 msgstr "Report QBI storico"
 
 #: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Holder Name"
 msgstr "Titolare prenotazione"
@@ -9633,6 +9904,7 @@ msgid "Hotelbeds"
 msgstr "Hotelbeds"
 
 #: BookingTopBar.vue HotelsTopBar.vue pages/hotels.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
 #: components/navigation/mobile-menu-booking.vue
 msgid "Hotels"
 msgstr "Hotel"
@@ -9642,6 +9914,7 @@ msgid "hotels and saved a total of"
 msgstr "hotel e risparmiato un totale di"
 
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Hotels Booked"
 msgstr "Hotel prenotati"
 
@@ -10024,6 +10297,12 @@ msgstr ""
 #: components/payout/partner-consent.vue old_compensation/index.html
 msgid "I DON'T CONSENT OR AGREE"
 msgstr "NON ACCONSENTO E NON ACCETTO"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "I don't see my pickup location"
+msgstr "Luogo di ritiro dei contanti"
 
 #: components/agreements/partner_code_of_conduct_agreement.vue
 msgid ""
@@ -11719,6 +11998,12 @@ msgstr ""
 msgid "Independent Partner Agreement"
 msgstr "Contratto del Partner Indipendente"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Reminded"
+msgid "index"
+msgstr "Promemoria inviato"
+
 #: receipts/team_residual_bonus_statement.html
 msgid "Indirect Members"
 msgstr "Membri indiretti"
@@ -11829,6 +12114,7 @@ msgid "inStays Price Match Guarantee"
 msgstr "Garanzia del miglior prezzo inStays"
 
 #: pages/courses.vue pages/email_address.vue pages/leadership_academy.vue
+#: components/reservations/tour-details.vue
 msgid "Instructions"
 msgstr "Istruzioni"
 
@@ -12145,8 +12431,10 @@ msgstr "Italia"
 msgid "Item"
 msgstr "Articolo"
 
-#: pages/cruise.vue components/cruises_booking/itinerary-modal.vue
+#: pages/cruise.vue pages/intours_details.vue
+#: components/cruises_booking/itinerary-modal.vue
 #: components/receipts/booking_receipt.vue
+#: components/reservations/tour-details.vue
 msgid "Itinerary"
 msgstr "Itinerario"
 
@@ -12292,6 +12580,7 @@ msgstr "Tieni aggiornate le tue carte."
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 msgid "Key"
 msgstr "Chiave"
 
@@ -12416,8 +12705,9 @@ msgstr ""
 "pagamento."
 
 #: pages/admin_restricted_paybonus.vue pages/global_summit_2023.vue
-#: pages/global_summit_2024.vue pages/hotel_booking.vue pages/invite.vue
-#: pages/settings.vue components/public/JoinModal.vue
+#: pages/global_summit_2024.vue pages/hotel_booking.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -12743,6 +13033,10 @@ msgstr "Link copiato negli appunti"
 msgid "Links"
 msgstr "Link"
 
+#: pages/intours_confirmation.vue
+msgid "List any specific needs"
+msgstr ""
+
 #: components/checkout/ProcessorNetcents.vue
 msgid "Litecoin"
 msgstr "Litecoin"
@@ -12774,7 +13068,8 @@ msgstr "Visualizza altri"
 #: pages/admin_partner_success.vue pages/invoices.vue pages/partner_success.vue
 #: pages/receipts.vue pages/reports.vue pages/track_results.vue
 #: pages/webinar_recordings.vue components/payout/wallet-transfers.vue
-#: reports/index.html track_results/index.html
+#: components/tours/intours_results.vue reports/index.html
+#: track_results/index.html
 msgid "Load More"
 msgstr "Visualizza altri"
 
@@ -12796,6 +13091,12 @@ msgstr ""
 #: components/payout/brightwell/cash-pickup-location.vue
 msgid "Location Details"
 msgstr "Informazioni sul luogo"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Location"
+msgid "Locations"
+msgstr "Località"
 
 #: components/inchat/user_room_actions.vue
 msgid "Lock Group"
@@ -12866,6 +13167,12 @@ msgstr "Esci"
 #: income_disclosure/index.html
 msgid "Low Monthly Gross Earnings"
 msgstr "Guadagno lordo mensile basso"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Lowest Price"
+msgid "Low to High Price"
+msgstr "Prezzo più basso"
 
 #: pages/hotels.vue
 msgid "Lowest Price"
@@ -13065,6 +13372,12 @@ msgstr "Mastercard MXN"
 msgid "Mastermind Training"
 msgstr "Formazione \"Mastermind\""
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Reward Points"
+msgid "Match Reward Points"
+msgstr "Crediti Premio"
+
 #: old_compensation/index.html
 msgid "Max Compensation Bonus"
 msgstr "Compenso massimo di questo Bonus"
@@ -13083,6 +13396,12 @@ msgstr "La dimensione massima del file è di 25mb"
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Max Lead Time"
 msgstr "Tempo massimo prima della partenza"
+
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Price"
+msgid "Max Price"
+msgstr "Prezzo"
 
 #: components/payout/italian_info.vue
 msgid ""
@@ -13149,6 +13468,16 @@ msgstr "Soddisfa i requisiti di rango:"
 #: components/top_bar/Connect.vue
 msgid "Meeting Info"
 msgstr "Info sulla riunione"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Meeting Info"
+msgid "Meeting Point"
+msgstr "Info sulla riunione"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "Meeting Point And Pickup Details"
+msgstr ""
 
 #: components/top_bar/Connect.vue
 msgid "Meeting Room"
@@ -13393,9 +13722,25 @@ msgstr "Michael Hutchison - Co-CEO e Co-Fondatore"
 msgid "Min Lead Time"
 msgstr "Tempo minimo prima della partenza"
 
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Cabin Price"
+msgid "Min Price"
+msgstr "Prezzo della cabina"
+
 #: components/compensation/recurring_income_levels.vue
 msgid "Minimum Earned Bonus Amount"
 msgstr "Importo minimo del bonus maturato"
+
+#: components/tours/intours_results.vue
+msgid "Minimum price cannot be greater than maximum price"
+msgstr ""
+
+#: pages/intours_details.vue
+msgid ""
+"Minimum: {{ ageBand.minTravelersPerBooking }}, Maximum: {{ ageBand."
+"maxTravelersPerBooking }}"
+msgstr ""
 
 #: components/inchat/user/user_create_room.vue
 msgid "Minimun of participants is 2."
@@ -13447,6 +13792,12 @@ msgstr "Telefono cellulare"
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Mobile Phone is required."
 msgstr "Il numero di cellulare è obbligatorio."
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "New Ticket"
+msgid "Mobile Ticket"
+msgstr "Nuovo ticket"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
 #: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
@@ -13839,6 +14190,18 @@ msgstr "Deve essere unico e disponibile"
 msgid "Must be unique and available."
 msgstr "Deve essere unico e disponibile."
 
+#: components/reservations/my-bookings.vue
+#, fuzzy
+#| msgid "All Bookings"
+msgid "My bookings"
+msgstr "Tutte le prenotazioni"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Contact Information"
+msgid "My Contact Information"
+msgstr "Informazioni di contatto"
+
 #: pages/titles.vue
 msgid "My Cruise Savings"
 msgstr "Quanto ho risparmiato sulle crociere"
@@ -13859,6 +14222,12 @@ msgstr ""
 "La mia più sincera speranza è che tu venga a trovarci spesso e che te ne "
 "vada con rinnovata determinazione per continuare a crescere, tu e i Partner "
 "del tuo team."
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "My Cruise Savings"
+msgid "My travel savings"
+msgstr "Quanto ho risparmiato sulle crociere"
 
 #: components/birthday-modal.vue components/fast-growing-legs.vue
 #: components/mercy-ship-modals.vue components/weekly-competition.vue
@@ -13900,6 +14269,7 @@ msgstr ""
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/qualified_residual_bonus.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -14047,11 +14417,6 @@ msgstr "Numero identificativo nazionale"
 msgid "Nationality:"
 msgstr "Nazionalità:"
 
-#: components/reservation.vue
-msgid "Need a <span class=\"bold\"> hotel/resort </span> to stay?"
-msgstr ""
-"Ti serve un <span class=\"bold\"> hotel/resort </span> in cui soggiornare?"
-
 #: components/hotels/perfect_pairings.vue
 msgid "Need a <span class=\"text-green\">hotel/resort</span> to stay?"
 msgstr ""
@@ -14099,6 +14464,12 @@ msgstr "Nuovi Partner diretti"
 #: components/inchat/user/user_create_room.vue
 msgid "New Group {{ selectedNamespace }}"
 msgstr "Nuovo gruppo {{ selectedNamespace }}"
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "No Display Name available."
+msgid "New inTours Feature available!"
+msgstr "Nessun nome di visualizzazione disponibile."
 
 #: pages/resources.vue components/growth_calculator/potential_leadership.vue
 msgid "New Members"
@@ -14337,9 +14708,23 @@ msgstr "Senza spese di elaborazione!"
 msgid "No Recurring Billing"
 msgstr "Non ha la fatturazione ricorrente"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "No redemption point - this is a direct entry ticket"
+msgstr ""
+
 #: components/user/directs.vue
 msgid "No Search Results"
 msgstr "La ricerca non ha dato risultati"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "The entered authentication code is invalid. Please try again."
+msgid "No tour recommendations found for this cruise. Please try again."
+msgstr "Il codice di autenticazione inserito non è valido. Prova di nuovo."
+
+#: components/tours/intours_results.vue
+msgid "No tours found for the selected destination and date range"
+msgstr ""
 
 #: components/booking/add-cd-user.vue
 msgid "No user found with that membership code."
@@ -14524,6 +14909,12 @@ msgstr "Non è stato invitato"
 #: components/membership_countdown.vue
 msgid "Not Membership Free"
 msgstr "Non ha la Membership gratuita"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "Donate Now"
+msgid "Not Now"
+msgstr "Dona ora"
 
 #: pages/duplicator.vue
 msgid "Not Opened"
@@ -14880,9 +15271,21 @@ msgstr "Aperto: {{ formatDate(invite.lastViewDate)}}"
 msgid "Opened!"
 msgstr "Aperto!"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Created by:"
+msgid "Operated by"
+msgstr "Creato da:"
+
 #: pages/public/leadership.vue
 msgid "Operations Director"
 msgstr "Direttore operativo"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Action"
+msgid "Option"
+msgstr "Azione"
 
 #: pages/account_setup.vue
 msgid ""
@@ -14983,7 +15386,7 @@ msgstr "I nostri valori"
 msgid "OUR VISION"
 msgstr "LA NOSTRA VISIONE"
 
-#: components/reservation.vue pages/hotel_booking.vue
+#: pages/hotel_booking.vue
 msgid "Out of Pocket"
 msgstr "Di tasca tua"
 
@@ -15055,6 +15458,7 @@ msgstr " "
 #: components/receipts/new_residual_bonus_statement.vue
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue
 msgid "Page"
@@ -15706,6 +16110,10 @@ msgstr "Password"
 msgid "Passwords do not match!"
 msgstr "Le password non corrispondono!"
 
+#: components/reservations/reservation-card.vue
+msgid "Past"
+msgstr ""
+
 #: pages/elevate.vue
 msgid "Pay Here"
 msgstr "Paga qui"
@@ -15914,6 +16322,10 @@ msgstr "al mese. Nessun contratto. Puoi cancellarti in qualsiasi momento."
 msgid "per night"
 msgstr "a notte"
 
+#: components/tours/tour-card.vue
+msgid "Per person"
+msgstr ""
+
 #: pages/track_growth.vue track_growth/index.html
 msgid "Percent Growth Needed"
 msgstr "Percentuale di crescita necessaria"
@@ -15989,7 +16401,8 @@ msgid "Personal View"
 msgstr "Prospettiva personale"
 
 #: pages/admin_user.vue pages/contacts.vue pages/elevate_registration.vue
-#: pages/global_summit_2023.vue pages/negative_balances.vue
+#: pages/global_summit_2023.vue pages/intours_confirmation.vue
+#: pages/negative_balances.vue
 #: components/cruises_booking/passenger-info-step.vue
 msgid "Phone"
 msgstr "Telefono"
@@ -16026,6 +16439,24 @@ msgstr "Documento d'identità corredato da foto"
 #: components/payout/brightwell/review.vue
 msgid "Pickup details"
 msgstr "Dettagli del ritiro"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup location"
+msgstr "Luogo di ritiro dei contanti"
+
+#: pages/intours_confirmation.vue components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup Location"
+msgstr "Luogo di ritiro dei contanti"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup Locations"
+msgstr "Luogo di ritiro dei contanti"
 
 #: components/checkout/ProcessorBoacompra.vue
 msgid "Pix"
@@ -16189,6 +16620,12 @@ msgstr ""
 "Scarica le risorse disponibili e arricchisci i tuoi eventi virtuali e dal "
 "vivo!"
 
+#: pages/intours_confirmation.vue
+msgid ""
+"Please ensure the contact information provided is accurate, as it will be "
+"used for notifications and updates regarding your booked tour."
+msgstr ""
+
 #: components/onboarding/recurring-payment-step.vue
 msgid "Please enter a card for recurring payments."
 msgstr "Imposta una carta per i pagamenti ricorrenti."
@@ -16298,6 +16735,12 @@ msgstr "Inserisci il tuo indirizzo email."
 msgid "Please enter your email and we will send you further instructions:"
 msgstr "Inserisci la tua email e ti invieremo ulteriori istruzioni:"
 
+#: pages/intours_confirmation.vue components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Please enter your Email"
+msgid "Please enter your pickup location"
+msgstr "Inserisci la tua email"
+
 #: components/booking/add-cd-user.vue
 msgid "Please enter your second member 'Unique Membership Code'."
 msgstr "Inserisci il \"Codice unico di Membership\" del secondo Membro."
@@ -16375,7 +16818,14 @@ msgstr ""
 "Inserisci le date d'inizio e fine. In caso contrario, ripristina i filtri "
 "nella parte superiore della pagina."
 
-#: pages/hotels.vue
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Please provide a valid destination before searching"
+msgid "Please provide a date range before searching"
+msgstr "Inserisci una destinazione valida prima di effettuare la ricerca"
+
+#: pages/hotels.vue components/tours/intours_landing.vue
+#: components/tours/intours_results.vue
 msgid "Please provide a valid destination before searching"
 msgstr "Inserisci una destinazione valida prima di effettuare la ricerca"
 
@@ -16668,6 +17118,12 @@ msgstr ""
 msgid "Please wait while we gather all available hotels..."
 msgstr "Stiamo acquisendo tutti hotel disponibili, sei pregato di attendere..."
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Please wait while we gather all available hotels..."
+msgid "Please wait while we gather all available tours..."
+msgstr "Stiamo acquisendo tutti hotel disponibili, sei pregato di attendere..."
+
 #: pages/cruise.vue
 msgid "Please wait while we gather cruise trip information..."
 msgstr ""
@@ -16675,6 +17131,14 @@ msgstr ""
 
 #: pages/hotel_booking.vue pages/hotels_details.vue
 msgid "Please wait while we gather Hotel details."
+msgstr ""
+"Stiamo caricando le informazioni relative all'hotel, sei pregato di "
+"attendere."
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Please wait while we gather Hotel details."
+msgid "Please wait while we gather tour details..."
 msgstr ""
 "Stiamo caricando le informazioni relative all'hotel, sei pregato di "
 "attendere."
@@ -16706,7 +17170,7 @@ msgstr "punti"
 msgid "Points"
 msgstr "Punti"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Popular Destinations"
 msgstr "Destinazioni popolari"
 
@@ -16756,6 +17220,12 @@ msgstr "CAP:"
 #: components/growth_calculator/potential_recurring.vue
 msgid "Potential Active Levels"
 msgstr "Livelli attivi potenziali"
+
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Potential Future Membership Savings"
+msgid "Potential future membership savings"
+msgstr "Potenziali risparmi futuri con la Membership"
 
 #: components/cruise/cruise_savings_info.vue
 msgid "Potential Future Membership Savings"
@@ -16879,14 +17349,20 @@ msgstr "Anno precedente"
 msgid "Previously used passenger:"
 msgstr "Passeggero utilizzato in precedenza:"
 
+#: components/filter-chip-range.vue
 #: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/booking/category.vue
 #: components/receipts/hotel_booking_receipt.vue
-#: components/receipts/receipt.vue receipts/hotel_booking_receipt.html
+#: components/receipts/receipt.vue components/receipts/tour_booking_receipt.vue
+#: components/tours/intours_results.vue receipts/hotel_booking_receipt.html
 #: receipts/receipt.html
 msgid "Price"
 msgstr "Prezzo"
+
+#: components/tours/intours_results.vue
+msgid "Price cannot be negative"
+msgstr ""
 
 #: components/receipts/booking_receipt.vue
 msgid "Price Code"
@@ -16905,7 +17381,8 @@ msgid "Price Higher on Top"
 msgstr "Prezzo maggiore in alto"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Price Information"
 msgstr "Informazioni sul prezzo"
@@ -16922,6 +17399,12 @@ msgstr "Garanzia Miglior Prezzo"
 msgid "PRICE MATCH GUARANTEE!"
 msgstr "GARANZIA DI PARITÀ DI PREZZO!"
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Result Limit must be a number!"
+msgid "Price must be a number"
+msgstr "Il limite dei risultati deve essere un numero!"
+
 #: pages/hotel_booking.vue
 msgid "Price per night:"
 msgstr "Prezzo per notte:"
@@ -16929,6 +17412,12 @@ msgstr "Prezzo per notte:"
 #: pages/convention_manager.vue
 msgid "Price per Ticket"
 msgstr "Prezzo per biglietto"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Price Range:"
+msgid "Price Range"
+msgstr "Fascia di prezzi:"
 
 #: pages/hotels.vue
 msgid "Price Range per Night:"
@@ -16960,6 +17449,12 @@ msgstr ""
 #: pages/email_tracking.vue
 msgid "Printed"
 msgstr "Stampa effettuata"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Archived Tickets"
+msgid "Printed Ticket"
+msgstr "Archivio dei ticket di assistenza"
 
 #: components/booking/cabin_categories.vue
 msgid ""
@@ -17269,7 +17764,7 @@ msgstr "Membri idonei"
 msgid "Quality of Business Index (QBI)"
 msgstr "Indice della Qualità del Business (QBI)"
 
-#: pages/leadership_academy.vue
+#: pages/intours_confirmation.vue pages/leadership_academy.vue
 msgid "question"
 msgstr "domanda"
 
@@ -17505,13 +18000,9 @@ msgstr "Coordinate bancarie del beneficiario"
 msgid "Recipients"
 msgstr "Destinatari"
 
-#: pages/multi_factor.vue
+#: pages/multi_factor.vue components/tours/intours_results.vue
 msgid "Recommended"
 msgstr "Consigliato"
-
-#: components/reservation.vue
-msgid "Record Locator"
-msgstr "Codice identificativo della pratica"
 
 #: pages/reports.vue
 #: components/admin_territory_directors/territory_directors.vue
@@ -17558,6 +18049,22 @@ msgstr "Produzione Qualificata Ricorrente"
 #: pages/track_results.vue track_results/index.html
 msgid "Recurring:"
 msgstr "Ricorrente:"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Perception"
+msgid "Redemption"
+msgstr "Percezione"
+
+#: components/reservations/tour-details.vue
+msgid "Redemption Type"
+msgstr ""
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Room Type"
+msgid "Redeption Type"
+msgstr "Tipo di camera"
 
 #: components/checkout/ProcessorBoacompra.vue
 msgid "Redirecting you over to BoaCompra."
@@ -17629,6 +18136,12 @@ msgstr "Statistiche della procedura di rimborso"
 #: pages/payment_protection.vue
 msgid "Refundable Amount"
 msgstr "Importo rimborsabile"
+
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Reminded"
+msgid "Refunded"
+msgstr "Promemoria inviato"
 
 #: components/covid-disclaimer-reminder.vue
 msgid ""
@@ -17846,7 +18359,8 @@ msgid "Resend SMS"
 msgstr "Reinvio SMS"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Reservation Details"
 msgstr "Dettagli della prenotazione"
@@ -18064,7 +18578,7 @@ msgstr "Rimborso Crediti Premio:"
 msgid "Rewards Points:"
 msgstr "Crediti Premio:"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Rio de Janeiro"
 msgstr "Rio de Janeiro"
 
@@ -18092,7 +18606,7 @@ msgstr "Rumeno"
 msgid "Romanian Speaking Global Markets"
 msgstr "Mercati globali di lingua rumena"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Rome"
 msgstr "Roma"
 
@@ -18239,7 +18753,7 @@ msgstr "Tesserino dell'Incaricato alle vendite"
 msgid "sample"
 msgstr "esempio"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Santorini"
 msgstr "Santorini"
 
@@ -18248,6 +18762,7 @@ msgstr "Santorini"
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 #: components/admin_management/admin_departments.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -18282,12 +18797,14 @@ msgid "SAVINGS GUARANTEE!"
 msgstr "RISPARMIO GARANTITO!"
 
 #: pages/communications.vue pages/contacts.vue pages/cruises.vue
-#: pages/hotels.vue pages/hotels_details.vue pages/notifications.vue
-#: pages/resources.vue pages/track_growth.vue pages/webinar_recordings.vue
-#: components/blog/blog_list.vue components/inchat/search/search-people.vue
-#: communications/index.html communications/view.html
-#: email_notifications/index.html track_growth/index.html
-#: webinar_recordings/index.html
+#: pages/hotels.vue pages/hotels_details.vue pages/intours_confirmation.vue
+#: pages/notifications.vue pages/resources.vue pages/track_growth.vue
+#: pages/webinar_recordings.vue components/blog/blog_list.vue
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#: components/inchat/search/search-people.vue
+#: components/tours/details/available-plans.vue communications/index.html
+#: communications/view.html email_notifications/index.html
+#: track_growth/index.html webinar_recordings/index.html
 msgid "Search"
 msgstr "Cerca"
 
@@ -18298,6 +18815,13 @@ msgstr "Cerca e prenota crociere, hotel e resort"
 #: pages/hotels.vue components/translations/placeholders.vue
 msgid "Search by city or hotel"
 msgstr "Ricerca per città o hotel"
+
+#: pages/intours.vue components/tours/intours_landing.vue
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Search by date"
+msgid "Search by Destination"
+msgstr "Cerca per data"
 
 #: resources/index.html
 msgid "Search Documents.."
@@ -18322,10 +18846,6 @@ msgstr "Cerca nomi o email"
 #: pages/hotels.vue
 msgid "Search Hotels and Cities:"
 msgstr "Cerca hotel e città:"
-
-#: components/reservation.vue
-msgid "Search InStays"
-msgstr "Cerca su inStays"
 
 #: pages/invite.vue components/translations/placeholders.vue
 msgid "Search Name or Email"
@@ -18368,6 +18888,13 @@ msgstr "Cerca stanze"
 msgid "Search this month..."
 msgstr "Cerca in questo mese..."
 
+#: components/welcome_tours_modal.vue
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Search users"
+msgid "Search Tours"
+msgstr "Cerca utenti"
+
 #: components/inchat/user_list_inchat.vue
 msgid "Search users"
 msgstr "Cerca utenti"
@@ -18401,7 +18928,14 @@ msgstr "Visualizza nella tua lingua"
 msgid "See List"
 msgstr "Consulta l'elenco"
 
-#: components/cards/menu-page-card.vue
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "See More"
+msgid "See more"
+msgstr "Scopri di più"
+
+#: pages/reservations.vue components/cards/menu-page-card.vue
+#: components/reservations/tour-search.vue
 msgid "See More"
 msgstr "Scopri di più"
 
@@ -18453,9 +18987,11 @@ msgid "See your certificate here!"
 msgstr "Guarda qui il tuo certificato!"
 
 #: pages/admin_department.vue pages/admin_permission_group.vue
-#: components/onboarding/address-step.vue components/user/department.vue
-#: components/user/departments.vue components/user/permission-assignation.vue
+#: pages/intours_confirmation.vue components/onboarding/address-step.vue
+#: components/user/department.vue components/user/departments.vue
+#: components/user/permission-assignation.vue
 #: components/user/permission-group.vue
+#: components/tours/details/available-plans.vue
 msgid "Select"
 msgstr "Seleziona"
 
@@ -18479,6 +19015,12 @@ msgstr "Seleziona il tipo di utente"
 #: pages/cruises.vue components/user/departments.vue
 msgid "Select All"
 msgstr "Seleziona tutto"
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Select Option"
+msgid "Select an option"
+msgstr "Seleziona un'opzione"
 
 #: components/booking/category.vue
 msgid "Select Cabin"
@@ -18534,6 +19076,12 @@ msgstr "Seleziona le email che desideri ricevere."
 #: pages/team_rankings.vue
 msgid "Select Time Period"
 msgstr "Seleziona l'intervallo di tempo"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Select payer"
+msgid "Select travelers"
+msgstr "Seleziona il pagatore"
 
 #: pages/cards.vue cards/index.html
 msgid "Select your name format:"
@@ -18760,6 +19308,12 @@ msgid ""
 msgstr ""
 "Imposta il tuo referral link <a href=\"/referral_links\" target=\"_blank"
 "\">qui</a> ."
+
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+msgid ""
+"Set your price range per person, based on double occupancy to filter cruise "
+"options."
+msgstr ""
 
 #: pages/onboarding.vue
 msgid "Set Your Referral Link"
@@ -19303,6 +19857,7 @@ msgstr "Stato/Provincia"
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/qualified_residual_bonus.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue receipts/booking_receipt.html
 #: receipts/commission_statement.html receipts/daily_member_activation.html
@@ -19336,7 +19891,7 @@ msgstr ""
 "Cabine a partire da <currency-convert ng-attr-value="
 "\"{{cruisePrice(cruise)}}\" hide=\"true\"/>"
 
-#: pages/admin_user_id.vue
+#: pages/admin_user_id.vue pages/reservations.vue
 msgid "Stats"
 msgstr "Statistiche"
 
@@ -19440,10 +19995,6 @@ msgstr "Iscrizioni"
 msgid "Success"
 msgstr "Successo"
 
-#: components/reservation.vue
-msgid "SUCCESSFUL"
-msgstr "RIUSCITO"
-
 #: pages/reports.vue reports/index.html
 msgid "Successful Growth"
 msgstr "Crescita vincente"
@@ -19489,6 +20040,12 @@ msgstr "Super Bonus Base Costruttori"
 msgid "Super Builders Bonus"
 msgstr "Super Bonus Costruttori"
 
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Agency Reference"
+msgid "Supplier Reference"
+msgstr "Riferimento Agenzia"
+
 #: pages/settings.vue pages/support.vue
 #: components/price_match_guarantee/cruises.vue layouts/no_navigation.html
 #: layouts/compiled/no_navigation.html
@@ -19502,12 +20059,6 @@ msgstr "Direttore del servizio assistenza"
 #: components/navigation/notifications.vue
 msgid "Support Replied"
 msgstr "L'assistenza ha risposto"
-
-#: components/reservation.vue
-msgid "Support staff has been alerted and is working on getting this resolved."
-msgstr ""
-"Il personale di supporto è stato avvertito e sta lavorando per risolvere la "
-"questione."
 
 #: pages/admin_user_id.vue
 msgid "Support Tickets"
@@ -19743,7 +20294,8 @@ msgstr "Telefono: 1-888-396-7285"
 msgid "Terms"
 msgstr "Condizioni"
 
-#: pages/elevate.vue pages/payment_protection.vue
+#: pages/elevate.vue pages/intours_confirmation.vue
+#: pages/payment_protection.vue
 msgid "Terms and Conditions"
 msgstr "Termini e condizioni"
 
@@ -20396,9 +20948,23 @@ msgstr ""
 msgid "There are no published courses."
 msgstr "Non sono stati pubblicati corsi."
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "There are no results for this search."
+msgid "There are no results for these parameters."
+msgstr "La ricerca non ha prodotto risultati."
+
 #: pages/hotels.vue
 msgid "There are no results for this search."
 msgstr "La ricerca non ha prodotto risultati."
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "There was a problem with your promotion code. Please try again."
+msgid "There are no tour recommendations right now. Please try again later."
+msgstr ""
+"Si è verificato un problema con il codice promozionale. Si prega di "
+"riprovare."
 
 #: components/public/Faq.vue
 msgid ""
@@ -20557,6 +21123,28 @@ msgstr "C'è stato un problema con la tua richiesta, prova di nuovo."
 #: pages/global_summit_2023.vue
 msgid "There was an error. Plaese reload the page."
 msgstr "Si è verificato un errore, ricarica la pagina."
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There was a problem with your promotion code. Please try again."
+msgid "There was an issue continueing with your booking. Please try again."
+msgstr ""
+"Si è verificato un problema con il codice promozionale. Si prega di "
+"riprovare."
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There has been an error. Please reload the page and try again."
+msgid ""
+"There was an issue initializing your checkout. Please reaload the page and "
+"try again."
+msgstr "Si è verificato un errore. Ricarica la pagina e riprova."
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There was an error with your request, please try again."
+msgid "There was an issue initializing your checkout. Please try again."
+msgstr "C'è stato un problema con la tua richiesta, prova di nuovo."
 
 #: pages/payout.vue
 msgid "There was an issue processing your payout. Please contact support."
@@ -20776,6 +21364,7 @@ msgstr "Ricevono"
 msgid "Things like:"
 msgstr "Situazioni come:"
 
+#: pages/intours_confirmation.vue pages/intours_details.vue
 #: components/booking/limited_time_offer_card.vue
 #: components/compensation/account_status.vue
 msgid "this"
@@ -20874,6 +21463,10 @@ msgstr ""
 "Questa azione rimuoverà questo gruppo di permessi da questo reparto e da "
 "tutti gli amministratori."
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "This Activity Includes"
+msgstr ""
+
 #: components/agreements/national_director_agreement.vue
 msgid ""
 "This Addendum (the “Addendum”) constitutes an addendum to the inCruises "
@@ -20942,6 +21535,12 @@ msgstr ""
 #: pages/builders_base.vue
 msgid "This bonus rewards rank leaders"
 msgstr "Questo bonus premia i leader di rango"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "This booking is non-refundable."
+msgid "This booking is non-refunable."
+msgstr "Questa prenotazione non è rimborsabile."
 
 #: components/booking/agreements.vue
 msgid ""
@@ -21430,9 +22029,25 @@ msgstr "ID del Ticket"
 msgid "Ticket Question:"
 msgstr "Domanda del Ticket:"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "Tickets can be redeemed at this product's starting point"
+msgstr ""
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid ""
+"Tickets can be redeemed from a location other than the product's starting "
+"point"
+msgstr ""
+
 #: components/admin_support_analytics/modals/show_ticket.vue
 msgid "Tickets for <u>{{ data.name }}</u> on <u>{{ data.dateRange }}</u>"
 msgstr "Biglietti per <u>{{ data.name }}</u> il <u>{{ data.dateRange }}</u>"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid ""
+"Tickets will be delivered post-booking by email; or, physically delivered to "
+"the customer or the customer's hotel"
+msgstr ""
 
 #: pages/global_summit_2024.vue
 msgid "Tiebreaker"
@@ -21441,6 +22056,16 @@ msgstr "Spareggio"
 #: pages/global_summit_2023.vue pages/global_summit_dr.vue
 msgid "Tiebreaker:"
 msgstr "Spareggio:"
+
+#: Course Answers
+msgid "Time"
+msgstr "Tempo"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Departure"
+msgid "Time Before Departure"
+msgstr "Partenza"
 
 #: pages/track_growth.vue track_growth/index.html
 msgid "Time Frame"
@@ -21890,6 +22515,12 @@ msgstr "I 7 migliori Board of Directors - vincono il soggiorno."
 msgid "Top 8 Executive Directors - Win the stay."
 msgstr "I migliori 8 Executive Director - vincono il soggiorno."
 
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "Top Activities"
+msgstr "Attività"
+
 #: pages/partner_success.vue
 msgid "Top Partners"
 msgstr "Top Partner"
@@ -21902,11 +22533,13 @@ msgstr "Produttori Top"
 msgid "total"
 msgstr "totale"
 
-#: pages/hotel_booking.vue pages/payment_protection.vue pages/track_growth.vue
+#: pages/hotel_booking.vue pages/intours_confirmation.vue
+#: pages/payment_protection.vue pages/track_growth.vue
 #: components/compensation/qbi.vue components/price_match_guarantee/cruises.vue
 #: components/receipts/booking_receipt.vue
 #: components/receipts/italian_commission.vue
-#: components/receipts/italian_receipt.vue receipts/booking_receipt.html
+#: components/receipts/italian_receipt.vue
+#: components/reservations/tour-details.vue receipts/booking_receipt.html
 #: receipts/italian_commission.html receipts/italian_receipt.html
 #: track_growth/index.html upgrade/index.html
 msgid "Total"
@@ -22003,9 +22636,21 @@ msgstr "Membri totali ({{count}})"
 msgid "Total Members (%{ count })"
 msgstr "Membri totali (%{ count })"
 
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Total Membership Dues Paid"
+msgid "Total membership dues paid"
+msgstr "Totale quote associative pagate"
+
 #: components/cruise/cruise_savings_info.vue
 msgid "Total Membership Dues Paid"
 msgstr "Totale quote associative pagate"
+
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Total Membership Savings Realized"
+msgid "Total membership savings realized"
+msgstr "Risparmi totali realizzati con la Membership"
 
 #: components/cruise/cruise_savings_info.vue
 msgid "Total Membership Savings Realized"
@@ -22128,6 +22773,31 @@ msgstr "TOTALI:"
 #: components/install-pwa-banner.vue
 msgid "Touch"
 msgstr "Tocca"
+
+#: pages/admin_booking.vue components/admin_booking/tour_bookings.vue
+#, fuzzy
+#| msgid "Future Bookings"
+msgid "Tour Bookings"
+msgstr "Prenotazioni future"
+
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "More Details"
+msgid "Tour Details"
+msgstr "Altri dettagli"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "More Info"
+msgid "Tour Info"
+msgstr "Maggiori informazioni"
+
+#: BookingTopBar.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
+#, fuzzy
+#| msgid "hours"
+msgid "Tours"
+msgstr "ore"
 
 #: Menu
 msgid "Track Growth"
@@ -22306,6 +22976,24 @@ msgstr "Esperienza di viaggio!"
 msgid "Travel places"
 msgstr "Luoghi di viaggio"
 
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "TRAVEL"
+msgid "TRAVELER"
+msgstr "VIAGGIA"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Cash Pickup"
+msgid "Traveler Pickup"
+msgstr "Prelievo in contanti"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Travel places"
+msgid "Travelers"
+msgstr "Luoghi di viaggio"
+
 #: pages/public/reviews.vue
 msgid ""
 "Traveling is the best thing that happens to us, and inCruises gives us that "
@@ -22391,6 +23079,10 @@ msgstr "UnionPay"
 #: pages/reward_points.vue pages/settings.vue
 msgid "Unique Membership Code"
 msgstr "Codice unico di Membership"
+
+#: pages/intours_confirmation.vue
+msgid "Unit"
+msgstr ""
 
 #: components/info-reminder.vue
 msgid "Unit or Apt #"
@@ -22787,6 +23479,7 @@ msgstr "Uzbeco"
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 msgid "Value"
 msgstr "Valore"
 
@@ -22838,6 +23531,12 @@ msgstr "Verifica"
 #: pages/settings.vue
 msgid "Verify Phone Number"
 msgstr "Verifica il numero di telefono"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Transfer details"
+msgid "Verify tour details"
+msgstr "Dati trasferimento"
 
 #: components/checkout/ItalianStep.vue
 msgid "Verify Your Information"
@@ -22971,6 +23670,12 @@ msgstr "Visualizza la lista"
 msgid "View More"
 msgstr "Visualizzane di più"
 
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "View More"
+msgid "View More Photos"
+msgstr "Visualizzane di più"
+
 #: notification_settings/index.html
 msgid "View Notifications"
 msgstr "Visualizza le notifiche"
@@ -22995,13 +23700,10 @@ msgstr "Visualizza i piani"
 msgid "View Previous Compensation"
 msgstr "Visualizza i compensi precedenti"
 
-#: pages/receipts.vue
+#: pages/receipts.vue components/reservations/reservation-card.vue
+#: components/reservations/tour-details.vue
 msgid "View Receipt"
 msgstr "Visualizza la ricevuta"
-
-#: components/reservation.vue
-msgid "View Refund Form"
-msgstr "Visualizza il modulo di rimborso"
 
 #: components/booking/cabin_categories.vue
 msgid "View Rooms"
@@ -23101,6 +23803,12 @@ msgstr "Volume"
 #: pages/builders_base.vue
 msgid "Volume is not final"
 msgstr "Il volume non è definitivo"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Touch"
+msgid "Voucher"
+msgstr "Tocca"
 
 #: components/support/TicketList.vue
 msgid "Waiting for Support"
@@ -23396,6 +24104,10 @@ msgstr ""
 "Per pagare le quote associative mensili tramite Trust My Travel (TMT), è "
 "necessario che confermi i tuoi dati inserendo nuovamente la carta, oppure "
 "inserisci una carta nuova."
+
+#: components/welcome_tours_modal.vue
+msgid "We noticed you have an upcoming cruise booked:"
+msgstr ""
 
 #: pages/public/causes.vue
 msgid ""
@@ -24498,6 +25210,12 @@ msgstr "Non hai accesso a questa funzione."
 msgid "You do not have any conversation."
 msgstr "Non hai alcuna conversazione."
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "You do not have any saved recipient accounts."
+msgid "You do not have any favorite tours"
+msgstr "Non hai ancora salvato alcun account di destinatario."
+
 #: components/payout/brightwell/recipient-account.vue
 msgid "You do not have any saved recipient accounts."
 msgstr "Non hai ancora salvato alcun account di destinatario."
@@ -25102,6 +25820,13 @@ msgstr ""
 msgid "Your Bonus"
 msgstr "Tuo Bonus"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Your booking session has expired. Please start over."
+msgid "Your booking has expired. Please try again."
+msgstr ""
+"La tua sessione di prenotazione è scaduta. Per procedere, ricomincia da capo."
+
 #: components/receipts/booking_receipt.vue
 msgid ""
 "Your booking reference number is {{ bookingDetails.cruise_confirmation }}. "
@@ -25282,6 +26007,10 @@ msgid ""
 msgstr ""
 "il tuo primo trasferimento a PayQuicker è soggetto al pagamento di $ 4 per "
 "l'emissione della carta."
+
+#: components/tours/intours_landing.vue
+msgid "Your from must be earlier than your to date"
+msgstr ""
 
 #: components/mercy-ship-modals.vue
 msgid ""
@@ -32947,10 +33676,6 @@ msgid "Energy"
 msgstr "Energia"
 
 #: Course Answers
-msgid "Time"
-msgstr "Tempo"
-
-#: Course Answers
 msgid ""
 "Spend long stretches of time focused on their craft. Refuse to pick up every "
 "incoming phone call."
@@ -37689,6 +38414,52 @@ msgstr "7 Notti - Mediterraneo da Taranto"
 msgid "10% off Virgin Voyage"
 msgstr "10% di sconto su Virgin Voyage"
 
+#~ msgid "%{ guests } Guests"
+#~ msgstr "%{ guests } Ospiti"
+
+#~ msgid "Active Bookings"
+#~ msgstr "Prenotazioni attive"
+
+#~ msgid "Below you will find the status of your reservations."
+#~ msgstr "Qui sotto troverai lo stato delle tue prenotazioni."
+
+#~ msgid "CANCELLED"
+#~ msgstr "ANNULLATO"
+
+#~ msgid "Cruises & Hotels Stats"
+#~ msgstr "Statistiche su crociere e hotel"
+
+#~ msgid "Depart Location"
+#~ msgstr "Località di partenza"
+
+#~ msgid "Failed"
+#~ msgstr "Non andato a buon fine"
+
+#~ msgid "FAILED"
+#~ msgstr "NON RIUSCITO"
+
+#~ msgid "Need a <span class=\"bold\"> hotel/resort </span> to stay?"
+#~ msgstr ""
+#~ "Ti serve un <span class=\"bold\"> hotel/resort </span> in cui soggiornare?"
+
+#~ msgid "Record Locator"
+#~ msgstr "Codice identificativo della pratica"
+
+#~ msgid "Search InStays"
+#~ msgstr "Cerca su inStays"
+
+#~ msgid "SUCCESSFUL"
+#~ msgstr "RIUSCITO"
+
+#~ msgid ""
+#~ "Support staff has been alerted and is working on getting this resolved."
+#~ msgstr ""
+#~ "Il personale di supporto è stato avvertito e sta lavorando per risolvere "
+#~ "la questione."
+
+#~ msgid "View Refund Form"
+#~ msgstr "Visualizza il modulo di rimborso"
+
 #~ msgid "Europe and Central Asia"
 #~ msgstr "Europa ed Asia centrale"
 
@@ -37953,11 +38724,6 @@ msgstr "10% di sconto su Virgin Voyage"
 #~ "Di nuovo, il,\n"
 #~ "\t\t\t\t\t\t\t\t\t\t<strong>Super Bonus Base Costruttori</strong>\n"
 #~ "\t\t\t\t\t\t\t\t\t\tnon ha limiti!"
-
-#, fuzzy
-#~| msgid "My Cruise Savings"
-#~ msgid "My Travel Savings"
-#~ msgstr "Quanto ho risparmiato sulle crociere"
 
 #~ msgid ""
 #~ "Please click <a href=\"%{tmtFinancialProtection}\" target=\"_blank"
@@ -39837,9 +40603,6 @@ msgstr "10% di sconto su Virgin Voyage"
 #~ msgid "Book Last Minute"
 #~ msgstr "Prenota all'ultimo momento"
 
-#~ msgid "Donate Now"
-#~ msgstr "Dona ora"
-
 #~ msgid "Go to page"
 #~ msgstr "Vai alla pagina"
 
@@ -40265,9 +41028,6 @@ msgstr "10% di sconto su Virgin Voyage"
 
 #~ msgid "Cruise Itinerary"
 #~ msgstr "Itinerario di crociera"
-
-#~ msgid "Departure"
-#~ msgstr "Partenza"
 
 #~ msgid "InCruises Membership Savings"
 #~ msgstr "Risparmi con la Membership inCruises"
@@ -41931,9 +42691,6 @@ msgstr "10% di sconto su Virgin Voyage"
 #~ msgid "Click here to filter nights"
 #~ msgstr "Clicca qui per filtrare le notti"
 
-#~ msgid "Price Range:"
-#~ msgstr "Fascia di prezzi:"
-
 #~ msgid ""
 #~ "<span class=\"h3\">${{ calculateNightlyRate(hotel.sellingRate) }}</span>\n"
 #~ "\t\t\t\t\t\t\t\t\t\t\t\t<sub v-translate=\"\">/ night</sub>"
@@ -42692,9 +43449,6 @@ msgstr "10% di sconto su Virgin Voyage"
 #~ msgid "Rewards"
 #~ msgstr "Compensi"
 
-#~ msgid "Search by date"
-#~ msgstr "Cerca per data"
-
 #~ msgid ""
 #~ "Success as an inCruises Partner can be measured in a variety of ways. To "
 #~ "some people, success will be meeting and networking with like-minded "
@@ -42753,9 +43507,6 @@ msgstr "10% di sconto su Virgin Voyage"
 
 #~ msgid "TO TRAVEL"
 #~ msgstr "PER VIAGGIARE"
-
-#~ msgid "TRAVEL"
-#~ msgstr "VIAGGIA"
 
 #~ msgid ""
 #~ "We believe you can! By launching your business and successfully referring "
@@ -43542,9 +44293,6 @@ msgstr "10% di sconto su Virgin Voyage"
 
 #~ msgid "Child #{{ index + 1 }} Age"
 #~ msgstr "Età #{{ index + 1 }} bambino"
-
-#~ msgid "Category"
-#~ msgstr "Categoria"
 
 #~ msgid "Western Union"
 #~ msgstr "Western Union"
@@ -47045,9 +47793,6 @@ msgstr "10% di sconto su Virgin Voyage"
 #~ msgid "Adding to Watch List"
 #~ msgstr "Aggiungi alla lista preferiti"
 
-#~ msgid "Arrive Time"
-#~ msgstr "Orario di arrivo"
-
 #~ msgid "Availability and Checkout"
 #~ msgstr "Disponibilità e pagina dei pagamenti"
 
@@ -47088,9 +47833,6 @@ msgstr "10% di sconto su Virgin Voyage"
 #~ msgid "Classes And Services"
 #~ msgstr "Categorie e servizi"
 
-#~ msgid "Click here to view Cancellation Policy"
-#~ msgstr "Clicca qui per vedere la Politica di Annullamento"
-
 #~ msgid "Cruise Booking Agreement"
 #~ msgstr "Contratto di prenotazione crociera"
 
@@ -47102,9 +47844,6 @@ msgstr "10% di sconto su Virgin Voyage"
 
 #~ msgid "Dining"
 #~ msgstr "Pasti"
-
-#~ msgid "Duration"
-#~ msgstr "Durata"
 
 #~ msgid "Gender"
 #~ msgstr "Sesso"

@@ -47,7 +47,8 @@ msgstr "10"
 msgid "2023"
 msgstr "2023"
 
-#: pages/courses.vue
+#: pages/courses.vue pages/intours_details.vue
+#: components/reservations/tour-details.vue
 msgid "_ctx"
 msgstr "_ctx"
 
@@ -252,6 +253,10 @@ msgid ""
 "de Campo experience awaits you”"
 msgstr ""
 "“如果您想要加勒比地區最好、排名第一的體驗，那麼您的 Casa de Campo 正等著您”"
+
+#: pages/intours_confirmation.vue
+msgid "({{ traveler.ageBand }})"
+msgstr ""
 
 #: pages/hotel_booking.vue
 msgid "(1 For 1)"
@@ -498,6 +503,12 @@ msgstr "{{ getRecipientAccountFieldName(recipientAccountField) }}"
 msgid "{{ getRecipientAccountFieldValue(recipientAccountField) }}"
 msgstr "{{ getRecipientAccountFieldValue(recipientAccountField) }}"
 
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "{{ videoDescription }}"
+msgid "{{ getTravelerDescription() }}"
+msgstr "{{ videoDescription }}"
+
 #: components/accordion.vue
 msgid "{{ item.body }}"
 msgstr "{{ item.body }}"
@@ -506,9 +517,25 @@ msgstr "{{ item.body }}"
 msgid "{{ item.title }}"
 msgstr "{{ item.title }}"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "{{ course.description }}"
+msgid "{{ itineraryItem.description }}"
+msgstr "{{ course.description }}"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "{{ itineraryItem.pointOfInterestLocation.location.name }}"
+msgstr ""
+
 #: pages/reports.vue pages/track_results.vue
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
+
+#: pages/intours_details.vue
+msgid ""
+"{{ pricingInfo.ageBands.length == 1 ? $gettext('TRAVELER') : ageBand."
+"ageBand }} {{ ageBand.label }}"
+msgstr ""
 
 #: pages/courses.vue
 msgid "{{ question.question }}"
@@ -841,10 +868,6 @@ msgstr "%{ cd_used } 奖励积分"
 msgid "%{ city }"
 msgstr "%{ city }"
 
-#: components/reservation.vue
-msgid "%{ guests } Guests"
-msgstr "%{ guests } 客人"
-
 #: pages/cruises.vue pages/hotels.vue
 msgid "%{ length } results match your criteria."
 msgstr "%{ length } 結果符合您的條件。"
@@ -885,14 +908,10 @@ msgstr "%{ name }, 現在請導入您的聯繫人"
 msgid "%{ night } Nights"
 msgstr "%{ night } 晚"
 
-#: components/reservation.vue pages/cruise.vue
-#: components/cruises_booking/cruise-header-details.vue
+#: pages/cruise.vue components/cruises_booking/cruise-header-details.vue
+#: components/reservations/reservation-card.vue
 msgid "%{ nights } Nights"
 msgstr "%{ nights } 晚"
-
-#: components/reservation.vue
-msgid "%{ passengers } Passengers"
-msgstr "%{ passengers } 乘客"
 
 #: components/receipts/hotel_booking_receipt.vue
 msgid "%{ points_used } Reward Points"
@@ -913,6 +932,24 @@ msgstr "%{ start } 到 %{ end }"
 #: pages/hotel_booking.vue
 msgid "%{ state }"
 msgstr "%{ state }"
+
+#: components/reservations/tour-search.vue
+msgid "%{activitiesNum} activities"
+msgstr ""
+
+#: components/reservations/tour-search.vue
+msgid "%{activitiesNum} activities found"
+msgstr ""
+
+#: components/reservations/reservation-card.vue
+msgid "%{adultCount} Adults · %{childCount} Childs"
+msgstr ""
+
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "%{ passengers } Passengers"
+msgid "%{adultCount} passengers"
+msgstr "%{ passengers } 乘客"
 
 #: components/compensation/residual_bonus.vue
 msgid "%{currentMonthName} Recurring Bonus"
@@ -966,6 +1003,12 @@ msgstr "+ 添加权限组"
 #: pages/admin_permission_group.vue
 msgid "+ Add Permissions"
 msgstr "+ 添加权限"
+
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "+150 Activities"
+msgstr "活动"
 
 #: pages/email.vue
 msgid ""
@@ -1043,6 +1086,13 @@ msgstr ""
 "<%- gettext(\"Personal=\"\" growth=\"\" and=\"\" development=\"\" is=\"\" "
 "the=\"\" core=\"\" of=\"\" a=\"\" leader's=\"\" success.\")=\"\" %=\"\"> </%-"
 ">"
+
+#: components/reservations/tour-details.vue
+msgid ""
+"<a :href=\"`${voucherInfo.url}`\" class=\"grow shrink\" target=\"_blank\"> "
+"<Button class=\"rounded-xl\" size=\"medium\" :label=\"$gettext('Get Your "
+"Ticket')\" :full=\"true\" base=\"solid\" variant=\"primary\"/> </a>"
+msgstr ""
 
 #: pages/public/reviews.vue
 msgid ""
@@ -1429,6 +1479,10 @@ msgid ""
 msgstr ""
 "<img class=\"flag\" :src=\"sourceCountryFlagImg\"/> {{ transferDetails."
 "sourceCountryAndCurrency.currency.code }}"
+
+#: components/tours/details/available-plans.vue
+msgid "<MapPin/> Pickup point"
+msgstr ""
 
 #: components/cruises_booking/reward-points-confirm-step.vue
 #: components/cruises_booking/reward-points-step.vue
@@ -1899,6 +1953,24 @@ msgid ""
 msgstr ""
 "<strong>更多详细信息</strong>: %{adults}成人, %{children} 儿童 | %{nights} 晚"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>%{ hotelName }</strong>"
+msgid "<strong>Pickup Point</strong>:"
+msgstr "<strong>%{ hotelName }</strong>"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>Departing on</strong>: %{ cruiseOn }"
+msgid "<strong>Start Date</strong>: %{ startDate }"
+msgstr "<strong>出发时间</strong>: %{ cruiseOn }"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>Departing on</strong>: %{ cruiseOn }"
+msgid "<strong>Start Time</strong>: %{ startTime }"
+msgstr "<strong>出发时间</strong>: %{ cruiseOn }"
+
 #: pages/elevate.vue
 msgid ""
 "<svg style=\"fill: #c0c0c0\" id=\"Layer_1\" width=\"20\" xmlns=\"http://www."
@@ -2105,6 +2177,12 @@ msgstr "1 換 1 獎勵積分餘額"
 msgid "1 for 1 Reward Points Logs"
 msgstr "1 換 1 獎勵積分日誌"
 
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "1 for 1 Reward Points Match"
+msgid "1 for 1 reward points match"
+msgstr "1换1奖励积分比赛"
+
 #: components/cruise/cruise_savings_info.vue
 msgid "1 for 1 Reward Points Match"
 msgstr "1换1奖励积分比赛"
@@ -2300,6 +2378,12 @@ msgstr "最多 10 个级别的每个新合作伙伴-会员激活可获得 30 分
 #: pages/builders_base.vue
 msgid "30% bonus"
 msgstr "30%獎金"
+
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "150,000+ Global Destinations are Waiting for You!"
+msgid "300,000+ Tours and experiences are waiting for you"
+msgstr "全球150,000多個目的地正等著您！"
 
 #: income_disclosure/index.html
 msgid "4 - 6 months"
@@ -2530,6 +2614,12 @@ msgstr ""
 msgid "About"
 msgstr "關於"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Login Activity"
+msgid "About This Activity"
+msgstr "登录活动"
+
 #: Footer.vue components/public/FooterLinks.vue pages/public/about.vue
 msgid "About Us"
 msgstr "關於我們"
@@ -2538,7 +2628,8 @@ msgstr "關於我們"
 msgid "Abu Dhabi"
 msgstr "阿布扎比"
 
-#: pages/account_setup.vue components/inchat/disclaimer_modal.vue
+#: pages/account_setup.vue pages/intours_confirmation.vue
+#: components/inchat/disclaimer_modal.vue
 msgid "Accept"
 msgstr "接受"
 
@@ -2692,10 +2783,6 @@ msgstr "本月激活"
 msgid "Active"
 msgstr "激活"
 
-#: pages/reservations.vue
-msgid "Active Bookings"
-msgstr "有效预订"
-
 #: pages/track_results.vue
 msgid "Active Members"
 msgstr "活躍會員"
@@ -2724,6 +2811,12 @@ msgstr "有效至："
 
 #: components/inchat/emoji/emoji_modal.vue
 msgid "Activities"
+msgstr "活动"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "Activities found"
 msgstr "活动"
 
 #: components/inchat/user_room_actions.vue components/user/user_notes.vue
@@ -2877,6 +2970,18 @@ msgstr "添加您的個人資料以獲得Trust My Travel(TMT)保護保證"
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Added"
 msgstr "添加"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Additional Details"
+msgstr "邀請詳情"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Additional Info"
+msgid "Additional info"
+msgstr "額外信息"
 
 #: components/info-reminder.vue pages/receipts.vue
 msgid "Additional Info"
@@ -3095,15 +3200,11 @@ msgid "Alipay"
 msgstr "支付宝"
 
 #: pages/admin_support_analytics.vue pages/hotels.vue pages/info_center.vue
-#: pages/leadership_academy.vue pages/reports.vue pages/reservations.vue
-#: pages/team_rankings.vue pages/track_results.vue components/user/timeline.vue
-#: reports/index.html track_results/index.html
+#: pages/leadership_academy.vue pages/reports.vue pages/team_rankings.vue
+#: pages/track_results.vue components/user/timeline.vue reports/index.html
+#: track_results/index.html
 msgid "All"
 msgstr "全部"
-
-#: pages/reservations.vue
-msgid "All Bookings"
-msgstr "所有预定"
 
 #: pages/admin_blog.vue pages/resources.vue components/blog/blog_list.vue
 msgid "All Categories"
@@ -3197,6 +3298,12 @@ msgstr "所有問題都正確回答"
 #: pages/global_summit_2024.vue
 msgid "All Ranks"
 msgstr "所有等级"
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "Reservations"
+msgid "All Reservations"
+msgstr "预订"
 
 #: pages/admin_blog.vue
 msgid "All Sections"
@@ -3634,7 +3741,8 @@ msgstr "适用性"
 msgid "Applicant Signature"
 msgstr "申請人簽名"
 
-#: pages/checkout.vue
+#: components/filter-chip-range.vue pages/checkout.vue
+#: pages/intours_details.vue components/tours/intours_results.vue
 msgid "Apply"
 msgstr "申请"
 
@@ -3902,9 +4010,21 @@ msgstr "將名字，姓氏和電子郵件分別填寫到對應的位置。然後
 msgid "Astana, Kazakhstan"
 msgstr "阿斯塔納，哈薩克斯坦"
 
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "data"
+msgid "at"
+msgstr "数据"
+
 #: pages/email.vue
 msgid "At"
 msgstr "在"
+
+#: components/reservations/tour-search.vue
+#, fuzzy
+#| msgid "Arrive Time"
+msgid "at %{arriveTime}"
+msgstr "抵達時間"
 
 #: components/covid-disclaimer-reminder.vue
 msgid ""
@@ -4075,6 +4195,12 @@ msgstr "可用餘額"
 msgid "Available Cabins"
 msgstr "可用舱位"
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Available Cabins"
+msgid "Available plans"
+msgstr "可用舱位"
+
 #: pages/reward_points.vue
 msgid "Available Rewards"
 msgstr "可用獎勵"
@@ -4127,8 +4253,8 @@ msgstr "b. National Director"
 msgid "b. Time of the Essence"
 msgstr "b. 重要的時間"
 
-#: pages/courses.vue pages/leadership_academy.vue pages/multi_factor.vue
-#: components/agreements/italian_agreement.vue
+#: pages/courses.vue pages/intours_details.vue pages/leadership_academy.vue
+#: pages/multi_factor.vue components/agreements/italian_agreement.vue
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
 #: components/onboarding/address-step.vue
@@ -4137,6 +4263,8 @@ msgstr "b. 重要的時間"
 #: components/onboarding/import-contacts.vue
 #: components/onboarding/recurring-payment-step.vue
 #: components/onboarding/referral-link-step.vue
+#: components/reservations/tour-details.vue
+#: components/reservations/tour-search.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
 #: components/payout/brightwell/recipient-card-details.vue
@@ -4308,10 +4436,6 @@ msgstr "從在Ross Perot's Electronic Data Systems公司工作開始發展事業
 #: pages/menu_page.vue
 msgid "Below you will find the status of your hotels & cruise reservations."
 msgstr "您将在下方找到您的酒店和邮轮预订状态。"
-
-#: pages/reservations.vue
-msgid "Below you will find the status of your reservations."
-msgstr "您将在下方找到您的预订状态。"
 
 #: Drop Down Destination List
 msgid "Bermuda"
@@ -4570,7 +4694,7 @@ msgid ""
 "Fall!"
 msgstr "最后一刻预订Costa Cruise令人难以置信的优惠并在今年夏季和秋季旅行！"
 
-#: pages/hotels_details.vue
+#: pages/hotels_details.vue components/tours/details/available-plans.vue
 msgid "Book now"
 msgstr "現在預訂"
 
@@ -4590,7 +4714,7 @@ msgstr "放心预订"
 msgid "Book with Reward Points, have total confidence!"
 msgstr "使用奖励积分预订，完全放心！"
 
-#: components/reservation.vue
+#: components/reservations/reservation-card.vue
 msgid "Booked"
 msgstr "已预订"
 
@@ -4607,12 +4731,14 @@ msgid "Booking Payments #{{ booking.global_booking_id }}"
 msgstr "预订付款 #{{ booking.global_booking_id }}"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Booking Receipt"
 msgstr "預定收據"
 
 #: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Booking Reference"
 msgstr "預訂參考"
@@ -4626,10 +4752,17 @@ msgstr "预订报告"
 msgid "Booking Review"
 msgstr "預定預覽"
 
-#: pages/admin_booking.vue
+#: pages/admin_booking.vue components/admin_booking/admin_booking_stats.vue
 msgid "Booking Stats"
 msgstr "預訂狀態"
 
+#: pages/intours_confirmation.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Booking Cost"
+msgid "Booking summary"
+msgstr "预订费用"
+
+#: pages/intours_confirmation.vue
 #: components/cruises_booking/confirmation-step.vue
 msgid "Booking Terms & Conditions"
 msgstr "预订条款和条件"
@@ -4792,6 +4925,13 @@ msgstr ""
 "\"partnerAgreement\" class=\"underline\" href=\"%{partnerAgreement}\" target="
 "\"_blank\">独立合作伙伴协议</a>"
 
+#: pages/reservations.vue
+msgid ""
+"By clicking on “Search tours”, easily explore tours and activities matching "
+"your booked cruise dates and destinations!"
+msgstr ""
+
+#: pages/intours_confirmation.vue
 #: components/cruises_booking/confirmation-step.vue
 msgid ""
 "By completing my booking, I understand and accept all associated Terms and "
@@ -5074,8 +5214,9 @@ msgstr "加拿大/新英格蘭"
 #: components/fast-growing-legs.vue pages/admin_department.vue
 #: pages/admin_permission.vue pages/admin_permission_group.vue
 #: pages/checkout.vue pages/connect.vue pages/cruises_booking.vue
-#: pages/email.vue pages/invoices.vue pages/reports.vue pages/settings.vue
-#: pages/subscriptions.vue components/admin_booking/admin_cruise_featured.vue
+#: pages/email.vue pages/intours_details.vue pages/invoices.vue
+#: pages/reports.vue pages/settings.vue pages/subscriptions.vue
+#: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
 #: components/admin_management/admin_departments.vue
@@ -5136,15 +5277,11 @@ msgstr "取消政策"
 msgid "Cancellation Warning"
 msgstr "取消警告"
 
-#: components/reservation.vue
+#: components/reservations/reservation-card.vue
 msgid "Cancelled"
 msgstr "已取消"
 
-#: components/reservation.vue
-msgid "CANCELLED"
-msgstr "已取消"
-
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Cancun"
 msgstr "坎昆"
 
@@ -5227,6 +5364,17 @@ msgstr "取款地点"
 #: webinar_recordings/index.html
 msgid "Catalan"
 msgstr "加泰羅尼亞語"
+
+#: components/welcome_tours_modal.vue pages/intours.vue
+#: components/reservations/tour-search.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Category"
+msgid "category"
+msgstr "類別"
+
+#: components/tours/intours_results.vue
+msgid "Category"
+msgstr "類別"
 
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Category Type"
@@ -5327,6 +5475,10 @@ msgid ""
 "Check out our upcoming events including webinars, meetings, and regional "
 "conventions."
 msgstr "查看我們即將舉辦的活動，包括網絡研討會，會議和地區會議。"
+
+#: components/welcome_tours_modal.vue
+msgid "Check out the following perfect pairing tours we have for you:"
+msgstr ""
 
 #: pages/welcome.vue
 msgid ""
@@ -5483,6 +5635,7 @@ msgid "Choose your referrer:"
 msgstr "選擇您的推薦人："
 
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Cities Visited"
 msgstr "參觀過的城市"
 
@@ -5509,6 +5662,12 @@ msgstr "城市："
 msgid "Claim Connect 5"
 msgstr "索賠 Connect 5"
 
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Insurance"
+msgid "Claim Insurance"
+msgstr "保險"
+
 #: power_tools_upgrade/index.html
 msgid "Claim Power Tools"
 msgstr "請求Power Tools"
@@ -5516,6 +5675,14 @@ msgstr "請求Power Tools"
 #: Gender
 msgid "Classic"
 msgstr "經典的"
+
+#: components/filter-chip-range.vue
+msgid "clear"
+msgstr ""
+
+#: components/filter-chip-dropdown.vue components/tours/intours_results.vue
+msgid "Clear"
+msgstr ""
 
 #: pages/cruises.vue pages/hotels.vue
 msgid "Clear All Filters"
@@ -5617,6 +5784,18 @@ msgstr "點擊這裡註冊"
 msgid "click here to start"
 msgstr "点击这里开始"
 
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Click here to view Cancellation Policy"
+msgid "Click here to view meeting point"
+msgstr "點擊此處查看取消政策"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Click here to learn more"
+msgid "Click here to view voucher"
+msgstr "点击这里了解更多"
+
 #: components/inchat/lists/room_list.vue
 msgid "Click to create a group."
 msgstr "单击以创建组。"
@@ -5651,6 +5830,12 @@ msgstr "客戶端配置"
 #: old_compensation/index.html
 msgid "Close"
 msgstr "關閉"
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "More Details"
+msgid "Close Details"
+msgstr "更多細節"
 
 #: pages/hotels.vue
 msgid "Close Filter"
@@ -5804,6 +5989,12 @@ msgstr "確認"
 #: pages/reward_points.vue
 msgid "Confirm Amount"
 msgstr "确认金额"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Funds availability:"
+msgid "Confirm availability"
+msgstr "资金可用性："
 
 #: components/birthdate-reminder.vue components/payout/birthday-modal.vue
 msgid "Confirm Birthdate"
@@ -6009,6 +6200,12 @@ msgstr "通過郵件聯繫："
 msgid "Contact Information"
 msgstr "聯繫信息"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Contact Information"
+msgid "Contact Information And Tour Details"
+msgstr "聯繫信息"
+
 #: Footer.vue components/public/FooterLinks.vue pages/public/contact.vue
 msgid "Contact Us"
 msgstr "聯繫我們"
@@ -6056,6 +6253,12 @@ msgstr "繼續"
 #: components/checkout/ProcessorTrustly.vue
 msgid "Continue Payment Below"
 msgstr "在下方繼續付款"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Continue to Checkout"
+msgid "Continue to checkout"
+msgstr "繼續結帳"
 
 #: pages/upgrade.vue
 msgid "Continue to Checkout"
@@ -6400,15 +6603,13 @@ msgid "Cruise, hosted by inGroups Co-Founder and Co-CEO"
 msgstr "Cruise，由 inGroups 联合创始人兼联合首席执行官主持"
 
 #: BookingTopBar.vue HotelsTopBar.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
 #: components/navigation/mobile-menu-booking.vue
 msgid "Cruises"
 msgstr "郵輪"
 
-#: components/admin_booking/admin_booking_stats.vue
-msgid "Cruises & Hotels Stats"
-msgstr "郵輪和酒店統計"
-
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Cruises Booked"
 msgstr "已經預定的郵輪"
 
@@ -6623,10 +6824,12 @@ msgstr "数据"
 msgid "Data Fields"
 msgstr "數據字段"
 
-#: pages/contacts.vue pages/email.vue pages/notifications.vue
-#: pages/reward_points.vue components/compensation/statements.vue
+#: pages/contacts.vue pages/email.vue pages/intours_details.vue
+#: pages/notifications.vue pages/reward_points.vue
+#: components/compensation/statements.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/settings_page/login-activity.vue email_notifications/index.html
 msgid "Date"
 msgstr "日期"
@@ -6861,16 +7064,11 @@ msgstr "演示推荐链接"
 msgid "Depart"
 msgstr "出發"
 
-#: components/reservation.vue pages/reports.vue
-#: components/admin_booking/admin_cruise_featured.vue
+#: pages/reports.vue components/admin_booking/admin_cruise_featured.vue
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 #: reports/index.html
 msgid "Depart Date"
 msgstr "出發日期"
-
-#: components/reservation.vue
-msgid "Depart Location"
-msgstr "出發地點"
 
 #: pages/global_summit_tracking.vue
 msgid "Departing from: Istanbul, Turkey"
@@ -6935,7 +7133,8 @@ msgstr "存款"
 msgid "description"
 msgstr "描述"
 
-#: pages/convention_manager.vue pages/email_address.vue pages/reward_points.vue
+#: pages/convention_manager.vue pages/email_address.vue
+#: pages/intours_details.vue pages/reward_points.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
 #: components/receipts/italian_commission.vue
@@ -6956,6 +7155,12 @@ msgstr "描述："
 msgid "destination"
 msgstr "目的地"
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "destination"
+msgid "Destination"
+msgstr "目的地"
+
 #: components/payout/brightwell/review.vue
 #: components/payout/brightwell/transfer-details.vue
 msgid "Destination country"
@@ -6968,6 +7173,12 @@ msgstr "目的地货币"
 #: pages/builders_base.vue
 msgid "detailed below."
 msgstr "细节如下。"
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "QBI Details"
+msgid "Details"
+msgstr "QBI 详情"
 
 #: components/settings_page/login-activity.vue
 msgid "Device"
@@ -7132,6 +7343,10 @@ msgstr "折扣："
 msgid "Discover"
 msgstr "探索"
 
+#: components/welcome_tours_modal.vue
+msgid "Discover Tours For Your Upcoming Cruise!"
+msgstr ""
+
 #: pages/account_setup.vue pages/cards.vue pages/certificates.vue
 #: pages/invite.vue pages/settings.vue cards/index.html certificates/index.html
 #: certificates/view.html
@@ -7214,6 +7429,12 @@ msgstr "多哈"
 #: pages/hotels.vue
 msgid "Doha, Qatar"
 msgstr "多哈，卡塔尔"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "Do not show this again"
+msgid "Don't show again"
+msgstr "請不要再向我展示這個內容"
 
 #: pages/welcome.vue pages/public/causes.vue
 msgid "Donate"
@@ -7416,6 +7637,10 @@ msgid ""
 "system."
 msgstr "Duplicator適用於移動設備和任何類型的計算機，平板電腦和操作系統。"
 
+#: components/tours/intours_results.vue
+msgid "Duration"
+msgstr "持續時間"
+
 #: income_disclosure/index.html
 msgid "During the month of"
 msgstr "在"
@@ -7593,6 +7818,7 @@ msgstr "易于添加："
 #: pages/convention_manager.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 #: components/settings_page/modify-saved-passengers.vue
 msgid "Edit"
 msgstr "編輯"
@@ -7691,6 +7917,12 @@ msgstr "有资格的"
 #: Menu
 msgid "Email"
 msgstr "電子郵件"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Link (optional)"
+msgid "Email (optional)"
+msgstr "鏈接（可選）"
 
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
@@ -7848,6 +8080,12 @@ msgstr "输入您的定制推荐链接"
 msgid "Enter your date of birth"
 msgstr "输入您的出生日期"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Insert your email..."
+msgid "Enter your email"
+msgstr "輸入您的電子郵件..."
+
 #: components/onboarding/address-step.vue
 msgid "Enter Zip Code"
 msgstr "输入邮政编码"
@@ -7893,6 +8131,12 @@ msgstr "更新错误"
 #: pages/cruise_spotlight.vue
 msgid "Error loading videos, please reload the page!"
 msgstr "加载视频时出错，请重新加载页面！"
+
+#: pages/intours_details.vue
+msgid ""
+"Error ocurred trying to hold your booking. Please check your selection and "
+"try again."
+msgstr ""
 
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
 msgid "Error saving data"
@@ -8109,6 +8353,12 @@ msgid ""
 "from the world’s leading brands."
 msgstr "探索度假选择的世界； 来自世界领先品牌的数以千计的房产。"
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Explore More"
+msgid "Explore By Category"
+msgstr "探索更多"
+
 #: components/welcome/explore-more.vue
 msgid "Explore More"
 msgstr "探索更多"
@@ -8159,14 +8409,6 @@ msgstr "Facebook像素"
 #: pages/hotels_details.vue
 msgid "Facilities"
 msgstr "設施"
-
-#: components/reservation.vue
-msgid "Failed"
-msgstr "失败"
-
-#: components/reservation.vue
-msgid "FAILED"
-msgstr "失败的"
 
 #: pages/multi_factor.vue
 msgid "Failed to copy!"
@@ -8272,6 +8514,12 @@ msgstr "最愛的郵輪"
 msgid "Favorite Hotels"
 msgstr "最喜欢的酒店"
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Favorite Hotels"
+msgid "Favorite Tours"
+msgstr "最喜欢的酒店"
+
 #: pages/admin_booking.vue components/admin_booking/admin_cruise_featured.vue
 msgid "Featured Cruises"
 msgstr "特色邮轮"
@@ -8310,7 +8558,7 @@ msgstr "按酒店名称过滤.."
 msgid "Filtering"
 msgstr "過濾"
 
-#: pages/reports.vue reports/index.html
+#: pages/reports.vue components/tours/intours_results.vue reports/index.html
 msgid "Filters"
 msgstr "過濾器"
 
@@ -8357,6 +8605,10 @@ msgstr "財務總監"
 msgid "Find Hotels"
 msgstr "寻找酒店"
 
+#: components/reservations/tour-search.vue
+msgid "Find the perfect pairing for your “%{reservationName}” Cruise Itinerary"
+msgstr ""
+
 #: pages/multi_factor.vue components/onboarding/final-step.vue
 msgid "Finish"
 msgstr "完成"
@@ -8370,8 +8622,9 @@ msgid "Finished"
 msgstr "完成"
 
 #: pages/admin_restricted_paybonus.vue pages/global_summit_2023.vue
-#: pages/global_summit_2024.vue pages/hotel_booking.vue pages/invite.vue
-#: pages/settings.vue components/public/JoinModal.vue
+#: pages/global_summit_2024.vue pages/hotel_booking.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -8510,6 +8763,10 @@ msgstr ""
 #: pages/login/login.vue login/index.html
 msgid "Forgot Password?"
 msgstr "忘記密碼？"
+
+#: components/tours/intours_results.vue
+msgid "formattedTime"
+msgstr ""
 
 #: pages/email_tracking.vue
 msgid "Forwarded"
@@ -8720,6 +8977,12 @@ msgstr "獲得排名"
 #: pages/duplicator.vue connect/index.html
 msgid "Get Started Now!"
 msgstr "現在開始！"
+
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Your Tickets"
+msgid "Get Your Ticket"
+msgstr "您的支持票"
 
 #: components/public/FooterLinks.vue
 msgid "Global 100"
@@ -9043,6 +9306,12 @@ msgstr "階層"
 msgid "High Monthly Gross Earnings"
 msgstr "总收入"
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Highest Price"
+msgid "High to Low Price"
+msgstr "最高價"
+
 #: pages/hotels.vue
 msgid "Highest Price"
 msgstr "最高價"
@@ -9064,6 +9333,7 @@ msgid "Historical QBI Report"
 msgstr "历史 QBI 报告"
 
 #: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Holder Name"
 msgstr "持有人名稱"
@@ -9132,6 +9402,7 @@ msgid "Hotelbeds"
 msgstr "Hotelbeds"
 
 #: BookingTopBar.vue HotelsTopBar.vue pages/hotels.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
 #: components/navigation/mobile-menu-booking.vue
 msgid "Hotels"
 msgstr "酒店"
@@ -9141,6 +9412,7 @@ msgid "hotels and saved a total of"
 msgstr "酒店总共节省了"
 
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Hotels Booked"
 msgstr "预订酒店"
 
@@ -9484,6 +9756,12 @@ msgstr ""
 #: components/payout/partner-consent.vue old_compensation/index.html
 msgid "I DON'T CONSENT OR AGREE"
 msgstr "我既不承諾也不同意"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "I don't see my pickup location"
+msgstr "取款地点"
 
 #: components/agreements/partner_code_of_conduct_agreement.vue
 msgid ""
@@ -10958,6 +11236,12 @@ msgstr ""
 msgid "Independent Partner Agreement"
 msgstr "獨立合作夥伴協議"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Reminded"
+msgid "index"
+msgstr "提醒"
+
 #: receipts/team_residual_bonus_statement.html
 msgid "Indirect Members"
 msgstr "間接會員"
@@ -11063,6 +11347,7 @@ msgid "inStays Price Match Guarantee"
 msgstr "inStays 价格匹配保证"
 
 #: pages/courses.vue pages/email_address.vue pages/leadership_academy.vue
+#: components/reservations/tour-details.vue
 msgid "Instructions"
 msgstr "說明書"
 
@@ -11355,8 +11640,10 @@ msgstr "意大利"
 msgid "Item"
 msgstr "項目"
 
-#: pages/cruise.vue components/cruises_booking/itinerary-modal.vue
+#: pages/cruise.vue pages/intours_details.vue
+#: components/cruises_booking/itinerary-modal.vue
 #: components/receipts/booking_receipt.vue
+#: components/reservations/tour-details.vue
 msgid "Itinerary"
 msgstr "行程"
 
@@ -11496,6 +11783,7 @@ msgstr "保持您的信用卡有效"
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 msgid "Key"
 msgstr "重点"
 
@@ -11613,8 +11901,9 @@ msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr "上個月的領導獎金已申請，正在等待支付。"
 
 #: pages/admin_restricted_paybonus.vue pages/global_summit_2023.vue
-#: pages/global_summit_2024.vue pages/hotel_booking.vue pages/invite.vue
-#: pages/settings.vue components/public/JoinModal.vue
+#: pages/global_summit_2024.vue pages/hotel_booking.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -11925,6 +12214,10 @@ msgstr "鏈接已復製到剪貼板"
 msgid "Links"
 msgstr "链接"
 
+#: pages/intours_confirmation.vue
+msgid "List any specific needs"
+msgstr ""
+
 #: components/checkout/ProcessorNetcents.vue
 msgid "Litecoin"
 msgstr "莱特币"
@@ -11956,7 +12249,8 @@ msgstr "加载更多"
 #: pages/admin_partner_success.vue pages/invoices.vue pages/partner_success.vue
 #: pages/receipts.vue pages/reports.vue pages/track_results.vue
 #: pages/webinar_recordings.vue components/payout/wallet-transfers.vue
-#: reports/index.html track_results/index.html
+#: components/tours/intours_results.vue reports/index.html
+#: track_results/index.html
 msgid "Load More"
 msgstr "加載更多"
 
@@ -11977,6 +12271,12 @@ msgstr "位置数据是近似值，可能不准确。"
 #: components/payout/brightwell/cash-pickup-location.vue
 msgid "Location Details"
 msgstr "位置详情"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Location"
+msgid "Locations"
+msgstr "地點"
 
 #: components/inchat/user_room_actions.vue
 msgid "Lock Group"
@@ -12047,6 +12347,12 @@ msgstr "登出"
 #: income_disclosure/index.html
 msgid "Low Monthly Gross Earnings"
 msgstr "每月总收入低"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Lowest Price"
+msgid "Low to High Price"
+msgstr "最低價格"
 
 #: pages/hotels.vue
 msgid "Lowest Price"
@@ -12235,6 +12541,12 @@ msgstr "MXN万事达卡"
 msgid "Mastermind Training"
 msgstr "領導者培訓"
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Reward Points"
+msgid "Match Reward Points"
+msgstr "獎勵積分"
+
 #: old_compensation/index.html
 msgid "Max Compensation Bonus"
 msgstr "最高獎勵獎金"
@@ -12253,6 +12565,12 @@ msgstr "檔案大小上限為25mb"
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Max Lead Time"
 msgstr "最长交货时间"
+
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Price"
+msgid "Max Price"
+msgstr "價錢"
 
 #: components/payout/italian_info.vue
 msgid ""
@@ -12318,6 +12636,16 @@ msgstr "满足等级要求："
 #: components/top_bar/Connect.vue
 msgid "Meeting Info"
 msgstr "会议信息"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Meeting Info"
+msgid "Meeting Point"
+msgstr "会议信息"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "Meeting Point And Pickup Details"
+msgstr ""
 
 #: components/top_bar/Connect.vue
 msgid "Meeting Room"
@@ -12554,9 +12882,25 @@ msgstr "Michael Hutchison - 联席首席执行官兼联合创始人"
 msgid "Min Lead Time"
 msgstr "最短交货时间"
 
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Cabin Price"
+msgid "Min Price"
+msgstr "艙位價格"
+
 #: components/compensation/recurring_income_levels.vue
 msgid "Minimum Earned Bonus Amount"
 msgstr "最低已获奖金金额"
+
+#: components/tours/intours_results.vue
+msgid "Minimum price cannot be greater than maximum price"
+msgstr ""
+
+#: pages/intours_details.vue
+msgid ""
+"Minimum: {{ ageBand.minTravelersPerBooking }}, Maximum: {{ ageBand."
+"maxTravelersPerBooking }}"
+msgstr ""
 
 #: components/inchat/user/user_create_room.vue
 msgid "Minimun of participants is 2."
@@ -12608,6 +12952,12 @@ msgstr "移動電話"
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Mobile Phone is required."
 msgstr "移動電話是必需的。"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "New Ticket"
+msgid "Mobile Ticket"
+msgstr "新票"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
 #: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
@@ -12964,6 +13314,18 @@ msgstr "必须是唯一的和可用的"
 msgid "Must be unique and available."
 msgstr "必須是唯一的和可用的。"
 
+#: components/reservations/my-bookings.vue
+#, fuzzy
+#| msgid "All Bookings"
+msgid "My bookings"
+msgstr "所有预定"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Contact Information"
+msgid "My Contact Information"
+msgstr "聯繫信息"
+
 #: pages/titles.vue
 msgid "My Cruise Savings"
 msgstr "我的郵輪儲蓄"
@@ -12983,6 +13345,12 @@ msgid ""
 msgstr ""
 "我最真誠的希望是，您和您的團隊合作夥伴經常拜訪，並以新的決心保持增長，從而擺"
 "脫困境。"
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "My Travel Savings"
+msgid "My travel savings"
+msgstr "我的旅行储蓄"
 
 #: components/birthday-modal.vue components/fast-growing-legs.vue
 #: components/mercy-ship-modals.vue components/weekly-competition.vue
@@ -13024,6 +13392,7 @@ msgstr ""
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/qualified_residual_bonus.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -13162,10 +13531,6 @@ msgstr "國民身份證 #"
 msgid "Nationality:"
 msgstr "國籍："
 
-#: components/reservation.vue
-msgid "Need a <span class=\"bold\"> hotel/resort </span> to stay?"
-msgstr "需要一个<span class=\"bold\">酒店/度假村</span>住宿？"
-
 #: components/hotels/perfect_pairings.vue
 msgid "Need a <span class=\"text-green\">hotel/resort</span> to stay?"
 msgstr "需要一个<span class=\"text-green\">酒店/度假村</span>住宿？"
@@ -13209,6 +13574,12 @@ msgstr "新的直接合作夥伴"
 #: components/inchat/user/user_create_room.vue
 msgid "New Group {{ selectedNamespace }}"
 msgstr "新组 {{ selectedNamespace }}"
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "No Display Name available."
+msgid "New inTours Feature available!"
+msgstr "沒有可用的昵稱"
 
 #: pages/resources.vue components/growth_calculator/potential_leadership.vue
 msgid "New Members"
@@ -13445,9 +13816,23 @@ msgstr "无加工费！"
 msgid "No Recurring Billing"
 msgstr "無重複計費"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "No redemption point - this is a direct entry ticket"
+msgstr ""
+
 #: components/user/directs.vue
 msgid "No Search Results"
 msgstr "沒有搜索結果"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "The entered authentication code is invalid. Please try again."
+msgid "No tour recommendations found for this cruise. Please try again."
+msgstr "输入的验证码无效。 请再试一次。"
+
+#: components/tours/intours_results.vue
+msgid "No tours found for the selected destination and date range"
+msgstr ""
 
 #: components/booking/add-cd-user.vue
 msgid "No user found with that membership code."
@@ -13614,6 +13999,12 @@ msgstr "未邀請"
 #: components/membership_countdown.vue
 msgid "Not Membership Free"
 msgstr "不是免費會員"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "Donate Now"
+msgid "Not Now"
+msgstr "立即捐款"
 
 #: pages/duplicator.vue
 msgid "Not Opened"
@@ -13951,9 +14342,21 @@ msgstr "公開的: {{ formatDate(invite.lastViewDate) }}"
 msgid "Opened!"
 msgstr "公开的！"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Created by:"
+msgid "Operated by"
+msgstr "由...制作："
+
 #: pages/public/leadership.vue
 msgid "Operations Director"
 msgstr "Operations Director"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Action"
+msgid "Option"
+msgstr "操作"
 
 #: pages/account_setup.vue
 msgid ""
@@ -14047,7 +14450,7 @@ msgstr "我們的價值"
 msgid "OUR VISION"
 msgstr "我們的願景"
 
-#: components/reservation.vue pages/hotel_booking.vue
+#: pages/hotel_booking.vue
 msgid "Out of Pocket"
 msgstr "自付費用"
 
@@ -14116,6 +14519,7 @@ msgstr "套餐"
 #: components/receipts/new_residual_bonus_statement.vue
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue
 msgid "Page"
@@ -14684,6 +15088,10 @@ msgstr "密碼"
 msgid "Passwords do not match!"
 msgstr "密碼不匹配！"
 
+#: components/reservations/reservation-card.vue
+msgid "Past"
+msgstr ""
+
 #: pages/elevate.vue
 msgid "Pay Here"
 msgstr "这里付款"
@@ -14888,6 +15296,10 @@ msgstr "每月。沒有合同。您可以隨時取消。"
 msgid "per night"
 msgstr "每晚"
 
+#: components/tours/tour-card.vue
+msgid "Per person"
+msgstr ""
+
 #: pages/track_growth.vue track_growth/index.html
 msgid "Percent Growth Needed"
 msgstr "需要的增長百分比"
@@ -14960,7 +15372,8 @@ msgid "Personal View"
 msgstr "個人觀點"
 
 #: pages/admin_user.vue pages/contacts.vue pages/elevate_registration.vue
-#: pages/global_summit_2023.vue pages/negative_balances.vue
+#: pages/global_summit_2023.vue pages/intours_confirmation.vue
+#: pages/negative_balances.vue
 #: components/cruises_booking/passenger-info-step.vue
 msgid "Phone"
 msgstr "電話號碼"
@@ -14997,6 +15410,24 @@ msgstr "照片身份證"
 #: components/payout/brightwell/review.vue
 msgid "Pickup details"
 msgstr "详情"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup location"
+msgstr "取款地点"
+
+#: pages/intours_confirmation.vue components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup Location"
+msgstr "取款地点"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup Locations"
+msgstr "取款地点"
 
 #: components/checkout/ProcessorBoacompra.vue
 msgid "Pix"
@@ -15143,6 +15574,12 @@ msgid ""
 "events!"
 msgstr "请下载可用资源并支持您自己的虚拟和现场活动！"
 
+#: pages/intours_confirmation.vue
+msgid ""
+"Please ensure the contact information provided is accurate, as it will be "
+"used for notifications and updates regarding your booked tour."
+msgstr ""
+
 #: components/onboarding/recurring-payment-step.vue
 msgid "Please enter a card for recurring payments."
 msgstr "请输入一张信用卡用于定期支付。"
@@ -15251,6 +15688,12 @@ msgstr "请输入您的电子邮件地址。"
 msgid "Please enter your email and we will send you further instructions:"
 msgstr "請輸入您的電子郵件，我們將向您發送進一步的說明："
 
+#: pages/intours_confirmation.vue components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Please enter your Email"
+msgid "Please enter your pickup location"
+msgstr "請輸入您的電子郵件"
+
 #: components/booking/add-cd-user.vue
 msgid "Please enter your second member 'Unique Membership Code'."
 msgstr "请输入您的第二位会员“唯一会员代码”。"
@@ -15323,7 +15766,14 @@ msgid ""
 "the page."
 msgstr "請提供開始日期和結束日期。 如果沒有，請重置頁面頂部的過濾器。"
 
-#: pages/hotels.vue
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Please provide a valid destination before searching"
+msgid "Please provide a date range before searching"
+msgstr "請在搜索前提供有效的目的地"
+
+#: pages/hotels.vue components/tours/intours_landing.vue
+#: components/tours/intours_results.vue
 msgid "Please provide a valid destination before searching"
 msgstr "請在搜索前提供有效的目的地"
 
@@ -15604,12 +16054,24 @@ msgstr "請稍等，我們正在收集所有可用的郵輪..."
 msgid "Please wait while we gather all available hotels..."
 msgstr "請稍等，我們正在收集所有可用的酒店..."
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Please wait while we gather all available hotels..."
+msgid "Please wait while we gather all available tours..."
+msgstr "請稍等，我們正在收集所有可用的酒店..."
+
 #: pages/cruise.vue
 msgid "Please wait while we gather cruise trip information..."
 msgstr "請稍等，我們正在收集郵輪旅行信息..."
 
 #: pages/hotel_booking.vue pages/hotels_details.vue
 msgid "Please wait while we gather Hotel details."
+msgstr "我們正在收集酒店詳細信息，請稍候。"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Please wait while we gather Hotel details."
+msgid "Please wait while we gather tour details..."
 msgstr "我們正在收集酒店詳細信息，請稍候。"
 
 #: pages/checkout.vue
@@ -15639,7 +16101,7 @@ msgstr "分數"
 msgid "Points"
 msgstr "分數"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Popular Destinations"
 msgstr "熱門目的地"
 
@@ -15689,6 +16151,12 @@ msgstr "郵政編碼："
 #: components/growth_calculator/potential_recurring.vue
 msgid "Potential Active Levels"
 msgstr "潜在的活跃水平"
+
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Potential Future Membership Savings"
+msgid "Potential future membership savings"
+msgstr "潛在的未來會員儲蓄"
 
 #: components/cruise/cruise_savings_info.vue
 msgid "Potential Future Membership Savings"
@@ -15805,14 +16273,20 @@ msgstr "前一年"
 msgid "Previously used passenger:"
 msgstr "以前使用过的乘客："
 
+#: components/filter-chip-range.vue
 #: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/booking/category.vue
 #: components/receipts/hotel_booking_receipt.vue
-#: components/receipts/receipt.vue receipts/hotel_booking_receipt.html
+#: components/receipts/receipt.vue components/receipts/tour_booking_receipt.vue
+#: components/tours/intours_results.vue receipts/hotel_booking_receipt.html
 #: receipts/receipt.html
 msgid "Price"
 msgstr "價錢"
+
+#: components/tours/intours_results.vue
+msgid "Price cannot be negative"
+msgstr ""
 
 #: components/receipts/booking_receipt.vue
 msgid "Price Code"
@@ -15831,7 +16305,8 @@ msgid "Price Higher on Top"
 msgstr "最高價格"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Price Information"
 msgstr "價格信息"
@@ -15848,6 +16323,12 @@ msgstr "价格匹配保证"
 msgid "PRICE MATCH GUARANTEE!"
 msgstr "价格匹配保证！"
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Result Limit must be a number!"
+msgid "Price must be a number"
+msgstr "結果必須是數字！"
+
 #: pages/hotel_booking.vue
 msgid "Price per night:"
 msgstr "每晚價格："
@@ -15855,6 +16336,12 @@ msgstr "每晚價格："
 #: pages/convention_manager.vue
 msgid "Price per Ticket"
 msgstr "每張票價"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Price Range:"
+msgid "Price Range"
+msgstr "價格範圍："
 
 #: pages/hotels.vue
 msgid "Price Range per Night:"
@@ -15883,6 +16370,12 @@ msgstr ""
 #: pages/email_tracking.vue
 msgid "Printed"
 msgstr "已打印"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Archived Tickets"
+msgid "Printed Ticket"
+msgstr "存档的门票"
 
 #: components/booking/cabin_categories.vue
 msgid ""
@@ -16186,7 +16679,7 @@ msgstr "合格会员"
 msgid "Quality of Business Index (QBI)"
 msgstr "商业质量指数（QBI）"
 
-#: pages/leadership_academy.vue
+#: pages/intours_confirmation.vue pages/leadership_academy.vue
 msgid "question"
 msgstr "問題"
 
@@ -16413,13 +16906,9 @@ msgstr "收款人银行详细信息"
 msgid "Recipients"
 msgstr "收件人"
 
-#: pages/multi_factor.vue
+#: pages/multi_factor.vue components/tours/intours_results.vue
 msgid "Recommended"
 msgstr "建议"
-
-#: components/reservation.vue
-msgid "Record Locator"
-msgstr "記錄編號"
 
 #: pages/reports.vue
 #: components/admin_territory_directors/territory_directors.vue
@@ -16466,6 +16955,22 @@ msgstr "循环合格产出"
 #: pages/track_results.vue track_results/index.html
 msgid "Recurring:"
 msgstr "重複："
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Perception"
+msgid "Redemption"
+msgstr "感知"
+
+#: components/reservations/tour-details.vue
+msgid "Redemption Type"
+msgstr ""
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Room Type"
+msgid "Redeption Type"
+msgstr "房間類型"
 
 #: components/checkout/ProcessorBoacompra.vue
 msgid "Redirecting you over to BoaCompra."
@@ -16536,6 +17041,12 @@ msgstr "退款協議統計"
 #: pages/payment_protection.vue
 msgid "Refundable Amount"
 msgstr "可退还金额"
+
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Reminded"
+msgid "Refunded"
+msgstr "提醒"
 
 #: components/covid-disclaimer-reminder.vue
 msgid ""
@@ -16744,7 +17255,8 @@ msgid "Resend SMS"
 msgstr "重发短信"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Reservation Details"
 msgstr "預定詳情"
@@ -16952,7 +17464,7 @@ msgstr "奖励积分返还："
 msgid "Rewards Points:"
 msgstr "獎勵積分："
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Rio de Janeiro"
 msgstr "里约热内卢"
 
@@ -16980,7 +17492,7 @@ msgstr "羅馬尼亞"
 msgid "Romanian Speaking Global Markets"
 msgstr "羅馬尼亞語全球市場"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Rome"
 msgstr "罗马"
 
@@ -17127,7 +17639,7 @@ msgstr "推銷員徽章"
 msgid "sample"
 msgstr "樣品"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Santorini"
 msgstr "圣托里尼"
 
@@ -17136,6 +17648,7 @@ msgstr "圣托里尼"
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 #: components/admin_management/admin_departments.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -17170,12 +17683,14 @@ msgid "SAVINGS GUARANTEE!"
 msgstr "储蓄保证！"
 
 #: pages/communications.vue pages/contacts.vue pages/cruises.vue
-#: pages/hotels.vue pages/hotels_details.vue pages/notifications.vue
-#: pages/resources.vue pages/track_growth.vue pages/webinar_recordings.vue
-#: components/blog/blog_list.vue components/inchat/search/search-people.vue
-#: communications/index.html communications/view.html
-#: email_notifications/index.html track_growth/index.html
-#: webinar_recordings/index.html
+#: pages/hotels.vue pages/hotels_details.vue pages/intours_confirmation.vue
+#: pages/notifications.vue pages/resources.vue pages/track_growth.vue
+#: pages/webinar_recordings.vue components/blog/blog_list.vue
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#: components/inchat/search/search-people.vue
+#: components/tours/details/available-plans.vue communications/index.html
+#: communications/view.html email_notifications/index.html
+#: track_growth/index.html webinar_recordings/index.html
 msgid "Search"
 msgstr "搜索"
 
@@ -17186,6 +17701,13 @@ msgstr "搜索并预订邮轮、酒店和度假村"
 #: pages/hotels.vue components/translations/placeholders.vue
 msgid "Search by city or hotel"
 msgstr "按城市或酒店搜索"
+
+#: pages/intours.vue components/tours/intours_landing.vue
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Search by date"
+msgid "Search by Destination"
+msgstr "根據日期搜索"
 
 #: resources/index.html
 msgid "Search Documents.."
@@ -17210,10 +17732,6 @@ msgstr "搜索姓名或電子郵件."
 #: pages/hotels.vue
 msgid "Search Hotels and Cities:"
 msgstr "搜索酒店和城市："
-
-#: components/reservation.vue
-msgid "Search InStays"
-msgstr "搜索InStays"
 
 #: pages/invite.vue components/translations/placeholders.vue
 msgid "Search Name or Email"
@@ -17255,6 +17773,13 @@ msgstr "搜索房间"
 msgid "Search this month..."
 msgstr "查询本月..."
 
+#: components/welcome_tours_modal.vue
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Search users"
+msgid "Search Tours"
+msgstr "搜索用户"
+
 #: components/inchat/user_list_inchat.vue
 msgid "Search users"
 msgstr "搜索用户"
@@ -17286,7 +17811,14 @@ msgstr "用您的語言查看"
 msgid "See List"
 msgstr "查看列表"
 
-#: components/cards/menu-page-card.vue
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "See More"
+msgid "See more"
+msgstr "查看更多"
+
+#: pages/reservations.vue components/cards/menu-page-card.vue
+#: components/reservations/tour-search.vue
 msgid "See More"
 msgstr "查看更多"
 
@@ -17333,9 +17865,11 @@ msgid "See your certificate here!"
 msgstr "在这里查看您的证书！"
 
 #: pages/admin_department.vue pages/admin_permission_group.vue
-#: components/onboarding/address-step.vue components/user/department.vue
-#: components/user/departments.vue components/user/permission-assignation.vue
+#: pages/intours_confirmation.vue components/onboarding/address-step.vue
+#: components/user/department.vue components/user/departments.vue
+#: components/user/permission-assignation.vue
 #: components/user/permission-group.vue
+#: components/tours/details/available-plans.vue
 msgid "Select"
 msgstr "选择"
 
@@ -17359,6 +17893,12 @@ msgstr "選擇用戶類型"
 #: pages/cruises.vue components/user/departments.vue
 msgid "Select All"
 msgstr "全選"
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Select Option"
+msgid "Select an option"
+msgstr "選擇選項"
 
 #: components/booking/category.vue
 msgid "Select Cabin"
@@ -17414,6 +17954,12 @@ msgstr "選擇您希望收信的電子郵件。"
 #: pages/team_rankings.vue
 msgid "Select Time Period"
 msgstr "選擇時間段"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Select payer"
+msgid "Select travelers"
+msgstr "选择付款人"
 
 #: pages/cards.vue cards/index.html
 msgid "Select your name format:"
@@ -17636,6 +18182,12 @@ msgid ""
 "\">here</a> ."
 msgstr ""
 "设置您的推荐链接<a href=\"/referral_links\" target=\"_blank\">这里</a>。"
+
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+msgid ""
+"Set your price range per person, based on double occupancy to filter cruise "
+"options."
+msgstr ""
 
 #: pages/onboarding.vue
 msgid "Set Your Referral Link"
@@ -18166,6 +18718,7 @@ msgstr "國家/地區"
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/qualified_residual_bonus.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue receipts/booking_receipt.html
 #: receipts/commission_statement.html receipts/daily_member_activation.html
@@ -18199,7 +18752,7 @@ msgstr ""
 "特等舱从 <currency-convert ng-attr-value=\"{{cruisePrice(cruise)}}\" hide="
 "\"true\"/>开始"
 
-#: pages/admin_user_id.vue
+#: pages/admin_user_id.vue pages/reservations.vue
 msgid "Stats"
 msgstr "統計數據"
 
@@ -18301,10 +18854,6 @@ msgstr "訂閱"
 msgid "Success"
 msgstr "成功"
 
-#: components/reservation.vue
-msgid "SUCCESSFUL"
-msgstr "成功的"
-
 #: pages/reports.vue reports/index.html
 msgid "Successful Growth"
 msgstr "成功的成長"
@@ -18350,6 +18899,12 @@ msgstr "超级建设者基础奖金"
 msgid "Super Builders Bonus"
 msgstr "超级建设者奖金"
 
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Agency Reference"
+msgid "Supplier Reference"
+msgstr "機構參考"
+
 #: pages/settings.vue pages/support.vue
 #: components/price_match_guarantee/cruises.vue layouts/no_navigation.html
 #: layouts/compiled/no_navigation.html
@@ -18363,10 +18918,6 @@ msgstr "Support Director"
 #: components/navigation/notifications.vue
 msgid "Support Replied"
 msgstr "已回复支持"
-
-#: components/reservation.vue
-msgid "Support staff has been alerted and is working on getting this resolved."
-msgstr "支持人員已收到，正在努力解決該問題。"
 
 #: pages/admin_user_id.vue
 msgid "Support Tickets"
@@ -18594,7 +19145,8 @@ msgstr "電話號碼：1-888-396-7285"
 msgid "Terms"
 msgstr "条款"
 
-#: pages/elevate.vue pages/payment_protection.vue
+#: pages/elevate.vue pages/intours_confirmation.vue
+#: pages/payment_protection.vue
 msgid "Terms and Conditions"
 msgstr "条款和条件"
 
@@ -19169,9 +19721,21 @@ msgstr ""
 msgid "There are no published courses."
 msgstr "没有已发布的课程。"
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "There are no results for this search."
+msgid "There are no results for these parameters."
+msgstr "此搜索沒有結果"
+
 #: pages/hotels.vue
 msgid "There are no results for this search."
 msgstr "此搜索沒有結果"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "There was a problem with your promotion code. Please try again."
+msgid "There are no tour recommendations right now. Please try again later."
+msgstr "您的促销代码出现了问题，请再试一次。"
 
 #: components/public/Faq.vue
 msgid ""
@@ -19310,6 +19874,26 @@ msgstr "您的請求有誤，請重試。"
 #: pages/global_summit_2023.vue
 msgid "There was an error. Plaese reload the page."
 msgstr "有一个错误。 请重新加载页面。"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There was a problem with your promotion code. Please try again."
+msgid "There was an issue continueing with your booking. Please try again."
+msgstr "您的促销代码出现了问题，请再试一次。"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There has been an error. Please reload the page and try again."
+msgid ""
+"There was an issue initializing your checkout. Please reaload the page and "
+"try again."
+msgstr "出现错误。 请刷新页面，然后再试一次。"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There was an error with your request, please try again."
+msgid "There was an issue initializing your checkout. Please try again."
+msgstr "您的請求有誤，請重試。"
 
 #: pages/payout.vue
 msgid "There was an issue processing your payout. Please contact support."
@@ -19496,6 +20080,7 @@ msgstr "他们收到"
 msgid "Things like:"
 msgstr "像："
 
+#: pages/intours_confirmation.vue pages/intours_details.vue
 #: components/booking/limited_time_offer_card.vue
 #: components/compensation/account_status.vue
 msgid "this"
@@ -19581,6 +20166,10 @@ msgid ""
 "admins."
 msgstr "此操作将从该部门和所有管理员中删除该权限组。"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "This Activity Includes"
+msgstr ""
+
 #: components/agreements/national_director_agreement.vue
 msgid ""
 "This Addendum (the “Addendum”) constitutes an addendum to the inCruises "
@@ -19638,6 +20227,12 @@ msgstr "该奖项旨在表彰 inCruises 全球超过 70,000 名活跃推荐合�
 #: pages/builders_base.vue
 msgid "This bonus rewards rank leaders"
 msgstr "这个奖金会奖励给排名靠前的人"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "This booking is non-refundable."
+msgid "This booking is non-refunable."
+msgstr "此預訂不可退款。"
 
 #: components/booking/agreements.vue
 msgid ""
@@ -20070,9 +20665,25 @@ msgstr "新票 ID"
 msgid "Ticket Question:"
 msgstr "问题："
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "Tickets can be redeemed at this product's starting point"
+msgstr ""
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid ""
+"Tickets can be redeemed from a location other than the product's starting "
+"point"
+msgstr ""
+
 #: components/admin_support_analytics/modals/show_ticket.vue
 msgid "Tickets for <u>{{ data.name }}</u> on <u>{{ data.dateRange }}</u>"
 msgstr "<u>{{ data.name }}</u>的票，在<u>{{ data.dateRange }}</u>"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid ""
+"Tickets will be delivered post-booking by email; or, physically delivered to "
+"the customer or the customer's hotel"
+msgstr ""
 
 #: pages/global_summit_2024.vue
 msgid "Tiebreaker"
@@ -20081,6 +20692,16 @@ msgstr "决胜局"
 #: pages/global_summit_2023.vue pages/global_summit_dr.vue
 msgid "Tiebreaker:"
 msgstr "决胜局："
+
+#: Course Answers
+msgid "Time"
+msgstr "時間"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Departure"
+msgid "Time Before Departure"
+msgstr "出發"
 
 #: pages/track_growth.vue track_growth/index.html
 msgid "Time Frame"
@@ -20484,6 +21105,12 @@ msgstr "前 7 名董事会 - 赢得留任。"
 msgid "Top 8 Executive Directors - Win the stay."
 msgstr "前 8 位Executive Directors - 赢得住宿。"
 
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "Top Activities"
+msgstr "活动"
+
 #: pages/partner_success.vue
 msgid "Top Partners"
 msgstr "顶级合作伙伴"
@@ -20496,11 +21123,13 @@ msgstr "最佳制作人"
 msgid "total"
 msgstr "合計"
 
-#: pages/hotel_booking.vue pages/payment_protection.vue pages/track_growth.vue
+#: pages/hotel_booking.vue pages/intours_confirmation.vue
+#: pages/payment_protection.vue pages/track_growth.vue
 #: components/compensation/qbi.vue components/price_match_guarantee/cruises.vue
 #: components/receipts/booking_receipt.vue
 #: components/receipts/italian_commission.vue
-#: components/receipts/italian_receipt.vue receipts/booking_receipt.html
+#: components/receipts/italian_receipt.vue
+#: components/reservations/tour-details.vue receipts/booking_receipt.html
 #: receipts/italian_commission.html receipts/italian_receipt.html
 #: track_growth/index.html upgrade/index.html
 msgid "Total"
@@ -20595,9 +21224,21 @@ msgstr "會員總數（{{count}}）"
 msgid "Total Members (%{ count })"
 msgstr "会员总数 (%{ count })"
 
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Total Membership Dues Paid"
+msgid "Total membership dues paid"
+msgstr "已支付的會費總額"
+
 #: components/cruise/cruise_savings_info.vue
 msgid "Total Membership Dues Paid"
 msgstr "已支付的會費總額"
+
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Total Membership Savings Realized"
+msgid "Total membership savings realized"
+msgstr "實現的總會員節省"
 
 #: components/cruise/cruise_savings_info.vue
 msgid "Total Membership Savings Realized"
@@ -20720,6 +21361,31 @@ msgstr "总共："
 #: components/install-pwa-banner.vue
 msgid "Touch"
 msgstr "触碰"
+
+#: pages/admin_booking.vue components/admin_booking/tour_bookings.vue
+#, fuzzy
+#| msgid "Future Bookings"
+msgid "Tour Bookings"
+msgstr "未來預訂"
+
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "More Details"
+msgid "Tour Details"
+msgstr "更多細節"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "More Info"
+msgid "Tour Info"
+msgstr "更多信息"
+
+#: BookingTopBar.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
+#, fuzzy
+#| msgid "hours"
+msgid "Tours"
+msgstr "小時"
 
 #: Menu
 msgid "Track Growth"
@@ -20890,6 +21556,24 @@ msgstr "旅行体验！"
 msgid "Travel places"
 msgstr "旅游地点"
 
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "TRAVEL"
+msgid "TRAVELER"
+msgstr "旅行"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Cash Pickup"
+msgid "Traveler Pickup"
+msgstr "现金提取"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Travel places"
+msgid "Travelers"
+msgstr "旅游地点"
+
 #: pages/public/reviews.vue
 msgid ""
 "Traveling is the best thing that happens to us, and inCruises gives us that "
@@ -20973,6 +21657,10 @@ msgstr "UnionPay"
 #: pages/reward_points.vue pages/settings.vue
 msgid "Unique Membership Code"
 msgstr "唯一會員代碼"
+
+#: pages/intours_confirmation.vue
+msgid "Unit"
+msgstr ""
 
 #: components/info-reminder.vue
 msgid "Unit or Apt #"
@@ -21347,6 +22035,7 @@ msgstr "烏茲別克"
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 msgid "Value"
 msgstr "价值"
 
@@ -21396,6 +22085,12 @@ msgstr "验证"
 #: pages/settings.vue
 msgid "Verify Phone Number"
 msgstr "驗證電話號碼"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Transfer details"
+msgid "Verify tour details"
+msgstr "转账详情"
 
 #: components/checkout/ItalianStep.vue
 msgid "Verify Your Information"
@@ -21526,6 +22221,12 @@ msgstr "查看清单"
 msgid "View More"
 msgstr "查看更多"
 
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "View More"
+msgid "View More Photos"
+msgstr "查看更多"
+
 #: notification_settings/index.html
 msgid "View Notifications"
 msgstr "查看通知"
@@ -21550,13 +22251,10 @@ msgstr "查看計劃"
 msgid "View Previous Compensation"
 msgstr "查看以前的報酬"
 
-#: pages/receipts.vue
+#: pages/receipts.vue components/reservations/reservation-card.vue
+#: components/reservations/tour-details.vue
 msgid "View Receipt"
 msgstr "查看收據"
-
-#: components/reservation.vue
-msgid "View Refund Form"
-msgstr "查看退款表"
 
 #: components/booking/cabin_categories.vue
 msgid "View Rooms"
@@ -21654,6 +22352,12 @@ msgstr "数量"
 #: pages/builders_base.vue
 msgid "Volume is not final"
 msgstr "数量不是最终的"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Touch"
+msgid "Voucher"
+msgstr "触碰"
 
 #: components/support/TicketList.vue
 msgid "Waiting for Support"
@@ -21922,6 +22626,10 @@ msgid ""
 msgstr ""
 "我們需要您通過重新輸入卡來確認您的詳細信息，或輸入新卡以通過Trust My Travel "
 "(TMT)支付月度會員資格。"
+
+#: components/welcome_tours_modal.vue
+msgid "We noticed you have an upcoming cruise booked:"
+msgstr ""
 
 #: pages/public/causes.vue
 msgid ""
@@ -22920,6 +23628,12 @@ msgstr "您無權訪問此功能。"
 msgid "You do not have any conversation."
 msgstr "你们没有任何对话。"
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "You do not have any saved recipient accounts."
+msgid "You do not have any favorite tours"
+msgstr "您没有任何已保存的收件人帐户。"
+
 #: components/payout/brightwell/recipient-account.vue
 msgid "You do not have any saved recipient accounts."
 msgstr "您没有任何已保存的收件人帐户。"
@@ -23459,6 +24173,12 @@ msgstr "您的购物车有效时间为 15 分钟，您必须在 %{date}之前完
 msgid "Your Bonus"
 msgstr "您的獎金"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Your booking session has expired. Please start over."
+msgid "Your booking has expired. Please try again."
+msgstr "您的預訂會話已過期。 請重新開始。"
+
 #: components/receipts/booking_receipt.vue
 msgid ""
 "Your booking reference number is {{ bookingDetails.cruise_confirmation }}. "
@@ -23624,6 +24344,10 @@ msgstr "您的活動"
 msgid ""
 "Your first transfer to PayQuicker is subject to a $4 USD card issuing charge."
 msgstr "您首次轉入PayQuicker需要支付4美元的手續費。"
+
+#: components/tours/intours_landing.vue
+msgid "Your from must be earlier than your to date"
+msgstr ""
 
 #: components/mercy-ship-modals.vue
 msgid ""
@@ -30383,10 +31107,6 @@ msgid "Energy"
 msgstr "能源"
 
 #: Course Answers
-msgid "Time"
-msgstr "時間"
-
-#: Course Answers
 msgid ""
 "Spend long stretches of time focused on their craft. Refuse to pick up every "
 "incoming phone call."
@@ -34609,6 +35329,49 @@ msgstr "7 晚 塔兰托 地中海之旅"
 msgid "10% off Virgin Voyage"
 msgstr "Virgin Voyage 享受 10% 折扣"
 
+#~ msgid "%{ guests } Guests"
+#~ msgstr "%{ guests } 客人"
+
+#~ msgid "Active Bookings"
+#~ msgstr "有效预订"
+
+#~ msgid "Below you will find the status of your reservations."
+#~ msgstr "您将在下方找到您的预订状态。"
+
+#~ msgid "CANCELLED"
+#~ msgstr "已取消"
+
+#~ msgid "Cruises & Hotels Stats"
+#~ msgstr "郵輪和酒店統計"
+
+#~ msgid "Depart Location"
+#~ msgstr "出發地點"
+
+#~ msgid "Failed"
+#~ msgstr "失败"
+
+#~ msgid "FAILED"
+#~ msgstr "失败的"
+
+#~ msgid "Need a <span class=\"bold\"> hotel/resort </span> to stay?"
+#~ msgstr "需要一个<span class=\"bold\">酒店/度假村</span>住宿？"
+
+#~ msgid "Record Locator"
+#~ msgstr "記錄編號"
+
+#~ msgid "Search InStays"
+#~ msgstr "搜索InStays"
+
+#~ msgid "SUCCESSFUL"
+#~ msgstr "成功的"
+
+#~ msgid ""
+#~ "Support staff has been alerted and is working on getting this resolved."
+#~ msgstr "支持人員已收到，正在努力解決該問題。"
+
+#~ msgid "View Refund Form"
+#~ msgstr "查看退款表"
+
 #~ msgid "Europe and Central Asia"
 #~ msgstr "欧洲和中亚"
 
@@ -34844,9 +35607,6 @@ msgstr "Virgin Voyage 享受 10% 折扣"
 
 #~ msgid "Again, <strong>Super Builders Base Bonus</strong> is uncapped!"
 #~ msgstr "再强调一次，<strong>超级建设者基本奖金</strong>是不封顶的！"
-
-#~ msgid "My Travel Savings"
-#~ msgstr "我的旅行储蓄"
 
 #~ msgid ""
 #~ "Please click <a href=\"%{tmtFinancialProtection}\" target=\"_blank"
@@ -36487,9 +37247,6 @@ msgstr "Virgin Voyage 享受 10% 折扣"
 #~ msgid "Book Last Minute"
 #~ msgstr "最后一刻预订"
 
-#~ msgid "Donate Now"
-#~ msgstr "立即捐款"
-
 #~ msgid "Go to page"
 #~ msgstr "转到页面"
 
@@ -36891,9 +37648,6 @@ msgstr "Virgin Voyage 享受 10% 折扣"
 
 #~ msgid "Cruise Itinerary"
 #~ msgstr "郵輪行程"
-
-#~ msgid "Departure"
-#~ msgstr "出發"
 
 #~ msgid "InCruises Membership Savings"
 #~ msgstr "inCruises會員儲蓄"
@@ -38379,9 +39133,6 @@ msgstr "Virgin Voyage 享受 10% 折扣"
 #~ msgid "Click here to filter nights"
 #~ msgstr "點擊這裡過濾天數"
 
-#~ msgid "Price Range:"
-#~ msgstr "價格範圍："
-
 #~ msgid ""
 #~ "<span class=\"h3\">${{ calculateNightlyRate(hotel.sellingRate) }}</span>\n"
 #~ "\t\t\t\t\t\t\t\t\t\t\t\t<sub v-translate=\"\">/ night</sub>"
@@ -39064,9 +39815,6 @@ msgstr "Virgin Voyage 享受 10% 折扣"
 #~ msgid "Rewards"
 #~ msgstr "獎勵"
 
-#~ msgid "Search by date"
-#~ msgstr "根據日期搜索"
-
 #~ msgid ""
 #~ "Success as an inCruises Partner can be measured in a variety of ways. To "
 #~ "some people, success will be meeting and networking with like-minded "
@@ -39117,9 +39865,6 @@ msgstr "Virgin Voyage 享受 10% 折扣"
 
 #~ msgid "TO TRAVEL"
 #~ msgstr "去旅行"
-
-#~ msgid "TRAVEL"
-#~ msgstr "旅行"
 
 #~ msgid ""
 #~ "We believe you can! By launching your business and successfully referring "
@@ -39855,9 +40600,6 @@ msgstr "Virgin Voyage 享受 10% 折扣"
 
 #~ msgid "Child #{{ index + 1 }} Age"
 #~ msgstr "兒童 #{{$index + 1}} 年齡"
-
-#~ msgid "Category"
-#~ msgstr "類別"
 
 #~ msgid "Western Union"
 #~ msgstr "西聯匯款"
@@ -42900,9 +43642,6 @@ msgstr "Virgin Voyage 享受 10% 折扣"
 #~ msgid "Adding to Watch List"
 #~ msgstr "加入到候選列表"
 
-#~ msgid "Arrive Time"
-#~ msgstr "抵達時間"
-
 #~ msgid "Availability and Checkout"
 #~ msgstr "可用性並結帳"
 
@@ -42938,9 +43677,6 @@ msgstr "Virgin Voyage 享受 10% 折扣"
 #~ msgid "Classes And Services"
 #~ msgstr "類別和服務"
 
-#~ msgid "Click here to view Cancellation Policy"
-#~ msgstr "點擊此處查看取消政策"
-
 #~ msgid "Cruise Booking Agreement"
 #~ msgstr "郵輪預定協議"
 
@@ -42949,9 +43685,6 @@ msgstr "Virgin Voyage 享受 10% 折扣"
 
 #~ msgid "Dining"
 #~ msgstr "餐飲"
-
-#~ msgid "Duration"
-#~ msgstr "持續時間"
 
 #~ msgid "Gender"
 #~ msgstr "性別"

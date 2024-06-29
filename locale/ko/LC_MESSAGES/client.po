@@ -52,7 +52,8 @@ msgstr "10"
 msgid "2023"
 msgstr "2023년"
 
-#: pages/courses.vue
+#: pages/courses.vue pages/intours_details.vue
+#: components/reservations/tour-details.vue
 msgid "_ctx"
 msgstr "_ctx"
 
@@ -264,6 +265,10 @@ msgid ""
 msgstr ""
 "“카리브해에서 최선, 최고, 최초를 원한다면 카사 데 캄포 경험이 당신을 기다립니"
 "다.”"
+
+#: pages/intours_confirmation.vue
+msgid "({{ traveler.ageBand }})"
+msgstr ""
 
 #: pages/hotel_booking.vue
 msgid "(1 For 1)"
@@ -521,6 +526,12 @@ msgstr "{{ getRecipientAccountFieldName(recipientAccountField) }}"
 msgid "{{ getRecipientAccountFieldValue(recipientAccountField) }}"
 msgstr "{{ getRecipientAccountFieldValue(recipientAccountField) }}"
 
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "{{ videoDescription }}"
+msgid "{{ getTravelerDescription() }}"
+msgstr "{{ videoDescription }}"
+
 #: components/accordion.vue
 msgid "{{ item.body }}"
 msgstr "{{ item.body }}"
@@ -529,9 +540,25 @@ msgstr "{{ item.body }}"
 msgid "{{ item.title }}"
 msgstr "{{ item.title }}"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "{{ course.description }}"
+msgid "{{ itineraryItem.description }}"
+msgstr "{{ course.description }}"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "{{ itineraryItem.pointOfInterestLocation.location.name }}"
+msgstr ""
+
 #: pages/reports.vue pages/track_results.vue
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
+
+#: pages/intours_details.vue
+msgid ""
+"{{ pricingInfo.ageBands.length == 1 ? $gettext('TRAVELER') : ageBand."
+"ageBand }} {{ ageBand.label }}"
+msgstr ""
 
 #: pages/courses.vue
 msgid "{{ question.question }}"
@@ -870,10 +897,6 @@ msgstr "%{ cd_used } 리워드 포인트"
 msgid "%{ city }"
 msgstr "%{ 도시 }"
 
-#: components/reservation.vue
-msgid "%{ guests } Guests"
-msgstr "%{ guests }명의 손님"
-
 #: pages/cruises.vue pages/hotels.vue
 msgid "%{ length } results match your criteria."
 msgstr "%{ length } 선택목록에 따른 결과."
@@ -914,14 +937,10 @@ msgstr "%{ name }, 이제 연락처 불러오기를 하십시오"
 msgid "%{ night } Nights"
 msgstr "%{ night } 박"
 
-#: components/reservation.vue pages/cruise.vue
-#: components/cruises_booking/cruise-header-details.vue
+#: pages/cruise.vue components/cruises_booking/cruise-header-details.vue
+#: components/reservations/reservation-card.vue
 msgid "%{ nights } Nights"
 msgstr "%{ nights } 박"
-
-#: components/reservation.vue
-msgid "%{ passengers } Passengers"
-msgstr "%{ passengers }명의 승객"
 
 #: components/receipts/hotel_booking_receipt.vue
 msgid "%{ points_used } Reward Points"
@@ -942,6 +961,24 @@ msgstr "%{ start }에서 %{ end }까지"
 #: pages/hotel_booking.vue
 msgid "%{ state }"
 msgstr "%{ 주/시 }"
+
+#: components/reservations/tour-search.vue
+msgid "%{activitiesNum} activities"
+msgstr ""
+
+#: components/reservations/tour-search.vue
+msgid "%{activitiesNum} activities found"
+msgstr ""
+
+#: components/reservations/reservation-card.vue
+msgid "%{adultCount} Adults · %{childCount} Childs"
+msgstr ""
+
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "%{ passengers } Passengers"
+msgid "%{adultCount} passengers"
+msgstr "%{ passengers }명의 승객"
 
 #: components/compensation/residual_bonus.vue
 msgid "%{currentMonthName} Recurring Bonus"
@@ -995,6 +1032,12 @@ msgstr "+ 권한 그룹 추가"
 #: pages/admin_permission_group.vue
 msgid "+ Add Permissions"
 msgstr "+ 권한 추가"
+
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "+150 Activities"
+msgstr "활동"
 
 #: pages/email.vue
 msgid ""
@@ -1075,6 +1118,13 @@ msgid ""
 msgstr ""
 "<%- gettext(\"개인=\"\" 의=\"\" 성장=\"\" 과=\"\" 발전=\"\" 은=\"\" 리더="
 "\"\" 성공=\"\" 의=\"\" 핵심=\"\" 입니다.\")=\"\" %=\"\"> </%->"
+
+#: components/reservations/tour-details.vue
+msgid ""
+"<a :href=\"`${voucherInfo.url}`\" class=\"grow shrink\" target=\"_blank\"> "
+"<Button class=\"rounded-xl\" size=\"medium\" :label=\"$gettext('Get Your "
+"Ticket')\" :full=\"true\" base=\"solid\" variant=\"primary\"/> </a>"
+msgstr ""
 
 #: pages/public/reviews.vue
 msgid ""
@@ -1471,6 +1521,10 @@ msgid ""
 msgstr ""
 "<img class=\"flag\" :src=\"sourceCountryFlagImg\"/> {{ transferDetails."
 "sourceCountryAndCurrency.currency.code }}"
+
+#: components/tours/details/available-plans.vue
+msgid "<MapPin/> Pickup point"
+msgstr ""
 
 #: components/cruises_booking/reward-points-confirm-step.vue
 #: components/cruises_booking/reward-points-step.vue
@@ -1965,6 +2019,24 @@ msgstr ""
 "<strong>자세한 내용</strong>: %{adults} 성인, %{children} 어린이 | %{nights} "
 "박"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>%{ hotelName }</strong>"
+msgid "<strong>Pickup Point</strong>:"
+msgstr "<strong>%{호텔명 }</strong>"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>Departing on</strong>: %{ cruiseOn }"
+msgid "<strong>Start Date</strong>: %{ startDate }"
+msgstr "<strong>출발날짜</strong>: %{ 승선크루즈 }"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "<strong>Departing on</strong>: %{ cruiseOn }"
+msgid "<strong>Start Time</strong>: %{ startTime }"
+msgstr "<strong>출발날짜</strong>: %{ 승선크루즈 }"
+
 #: pages/elevate.vue
 msgid ""
 "<svg style=\"fill: #c0c0c0\" id=\"Layer_1\" width=\"20\" xmlns=\"http://www."
@@ -2171,6 +2243,12 @@ msgstr "1대 1 리워드 포인트 잔액"
 msgid "1 for 1 Reward Points Logs"
 msgstr "1대 1 리워드 포인트 로그"
 
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "1 for 1 Reward Points Match"
+msgid "1 for 1 reward points match"
+msgstr "1대 1 리워드 포인트 매치"
+
 #: components/cruise/cruise_savings_info.vue
 msgid "1 for 1 Reward Points Match"
 msgstr "1대 1 리워드 포인트 매치"
@@ -2373,6 +2451,12 @@ msgstr "최대 10레벨까지 각 신규 파트너 멤버 활성화에 대해 30
 #: pages/builders_base.vue
 msgid "30% bonus"
 msgstr "30% 보너스"
+
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "150,000+ Global Destinations are Waiting for You!"
+msgid "300,000+ Tours and experiences are waiting for you"
+msgstr "전세계적으로 150,000개 이상의 여행지가 준비되어 있습니다!"
 
 #: income_disclosure/index.html
 msgid "4 - 6 months"
@@ -2611,6 +2695,12 @@ msgstr ""
 msgid "About"
 msgstr "회사 소개"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Login Activity"
+msgid "About This Activity"
+msgstr "로그인 활동"
+
 #: Footer.vue components/public/FooterLinks.vue pages/public/about.vue
 msgid "About Us"
 msgstr "회사 소개"
@@ -2619,7 +2709,8 @@ msgstr "회사 소개"
 msgid "Abu Dhabi"
 msgstr "아부 다비"
 
-#: pages/account_setup.vue components/inchat/disclaimer_modal.vue
+#: pages/account_setup.vue pages/intours_confirmation.vue
+#: components/inchat/disclaimer_modal.vue
 msgid "Accept"
 msgstr "수락합니다"
 
@@ -2773,10 +2864,6 @@ msgstr "이 달의 활성화"
 msgid "Active"
 msgstr "활성화"
 
-#: pages/reservations.vue
-msgid "Active Bookings"
-msgstr "활성 예약"
-
 #: pages/track_results.vue
 msgid "Active Members"
 msgstr "활성화 멤버"
@@ -2805,6 +2892,12 @@ msgstr "활성화 기간:"
 
 #: components/inchat/emoji/emoji_modal.vue
 msgid "Activities"
+msgstr "활동"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "Activities found"
 msgstr "활동"
 
 #: components/inchat/user_room_actions.vue components/user/user_notes.vue
@@ -2959,6 +3052,18 @@ msgstr "Trust My Travel (TMT) 보호 보증을 받으려면 자동 프로필을 
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Added"
 msgstr "추가"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Additional Details"
+msgstr "가입안내 세부정보"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Additional Info"
+msgid "Additional info"
+msgstr "추가 정보"
 
 #: components/info-reminder.vue pages/receipts.vue
 msgid "Additional Info"
@@ -3178,15 +3283,11 @@ msgid "Alipay"
 msgstr "Alipay(알리페이)"
 
 #: pages/admin_support_analytics.vue pages/hotels.vue pages/info_center.vue
-#: pages/leadership_academy.vue pages/reports.vue pages/reservations.vue
-#: pages/team_rankings.vue pages/track_results.vue components/user/timeline.vue
-#: reports/index.html track_results/index.html
+#: pages/leadership_academy.vue pages/reports.vue pages/team_rankings.vue
+#: pages/track_results.vue components/user/timeline.vue reports/index.html
+#: track_results/index.html
 msgid "All"
 msgstr "전부"
-
-#: pages/reservations.vue
-msgid "All Bookings"
-msgstr "모든 예약"
 
 #: pages/admin_blog.vue pages/resources.vue components/blog/blog_list.vue
 msgid "All Categories"
@@ -3286,6 +3387,12 @@ msgstr "모든 질문에 바르게 대답하셨습니다"
 #: pages/global_summit_2024.vue
 msgid "All Ranks"
 msgstr "모든 직급"
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "Reservations"
+msgid "All Reservations"
+msgstr "예약"
 
 #: pages/admin_blog.vue
 msgid "All Sections"
@@ -3736,7 +3843,8 @@ msgstr "적용 가능성"
 msgid "Applicant Signature"
 msgstr "지원자 서명"
 
-#: pages/checkout.vue
+#: components/filter-chip-range.vue pages/checkout.vue
+#: pages/intours_details.vue components/tours/intours_results.vue
 msgid "Apply"
 msgstr "적용"
 
@@ -4015,9 +4123,21 @@ msgstr ""
 msgid "Astana, Kazakhstan"
 msgstr "아스타나, 카자흐스탄"
 
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "data"
+msgid "at"
+msgstr "데이타"
+
 #: pages/email.vue
 msgid "At"
 msgstr "에서"
+
+#: components/reservations/tour-search.vue
+#, fuzzy
+#| msgid "Arrive Time"
+msgid "at %{arriveTime}"
+msgstr "도착 시간"
 
 #: components/covid-disclaimer-reminder.vue
 msgid ""
@@ -4198,6 +4318,12 @@ msgstr "인출 가능 잔액"
 msgid "Available Cabins"
 msgstr "이용가능한 객실"
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Available Cabins"
+msgid "Available plans"
+msgstr "이용가능한 객실"
+
 #: pages/reward_points.vue
 msgid "Available Rewards"
 msgstr "사용 가능한 보상"
@@ -4251,8 +4377,8 @@ msgstr "b. 내셔널 디렉터"
 msgid "b. Time of the Essence"
 msgstr "b. 절대적으로 중요한 시간"
 
-#: pages/courses.vue pages/leadership_academy.vue pages/multi_factor.vue
-#: components/agreements/italian_agreement.vue
+#: pages/courses.vue pages/intours_details.vue pages/leadership_academy.vue
+#: pages/multi_factor.vue components/agreements/italian_agreement.vue
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
 #: components/onboarding/address-step.vue
@@ -4261,6 +4387,8 @@ msgstr "b. 절대적으로 중요한 시간"
 #: components/onboarding/import-contacts.vue
 #: components/onboarding/recurring-payment-step.vue
 #: components/onboarding/referral-link-step.vue
+#: components/reservations/tour-details.vue
+#: components/reservations/tour-search.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
 #: components/payout/brightwell/recipient-card-details.vue
@@ -4440,10 +4568,6 @@ msgstr "로스 페로의 일렉트로닉 데이터 시스템(EDS)에서 직업 �
 #: pages/menu_page.vue
 msgid "Below you will find the status of your hotels & cruise reservations."
 msgstr "아래에서 호텔과 크루즈 예약 상태를 확인할 수 있습니다."
-
-#: pages/reservations.vue
-msgid "Below you will find the status of your reservations."
-msgstr "아래에서 예약 상태를 확인할 수 있습니다."
 
 #: Drop Down Destination List
 msgid "Bermuda"
@@ -4710,7 +4834,7 @@ msgstr ""
 "Costa 크루즈의 막바지 놀라운 상품을 예약하고 이번 여름과 가을에 여행을 떠나세"
 "요 !"
 
-#: pages/hotels_details.vue
+#: pages/hotels_details.vue components/tours/details/available-plans.vue
 msgid "Book now"
 msgstr "지금 예약하기"
 
@@ -4730,7 +4854,7 @@ msgstr "안심하고 예약하세요"
 msgid "Book with Reward Points, have total confidence!"
 msgstr "안심하고 리워드 포인트로 예약하세요!"
 
-#: components/reservation.vue
+#: components/reservations/reservation-card.vue
 msgid "Booked"
 msgstr "예약됨"
 
@@ -4747,12 +4871,14 @@ msgid "Booking Payments #{{ booking.global_booking_id }}"
 msgstr "예약 결제 #{{ booking.global_booking_id }}"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Booking Receipt"
 msgstr "예약 영수증"
 
 #: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Booking Reference"
 msgstr "예약 번호"
@@ -4766,10 +4892,17 @@ msgstr "예약 보고서"
 msgid "Booking Review"
 msgstr "예약 검토"
 
-#: pages/admin_booking.vue
+#: pages/admin_booking.vue components/admin_booking/admin_booking_stats.vue
 msgid "Booking Stats"
 msgstr "예약 상태"
 
+#: pages/intours_confirmation.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Booking Cost"
+msgid "Booking summary"
+msgstr "예약 비용"
+
+#: pages/intours_confirmation.vue
 #: components/cruises_booking/confirmation-step.vue
 msgid "Booking Terms & Conditions"
 msgstr "예약 이용 약관"
@@ -4937,6 +5070,13 @@ msgstr ""
 "\"partnerAgreement\" class=\"underline\" href=\"%{partnerAgreement}\" target="
 "\"_blank\">독립 파트너 계약서</a>의 약관에 동의하게 됩니다"
 
+#: pages/reservations.vue
+msgid ""
+"By clicking on “Search tours”, easily explore tours and activities matching "
+"your booked cruise dates and destinations!"
+msgstr ""
+
+#: pages/intours_confirmation.vue
 #: components/cruises_booking/confirmation-step.vue
 msgid ""
 "By completing my booking, I understand and accept all associated Terms and "
@@ -5230,8 +5370,9 @@ msgstr "캐나다 / 뉴잉글랜드"
 #: components/fast-growing-legs.vue pages/admin_department.vue
 #: pages/admin_permission.vue pages/admin_permission_group.vue
 #: pages/checkout.vue pages/connect.vue pages/cruises_booking.vue
-#: pages/email.vue pages/invoices.vue pages/reports.vue pages/settings.vue
-#: pages/subscriptions.vue components/admin_booking/admin_cruise_featured.vue
+#: pages/email.vue pages/intours_details.vue pages/invoices.vue
+#: pages/reports.vue pages/settings.vue pages/subscriptions.vue
+#: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
 #: components/admin_management/admin_departments.vue
@@ -5292,15 +5433,11 @@ msgstr "취소 정책"
 msgid "Cancellation Warning"
 msgstr "취소 경고"
 
-#: components/reservation.vue
+#: components/reservations/reservation-card.vue
 msgid "Cancelled"
 msgstr "철회됨"
 
-#: components/reservation.vue
-msgid "CANCELLED"
-msgstr "취소"
-
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Cancun"
 msgstr "칸쿤"
 
@@ -5383,6 +5520,17 @@ msgstr "현금 인출 위치"
 #: webinar_recordings/index.html
 msgid "Catalan"
 msgstr "카탈로니아어"
+
+#: components/welcome_tours_modal.vue pages/intours.vue
+#: components/reservations/tour-search.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Category"
+msgid "category"
+msgstr "카테고리"
+
+#: components/tours/intours_results.vue
+msgid "Category"
+msgstr "카테고리"
 
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Category Type"
@@ -5484,6 +5632,10 @@ msgid ""
 "Check out our upcoming events including webinars, meetings, and regional "
 "conventions."
 msgstr "예정된 웹 세미나, 회의 및 지역 대회 등의 일정을 확인하십시오."
+
+#: components/welcome_tours_modal.vue
+msgid "Check out the following perfect pairing tours we have for you:"
+msgstr ""
 
 #: pages/welcome.vue
 msgid ""
@@ -5642,6 +5794,7 @@ msgid "Choose your referrer:"
 msgstr "리퍼러를 선택하십시오:"
 
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Cities Visited"
 msgstr "방문한 도시들"
 
@@ -5668,6 +5821,12 @@ msgstr "도시:"
 msgid "Claim Connect 5"
 msgstr "커넥트 5 요청"
 
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Insurance"
+msgid "Claim Insurance"
+msgstr "보험"
+
 #: power_tools_upgrade/index.html
 msgid "Claim Power Tools"
 msgstr "파워 툴 청구"
@@ -5675,6 +5834,14 @@ msgstr "파워 툴 청구"
 #: Gender
 msgid "Classic"
 msgstr "클래식"
+
+#: components/filter-chip-range.vue
+msgid "clear"
+msgstr ""
+
+#: components/filter-chip-dropdown.vue components/tours/intours_results.vue
+msgid "Clear"
+msgstr ""
 
 #: pages/cruises.vue pages/hotels.vue
 msgid "Clear All Filters"
@@ -5779,6 +5946,18 @@ msgstr "가입하시려면 여기를 클릭하십시오"
 msgid "click here to start"
 msgstr "시작하려면 여기를 클릭하십시오"
 
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Click here to view Cancellation Policy"
+msgid "Click here to view meeting point"
+msgstr "취소 정책을 보려면 여기를 클릭하십시오"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Click here to learn more"
+msgid "Click here to view voucher"
+msgstr "더 배우려면 여기를 클릭하십시오"
+
 #: components/inchat/lists/room_list.vue
 msgid "Click to create a group."
 msgstr "그룹을 생성하려면 클릭하세요."
@@ -5813,6 +5992,12 @@ msgstr "클라이언트 구성"
 #: old_compensation/index.html
 msgid "Close"
 msgstr "닫기"
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "More Details"
+msgid "Close Details"
+msgstr "세부 정보"
 
 #: pages/hotels.vue
 msgid "Close Filter"
@@ -5966,6 +6151,12 @@ msgstr "확인"
 #: pages/reward_points.vue
 msgid "Confirm Amount"
 msgstr "금액 확인"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Funds availability:"
+msgid "Confirm availability"
+msgstr "자금 가용성 :"
 
 #: components/birthdate-reminder.vue components/payout/birthday-modal.vue
 msgid "Confirm Birthdate"
@@ -6173,6 +6364,12 @@ msgstr "메일 문의:"
 msgid "Contact Information"
 msgstr "연락처 정보"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Contact Information"
+msgid "Contact Information And Tour Details"
+msgstr "연락처 정보"
+
 #: Footer.vue components/public/FooterLinks.vue pages/public/contact.vue
 msgid "Contact Us"
 msgstr "고객센터"
@@ -6220,6 +6417,12 @@ msgstr "진행"
 #: components/checkout/ProcessorTrustly.vue
 msgid "Continue Payment Below"
 msgstr "아래에서 결제 계속 지불 하십시오"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Continue to Checkout"
+msgid "Continue to checkout"
+msgstr "체크 아웃 진행하기"
 
 #: pages/upgrade.vue
 msgid "Continue to Checkout"
@@ -6566,15 +6769,13 @@ msgid "Cruise, hosted by inGroups Co-Founder and Co-CEO"
 msgstr "inGroups 공동 창립자 겸 공동 CEO가 주최하는 크루즈"
 
 #: BookingTopBar.vue HotelsTopBar.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
 #: components/navigation/mobile-menu-booking.vue
 msgid "Cruises"
 msgstr "크루즈 여행"
 
-#: components/admin_booking/admin_booking_stats.vue
-msgid "Cruises & Hotels Stats"
-msgstr "크루즈 및 호텔 통계자료"
-
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Cruises Booked"
 msgstr "예약된 크루즈"
 
@@ -6793,10 +6994,12 @@ msgstr "데이타"
 msgid "Data Fields"
 msgstr "데이터 입력란"
 
-#: pages/contacts.vue pages/email.vue pages/notifications.vue
-#: pages/reward_points.vue components/compensation/statements.vue
+#: pages/contacts.vue pages/email.vue pages/intours_details.vue
+#: pages/notifications.vue pages/reward_points.vue
+#: components/compensation/statements.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/settings_page/login-activity.vue email_notifications/index.html
 msgid "Date"
 msgstr "날짜"
@@ -7033,16 +7236,11 @@ msgstr "데모 추천 링크"
 msgid "Depart"
 msgstr "출발"
 
-#: components/reservation.vue pages/reports.vue
-#: components/admin_booking/admin_cruise_featured.vue
+#: pages/reports.vue components/admin_booking/admin_cruise_featured.vue
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 #: reports/index.html
 msgid "Depart Date"
 msgstr "출발일"
-
-#: components/reservation.vue
-msgid "Depart Location"
-msgstr "출발 장소"
 
 #: pages/global_summit_tracking.vue
 msgid "Departing from: Istanbul, Turkey"
@@ -7108,7 +7306,8 @@ msgstr "보증금"
 msgid "description"
 msgstr "설명"
 
-#: pages/convention_manager.vue pages/email_address.vue pages/reward_points.vue
+#: pages/convention_manager.vue pages/email_address.vue
+#: pages/intours_details.vue pages/reward_points.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
 #: components/receipts/italian_commission.vue
@@ -7129,6 +7328,12 @@ msgstr "설명:"
 msgid "destination"
 msgstr "목적지"
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "destination"
+msgid "Destination"
+msgstr "목적지"
+
 #: components/payout/brightwell/review.vue
 #: components/payout/brightwell/transfer-details.vue
 msgid "Destination country"
@@ -7141,6 +7346,12 @@ msgstr "여행지 통화"
 #: pages/builders_base.vue
 msgid "detailed below."
 msgstr "의 백분율을 지불합니다."
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "QBI Details"
+msgid "Details"
+msgstr "QBI 상세 정보"
 
 #: components/settings_page/login-activity.vue
 msgid "Device"
@@ -7305,6 +7516,10 @@ msgstr "할인 :"
 msgid "Discover"
 msgstr "Discover (디스커버)"
 
+#: components/welcome_tours_modal.vue
+msgid "Discover Tours For Your Upcoming Cruise!"
+msgstr ""
+
 #: pages/account_setup.vue pages/cards.vue pages/certificates.vue
 #: pages/invite.vue pages/settings.vue cards/index.html certificates/index.html
 #: certificates/view.html
@@ -7389,6 +7604,12 @@ msgstr "도하"
 #: pages/hotels.vue
 msgid "Doha, Qatar"
 msgstr "도하, 카타르"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "Do not show this again"
+msgid "Don't show again"
+msgstr "다시 보지 않겠습니다"
 
 #: pages/welcome.vue pages/public/causes.vue
 msgid "Donate"
@@ -7600,6 +7821,10 @@ msgstr ""
 "듀플리케이터는 스마트폰 및 태블릿 PC, 모든 운영시스템의 PC에서 사용할 수 있습"
 "니다."
 
+#: components/tours/intours_results.vue
+msgid "Duration"
+msgstr "기간"
+
 #: income_disclosure/index.html
 msgid "During the month of"
 msgstr "한 달 동안"
@@ -7788,6 +8013,7 @@ msgstr "추가하기 쉬움 :"
 #: pages/convention_manager.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 #: components/settings_page/modify-saved-passengers.vue
 msgid "Edit"
 msgstr "편집하기"
@@ -7889,6 +8115,12 @@ msgstr "자격이 있는"
 #: Menu
 msgid "Email"
 msgstr "이메일"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Link (optional)"
+msgid "Email (optional)"
+msgstr "링크 (선택사항)"
 
 #: pages/account_setup.vue pages/email_address.vue
 msgid "Email Address"
@@ -8046,6 +8278,12 @@ msgstr "맞춤 추천 링크를 입력하세요"
 msgid "Enter your date of birth"
 msgstr "생년월일을 입력하세요"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Insert your email..."
+msgid "Enter your email"
+msgstr "이메일을 기입하십시오..."
+
 #: components/onboarding/address-step.vue
 msgid "Enter Zip Code"
 msgstr "우편번호 입력"
@@ -8091,6 +8329,12 @@ msgstr "업데이트 오류"
 #: pages/cruise_spotlight.vue
 msgid "Error loading videos, please reload the page!"
 msgstr "동영상을 로드하는 중에 오류가 발생했습니다. 페이지를 새로고침하세요 !"
+
+#: pages/intours_details.vue
+msgid ""
+"Error ocurred trying to hold your booking. Please check your selection and "
+"try again."
+msgstr ""
 
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
 msgid "Error saving data"
@@ -8313,6 +8557,12 @@ msgstr ""
 "휴가 옵션의 세계를 탐험하십시오; 말 그대로 세계 최고의 브랜드에서 수천 개의 "
 "자산을 보유하고 있습니다."
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Explore More"
+msgid "Explore By Category"
+msgstr "더 많은 탐험"
+
 #: components/welcome/explore-more.vue
 msgid "Explore More"
 msgstr "더 많은 탐험"
@@ -8366,14 +8616,6 @@ msgstr "페이스북 픽셀"
 #: pages/hotels_details.vue
 msgid "Facilities"
 msgstr "시설"
-
-#: components/reservation.vue
-msgid "Failed"
-msgstr "실패"
-
-#: components/reservation.vue
-msgid "FAILED"
-msgstr "실패"
 
 #: pages/multi_factor.vue
 msgid "Failed to copy!"
@@ -8482,6 +8724,12 @@ msgstr "선호 크루즈"
 msgid "Favorite Hotels"
 msgstr "선호 호텔"
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Favorite Hotels"
+msgid "Favorite Tours"
+msgstr "선호 호텔"
+
 #: pages/admin_booking.vue components/admin_booking/admin_cruise_featured.vue
 msgid "Featured Cruises"
 msgstr "추천 크루즈"
@@ -8520,7 +8768,7 @@ msgstr "호텔 이름으로 필터링.."
 msgid "Filtering"
 msgstr "필터링"
 
-#: pages/reports.vue reports/index.html
+#: pages/reports.vue components/tours/intours_results.vue reports/index.html
 msgid "Filters"
 msgstr "필터"
 
@@ -8567,6 +8815,10 @@ msgstr "재무 통제자"
 msgid "Find Hotels"
 msgstr "호텔 검색"
 
+#: components/reservations/tour-search.vue
+msgid "Find the perfect pairing for your “%{reservationName}” Cruise Itinerary"
+msgstr ""
+
 #: pages/multi_factor.vue components/onboarding/final-step.vue
 msgid "Finish"
 msgstr "마침"
@@ -8580,8 +8832,9 @@ msgid "Finished"
 msgstr "완료"
 
 #: pages/admin_restricted_paybonus.vue pages/global_summit_2023.vue
-#: pages/global_summit_2024.vue pages/hotel_booking.vue pages/invite.vue
-#: pages/settings.vue components/public/JoinModal.vue
+#: pages/global_summit_2024.vue pages/hotel_booking.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -8727,6 +8980,10 @@ msgstr ""
 #: pages/login/login.vue login/index.html
 msgid "Forgot Password?"
 msgstr "비밀번호를 잊으셨습니까?"
+
+#: components/tours/intours_results.vue
+msgid "formattedTime"
+msgstr ""
 
 #: pages/email_tracking.vue
 msgid "Forwarded"
@@ -8940,6 +9197,12 @@ msgstr "달성 순위"
 #: pages/duplicator.vue connect/index.html
 msgid "Get Started Now!"
 msgstr "지금 시작하십시오!"
+
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Your Tickets"
+msgid "Get Your Ticket"
+msgstr "귀하의 티켓"
 
 #: components/public/FooterLinks.vue
 msgid "Global 100"
@@ -9269,6 +9532,12 @@ msgstr "체계"
 msgid "High Monthly Gross Earnings"
 msgstr "높은 월 총 수입"
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Highest Price"
+msgid "High to Low Price"
+msgstr "최고 가격"
+
 #: pages/hotels.vue
 msgid "Highest Price"
 msgstr "최고 가격"
@@ -9290,6 +9559,7 @@ msgid "Historical QBI Report"
 msgstr "과거 QBI 리포트"
 
 #: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Holder Name"
 msgstr "소지자 이름"
@@ -9358,6 +9628,7 @@ msgid "Hotelbeds"
 msgstr "호텔베즈(Hotelbeds)"
 
 #: BookingTopBar.vue HotelsTopBar.vue pages/hotels.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
 #: components/navigation/mobile-menu-booking.vue
 msgid "Hotels"
 msgstr "호텔"
@@ -9367,6 +9638,7 @@ msgid "hotels and saved a total of"
 msgstr "호텔에서 총"
 
 #: components/cruise/cruise_savings_info.vue
+#: components/reservations/my-bookings.vue
 msgid "Hotels Booked"
 msgstr "예약된 호텔"
 
@@ -9730,6 +10002,12 @@ msgstr ""
 #: components/payout/partner-consent.vue old_compensation/index.html
 msgid "I DON'T CONSENT OR AGREE"
 msgstr "동의하지 않습니다"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "I don't see my pickup location"
+msgstr "현금 인출 위치"
 
 #: components/agreements/partner_code_of_conduct_agreement.vue
 msgid ""
@@ -11295,6 +11573,12 @@ msgstr ""
 msgid "Independent Partner Agreement"
 msgstr "독립 파트너 계약"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Reminded"
+msgid "index"
+msgstr "알림이 전송되었습니다"
+
 #: receipts/team_residual_bonus_statement.html
 msgid "Indirect Members"
 msgstr "간접 멤버"
@@ -11403,6 +11687,7 @@ msgid "inStays Price Match Guarantee"
 msgstr "inStay 가격 일치 보장"
 
 #: pages/courses.vue pages/email_address.vue pages/leadership_academy.vue
+#: components/reservations/tour-details.vue
 msgid "Instructions"
 msgstr "설명"
 
@@ -11710,8 +11995,10 @@ msgstr "이탈리아"
 msgid "Item"
 msgstr "항목"
 
-#: pages/cruise.vue components/cruises_booking/itinerary-modal.vue
+#: pages/cruise.vue pages/intours_details.vue
+#: components/cruises_booking/itinerary-modal.vue
 #: components/receipts/booking_receipt.vue
+#: components/reservations/tour-details.vue
 msgid "Itinerary"
 msgstr "여정"
 
@@ -11853,6 +12140,7 @@ msgstr "카드를 최신 상태로 유지하세요."
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 msgid "Key"
 msgstr "열쇠"
 
@@ -11972,8 +12260,9 @@ msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr "지난 달의 리더십 보너스가 요청되었으며 지불 보류 중입니다."
 
 #: pages/admin_restricted_paybonus.vue pages/global_summit_2023.vue
-#: pages/global_summit_2024.vue pages/hotel_booking.vue pages/invite.vue
-#: pages/settings.vue components/public/JoinModal.vue
+#: pages/global_summit_2024.vue pages/hotel_booking.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -12290,6 +12579,10 @@ msgstr "클립보드로 링크 복사하기"
 msgid "Links"
 msgstr "링크"
 
+#: pages/intours_confirmation.vue
+msgid "List any specific needs"
+msgstr ""
+
 #: components/checkout/ProcessorNetcents.vue
 msgid "Litecoin"
 msgstr "Litecoin(라이트코인)"
@@ -12321,7 +12614,8 @@ msgstr "추가 로드"
 #: pages/admin_partner_success.vue pages/invoices.vue pages/partner_success.vue
 #: pages/receipts.vue pages/reports.vue pages/track_results.vue
 #: pages/webinar_recordings.vue components/payout/wallet-transfers.vue
-#: reports/index.html track_results/index.html
+#: components/tours/intours_results.vue reports/index.html
+#: track_results/index.html
 msgid "Load More"
 msgstr "더 보기"
 
@@ -12342,6 +12636,12 @@ msgstr "위치 데이터는 대략적인 것이며 정확하지 않을 수 있�
 #: components/payout/brightwell/cash-pickup-location.vue
 msgid "Location Details"
 msgstr "위치 세부정보"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Location"
+msgid "Locations"
+msgstr "위치"
 
 #: components/inchat/user_room_actions.vue
 msgid "Lock Group"
@@ -12412,6 +12712,12 @@ msgstr "로그아웃"
 #: income_disclosure/index.html
 msgid "Low Monthly Gross Earnings"
 msgstr "낮은 월 총 수입"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Lowest Price"
+msgid "Low to High Price"
+msgstr "최저 가격"
 
 #: pages/hotels.vue
 msgid "Lowest Price"
@@ -12607,6 +12913,12 @@ msgstr "Mastercard(마스터카드) MXN"
 msgid "Mastermind Training"
 msgstr "리더 트레이닝"
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Reward Points"
+msgid "Match Reward Points"
+msgstr "리워드 포인트"
+
 #: old_compensation/index.html
 msgid "Max Compensation Bonus"
 msgstr "최대 보상 보너스"
@@ -12625,6 +12937,12 @@ msgstr "최대 파일 크기는 25MB입니다"
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Max Lead Time"
 msgstr "최대 리드타임"
+
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Price"
+msgid "Max Price"
+msgstr "가격"
 
 #: components/payout/italian_info.vue
 msgid ""
@@ -12690,6 +13008,16 @@ msgstr "직급 요구 사항을 충족하십시오 :"
 #: components/top_bar/Connect.vue
 msgid "Meeting Info"
 msgstr "회의 정보"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Meeting Info"
+msgid "Meeting Point"
+msgstr "회의 정보"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "Meeting Point And Pickup Details"
+msgstr ""
 
 #: components/top_bar/Connect.vue
 msgid "Meeting Room"
@@ -12930,9 +13258,25 @@ msgstr "Michael Hutchison - 공동 CEO & 공동 설립자"
 msgid "Min Lead Time"
 msgstr "최소 리드 타임"
 
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Cabin Price"
+msgid "Min Price"
+msgstr "객실 가격"
+
 #: components/compensation/recurring_income_levels.vue
 msgid "Minimum Earned Bonus Amount"
 msgstr "획득한 최소 보너스 금액"
+
+#: components/tours/intours_results.vue
+msgid "Minimum price cannot be greater than maximum price"
+msgstr ""
+
+#: pages/intours_details.vue
+msgid ""
+"Minimum: {{ ageBand.minTravelersPerBooking }}, Maximum: {{ ageBand."
+"maxTravelersPerBooking }}"
+msgstr ""
 
 #: components/inchat/user/user_create_room.vue
 msgid "Minimun of participants is 2."
@@ -12984,6 +13328,12 @@ msgstr "휴대 전화"
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Mobile Phone is required."
 msgstr "휴대전화번호가 필요합니다."
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "New Ticket"
+msgid "Mobile Ticket"
+msgstr "신규 티켓"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
 #: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
@@ -13362,6 +13712,18 @@ msgstr "고유해야 하며 사용할 수 있어야 합니다"
 msgid "Must be unique and available."
 msgstr "고유해야 하며 사용할 수 있어야 합니다."
 
+#: components/reservations/my-bookings.vue
+#, fuzzy
+#| msgid "All Bookings"
+msgid "My bookings"
+msgstr "모든 예약"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Contact Information"
+msgid "My Contact Information"
+msgstr "연락처 정보"
+
 #: pages/titles.vue
 msgid "My Cruise Savings"
 msgstr "나의 크루즈 절감액"
@@ -13381,6 +13743,12 @@ msgid ""
 msgstr ""
 "여러분께서 자주 방문하여 자신과 팀파트너의 성장을 계속해 가기 위한 새로운 결"
 "의를 가지고 떠나기를 진심으로 희망합니다."
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "My Travel Savings"
+msgid "My travel savings"
+msgstr "나의 여행 절감액"
 
 #: components/birthday-modal.vue components/fast-growing-legs.vue
 #: components/mercy-ship-modals.vue components/weekly-competition.vue
@@ -13422,6 +13790,7 @@ msgstr ""
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/qualified_residual_bonus.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -13567,10 +13936,6 @@ msgstr "내셔널 ID #"
 msgid "Nationality:"
 msgstr "국적:"
 
-#: components/reservation.vue
-msgid "Need a <span class=\"bold\"> hotel/resort </span> to stay?"
-msgstr "머무를 <span class=\"bold\">호텔/리조트</span>가 필요하십니까?"
-
 #: components/hotels/perfect_pairings.vue
 msgid "Need a <span class=\"text-green\">hotel/resort</span> to stay?"
 msgstr "머무를 <span class=\"text-green\">호텔/리조트</span>가 필요하십니까?"
@@ -13614,6 +13979,12 @@ msgstr "신규 직접 추천 파트너"
 #: components/inchat/user/user_create_room.vue
 msgid "New Group {{ selectedNamespace }}"
 msgstr "신규 그룹 {{ selectedNamespace }}"
+
+#: pages/reservations.vue
+#, fuzzy
+#| msgid "No Display Name available."
+msgid "New inTours Feature available!"
+msgstr "사용 가능한 표시 이름이 없습니다."
 
 #: pages/resources.vue components/growth_calculator/potential_leadership.vue
 msgid "New Members"
@@ -13850,9 +14221,23 @@ msgstr "처리 수수료 없음 !"
 msgid "No Recurring Billing"
 msgstr "자동 청구 없음"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "No redemption point - this is a direct entry ticket"
+msgstr ""
+
 #: components/user/directs.vue
 msgid "No Search Results"
 msgstr "검색 결과 없음"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "The entered authentication code is invalid. Please try again."
+msgid "No tour recommendations found for this cruise. Please try again."
+msgstr "입력한 인증코드가 유효하지 않습니다. 다시 시도해 주세요."
+
+#: components/tours/intours_results.vue
+msgid "No tours found for the selected destination and date range"
+msgstr ""
 
 #: components/booking/add-cd-user.vue
 msgid "No user found with that membership code."
@@ -14024,6 +14409,12 @@ msgstr "초대되지 않았습니다"
 #: components/membership_countdown.vue
 msgid "Not Membership Free"
 msgstr "무료 멤버가 아닙니다"
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "Donate Now"
+msgid "Not Now"
+msgstr "지금 기부하세요"
 
 #: pages/duplicator.vue
 msgid "Not Opened"
@@ -14367,9 +14758,21 @@ msgstr "열림: {{ formatDate(invite.lastViewDate) }}"
 msgid "Opened!"
 msgstr "열림!"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Created by:"
+msgid "Operated by"
+msgstr "생성 :"
+
 #: pages/public/leadership.vue
 msgid "Operations Director"
 msgstr "운영 디렉터"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Action"
+msgid "Option"
+msgstr "액션"
 
 #: pages/account_setup.vue
 msgid ""
@@ -14468,7 +14871,7 @@ msgstr "우리의 가치"
 msgid "OUR VISION"
 msgstr "우리의 비젼"
 
-#: components/reservation.vue pages/hotel_booking.vue
+#: pages/hotel_booking.vue
 msgid "Out of Pocket"
 msgstr "현금 지불"
 
@@ -14539,6 +14942,7 @@ msgstr "패키지"
 #: components/receipts/new_residual_bonus_statement.vue
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue
 msgid "Page"
@@ -15138,6 +15542,10 @@ msgstr "비밀번호"
 msgid "Passwords do not match!"
 msgstr "비밀번호가 일치하지 않습니다!"
 
+#: components/reservations/reservation-card.vue
+msgid "Past"
+msgstr ""
+
 #: pages/elevate.vue
 msgid "Pay Here"
 msgstr "여기에서 결제하세요"
@@ -15342,6 +15750,10 @@ msgstr "월간. 계약 없음. 언제든지 취소할 수 있습니다."
 msgid "per night"
 msgstr "박당"
 
+#: components/tours/tour-card.vue
+msgid "Per person"
+msgstr ""
+
 #: pages/track_growth.vue track_growth/index.html
 msgid "Percent Growth Needed"
 msgstr "요구 성장률"
@@ -15415,7 +15827,8 @@ msgid "Personal View"
 msgstr "개인 보기"
 
 #: pages/admin_user.vue pages/contacts.vue pages/elevate_registration.vue
-#: pages/global_summit_2023.vue pages/negative_balances.vue
+#: pages/global_summit_2023.vue pages/intours_confirmation.vue
+#: pages/negative_balances.vue
 #: components/cruises_booking/passenger-info-step.vue
 msgid "Phone"
 msgstr "전화번호"
@@ -15452,6 +15865,24 @@ msgstr "사진이 부착된 신분증"
 #: components/payout/brightwell/review.vue
 msgid "Pickup details"
 msgstr "픽업 세부 정보"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup location"
+msgstr "현금 인출 위치"
+
+#: pages/intours_confirmation.vue components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup Location"
+msgstr "현금 인출 위치"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Cash Pickup Location"
+msgid "Pickup Locations"
+msgstr "현금 인출 위치"
 
 #: components/checkout/ProcessorBoacompra.vue
 msgid "Pix"
@@ -15608,6 +16039,12 @@ msgid ""
 msgstr ""
 "사용 가능한 자산들을 다운로드하고 가상 및 라이브 이벤트에 힘을 실어주세요 !"
 
+#: pages/intours_confirmation.vue
+msgid ""
+"Please ensure the contact information provided is accurate, as it will be "
+"used for notifications and updates regarding your booked tour."
+msgstr ""
+
 #: components/onboarding/recurring-payment-step.vue
 msgid "Please enter a card for recurring payments."
 msgstr "반복결제를 위한 카드를 입력해주세요."
@@ -15717,6 +16154,12 @@ msgstr "귀하의 이메일 주소를 입력하십시오."
 msgid "Please enter your email and we will send you further instructions:"
 msgstr "귀하의 이메일을 입력하면 추가 지시 사항을 보내드립니다 :"
 
+#: pages/intours_confirmation.vue components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Please enter your Email"
+msgid "Please enter your pickup location"
+msgstr "귀하의 이메일을 입력하십시오"
+
 #: components/booking/add-cd-user.vue
 msgid "Please enter your second member 'Unique Membership Code'."
 msgstr "두 번째 멤버의 '고유 멤버십 코드' 를 입력하십시오."
@@ -15791,7 +16234,14 @@ msgstr ""
 "시작 날짜와 종료 날짜를 입력하십시오. 없는 경우 페이지 상단에서 필터를 재설정"
 "하십시오."
 
-#: pages/hotels.vue
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Please provide a valid destination before searching"
+msgid "Please provide a date range before searching"
+msgstr "검색하기 전에 유효한 목적지를 입력하세요"
+
+#: pages/hotels.vue components/tours/intours_landing.vue
+#: components/tours/intours_results.vue
 msgid "Please provide a valid destination before searching"
 msgstr "검색하기 전에 유효한 목적지를 입력하세요"
 
@@ -16078,12 +16528,24 @@ msgstr "이용가능한 모든 크루즈를 수집하는 동안 기다려주십�
 msgid "Please wait while we gather all available hotels..."
 msgstr "이용가능한 모든 호텔을 수집하는 동안 기다려주십시오..."
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Please wait while we gather all available hotels..."
+msgid "Please wait while we gather all available tours..."
+msgstr "이용가능한 모든 호텔을 수집하는 동안 기다려주십시오..."
+
 #: pages/cruise.vue
 msgid "Please wait while we gather cruise trip information..."
 msgstr "크루즈 여행 정보를 수집하는 동안 기다려주십시오..."
 
 #: pages/hotel_booking.vue pages/hotels_details.vue
 msgid "Please wait while we gather Hotel details."
+msgstr "호텔 세부정보를 수집하는 동안 기다려주십시오."
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Please wait while we gather Hotel details."
+msgid "Please wait while we gather tour details..."
 msgstr "호텔 세부정보를 수집하는 동안 기다려주십시오."
 
 #: pages/checkout.vue
@@ -16113,7 +16575,7 @@ msgstr "포인트"
 msgid "Points"
 msgstr "포인트"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Popular Destinations"
 msgstr "인기 여행지"
 
@@ -16163,6 +16625,12 @@ msgstr "우편 번호:"
 #: components/growth_calculator/potential_recurring.vue
 msgid "Potential Active Levels"
 msgstr "잠재적 활성 레벨"
+
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Potential Future Membership Savings"
+msgid "Potential future membership savings"
+msgstr "잠재적 미래 멤버십 절감액"
 
 #: components/cruise/cruise_savings_info.vue
 msgid "Potential Future Membership Savings"
@@ -16283,14 +16751,20 @@ msgstr "작년"
 msgid "Previously used passenger:"
 msgstr "이전에 사용한 승객:"
 
+#: components/filter-chip-range.vue
 #: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/booking/category.vue
 #: components/receipts/hotel_booking_receipt.vue
-#: components/receipts/receipt.vue receipts/hotel_booking_receipt.html
+#: components/receipts/receipt.vue components/receipts/tour_booking_receipt.vue
+#: components/tours/intours_results.vue receipts/hotel_booking_receipt.html
 #: receipts/receipt.html
 msgid "Price"
 msgstr "가격"
+
+#: components/tours/intours_results.vue
+msgid "Price cannot be negative"
+msgstr ""
 
 #: components/receipts/booking_receipt.vue
 msgid "Price Code"
@@ -16309,7 +16783,8 @@ msgid "Price Higher on Top"
 msgstr "높은 가격부터"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Price Information"
 msgstr "가격 정보"
@@ -16326,6 +16801,12 @@ msgstr "가격 일치 보장"
 msgid "PRICE MATCH GUARANTEE!"
 msgstr "가격 일치 보장!"
 
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Result Limit must be a number!"
+msgid "Price must be a number"
+msgstr "결과 한도는 숫자여야만 합니다!"
+
 #: pages/hotel_booking.vue
 msgid "Price per night:"
 msgstr "박당 금액:"
@@ -16333,6 +16814,12 @@ msgstr "박당 금액:"
 #: pages/convention_manager.vue
 msgid "Price per Ticket"
 msgstr "티켓당 금액"
+
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Price Range:"
+msgid "Price Range"
+msgstr "가격 범위:"
 
 #: pages/hotels.vue
 msgid "Price Range per Night:"
@@ -16363,6 +16850,12 @@ msgstr ""
 #: pages/email_tracking.vue
 msgid "Printed"
 msgstr "인쇄됨"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Archived Tickets"
+msgid "Printed Ticket"
+msgstr "보관된 티켓"
 
 #: components/booking/cabin_categories.vue
 msgid ""
@@ -16667,7 +17160,7 @@ msgstr "적격 멤버"
 msgid "Quality of Business Index (QBI)"
 msgstr "비즈니스 품질 지수 (QBI)"
 
-#: pages/leadership_academy.vue
+#: pages/intours_confirmation.vue pages/leadership_academy.vue
 msgid "question"
 msgstr "질문"
 
@@ -16897,13 +17390,9 @@ msgstr "수취인의 은행 세부 정보"
 msgid "Recipients"
 msgstr "받는 사람"
 
-#: pages/multi_factor.vue
+#: pages/multi_factor.vue components/tours/intours_results.vue
 msgid "Recommended"
 msgstr "추천"
-
-#: components/reservation.vue
-msgid "Record Locator"
-msgstr "기록 찾기"
 
 #: pages/reports.vue
 #: components/admin_territory_directors/territory_directors.vue
@@ -16950,6 +17439,22 @@ msgstr "리커링 적격 생산액"
 #: pages/track_results.vue track_results/index.html
 msgid "Recurring:"
 msgstr "자동:"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Perception"
+msgid "Redemption"
+msgstr "인식"
+
+#: components/reservations/tour-details.vue
+msgid "Redemption Type"
+msgstr ""
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Room Type"
+msgid "Redeption Type"
+msgstr "객실 유형"
 
 #: components/checkout/ProcessorBoacompra.vue
 msgid "Redirecting you over to BoaCompra."
@@ -17020,6 +17525,12 @@ msgstr "환불 프로토콜 통계"
 #: pages/payment_protection.vue
 msgid "Refundable Amount"
 msgstr "환불 가능 금액"
+
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Reminded"
+msgid "Refunded"
+msgstr "알림이 전송되었습니다"
 
 #: components/covid-disclaimer-reminder.vue
 msgid ""
@@ -17234,7 +17745,8 @@ msgid "Resend SMS"
 msgstr "SMS 재전송"
 
 #: components/receipts/booking_receipt.vue
-#: components/receipts/hotel_booking_receipt.vue receipts/booking_receipt.html
+#: components/receipts/hotel_booking_receipt.vue
+#: components/receipts/tour_booking_receipt.vue receipts/booking_receipt.html
 #: receipts/hotel_booking_receipt.html
 msgid "Reservation Details"
 msgstr "예약 상세정보"
@@ -17446,7 +17958,7 @@ msgstr "리워드 포인트 리베이트:"
 msgid "Rewards Points:"
 msgstr "리워드 포인트:"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Rio de Janeiro"
 msgstr "리오데자네이루"
 
@@ -17474,7 +17986,7 @@ msgstr "루마니아어"
 msgid "Romanian Speaking Global Markets"
 msgstr "루마니아어 사용 글로벌 시장"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Rome"
 msgstr "로마"
 
@@ -17621,7 +18133,7 @@ msgstr "세일즈맨 배지"
 msgid "sample"
 msgstr "예시"
 
-#: pages/hotels.vue
+#: pages/hotels.vue components/tours/intours_landing.vue
 msgid "Santorini"
 msgstr "산토리니"
 
@@ -17630,6 +18142,7 @@ msgstr "산토리니"
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 #: components/admin_management/admin_departments.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -17664,12 +18177,14 @@ msgid "SAVINGS GUARANTEE!"
 msgstr "절감 보장!"
 
 #: pages/communications.vue pages/contacts.vue pages/cruises.vue
-#: pages/hotels.vue pages/hotels_details.vue pages/notifications.vue
-#: pages/resources.vue pages/track_growth.vue pages/webinar_recordings.vue
-#: components/blog/blog_list.vue components/inchat/search/search-people.vue
-#: communications/index.html communications/view.html
-#: email_notifications/index.html track_growth/index.html
-#: webinar_recordings/index.html
+#: pages/hotels.vue pages/hotels_details.vue pages/intours_confirmation.vue
+#: pages/notifications.vue pages/resources.vue pages/track_growth.vue
+#: pages/webinar_recordings.vue components/blog/blog_list.vue
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#: components/inchat/search/search-people.vue
+#: components/tours/details/available-plans.vue communications/index.html
+#: communications/view.html email_notifications/index.html
+#: track_growth/index.html webinar_recordings/index.html
 msgid "Search"
 msgstr "검색"
 
@@ -17680,6 +18195,13 @@ msgstr "크루즈, 호텔, 리조트 검색 및 예약"
 #: pages/hotels.vue components/translations/placeholders.vue
 msgid "Search by city or hotel"
 msgstr "도시나 호텔 검색"
+
+#: pages/intours.vue components/tours/intours_landing.vue
+#: components/tours/intours_results.vue
+#, fuzzy
+#| msgid "Search by date"
+msgid "Search by Destination"
+msgstr "날짜별 검색"
 
 #: resources/index.html
 msgid "Search Documents.."
@@ -17704,10 +18226,6 @@ msgstr "이름 또는 이메일로 검색"
 #: pages/hotels.vue
 msgid "Search Hotels and Cities:"
 msgstr "호텔과 도시 검색:"
-
-#: components/reservation.vue
-msgid "Search InStays"
-msgstr "InStays 검색"
 
 #: pages/invite.vue components/translations/placeholders.vue
 msgid "Search Name or Email"
@@ -17749,6 +18267,13 @@ msgstr "객실 검색"
 msgid "Search this month..."
 msgstr "이번 달 검색..."
 
+#: components/welcome_tours_modal.vue
+#: components/reservations/reservation-card.vue
+#, fuzzy
+#| msgid "Search users"
+msgid "Search Tours"
+msgstr "사용자 검색"
+
 #: components/inchat/user_list_inchat.vue
 msgid "Search users"
 msgstr "사용자 검색"
@@ -17782,7 +18307,14 @@ msgstr "언어 보기"
 msgid "See List"
 msgstr "목록 보기"
 
-#: components/cards/menu-page-card.vue
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "See More"
+msgid "See more"
+msgstr "더 보기"
+
+#: pages/reservations.vue components/cards/menu-page-card.vue
+#: components/reservations/tour-search.vue
 msgid "See More"
 msgstr "더 보기"
 
@@ -17830,9 +18362,11 @@ msgid "See your certificate here!"
 msgstr "여기에서 인증서를 확인하세요!"
 
 #: pages/admin_department.vue pages/admin_permission_group.vue
-#: components/onboarding/address-step.vue components/user/department.vue
-#: components/user/departments.vue components/user/permission-assignation.vue
+#: pages/intours_confirmation.vue components/onboarding/address-step.vue
+#: components/user/department.vue components/user/departments.vue
+#: components/user/permission-assignation.vue
 #: components/user/permission-group.vue
+#: components/tours/details/available-plans.vue
 msgid "Select"
 msgstr "선택"
 
@@ -17856,6 +18390,12 @@ msgstr "사용자 유형 선택"
 #: pages/cruises.vue components/user/departments.vue
 msgid "Select All"
 msgstr "모두 선택"
+
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "Select Option"
+msgid "Select an option"
+msgstr "옵션 선택"
 
 #: components/booking/category.vue
 msgid "Select Cabin"
@@ -17911,6 +18451,12 @@ msgstr "이메일로 알림을 받고 싶은 항목을 선택하십시오."
 #: pages/team_rankings.vue
 msgid "Select Time Period"
 msgstr "기간 선택"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Select payer"
+msgid "Select travelers"
+msgstr "지불사 선택"
 
 #: pages/cards.vue cards/index.html
 msgid "Select your name format:"
@@ -18137,6 +18683,12 @@ msgid ""
 msgstr ""
 "추천 링크를 <a href=\"/referral links\" target=\"_blank\">여기</a> 에 설정하"
 "십시오."
+
+#: components/filter-chip-range.vue components/tours/intours_results.vue
+msgid ""
+"Set your price range per person, based on double occupancy to filter cruise "
+"options."
+msgstr ""
 
 #: pages/onboarding.vue
 msgid "Set Your Referral Link"
@@ -18673,6 +19225,7 @@ msgstr "주/지역"
 #: components/receipts/new_team_residual_bonus_statement.vue
 #: components/receipts/qualified_residual_bonus.vue
 #: components/receipts/receipt.vue components/receipts/super_builders_bonus.vue
+#: components/receipts/tour_booking_receipt.vue
 #: components/receipts/travel_challenge_statement.vue
 #: components/receipts/weekly_bonus_statement.vue receipts/booking_receipt.html
 #: receipts/commission_statement.html receipts/daily_member_activation.html
@@ -18706,7 +19259,7 @@ msgstr ""
 "개인 전용실 <currency-convert ng-attr-value=\"{{cruisePrice(cruise)}}\" hide="
 "\"true\"/>부터"
 
-#: pages/admin_user_id.vue
+#: pages/admin_user_id.vue pages/reservations.vue
 msgid "Stats"
 msgstr "통계"
 
@@ -18808,10 +19361,6 @@ msgstr "구독 정보"
 msgid "Success"
 msgstr "성공"
 
-#: components/reservation.vue
-msgid "SUCCESSFUL"
-msgstr "성공적인"
-
 #: pages/reports.vue reports/index.html
 msgid "Successful Growth"
 msgstr "성공적인 성장"
@@ -18857,6 +19406,12 @@ msgstr "슈퍼 빌더 베이스 보너스"
 msgid "Super Builders Bonus"
 msgstr "수퍼 빌더 보너스"
 
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Agency Reference"
+msgid "Supplier Reference"
+msgstr "대행사 참조"
+
 #: pages/settings.vue pages/support.vue
 #: components/price_match_guarantee/cruises.vue layouts/no_navigation.html
 #: layouts/compiled/no_navigation.html
@@ -18870,10 +19425,6 @@ msgstr "지원 디렉터"
 #: components/navigation/notifications.vue
 msgid "Support Replied"
 msgstr "지원 응답"
-
-#: components/reservation.vue
-msgid "Support staff has been alerted and is working on getting this resolved."
-msgstr "지원담당자는 알림을 받았으며, 이를 해결하려고 하고 있습니다."
 
 #: pages/admin_user_id.vue
 msgid "Support Tickets"
@@ -19106,7 +19657,8 @@ msgstr "전화번호: 1-888-396-7285"
 msgid "Terms"
 msgstr "약관"
 
-#: pages/elevate.vue pages/payment_protection.vue
+#: pages/elevate.vue pages/intours_confirmation.vue
+#: pages/payment_protection.vue
 msgid "Terms and Conditions"
 msgstr "조건과 규정"
 
@@ -19710,9 +20262,21 @@ msgstr ""
 msgid "There are no published courses."
 msgstr "등록된 강좌가 없습니다."
 
+#: components/tours/details/available-plans.vue
+#, fuzzy
+#| msgid "There are no results for this search."
+msgid "There are no results for these parameters."
+msgstr "해당 검색에 대한 결과가 없습니다."
+
 #: pages/hotels.vue
 msgid "There are no results for this search."
 msgstr "해당 검색에 대한 결과가 없습니다."
+
+#: components/welcome_tours_modal.vue
+#, fuzzy
+#| msgid "There was a problem with your promotion code. Please try again."
+msgid "There are no tour recommendations right now. Please try again later."
+msgstr "프로모션 코드에 문제가 있습니다. 다시 시도해 주세요."
 
 #: components/public/Faq.vue
 msgid ""
@@ -19855,6 +20419,26 @@ msgstr "귀하의 요청에 오류가 있으니, 다시 시도해 주십시오."
 #: pages/global_summit_2023.vue
 msgid "There was an error. Plaese reload the page."
 msgstr "오류가 있었습니다. 페이지를 새로고침하세요."
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There was a problem with your promotion code. Please try again."
+msgid "There was an issue continueing with your booking. Please try again."
+msgstr "프로모션 코드에 문제가 있습니다. 다시 시도해 주세요."
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There has been an error. Please reload the page and try again."
+msgid ""
+"There was an issue initializing your checkout. Please reaload the page and "
+"try again."
+msgstr "오류가 발생했습니다. 페이지를 새로고침하고 다시 시도하세요."
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "There was an error with your request, please try again."
+msgid "There was an issue initializing your checkout. Please try again."
+msgstr "귀하의 요청에 오류가 있으니, 다시 시도해 주십시오."
 
 #: pages/payout.vue
 msgid "There was an issue processing your payout. Please contact support."
@@ -20051,6 +20635,7 @@ msgstr "송금 받기"
 msgid "Things like:"
 msgstr "다음과 같은 것들 :"
 
+#: pages/intours_confirmation.vue pages/intours_details.vue
 #: components/booking/limited_time_offer_card.vue
 #: components/compensation/account_status.vue
 msgid "this"
@@ -20136,6 +20721,10 @@ msgid ""
 "admins."
 msgstr "이 작업은 이 부서와 모든 관리자에서 이 권한 그룹을 제거합니다."
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "This Activity Includes"
+msgstr ""
+
 #: components/agreements/national_director_agreement.vue
 msgid ""
 "This Addendum (the “Addendum”) constitutes an addendum to the inCruises "
@@ -20198,6 +20787,12 @@ msgstr ""
 #: pages/builders_base.vue
 msgid "This bonus rewards rank leaders"
 msgstr "이 보너스는 직급 리더"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "This booking is non-refundable."
+msgid "This booking is non-refunable."
+msgstr "이 예약은 환불되지 않습니다."
 
 #: components/booking/agreements.vue
 msgid ""
@@ -20654,10 +21249,26 @@ msgstr "신규 ID"
 msgid "Ticket Question:"
 msgstr "티켓 질문:"
 
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid "Tickets can be redeemed at this product's starting point"
+msgstr ""
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid ""
+"Tickets can be redeemed from a location other than the product's starting "
+"point"
+msgstr ""
+
 #: components/admin_support_analytics/modals/show_ticket.vue
 msgid "Tickets for <u>{{ data.name }}</u> on <u>{{ data.dateRange }}</u>"
 msgstr ""
 "<u>{{ data.dateRange }}</u> 에 대한 <u>{{ data.name }}</u> 를 위한 티켓"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+msgid ""
+"Tickets will be delivered post-booking by email; or, physically delivered to "
+"the customer or the customer's hotel"
+msgstr ""
 
 #: pages/global_summit_2024.vue
 msgid "Tiebreaker"
@@ -20666,6 +21277,16 @@ msgstr "동점자"
 #: pages/global_summit_2023.vue pages/global_summit_dr.vue
 msgid "Tiebreaker:"
 msgstr "동점자:"
+
+#: Course Answers
+msgid "Time"
+msgstr "시간"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Departure"
+msgid "Time Before Departure"
+msgstr "출발"
 
 #: pages/track_growth.vue track_growth/index.html
 msgid "Time Frame"
@@ -21080,6 +21701,12 @@ msgstr "상위 7명의 보드 오브 디렉터 - 숙박권 획득."
 msgid "Top 8 Executive Directors - Win the stay."
 msgstr "상위 8명의 이그제큐티브 디렉터 - 숙박권 획득."
 
+#: components/tours/intours_landing.vue
+#, fuzzy
+#| msgid "Activities"
+msgid "Top Activities"
+msgstr "활동"
+
 #: pages/partner_success.vue
 msgid "Top Partners"
 msgstr "상위 파트너"
@@ -21092,11 +21719,13 @@ msgstr "최우수 프로듀서"
 msgid "total"
 msgstr "합계"
 
-#: pages/hotel_booking.vue pages/payment_protection.vue pages/track_growth.vue
+#: pages/hotel_booking.vue pages/intours_confirmation.vue
+#: pages/payment_protection.vue pages/track_growth.vue
 #: components/compensation/qbi.vue components/price_match_guarantee/cruises.vue
 #: components/receipts/booking_receipt.vue
 #: components/receipts/italian_commission.vue
-#: components/receipts/italian_receipt.vue receipts/booking_receipt.html
+#: components/receipts/italian_receipt.vue
+#: components/reservations/tour-details.vue receipts/booking_receipt.html
 #: receipts/italian_commission.html receipts/italian_receipt.html
 #: track_growth/index.html upgrade/index.html
 msgid "Total"
@@ -21192,9 +21821,21 @@ msgstr "총 회원 ({{count}})"
 msgid "Total Members (%{ count })"
 msgstr "총 멤버 (%{ count })"
 
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Total Membership Dues Paid"
+msgid "Total membership dues paid"
+msgstr "지불된 총 멤버십 비용"
+
 #: components/cruise/cruise_savings_info.vue
 msgid "Total Membership Dues Paid"
 msgstr "지불된 총 멤버십 비용"
+
+#: components/reservations/stats.vue
+#, fuzzy
+#| msgid "Total Membership Savings Realized"
+msgid "Total membership savings realized"
+msgstr "실현된 총 멤버십 절감액"
 
 #: components/cruise/cruise_savings_info.vue
 msgid "Total Membership Savings Realized"
@@ -21317,6 +21958,31 @@ msgstr "총:"
 #: components/install-pwa-banner.vue
 msgid "Touch"
 msgstr "터치"
+
+#: pages/admin_booking.vue components/admin_booking/tour_bookings.vue
+#, fuzzy
+#| msgid "Future Bookings"
+msgid "Tour Bookings"
+msgstr "향후 예약"
+
+#: components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "More Details"
+msgid "Tour Details"
+msgstr "세부 정보"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "More Info"
+msgid "Tour Info"
+msgstr "추가 정보"
+
+#: BookingTopBar.vue pages/reservations.vue
+#: components/admin_booking/admin_booking_stats.vue
+#, fuzzy
+#| msgid "hours"
+msgid "Tours"
+msgstr "시간"
 
 #: Menu
 msgid "Track Growth"
@@ -21491,6 +22157,24 @@ msgstr "여행 경험 !"
 msgid "Travel places"
 msgstr "여행 장소"
 
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "TRAVEL"
+msgid "TRAVELER"
+msgstr "여행"
+
+#: pages/intours_details.vue components/reservations/tour-details.vue
+#, fuzzy
+#| msgid "Cash Pickup"
+msgid "Traveler Pickup"
+msgstr "현금 픽업"
+
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "Travel places"
+msgid "Travelers"
+msgstr "여행 장소"
+
 #: pages/public/reviews.vue
 msgid ""
 "Traveling is the best thing that happens to us, and inCruises gives us that "
@@ -21576,6 +22260,10 @@ msgstr "UnionPay(유니온페이)"
 #: pages/reward_points.vue pages/settings.vue
 msgid "Unique Membership Code"
 msgstr "고유 멤버십 코드"
+
+#: pages/intours_confirmation.vue
+msgid "Unit"
+msgstr ""
 
 #: components/info-reminder.vue
 msgid "Unit or Apt #"
@@ -21961,6 +22649,7 @@ msgstr "우즈베키스탄"
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
+#: components/admin_booking/tour_bookings.vue
 msgid "Value"
 msgstr "가치"
 
@@ -22011,6 +22700,12 @@ msgstr "확인"
 #: pages/settings.vue
 msgid "Verify Phone Number"
 msgstr "전화번호를 인증받으십시오"
+
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Transfer details"
+msgid "Verify tour details"
+msgstr "이체 세부 정보"
 
 #: components/checkout/ItalianStep.vue
 msgid "Verify Your Information"
@@ -22141,6 +22836,12 @@ msgstr "목록 보기"
 msgid "View More"
 msgstr "더 보기"
 
+#: pages/intours_details.vue
+#, fuzzy
+#| msgid "View More"
+msgid "View More Photos"
+msgstr "더 보기"
+
 #: notification_settings/index.html
 msgid "View Notifications"
 msgstr "이메일 알림 설정 보기"
@@ -22165,13 +22866,10 @@ msgstr "요금제 보기"
 msgid "View Previous Compensation"
 msgstr "이전 보상 플랜 보기"
 
-#: pages/receipts.vue
+#: pages/receipts.vue components/reservations/reservation-card.vue
+#: components/reservations/tour-details.vue
 msgid "View Receipt"
 msgstr "영수증 보기"
-
-#: components/reservation.vue
-msgid "View Refund Form"
-msgstr "환불 양식 보기"
 
 #: components/booking/cabin_categories.vue
 msgid "View Rooms"
@@ -22269,6 +22967,12 @@ msgstr "매출"
 #: pages/builders_base.vue
 msgid "Volume is not final"
 msgstr "최종 볼륨이 아님"
+
+#: components/receipts/tour_booking_receipt.vue
+#, fuzzy
+#| msgid "Touch"
+msgid "Voucher"
+msgstr "터치"
 
 #: components/support/TicketList.vue
 msgid "Waiting for Support"
@@ -22547,6 +23251,10 @@ msgid ""
 msgstr ""
 "신용 카드를 다시 입력하여 귀하의 세부 정보를 확인하거나 새 카드를 입력하여 "
 "Trust My Travel (TMT)을 통해 지불하십시오."
+
+#: components/welcome_tours_modal.vue
+msgid "We noticed you have an upcoming cruise booked:"
+msgstr ""
 
 #: pages/public/causes.vue
 msgid ""
@@ -23588,6 +24296,12 @@ msgstr "이 기능에 대한 액세스 권한이 없습니다."
 msgid "You do not have any conversation."
 msgstr "현재 대화가 없습니다."
 
+#: components/tours/intours_landing.vue components/tours/intours_results.vue
+#, fuzzy
+#| msgid "You do not have any saved recipient accounts."
+msgid "You do not have any favorite tours"
+msgstr "저장된 수신자 계정이 없습니다."
+
 #: components/payout/brightwell/recipient-account.vue
 msgid "You do not have any saved recipient accounts."
 msgstr "저장된 수신자 계정이 없습니다."
@@ -24148,6 +24862,12 @@ msgstr ""
 msgid "Your Bonus"
 msgstr "귀하의 보너스"
 
+#: pages/intours_confirmation.vue
+#, fuzzy
+#| msgid "Your booking session has expired. Please start over."
+msgid "Your booking has expired. Please try again."
+msgstr "예약 세션이 만료되었습니다. 다시 시작하십시오."
+
 #: components/receipts/booking_receipt.vue
 msgid ""
 "Your booking reference number is {{ bookingDetails.cruise_confirmation }}. "
@@ -24317,6 +25037,10 @@ msgstr "나의 이벤트"
 msgid ""
 "Your first transfer to PayQuicker is subject to a $4 USD card issuing charge."
 msgstr "PayQuicker 로의 첫 송금에는 $ 4 USD 카드 발급 수수료가 부과됩니다."
+
+#: components/tours/intours_landing.vue
+msgid "Your from must be earlier than your to date"
+msgstr ""
 
 #: components/mercy-ship-modals.vue
 msgid ""
@@ -31647,10 +32371,6 @@ msgid "Energy"
 msgstr "에너지"
 
 #: Course Answers
-msgid "Time"
-msgstr "시간"
-
-#: Course Answers
 msgid ""
 "Spend long stretches of time focused on their craft. Refuse to pick up every "
 "incoming phone call."
@@ -36180,6 +36900,49 @@ msgstr "타란토 출발 지중해 7박"
 msgid "10% off Virgin Voyage"
 msgstr "Virgin Voyage 10% 할인"
 
+#~ msgid "%{ guests } Guests"
+#~ msgstr "%{ guests }명의 손님"
+
+#~ msgid "Active Bookings"
+#~ msgstr "활성 예약"
+
+#~ msgid "Below you will find the status of your reservations."
+#~ msgstr "아래에서 예약 상태를 확인할 수 있습니다."
+
+#~ msgid "CANCELLED"
+#~ msgstr "취소"
+
+#~ msgid "Cruises & Hotels Stats"
+#~ msgstr "크루즈 및 호텔 통계자료"
+
+#~ msgid "Depart Location"
+#~ msgstr "출발 장소"
+
+#~ msgid "Failed"
+#~ msgstr "실패"
+
+#~ msgid "FAILED"
+#~ msgstr "실패"
+
+#~ msgid "Need a <span class=\"bold\"> hotel/resort </span> to stay?"
+#~ msgstr "머무를 <span class=\"bold\">호텔/리조트</span>가 필요하십니까?"
+
+#~ msgid "Record Locator"
+#~ msgstr "기록 찾기"
+
+#~ msgid "Search InStays"
+#~ msgstr "InStays 검색"
+
+#~ msgid "SUCCESSFUL"
+#~ msgstr "성공적인"
+
+#~ msgid ""
+#~ "Support staff has been alerted and is working on getting this resolved."
+#~ msgstr "지원담당자는 알림을 받았으며, 이를 해결하려고 하고 있습니다."
+
+#~ msgid "View Refund Form"
+#~ msgstr "환불 양식 보기"
+
 #~ msgid "Europe and Central Asia"
 #~ msgstr "유럽과 중앙 아시아"
 
@@ -36420,9 +37183,6 @@ msgstr "Virgin Voyage 10% 할인"
 #~ msgstr ""
 #~ "다시 말씀드리지만, <strong>슈퍼 빌더 베이스 보너스</strong> 에는 제한이 없"
 #~ "습니다 !"
-
-#~ msgid "My Travel Savings"
-#~ msgstr "나의 여행 절감액"
 
 #~ msgid ""
 #~ "Please click <a href=\"%{tmtFinancialProtection}\" target=\"_blank"
@@ -38174,9 +38934,6 @@ msgstr "Virgin Voyage 10% 할인"
 #~ msgid "Book Last Minute"
 #~ msgstr "막바지 예약"
 
-#~ msgid "Donate Now"
-#~ msgstr "지금 기부하세요"
-
 #~ msgid "Go to page"
 #~ msgstr "페이지로 이동"
 
@@ -38587,9 +39344,6 @@ msgstr "Virgin Voyage 10% 할인"
 
 #~ msgid "Cruise Itinerary"
 #~ msgstr "크루즈 일정"
-
-#~ msgid "Departure"
-#~ msgstr "출발"
 
 #~ msgid "InCruises Membership Savings"
 #~ msgstr "inCruises 멤버십 절감"
@@ -40129,9 +40883,6 @@ msgstr "Virgin Voyage 10% 할인"
 #~ msgid "Click here to filter nights"
 #~ msgstr "숙박일수를 선택하려면 여기를 클릭하십시오"
 
-#~ msgid "Price Range:"
-#~ msgstr "가격 범위:"
-
 #~ msgid ""
 #~ "<span class=\"h3\">${{ calculateNightlyRate(hotel.sellingRate) }}</span>\n"
 #~ "\t\t\t\t\t\t\t\t\t\t\t\t<sub v-translate=\"\">/ night</sub>"
@@ -40844,9 +41595,6 @@ msgstr "Virgin Voyage 10% 할인"
 #~ msgid "Rewards"
 #~ msgstr "보상"
 
-#~ msgid "Search by date"
-#~ msgstr "날짜별 검색"
-
 #~ msgid ""
 #~ "Success as an inCruises Partner can be measured in a variety of ways. To "
 #~ "some people, success will be meeting and networking with like-minded "
@@ -40902,9 +41650,6 @@ msgstr "Virgin Voyage 10% 할인"
 
 #~ msgid "TO TRAVEL"
 #~ msgstr "여행하기 위해"
-
-#~ msgid "TRAVEL"
-#~ msgstr "여행"
 
 #~ msgid ""
 #~ "We believe you can! By launching your business and successfully referring "
@@ -41678,9 +42423,6 @@ msgstr "Virgin Voyage 10% 할인"
 
 #~ msgid "Child #{{ index + 1 }} Age"
 #~ msgstr "어린이 #{{ index + 1 }} 연령"
-
-#~ msgid "Category"
-#~ msgstr "카테고리"
 
 #~ msgid "Western Union"
 #~ msgstr "웨스턴 유니온"
@@ -44895,9 +45637,6 @@ msgstr "Virgin Voyage 10% 할인"
 #~ msgid "Adding to Watch List"
 #~ msgstr "관심목록에 추가"
 
-#~ msgid "Arrive Time"
-#~ msgstr "도착 시간"
-
 #~ msgid "Availability and Checkout"
 #~ msgstr "가용성 및 체크 아웃"
 
@@ -44936,9 +45675,6 @@ msgstr "Virgin Voyage 10% 할인"
 #~ msgid "Classes And Services"
 #~ msgstr "등급 및 서비스"
 
-#~ msgid "Click here to view Cancellation Policy"
-#~ msgstr "취소 정책을 보려면 여기를 클릭하십시오"
-
 #~ msgid "Cruise Booking Agreement"
 #~ msgstr "크루즈 예약 계약서"
 
@@ -44950,9 +45686,6 @@ msgstr "Virgin Voyage 10% 할인"
 
 #~ msgid "Dining"
 #~ msgstr "식사"
-
-#~ msgid "Duration"
-#~ msgstr "기간"
 
 #~ msgid "Gender"
 #~ msgstr "성별"
