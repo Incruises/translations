@@ -1118,6 +1118,10 @@ msgstr "%{adultCount} конок"
 msgid "%{currentMonthName} Recurring Bonus"
 msgstr "%{currentMonthName} үчүн Кайталануучу бонус"
 
+#: pages/invoices.vue
+msgid "%{DueDate} At %{DueTime}."
+msgstr ""
+
 #: components/compensation/residual_bonus.vue
 msgid "%{lastMonthName} Recurring Bonus"
 msgstr "%{lastMonthName} үчүн Кайталануучу бонус"
@@ -1560,10 +1564,6 @@ msgstr "<i class=\"fas fa-question-circle\"/>Көмөк алуу"
 msgid "<i class=\"fe fe-check\"/> Close Ticket"
 msgstr "<i class=\"fe fe-check\"/>Тикетти Жабуу"
 
-#: pages/invoices.vue
-msgid "<i class=\"fe fe-credit-card noicon mr-2 \"/> Pay Invoice"
-msgstr "<i class=\"fe fe-credit-card noicon mr-2 \"/>Эсеп- фактураны төлөө"
-
 #: components/support/TicketViewer.vue
 msgid "<i class=\"fe fe-edit\"/> Admin Note"
 msgstr "<i class=\"fe fe-edit\"/>Администратордун эскертүүсү"
@@ -1571,10 +1571,6 @@ msgstr "<i class=\"fe fe-edit\"/>Администратордун эскертү
 #: components/user/user_notes.vue
 msgid "<i class=\"fe fe-edit\"/> Edit"
 msgstr "<i class=\"fe fe-edit\"/>Түзөтүү"
-
-#: pages/invoices.vue
-msgid "<i class=\"fe fe-file-text noicon mr-2\"/> View Invoice"
-msgstr "<i class=\"fe fe-file-text noicon mr-2\"/>Эсеп-фактураны көрүү"
 
 #: components/payout/brightwell/review.vue
 msgid ""
@@ -2895,13 +2891,14 @@ msgstr "Ишке ашты"
 msgid "action"
 msgstr "иш-аракет"
 
-#: components/birthday-modal.vue pages/invoices.vue pages/receipts.vue
+#: components/birthday-modal.vue pages/receipts.vue
 msgid "Action"
 msgstr "Иш-аракет"
 
 #: pages/admin_certificates.vue pages/admin_restricted_paybonus.vue
-#: pages/certificates.vue pages/contacts.vue pages/negative_balances.vue
-#: pages/reports.vue components/admin_booking/admin_cruise_featured.vue
+#: pages/certificates.vue pages/contacts.vue pages/invoices.vue
+#: pages/negative_balances.vue pages/reports.vue
+#: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/admin_finance/payment_fulfillment.vue
@@ -3081,7 +3078,7 @@ msgstr ""
 "кошуңуз, жана картаңыздын (карталардын)<strong>мөөнөтү бүтүп калбаганын</"
 "strong> же мөөнөтү бүтө электигин текшерүү үчүн бат-баттан текшериңиз."
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Add a card"
 msgstr "карта кошуңуз"
 
@@ -3102,12 +3099,12 @@ msgid "Add Backup"
 msgstr "Резервдик көчүрмөнү кошуу"
 
 #: components/navigation/add-recurring-notice.vue
-#: components/onboarding/recurring-payment-step.vue
 #: components/recurring/add-recurring.vue
+#: components/recurring/recurring-cards.vue
 msgid "Add Card"
 msgstr "Картаны кошуңуз"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Add card information for recurring payments."
 msgstr "Кайталануучу төлөм үчүн карта маалыматын кошуңуз."
 
@@ -3157,7 +3154,7 @@ msgstr "Жаңысын кошуу"
 msgid "Add Note"
 msgstr "Эскертүү кошуу"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Add Payment method"
 msgstr "Төлөм ыкмасын кошуңуз"
 
@@ -3206,7 +3203,7 @@ msgstr "Сунуш боюнча билет кошуу"
 msgid "Add to sitemap"
 msgstr "Сайттын картасына кошуу"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Add up to 2 cards, for further peace of mind."
 msgstr "Көңүлүңүз тынч болушу үчүн 2 карта кошуп коюңуз."
 
@@ -3664,7 +3661,7 @@ msgstr ""
 "Бардык кайталануучу төлөмдөрүңүз <strong>TrustMyTravel (TMT)</"
 "strong>тарабынан <strong>иштетилип чыгат жана кепилденет.</strong>."
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid ""
 "All your recurring payments are processed and guaranteed by "
 "TrustMyTravel(TMT)."
@@ -5668,9 +5665,8 @@ msgstr "Канада / Жаңы Англия"
 #: components/cruises_booking/reward_points_step.vue
 #: components/cruises_booking_old/confirmation-step.vue
 #: components/onboarding/name-birthday-avatar-step.vue
-#: components/onboarding/recurring-payment-step.vue
 #: components/payout/euro-conversion.vue components/recurring/add-recurring.vue
-#: components/user/departments.vue
+#: components/recurring/recurring-cards.vue components/user/departments.vue
 #: components/payout/brightwell/recipient-account.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
@@ -5732,7 +5728,7 @@ msgstr "Сынактын жүрүшүндө бирден ашык даража �
 msgid "Caption must be less than 500 characters"
 msgstr "Аталышы 500 белгиден ашпашы керек"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Card Added"
 msgstr "Карт Кошулду"
 
@@ -5741,11 +5737,11 @@ msgstr "Карт Кошулду"
 msgid "Card CVC/CVV:"
 msgstr "Карта CVC/CVV:"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Card Deleted"
 msgstr "Карта жокко чыгарылды"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Card Expiration"
 msgstr "Картанын жарамдуулук мөөнөтү"
 
@@ -5754,7 +5750,7 @@ msgstr "Картанын жарамдуулук мөөнөтү"
 msgid "Card Expiration:"
 msgstr "Картанын жарамдуулук мөөнөтү:"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Card Name"
 msgstr "Карта аты"
 
@@ -5763,7 +5759,7 @@ msgstr "Карта аты"
 msgid "Card Name:"
 msgstr "Карта аты:"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Card Number"
 msgstr "Карта номери"
 
@@ -6492,8 +6488,8 @@ msgstr "Жүргүнчүлөрдүн толук маалыматтары"
 msgid "Complete your booking before"
 msgstr "... дан мурун брондооңузду бүтүрүңүз"
 
-#: pages/export.vue pages/leadership_academy.vue pages/reports.vue
-#: reports/index.html
+#: pages/export.vue pages/invoices.vue pages/leadership_academy.vue
+#: pages/reports.vue reports/index.html
 msgid "Completed"
 msgstr "Аяктады"
 
@@ -6974,6 +6970,10 @@ msgstr ""
 msgid "Create"
 msgstr "Түзүү"
 
+#: pages/invoices.vue
+msgid "Create a prepaid invoice now to secure your payment in advance."
+msgstr ""
+
 #: components/inchat/list_modals/select_namespace_modal.vue
 msgid "Create a room for"
 msgstr "үчүн бөлмө ачуу"
@@ -6994,9 +6994,19 @@ msgstr "Дата түзүү"
 msgid "Create ePayments Wallet"
 msgstr "ePayments Wallet түзүңүз"
 
+#: pages/invoices.vue
+#, fuzzy
+#| msgid "Completed Invoices"
+msgid "Create Invoice"
+msgstr "Толтурулган эсеп-фактуралар"
+
 #: components/payout/payoneer-withdraw.vue
 msgid "Create Payoneer Account"
 msgstr "Payoneer каттоо эсебин түзүү"
+
+#: pages/invoices.vue
+msgid "Create prepaid invoice in advance"
+msgstr ""
 
 #: components/inchat/admin/AdminCreateRoom.vue
 msgid "Create Room"
@@ -8829,7 +8839,7 @@ msgstr "Шаардын атын жазыңыз"
 msgid "Enter Cruise Destination"
 msgstr "Круиздик багытты жазыңыз:"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Enter CVC/CVV"
 msgstr "CVC/CVVни жазыңыз"
 
@@ -8837,7 +8847,7 @@ msgstr "CVC/CVVни жазыңыз"
 msgid "Enter display name (Optional)"
 msgstr "Көрсөтүлгөн атын киргизиңиз (Милдеттүү эмес)"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Enter name"
 msgstr "Aтыңызды киргизиңиз:"
 
@@ -10547,6 +10557,7 @@ msgstr ""
 
 #: components/covid-disclaimer-reminder.vue
 #: components/recurring/add-recurring.vue
+#: components/recurring/recurring-cards.vue
 msgid "I Accept"
 msgstr "Мен кабыл алам"
 
@@ -11414,7 +11425,7 @@ msgstr ""
 "Эгер бул маалыматтын баары туура болсо, бекитүүгө жөнөтүү үчүн төмөндөгү "
 "Жиберүү баскычына басыңыз."
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "If any of the 2 cards fail, we'll try your inCruises wallet."
 msgstr ""
 "Эгер эки картанын бири иштебей калса, inCruises капчыгыңызды текшеребиз."
@@ -12777,13 +12788,10 @@ msgstr "Эсеп-фактура"
 msgid "Invoice Date"
 msgstr "Эсеп-фактура күнү"
 
-#: components/invoices/invoice.vue invoices/invoice_statement.html
+#: pages/invoices.vue components/invoices/invoice.vue
+#: invoices/invoice_statement.html
 msgid "Invoice ID"
 msgstr "Эсеп-фактуранын ИН"
-
-#: pages/invoices.vue
-msgid "INVOICE ID"
-msgstr "ЭСЕП-ФАКТУРАНЫН ИН"
 
 #: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Invoice Number"
@@ -13155,7 +13163,7 @@ msgstr ""
 "стратегияңызды өркүндөтүү үчүн, реалдуу убакыт режиминде каттарды алып ачып "
 "кабардар болуңуз."
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Keep your cards up-to-date."
 msgstr "Карталарыңызды жаңыртып туруңуз."
 
@@ -13623,9 +13631,9 @@ msgstr "Деңгээлди жүктө"
 msgid "Load more"
 msgstr "Көбүрөөк жүктө"
 
-#: pages/admin_partner_success.vue pages/cruises.vue pages/invoices.vue
-#: pages/partner_success.vue pages/receipts.vue pages/reports.vue
-#: pages/reward_points.vue pages/track_results.vue pages/webinar_recordings.vue
+#: pages/admin_partner_success.vue pages/cruises.vue pages/partner_success.vue
+#: pages/receipts.vue pages/reports.vue pages/reward_points.vue
+#: pages/track_results.vue pages/webinar_recordings.vue
 #: components/cruises_booking/cabin_step.vue
 #: components/payout/wallet-transfers.vue components/tours/intours_results.vue
 #: reports/index.html track_results/index.html
@@ -16898,6 +16906,12 @@ msgstr "Төлөө"
 msgid "Pay Here"
 msgstr "Бул жерде төлөңүз"
 
+#: pages/invoices.vue
+#, fuzzy
+#| msgid "Invoice"
+msgid "Pay Invoice"
+msgstr "Эсеп-фактура"
+
 #: components/checkout/ProcessorWallet.vue
 msgid "Pay using inCruises® Wallet"
 msgstr "inCruises® Капчыгы аркылуу төлөңүз"
@@ -17002,7 +17016,8 @@ msgstr "Төлөмдү карап чыгуу"
 msgid "Paypal"
 msgstr "Paypal"
 
-#: pages/track_results.vue components/admin_finance/cruise_bookings.vue
+#: pages/invoices.vue pages/track_results.vue
+#: components/admin_finance/cruise_bookings.vue
 #: components/support/TicketList.vue components/welcome/members-modal.vue
 msgid "Pending"
 msgstr "Күтүүдө"
@@ -17399,15 +17414,15 @@ msgid ""
 msgstr ""
 "Изделүүчү сөз айкаштарын туура жазганыңызды текшерип, кайра аракет кылыңыз."
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Please enter a card for recurring payments."
 msgstr "Өтүнүч, кайталануучу төлөм үчүн картаңызды киргизиңиз."
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Please enter a card number"
 msgstr "Картаңыздын номерин киргизиңиз"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Please enter a CVC"
 msgstr "CVC номерин киргизиңиз"
 
@@ -17419,7 +17434,7 @@ msgstr "Сураныч, топтун сүрөттөмөсүн киргизиңи
 msgid "Please enter a group name."
 msgstr "Сураныч, топтун аталышын киргизиңиз"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Please enter a name"
 msgstr "Атын киргизиңиз"
 
@@ -17441,7 +17456,7 @@ msgstr "Жарактуу телефон номерди киргизиңиз."
 msgid "Please enter address"
 msgstr "Дарегиңизди киргизиңиз"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Please enter an expiration date"
 msgstr "Жарамдуулук мөөнөтүн киргизиңиз"
 
@@ -19001,7 +19016,7 @@ msgstr "Алуучулар"
 msgid "Recommended"
 msgstr "Сунушталат"
 
-#: pages/reports.vue
+#: pages/invoices.vue pages/reports.vue
 #: components/admin_territory_directors/territory_directors.vue
 #: components/recurring/add-recurring.vue reports/index.html
 msgid "Recurring Billing"
@@ -21217,6 +21232,7 @@ msgid "Submit Ticket"
 msgstr "Тикетти жиберүү"
 
 #: components/recurring/add-recurring.vue
+#: components/recurring/recurring-cards.vue
 msgid "Subscription Agreement"
 msgstr "Жазылуу келишими"
 
@@ -22153,7 +22169,7 @@ msgstr "Сапардын калган 75% чөнтөгүнөн чыккан ка
 msgid "The required startDate and returnDate are missing."
 msgstr "Талап кылынган башталгыч жана кайтыш кунү."
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "The selected card will be used for recurring payments."
 msgstr "Тандалган карта кайталануучу төлөмдөр үчүн колдонулат."
 
@@ -22461,6 +22477,12 @@ msgid ""
 msgstr ""
 "Төлөмүңүздү баштоодо көйгөй келип чыкты. Баракчаны кайра жүктөп, кайра "
 "аракет кылыңыз."
+
+#: pages/invoices.vue
+#, fuzzy
+#| msgid "There was an issue initializing your checkout. Please try again."
+msgid "There was an issue initializing your checkout. Please try again later."
+msgstr "Төлөмүңүздү баштоодо көйгөй келип чыкты. Кайталап көрүңүз."
 
 #: pages/payout.vue
 msgid "There was an issue processing your payout. Please contact support."
@@ -22897,6 +22919,7 @@ msgstr ""
 "кайтарып ала албайсыз."
 
 #: components/recurring/add-recurring.vue
+#: components/recurring/recurring-cards.vue
 msgid ""
 "This card will be used to bill your for any and all pending invoices "
 "generated by inCruises to maintain your Membership and Partnership status "
@@ -27444,11 +27467,6 @@ msgstr ""
 msgid "Your Accounts"
 msgstr "Сиздин аккаунттарыңыз"
 
-#: pages/invoices.vue
-msgid ""
-"Your bank transfer has initiated and should be completed within a few days."
-msgstr "Банк которууңуз башталды жана ал бир нече күндүн ичинде бүтөт."
-
 #: components/cruises_booking/active_basket_bar.vue
 #, fuzzy
 #| msgid ""
@@ -27524,6 +27542,12 @@ msgstr "Брондоо сессиясынын мөөнөтү бүттү. Сур�
 #: components/inchat/preview/preview_modal.vue
 msgid "Your browser does not support the video tag."
 msgstr "Сиздин браузериңиз видео тэгди колдобойт."
+
+#: components/recurring/recurring-cards.vue
+#, fuzzy
+#| msgid "Your new card has been added successfully"
+msgid "Your card has been deleted successfully"
+msgstr "Жаңы картаңыз ийгиликтүү туташтырылды"
 
 #: pages/hotels.vue pages/hotels_details.vue
 msgid "Your check in date and check out date must be different"
@@ -27731,7 +27755,7 @@ msgstr ""
 msgid "Your Name"
 msgstr "Сиздин атыңыз"
 
-#: components/onboarding/recurring-payment-step.vue
+#: components/recurring/recurring-cards.vue
 msgid "Your new card has been added successfully"
 msgstr "Жаңы картаңыз ийгиликтүү туташтырылды"
 
@@ -39965,6 +39989,20 @@ msgstr "Costa менен Кариб деңизиндеги Жаңы жыл"
 msgid "Spring Cruise from Barcelona"
 msgstr "Барселонадан жазгы круиз"
 
+#~ msgid "<i class=\"fe fe-credit-card noicon mr-2 \"/> Pay Invoice"
+#~ msgstr "<i class=\"fe fe-credit-card noicon mr-2 \"/>Эсеп- фактураны төлөө"
+
+#~ msgid "<i class=\"fe fe-file-text noicon mr-2\"/> View Invoice"
+#~ msgstr "<i class=\"fe fe-file-text noicon mr-2\"/>Эсеп-фактураны көрүү"
+
+#~ msgid "INVOICE ID"
+#~ msgstr "ЭСЕП-ФАКТУРАНЫН ИН"
+
+#~ msgid ""
+#~ "Your bank transfer has initiated and should be completed within a few "
+#~ "days."
+#~ msgstr "Банк которууңуз башталды жана ал бир нече күндүн ичинде бүтөт."
+
 #~ msgid "# of Sales"
 #~ msgstr "# Сатуулардын"
 
@@ -41608,9 +41646,6 @@ msgstr "Барселонадан жазгы круиз"
 
 #~ msgid "You must be among the"
 #~ msgstr "Сиз төмөнкүлөрдүн арасында болушуңуз керек"
-
-#~ msgid "There was an issue initializing your checkout. Please try again."
-#~ msgstr "Төлөмүңүздү баштоодо көйгөй келип чыкты. Кайталап көрүңүз."
 
 #~ msgid "7 nights Mediterranean from Barcelona"
 #~ msgstr "Барселонадан 7 түндүк Жер Ортолук деңиз"
