@@ -217,6 +217,7 @@ msgid "%s has requested to delete their %s subscription."
 msgstr "%s han solicitado borrar su %s subscripción."
 
 #: /app/apps/main/views/emails/invoices/successful.html
+#: /app/apps/main/views/emails/invoices/successful_prepayment.html
 msgid "%s Invoice"
 msgstr "%s Recibo"
 
@@ -724,10 +725,6 @@ msgstr ""
 "período de reembolso de 14 días. Tu solicitud está fuera de ese período, por "
 "lo que no tenemos un proceso de reembolso."
 
-#: /app/apps/main/controllers/invoices.js
-msgid "Account Expired"
-msgstr "Cuenta Expirada"
-
 #: /app/apps/main/components/account_recovery.js
 msgid "Account Recovery Initiated"
 msgstr "Se ha iniciado el proceso de recuperación de la cuenta"
@@ -1174,10 +1171,6 @@ msgstr ""
 #: /app/apps/main/views/emails/refund_protocol/warning_refund_its_rejected.html
 msgid "Best regards,"
 msgstr "Un saludo cordial,"
-
-#: /app/apps/main/controllers/invoices.js
-msgid "Billing Reminder"
-msgstr "Recordatorio de Facturación"
 
 #: /app/apps/main/controllers/certificates.js
 msgid "BOARD OF DIRECTORS"
@@ -2176,6 +2169,12 @@ msgstr "¡Aviso de vencimiento de Método de pago de Membresía de inCruises!"
 msgid "Failed to add certificate"
 msgstr "No se pudo añadir el certificado"
 
+#: /app/apps/main/components/invoices.js
+#, fuzzy
+#| msgid "Failed to add certificate"
+msgid "Failed to create invoice"
+msgstr "No se pudo añadir el certificado"
+
 #: /app/apps/main/controllers/payout_withdraw.js
 msgid ""
 "Failed to initiate your withdraw. Please verify your information and try "
@@ -2340,10 +2339,6 @@ msgstr ""
 msgid "Founder & Chief Executive Officer"
 msgstr "Fundador y Director General"
 
-#: /app/apps/main/controllers/invoices.js
-msgid "Free Membership"
-msgstr "Membresía Gratis"
-
 #: /app/apps/main/controllers/certificates.js
 msgid "FREE MEMBERSHIP"
 msgstr "MEMBRESÍA GRATIS"
@@ -2430,6 +2425,7 @@ msgstr "Hola %s"
 #: /app/apps/main/views/emails/email_verification/verify_recipient_account.html
 #: /app/apps/main/views/emails/fast_growing_legs/team_warning.html
 #: /app/apps/main/views/emails/invoices/successful.html
+#: /app/apps/main/views/emails/invoices/successful_prepayment.html
 #: /app/apps/main/views/emails/kyc_verification/verification_status.html
 #: /app/apps/main/views/emails/leadership_review_protocol/warning_leadership_bonus_lost.html
 #: /app/apps/main/views/emails/negative_balances/negative_balances_hold.html
@@ -3479,7 +3475,6 @@ msgstr ""
 msgid "Invite Notification"
 msgstr "Notificación de invitación"
 
-#: /app/apps/main/controllers/invoices.js
 #: /app/apps/main/cronjobs/powerToolsUpgradeExpires.js
 msgid "Invoice Created"
 msgstr "Recibo creado"
@@ -3507,6 +3502,10 @@ msgstr "¡Recibo de inCruises!"
 #: /app/apps/main/cronjobs/notifyPendingMember.js
 msgid "Invoice from inCruises®!"
 msgstr "Recibo de inCruises®"
+
+#: /app/apps/main/components/invoices.js
+msgid "Invoice is created and ready for payment."
+msgstr ""
 
 #: /app/apps/main/views/emails/invoices/create_invoice.html
 #: /app/apps/main/views/emails/invoices/expired_user.html
@@ -3764,6 +3763,7 @@ msgstr "Miembro"
 #: /app/apps/main/views/emails/billing/recurring_failed_support.html
 #: /app/apps/main/views/emails/billing/recurring_success_support.html
 #: /app/apps/main/views/emails/invoices/successful.html
+#: /app/apps/main/views/emails/invoices/successful_prepayment.html
 msgid "Member’s ID:"
 msgstr "Miembro ID:"
 
@@ -3910,6 +3910,12 @@ msgstr "Nueva Contraseña:"
 msgid "No comp ID found in request."
 msgstr "No comp ID found in request."
 
+#: /app/apps/main/components/invoices.js
+#, fuzzy
+#| msgid "Successfully membership plan changed."
+msgid "No current membership plan found"
+msgstr "Plan de membresía cambiado satisfactoriamente."
+
 #: /app/apps/main/controllers/settings.js
 msgid "No data posted!"
 msgstr "No has puesto ningun dato."
@@ -3944,6 +3950,12 @@ msgstr "Ninguna coincidencia encontrada"
 msgid "No pending bonus found"
 msgstr "No se encontró ningún bono pendiente"
 
+#: /app/apps/main/components/invoices.js
+#, fuzzy
+#| msgid "No status provided"
+msgid "No user provided"
+msgstr "Satus no proporcionado."
+
 #: /app/apps/main/components/weekly_bonus.js
 msgid "No weekly bonus found."
 msgstr "No se encontró ningún bono semanal."
@@ -3961,10 +3973,6 @@ msgstr "no elegible"
 msgid "Not enough total team members."
 msgstr "No tienes suficientes Miembros de equipo."
 
-#: /app/apps/main/controllers/invoices.js
-msgid "Not Free Membership"
-msgstr "No tiene Membresía Gratis"
-
 #: /app/apps/main/controllers/user_notes.js
 msgid "Note added to user"
 msgstr "Nota añadida al usuario"
@@ -3976,10 +3984,6 @@ msgstr "Nota eliminada"
 #: /app/apps/main/controllers/user_notes.js
 msgid "Note updated"
 msgstr "Nota actualizada"
-
-#: /app/apps/main/controllers/invoices.js
-msgid "Now Free Membership"
-msgstr "Ahora tienes Membresía Gratis"
 
 #: /app/apps/main/views/emails/contacts/reminders/upgrade_reminder_3.html
 msgid "Now, take a step back for a moment...and consider the following:"
@@ -4248,6 +4252,7 @@ msgstr "el pago ha sido confirmado."
 #: /app/apps/main/views/emails/billing/recurring_failed_support.html
 #: /app/apps/main/views/emails/billing/recurring_success_support.html
 #: /app/apps/main/views/emails/invoices/successful.html
+#: /app/apps/main/views/emails/invoices/successful_prepayment.html
 msgid "Payment Method:"
 msgstr "Método de Pago:"
 
@@ -4422,6 +4427,7 @@ msgstr ""
 #: /app/apps/main/views/emails/billing/recurring_failed_support.html
 #: /app/apps/main/views/emails/billing/recurring_success_support.html
 #: /app/apps/main/views/emails/invoices/successful.html
+#: /app/apps/main/views/emails/invoices/successful_prepayment.html
 msgid ""
 "Please contact them and make yourself available for any follow up questions "
 "and/or guidance they may need."
@@ -5222,6 +5228,12 @@ msgstr "Algo salió mal, no podemos actualizar esta revisión."
 msgid "Someone you referred successfully paid an invoice."
 msgstr "Alguien al que referiste pago con éxito su recibo."
 
+#: /app/apps/main/components/invoices.js
+#, fuzzy
+#| msgid "Someone you referred successfully paid an invoice."
+msgid "Someone you referred successfully pre-paid an invoice."
+msgstr "Alguien al que referiste pago con éxito su recibo."
+
 #: /app/apps/main/controllers/upgrade.js
 msgid "Someone you referred successfully upgraded on inCruises"
 msgstr "Uno de tus invitados se activo con éxito en inCruises"
@@ -5337,12 +5349,14 @@ msgstr "Actualización exitosa de Connect"
 msgid "SUCCESSFUL GROWTH"
 msgstr "CRECIMIENTO EXITOSO"
 
-#: /app/apps/main/controllers/invoices.js
-msgid "Successful Invoice"
+#: /app/apps/main/components/invoices.js
+msgid "Successful Invoice Payment"
 msgstr "Recibo Pagado con Éxito"
 
 #: /app/apps/main/components/invoices.js
-msgid "Successful Invoice Payment"
+#, fuzzy
+#| msgid "Successful Invoice Payment"
+msgid "Successful Invoice Pre-Payment"
 msgstr "Recibo Pagado con Éxito"
 
 #: /app/apps/main/controllers/upgrade.js
@@ -5428,10 +5442,6 @@ msgstr "Solicitaste el Pago del Bono Residual con éxito. "
 msgid "Successfully updated your preferred recurring currency."
 msgstr "La moneda preferida recurrente ha sido actualizada con éxito."
 
-#: /app/apps/main/controllers/invoices.js
-msgid "Successfuly changed your recurring payment method."
-msgstr "Cambio con éxito el método de pago recurrente."
-
 #: /app/apps/main/controllers/global_convention.js
 msgid "Successfuly deleted your event."
 msgstr "Tu evento fue borrado con éxito."
@@ -5439,10 +5449,6 @@ msgstr "Tu evento fue borrado con éxito."
 #: /app/apps/main/controllers/global_convention.js
 msgid "Successfuly edited your event."
 msgstr "Tu evento fue editado con éxito."
-
-#: /app/apps/main/controllers/invoices.js
-msgid "Successfuly removed your recurring payment method."
-msgstr "Eliminó con éxito el método de pago recurrente."
 
 #: /app/apps/main/controllers/global_convention.js
 msgid "Successfuly submitted your event for review."
@@ -6070,7 +6076,6 @@ msgstr ""
 #: /app/apps/main/compensation/old_leadership.js
 #: /app/apps/main/compensation/residual.js
 #: /app/apps/main/controllers/contacts.js
-#: /app/apps/main/controllers/invoices.js
 msgid "There was an error processing your request."
 msgstr "Hubo un error al procesar tu solicitud."
 
@@ -6754,6 +6759,7 @@ msgstr "Estado actualizado."
 #: /app/apps/main/views/emails/billing/recurring_failed_support.html
 #: /app/apps/main/views/emails/billing/recurring_success_support.html
 #: /app/apps/main/views/emails/invoices/successful.html
+#: /app/apps/main/views/emails/invoices/successful_prepayment.html
 msgid "Upgrade Details:"
 msgstr "Detalles de la Actualización:"
 
@@ -6838,12 +6844,14 @@ msgstr "Usuario no encontrado, favor de buscarlo en Comentarios."
 #: /app/apps/main/views/emails/billing/recurring_failed_support.html
 #: /app/apps/main/views/emails/billing/recurring_success_support.html
 #: /app/apps/main/views/emails/invoices/successful.html
+#: /app/apps/main/views/emails/invoices/successful_prepayment.html
 msgid "User's Email:"
 msgstr "Email del Usuario:"
 
 #: /app/apps/main/views/emails/billing/recurring_failed_support.html
 #: /app/apps/main/views/emails/billing/recurring_success_support.html
 #: /app/apps/main/views/emails/invoices/successful.html
+#: /app/apps/main/views/emails/invoices/successful_prepayment.html
 msgid "User’s phone number:"
 msgstr "Número de Teléfono del usuario:"
 
@@ -7149,6 +7157,14 @@ msgstr ""
 #: /app/apps/main/views/emails/refund_protocol/warning_refund_done.html
 msgid "We have processed your request and returned the money to the card."
 msgstr "Hemos procesado tu solicitud y devuelto el dinero a la tarjeta."
+
+#: /app/apps/main/views/emails/invoices/successful_prepayment.html
+#, fuzzy
+#| msgid "We have successfully charged <strong>%s %s</strong> for an invoice."
+msgid ""
+"We have successfully charged <strong>%s %s</strong> for an invoice "
+"prepayment."
+msgstr "Pudimos cobrar con éxito a <strong>%s %s</strong> su recibo."
 
 #: /app/apps/main/views/emails/invoices/successful.html
 msgid "We have successfully charged <strong>%s %s</strong> for an invoice."
@@ -21082,6 +21098,30 @@ msgstr "Travesías por el Caribe con Costa"
 msgid "New Year in the Caribbean with Costa"
 msgstr "Nuevo Año por el Caribe con Costa"
 
+#~ msgid "Account Expired"
+#~ msgstr "Cuenta Expirada"
+
+#~ msgid "Billing Reminder"
+#~ msgstr "Recordatorio de Facturación"
+
+#~ msgid "Free Membership"
+#~ msgstr "Membresía Gratis"
+
+#~ msgid "Not Free Membership"
+#~ msgstr "No tiene Membresía Gratis"
+
+#~ msgid "Now Free Membership"
+#~ msgstr "Ahora tienes Membresía Gratis"
+
+#~ msgid "Successful Invoice"
+#~ msgstr "Recibo Pagado con Éxito"
+
+#~ msgid "Successfuly changed your recurring payment method."
+#~ msgstr "Cambio con éxito el método de pago recurrente."
+
+#~ msgid "Successfuly removed your recurring payment method."
+#~ msgstr "Eliminó con éxito el método de pago recurrente."
+
 #~ msgid ""
 #~ "InCruises: Your 2FA has been changed on your account! If you did not "
 #~ "request this change, please review your account details and contact "
@@ -22427,9 +22467,6 @@ msgstr "Nuevo Año por el Caribe con Costa"
 
 #~ msgid "No search field selected."
 #~ msgstr "No seleccionaste un campo de búsqueda."
-
-#~ msgid "No status provided"
-#~ msgstr "Satus no proporcionado."
 
 #~ msgid "Successfully pinned ticket."
 #~ msgstr "Ticket asignado con éxito."
