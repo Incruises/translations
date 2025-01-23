@@ -374,6 +374,12 @@ msgstr "(Адміністратор)"
 msgid "(Adult member)"
 msgstr "(Дорослий учасник)"
 
+#: components/hotel_booking/guest_info_step.vue
+#, fuzzy
+#| msgid "Adult"
+msgid "(Adult)"
+msgstr "Дорослий"
+
 #: pages/public/pricing.vue
 msgid "(awards 100 or 250 Reward Points)"
 msgstr "(нараховується 100 або 250 Бонусних Балів)"
@@ -383,6 +389,7 @@ msgid "(Cabin Code: %{ cabin_code })"
 msgstr "(Код каюти: %{ cabin_code })"
 
 #: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "(Child)"
 msgstr "(Дитина)"
 
@@ -696,20 +703,6 @@ msgstr ""
 "fieldType === 'PHONE_NUMBER' ? `+${recipientField.value."
 "countryPhoneCode}${recipientField.value.number}` : recipientField.value }}"
 
-#: pages/hotel_booking.vue
-msgid ""
-"{{ requirePassengerNames ? '' : 'Optional' }} Guest (%{guest}) #%{ index }"
-msgstr ""
-"{{ requirePassengerNames ? '' : 'Optional' }} Гість (%{guest}) #%{ index }"
-
-#: pages/hotel_booking.vue
-msgid ""
-"{{ requirePassengerNames ? 'Required Additional Guests' : 'Additional Guests "
-"(Optional)' }}"
-msgstr ""
-"{{ requirePassengerNames ? 'Обов'язкові додаткові гості' : 'Додаткові гості "
-"(опціонально)' }}"
-
 #: pages/contacts.vue
 #, fuzzy
 #| msgid "{{ course.description }}"
@@ -880,10 +873,6 @@ msgstr ""
 msgid "*Price does not include taxes"
 msgstr "*ціна не включає податки"
 
-#: pages/hotels.vue
-msgid "*Price may vary based on availability."
-msgstr "*Ціна може змінюватися в залежності від наявності."
-
 #: pages/cruises_old.vue
 msgid ""
 "*Price may vary based on availability. You will receive accurate pricing "
@@ -919,8 +908,14 @@ msgstr ""
 "оскільки inCruises розцінює ці дії як неприйнятні та може застосувати "
 "штрафні санкції."
 
-#: pages/hotel_booking.vue pages/hotels.vue
+#: pages/hotels.vue
 msgid "/ night"
+msgstr "/ ніч"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "/ night"
+msgid "/ Night"
 msgstr "/ ніч"
 
 #: pages/track_results.vue
@@ -978,7 +973,7 @@ msgstr "%{ cd_used } Бонусних Балів"
 msgid "%{ city }"
 msgstr "%{ city }"
 
-#: pages/cruises_old.vue pages/hotels.vue
+#: pages/cruises_old.vue
 msgid "%{ length } results match your criteria."
 msgstr "Результати, що відповідають вашим критеріям: %{ length }."
 
@@ -1089,14 +1084,6 @@ msgstr "%{nights} Ночей"
 #: pages/cruises_old.vue
 msgid "%{nights} Nights - {{ getDestinationById(cruise.destination_id) }}"
 msgstr "%{nights} Ночей - {{ getDestinationById(cruise.destination_id) }}і"
-
-#: pages/hotels_details.vue
-msgid "%{sellingRate} for %{nights} nights total"
-msgstr "%{sellingRate} за %{nights} ночей разом"
-
-#: pages/hotels_details.vue
-msgid "%{sellingRate} per night"
-msgstr "%{sellingRate} за ніч"
 
 #: components/cruises_booking/cruise_card.vue
 msgid "%{startDate} to %{endDate}"
@@ -1494,18 +1481,6 @@ msgstr ""
 "<i class=\"far fa-clock mr-2\"/> Залишилось підписати лише <strong>{{5 - "
 "quick_actions[10]}} Члена(-ів) Клубу</strong> щоб у наступному місяці "
 "звільнитися від сплати Членського Внеску у розмірі $100"
-
-#: pages/hotels.vue
-msgid "<i class=\"fas fa-hotel mr-1\"/> Hotels"
-msgstr "<i class=\"fas fa-hotel mr-1\"/> Готелі"
-
-#: pages/hotels.vue
-msgid "<i class=\"fas fa-map mr-1\"/> Destinations"
-msgstr "<i class=\"fas fa-map mr-1\"/> Напрямки"
-
-#: pages/hotels.vue
-msgid "<i class=\"fas fa-map-pin mr-1\"/> Zones"
-msgstr "<i class=\"fas fa-map-pin mr-1\"/> Зони"
 
 #: components/public/FooterLinks.vue
 msgid "<i class=\"fas fa-question-circle\"/> Get Help"
@@ -2230,6 +2205,18 @@ msgstr ""
 msgid "${{statement.data.amount}}"
 msgstr "${{statement.data.amount}}"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "%{sellingRate} per night"
+msgid "$%{sellingRate} / Night"
+msgstr "%{sellingRate} за ніч"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "%{sellingRate} per night"
+msgid "$%{sellingRate} total"
+msgstr "%{sellingRate} за ніч"
+
 #: pages/payment_protection.vue
 msgid "$1,100 + 1,000 (2 for 1) Reward Points"
 msgstr "$1100 + 1000 Бонусні Бали (2 за 1)"
@@ -2387,7 +2374,9 @@ msgstr ""
 "Балів, та"
 
 #: pages/hotels.vue
-msgid "150,000+ Global Destinations are Waiting for You!"
+#, fuzzy
+#| msgid "150,000+ Global Destinations are Waiting for You!"
+msgid "150.000+ Global destinations are waiting for you"
 msgstr "На вас чекають понад 150 000 міжнародних напрямків!"
 
 #: pages/multi_factor.vue
@@ -2415,12 +2404,10 @@ msgstr "ББ 2 до 1"
 msgid "2 nights in Dubai with pre-cruise accommodations"
 msgstr "Розміщення в Дубаї на 2 ночі перед початком круїзу"
 
-#: pages/hotels_details.vue
-msgid "2-11 years at the time of travel"
-msgstr "2-11 років на момент подорожі"
-
-#: pages/hotels.vue
-msgid "2-17 years at the time of travel"
+#: components/hotels/GuestsDropdown.vue
+#, fuzzy
+#| msgid "2-17 years at the time of travel"
+msgid "2 to 17 years at the time of travel."
 msgstr "2-17 років на момент подорожі"
 
 #: pages/elevate.vue pages/elevate_registration.vue
@@ -2632,7 +2619,7 @@ msgstr ""
 msgid "A Great Value:"
 msgstr "Величезна цінність:"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid ""
 "A members in this booking has reached the limit for booking cruises with "
 "Insider Pricing discount. Insider Pricing is no longer available."
@@ -2977,7 +2964,8 @@ msgstr "Активацій цього місяця"
 msgid "Active"
 msgstr "Активний"
 
-#: pages/hotel_booking.vue components/cruises_booking/reward_points_step.vue
+#: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Active Balance"
 msgstr "Активний баланс"
 
@@ -3125,8 +3113,10 @@ msgstr "Додати відділ"
 msgid "Add Dynamic Featured Cruise"
 msgstr "Додати динамічний рекомендований круїз"
 
-#: pages/hotel_booking.vue
-msgid "Add Guest"
+#: components/hotels/GuestsDropdown.vue
+#, fuzzy
+#| msgid "Add Guest"
+msgid "Add guests"
 msgstr "Додати гостя"
 
 #: components/booking/add-cd-user.vue
@@ -3140,10 +3130,12 @@ msgstr "Додати Пізніше"
 #: components/booking/add-cd-user.vue
 #: components/cruises_booking/reward_points_step.vue
 #: components/cruises_booking_old/reward-points-step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Add Member"
 msgstr "Додати Члена Клубу"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Add Members to your Booking"
 msgstr "Додати Членів Клубу до свого бронювання"
 
@@ -3418,23 +3410,16 @@ msgstr "Адміністратори"
 msgid "Admins and rank leaders cannot disable 2FA"
 msgstr "Адміністратори та лідери в ранзі не можуть відключати 2FA"
 
-#: pages/hotel_booking.vue
-msgid "adult"
-msgstr "дорослий"
-
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotels/GuestsDropdown.vue
 msgid "Adult"
 msgstr "Дорослий"
 
-#: pages/hotels.vue pages/hotels_details.vue
 #: components/cruises_booking/passenger_count_step.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
+#: components/hotels/GuestsDropdown.vue
 msgid "Adults"
 msgstr "Дорослі"
-
-#: pages/hotel_booking.vue
-msgid "Adults:"
-msgstr "Дорослі:"
 
 #: pages/glsx.vue
 #, fuzzy
@@ -3458,10 +3443,6 @@ msgstr "ДОСТУПНИМИ"
 #: pages/elevate.vue
 msgid "After booking the Elevate Cruise,"
 msgstr "Після бронювання круїзу Elevate Cruise"
-
-#: pages/hotels.vue pages/hotels_details.vue
-msgid "Age of children:"
-msgstr "Вік дітей:"
 
 #: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
@@ -3496,7 +3477,7 @@ msgstr "Аляска"
 msgid "Alipay"
 msgstr "Alipay"
 
-#: pages/admin_support_analytics.vue pages/hotels.vue pages/info_center.vue
+#: pages/admin_support_analytics.vue pages/info_center.vue
 #: pages/leadership_academy.vue pages/reports.vue pages/team_rankings.vue
 #: pages/track_results.vue components/user/timeline.vue reports/index.html
 #: track_results/index.html
@@ -3552,6 +3533,18 @@ msgstr "Всі Документи"
 #: pages/inviter.vue pages/support.vue components/support/AdminCreateTicket.vue
 msgid "All fields are required."
 msgstr "Необхідно заповнити всі поля."
+
+#: components/hotel_booking/guest_info_step.vue
+#, fuzzy
+#| msgid ""
+#| "All fields are required. Please confirm all of the passengers on this "
+#| "booking, the passengers are final and cannot be changed at a later time."
+msgid ""
+"All fields are required. Please confirm all of the guests on this booking."
+msgstr ""
+"Усі поля є обов'язковими до заповнення. Будь ласка, підтвердьте всіх "
+"пасажирів цього бронювання. Дані пасажирів є остаточними та не підлягають "
+"подальшим змінам."
 
 #: components/cruises_booking/passenger_info_step.vue
 msgid ""
@@ -3715,10 +3708,12 @@ msgid "All your saved passengers"
 msgstr "Всі ваші пасажири, що були збережені"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Allocated points"
 msgstr "Виділені бали"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Allocated Points"
 msgstr "Виділені бали"
 
@@ -3819,6 +3814,12 @@ msgstr "Результати Амбасадора"
 msgid "Ambassador Tracking"
 msgstr "Результати Амбасадора"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Ship Amenities"
+msgid "Amenities"
+msgstr "Зручності на кораблі"
+
 #: components/checkout/ProcessorIngenico.vue
 #: components/checkout/ProcessorNexio.vue
 #: components/checkout/ProcessorSafechargeEur.vue
@@ -3832,7 +3833,7 @@ msgstr "American Express"
 msgid "Americas Territory Director"
 msgstr "Територіальний Директор регіону Америк"
 
-#: pages/hotel_booking.vue pages/invoices.vue pages/invoices_new.vue
+#: pages/invoices.vue pages/invoices_new.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
@@ -4139,8 +4140,9 @@ msgid "Applicant Signature"
 msgstr "Підпис Заявника"
 
 #: components/filter-chip-range.vue components/month_picker.vue
-#: pages/checkout.vue pages/contacts.vue pages/cruises.vue
-#: pages/intours_details.vue components/tours/intours_results.vue
+#: pages/checkout.vue pages/contacts.vue pages/cruises.vue pages/hotels.vue
+#: pages/hotels_details.vue pages/intours_details.vue
+#: components/tours/intours_results.vue
 msgid "Apply"
 msgstr "Застосувати"
 
@@ -4544,6 +4546,7 @@ msgstr ""
 "В inCruises®, ми ставимо наших Членів та Партнерів завжди на перше місце!"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "At some point you may have deactivated your account. This caused your points "
 "to move to an inactive account balance. Take into account that inactive "
@@ -4732,9 +4735,9 @@ msgstr "b. Національний Директор"
 msgid "b. Time of the Essence"
 msgstr "b. Термін Дії"
 
-#: pages/contacts.vue pages/courses.vue pages/cruise.vue pages/import.vue
-#: pages/intours_details.vue pages/leadership_academy.vue
-#: pages/multi_factor.vue pages/settings.vue
+#: pages/contacts.vue pages/courses.vue pages/cruise.vue
+#: pages/hotels_details.vue pages/import.vue pages/intours_details.vue
+#: pages/leadership_academy.vue pages/multi_factor.vue pages/settings.vue
 #: components/agreements/italian_agreement.vue
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
@@ -4787,6 +4790,7 @@ msgid "Balance"
 msgstr "Баланс"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Balance Use conditions"
 msgstr "Умови використання балансу"
 
@@ -4846,6 +4850,7 @@ msgid "Basic Training Courses"
 msgstr "Базові навчальні курси"
 
 #: components/cruises_booking/active_basket_bar.vue
+#: components/hotel_booking/active_basket_bar.vue
 msgid "Basket active for"
 msgstr "Корзина активний протягом"
 
@@ -4910,6 +4915,7 @@ msgstr ""
 "Станьте Активним Партнером, підписавши 1-го прямого Члена Клубу цього місяця."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Before"
 msgstr "Раніше"
 
@@ -5082,10 +5088,6 @@ msgstr "Boleto"
 msgid "Boleto Flash"
 msgstr "Boleto Flash"
 
-#: pages/hotels.vue
-msgid "Bonotel"
-msgstr "Bonotel"
-
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/weekly_bonus.vue
 #: components/growth_calculator/potential_leadership.vue
@@ -5182,6 +5184,15 @@ msgstr ""
 "Бронюйте частину ваших круїзів з використанням бонусних балів, а іншу – за "
 "гроші"
 
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid ""
+#| "Book a part of your cruises using reward points and the other with money"
+msgid "Book a part of your hotel using reward points and the other with money"
+msgstr ""
+"Бронюйте частину ваших круїзів з використанням бонусних балів, а іншу – за "
+"гроші"
+
 #: components/covid-disclaimer-reminder.vue
 msgid "BOOK AND CRUISE AT YOUR OWN RISK"
 msgstr "БРОНЮЙТЕ І ВІДПРАВЛЯЙТЕСЬ В КРУЇЗ ПІД ВАШУ ВІДПОВІДАЛЬНІСТЬ"
@@ -5196,7 +5207,7 @@ msgstr ""
 "Бронюйте неймовірні пропозиції від Costa Cruise і вирушайте в подорож вже "
 "цього сезону!"
 
-#: pages/hotels_details.vue components/tours/details/available-plans.vue
+#: components/tours/details/available-plans.vue
 msgid "Book now"
 msgstr "Забронювати зараз"
 
@@ -5216,6 +5227,11 @@ msgstr "Бронюйте преміальні круїзи, готелі та к
 msgid "BOOK WITH CONFIDENCE"
 msgstr "БРОНЮЙТЕ З ВПЕВНЕНІСТЮ"
 
+#: components/hotels/price_match_banner.vue
+msgid ""
+"Book with inStays and get the difference in points if you find a lower price!"
+msgstr ""
+
 #: pages/menu_page.vue
 msgid "Book with Reward Points, have total confidence!"
 msgstr "Бронюйте з Бонусними Балами, будьте абсолютно впевнені!"
@@ -5226,6 +5242,18 @@ msgstr "Забронювати свій круїз за роздрібною в�
 
 #: components/cruises_booking/reward_points_step.vue
 msgid "Book your cruise using a special price"
+msgstr "Забронювати свій круїз за спеціальною ціною"
+
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid "Book your cruise using a retail price"
+msgid "Book your hotel using a retail price"
+msgstr "Забронювати свій круїз за роздрібною вартістю"
+
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid "Book your cruise using a special price"
+msgid "Book your hotel using a special price"
 msgstr "Забронювати свій круїз за спеціальною ціною"
 
 #: components/reservations/reservation-card.vue
@@ -5275,6 +5303,7 @@ msgid "Booking summary"
 msgstr "Підсумок бронювання"
 
 #: components/cruises_booking/booking_summary.vue
+#: components/hotel_booking/booking_summary.vue
 msgid "Booking Summary"
 msgstr "Підсумок Бронювання"
 
@@ -5538,7 +5567,7 @@ msgstr "За електронною поштою"
 msgid "By Mail"
 msgstr "Поштою"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid ""
 "By pressing “Pay”, you are confirming your reservation and agreeing to pay "
 "%{totalPointsUsed} reward points. Are you sure you want to proceed?"
@@ -5801,9 +5830,10 @@ msgstr "Канада/Нова Англія"
 #: components/recipients_modal.vue pages/admin_department.vue
 #: pages/admin_permission.vue pages/admin_permission_group.vue
 #: pages/checkout.vue pages/connect.vue pages/contacts.vue
-#: pages/cruises_booking_old.vue pages/email.vue pages/intours_details.vue
-#: pages/inviter.vue pages/invoices.vue pages/invoices_new.vue
-#: pages/referral_links.vue pages/reports.vue pages/settings.vue
+#: pages/cruises_booking_old.vue pages/email.vue pages/hotels.vue
+#: pages/hotels_details.vue pages/intours_details.vue pages/inviter.vue
+#: pages/invoices.vue pages/invoices_new.vue pages/referral_links.vue
+#: pages/reports.vue pages/settings.vue
 #: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
@@ -5820,6 +5850,7 @@ msgstr "Канада/Нова Англія"
 #: components/contacts/mass-contact-modal.vue
 #: components/cruises_booking/reward_points_step.vue
 #: components/cruises_booking_old/confirmation-step.vue
+#: components/hotel_booking/reward_points_step.vue
 #: components/onboarding/name-birthday-avatar-step.vue
 #: components/payout/euro-conversion.vue components/recurring/add-recurring.vue
 #: components/recurring/recurring-cards.vue components/support/TicketViewer.vue
@@ -6084,10 +6115,6 @@ msgstr "Перевірити групу"
 msgid "Check In"
 msgstr "Реєстрація"
 
-#: pages/hotel_booking.vue
-msgid "Check in:"
-msgstr "Реєстрація:"
-
 #: components/news-modal.vue
 #, fuzzy
 #| msgid "Check Out"
@@ -6144,10 +6171,6 @@ msgstr ""
 msgid "Check out this video to learn more."
 msgstr "Перегляньте це відео, щоб дізнатися більше."
 
-#: pages/hotel_booking.vue
-msgid "Check out:"
-msgstr "Виписка:"
-
 #: components/cruises_booking/cabin_step.vue
 msgid "Checking cabin availability with the cruise line, just a moment..."
 msgstr ""
@@ -6170,11 +6193,12 @@ msgstr "Акції при оформленні"
 msgid "Chief Marketing Officer (CMO)"
 msgstr "Директор з маркетингу"
 
-#: Menu.vue pages/hotel_booking.vue
+#: Menu.vue
 msgid "child"
 msgstr "дитина"
 
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotels/GuestsDropdown.vue
 msgid "Child"
 msgstr "Дитина"
 
@@ -6182,14 +6206,20 @@ msgstr "Дитина"
 msgid "Child #%{ childNumber } Birthdate"
 msgstr "Дата народження дитини #%{ childNumber }"
 
+#: components/hotels/GuestsDropdown.vue
+#, fuzzy
+#| msgid "Child Ages"
+msgid "Child Age"
+msgstr "Вік дитини"
+
 #: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Child Ages"
 msgstr "Вік дитини"
 
-#: pages/hotels.vue pages/hotels_details.vue
 #: components/cruises_booking/passenger_count_step.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
+#: components/hotels/GuestsDropdown.vue
 msgid "Children"
 msgstr "Діти"
 
@@ -6197,9 +6227,11 @@ msgstr "Діти"
 msgid "Children information"
 msgstr "Інформація про дітей"
 
-#: pages/hotel_booking.vue
-msgid "Children:"
-msgstr "Діти:"
+#: components/hotels/GuestsDropdown.vue
+#, fuzzy
+#| msgid "Child"
+msgid "Childs"
+msgstr "Дитина"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
 #: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
@@ -6239,10 +6271,6 @@ msgstr "Оберіть іншу категорію"
 #: pages/checkout.vue
 msgid "Choose Different Payment Method"
 msgstr "Оберіть Інший Метод Оплати"
-
-#: pages/hotel_booking.vue
-msgid "Choose Different Room"
-msgstr "Обрати інший номер"
 
 #: components/cruises_booking_old/passenger-info-step.vue
 msgid "Choose Dining Option"
@@ -6295,7 +6323,7 @@ msgstr ""
 msgid "Choose Title"
 msgstr "Вибрати заголовок"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Choose Your Booking Type"
 msgstr "Виберіть тип бронювання"
 
@@ -6390,11 +6418,11 @@ msgid "Classic Plan: $100 USD/month"
 msgstr "План Classic: $100/місяць"
 
 #: components/filter-chip-dropdown.vue components/filter-chip-range.vue
-#: pages/cruises.vue components/tours/intours_results.vue
+#: pages/cruises.vue pages/hotels.vue components/tours/intours_results.vue
 msgid "Clear"
 msgstr "Очистити"
 
-#: pages/cruises_old.vue pages/hotels.vue
+#: pages/cruises_old.vue
 msgid "Clear All Filters"
 msgstr "Очистити всі фільтри"
 
@@ -6448,7 +6476,7 @@ msgstr "Натисніть Тут, щоб Увійти"
 msgid "Click Here to Download"
 msgstr "Натисніть Тут, щоб Завантажити"
 
-#: pages/cruises_old.vue pages/hotels.vue
+#: pages/cruises_old.vue
 msgid "Click here to learn more"
 msgstr "Натисніть тут, щоб дізнатися більше"
 
@@ -6504,18 +6532,14 @@ msgstr "Натисніть тут, щоб переглянути ваучер"
 msgid "Click to create a group."
 msgstr "Натисніть, щоб створити групу."
 
-#: pages/hotels.vue
-msgid "Click to filter by Stars"
-msgstr "Натисніть, щоб відфільтрувати за кількістю зірок"
-
 #: pages/email_address.vue
 msgid "Client Configuration"
 msgstr "Конфігурація Клієнта"
 
 #: components/global-summit-reminder.vue components/tmt-modal.vue
-#: components/weekly-competition.vue pages/connect.vue pages/hotels_details.vue
-#: pages/menu_page.vue pages/referral_links_old.vue pages/resources.vue
-#: pages/welcome.vue components/compensation/info_modal.vue
+#: components/weekly-competition.vue pages/connect.vue pages/menu_page.vue
+#: pages/referral_links_old.vue pages/resources.vue pages/welcome.vue
+#: components/compensation/info_modal.vue
 #: components/compensation/leadership_bonus.vue
 #: components/cruises_booking_old/itinerary-modal.vue
 #: components/global_convention/event_info.vue
@@ -6535,10 +6559,6 @@ msgstr "Закрити"
 #: components/upgrade/modals/upgrade-plan-detail.vue
 msgid "Close Details"
 msgstr "Закрити Деталі"
-
-#: pages/hotels.vue
-msgid "Close Filter"
-msgstr "Закрити фільтр"
 
 #: pages/welcome.vue
 #, fuzzy
@@ -6675,14 +6695,22 @@ msgid "Complete at least 4 Direct Partner Activations during Phase 1"
 msgstr ""
 
 #: components/cruises_booking/active_basket_bar.vue
+#: components/hotel_booking/active_basket_bar.vue
 msgid "Complete Booking in"
 msgstr "Завершити бронювання в"
+
+#: pages/hotel_booking.vue
+#, fuzzy
+#| msgid "Complete Passenger Details"
+msgid "Complete Guest Details"
+msgstr "Повна інформація про пасажирів"
 
 #: pages/cruises_booking.vue
 msgid "Complete Passenger Details"
 msgstr "Повна інформація про пасажирів"
 
 #: components/cruises_booking/active_basket_bar.vue
+#: components/hotel_booking/active_basket_bar.vue
 msgid "Complete your booking before"
 msgstr "Завершіть своє бронювання до"
 
@@ -6730,6 +6758,7 @@ msgid "Confirm"
 msgstr "Підтвердіть"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Confirm & Add"
 msgstr "Підтвердити та додати"
 
@@ -6958,7 +6987,7 @@ msgstr ""
 msgid "Contact by Mail:"
 msgstr "Зв'язок Поштою:"
 
-#: pages/hotel_booking.vue components/contacts/contact-edit-modal.vue
+#: components/contacts/contact-edit-modal.vue
 msgid "Contact Information"
 msgstr "Контактна інформація"
 
@@ -7799,17 +7828,13 @@ msgstr "Дата: 6 Грудня"
 msgid "Date: November 6th"
 msgstr "Дата: 6 Листопада"
 
-#: pages/admin_signup_flow.vue
+#: pages/admin_signup_flow.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Dates"
 msgstr "Дати"
 
 #: pages/glsx.vue
 msgid "Dates and location to be revealed at a later time"
 msgstr ""
-
-#: pages/hotels.vue
-msgid "Dates:"
-msgstr "Дати:"
 
 #: pages/cruise.vue pages/elevate_registration.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
@@ -8095,6 +8120,12 @@ msgstr "Країна призначення"
 
 #: components/payout/brightwell/transfer-details.vue
 msgid "Destination currency"
+msgstr "Валюта призначення"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Destination currency"
+msgid "Destination or hotel name"
 msgstr "Валюта призначення"
 
 #: components/cruises_booking/more_details_modal.vue
@@ -8938,6 +8969,7 @@ msgstr "Легко додати:"
 #: components/admin_booking/hotel_bookings.vue
 #: components/admin_booking/tour_bookings.vue
 #: components/cruises_booking/booking_summary.vue
+#: components/hotel_booking/booking_summary.vue
 #: components/settings_page/modify-saved-passengers.vue
 msgid "Edit"
 msgstr "Змінити"
@@ -9039,6 +9071,7 @@ msgid "Eligible"
 msgstr "Доступно"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Elite Travel Advantage"
 msgstr "Елітні туристичні переваги"
 
@@ -9217,6 +9250,7 @@ msgid "Enter Name"
 msgstr "Введіть ім'я"
 
 #: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Enter phone number"
 msgstr "Введіть номер телефону"
 
@@ -9233,6 +9267,7 @@ msgid "Enter State"
 msgstr "Введіть штат"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Enter Unique Member Code"
 msgstr "Введіть унікальний код Члена Клубу"
 
@@ -9272,14 +9307,17 @@ msgstr "Введіть дату свого народження"
 
 #: pages/intours_confirmation.vue
 #: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Enter your email"
 msgstr "Вкажіть свою адресу електронної пошти"
 
 #: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Enter your first name"
 msgstr "Введіть своє ім'я"
 
 #: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Enter your last name"
 msgstr "Введіть своє прізвище"
 
@@ -9564,6 +9602,10 @@ msgstr "Вихід"
 msgid "Exit Checkout Page"
 msgstr "Вийти зі сторінки \"Оформлення Замовлення\""
 
+#: components/hotels/map.vue
+msgid "Expand"
+msgstr ""
+
 #: pages/public/disclosure.vue
 msgid "Expenses"
 msgstr "Витрати"
@@ -9797,6 +9839,12 @@ msgstr "Улюблені готелі"
 msgid "Favorite Tours"
 msgstr "Вподобані Тури"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Favorite Tours"
+msgid "Favorites"
+msgstr "Вподобані Тури"
+
 #: pages/admin_booking.vue components/admin_booking/admin_cruise_featured.vue
 msgid "Featured Cruises"
 msgstr "Рекомендовані круїзи"
@@ -9831,7 +9879,7 @@ msgstr "Завантаження файлу..."
 msgid "Filter"
 msgstr "Фільтрувати"
 
-#: pages/hotels.vue components/translations/placeholders.vue
+#: components/translations/placeholders.vue
 msgid "Filter by hotel name.."
 msgstr "Фільтрувати за назвою готелю.."
 
@@ -9843,7 +9891,7 @@ msgstr "Фільтрувати за мовою"
 msgid "Filtering"
 msgstr "Фільтрування"
 
-#: pages/cruises.vue pages/reports.vue
+#: pages/cruises.vue pages/hotels.vue pages/reports.vue
 #: components/data_table/filter-selection-widget.vue
 #: components/data_table/table.vue components/tours/intours_results.vue
 #: reports/index.html
@@ -9940,9 +9988,9 @@ msgid "First Leader"
 msgstr "Змінити Лідерів"
 
 #: pages/admin_restricted_paybonus.vue pages/contacts.vue
-#: pages/hotel_booking.vue pages/intours_confirmation.vue pages/invite.vue
-#: pages/settings.vue components/cruises_booking/passenger_info_step.vue
-#: components/public/JoinModal.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -10495,8 +10543,8 @@ msgstr ""
 msgid "GLS-X! Is HERE!"
 msgstr ""
 
-#: pages/cruises_booking_old.vue pages/hotels_details.vue
-#: pages/italian_onboarding.vue pages/login/login.vue
+#: pages/cruises_booking_old.vue pages/italian_onboarding.vue
+#: pages/login/login.vue
 msgid "Go Back"
 msgstr "Повернутися назад"
 
@@ -10509,6 +10557,7 @@ msgid "GOLD PACKAGE"
 msgstr "ЗОЛОТИЙ ТАРИФ"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Got It"
 msgstr "Зрозуміло"
 
@@ -10554,6 +10603,7 @@ msgstr ""
 "(ІЯБ), але це станеться, коли вони потраплять у 6-місячне вікно."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "Great news! As a Ranked Partner-Member, you can use your Reward Points to "
 "cover the full cost of this booking."
@@ -10563,6 +10613,7 @@ msgstr ""
 "бронювання."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "Great news! As an Active Member, you can use your Reward Points to cover up "
 "to half of the cost of this booking."
@@ -10636,10 +10687,13 @@ msgstr "Гарантовано"
 msgid "Guaynabo, Puerto Rico 00968-1705"
 msgstr "Гуайнабо, Пуерто-Рико 00968-1705"
 
-#: pages/hotels.vue
-msgid "guests"
-msgstr "гості"
+#: components/hotel_booking/guest_info_step.vue
+#, fuzzy
+#| msgid "Passenger %{ index }"
+msgid "Guest %{ index }"
+msgstr "Пасажир %{ index }"
 
+#: components/hotels/GuestsDropdown.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Guests"
@@ -10871,6 +10925,18 @@ msgstr "Телефон готелю #"
 msgid "Hotel Price"
 msgstr "Вартість готелю"
 
+#: pages/hotel_booking.vue
+#, fuzzy
+#| msgid "Protection"
+msgid "Hotel Protection"
+msgstr "Захист"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Hotel Providers"
+msgid "Hotel Provider:"
+msgstr "Постачальники готелів"
+
 #: pages/admin_booking.vue components/admin_booking/hotel_providers.vue
 msgid "Hotel Providers"
 msgstr "Постачальники готелів"
@@ -10883,10 +10949,6 @@ msgstr "Пошук готелю"
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Website"
 msgstr "Веб-сайт готелю"
-
-#: pages/hotels.vue
-msgid "Hotelbeds"
-msgstr "Hotelbeds"
 
 #: BookingTopBar.vue HotelsTopBar.vue pages/hotels.vue pages/reservations.vue
 #: components/admin_booking/admin_booking_stats.vue
@@ -12089,6 +12151,18 @@ msgstr ""
 msgid "If you book with inStays and"
 msgstr "Якщо ви здійснюєте бронювання в inStays і"
 
+#: components/hotels/price_match_banner.vue
+#, fuzzy
+#| msgid ""
+#| "of your inStays booking, you can receive a credit for the difference in "
+#| "Reward Points."
+msgid ""
+"If you book with inStays and find a lower price you get the difference in "
+"Reward Points*!"
+msgstr ""
+"з моменту вашого бронювання в inStays, то ви можете отримати різницю у "
+"вигляді Бонусних Балів."
+
 #: upgrade/index.html
 msgid ""
 "If you chose a cash payment option, please proceed to make the payment and "
@@ -12742,8 +12816,8 @@ msgstr "у вигляді утримуваних податків та"
 msgid "Inactive"
 msgstr "Неактивний"
 
-#: pages/hotel_booking.vue pages/reward_points.vue
-#: components/cruises_booking/reward_points_step.vue
+#: pages/reward_points.vue components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Inactive Balance"
 msgstr "Неактивний баланс"
 
@@ -12796,10 +12870,6 @@ msgstr ""
 #: components/price_match_guarantee/cruises.vue
 msgid "Include all taxes and fees."
 msgstr "Включити всі податки та збори."
-
-#: pages/hotels_details.vue
-msgid "Including taxes and fees"
-msgstr "Включаючи податки та збори"
 
 #: pages/m3.vue
 msgid "Income and Incentive Guide"
@@ -13208,7 +13278,7 @@ msgstr "Внутрішня"
 msgid "Insider Price"
 msgstr "Insider Price"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Insider Pricing"
 msgstr "Insider Pricing"
 
@@ -13216,15 +13286,12 @@ msgstr "Insider Pricing"
 msgid "INsider pricing"
 msgstr "INsider pricing"
 
-#: pages/hotel_booking.vue
-msgid "INsider Pricing"
-msgstr "INsider Pricing"
-
 #: components/feature_card.vue
 msgid "INsider Pricing Bookings Per Year"
 msgstr "Бронювань INsider Pricing на рік"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Insider pricing is not available for inactive members."
 msgstr "Опція Insider pricing недоступна для неактивних членів клубу."
 
@@ -13964,9 +14031,9 @@ msgstr ""
 "виплати."
 
 #: pages/admin_restricted_paybonus.vue pages/contacts.vue
-#: pages/hotel_booking.vue pages/intours_confirmation.vue pages/invite.vue
-#: pages/settings.vue components/cruises_booking/passenger_info_step.vue
-#: components/public/JoinModal.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -14108,7 +14175,8 @@ msgstr "Лідерські Питання Для Обговорення"
 msgid "Leadership Team"
 msgstr "Команда Лідерів"
 
-#: pages/account_setup.vue pages/welcome.vue pages/public/causes.vue
+#: pages/account_setup.vue pages/welcome.vue
+#: components/hotels/price_match_banner.vue pages/public/causes.vue
 msgid "Learn More"
 msgstr "Дізнайся Більше"
 
@@ -14249,7 +14317,7 @@ msgstr "Пожиттєва комісія:"
 msgid "Limassol, Cyprus"
 msgstr "Лімасол, Кіпр"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Limit of Bookings with Insider Pricing Discount Reached."
 msgstr "Досягнуто ліміту за кількістю бронювань зі знижкою Insider Pricing."
 
@@ -14479,6 +14547,12 @@ msgstr "Бали лояльності або програми винагород
 msgid "Main Chat"
 msgstr "Основний чат"
 
+#: components/hotel_booking/guest_info_step.vue
+#, fuzzy
+#| msgid "Add Guest"
+msgid "Main Guest"
+msgstr "Додати гостя"
+
 #: components/cruises_booking/passenger_info_step.vue
 msgid "Main Passenger"
 msgstr "Основний пасажир"
@@ -14586,10 +14660,6 @@ msgid ""
 msgstr ""
 "У багатьох сімей немає коштів на необхідне їх дітям лікування і хірургічне "
 "втручання; деякі з цих патологій загрожують навіть їхнім життям."
-
-#: pages/hotels_details.vue
-msgid "Map"
-msgstr "Мапа"
 
 #: pages/elevate_registration.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
@@ -14718,7 +14788,7 @@ msgstr "Максимальний розмір файлу – 25 MB, і файл 
 msgid "Max Lead Time"
 msgstr "Максимальний час постачання лайнера"
 
-#: components/filter-chip-range.vue pages/cruises.vue
+#: components/filter-chip-range.vue pages/cruises.vue pages/hotels.vue
 #: components/tours/intours_results.vue
 msgid "Max Price"
 msgstr "Максимальна ціна"
@@ -14834,7 +14904,7 @@ msgstr "Активації Членів Клубу"
 msgid "Member Agreement"
 msgstr "Угода про Членство"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Member Configuration"
 msgstr "Конфігурація Члена Клубу"
 
@@ -14843,10 +14913,12 @@ msgid "Member Count"
 msgstr "Кількість Членів Клубу"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Member Is Not a Black Card Member"
 msgstr "Член Клубу не є Членом Клубу з Чорною Картою"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Member reached insider pricing limit"
 msgstr "Член Клубу досяг ліміту insider pricing"
 
@@ -15137,7 +15209,7 @@ msgstr "Майкл Хатчісон - Співзасновник та Співг
 msgid "Min Lead Time"
 msgstr "Мінімальний час постачання лайнера"
 
-#: components/filter-chip-range.vue pages/cruises.vue
+#: components/filter-chip-range.vue pages/cruises.vue pages/hotels.vue
 #: components/tours/intours_results.vue
 msgid "Min Price"
 msgstr "Мінімальна ціна"
@@ -15196,9 +15268,9 @@ msgstr "Нагадування про Мобільний Додаток"
 msgid "Mobile Apps"
 msgstr "Мобільні Додатки"
 
-#: pages/additional_info.vue pages/cards.vue pages/hotel_booking.vue
-#: pages/settings.vue pages/team_rankings.vue
-#: components/compensation/leadership_bonus.vue components/public/JoinModal.vue
+#: pages/additional_info.vue pages/cards.vue pages/settings.vue
+#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue pages/public/signup.vue
 #: cards/index.html old_compensation/index.html
 #: receipts/hotel_booking_receipt.html
@@ -15303,7 +15375,7 @@ msgstr "Звіт Щомісячного Доходу"
 msgid "Monthly Team Member Activation Production"
 msgstr "Командний товарообіг Активацій Партнерів за місяць"
 
-#: components/cruises_booking/cabin_category.vue
+#: pages/hotels_details.vue components/cruises_booking/cabin_category.vue
 msgid "More details"
 msgstr "Додаткова інформація"
 
@@ -16016,11 +16088,15 @@ msgid "News App"
 msgstr "Новинний додаток"
 
 #: pages/contacts.vue pages/cruises_booking.vue pages/email.vue
-#: pages/leadership_academy.vue pages/multi_factor.vue pages/notifications.vue
-#: pages/receipts.vue components/cruises_booking/deck_step.vue
+#: pages/hotel_booking.vue pages/leadership_academy.vue pages/multi_factor.vue
+#: pages/notifications.vue pages/receipts.vue
+#: components/cruises_booking/deck_step.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking/protection_step.vue
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/guest_info_step.vue
+#: components/hotel_booking/protection_step.vue
+#: components/hotel_booking/reward_points_step.vue
 #: components/onboarding/address-step.vue
 #: components/onboarding/email-address-step.vue
 #: components/onboarding/import-contacts.vue
@@ -16068,16 +16144,11 @@ msgstr "Наступний Крок"
 msgid "Next Year"
 msgstr "Наступний Рік"
 
-#: pages/hotels.vue
-msgid "night"
-msgstr "ніч"
-
-#: pages/cruises_old.vue pages/hotel_booking.vue pages/hotels.vue
-#: pages/hotels_details.vue
+#: pages/cruises_old.vue pages/hotels.vue
 msgid "nights"
 msgstr "ночей"
 
-#: pages/cruises.vue
+#: pages/cruises.vue pages/hotel_booking.vue
 msgid "Nights"
 msgstr "Ночей"
 
@@ -16188,6 +16259,18 @@ msgstr "Бронювання не знайдено"
 msgid "No results match your search criteria"
 msgstr "Результатів, що відповідають вашим критеріям пошуку, не виявлено"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Not achieved yet."
+msgid "No reviewed yet"
+msgstr "Ще не досягнуто."
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Search Parameters"
+msgid "No search parameters found."
+msgstr "Параметри пошуку"
+
 #: components/user/directs.vue
 msgid "No Search Results"
 msgstr "Пошук не дав результатів"
@@ -16206,6 +16289,7 @@ msgstr "Можливість оновлення відсутня"
 
 #: components/booking/add-cd-user.vue
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "No user found with that membership code."
 msgstr "За даним кодом членства користувачів не знайдено."
 
@@ -16979,15 +17063,11 @@ msgstr "Наші Цінності"
 msgid "OUR VISION"
 msgstr "НАШЕ БАЧЕННЯ"
 
-#: pages/hotel_booking.vue
-msgid "Out of Pocket"
-msgstr "З власних коштів"
-
 #: components/receipts/hotel_booking_receipt.vue
 msgid "Out Of Pocket"
 msgstr "З Власних Коштів"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Out of Pocket Protection"
 msgstr "Захист платежу з власних коштів"
 
@@ -17647,6 +17727,7 @@ msgid "Passenger count"
 msgstr "Кількість пасажирів"
 
 #: pages/cruises_booking.vue pages/elevate_registration.vue
+#: pages/hotel_booking.vue
 msgid "Passenger Information"
 msgstr "Інформація про пасажира"
 
@@ -17736,7 +17817,7 @@ msgstr "Паролі не співпадають!"
 msgid "Past"
 msgstr "Минулий"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Pay"
 msgstr "Сплатити"
 
@@ -17765,6 +17846,12 @@ msgstr "Сплатити за допомогою PayQuicker"
 #: components/checkout/Processor2For1.vue
 msgid "Pay using Reward Points"
 msgstr "Сплатити, використовуючи Бонусні Бали"
+
+#: pages/hotel_booking.vue
+#, fuzzy
+#| msgid "Pay with Reward points"
+msgid "Pay with Reward points"
+msgstr "Сплатити Бонусними Балами"
 
 #: pages/cruises_booking.vue
 #, fuzzy
@@ -17942,7 +18029,7 @@ msgstr "Пенсійні права"
 msgid "People"
 msgstr "Люди"
 
-#: pages/hotel_booking.vue pages/hotels.vue pages/hotels_details.vue
+#: pages/hotels.vue
 msgid "per"
 msgstr "за"
 
@@ -17950,11 +18037,8 @@ msgstr "за"
 msgid "per month. No contracts. You can cancel anytime."
 msgstr "в місяць. Ніяких контрактів. Ви можете скасувати це в будь-який час."
 
-#: pages/hotels_details.vue
-msgid "per night"
-msgstr "за ніч"
-
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Per passenger"
 msgstr "За пассажира"
 
@@ -18043,6 +18127,7 @@ msgstr "Телефон #"
 
 #: components/fast-growing-legs.vue pages/multi_factor.vue pages/reports.vue
 #: pages/settings.vue components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue reports/index.html
 msgid "Phone Number"
@@ -18051,6 +18136,7 @@ msgstr "Номер Телефону"
 #: pages/elevate_registration.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Phone number entered invalid."
 msgstr "Введений некоректний номер телефону."
 
@@ -18122,10 +18208,6 @@ msgstr ""
 msgid "Please allocate the corresponding Reward Points for each member:"
 msgstr "Будь ласка, розподіліть відповідні Бонусні Бали між Членами Клубу:"
 
-#: pages/hotel_booking.vue
-msgid "Please allocate the corresponding Rewards Points for each member:"
-msgstr "Будь ласка, розподіліть відповідні Бонусні Бали між Членами Клубу:"
-
 #: pages/leadership_academy.vue
 msgid "Please answer the current question."
 msgstr "Будь ласка, дайте відповідь на поточне питання."
@@ -18189,7 +18271,6 @@ msgstr ""
 "Виберіть валюту заданого Варіанту Оплати. Некоректно вказана валюта може "
 "призвести до невдалої оплати."
 
-#: pages/hotel_booking.vue
 #: components/cruises_booking_old/reward-points-step.vue
 msgid "Please choose the type of booking you wish to do:"
 msgstr "Виберіть, будь ласка, бажаний тип бронювання:"
@@ -18399,6 +18480,12 @@ msgstr "Будь ласка, введіть вік всіх дітей."
 #: components/cruises_booking_old/cabin-categories-step.vue
 msgid "Please enter the birthdate of all children."
 msgstr "Будь ласка, вкажіть дату народження для всіх дітей."
+
+#: components/hotels/GuestsDropdown.vue
+#, fuzzy
+#| msgid "Please enter the age of all children."
+msgid "Please enter the child age."
+msgstr "Будь ласка, введіть вік всіх дітей."
 
 #: components/checkout/CardStep.vue
 msgid "Please enter the following details:"
@@ -18888,6 +18975,12 @@ msgstr "Будь ласка, підтвердьте адресу вашої ел
 msgid "Please Wait"
 msgstr "Будь Ласка, Зачекайте"
 
+#: pages/hotel_booking.vue
+#, fuzzy
+#| msgid "Please select a country."
+msgid "Please wait just a moment..."
+msgstr "Виберіть, будь ласка, країну."
+
 #: pages/checkout.vue
 msgid "Please wait while we apply your promotion code."
 msgstr "Будь ласка, зачекайте, поки ми застосувамо ваш промокод."
@@ -18901,8 +18994,10 @@ msgstr ""
 msgid "Please wait while we gather all available cruises..."
 msgstr "Будь ласка, зачекайте поки ми підбираємо доступні круїзи ..."
 
-#: pages/hotels.vue
-msgid "Please wait while we gather all available hotels..."
+#: pages/hotels.vue pages/hotels_details.vue
+#, fuzzy
+#| msgid "Please wait while we gather all available hotels..."
+msgid "Please wait while we gather all available hotels, just a moment..."
 msgstr "Будь ласка, зачекайте, поки ми підбираємо доступні готелі..."
 
 #: components/tours/intours_landing.vue components/tours/intours_results.vue
@@ -18918,8 +19013,10 @@ msgid "Please wait while we gather cruise trip information..."
 msgstr ""
 "Будь ласка, зачекайте поки ми збираємо інформацію про круїзну подорож ..."
 
-#: pages/hotel_booking.vue pages/hotels_details.vue
-msgid "Please wait while we gather Hotel details."
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Please wait while we gather Hotel details."
+msgid "Please wait while we gather hotel details, just a moment..."
 msgstr "Будь ласка, зачекайте, поки ми збираємо інформацію про готель."
 
 #: pages/intours_details.vue
@@ -19184,7 +19281,7 @@ msgstr "Попередній Рік"
 msgid "Previously used passenger:"
 msgstr "Пасажир, дані якого були раніше внесені в систему:"
 
-#: components/filter-chip-range.vue pages/cruises.vue
+#: components/filter-chip-range.vue pages/cruises.vue pages/hotels.vue
 #: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/booking/category.vue
@@ -19203,10 +19300,6 @@ msgstr "Ціна не може бути від'ємною"
 #: components/receipts/booking_receipt.vue
 msgid "Price Code"
 msgstr "Код ціни"
-
-#: pages/hotel_booking.vue
-msgid "Price details"
-msgstr "Деталі вартості"
 
 #: components/booking/category.vue
 msgid "Price does not include Taxes and Fees"
@@ -19235,25 +19328,25 @@ msgstr "Низька ціна зверху"
 msgid "Price Match Guarantee"
 msgstr "Гарантія відповідності ціни"
 
+#: components/hotels/price_match_banner.vue
+#, fuzzy
+#| msgid "Price Match Guarantee"
+msgid "Price Match Guarantee!"
+msgstr "Гарантія відповідності ціни"
+
 #: pages/hotels.vue
-msgid "PRICE MATCH GUARANTEE!"
-msgstr "ГАРАНТІЯ ВІДПОВІДНОСТІ ЦІНИ!"
+#, fuzzy
+#| msgid "*Price may vary based on availability."
+msgid "Price may vary based on availability"
+msgstr "*Ціна може змінюватися в залежності від наявності."
 
 #: components/tours/intours_results.vue
 msgid "Price must be a number"
 msgstr "Ціна має бути числом"
 
-#: pages/hotel_booking.vue
-msgid "Price per night:"
-msgstr "Ціна за ніч:"
-
-#: pages/cruises.vue components/tours/intours_results.vue
+#: pages/cruises.vue pages/hotels.vue components/tours/intours_results.vue
 msgid "Price Range"
 msgstr "Діапазон цін"
-
-#: pages/hotels.vue
-msgid "Price Range per Night:"
-msgstr "Діапазон цін за ніч:"
 
 #: components/cruises_booking/cruise_card.vue
 msgid ""
@@ -19306,10 +19399,6 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr "Політика Конфіденційності"
 
-#: pages/hotel_booking.vue
-msgid "Privacy Policy licenses."
-msgstr "Ліцензії Політики Конфіденційності."
-
 #: pages/cruise_price_match_guarantee.vue
 #: pages/instays_price_match_guarantee.vue
 msgid "Private group bookings"
@@ -19327,19 +19416,20 @@ msgstr ""
 msgid "Problem with the cruise line."
 msgstr "Проблеми з круїзною лінією."
 
-#: pages/checkout.vue pages/hotel_booking.vue pages/invoices.vue
-#: pages/invoices_new.vue components/booking/agreements.vue
+#: pages/checkout.vue pages/invoices.vue pages/invoices_new.vue
+#: components/booking/agreements.vue
 #: components/cruises_booking/reward_points_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
 #: components/cruises_booking_old/reward-points-confirm-step.vue
 #: components/cruises_booking_old/reward-points-step.vue
 #: components/cruises_booking_old/select-cabin-step.vue
+#: components/hotel_booking/reward_points_step.vue
 #: components/support/TicketViewer.vue upgrade/index.html
 msgid "Proceed"
 msgstr "Продовжити"
 
 #: pages/cruises_booking.vue pages/cruises_booking_old.vue
-#: components/cruises_booking_old/confirmation-step.vue
+#: pages/hotel_booking.vue components/cruises_booking_old/confirmation-step.vue
 msgid "Proceed to Checkout"
 msgstr "Перейти до Оформлення Замовлення"
 
@@ -19477,6 +19567,18 @@ msgstr "Рекламне повідомлення"
 msgid "Proof of Lower Rate"
 msgstr "Підтвердження нижчої ціни"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Transfer type"
+msgid "Property type"
+msgstr "Тип переказу"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Partner Type"
+msgid "Property Type"
+msgstr "Тип Партнера"
+
 #: webinar_recordings/index.html
 msgid "Prospecting Ideas"
 msgstr "Ідеї Пошуку"
@@ -19486,6 +19588,7 @@ msgid "Protect"
 msgstr "Захистити"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Protect out of pocket"
 msgstr "Захистити власні кошти"
 
@@ -19496,14 +19599,16 @@ msgstr "Захистити власні кошти"
 
 #: pages/payment_protection.vue components/cruises_booking/protection_step.vue
 #: components/cruises_booking_old/protection-section.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Protect Reward Points"
 msgstr "Захистити Бонусні Бали"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Protect Your Booking"
 msgstr "Захистити своє бронювання"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Protected Out Of Pocket"
 msgstr "Захищені власні кошти"
 
@@ -19512,6 +19617,7 @@ msgid "Protected Out of Pocket:"
 msgstr "Захищені власні кошти:"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Protected Reward Points"
 msgstr "Захищені Бонусні Бали"
 
@@ -20453,6 +20559,12 @@ msgstr "Статус Бронювання"
 msgid "Reservations"
 msgstr "Бронювання"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Reset"
+msgid "Reserve"
+msgstr "Перевстановити"
+
 #: pages/notifications.vue email_notifications/index.html
 msgid "Reset"
 msgstr "Перевстановити"
@@ -20500,17 +20612,9 @@ msgstr "Ліміт Результату повинен бути встановл
 msgid "Results"
 msgstr "Результати"
 
-#: pages/hotel_booking.vue
-msgid "Retail Price"
-msgstr "Роздрібна вартість"
-
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Return Date"
 msgstr "Дата Повернення"
-
-#: pages/hotels.vue
-msgid "Return to Highlights"
-msgstr "Повернутись до розділу \"У центрі уваги\""
 
 #: pages/account-recovery.vue
 #, fuzzy
@@ -20573,14 +20677,6 @@ msgstr "Нагорода"
 msgid "Reward Points"
 msgstr "Бонусні Бали"
 
-#: pages/hotel_booking.vue
-msgid "Reward Points (Inactive Balance)"
-msgstr "Бонусні Бали (неактивний баланс)"
-
-#: pages/hotel_booking.vue
-msgid "Reward Points Available"
-msgstr "Доступно Бонусних Балів"
-
 #: pages/reward_points.vue
 msgid "Reward Points Balance"
 msgstr "Баланс Бонусних Балів"
@@ -20623,7 +20719,8 @@ msgstr "Історія Бонусних Балів"
 msgid "Reward Points Logs"
 msgstr "Журнал Бонусних Балів"
 
-#: pages/cruises_booking.vue components/receipts/booking_receipt.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
+#: components/receipts/booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue
 msgid "Reward Points Protection"
 msgstr "Захист Бонусних Балів"
@@ -20693,21 +20790,19 @@ msgstr "Рим"
 msgid "Room"
 msgstr "Номер"
 
-#: pages/hotel_booking.vue
-msgid "Room name:"
-msgstr "Назва номеру:"
-
 #: components/cruises_booking_old/confirmation-step.vue
 msgid "Room Num:"
 msgstr "Номер кімнати:"
 
+#: components/hotels/room_rates_dropdown.vue
+#, fuzzy
+#| msgid "Row Actions"
+msgid "Room Options"
+msgstr "Дії з рядками"
+
 #: pages/hotel_booking.vue
 msgid "Room Rate"
 msgstr "Рейтинг номера"
-
-#: pages/hotels_details.vue
-msgid "Room Stay Facilities"
-msgstr "Зручності розміщення в номері"
 
 #: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
@@ -20722,21 +20817,9 @@ msgstr "Тип номеру:"
 msgid "Room Type:"
 msgstr "Тип номеру:"
 
-#: pages/hotels.vue
-msgid "rooms"
-msgstr "номери"
-
-#: pages/hotels.vue pages/hotels_details.vue
-msgid "Rooms"
-msgstr "Номери"
-
 #: pages/cruise.vue
 msgid "Rooms starting from"
 msgstr "Номери, починаючи від"
-
-#: pages/hotel_booking.vue pages/hotels.vue
-msgid "Rooms:"
-msgstr "Номери:"
 
 #: components/user/permission-assignation.vue
 #: components/user/permission-group.vue components/user/permissions.vue
@@ -20784,19 +20867,17 @@ msgstr "бонус Роял-Амбасадора на додаток до ваш
 msgid "Royal Board Of Directors"
 msgstr "Royal Board Of Directors"
 
-#: pages/hotel_booking.vue
-msgid "RP"
-msgstr "ББ"
-
 #: pages/admin_user.vue
 msgid "RP used"
 msgstr "ББ використано"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "RP Used"
 msgstr "Використані ББ"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "RP used!"
 msgstr "ББ використано!"
 
@@ -20932,7 +21013,7 @@ msgstr "Пошук"
 msgid "Search and book cruises, hotels and resorts"
 msgstr "Знайти та забронювати круїзи, готелі та курорти"
 
-#: pages/hotels.vue components/translations/placeholders.vue
+#: components/translations/placeholders.vue
 msgid "Search by city or hotel"
 msgstr "Пошук за містом або готелем"
 
@@ -20940,6 +21021,12 @@ msgstr "Пошук за містом або готелем"
 #: components/tours/intours_results.vue
 msgid "Search by Destination"
 msgstr "Пошук за Напрямком"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Search by city or hotel"
+msgid "Search by destination or hotel name"
+msgstr "Пошук за містом або готелем"
 
 #: pages/cruises_booking.vue
 msgid "Search Cabins"
@@ -20979,10 +21066,6 @@ msgstr "Пошук імен або електронної пошти"
 msgid "Search for previous passenger"
 msgstr "Пошук за попередніми пасажирами"
 
-#: pages/hotels.vue
-msgid "Search Hotels and Cities:"
-msgstr "Пошук готелів та міст:"
-
 #: pages/invite.vue components/translations/placeholders.vue
 msgid "Search Name or Email"
 msgstr "Пошук Імені або Електронної Пошти"
@@ -21004,10 +21087,6 @@ msgstr ""
 "матеріали, інформацію про відповідність і багато корисних порад, які "
 "допоможуть вам побудувати свій бізнес."
 
-#: pages/hotels_details.vue
-msgid "Search Parameters"
-msgstr "Параметри пошуку"
-
 #: components/inchat/search/search-people.vue
 msgid "Search People to Chat"
 msgstr "Шукати людей для спілкування"
@@ -21016,7 +21095,7 @@ msgstr "Шукати людей для спілкування"
 msgid "Search Post"
 msgstr "Пошук публікації"
 
-#: pages/cruise.vue
+#: pages/cruise.vue pages/hotels_details.vue
 msgid "Search Results"
 msgstr "Результати пошуку"
 
@@ -21123,8 +21202,9 @@ msgstr "Переглянути свій сертифікат тут!"
 #: components/checkout/ProcessorNetcents.vue
 #: components/cruises_booking/cabin_category.vue
 #: components/cruises_booking/cabin_step.vue
-#: components/onboarding/address-step.vue components/user/department.vue
-#: components/user/departments.vue components/user/permission-assignation.vue
+#: components/hotels/GuestsDropdown.vue components/onboarding/address-step.vue
+#: components/user/department.vue components/user/departments.vue
+#: components/user/permission-assignation.vue
 #: components/user/permission-group.vue
 #: components/tours/details/available-plans.vue
 msgid "Select"
@@ -21178,6 +21258,12 @@ msgstr "Вибрати країну"
 msgid "Select Country"
 msgstr "Вибрати країну"
 
+#: pages/hotels.vue pages/hotels_details.vue
+#, fuzzy
+#| msgid "Select state"
+msgid "Select dates"
+msgstr "Виберіть штат"
+
 #: components/month_picker.vue
 msgid "Select Departure Date"
 msgstr "Виберіть дату відправлення"
@@ -21191,6 +21277,7 @@ msgid "Select dining preference"
 msgstr "Виберіть уподобання щодо харчування"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Select how you would like to continue with your booking"
 msgstr "Виберіть, як ви хочете продовжити своє бронювання"
 
@@ -21219,8 +21306,15 @@ msgid "Select post language:"
 msgstr "Оберіть Мову Публікації:"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Select Reward Points Balance"
 msgstr "Вибрати баланс Бонусних Балів"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Selected Room"
+msgid "Select Room"
+msgstr "Вибраний номер"
 
 #: pages/courses.vue pages/leadership_academy.vue
 msgid "Select Script By Language"
@@ -21262,10 +21356,6 @@ msgstr "Виберіть штат"
 msgid "Select Tag"
 msgstr "Вибрати"
 
-#: pages/hotel_booking.vue
-msgid "Select the balance you want to use"
-msgstr "Виберіть баланс, який хочете використати"
-
 #: notification_settings/index.html
 msgid "Select the emails you wish to receive."
 msgstr "Оберіть email, які ви бажаєте отримувати."
@@ -21285,6 +21375,7 @@ msgid "Select travelers"
 msgstr "Вибрати подорожувальників"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Select Type Of Booking"
 msgstr "Виберіть тип бронювання"
 
@@ -21326,10 +21417,6 @@ msgstr "Вибрана країна:"
 #: pages/elevate_registration.vue
 msgid "Selected Package"
 msgstr "Вибраний тариф"
-
-#: pages/hotel_booking.vue
-msgid "Selected Room"
-msgstr "Вибраний номер"
 
 #: Footer.vue components/public/FooterLinks.vue
 msgid "Seller of Travel"
@@ -21570,6 +21657,18 @@ msgstr ""
 "Щоб відфільтрувати варіанти круїзу, установіть діапазон цін на особу на "
 "основі двомісного розміщення."
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid ""
+#| "Set your price range per person, based on double occupancy to filter "
+#| "cruise options."
+msgid ""
+"Set your price range per person, based on double occupancy to filter hotel "
+"options."
+msgstr ""
+"Щоб відфільтрувати варіанти круїзу, установіть діапазон цін на особу на "
+"основі двомісного розміщення."
+
 #: pages/onboarding.vue
 msgid "Set Your Referral Link"
 msgstr "Налаштувати своє реферальне посилання"
@@ -21727,15 +21826,21 @@ msgstr "Показати Списки Лідерів Для"
 msgid "Show Leadership"
 msgstr "Показати Лідерство"
 
-#: pages/cruises.vue
+#: pages/cruises.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Show less"
 msgstr "Показати менше"
+
+#: components/hotels/hotel_results.vue
+#, fuzzy
+#| msgid "Show all"
+msgid "Show Map"
+msgstr "Показати все"
 
 #: pages/reach.vue
 msgid "Show Members"
 msgstr "Показати Членів Клубу"
 
-#: pages/cruise.vue pages/cruises.vue
+#: pages/cruise.vue pages/cruises.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Show more"
 msgstr "Показати більше"
 
@@ -21774,10 +21879,6 @@ msgstr "Показати веб-реєстрацію"
 #: pages/reports.vue reports/index.html
 msgid "Showing All Teams"
 msgstr "Відображення Всіх Команд"
-
-#: pages/hotels.vue
-msgid "Showing results for {{ describeSearch() }}"
-msgstr "Відображення результатів для {{ describeSearch() }}"
 
 #: pages/cruises_old.vue
 msgid "Showing results for %{ description }"
@@ -21941,6 +22042,7 @@ msgstr "Деякі поля не повинні бути порожніми: "
 #: pages/elevate_registration.vue pages/hotel_booking.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Some passenger fields are missing."
 msgstr "Деякі поля пасажира не заповнені."
 
@@ -22022,10 +22124,6 @@ msgstr ""
 "Щось пішло не так. Перезавантажте, будь ласка, сторінку або зверніться до <a "
 "href=\"/support\">Служби Підтримки inCruises</a>"
 
-#: pages/hotels.vue
-msgid "Sorry, it appears we have no hotels available for this destination."
-msgstr "Вибачте, але для цього напрямку немає доступних готелів."
-
 #: pages/hotels_details.vue
 msgid "Sorry, we couldn't find any room available for your selection."
 msgstr "Вибачте, ми не змогли знайти доступні кімнати для вашого вибору."
@@ -22034,7 +22132,7 @@ msgstr "Вибачте, ми не змогли знайти доступні к�
 msgid "Sorting"
 msgstr "Класифікація"
 
-#: pages/admin_support_analytics.vue pages/cruises_old.vue pages/hotels.vue
+#: pages/admin_support_analytics.vue pages/cruises_old.vue
 msgid "Sorting:"
 msgstr "Сортування:"
 
@@ -22098,7 +22196,7 @@ msgstr "St. 1- Lot #3, Suite 500 (Metro Office Park 3)"
 msgid "Staff"
 msgstr ""
 
-#: pages/cruises.vue
+#: pages/cruises.vue pages/hotels.vue
 msgid "Star Rating"
 msgstr "Зірковий рейтинг"
 
@@ -22154,6 +22252,7 @@ msgid "Starter Plan - $0"
 msgstr "Початковий План - $0"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Starter Plan cannot be combined with Classic Plan or Premium Plan"
 msgstr "План Starter не може бути поєднаний із планами Classic або Premium"
 
@@ -22293,7 +22392,7 @@ msgid ""
 "Stay up to date with company announcements, news and important information"
 msgstr "Слідкуйте за оголошеннями компанії, новинами та важливою інформацією"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Step %{ step } of %{ totalSteps }"
 msgstr "Крок %{ step } з %{ totalSteps }"
 
@@ -22377,7 +22476,7 @@ msgstr "Згода на підписку"
 msgid "Subscriptions"
 msgstr "Підписки"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Subtotal"
 msgstr "Проміжний підсумок"
 
@@ -22594,11 +22693,7 @@ msgstr "Сума, що оподатковується, для соціальни
 msgid "Taxable Amount:"
 msgstr "Оподатковувана сума:"
 
-#: pages/hotel_booking.vue
-msgid "Taxes"
-msgstr "Податки"
-
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Taxes and fees"
 msgstr "Податки та збори"
 
@@ -22747,6 +22842,7 @@ msgid "Terms And Conditions Page"
 msgstr "Сторінка Правил та Умов"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Terms and conditions."
 msgstr "Умови та положення."
 
@@ -22948,6 +23044,7 @@ msgstr ""
 "проявлятимете всі ці якості."
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid ""
 "The amount protected includes the total out-of-pocket value + the total "
 "price paid for the protection ($%{outOfPocketPP} x No. of passengers)."
@@ -22955,7 +23052,7 @@ msgstr ""
 "Захищена сума включає загальну вартість власних коштів + загальну вартість, "
 "сплачену за захист ($%{outOfPocketPP} x кількість пасажирів)."
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid ""
 "The balance available to be used for shared bookings corresponds to the "
 "active account balance. Inactive account balance is only available for "
@@ -23065,6 +23162,7 @@ msgid "The contact information has been saved successfully."
 msgstr "Інформація про пасажира"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid ""
 "The cost of this protection is non-refundable. Only redeemed reward points "
 "will be refunded."
@@ -23164,6 +23262,7 @@ msgstr "Нижче наведено ваш WeChat Pay QR-код."
 #: pages/elevate_registration.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "The following phone number is not valid or has no country code: "
 msgstr "Даний номер телефону некоректний або відсутній код країни: "
 
@@ -23264,10 +23363,38 @@ msgstr ""
 "зі знижкою insider pricing. Ми переключимо вас на використання бонусних "
 "балів для бронювання цього круїзу."
 
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid ""
+#| "The member you are trying to add has already reached the limit of cruises "
+#| "booked with insider pricing discount. We will switch you to use reward "
+#| "points to book this cruise."
+msgid ""
+"The member you are trying to add has already reached the limit of hotels "
+"booked with insider pricing discount. We will switch you to use reward "
+"points to book this hotel."
+msgstr ""
+"Член Клубу, якого ви намагаєтеся додати, вже досяг ліміту бронювань круїзів "
+"зі знижкою insider pricing. Ми переключимо вас на використання бонусних "
+"балів для бронювання цього круїзу."
+
 #: components/cruises_booking/reward_points_step.vue
 msgid ""
 "The member you are trying to add is not a black card member. You will no "
 "longer be able to book this cruise only with reward points."
+msgstr ""
+"Член Клубу, якого ви намагаєтесь додати, не є Членом Клубу з чорною карткою. "
+"Ви більше не зможете бронювати цей круїз із використанням лише бонусних "
+"балів."
+
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid ""
+#| "The member you are trying to add is not a black card member. You will no "
+#| "longer be able to book this cruise only with reward points."
+msgid ""
+"The member you are trying to add is not a black card member. You will no "
+"longer be able to book this hotel only with reward points."
 msgstr ""
 "Член Клубу, якого ви намагаєтесь додати, не є Членом Клубу з чорною карткою. "
 "Ви більше не зможете бронювати цей круїз із використанням лише бонусних "
@@ -23289,6 +23416,7 @@ msgstr "Ви ввели некоректне ім'я."
 
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid ""
 "The name you provided for a passenger does not belong to the member you "
 "added to this booking."
@@ -23557,10 +23685,6 @@ msgstr "Немає опублікованих курсів."
 msgid "There are no results for these parameters."
 msgstr "За цими параметрами пошуку немає результатів."
 
-#: pages/hotels.vue
-msgid "There are no results for this search."
-msgstr "Пошук не дав результатів."
-
 #: components/welcome_tours_modal.vue
 msgid "There are no tour recommendations right now. Please try again later."
 msgstr ""
@@ -23623,7 +23747,7 @@ msgstr ""
 msgid "There was a problem with your promotion code. Please try again."
 msgstr "Виникла проблема з вашим промокодом. Будь ласка, спробуйте ще раз."
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "There was a problem with your request. Please try again."
 msgstr "При запиті виникла проблема. Будь ласка, спробуйте ще раз."
 
@@ -23695,7 +23819,8 @@ msgid "There was an error updating your display name."
 msgstr "При оновленні відображуваного імені виникла помилка."
 
 #: pages/cruise.vue pages/cruise_old.vue pages/cruises_booking.vue
-#: pages/cruises_booking_old.vue components/cruises_booking/cabin_step.vue
+#: pages/cruises_booking_old.vue pages/hotel_booking.vue
+#: components/cruises_booking/cabin_step.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
 msgid "There was an error with your request, please try again."
 msgstr "При вашому запиті виникла помилка. Будь ласка, спробуйте ще раз."
@@ -23926,6 +24051,7 @@ msgstr ""
 
 #: components/cruises_booking/protection_step.vue
 #: components/cruises_booking_old/protection-section.vue
+#: components/hotel_booking/protection_step.vue
 msgid "These Protection Books are not available!"
 msgstr "Ці Книги Захисту недоступні!"
 
@@ -23953,8 +24079,8 @@ msgstr "Вони отримують"
 msgid "Third Child Birthdate"
 msgstr "Дата народження третьої дитини"
 
-#: pages/intours_confirmation.vue pages/intours_details.vue
-#: components/booking/limited_time_offer_card.vue
+#: pages/hotel_booking.vue pages/intours_confirmation.vue
+#: pages/intours_details.vue components/booking/limited_time_offer_card.vue
 #: components/compensation/account_status.vue
 msgid "this"
 msgstr "це"
@@ -24137,10 +24263,10 @@ msgstr ""
 "Це бронювання є незворотнім. Якщо ви продовжите оформлення бронювання, то не "
 "зможете отримати повернення коштів у разі скасування."
 
-#: pages/hotel_booking.vue pages/hotels_details.vue
 #: pages/intours_confirmation.vue
 #: components/cruises_booking/booking_summary.vue
 #: components/cruises_booking_old/NonRefundableWarning.vue
+#: components/hotel_booking/booking_summary.vue
 msgid "This booking is non-refundable."
 msgstr "Це бронювання є незворотнім."
 
@@ -24355,10 +24481,6 @@ msgstr ""
 "Це застарілий список круїзів. Ви можете забронювати круїзи тільки з датою "
 "відправлення від 90 днів і більше починаючи з сьогоднішнього дня."
 
-#: pages/hotel_booking.vue
-msgid "This is not legal advice."
-msgstr "Не є юридичною рекомендацією."
-
 #: pages/kyc_verification.vue
 msgid ""
 "This is the Identity Verification, before you begin please make sure you "
@@ -24552,7 +24674,6 @@ msgid "This ticket is currently being viewed by <u>{{ agent_name }}</u>"
 msgstr "На даний момент цей тікет розглядає <u>{{ agent_name }}</u>"
 
 #: pages/cruises_booking.vue pages/cruises_booking_old.vue
-#: pages/hotel_booking.vue
 msgid "This type of booking is not allowed"
 msgstr "Цей тип бронювання заборонений"
 
@@ -25079,6 +25200,7 @@ msgstr ""
 "профілю та виберіть валюту."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "To use Insider Pricing you must upgrade to a paid membership."
 msgstr ""
 "Щоб використати Insider Pricing, ви повинні перейти на платний план Програми "
@@ -25121,10 +25243,6 @@ msgstr "Сьогоднішня Дата"
 #: pages/all_in.vue
 msgid "Together let's ignite a wave of global"
 msgstr "Давайте разом розпалимо хвилю міжнародних"
-
-#: pages/hotels_details.vue
-msgid "Toggle Admin Info"
-msgstr "Переключити інформацію адміністратора"
 
 #: pages/public/leadership.vue
 msgid "Tony Robbins' VP of Worldwide Sales and Marketing (1987-1994)"
@@ -25200,13 +25318,8 @@ msgstr "Топ Виробники"
 msgid "Top Successful Referrals By Country"
 msgstr ""
 
-#: pages/hotels.vue
-msgid "total"
-msgstr "всього"
-
-#: pages/hotel_booking.vue pages/intours_confirmation.vue
-#: pages/track_growth.vue components/compensation/qbi.vue
-#: components/price_match_guarantee/cruises.vue
+#: pages/intours_confirmation.vue pages/track_growth.vue
+#: components/compensation/qbi.vue components/price_match_guarantee/cruises.vue
 #: components/receipts/booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/receipts/italian_commission.vue
@@ -25318,6 +25431,12 @@ msgstr "Загальна сума (включно з ПДВ):"
 msgid "Total Guests on Booked Cruises/Hotels"
 msgstr "Всього гостей у заброньованих круїзах/готелях"
 
+#: pages/hotel_booking.vue
+#, fuzzy
+#| msgid "Hotel Price"
+msgid "Total Hotel Price"
+msgstr "Вартість готелю"
+
 #: pages/reward_points.vue
 #, fuzzy
 #| msgid "Insider Pricing"
@@ -25358,12 +25477,14 @@ msgstr "Підсумкова економія завдяки Членству в
 msgid "Total Number of Members"
 msgstr "Загальна Кількість Членів"
 
-#: pages/cruises_booking.vue components/receipts/booking_receipt.vue
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: pages/cruises_booking.vue pages/hotel_booking.vue
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Total Out Of Pocket"
 msgstr "Разом,Загалом з вашої кишені"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Total Out of Pocket protected"
 msgstr "Всього захищених власних коштів"
 
@@ -25390,18 +25511,6 @@ msgstr "ВСЬОГО ПАРТНЕРІВ"
 msgid "Total Price"
 msgstr "Підсумкова вартість"
 
-#: pages/hotels.vue
-msgid "Total Price Max"
-msgstr "Максимальна підсумкова вартість"
-
-#: pages/hotels.vue
-msgid "Total Price Minimum"
-msgstr "Мінімальна підсумкова вартість"
-
-#: pages/hotel_booking.vue
-msgid "Total price per 6 nights:"
-msgstr "Загальна вартість за 6 ночей:"
-
 #: components/cruises_booking_old/confirmation-step.vue
 msgid "Total Price:"
 msgstr "Підсумкова вартість:"
@@ -25427,6 +25536,7 @@ msgid "Total Reward Points"
 msgstr "Всього Бонусних Балів"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Total Reward Points protected"
 msgstr "Всього захищених Бонусних Балів"
 
@@ -25808,6 +25918,7 @@ msgid "Ukrainian Humanitarian Relief Campaign"
 msgstr "Кампанія з надання гуманітарної допомоги в Україні"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Unable to Add Inactive Member"
 msgstr "Неможливо додати неактивного Члена Клубу"
 
@@ -25917,6 +26028,7 @@ msgid "Until Month-End"
 msgstr "До кінця місяця"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Unused RPs"
 msgstr "Невикористані ББ"
 
@@ -25994,6 +26106,7 @@ msgid "Upgrade Plans"
 msgstr "Плани для оновлення"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid ""
 "Upgrade to a refundable booking for a <strong>100% refund on Reward Points "
 "portion</strong> if you cannot attend due to valid reasons outlined in our"
@@ -26003,6 +26116,7 @@ msgstr ""
 "зможете бути присутнім з поважних причин, перерахованих у нашому"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid ""
 "Upgrade to a refundable booking for a <strong>100% refund on your out of "
 "pocket portion</strong> if you cannot attend due to valid reasons outlined "
@@ -26482,7 +26596,7 @@ msgstr "Перегляньте і оновіть вашу основну інф�
 msgid "View Birthdays"
 msgstr "Переглянути дні народження"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "View Booking Summary"
 msgstr "Переглянути результат бронювання"
 
@@ -26502,8 +26616,7 @@ msgstr "Переглянути Правила Конкурсу"
 msgid "View Cruise"
 msgstr "Переглянути Круїз"
 
-#: pages/elevate.vue pages/hotels_details.vue
-#: components/welcome/countdown-tiles.vue
+#: pages/elevate.vue components/welcome/countdown-tiles.vue
 msgid "View Details"
 msgstr "Дізнатися подробиці"
 
@@ -26518,10 +26631,6 @@ msgstr "Переглянути тарифи"
 #: pages/communications.vue pages/webinar_recordings.vue
 msgid "View Future Webinars"
 msgstr "Переглянути майбутні вебінари"
-
-#: pages/hotels.vue
-msgid "View Hotel Details"
-msgstr "Дізнатись детальніше про готель"
 
 #: pages/reward_points.vue
 msgid "View Inactive RPs History"
@@ -27150,10 +27259,6 @@ msgstr ""
 msgid "Web"
 msgstr "Веб"
 
-#: pages/hotels.vue
-msgid "Webbeds"
-msgstr "Webbeds"
-
 #: Menu
 msgid "Webinar Recordings"
 msgstr "Записи вебінарів"
@@ -27358,6 +27463,7 @@ msgid "Whatsapp #"
 msgstr ""
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "When"
 msgstr "Коли"
 
@@ -27586,6 +27692,7 @@ msgid "with inCruises!"
 msgstr "з inCruises!"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "With INsider Pricing"
 msgstr "З INsider Pricing"
 
@@ -27603,10 +27710,12 @@ msgstr ""
 "збільшується, коли ви використовуєте Бонусні Бали."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "With Retail Price"
 msgstr "За роздрібною ціною"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "With Reward Points"
 msgstr "Бонусними Балами"
 
@@ -27821,6 +27930,7 @@ msgstr ""
 "яка щомісяця генерує щонайменше $500 виручки від продажу Програми Членства."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "you"
 msgstr "ви"
 
@@ -27865,7 +27975,7 @@ msgid ""
 msgstr ""
 "Ви можете використати баланс 2 до 1 для покриття частини вартості бронювання."
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "You are about to pay %{totalPointsUsed} RP"
 msgstr "Ви збираєтеся заплатити %{totalPointsUsed} ББ"
 
@@ -27923,7 +28033,7 @@ msgstr "ВИ МАЄТЕ ПРАВО"
 msgid "You are Locked by administrator"
 msgstr "Ви заблоковані адміністратором"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid ""
 "You are no longer able to use your Reward Points to cover the full cost of "
 "this booking, because some members don’t have access to Black Card Members "
@@ -28101,12 +28211,14 @@ msgid "You can now choose your preferred currency for recurring billing."
 msgstr "Ви вибрали бажану валюту для системи рекурентной оплати рахунків."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 #, fuzzy
 #| msgid "You can only add one additional member to a booking."
 msgid "You can only add members to a booking if you are an active member."
 msgstr "Ви можете додати лише одного додаткового члена до бронювання."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "You can only add one additional member to a booking."
 msgstr "Ви можете додати лише одного додаткового члена до бронювання."
 
@@ -28182,6 +28294,7 @@ msgid "You can't book Global Destination Cruises yet."
 msgstr "Ви поки, що не можете бронювати подорожі в категорії Глобальні Круїзи."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "You cannot add an inactive member to your booking. Please try by adding "
 "another user."
@@ -28242,7 +28355,18 @@ msgstr ""
 "Ви не можете використовувати Бонусні Бали, оскільки дата відправлення даного "
 "круїзу надто близька до дати плавання."
 
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid ""
+#| "You cannot use Reward Points because you have a pending invoice on your "
+#| "account."
+msgid "You cannot use Reward Points because this hotel booking is too soon."
+msgstr ""
+"Ви не можете використовувати Бонусні Бали, оскільки ваш обліковий запис має "
+"неоплачений рахунок."
+
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "You cannot use Reward Points because you have a pending invoice on your "
 "account."
@@ -28548,7 +28672,7 @@ msgstr "Ви успішно відправили"
 msgid "You have the potential to earn a matching bonus for these."
 msgstr "Ви маєте потенційну можливість заробити за це матчінг-бонус."
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "You have unsaved changes. Do you really want to leave?"
 msgstr "У вас є незбережені зміни. Ви справді хочете вийти?"
 
@@ -28615,6 +28739,7 @@ msgid "You may only add one additional member"
 msgstr "Ви можете додати лише одного додаткового члена клубу"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "You may only add one additional member per booking."
 msgstr "Ви можете додати лише одного додаткового члена клубу на бронювання."
 
@@ -28925,6 +29050,7 @@ msgid "You've won 50 Reward Points!"
 msgstr "Ви виграли 50 Бонусних Балів!"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "You’ve reached the maximum number of Insider Pricing bookings for this year."
 msgstr ""
@@ -28969,6 +29095,7 @@ msgstr ""
 "днів."
 
 #: components/cruises_booking/active_basket_bar.vue
+#: components/hotel_booking/active_basket_bar.vue
 msgid ""
 "Your basket is active for 15 minutes, you must complete your booking before"
 msgstr ""
@@ -28984,6 +29111,7 @@ msgstr ""
 "до %{date}."
 
 #: components/cruises_booking/active_basket_bar.vue
+#: components/hotel_booking/active_basket_bar.vue
 msgid "Your basket is active, you must complete your booking before"
 msgstr "Ваш кошик активний, ви повинні закінчити своє бронювання до"
 
@@ -41577,6 +41705,180 @@ msgstr ""
 #: Featured Cruises Promotions
 msgid "Group Cruise in Asia onboard Bellissima"
 msgstr ""
+
+#~ msgid ""
+#~ "{{ requirePassengerNames ? '' : 'Optional' }} Guest (%{guest}) #%{ index }"
+#~ msgstr ""
+#~ "{{ requirePassengerNames ? '' : 'Optional' }} Гість (%{guest}) #%{ index }"
+
+#~ msgid ""
+#~ "{{ requirePassengerNames ? 'Required Additional Guests' : 'Additional "
+#~ "Guests (Optional)' }}"
+#~ msgstr ""
+#~ "{{ requirePassengerNames ? 'Обов'язкові додаткові гості' : 'Додаткові "
+#~ "гості (опціонально)' }}"
+
+#~ msgid "%{sellingRate} for %{nights} nights total"
+#~ msgstr "%{sellingRate} за %{nights} ночей разом"
+
+#~ msgid "<i class=\"fas fa-hotel mr-1\"/> Hotels"
+#~ msgstr "<i class=\"fas fa-hotel mr-1\"/> Готелі"
+
+#~ msgid "<i class=\"fas fa-map mr-1\"/> Destinations"
+#~ msgstr "<i class=\"fas fa-map mr-1\"/> Напрямки"
+
+#~ msgid "<i class=\"fas fa-map-pin mr-1\"/> Zones"
+#~ msgstr "<i class=\"fas fa-map-pin mr-1\"/> Зони"
+
+#~ msgid "2-11 years at the time of travel"
+#~ msgstr "2-11 років на момент подорожі"
+
+#~ msgid "adult"
+#~ msgstr "дорослий"
+
+#~ msgid "Adults:"
+#~ msgstr "Дорослі:"
+
+#~ msgid "Age of children:"
+#~ msgstr "Вік дітей:"
+
+#~ msgid "Bonotel"
+#~ msgstr "Bonotel"
+
+#~ msgid "Check in:"
+#~ msgstr "Реєстрація:"
+
+#~ msgid "Check out:"
+#~ msgstr "Виписка:"
+
+#~ msgid "Children:"
+#~ msgstr "Діти:"
+
+#~ msgid "Choose Different Room"
+#~ msgstr "Обрати інший номер"
+
+#~ msgid "Click to filter by Stars"
+#~ msgstr "Натисніть, щоб відфільтрувати за кількістю зірок"
+
+#~ msgid "Close Filter"
+#~ msgstr "Закрити фільтр"
+
+#~ msgid "Dates:"
+#~ msgstr "Дати:"
+
+#~ msgid "guests"
+#~ msgstr "гості"
+
+#~ msgid "Hotelbeds"
+#~ msgstr "Hotelbeds"
+
+#~ msgid "Including taxes and fees"
+#~ msgstr "Включаючи податки та збори"
+
+#~ msgid "INsider Pricing"
+#~ msgstr "INsider Pricing"
+
+#~ msgid "Map"
+#~ msgstr "Мапа"
+
+#~ msgid "night"
+#~ msgstr "ніч"
+
+#~ msgid "Out of Pocket"
+#~ msgstr "З власних коштів"
+
+#~ msgid "per night"
+#~ msgstr "за ніч"
+
+#~ msgid "Please allocate the corresponding Rewards Points for each member:"
+#~ msgstr "Будь ласка, розподіліть відповідні Бонусні Бали між Членами Клубу:"
+
+#~ msgid "Price details"
+#~ msgstr "Деталі вартості"
+
+#~ msgid "PRICE MATCH GUARANTEE!"
+#~ msgstr "ГАРАНТІЯ ВІДПОВІДНОСТІ ЦІНИ!"
+
+#~ msgid "Price per night:"
+#~ msgstr "Ціна за ніч:"
+
+#~ msgid "Price Range per Night:"
+#~ msgstr "Діапазон цін за ніч:"
+
+#~ msgid "Privacy Policy licenses."
+#~ msgstr "Ліцензії Політики Конфіденційності."
+
+#~ msgid "Retail Price"
+#~ msgstr "Роздрібна вартість"
+
+#~ msgid "Return to Highlights"
+#~ msgstr "Повернутись до розділу \"У центрі уваги\""
+
+#~ msgid "Reward Points (Inactive Balance)"
+#~ msgstr "Бонусні Бали (неактивний баланс)"
+
+#~ msgid "Reward Points Available"
+#~ msgstr "Доступно Бонусних Балів"
+
+#~ msgid "Room name:"
+#~ msgstr "Назва номеру:"
+
+#~ msgid "Room Stay Facilities"
+#~ msgstr "Зручності розміщення в номері"
+
+#~ msgid "rooms"
+#~ msgstr "номери"
+
+#~ msgid "Rooms"
+#~ msgstr "Номери"
+
+#~ msgid "Rooms:"
+#~ msgstr "Номери:"
+
+#~ msgid "RP"
+#~ msgstr "ББ"
+
+#~ msgid "Search Hotels and Cities:"
+#~ msgstr "Пошук готелів та міст:"
+
+#~ msgid "Select the balance you want to use"
+#~ msgstr "Виберіть баланс, який хочете використати"
+
+#~ msgid "Showing results for {{ describeSearch() }}"
+#~ msgstr "Відображення результатів для {{ describeSearch() }}"
+
+#~ msgid "Sorry, it appears we have no hotels available for this destination."
+#~ msgstr "Вибачте, але для цього напрямку немає доступних готелів."
+
+#~ msgid "Taxes"
+#~ msgstr "Податки"
+
+#~ msgid "There are no results for this search."
+#~ msgstr "Пошук не дав результатів."
+
+#~ msgid "This is not legal advice."
+#~ msgstr "Не є юридичною рекомендацією."
+
+#~ msgid "Toggle Admin Info"
+#~ msgstr "Переключити інформацію адміністратора"
+
+#~ msgid "total"
+#~ msgstr "всього"
+
+#~ msgid "Total Price Max"
+#~ msgstr "Максимальна підсумкова вартість"
+
+#~ msgid "Total Price Minimum"
+#~ msgstr "Мінімальна підсумкова вартість"
+
+#~ msgid "Total price per 6 nights:"
+#~ msgstr "Загальна вартість за 6 ночей:"
+
+#~ msgid "View Hotel Details"
+#~ msgstr "Дізнатись детальніше про готель"
+
+#~ msgid "Webbeds"
+#~ msgstr "Webbeds"
 
 #, fuzzy
 #~| msgid "Global Leadership Summit"

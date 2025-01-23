@@ -371,6 +371,12 @@ msgstr "(Administrators)"
 msgid "(Adult member)"
 msgstr "(Pieaudzis biedrs)"
 
+#: components/hotel_booking/guest_info_step.vue
+#, fuzzy
+#| msgid "Adult"
+msgid "(Adult)"
+msgstr "Pieaugušais"
+
 #: pages/public/pricing.vue
 msgid "(awards 100 or 250 Reward Points)"
 msgstr "(piešķir 100 vai 250 Balvu Punktus)"
@@ -380,6 +386,7 @@ msgid "(Cabin Code: %{ cabin_code })"
 msgstr "(Kajītes kods: %{ cabin_code })"
 
 #: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "(Child)"
 msgstr "(Bērns)"
 
@@ -689,20 +696,6 @@ msgstr ""
 "fieldType === 'PHONE_NUMBER' ? `+${recipientField.value."
 "countryPhoneCode}${recipientField.value.number}` : recipientField.value }}"
 
-#: pages/hotel_booking.vue
-msgid ""
-"{{ requirePassengerNames ? '' : 'Optional' }} Guest (%{guest}) #%{ index }"
-msgstr ""
-"{{ requirePassengerNames ? '' : 'Optional' }} Viesis (%{guest}) #%{ index }"
-
-#: pages/hotel_booking.vue
-msgid ""
-"{{ requirePassengerNames ? 'Required Additional Guests' : 'Additional Guests "
-"(Optional)' }}"
-msgstr ""
-"{{ requirePassengerNames ? 'Pieprasītie Papildus viesi' : 'Papildus viesi "
-"(Optional)' }}"
-
 #: pages/contacts.vue
 msgid "{{ selectedContact.subscription }}"
 msgstr "{{ selectedContact.parakstīšnās }}"
@@ -868,10 +861,6 @@ msgstr ""
 msgid "*Price does not include taxes"
 msgstr "Cenā netiek iekļauti nodokļi"
 
-#: pages/hotels.vue
-msgid "*Price may vary based on availability."
-msgstr "*Cena var mainīties atkarībā no pieejamības.."
-
 #: pages/cruises_old.vue
 msgid ""
 "*Price may vary based on availability. You will receive accurate pricing "
@@ -906,8 +895,14 @@ msgstr ""
 "gadījumā nedrīkst izmantot, lai piesaistītu vai mēģinātu pārdot mūsu biedru "
 "dalību, jo inCruises to nepieņems un tas ir pakļauts sodam."
 
-#: pages/hotel_booking.vue pages/hotels.vue
+#: pages/hotels.vue
 msgid "/ night"
+msgstr "/ nakts"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "/ night"
+msgid "/ Night"
 msgstr "/ nakts"
 
 #: pages/track_results.vue
@@ -964,7 +959,7 @@ msgstr "%{ cd_used } Balvu Punkti"
 msgid "%{ city }"
 msgstr "%{ city }"
 
-#: pages/cruises_old.vue pages/hotels.vue
+#: pages/cruises_old.vue
 msgid "%{ length } results match your criteria."
 msgstr "%{ length } rezultāti atbilst jūsu kritērijiem."
 
@@ -1073,14 +1068,6 @@ msgstr "%{nights} Naktis"
 #: pages/cruises_old.vue
 msgid "%{nights} Nights - {{ getDestinationById(cruise.destination_id) }}"
 msgstr "%{nights} Naktis - {{ getDestinationById(cruise.destination_id) }}"
-
-#: pages/hotels_details.vue
-msgid "%{sellingRate} for %{nights} nights total"
-msgstr "%{sellingRate} par %{nights} naktīm kopā"
-
-#: pages/hotels_details.vue
-msgid "%{sellingRate} per night"
-msgstr "%{sellingRate} par nakti"
 
 #: components/cruises_booking/cruise_card.vue
 msgid "%{startDate} to %{endDate}"
@@ -1470,18 +1457,6 @@ msgstr ""
 "<i class=\"far fa-clock mr-2\"/>Jūs esat vienīgie <strong>{{5 - "
 "quick_actions[10]}} Biedri</strong> nav iespējams saņemt nākamā mēneša "
 "Biedru dalības maksu 100 ASV dolāru apmērā"
-
-#: pages/hotels.vue
-msgid "<i class=\"fas fa-hotel mr-1\"/> Hotels"
-msgstr "<i class=\"fas fa-hotel mr-1\"/> Viesnīcas"
-
-#: pages/hotels.vue
-msgid "<i class=\"fas fa-map mr-1\"/> Destinations"
-msgstr "<i class=\"fas fa-map mr-1\"/> Galamērķi"
-
-#: pages/hotels.vue
-msgid "<i class=\"fas fa-map-pin mr-1\"/> Zones"
-msgstr "<i class=\"fas fa-map-pin mr-1\"/> Zonas"
 
 #: components/public/FooterLinks.vue
 msgid "<i class=\"fas fa-question-circle\"/> Get Help"
@@ -2186,6 +2161,18 @@ msgstr ""
 msgid "${{statement.data.amount}}"
 msgstr "Dollar{{statement.data.amount}}"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "%{sellingRate} per night"
+msgid "$%{sellingRate} / Night"
+msgstr "%{sellingRate} par nakti"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "%{sellingRate} per night"
+msgid "$%{sellingRate} total"
+msgstr "%{sellingRate} par nakti"
+
 #: pages/payment_protection.vue
 msgid "$1,100 + 1,000 (2 for 1) Reward Points"
 msgstr "$1,100 + 1,000 (2 pret 1) Balvu Punkti"
@@ -2342,7 +2329,9 @@ msgstr ""
 "Kruīzu, un"
 
 #: pages/hotels.vue
-msgid "150,000+ Global Destinations are Waiting for You!"
+#, fuzzy
+#| msgid "150,000+ Global Destinations are Waiting for You!"
+msgid "150.000+ Global destinations are waiting for you"
 msgstr "150.000 + pasaules gala mērķi gaida jūs!"
 
 #: pages/multi_factor.vue
@@ -2370,12 +2359,10 @@ msgstr "2 Par 1 BP"
 msgid "2 nights in Dubai with pre-cruise accommodations"
 msgstr "2 naktis Dubaijā ar pirmskruīza mītnēm"
 
-#: pages/hotels_details.vue
-msgid "2-11 years at the time of travel"
-msgstr "2 –11 gadi ceļojuma laikā"
-
-#: pages/hotels.vue
-msgid "2-17 years at the time of travel"
+#: components/hotels/GuestsDropdown.vue
+#, fuzzy
+#| msgid "2-17 years at the time of travel"
+msgid "2 to 17 years at the time of travel."
 msgstr "2 –17 gadi ceļojuma laikā"
 
 #: pages/elevate.vue pages/elevate_registration.vue
@@ -2578,7 +2565,7 @@ msgstr ""
 msgid "A Great Value:"
 msgstr "Liela Vērtība:"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid ""
 "A members in this booking has reached the limit for booking cruises with "
 "Insider Pricing discount. Insider Pricing is no longer available."
@@ -2910,7 +2897,8 @@ msgstr "Aktivizācijas šajā mēnesī"
 msgid "Active"
 msgstr "Aktīvs"
 
-#: pages/hotel_booking.vue components/cruises_booking/reward_points_step.vue
+#: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Active Balance"
 msgstr "Aktīva Bilance"
 
@@ -3056,8 +3044,10 @@ msgstr "Pievieno Departamentu"
 msgid "Add Dynamic Featured Cruise"
 msgstr "Pievieno Dinamisko Aktuālo Kruīzu"
 
-#: pages/hotel_booking.vue
-msgid "Add Guest"
+#: components/hotels/GuestsDropdown.vue
+#, fuzzy
+#| msgid "Add Guest"
+msgid "Add guests"
 msgstr "Pievieno Viesi"
 
 #: components/booking/add-cd-user.vue
@@ -3071,10 +3061,12 @@ msgstr "Pievieno vēlāk"
 #: components/booking/add-cd-user.vue
 #: components/cruises_booking/reward_points_step.vue
 #: components/cruises_booking_old/reward-points-step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Add Member"
 msgstr "Pievieno Biedru"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Add Members to your Booking"
 msgstr "Pievienot Biedrus jūsu Rezervācijai"
 
@@ -3339,23 +3331,16 @@ msgstr "Adminstr"
 msgid "Admins and rank leaders cannot disable 2FA"
 msgstr "Administratori un rangu līderi nevar atspējot 2FA"
 
-#: pages/hotel_booking.vue
-msgid "adult"
-msgstr "pieaugušais"
-
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotels/GuestsDropdown.vue
 msgid "Adult"
 msgstr "Pieaugušais"
 
-#: pages/hotels.vue pages/hotels_details.vue
 #: components/cruises_booking/passenger_count_step.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
+#: components/hotels/GuestsDropdown.vue
 msgid "Adults"
 msgstr "1 Pieaugušie"
-
-#: pages/hotel_booking.vue
-msgid "Adults:"
-msgstr "Pieaugušie:"
 
 #: pages/glsx.vue
 msgid "Advancing Leaders:"
@@ -3377,10 +3362,6 @@ msgstr "PIEEJAMS"
 #: pages/elevate.vue
 msgid "After booking the Elevate Cruise,"
 msgstr "Pēc Elevate kruīza rezervēšanas"
-
-#: pages/hotels.vue pages/hotels_details.vue
-msgid "Age of children:"
-msgstr "Bērnu vecums:"
 
 #: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
@@ -3415,7 +3396,7 @@ msgstr "Aļaska"
 msgid "Alipay"
 msgstr "Alipay maksājumi"
 
-#: pages/admin_support_analytics.vue pages/hotels.vue pages/info_center.vue
+#: pages/admin_support_analytics.vue pages/info_center.vue
 #: pages/leadership_academy.vue pages/reports.vue pages/team_rankings.vue
 #: pages/track_results.vue components/user/timeline.vue reports/index.html
 #: track_results/index.html
@@ -3469,6 +3450,17 @@ msgstr "Visi dokumenti"
 #: pages/inviter.vue pages/support.vue components/support/AdminCreateTicket.vue
 msgid "All fields are required."
 msgstr "Visi kvadrāti/lauki ir obligāti."
+
+#: components/hotel_booking/guest_info_step.vue
+#, fuzzy
+#| msgid ""
+#| "All fields are required. Please confirm all of the passengers on this "
+#| "booking, the passengers are final and cannot be changed at a later time."
+msgid ""
+"All fields are required. Please confirm all of the guests on this booking."
+msgstr ""
+"Visi lauki ir obligāti.Lūdzu apstipriniet visus pasažierus par šo "
+"rezervāciju, pasažieri ir pēdējie un vēlāk tos nevar mainīt."
 
 #: components/cruises_booking/passenger_info_step.vue
 msgid ""
@@ -3626,10 +3618,12 @@ msgid "All your saved passengers"
 msgstr "Visi jūsu saglabātie pasažieri"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Allocated points"
 msgstr "Piešķirtie punkti"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Allocated Points"
 msgstr "Piešķirtie Punkti"
 
@@ -3728,6 +3722,12 @@ msgstr "Ambassador Bod+: "
 msgid "Ambassador Tracking"
 msgstr "Sūtņa/vēstnieka izsekošana"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Ship Amenities"
+msgid "Amenities"
+msgstr "Kuģa Ertības"
+
 #: components/checkout/ProcessorIngenico.vue
 #: components/checkout/ProcessorNexio.vue
 #: components/checkout/ProcessorSafechargeEur.vue
@@ -3741,7 +3741,7 @@ msgstr "American Express"
 msgid "Americas Territory Director"
 msgstr "Amerikas Teritorijas direktors"
 
-#: pages/hotel_booking.vue pages/invoices.vue pages/invoices_new.vue
+#: pages/invoices.vue pages/invoices_new.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
@@ -4046,8 +4046,9 @@ msgid "Applicant Signature"
 msgstr "Iesniedzēja Paraksts"
 
 #: components/filter-chip-range.vue components/month_picker.vue
-#: pages/checkout.vue pages/contacts.vue pages/cruises.vue
-#: pages/intours_details.vue components/tours/intours_results.vue
+#: pages/checkout.vue pages/contacts.vue pages/cruises.vue pages/hotels.vue
+#: pages/hotels_details.vue pages/intours_details.vue
+#: components/tours/intours_results.vue
 msgid "Apply"
 msgstr "Piemēro"
 
@@ -4445,6 +4446,7 @@ msgid ""
 msgstr "Mēs inCruises esam apņēmušies,ka mūsu Biedri un Partneri nāk pirmie!"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "At some point you may have deactivated your account. This caused your points "
 "to move to an inactive account balance. Take into account that inactive "
@@ -4620,9 +4622,9 @@ msgstr "b.Nacionālais direktors"
 msgid "b. Time of the Essence"
 msgstr "Galvenais laiks"
 
-#: pages/contacts.vue pages/courses.vue pages/cruise.vue pages/import.vue
-#: pages/intours_details.vue pages/leadership_academy.vue
-#: pages/multi_factor.vue pages/settings.vue
+#: pages/contacts.vue pages/courses.vue pages/cruise.vue
+#: pages/hotels_details.vue pages/import.vue pages/intours_details.vue
+#: pages/leadership_academy.vue pages/multi_factor.vue pages/settings.vue
 #: components/agreements/italian_agreement.vue
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
@@ -4675,6 +4677,7 @@ msgid "Balance"
 msgstr "Bilance"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Balance Use conditions"
 msgstr "Līdzsvara izmantošanas nosacījumi"
 
@@ -4735,6 +4738,7 @@ msgid "Basic Training Courses"
 msgstr "Pamatu apmācības kursi"
 
 #: components/cruises_booking/active_basket_bar.vue
+#: components/hotel_booking/active_basket_bar.vue
 msgid "Basket active for"
 msgstr "Grozs ir aktīvs"
 
@@ -4799,6 +4803,7 @@ msgstr ""
 "vismaz 200 ASV dolāru."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Before"
 msgstr "Pirms"
 
@@ -4968,10 +4973,6 @@ msgstr "Boleto maksājumu sistēma"
 msgid "Boleto Flash"
 msgstr "Boleto Flash-maksājuma apstiprinājums"
 
-#: pages/hotels.vue
-msgid "Bonotel"
-msgstr "bonotel"
-
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/weekly_bonus.vue
 #: components/growth_calculator/potential_leadership.vue
@@ -5066,6 +5067,14 @@ msgid ""
 msgstr ""
 "Rezervējiet daļu savu kruīzu, izmantojot balvu punktus, bet daļu - ar naudu"
 
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid ""
+#| "Book a part of your cruises using reward points and the other with money"
+msgid "Book a part of your hotel using reward points and the other with money"
+msgstr ""
+"Rezervējiet daļu savu kruīzu, izmantojot balvu punktus, bet daļu - ar naudu"
+
 #: components/covid-disclaimer-reminder.vue
 msgid "BOOK AND CRUISE AT YOUR OWN RISK"
 msgstr "REZERVĒ UN DODIES KRUĪZĀ PATS RISKĒJOT"
@@ -5080,7 +5089,7 @@ msgstr ""
 "Rezervējiet Pēdējos INeticamos Costa Kruīzu Piedāvājumus un ceļojiet Šajā "
 "Sezonā!"
 
-#: pages/hotels_details.vue components/tours/details/available-plans.vue
+#: components/tours/details/available-plans.vue
 msgid "Book now"
 msgstr "Rezervē Tagad"
 
@@ -5100,6 +5109,11 @@ msgstr "Rezervē Kruīzus, Viesnīcas un Kūrortus"
 msgid "BOOK WITH CONFIDENCE"
 msgstr "REZERVĒ AR PĀRLIECĪBU"
 
+#: components/hotels/price_match_banner.vue
+msgid ""
+"Book with inStays and get the difference in points if you find a lower price!"
+msgstr ""
+
 #: pages/menu_page.vue
 msgid "Book with Reward Points, have total confidence!"
 msgstr "Rezervējiet ar Balvu Punktiem, esiet pilnīgi pārliecināts!"
@@ -5110,6 +5124,18 @@ msgstr "Rezervējiet kruīzu, izmantojot mazumtirdzniecības cenu"
 
 #: components/cruises_booking/reward_points_step.vue
 msgid "Book your cruise using a special price"
+msgstr "Rezervējiet savu kruīzu, izmantojot īpašu cenu"
+
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid "Book your cruise using a retail price"
+msgid "Book your hotel using a retail price"
+msgstr "Rezervējiet kruīzu, izmantojot mazumtirdzniecības cenu"
+
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid "Book your cruise using a special price"
+msgid "Book your hotel using a special price"
 msgstr "Rezervējiet savu kruīzu, izmantojot īpašu cenu"
 
 #: components/reservations/reservation-card.vue
@@ -5159,6 +5185,7 @@ msgid "Booking summary"
 msgstr "Rezervācijas kopsavilkums"
 
 #: components/cruises_booking/booking_summary.vue
+#: components/hotel_booking/booking_summary.vue
 msgid "Booking Summary"
 msgstr "Rezervācijas Kopsavilkums"
 
@@ -5418,7 +5445,7 @@ msgstr "Pa e-pastiem"
 msgid "By Mail"
 msgstr "Pa pastu"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid ""
 "By pressing “Pay”, you are confirming your reservation and agreeing to pay "
 "%{totalPointsUsed} reward points. Are you sure you want to proceed?"
@@ -5675,9 +5702,10 @@ msgstr "Kanāda/Jaunanglija"
 #: components/recipients_modal.vue pages/admin_department.vue
 #: pages/admin_permission.vue pages/admin_permission_group.vue
 #: pages/checkout.vue pages/connect.vue pages/contacts.vue
-#: pages/cruises_booking_old.vue pages/email.vue pages/intours_details.vue
-#: pages/inviter.vue pages/invoices.vue pages/invoices_new.vue
-#: pages/referral_links.vue pages/reports.vue pages/settings.vue
+#: pages/cruises_booking_old.vue pages/email.vue pages/hotels.vue
+#: pages/hotels_details.vue pages/intours_details.vue pages/inviter.vue
+#: pages/invoices.vue pages/invoices_new.vue pages/referral_links.vue
+#: pages/reports.vue pages/settings.vue
 #: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
@@ -5694,6 +5722,7 @@ msgstr "Kanāda/Jaunanglija"
 #: components/contacts/mass-contact-modal.vue
 #: components/cruises_booking/reward_points_step.vue
 #: components/cruises_booking_old/confirmation-step.vue
+#: components/hotel_booking/reward_points_step.vue
 #: components/onboarding/name-birthday-avatar-step.vue
 #: components/payout/euro-conversion.vue components/recurring/add-recurring.vue
 #: components/recurring/recurring-cards.vue components/support/TicketViewer.vue
@@ -5952,10 +5981,6 @@ msgstr "Pārbaudes grupa"
 msgid "Check In"
 msgstr "Iečekoties"
 
-#: pages/hotel_booking.vue
-msgid "Check in:"
-msgstr "Iečekošanās:"
-
 #: components/news-modal.vue
 msgid "Check It Out"
 msgstr "Pārskati"
@@ -6009,10 +6034,6 @@ msgstr ""
 msgid "Check out this video to learn more."
 msgstr "Apskati šo video,lai iemācītos vairāk."
 
-#: pages/hotel_booking.vue
-msgid "Check out:"
-msgstr "Iziešana:"
-
 #: components/cruises_booking/cabin_step.vue
 msgid "Checking cabin availability with the cruise line, just a moment..."
 msgstr "Kajītes pieejamības pārbaude ar kruīza līniju, tikai mirklis..."
@@ -6033,11 +6054,12 @@ msgstr "Norēķināšanās Akcijas"
 msgid "Chief Marketing Officer (CMO)"
 msgstr "Galvenais Mārketinga speciālists(CMO)"
 
-#: Menu.vue pages/hotel_booking.vue
+#: Menu.vue
 msgid "child"
 msgstr "bērns"
 
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotels/GuestsDropdown.vue
 msgid "Child"
 msgstr "Bērns"
 
@@ -6045,14 +6067,20 @@ msgstr "Bērns"
 msgid "Child #%{ childNumber } Birthdate"
 msgstr "Bērns #%{ childNumber } Dzimšanas datums"
 
+#: components/hotels/GuestsDropdown.vue
+#, fuzzy
+#| msgid "Child Ages"
+msgid "Child Age"
+msgstr "Bērnu vecumi"
+
 #: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Child Ages"
 msgstr "Bērnu vecumi"
 
-#: pages/hotels.vue pages/hotels_details.vue
 #: components/cruises_booking/passenger_count_step.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
+#: components/hotels/GuestsDropdown.vue
 msgid "Children"
 msgstr "Bērni"
 
@@ -6060,9 +6088,11 @@ msgstr "Bērni"
 msgid "Children information"
 msgstr "Informācija bērniem"
 
-#: pages/hotel_booking.vue
-msgid "Children:"
-msgstr "Bērni:"
+#: components/hotels/GuestsDropdown.vue
+#, fuzzy
+#| msgid "Child"
+msgid "Childs"
+msgstr "Bērns"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
 #: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
@@ -6102,10 +6132,6 @@ msgstr "Izvēlies citu kategoriju"
 #: pages/checkout.vue
 msgid "Choose Different Payment Method"
 msgstr "Izvēlēties citādu samaksas veidu"
-
-#: pages/hotel_booking.vue
-msgid "Choose Different Room"
-msgstr "Izvēlies citu Numuriņu"
 
 #: components/cruises_booking_old/passenger-info-step.vue
 msgid "Choose Dining Option"
@@ -6160,7 +6186,7 @@ msgstr ""
 msgid "Choose Title"
 msgstr "Izvēlies Virsrakstu"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Choose Your Booking Type"
 msgstr "Izvēlies savu Rezrvācijas Tipu"
 
@@ -6255,11 +6281,11 @@ msgid "Classic Plan: $100 USD/month"
 msgstr "Clasic Plāns: $ 100 USD/mēnesī"
 
 #: components/filter-chip-dropdown.vue components/filter-chip-range.vue
-#: pages/cruises.vue components/tours/intours_results.vue
+#: pages/cruises.vue pages/hotels.vue components/tours/intours_results.vue
 msgid "Clear"
 msgstr "Skaidrs/novākt/dzēst"
 
-#: pages/cruises_old.vue pages/hotels.vue
+#: pages/cruises_old.vue
 msgid "Clear All Filters"
 msgstr "Notīrīt visus filtrus"
 
@@ -6312,7 +6338,7 @@ msgstr "Uzklikšķini šeit lai iečekotos"
 msgid "Click Here to Download"
 msgstr "Uzklikšķini šeit lai lejuplādētu"
 
-#: pages/cruises_old.vue pages/hotels.vue
+#: pages/cruises_old.vue
 msgid "Click here to learn more"
 msgstr "Uzklikšķini šeit lai vairāk uzzinātu"
 
@@ -6368,18 +6394,14 @@ msgstr "Noklikšķiniet šeit, lai skatītu talonu/vaučeru"
 msgid "Click to create a group."
 msgstr "Uzklikšķiniet ,lai izveidoptu grupu."
 
-#: pages/hotels.vue
-msgid "Click to filter by Stars"
-msgstr "Uzklikšķini , lai filtrētu"
-
 #: pages/email_address.vue
 msgid "Client Configuration"
 msgstr "Klienta konfigurācija"
 
 #: components/global-summit-reminder.vue components/tmt-modal.vue
-#: components/weekly-competition.vue pages/connect.vue pages/hotels_details.vue
-#: pages/menu_page.vue pages/referral_links_old.vue pages/resources.vue
-#: pages/welcome.vue components/compensation/info_modal.vue
+#: components/weekly-competition.vue pages/connect.vue pages/menu_page.vue
+#: pages/referral_links_old.vue pages/resources.vue pages/welcome.vue
+#: components/compensation/info_modal.vue
 #: components/compensation/leadership_bonus.vue
 #: components/cruises_booking_old/itinerary-modal.vue
 #: components/global_convention/event_info.vue
@@ -6399,10 +6421,6 @@ msgstr "Aizver"
 #: components/upgrade/modals/upgrade-plan-detail.vue
 msgid "Close Details"
 msgstr "Aizvērt detalizētu informāciju"
-
-#: pages/hotels.vue
-msgid "Close Filter"
-msgstr "Aizvērt filtru"
 
 #: pages/welcome.vue
 msgid "Close Video"
@@ -6533,14 +6551,22 @@ msgid "Complete at least 4 Direct Partner Activations during Phase 1"
 msgstr "Pabeigt vismaz 4 Tiešo Partneru Aktivizācijas 1. fāzes laikā"
 
 #: components/cruises_booking/active_basket_bar.vue
+#: components/hotel_booking/active_basket_bar.vue
 msgid "Complete Booking in"
 msgstr "Pabeidziet Rezervācijas"
+
+#: pages/hotel_booking.vue
+#, fuzzy
+#| msgid "Complete Passenger Details"
+msgid "Complete Guest Details"
+msgstr "Papeidziet Pasažiera Datus"
 
 #: pages/cruises_booking.vue
 msgid "Complete Passenger Details"
 msgstr "Papeidziet Pasažiera Datus"
 
 #: components/cruises_booking/active_basket_bar.vue
+#: components/hotel_booking/active_basket_bar.vue
 msgid "Complete your booking before"
 msgstr "Pabeidziet savu rezervāciju pirms"
 
@@ -6586,6 +6612,7 @@ msgid "Confirm"
 msgstr "Apstiprināt"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Confirm & Add"
 msgstr "Apstiprini & Pievieno"
 
@@ -6814,7 +6841,7 @@ msgstr "Iepazīstieties ar dažādu Biedru Dalības plānu īpašajām iezīmēm
 msgid "Contact by Mail:"
 msgstr "Kontaktpersona pa pastu:"
 
-#: pages/hotel_booking.vue components/contacts/contact-edit-modal.vue
+#: components/contacts/contact-edit-modal.vue
 msgid "Contact Information"
 msgstr "Kontakt informācija"
 
@@ -7632,17 +7659,13 @@ msgstr "Datums:6 Decembris"
 msgid "Date: November 6th"
 msgstr "Datums:6 Novembris"
 
-#: pages/admin_signup_flow.vue
+#: pages/admin_signup_flow.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Dates"
 msgstr "Datumi"
 
 #: pages/glsx.vue
 msgid "Dates and location to be revealed at a later time"
 msgstr "Datumi un atrašanās vieta tiks atklāti vēlāk"
-
-#: pages/hotels.vue
-msgid "Dates:"
-msgstr "Datumi:"
 
 #: pages/cruise.vue pages/elevate_registration.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
@@ -7919,6 +7942,12 @@ msgstr "Galamēķa valsts"
 
 #: components/payout/brightwell/transfer-details.vue
 msgid "Destination currency"
+msgstr "Galamēķa valūta"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Destination currency"
+msgid "Destination or hotel name"
 msgstr "Galamēķa valūta"
 
 #: components/cruises_booking/more_details_modal.vue
@@ -8745,6 +8774,7 @@ msgstr "Vienkārši pievienot/papildināt:"
 #: components/admin_booking/hotel_bookings.vue
 #: components/admin_booking/tour_bookings.vue
 #: components/cruises_booking/booking_summary.vue
+#: components/hotel_booking/booking_summary.vue
 #: components/settings_page/modify-saved-passengers.vue
 msgid "Edit"
 msgstr "Rediģē"
@@ -8844,6 +8874,7 @@ msgid "Eligible"
 msgstr "Piemērots"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Elite Travel Advantage"
 msgstr "Elitārās Ceļojumu Priekšrocības"
 
@@ -9018,6 +9049,7 @@ msgid "Enter Name"
 msgstr "ievadiet vārdu/nosaukumu"
 
 #: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Enter phone number"
 msgstr "Ievadi telefona numuru"
 
@@ -9034,6 +9066,7 @@ msgid "Enter State"
 msgstr "Ievadiet Valsti"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Enter Unique Member Code"
 msgstr "Ievadi Īpašo Biedra Kodu"
 
@@ -9072,14 +9105,17 @@ msgstr "Ievadiet savu dzimšanas datumu"
 
 #: pages/intours_confirmation.vue
 #: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Enter your email"
 msgstr "Ievadi savu e-pastu"
 
 #: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Enter your first name"
 msgstr "Ievadi savu vārdu"
 
 #: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Enter your last name"
 msgstr "Ievadi savu uzvārdu"
 
@@ -9350,6 +9386,10 @@ msgstr "Izeja"
 msgid "Exit Checkout Page"
 msgstr "Iziet no pārbaudes lapas"
 
+#: components/hotels/map.vue
+msgid "Expand"
+msgstr ""
+
 #: pages/public/disclosure.vue
 msgid "Expenses"
 msgstr "Izdevumi"
@@ -9580,6 +9620,12 @@ msgstr "Iemīļotākās viesnīcas"
 msgid "Favorite Tours"
 msgstr "Iemīļotākās Ekskursijas"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Favorite Tours"
+msgid "Favorites"
+msgstr "Iemīļotākās Ekskursijas"
+
 #: pages/admin_booking.vue components/admin_booking/admin_cruise_featured.vue
 msgid "Featured Cruises"
 msgstr "Uzrādītie kruīzi"
@@ -9614,7 +9660,7 @@ msgstr "Faila augšuplāde..."
 msgid "Filter"
 msgstr "Filtrs"
 
-#: pages/hotels.vue components/translations/placeholders.vue
+#: components/translations/placeholders.vue
 msgid "Filter by hotel name.."
 msgstr "Filtrēt pēc viesnīcas nosaukuma.."
 
@@ -9626,7 +9672,7 @@ msgstr "Atlasīt Pēc Valodas"
 msgid "Filtering"
 msgstr "filtrēšana"
 
-#: pages/cruises.vue pages/reports.vue
+#: pages/cruises.vue pages/hotels.vue pages/reports.vue
 #: components/data_table/filter-selection-widget.vue
 #: components/data_table/table.vue components/tours/intours_results.vue
 #: reports/index.html
@@ -9716,9 +9762,9 @@ msgid "First Leader"
 msgstr "Pirmai līderi"
 
 #: pages/admin_restricted_paybonus.vue pages/contacts.vue
-#: pages/hotel_booking.vue pages/intours_confirmation.vue pages/invite.vue
-#: pages/settings.vue components/cruises_booking/passenger_info_step.vue
-#: components/public/JoinModal.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -10253,8 +10299,8 @@ msgstr "GLS-X ir jūsu ceļš IN uz visizdevīgāko Globālo līderu Samitu!"
 msgid "GLS-X! Is HERE!"
 msgstr "GLS-X! Ir ŠEIT!"
 
-#: pages/cruises_booking_old.vue pages/hotels_details.vue
-#: pages/italian_onboarding.vue pages/login/login.vue
+#: pages/cruises_booking_old.vue pages/italian_onboarding.vue
+#: pages/login/login.vue
 msgid "Go Back"
 msgstr "Ej atpakaļ"
 
@@ -10267,6 +10313,7 @@ msgid "GOLD PACKAGE"
 msgstr "ZELTA PAKETE"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Got It"
 msgstr "Sapratu"
 
@@ -10312,6 +10359,7 @@ msgstr ""
 "tie tiks ievadīti 6 mēnešu laika periodā."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "Great news! As a Ranked Partner-Member, you can use your Reward Points to "
 "cover the full cost of this booking."
@@ -10320,6 +10368,7 @@ msgstr ""
 "lai segtu visas šīs rezervēšanas izmaksas."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "Great news! As an Active Member, you can use your Reward Points to cover up "
 "to half of the cost of this booking."
@@ -10394,10 +10443,13 @@ msgstr "GARANTĒTS"
 msgid "Guaynabo, Puerto Rico 00968-1705"
 msgstr "Guanabo,Puertariko 00968-1705"
 
-#: pages/hotels.vue
-msgid "guests"
-msgstr "viesi"
+#: components/hotel_booking/guest_info_step.vue
+#, fuzzy
+#| msgid "Passenger %{ index }"
+msgid "Guest %{ index }"
+msgstr "Passažiera %{ index }"
 
+#: components/hotels/GuestsDropdown.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
 msgid "Guests"
@@ -10632,6 +10684,18 @@ msgstr "Viesnīcas Telefons#"
 msgid "Hotel Price"
 msgstr "Viesnīcas Cena"
 
+#: pages/hotel_booking.vue
+#, fuzzy
+#| msgid "Protection"
+msgid "Hotel Protection"
+msgstr "Aizsardzība"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Hotel Providers"
+msgid "Hotel Provider:"
+msgstr "Viesnīcu nodrošinātājs"
+
 #: pages/admin_booking.vue components/admin_booking/hotel_providers.vue
 msgid "Hotel Providers"
 msgstr "Viesnīcu nodrošinātājs"
@@ -10644,10 +10708,6 @@ msgstr "Meklēt Viesnīcas"
 #: receipts/hotel_booking_receipt.html
 msgid "Hotel Website"
 msgstr "Viesnīcas tīmekļa vietne"
-
-#: pages/hotels.vue
-msgid "Hotelbeds"
-msgstr "Viesnīcu gultas/vietas"
 
 #: BookingTopBar.vue HotelsTopBar.vue pages/hotels.vue pages/reservations.vue
 #: components/admin_booking/admin_booking_stats.vue
@@ -11813,6 +11873,16 @@ msgstr ""
 msgid "If you book with inStays and"
 msgstr "Ja rezervējiet ar inStays un"
 
+#: components/hotels/price_match_banner.vue
+#, fuzzy
+#| msgid ""
+#| "of your inStays booking, you can receive a credit for the difference in "
+#| "Reward Points."
+msgid ""
+"If you book with inStays and find a lower price you get the difference in "
+"Reward Points*!"
+msgstr "rezervējot inStays, varat saņemt Balvu Punktu starpību."
+
 #: upgrade/index.html
 msgid ""
 "If you chose a cash payment option, please proceed to make the payment and "
@@ -12423,8 +12493,8 @@ msgstr "Ieturējuma nodokliī un"
 msgid "Inactive"
 msgstr "Neaktīvs"
 
-#: pages/hotel_booking.vue pages/reward_points.vue
-#: components/cruises_booking/reward_points_step.vue
+#: pages/reward_points.vue components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Inactive Balance"
 msgstr "Neaktīva bilance"
 
@@ -12477,10 +12547,6 @@ msgstr ""
 #: components/price_match_guarantee/cruises.vue
 msgid "Include all taxes and fees."
 msgstr "Ieskaitot visus nodokļus un maksas."
-
-#: pages/hotels_details.vue
-msgid "Including taxes and fees"
-msgstr "Ieskaitot nodokļus un maksas"
 
 #: pages/m3.vue
 msgid "Income and Incentive Guide"
@@ -12879,7 +12945,7 @@ msgstr "Iekšējā kajīte"
 msgid "Insider Price"
 msgstr "Insider Cena"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Insider Pricing"
 msgstr "INsider Pricing"
 
@@ -12887,15 +12953,12 @@ msgstr "INsider Pricing"
 msgid "INsider pricing"
 msgstr "INsider Pricing"
 
-#: pages/hotel_booking.vue
-msgid "INsider Pricing"
-msgstr "INsider Pricing"
-
 #: components/feature_card.vue
 msgid "INsider Pricing Bookings Per Year"
 msgstr "INsider Pricing Rezervācijas gadā"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Insider pricing is not available for inactive members."
 msgstr "Insider Pricing nav pieejami neaktīviem dalībniekiem."
 
@@ -13601,9 +13664,9 @@ msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr "Pēdējā mēneša Vadības prēmija ir tikusi pieprasīta un gaida izmaksu."
 
 #: pages/admin_restricted_paybonus.vue pages/contacts.vue
-#: pages/hotel_booking.vue pages/intours_confirmation.vue pages/invite.vue
-#: pages/settings.vue components/cruises_booking/passenger_info_step.vue
-#: components/public/JoinModal.vue
+#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
+#: components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue pages/public/signup.vue import/index.html
@@ -13742,7 +13805,8 @@ msgstr "Vadības sarunu punkti"
 msgid "Leadership Team"
 msgstr "Vadības komanda"
 
-#: pages/account_setup.vue pages/welcome.vue pages/public/causes.vue
+#: pages/account_setup.vue pages/welcome.vue
+#: components/hotels/price_match_banner.vue pages/public/causes.vue
 msgid "Learn More"
 msgstr "Iemācies vairāk"
 
@@ -13883,7 +13947,7 @@ msgstr "Mūža komisijas:"
 msgid "Limassol, Cyprus"
 msgstr "Limasola, Kipra"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Limit of Bookings with Insider Pricing Discount Reached."
 msgstr "Sasniegts Rezervāciju limits ar Insider Pricing atlaidi."
 
@@ -14107,6 +14171,12 @@ msgstr "Lojalitātes punkti vai apbalvošanas programmas"
 msgid "Main Chat"
 msgstr "Galvenais tērzēšanā"
 
+#: components/hotel_booking/guest_info_step.vue
+#, fuzzy
+#| msgid "Add Guest"
+msgid "Main Guest"
+msgstr "Pievieno Viesi"
+
 #: components/cruises_booking/passenger_info_step.vue
 msgid "Main Passenger"
 msgstr "Galvenais Pasažieris"
@@ -14211,10 +14281,6 @@ msgid ""
 msgstr ""
 "Daudzām ģimenēm nav līdzekļu, lai ārstētu savus bērnus, un iegūtu ķirurģisku "
 "palīdzību,kas tiem ir nepieciešama; pat apdraud dzīvību."
-
-#: pages/hotels_details.vue
-msgid "Map"
-msgstr "Karte"
 
 #: pages/elevate_registration.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
@@ -14341,7 +14407,7 @@ msgstr "Maksimālais faila lielums ir 25 MB, un fails nevar būt tukšs."
 msgid "Max Lead Time"
 msgstr "Maksimālais potenciālā klienta laiks"
 
-#: components/filter-chip-range.vue pages/cruises.vue
+#: components/filter-chip-range.vue pages/cruises.vue pages/hotels.vue
 #: components/tours/intours_results.vue
 msgid "Max Price"
 msgstr "Maksimālā Cena"
@@ -14457,7 +14523,7 @@ msgstr "Biedru Aktivizācijas"
 msgid "Member Agreement"
 msgstr "Biedra Līgums"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Member Configuration"
 msgstr "Biedra konfigurācija"
 
@@ -14466,10 +14532,12 @@ msgid "Member Count"
 msgstr "Dalībnieku Skaits"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Member Is Not a Black Card Member"
 msgstr "Biedrs nav Melnās Kartes Biedrs"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Member reached insider pricing limit"
 msgstr "Biedrs ir sasniedzis Insider pricing limitu"
 
@@ -14749,7 +14817,7 @@ msgstr "Michael Hutchison - iZPILDDIREKTORS & Līdzdibinātājs"
 msgid "Min Lead Time"
 msgstr "Min Klienta laiks"
 
-#: components/filter-chip-range.vue pages/cruises.vue
+#: components/filter-chip-range.vue pages/cruises.vue pages/hotels.vue
 #: components/tours/intours_results.vue
 msgid "Min Price"
 msgstr "Min cena"
@@ -14808,9 +14876,9 @@ msgstr "Mobilo lietojumprogrammu atgādinājums"
 msgid "Mobile Apps"
 msgstr "Mobilās aplikācijas"
 
-#: pages/additional_info.vue pages/cards.vue pages/hotel_booking.vue
-#: pages/settings.vue pages/team_rankings.vue
-#: components/compensation/leadership_bonus.vue components/public/JoinModal.vue
+#: pages/additional_info.vue pages/cards.vue pages/settings.vue
+#: pages/team_rankings.vue components/compensation/leadership_bonus.vue
+#: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue pages/public/signup.vue
 #: cards/index.html old_compensation/index.html
 #: receipts/hotel_booking_receipt.html
@@ -14916,7 +14984,7 @@ msgstr "Mēneša ieņēmumu sadalījums"
 msgid "Monthly Team Member Activation Production"
 msgstr "Ikmēneša Komandas Biedru Aktivizāciju Apgrozījunms"
 
-#: components/cruises_booking/cabin_category.vue
+#: pages/hotels_details.vue components/cruises_booking/cabin_category.vue
 msgid "More details"
 msgstr "Papildinformācija/sīkāk"
 
@@ -15614,11 +15682,15 @@ msgid "News App"
 msgstr "Jaunumu lietojumprogramma"
 
 #: pages/contacts.vue pages/cruises_booking.vue pages/email.vue
-#: pages/leadership_academy.vue pages/multi_factor.vue pages/notifications.vue
-#: pages/receipts.vue components/cruises_booking/deck_step.vue
+#: pages/hotel_booking.vue pages/leadership_academy.vue pages/multi_factor.vue
+#: pages/notifications.vue pages/receipts.vue
+#: components/cruises_booking/deck_step.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking/protection_step.vue
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/guest_info_step.vue
+#: components/hotel_booking/protection_step.vue
+#: components/hotel_booking/reward_points_step.vue
 #: components/onboarding/address-step.vue
 #: components/onboarding/email-address-step.vue
 #: components/onboarding/import-contacts.vue
@@ -15664,16 +15736,11 @@ msgstr "Nākamais solis"
 msgid "Next Year"
 msgstr "Nākamais gads"
 
-#: pages/hotels.vue
-msgid "night"
-msgstr "nakts"
-
-#: pages/cruises_old.vue pages/hotel_booking.vue pages/hotels.vue
-#: pages/hotels_details.vue
+#: pages/cruises_old.vue pages/hotels.vue
 msgid "nights"
 msgstr "naktis"
 
-#: pages/cruises.vue
+#: pages/cruises.vue pages/hotel_booking.vue
 msgid "Nights"
 msgstr "Naktis"
 
@@ -15784,6 +15851,18 @@ msgstr "Rezervācijas nav atrastas"
 msgid "No results match your search criteria"
 msgstr "Meklēšanas kritērijiem neatbilst neviens rezultāts"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Not achieved yet."
+msgid "No reviewed yet"
+msgstr "Vēl nav sasniegts."
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Search Parameters"
+msgid "No search parameters found."
+msgstr "Meklēšanas parametri"
+
 #: components/user/directs.vue
 msgid "No Search Results"
 msgstr "Nav meklēšanas rezultātu"
@@ -15803,6 +15882,7 @@ msgstr "Nav pieejama apgreidošana"
 
 #: components/booking/add-cd-user.vue
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "No user found with that membership code."
 msgstr "Ar šo dalības kodu nav atrasts neviens lietotājs."
 
@@ -16557,15 +16637,11 @@ msgstr "Mūsu vērtības"
 msgid "OUR VISION"
 msgstr "MŪSU VĪZIJA"
 
-#: pages/hotel_booking.vue
-msgid "Out of Pocket"
-msgstr "Skaidrā naudā"
-
 #: components/receipts/hotel_booking_receipt.vue
 msgid "Out Of Pocket"
 msgstr "Skaidrā Naudā"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Out of Pocket Protection"
 msgstr "Skaidrās naudas aizsardzība"
 
@@ -17214,6 +17290,7 @@ msgid "Passenger count"
 msgstr "Pasažiera konts"
 
 #: pages/cruises_booking.vue pages/elevate_registration.vue
+#: pages/hotel_booking.vue
 msgid "Passenger Information"
 msgstr "Pasažieru informācija"
 
@@ -17299,7 +17376,7 @@ msgstr "Paroles nesakrīt."
 msgid "Past"
 msgstr "Pagātne/pagājušie"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Pay"
 msgstr "Maksā"
 
@@ -17326,6 +17403,12 @@ msgstr "Maksāt, izmantojot PayQuicker"
 #: components/checkout/Processor2For1.vue
 msgid "Pay using Reward Points"
 msgstr "Maksā ,pielietojot Balvu Punktus"
+
+#: pages/hotel_booking.vue
+#, fuzzy
+#| msgid "Pay with Reward Points"
+msgid "Pay with Reward points"
+msgstr "Maksā ar Balvu punktiem"
 
 #: pages/cruises_booking.vue
 msgid "Pay with Reward Points"
@@ -17502,7 +17585,7 @@ msgstr "Pensijas tiesības"
 msgid "People"
 msgstr "Cilvēki"
 
-#: pages/hotel_booking.vue pages/hotels.vue pages/hotels_details.vue
+#: pages/hotels.vue
 msgid "per"
 msgstr "uz/par vienu"
 
@@ -17510,11 +17593,8 @@ msgstr "uz/par vienu"
 msgid "per month. No contracts. You can cancel anytime."
 msgstr "mēnesī.Nav līgumu.Jūs varat atcelt jebkurā laikā."
 
-#: pages/hotels_details.vue
-msgid "per night"
-msgstr "par nakti"
-
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Per passenger"
 msgstr "Uz pasažieri"
 
@@ -17599,6 +17679,7 @@ msgstr "Telefons#"
 
 #: components/fast-growing-legs.vue pages/multi_factor.vue pages/reports.vue
 #: pages/settings.vue components/cruises_booking/passenger_info_step.vue
+#: components/hotel_booking/guest_info_step.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue reports/index.html
 msgid "Phone Number"
@@ -17607,6 +17688,7 @@ msgstr "Telefona numurs"
 #: pages/elevate_registration.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Phone number entered invalid."
 msgstr "Ievadītais tālruņa numurs nav derīgs."
 
@@ -17671,10 +17753,6 @@ msgstr "Lūdzu, pievienojiet inCruises biedrus, kas būs šīs rezervācijas da�
 msgid "Please allocate the corresponding Reward Points for each member:"
 msgstr "Katram dalībniekam, lūdzu, piešķiriet attiecīgos Balvu Punktus:"
 
-#: pages/hotel_booking.vue
-msgid "Please allocate the corresponding Rewards Points for each member:"
-msgstr "Katram dalībniekam, lūdzu, piešķiriet attiecīgos Balvu Punktus:"
-
 #: pages/leadership_academy.vue
 msgid "Please answer the current question."
 msgstr "Lūdzu atbildiet uz patreizējo jautājumu."
@@ -17735,7 +17813,6 @@ msgstr ""
 "Lūdzu, izvēlieties šīs maksāšanas metodes valūtu. Nepareiza valūta var "
 "novest pie neveiksmīga maksājuma."
 
-#: pages/hotel_booking.vue
 #: components/cruises_booking_old/reward-points-step.vue
 msgid "Please choose the type of booking you wish to do:"
 msgstr "Lūdzu, izvēlieties rezervējuma veidu, ko vēlaties veikt:"
@@ -17938,6 +18015,12 @@ msgstr "Lūdzu ievadiet visu bērnu vecumu."
 #: components/cruises_booking_old/cabin-categories-step.vue
 msgid "Please enter the birthdate of all children."
 msgstr "Lūdzu ievadiet visu bērnu dzimšanas datumu."
+
+#: components/hotels/GuestsDropdown.vue
+#, fuzzy
+#| msgid "Please enter the age of all children."
+msgid "Please enter the child age."
+msgstr "Lūdzu ievadiet visu bērnu vecumu."
 
 #: components/checkout/CardStep.vue
 msgid "Please enter the following details:"
@@ -18422,6 +18505,12 @@ msgstr "Lūdzu pārbaudiet visas epasta adreses"
 msgid "Please Wait"
 msgstr "Lūdzu uzgaidiet"
 
+#: pages/hotel_booking.vue
+#, fuzzy
+#| msgid "Please select a country."
+msgid "Please wait just a moment..."
+msgstr "Lūdzu norādiet valsti."
+
 #: pages/checkout.vue
 msgid "Please wait while we apply your promotion code."
 msgstr ""
@@ -18435,8 +18524,10 @@ msgstr "Lūdzu uzgaidiet, kamēr tiek pabeigts Jūsu maksājums."
 msgid "Please wait while we gather all available cruises..."
 msgstr "Lūdzu, uzgaidiet, kamēr mēs uzzinām visus pieejamos kruīzus.."
 
-#: pages/hotels.vue
-msgid "Please wait while we gather all available hotels..."
+#: pages/hotels.vue pages/hotels_details.vue
+#, fuzzy
+#| msgid "Please wait while we gather all available hotels..."
+msgid "Please wait while we gather all available hotels, just a moment..."
 msgstr "Lūdzu, uzgaidiet, kamēr mēs uzzinām visus pieejamās viesnīcas.."
 
 #: components/tours/intours_landing.vue components/tours/intours_results.vue
@@ -18451,8 +18542,10 @@ msgstr "Lūdzu, uzgaidiet, kamēr apkopojam visas jūsu rezervācijas..."
 msgid "Please wait while we gather cruise trip information..."
 msgstr "Lūdzu, uzgaidiet, kamēr apkopojam informāciju par kruīza ceļojumu..."
 
-#: pages/hotel_booking.vue pages/hotels_details.vue
-msgid "Please wait while we gather Hotel details."
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Please wait while we gather Hotel details."
+msgid "Please wait while we gather hotel details, just a moment..."
 msgstr "Lūdzu, uzgaidiet, kamēr apkopojam informāciju par viesnīcu."
 
 #: pages/intours_details.vue
@@ -18712,7 +18805,7 @@ msgstr "Iepriekšējais gads"
 msgid "Previously used passenger:"
 msgstr "Iepriekšējais pasažieris:"
 
-#: components/filter-chip-range.vue pages/cruises.vue
+#: components/filter-chip-range.vue pages/cruises.vue pages/hotels.vue
 #: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/booking/category.vue
@@ -18731,10 +18824,6 @@ msgstr "Cena nevar būt negatīva"
 #: components/receipts/booking_receipt.vue
 msgid "Price Code"
 msgstr "Cenas kods"
-
-#: pages/hotel_booking.vue
-msgid "Price details"
-msgstr "Cenu detalizēta informācija"
 
 #: components/booking/category.vue
 msgid "Price does not include Taxes and Fees"
@@ -18763,25 +18852,25 @@ msgstr "Zemākā cena"
 msgid "Price Match Guarantee"
 msgstr "Cenu Atbilstības Garantija"
 
+#: components/hotels/price_match_banner.vue
+#, fuzzy
+#| msgid "Price Match Guarantee"
+msgid "Price Match Guarantee!"
+msgstr "Cenu Atbilstības Garantija"
+
 #: pages/hotels.vue
-msgid "PRICE MATCH GUARANTEE!"
-msgstr "CENU ATBILSTĪBAS GARANTIJA!"
+#, fuzzy
+#| msgid "*Price may vary based on availability."
+msgid "Price may vary based on availability"
+msgstr "*Cena var mainīties atkarībā no pieejamības.."
 
 #: components/tours/intours_results.vue
 msgid "Price must be a number"
 msgstr "Cenai ir jābūt skaitlim"
 
-#: pages/hotel_booking.vue
-msgid "Price per night:"
-msgstr "Cena par nakti:"
-
-#: pages/cruises.vue components/tours/intours_results.vue
+#: pages/cruises.vue pages/hotels.vue components/tours/intours_results.vue
 msgid "Price Range"
 msgstr "Cenas diapazons"
-
-#: pages/hotels.vue
-msgid "Price Range per Night:"
-msgstr "Cenu diapazons par nakti:"
 
 #: components/cruises_booking/cruise_card.vue
 msgid ""
@@ -18834,10 +18923,6 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr "Konfidencialitātes politika"
 
-#: pages/hotel_booking.vue
-msgid "Privacy Policy licenses."
-msgstr "Konfidencialitātes politikas licences."
-
 #: pages/cruise_price_match_guarantee.vue
 #: pages/instays_price_match_guarantee.vue
 msgid "Private group bookings"
@@ -18857,19 +18942,20 @@ msgstr ""
 msgid "Problem with the cruise line."
 msgstr "Problēmas ar Kruīzu Līnuju."
 
-#: pages/checkout.vue pages/hotel_booking.vue pages/invoices.vue
-#: pages/invoices_new.vue components/booking/agreements.vue
+#: pages/checkout.vue pages/invoices.vue pages/invoices_new.vue
+#: components/booking/agreements.vue
 #: components/cruises_booking/reward_points_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
 #: components/cruises_booking_old/reward-points-confirm-step.vue
 #: components/cruises_booking_old/reward-points-step.vue
 #: components/cruises_booking_old/select-cabin-step.vue
+#: components/hotel_booking/reward_points_step.vue
 #: components/support/TicketViewer.vue upgrade/index.html
 msgid "Proceed"
 msgstr "Turpini"
 
 #: pages/cruises_booking.vue pages/cruises_booking_old.vue
-#: components/cruises_booking_old/confirmation-step.vue
+#: pages/hotel_booking.vue components/cruises_booking_old/confirmation-step.vue
 msgid "Proceed to Checkout"
 msgstr "Turpina pārbaudīt maksājumu"
 
@@ -19007,6 +19093,18 @@ msgstr "Akcijas ziņojums"
 msgid "Proof of Lower Rate"
 msgstr "Zemākās cenas apliecinājums"
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Transfer type"
+msgid "Property type"
+msgstr "Pārskaitījuma veids"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Partner Type"
+msgid "Property Type"
+msgstr "Partnera tips/veids"
+
 #: webinar_recordings/index.html
 msgid "Prospecting Ideas"
 msgstr "Perspektīvās idejas"
@@ -19016,6 +19114,7 @@ msgid "Protect"
 msgstr "Aizsargāt"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Protect out of pocket"
 msgstr "Aizsargāt skaidro naudu"
 
@@ -19026,14 +19125,16 @@ msgstr "Aizsargāt Skaidro naudu"
 
 #: pages/payment_protection.vue components/cruises_booking/protection_step.vue
 #: components/cruises_booking_old/protection-section.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Protect Reward Points"
 msgstr "Aizsargāt Balvu Punktus"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Protect Your Booking"
 msgstr "Aizsargā Jūsu Rezervāciju"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Protected Out Of Pocket"
 msgstr "Aizsargātā Skaidrā Nauda"
 
@@ -19042,6 +19143,7 @@ msgid "Protected Out of Pocket:"
 msgstr "Aizsargātā Skaidrā nauda:"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Protected Reward Points"
 msgstr "Aizsargātie Balvu Punkti"
 
@@ -19947,6 +20049,12 @@ msgstr "Rezervācijas statuss"
 msgid "Reservations"
 msgstr "Rezervācijas"
 
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Reset"
+msgid "Reserve"
+msgstr "Atiestatīt"
+
 #: pages/notifications.vue email_notifications/index.html
 msgid "Reset"
 msgstr "Atiestatīt"
@@ -19994,17 +20102,9 @@ msgstr "Rezultātu ierobežojumam jābūt noteiktam starp 100 un 25000."
 msgid "Results"
 msgstr "Rezultāti"
 
-#: pages/hotel_booking.vue
-msgid "Retail Price"
-msgstr "Mazumtirdzniecības Cena"
-
 #: components/receipts/booking_receipt.vue receipts/booking_receipt.html
 msgid "Return Date"
 msgstr "Atgriešanās datums"
-
-#: pages/hotels.vue
-msgid "Return to Highlights"
-msgstr "Atgriezies uz marķējumiem"
 
 #: pages/account-recovery.vue
 msgid "Return to Login"
@@ -20065,14 +20165,6 @@ msgstr "Apbalvojums"
 msgid "Reward Points"
 msgstr "Balvu Punkti"
 
-#: pages/hotel_booking.vue
-msgid "Reward Points (Inactive Balance)"
-msgstr "Balvu Punktu (Neaktīvā Bilance)"
-
-#: pages/hotel_booking.vue
-msgid "Reward Points Available"
-msgstr "Pieejamie Balvu Punkti"
-
 #: pages/reward_points.vue
 msgid "Reward Points Balance"
 msgstr "Balvu Punktu Bilance"
@@ -20116,7 +20208,8 @@ msgstr "Balvu Punktu Vēsture"
 msgid "Reward Points Logs"
 msgstr "Balvu Punktu uzskaitījums"
 
-#: pages/cruises_booking.vue components/receipts/booking_receipt.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
+#: components/receipts/booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue
 msgid "Reward Points Protection"
 msgstr "Balvu PunktuAizsardzība"
@@ -20186,21 +20279,19 @@ msgstr "Roma"
 msgid "Room"
 msgstr "Kajīte/numuriņš"
 
-#: pages/hotel_booking.vue
-msgid "Room name:"
-msgstr "Kajītes/numuriņa nosaukums:"
-
 #: components/cruises_booking_old/confirmation-step.vue
 msgid "Room Num:"
 msgstr "Kajītes numurs:"
 
+#: components/hotels/room_rates_dropdown.vue
+#, fuzzy
+#| msgid "Row Actions"
+msgid "Room Options"
+msgstr "Rindu Darbības"
+
 #: pages/hotel_booking.vue
 msgid "Room Rate"
 msgstr "Kajītes/numuriņa likme"
-
-#: pages/hotels_details.vue
-msgid "Room Stay Facilities"
-msgstr "Kajītes/numuriņa ērtības"
 
 #: components/receipts/hotel_booking_receipt.vue
 #: receipts/hotel_booking_receipt.html
@@ -20215,21 +20306,9 @@ msgstr "Kajītes/numuriņa tips:"
 msgid "Room Type:"
 msgstr "Kajītes/numuriņa tips:"
 
-#: pages/hotels.vue
-msgid "rooms"
-msgstr "kajītes"
-
-#: pages/hotels.vue pages/hotels_details.vue
-msgid "Rooms"
-msgstr "Kajītes"
-
 #: pages/cruise.vue
 msgid "Rooms starting from"
 msgstr "Kajītes sākot no"
-
-#: pages/hotel_booking.vue pages/hotels.vue
-msgid "Rooms:"
-msgstr "Kajītes :"
 
 #: components/user/permission-assignation.vue
 #: components/user/permission-group.vue components/user/permissions.vue
@@ -20277,19 +20356,17 @@ msgstr "Karaliskā Direktoru Valdes sūtņa bonus, papildus jūsu"
 msgid "Royal Board Of Directors"
 msgstr "Karaliskā Board of Directors(Direktoru Valde)"
 
-#: pages/hotel_booking.vue
-msgid "RP"
-msgstr "BP"
-
 #: pages/admin_user.vue
 msgid "RP used"
 msgstr "Izmantotie BP"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "RP Used"
 msgstr "Izmantotie BP"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "RP used!"
 msgstr "BP izmantoti!"
 
@@ -20426,7 +20503,7 @@ msgstr "Meklēt"
 msgid "Search and book cruises, hotels and resorts"
 msgstr "Meklē un rezervē kruīzus, viesnīcas un kūrortus"
 
-#: pages/hotels.vue components/translations/placeholders.vue
+#: components/translations/placeholders.vue
 msgid "Search by city or hotel"
 msgstr "Meklēt pēc pilsētas vai viesnīcas"
 
@@ -20434,6 +20511,12 @@ msgstr "Meklēt pēc pilsētas vai viesnīcas"
 #: components/tours/intours_results.vue
 msgid "Search by Destination"
 msgstr "Meklēt pēc Galamērķa"
+
+#: pages/hotels.vue
+#, fuzzy
+#| msgid "Search by city or hotel"
+msgid "Search by destination or hotel name"
+msgstr "Meklēt pēc pilsētas vai viesnīcas"
 
 #: pages/cruises_booking.vue
 msgid "Search Cabins"
@@ -20471,10 +20554,6 @@ msgstr "Meklē vāŗdus vai epastus"
 msgid "Search for previous passenger"
 msgstr "Iepriekšējā pasažiera meklēšana"
 
-#: pages/hotels.vue
-msgid "Search Hotels and Cities:"
-msgstr "Meklē Viesnīcas un Pilsētas:"
-
 #: pages/invite.vue components/translations/placeholders.vue
 msgid "Search Name or Email"
 msgstr "Meklē vāŗdu vai epastu"
@@ -20495,10 +20574,6 @@ msgstr ""
 "Apskati mūsu bibliotēkas dokumentus.Tur ir mārketinga materiāli, dokumenti "
 "un daudz noderīgas informācijas, kas palīdzēs tev veidot biznesu."
 
-#: pages/hotels_details.vue
-msgid "Search Parameters"
-msgstr "Meklēšanas parametri"
-
 #: components/inchat/search/search-people.vue
 msgid "Search People to Chat"
 msgstr "Meklēt Cilvēkus Sarunām"
@@ -20507,7 +20582,7 @@ msgstr "Meklēt Cilvēkus Sarunām"
 msgid "Search Post"
 msgstr "Meklēt ziņu"
 
-#: pages/cruise.vue
+#: pages/cruise.vue pages/hotels_details.vue
 msgid "Search Results"
 msgstr "Meklēšanas Rezultāti"
 
@@ -20613,8 +20688,9 @@ msgstr "Apskati savu sertifikātu šeit!"
 #: components/checkout/ProcessorNetcents.vue
 #: components/cruises_booking/cabin_category.vue
 #: components/cruises_booking/cabin_step.vue
-#: components/onboarding/address-step.vue components/user/department.vue
-#: components/user/departments.vue components/user/permission-assignation.vue
+#: components/hotels/GuestsDropdown.vue components/onboarding/address-step.vue
+#: components/user/department.vue components/user/departments.vue
+#: components/user/permission-assignation.vue
 #: components/user/permission-group.vue
 #: components/tours/details/available-plans.vue
 msgid "Select"
@@ -20668,6 +20744,12 @@ msgstr "Izvēlies valsti"
 msgid "Select Country"
 msgstr "Izvēlies Valsti"
 
+#: pages/hotels.vue pages/hotels_details.vue
+#, fuzzy
+#| msgid "Select state"
+msgid "Select dates"
+msgstr "Izvēlies valsti"
+
 #: components/month_picker.vue
 msgid "Select Departure Date"
 msgstr "Atlasi Atiešanas Datumu"
@@ -20681,6 +20763,7 @@ msgid "Select dining preference"
 msgstr "Atlasīt ēšanas preferenci"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Select how you would like to continue with your booking"
 msgstr "Atlasiet, kā vēlaties turpināt rezervēšanu"
 
@@ -20709,8 +20792,15 @@ msgid "Select post language:"
 msgstr "Izvēlies pasta valodu:"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Select Reward Points Balance"
 msgstr "Atlasiet Balvu Punktu Bilanci"
+
+#: pages/hotels_details.vue
+#, fuzzy
+#| msgid "Selected Room"
+msgid "Select Room"
+msgstr "Izvēlētās kajītes"
 
 #: pages/courses.vue pages/leadership_academy.vue
 msgid "Select Script By Language"
@@ -20748,10 +20838,6 @@ msgstr "Atlasīt tagu"
 msgid "Select Tag"
 msgstr "Atlasīt Tagu"
 
-#: pages/hotel_booking.vue
-msgid "Select the balance you want to use"
-msgstr "Atlasiet izmantojamo bilanci"
-
 #: notification_settings/index.html
 msgid "Select the emails you wish to receive."
 msgstr "Atlasi epastus, kurus vēlies saņemt."
@@ -20769,6 +20855,7 @@ msgid "Select travelers"
 msgstr "Izvēlies ceļotājus"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Select Type Of Booking"
 msgstr "Atlasiet Rezervācijas Veidu"
 
@@ -20810,10 +20897,6 @@ msgstr "Izvēlētā Valsts:"
 #: pages/elevate_registration.vue
 msgid "Selected Package"
 msgstr "Izvēlētā Pakete"
-
-#: pages/hotel_booking.vue
-msgid "Selected Room"
-msgstr "Izvēlētās kajītes"
 
 #: Footer.vue components/public/FooterLinks.vue
 msgid "Seller of Travel"
@@ -21048,6 +21131,18 @@ msgstr ""
 "Iestatiet cenu diapazonu vienai personai, pamatojoties uz dubulto vietu "
 "skaitu, lai filtrētu kruīza opcijas."
 
+#: pages/hotels.vue
+#, fuzzy
+#| msgid ""
+#| "Set your price range per person, based on double occupancy to filter "
+#| "cruise options."
+msgid ""
+"Set your price range per person, based on double occupancy to filter hotel "
+"options."
+msgstr ""
+"Iestatiet cenu diapazonu vienai personai, pamatojoties uz dubulto vietu "
+"skaitu, lai filtrētu kruīza opcijas."
+
 #: pages/onboarding.vue
 msgid "Set Your Referral Link"
 msgstr "Iestai Savu Reģistrācijas Saiti"
@@ -21200,15 +21295,21 @@ msgstr "Parādi līderu valdes priekš"
 msgid "Show Leadership"
 msgstr "Rādīt Līderu Vadību"
 
-#: pages/cruises.vue
+#: pages/cruises.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Show less"
 msgstr "Rādīt mazāk"
+
+#: components/hotels/hotel_results.vue
+#, fuzzy
+#| msgid "Show all"
+msgid "Show Map"
+msgstr "Rādīt visu"
 
 #: pages/reach.vue
 msgid "Show Members"
 msgstr "Rādi Biedrus"
 
-#: pages/cruise.vue pages/cruises.vue
+#: pages/cruise.vue pages/cruises.vue pages/hotels.vue pages/hotels_details.vue
 msgid "Show more"
 msgstr "Rādīt vairāk"
 
@@ -21247,10 +21348,6 @@ msgstr "Rādīt tīmekļa reģistrāciju"
 #: pages/reports.vue reports/index.html
 msgid "Showing All Teams"
 msgstr "Parādīt visas komandas"
-
-#: pages/hotels.vue
-msgid "Showing results for {{ describeSearch() }}"
-msgstr "Rāda rezultātus par/priekš {{ describeSearch() }}"
 
 #: pages/cruises_old.vue
 msgid "Showing results for %{ description }"
@@ -21414,6 +21511,7 @@ msgstr "Daži lauki nevar būt tukši: "
 #: pages/elevate_registration.vue pages/hotel_booking.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "Some passenger fields are missing."
 msgstr "Trūkst dažas ziņas par pasažieri."
 
@@ -21492,10 +21590,6 @@ msgstr ""
 "Kau kas neizdevās. Lūdzu atkārtoti ielādājiet lapu vai griežaties pie<a href="
 "\"www.incruises.com/support\" v-translate=\"\">inCruises Support</a>"
 
-#: pages/hotels.vue
-msgid "Sorry, it appears we have no hotels available for this destination."
-msgstr "Atvainojamies.izrādās, ka uz šo maršrutu mums viesnīcas nav pieejamas."
-
 #: pages/hotels_details.vue
 msgid "Sorry, we couldn't find any room available for your selection."
 msgstr "Diemžēl nevarējam atrast jūsu izvēlei piemērotu vietu/numuriņu/kajīti."
@@ -21504,7 +21598,7 @@ msgstr "Diemžēl nevarējam atrast jūsu izvēlei piemērotu vietu/numuriņu/ka
 msgid "Sorting"
 msgstr "Šķirošana"
 
-#: pages/admin_support_analytics.vue pages/cruises_old.vue pages/hotels.vue
+#: pages/admin_support_analytics.vue pages/cruises_old.vue
 msgid "Sorting:"
 msgstr "Šķirošana:"
 
@@ -21567,7 +21661,7 @@ msgstr "St. 1-Lot #3,Suite 500(Metro Parka Ofiss 3)"
 msgid "Staff"
 msgstr "Personāls"
 
-#: pages/cruises.vue
+#: pages/cruises.vue pages/hotels.vue
 msgid "Star Rating"
 msgstr "Zvaigžņu Novērtējums"
 
@@ -21623,6 +21717,7 @@ msgid "Starter Plan - $0"
 msgstr "Sākotnējais plāns $0"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Starter Plan cannot be combined with Classic Plan or Premium Plan"
 msgstr "Starter Plānu nevar kombinēt ar Classic Plānu vai Premium Plānu"
 
@@ -21759,7 +21854,7 @@ msgid ""
 msgstr ""
 "Iepazīstieties ar kompānijas paziņojumiem, jaunumiem un svarīgu informāciju"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Step %{ step } of %{ totalSteps }"
 msgstr "Solis %{ step } of %{ totalSteps }"
 
@@ -21839,7 +21934,7 @@ msgstr "Pierakstīšanās līgums"
 msgid "Subscriptions"
 msgstr "Abonēšana"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Subtotal"
 msgstr "Starpsumma"
 
@@ -22045,11 +22140,7 @@ msgstr "Summa, kurai uzliek nodokli sociālo iemaksu vajadzībām"
 msgid "Taxable Amount:"
 msgstr "Ar nodokli apliekamā summa:"
 
-#: pages/hotel_booking.vue
-msgid "Taxes"
-msgstr "Nodokļi"
-
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "Taxes and fees"
 msgstr "Nodokļi un maksas"
 
@@ -22197,6 +22288,7 @@ msgid "Terms And Conditions Page"
 msgstr "Terminu/noteikumu un Nosacījumu lapa"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Terms and conditions."
 msgstr "TerminI un nosacījumi."
 
@@ -22395,6 +22487,7 @@ msgstr ""
 "atkarīgs no tā, cik labi jūs realizēsiet šīs īpašības."
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid ""
 "The amount protected includes the total out-of-pocket value + the total "
 "price paid for the protection ($%{outOfPocketPP} x No. of passengers)."
@@ -22402,7 +22495,7 @@ msgstr ""
 "Aizsargājamā summa ietver kopējo skaidrās naudas vērtību + kopējo par "
 "aizsardzību samaksāto cenu ($%{outOfPocketPP} x pasažieru skaits)."
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid ""
 "The balance available to be used for shared bookings corresponds to the "
 "active account balance. Inactive account balance is only available for "
@@ -22508,6 +22601,7 @@ msgid "The contact information has been saved successfully."
 msgstr "Kontaktinformācija ir veiksmīgi saglabāta."
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid ""
 "The cost of this protection is non-refundable. Only redeemed reward points "
 "will be refunded."
@@ -22607,6 +22701,7 @@ msgstr "Nākošais ir tavs WEChatapmaksas QR kods."
 #: pages/elevate_registration.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid "The following phone number is not valid or has no country code: "
 msgstr "Sekojošais telefona numurs nav likumīgs vai nav valsts koda: "
 
@@ -22700,10 +22795,37 @@ msgstr ""
 "rezervēts ar insider pricing atlaidi. Mēs pārslēgsim jūs izmantot balvu "
 "punktus, lai rezervētu šo kruīzu."
 
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid ""
+#| "The member you are trying to add has already reached the limit of cruises "
+#| "booked with insider pricing discount. We will switch you to use reward "
+#| "points to book this cruise."
+msgid ""
+"The member you are trying to add has already reached the limit of hotels "
+"booked with insider pricing discount. We will switch you to use reward "
+"points to book this hotel."
+msgstr ""
+"Biedrs, kuru mēģināt pievienot, jau ir sasniedzis kruīzu ierobežojumu, kas "
+"rezervēts ar insider pricing atlaidi. Mēs pārslēgsim jūs izmantot balvu "
+"punktus, lai rezervētu šo kruīzu."
+
 #: components/cruises_booking/reward_points_step.vue
 msgid ""
 "The member you are trying to add is not a black card member. You will no "
 "longer be able to book this cruise only with reward points."
+msgstr ""
+"Biedrs, kuru mēģināt pievienot, nav melnās kartītes dalībnieks. Šo kruīzu "
+"vairs nevarēs rezervēt tikai ar balvu punktiem."
+
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid ""
+#| "The member you are trying to add is not a black card member. You will no "
+#| "longer be able to book this cruise only with reward points."
+msgid ""
+"The member you are trying to add is not a black card member. You will no "
+"longer be able to book this hotel only with reward points."
 msgstr ""
 "Biedrs, kuru mēģināt pievienot, nav melnās kartītes dalībnieks. Šo kruīzu "
 "vairs nevarēs rezervēt tikai ar balvu punktiem."
@@ -22722,6 +22844,7 @@ msgstr "Jūsu ievadītais vārds nav derīgs."
 
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/hotel_booking/guest_info_step.vue
 msgid ""
 "The name you provided for a passenger does not belong to the member you "
 "added to this booking."
@@ -22978,10 +23101,6 @@ msgstr "Nav publicētu kursu."
 msgid "There are no results for these parameters."
 msgstr "Šiem parametriem nav rezultātu."
 
-#: pages/hotels.vue
-msgid "There are no results for this search."
-msgstr "Jūsu meklējumam nav rtezultātu."
-
 #: components/welcome_tours_modal.vue
 msgid "There are no tour recommendations right now. Please try again later."
 msgstr "Tūres rekomendāciju šobrīd nav. Lūdzu, vēlāk mēģiniet vēlreiz."
@@ -23040,7 +23159,7 @@ msgid "There was a problem with your promotion code. Please try again."
 msgstr ""
 "Radās ar jūsu reklāmas kodu saistīta problēma. Lūdzu, mēģiniet vēlreiz."
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "There was a problem with your request. Please try again."
 msgstr "Jūsu pieprasījumam radās kļūda, lūdzu. Lūdzu mēģiniet vēlreiz."
 
@@ -23108,7 +23227,8 @@ msgid "There was an error updating your display name."
 msgstr "Atjauninot parādāmo/displeja vārdu/nosaukumu, radās kļūda."
 
 #: pages/cruise.vue pages/cruise_old.vue pages/cruises_booking.vue
-#: pages/cruises_booking_old.vue components/cruises_booking/cabin_step.vue
+#: pages/cruises_booking_old.vue pages/hotel_booking.vue
+#: components/cruises_booking/cabin_step.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
 msgid "There was an error with your request, please try again."
 msgstr "Jūsu pieprasījumā radās kļūda, lūdzu, mēģiniet vēlreiz."
@@ -23324,6 +23444,7 @@ msgstr ""
 
 #: components/cruises_booking/protection_step.vue
 #: components/cruises_booking_old/protection-section.vue
+#: components/hotel_booking/protection_step.vue
 msgid "These Protection Books are not available!"
 msgstr "Šīs Aizsardzības Grāmatas nav pieejamas!"
 
@@ -23351,8 +23472,8 @@ msgstr "Viņi saņem"
 msgid "Third Child Birthdate"
 msgstr "Trešā Bērna Dzimšanas Datums"
 
-#: pages/intours_confirmation.vue pages/intours_details.vue
-#: components/booking/limited_time_offer_card.vue
+#: pages/hotel_booking.vue pages/intours_confirmation.vue
+#: pages/intours_details.vue components/booking/limited_time_offer_card.vue
 #: components/compensation/account_status.vue
 msgid "this"
 msgstr "šis"
@@ -23532,10 +23653,10 @@ msgstr ""
 "Šī rezervācija netiek atmaksāta. Ja turpināsit rezervāciju, nevarēsit saņemt "
 "atmaksu, atcelšanas gadījumā."
 
-#: pages/hotel_booking.vue pages/hotels_details.vue
 #: pages/intours_confirmation.vue
 #: components/cruises_booking/booking_summary.vue
 #: components/cruises_booking_old/NonRefundableWarning.vue
+#: components/hotel_booking/booking_summary.vue
 msgid "This booking is non-refundable."
 msgstr "Šī rezervācija nav atmaksājama."
 
@@ -23744,10 +23865,6 @@ msgstr ""
 "Šis ir kruīza saraksts, kam beidzies derīguma termiņš, jūs drīkstat rezervēt "
 "ceļojumus, kas turpmāk ilgs 90 dienas vai ilgāk."
 
-#: pages/hotel_booking.vue
-msgid "This is not legal advice."
-msgstr "Tas nav juridiski pamatots padoms."
-
 #: pages/kyc_verification.vue
 msgid ""
 "This is the Identity Verification, before you begin please make sure you "
@@ -23938,7 +24055,6 @@ msgid "This ticket is currently being viewed by <u>{{ agent_name }}</u>"
 msgstr "Šī biļete patreiz tiek izskatīta <u>{{ agent_name }}</u>"
 
 #: pages/cruises_booking.vue pages/cruises_booking_old.vue
-#: pages/hotel_booking.vue
 msgid "This type of booking is not allowed"
 msgstr "Šīis rezervācijas veids nav atļauts"
 
@@ -24445,6 +24561,7 @@ msgstr ""
 "izvēlaties valūtu."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "To use Insider Pricing you must upgrade to a paid membership."
 msgstr ""
 "Lai izmantotu Insider Pricing, jums ir jāapgreidojas uz maksājamo biedru "
@@ -24485,10 +24602,6 @@ msgstr "Šodienas datums"
 #: pages/all_in.vue
 msgid "Together let's ignite a wave of global"
 msgstr "Kopā iešūposim globālo vilni/globālā viļņa"
-
-#: pages/hotels_details.vue
-msgid "Toggle Admin Info"
-msgstr "Pārslēgt administratora informāciju"
 
 #: pages/public/leadership.vue
 msgid "Tony Robbins' VP of Worldwide Sales and Marketing (1987-1994)"
@@ -24549,13 +24662,8 @@ msgstr "Top lietotāji"
 msgid "Top Successful Referrals By Country"
 msgstr "Populārākie sekmīgie dalībnieki pa valstīm"
 
-#: pages/hotels.vue
-msgid "total"
-msgstr "kopā"
-
-#: pages/hotel_booking.vue pages/intours_confirmation.vue
-#: pages/track_growth.vue components/compensation/qbi.vue
-#: components/price_match_guarantee/cruises.vue
+#: pages/intours_confirmation.vue pages/track_growth.vue
+#: components/compensation/qbi.vue components/price_match_guarantee/cruises.vue
 #: components/receipts/booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/receipts/italian_commission.vue
@@ -24664,6 +24772,12 @@ msgstr "Kopējā bruto summa (ieskaitot PVN):"
 msgid "Total Guests on Booked Cruises/Hotels"
 msgstr "Kopējais viesu skaits rezervētajos kruīzos/viesnīcās"
 
+#: pages/hotel_booking.vue
+#, fuzzy
+#| msgid "Hotel Price"
+msgid "Total Hotel Price"
+msgstr "Viesnīcas Cena"
+
 #: pages/reward_points.vue
 msgid "Total Insider Pricing Available"
 msgstr "Kopējais INsider Pricing Pieejams"
@@ -24700,12 +24814,14 @@ msgstr "Kopējās realizētās Biedru dalības ietaupījumu iemaksas"
 msgid "Total Number of Members"
 msgstr "Kopējais biedru skaits"
 
-#: pages/cruises_booking.vue components/receipts/booking_receipt.vue
-#: receipts/booking_receipt.html receipts/hotel_booking_receipt.html
+#: pages/cruises_booking.vue pages/hotel_booking.vue
+#: components/receipts/booking_receipt.vue receipts/booking_receipt.html
+#: receipts/hotel_booking_receipt.html
 msgid "Total Out Of Pocket"
 msgstr "KOPĒJĀ KABATAS NAUDA"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Total Out of Pocket protected"
 msgstr "Kopējā aizsargātā skaidrā nauda"
 
@@ -24732,18 +24848,6 @@ msgstr "KOPĀ PARTNERI"
 msgid "Total Price"
 msgstr "Kopājā cena"
 
-#: pages/hotels.vue
-msgid "Total Price Max"
-msgstr "Kopējā cena maks"
-
-#: pages/hotels.vue
-msgid "Total Price Minimum"
-msgstr "Kopājā minimālā cena"
-
-#: pages/hotel_booking.vue
-msgid "Total price per 6 nights:"
-msgstr "Kopējā cena par 6 naktīm:"
-
 #: components/cruises_booking_old/confirmation-step.vue
 msgid "Total Price:"
 msgstr "Kopājā cena:"
@@ -24769,6 +24873,7 @@ msgid "Total Reward Points"
 msgstr "Kopējie Balvu Punkti"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid "Total Reward Points protected"
 msgstr "Kopējie aizsargātie Balvu Punkti"
 
@@ -25148,6 +25253,7 @@ msgid "Ukrainian Humanitarian Relief Campaign"
 msgstr "Ukrainas Humānās Palīdzības Kampaņa"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Unable to Add Inactive Member"
 msgstr "Nevar Pievienot Neaktīvu Biedru"
 
@@ -25258,6 +25364,7 @@ msgid "Until Month-End"
 msgstr "Līdz Menešā beigām"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "Unused RPs"
 msgstr "Neizmantotie BP"
 
@@ -25333,6 +25440,7 @@ msgid "Upgrade Plans"
 msgstr "Apgreido Plānus"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid ""
 "Upgrade to a refundable booking for a <strong>100% refund on Reward Points "
 "portion</strong> if you cannot attend due to valid reasons outlined in our"
@@ -25342,6 +25450,7 @@ msgstr ""
 "izklāstīti mūsu"
 
 #: components/cruises_booking/protection_step.vue
+#: components/hotel_booking/protection_step.vue
 msgid ""
 "Upgrade to a refundable booking for a <strong>100% refund on your out of "
 "pocket portion</strong> if you cannot attend due to valid reasons outlined "
@@ -25651,7 +25760,8 @@ msgstr ""
 
 #: components/widgets/stats.vue
 msgid "Users who have seen our website through your link."
-msgstr "Lietotāji, kas ir redzējuši mūsu tīmekļa vietni, izmantojot jūsu saiti."
+msgstr ""
+"Lietotāji, kas ir redzējuši mūsu tīmekļa vietni, izmantojot jūsu saiti."
 
 #: pages/reports.vue reports/index.html
 msgid "Users with Pending Invoices"
@@ -25823,7 +25933,7 @@ msgstr "Pārskati un atjauno savu pamatinformāciju."
 msgid "View Birthdays"
 msgstr "Skati dzimšanas dienas"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "View Booking Summary"
 msgstr "Skatiet Rezervācijas Kopsavilkumu"
 
@@ -25843,8 +25953,7 @@ msgstr "Skati konkursa kārtulas"
 msgid "View Cruise"
 msgstr "Skati kruīzu"
 
-#: pages/elevate.vue pages/hotels_details.vue
-#: components/welcome/countdown-tiles.vue
+#: pages/elevate.vue components/welcome/countdown-tiles.vue
 msgid "View Details"
 msgstr "Skatīt detalizētu informāciju"
 
@@ -25859,10 +25968,6 @@ msgstr "Skati cenas"
 #: pages/communications.vue pages/webinar_recordings.vue
 msgid "View Future Webinars"
 msgstr "Skati Nākamos Vebinārus"
-
-#: pages/hotels.vue
-msgid "View Hotel Details"
-msgstr "Skatīt viesnīcu detalizētu informāciju"
 
 #: pages/reward_points.vue
 msgid "View Inactive RPs History"
@@ -26474,10 +26579,6 @@ msgstr ""
 msgid "Web"
 msgstr "Tīmeklis"
 
-#: pages/hotels.vue
-msgid "Webbeds"
-msgstr "Tīmekļa vietas"
-
 #: Menu
 msgid "Webinar Recordings"
 msgstr "Vebināra ieraksti"
@@ -26680,6 +26781,7 @@ msgid "Whatsapp #"
 msgstr "WHatsapp #"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "When"
 msgstr "Kad"
 
@@ -26904,6 +27006,7 @@ msgid "with inCruises!"
 msgstr "ar inCruises!"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "With INsider Pricing"
 msgstr "Ar Insider Pricing"
 
@@ -26921,10 +27024,12 @@ msgstr ""
 "Balvu Puktus."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "With Retail Price"
 msgstr "Ar Mazumtirdzniecības Cenu"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "With Reward Points"
 msgstr "Ar Balvu Punktiem"
 
@@ -27133,6 +27238,7 @@ msgstr ""
 "gūst vismaz 500 ASV dolāru ieņēmumus no Biedru Dalības pārdošanas."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "you"
 msgstr "jūs"
 
@@ -27176,7 +27282,7 @@ msgstr ""
 "Jūs varat izmantot savu 2 par 1 bilanci, lai segtu daļu no rezervācijas "
 "cenas."
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "You are about to pay %{totalPointsUsed} RP"
 msgstr "Jūs gatavojaties maksāt %{totalPointsUsed} BP"
 
@@ -27234,7 +27340,7 @@ msgstr "JŪS ESAT TIESĪGS!"
 msgid "You are Locked by administrator"
 msgstr "Administrators ir bloķējis jūs"
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid ""
 "You are no longer able to use your Reward Points to cover the full cost of "
 "this booking, because some members don’t have access to Black Card Members "
@@ -27404,10 +27510,12 @@ msgid "You can now choose your preferred currency for recurring billing."
 msgstr "tagad jūs varat izvēlēties vēlamo valūtu periodiskiem norēķiniem."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "You can only add members to a booking if you are an active member."
 msgstr "Biedrus rezervācijai var pievienot tikai tad, ja esat aktīvs biedrs."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "You can only add one additional member to a booking."
 msgstr "Rezervācijai var pievienot tikai vienu papildu biedru."
 
@@ -27481,6 +27589,7 @@ msgid "You can't book Global Destination Cruises yet."
 msgstr "Jūs vēl nevarat pieteikt rezervāciju uz Pasaules gala mērķu kruīziem."
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "You cannot add an inactive member to your booking. Please try by adding "
 "another user."
@@ -27539,7 +27648,16 @@ msgid ""
 msgstr ""
 "Balvu punktus nevar izmantot, jo šī kruīza atiešanas datums ir pārāk tuvu."
 
+#: components/hotel_booking/reward_points_step.vue
+#, fuzzy
+#| msgid ""
+#| "You cannot use Reward Points because you have a pending invoice on your "
+#| "account."
+msgid "You cannot use Reward Points because this hotel booking is too soon."
+msgstr "Balvu punktus nevar izmantot, jo jūsu kontā ir gaidošs rēķins."
+
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "You cannot use Reward Points because you have a pending invoice on your "
 "account."
@@ -27841,7 +27959,7 @@ msgstr "Jūs esat nosūtījis veiksmīgi"
 msgid "You have the potential to earn a matching bonus for these."
 msgstr "Jums ir potenciāls par tiem nopelnīt atbilstošu bonusu."
 
-#: pages/cruises_booking.vue
+#: pages/cruises_booking.vue pages/hotel_booking.vue
 msgid "You have unsaved changes. Do you really want to leave?"
 msgstr "Jums ir nesaglabātas izmaiņas. Vai tiešām vēlaties to atstāt?"
 
@@ -27906,6 +28024,7 @@ msgid "You may only add one additional member"
 msgstr "Jūs varat pievienot tikai vienu papildus biedru"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid "You may only add one additional member per booking."
 msgstr "Katrā rezervācijā varat pievienot tikai vienu papildu biedru."
 
@@ -28201,6 +28320,7 @@ msgid "You've won 50 Reward Points!"
 msgstr "Jūs esat ieguvis 50 Balvu Punktus!"
 
 #: components/cruises_booking/reward_points_step.vue
+#: components/hotel_booking/reward_points_step.vue
 msgid ""
 "You’ve reached the maximum number of Insider Pricing bookings for this year."
 msgstr ""
@@ -28248,6 +28368,7 @@ msgstr ""
 "jūsu bankas pārskaitījums ir sācies un varētu tikt pabeigts dažu dienu laikā."
 
 #: components/cruises_booking/active_basket_bar.vue
+#: components/hotel_booking/active_basket_bar.vue
 msgid ""
 "Your basket is active for 15 minutes, you must complete your booking before"
 msgstr "Jūsu grozs ir aktīvs 15 minūtes, jums rezervācija ir jābeidz pirms"
@@ -28260,6 +28381,7 @@ msgstr ""
 "Jūsu grozs ir aktīvs 15 minūtes, jums rezervācija ir jābeidz pirms %{date}."
 
 #: components/cruises_booking/active_basket_bar.vue
+#: components/hotel_booking/active_basket_bar.vue
 msgid "Your basket is active, you must complete your booking before"
 msgstr "Jūsu grozs ir aktīvs, jums rezervācija ir jābeidz pirms"
 
@@ -40567,6 +40689,182 @@ msgstr "Grupas kruīzs ar Costa pārstāvjiem"
 #: Featured Cruises Promotions
 msgid "Group Cruise in Asia onboard Bellissima"
 msgstr "Grupas Krūīzs Āzijā uz kuģa “Bellissima”"
+
+#~ msgid ""
+#~ "{{ requirePassengerNames ? '' : 'Optional' }} Guest (%{guest}) #%{ index }"
+#~ msgstr ""
+#~ "{{ requirePassengerNames ? '' : 'Optional' }} Viesis (%{guest}) #"
+#~ "%{ index }"
+
+#~ msgid ""
+#~ "{{ requirePassengerNames ? 'Required Additional Guests' : 'Additional "
+#~ "Guests (Optional)' }}"
+#~ msgstr ""
+#~ "{{ requirePassengerNames ? 'Pieprasītie Papildus viesi' : 'Papildus viesi "
+#~ "(Optional)' }}"
+
+#~ msgid "%{sellingRate} for %{nights} nights total"
+#~ msgstr "%{sellingRate} par %{nights} naktīm kopā"
+
+#~ msgid "<i class=\"fas fa-hotel mr-1\"/> Hotels"
+#~ msgstr "<i class=\"fas fa-hotel mr-1\"/> Viesnīcas"
+
+#~ msgid "<i class=\"fas fa-map mr-1\"/> Destinations"
+#~ msgstr "<i class=\"fas fa-map mr-1\"/> Galamērķi"
+
+#~ msgid "<i class=\"fas fa-map-pin mr-1\"/> Zones"
+#~ msgstr "<i class=\"fas fa-map-pin mr-1\"/> Zonas"
+
+#~ msgid "2-11 years at the time of travel"
+#~ msgstr "2 –11 gadi ceļojuma laikā"
+
+#~ msgid "adult"
+#~ msgstr "pieaugušais"
+
+#~ msgid "Adults:"
+#~ msgstr "Pieaugušie:"
+
+#~ msgid "Age of children:"
+#~ msgstr "Bērnu vecums:"
+
+#~ msgid "Bonotel"
+#~ msgstr "bonotel"
+
+#~ msgid "Check in:"
+#~ msgstr "Iečekošanās:"
+
+#~ msgid "Check out:"
+#~ msgstr "Iziešana:"
+
+#~ msgid "Children:"
+#~ msgstr "Bērni:"
+
+#~ msgid "Choose Different Room"
+#~ msgstr "Izvēlies citu Numuriņu"
+
+#~ msgid "Click to filter by Stars"
+#~ msgstr "Uzklikšķini , lai filtrētu"
+
+#~ msgid "Close Filter"
+#~ msgstr "Aizvērt filtru"
+
+#~ msgid "Dates:"
+#~ msgstr "Datumi:"
+
+#~ msgid "guests"
+#~ msgstr "viesi"
+
+#~ msgid "Hotelbeds"
+#~ msgstr "Viesnīcu gultas/vietas"
+
+#~ msgid "Including taxes and fees"
+#~ msgstr "Ieskaitot nodokļus un maksas"
+
+#~ msgid "INsider Pricing"
+#~ msgstr "INsider Pricing"
+
+#~ msgid "Map"
+#~ msgstr "Karte"
+
+#~ msgid "night"
+#~ msgstr "nakts"
+
+#~ msgid "Out of Pocket"
+#~ msgstr "Skaidrā naudā"
+
+#~ msgid "per night"
+#~ msgstr "par nakti"
+
+#~ msgid "Please allocate the corresponding Rewards Points for each member:"
+#~ msgstr "Katram dalībniekam, lūdzu, piešķiriet attiecīgos Balvu Punktus:"
+
+#~ msgid "Price details"
+#~ msgstr "Cenu detalizēta informācija"
+
+#~ msgid "PRICE MATCH GUARANTEE!"
+#~ msgstr "CENU ATBILSTĪBAS GARANTIJA!"
+
+#~ msgid "Price per night:"
+#~ msgstr "Cena par nakti:"
+
+#~ msgid "Price Range per Night:"
+#~ msgstr "Cenu diapazons par nakti:"
+
+#~ msgid "Privacy Policy licenses."
+#~ msgstr "Konfidencialitātes politikas licences."
+
+#~ msgid "Retail Price"
+#~ msgstr "Mazumtirdzniecības Cena"
+
+#~ msgid "Return to Highlights"
+#~ msgstr "Atgriezies uz marķējumiem"
+
+#~ msgid "Reward Points (Inactive Balance)"
+#~ msgstr "Balvu Punktu (Neaktīvā Bilance)"
+
+#~ msgid "Reward Points Available"
+#~ msgstr "Pieejamie Balvu Punkti"
+
+#~ msgid "Room name:"
+#~ msgstr "Kajītes/numuriņa nosaukums:"
+
+#~ msgid "Room Stay Facilities"
+#~ msgstr "Kajītes/numuriņa ērtības"
+
+#~ msgid "rooms"
+#~ msgstr "kajītes"
+
+#~ msgid "Rooms"
+#~ msgstr "Kajītes"
+
+#~ msgid "Rooms:"
+#~ msgstr "Kajītes :"
+
+#~ msgid "RP"
+#~ msgstr "BP"
+
+#~ msgid "Search Hotels and Cities:"
+#~ msgstr "Meklē Viesnīcas un Pilsētas:"
+
+#~ msgid "Select the balance you want to use"
+#~ msgstr "Atlasiet izmantojamo bilanci"
+
+#~ msgid "Showing results for {{ describeSearch() }}"
+#~ msgstr "Rāda rezultātus par/priekš {{ describeSearch() }}"
+
+#~ msgid "Sorry, it appears we have no hotels available for this destination."
+#~ msgstr ""
+#~ "Atvainojamies.izrādās, ka uz šo maršrutu mums viesnīcas nav pieejamas."
+
+#~ msgid "Taxes"
+#~ msgstr "Nodokļi"
+
+#~ msgid "There are no results for this search."
+#~ msgstr "Jūsu meklējumam nav rtezultātu."
+
+#~ msgid "This is not legal advice."
+#~ msgstr "Tas nav juridiski pamatots padoms."
+
+#~ msgid "Toggle Admin Info"
+#~ msgstr "Pārslēgt administratora informāciju"
+
+#~ msgid "total"
+#~ msgstr "kopā"
+
+#~ msgid "Total Price Max"
+#~ msgstr "Kopējā cena maks"
+
+#~ msgid "Total Price Minimum"
+#~ msgstr "Kopājā minimālā cena"
+
+#~ msgid "Total price per 6 nights:"
+#~ msgstr "Kopējā cena par 6 naktīm:"
+
+#~ msgid "View Hotel Details"
+#~ msgstr "Skatīt viesnīcu detalizētu informāciju"
+
+#~ msgid "Webbeds"
+#~ msgstr "Tīmekļa vietas"
 
 #~ msgid "2024 Global Leadership Winners!"
 #~ msgstr "2024 Globālā Līderu Samita Uzvarētāji!"
