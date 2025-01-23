@@ -49,7 +49,7 @@ msgstr " 会员 "
 
 #: components/accordion-v2.vue pages/claim_free_rp.vue pages/courses.vue
 #: pages/intours_details.vue components/checkout/ProcessorNetcents.vue
-#: components/reservations/tour-details.vue
+#: components/reservations/tour-details.vue components/widgets/PieChart.vue
 msgid "_ctx"
 msgstr "_ctx"
 
@@ -670,6 +670,12 @@ msgstr ""
 "{{ requirePassengerNames ? 'Required Additional Guests' : 'Additional Guests "
 "(Optional)' }}"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "{{ course.description }}"
+msgid "{{ selectedContact.subscription }}"
+msgstr "{{ course.description }}"
+
 #: pages/builders_base.vue
 msgid "{{ selectedMonth }} Base Builders"
 msgstr "{{ selectedMonth }} 建设者基础"
@@ -1038,6 +1044,12 @@ msgstr "%{salesRate} 每晚"
 msgid "%{startDate} to %{endDate}"
 msgstr "%{startDate} to %{endDate}"
 
+#: components/contacts/mass-contact-modal.vue
+msgid ""
+"%{total1} out of %{total2} selected contacts have already been invited. "
+"Please select how you would like to continue."
+msgstr ""
+
 #: pages/admin_department.vue pages/admin_permission_group.vue
 msgid "+ Add Admins"
 msgstr "+ 添加管理员"
@@ -1367,7 +1379,7 @@ msgstr "<i class=\"fal fa-ticket-alt mr-1\"/> 现在注册"
 msgid "<i class=\"fal fa-ticket-alt mr-1\"/> Remove Registration"
 msgstr "<i class=\"fal fa-ticket-alt mr-1\"/> 删除注册"
 
-#: pages/account_setup.vue
+#: pages/account_setup.vue pages/import.vue
 msgid "<i class=\"far fa-address-book mr-1\"/> Begin Import"
 msgstr "<i class=\"far fa-address-book mr-1\"/> 开始导入"
 
@@ -1452,10 +1464,6 @@ msgstr ""
 #: components/global_convention/event_info.vue
 msgid "<i class=\"fe fe-link\"/> Visit Event Link"
 msgstr "<i class=\"fe fe-link\"/> 查看活动链接"
-
-#: pages/contacts.vue
-msgid "<i class=\"fe fe-mail mr-1\"/> Send Invitation"
-msgstr "<i class=\"fe fe-mail mr-1\"/> 发送邀请"
 
 #: components/support/TicketViewer.vue
 msgid "<i class=\"fe fe-message-circle\"/> Comment"
@@ -2720,15 +2728,15 @@ msgstr "操作"
 
 #: pages/admin_account_recovery.vue pages/admin_certificates.vue
 #: pages/admin_restricted_paybonus.vue pages/certificates.vue
-#: pages/contacts.vue pages/invoices_new.vue pages/negative_balances.vue
-#: pages/reports.vue components/admin_booking/admin_cruise_featured.vue
+#: pages/invoices_new.vue pages/negative_balances.vue pages/reports.vue
+#: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/admin_finance/payment_fulfillment.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/recurring_income_levels.vue
-#: components/compensation/statements.vue
+#: components/compensation/statements.vue components/data_table/table.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue certificates/index.html
 #: certificates/view.html old_compensation/index.html reports/index.html
@@ -2877,6 +2885,7 @@ msgstr "活动"
 msgid "Activities found"
 msgstr "找到的活动"
 
+#: components/recipients_modal.vue pages/contacts.vue
 #: components/inchat/user_room_actions.vue components/user/user_notes.vue
 #: components/inchat/search/search-people.vue
 msgid "Add"
@@ -2925,7 +2934,7 @@ msgstr "添加名片"
 msgid "Add card information for recurring payments."
 msgstr "添加信用卡信息以进行定期付款。"
 
-#: apps/index.html
+#: pages/contacts.vue apps/index.html
 msgid "Add Contacts"
 msgstr "添加聯繫人"
 
@@ -2963,6 +2972,12 @@ msgstr "添加会员"
 msgid "Add Members to your Booking"
 msgstr "将会员添加到您的预订中"
 
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Add New"
+msgid "Add new"
+msgstr "新添加"
+
 #: components/data_table/create_widget.vue
 msgid "Add New"
 msgstr "新添加"
@@ -2970,6 +2985,10 @@ msgstr "新添加"
 #: components/user/user_notes.vue
 msgid "Add Note"
 msgstr "添加备注"
+
+#: pages/contacts.vue components/contacts/contact-edit-modal.vue
+msgid "Add notes about this contact"
+msgstr ""
 
 #: components/recurring/recurring-cards.vue
 msgid "Add Payment method"
@@ -2986,6 +3005,12 @@ msgstr "+ 添加权限组"
 #: pages/checkout.vue
 msgid "Add Promotion Code"
 msgstr "添加促销代码"
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Recipients"
+msgid "Add recipients"
+msgstr "收件人"
 
 #: components/navigation/add-recurring-notice.vue
 msgid "Add Recurring Billing"
@@ -3092,6 +3117,7 @@ msgstr ""
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
+#: components/contacts/contact-edit-modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/onboarding/address-step.vue
 #: components/receipts/italian_receipt.vue old_compensation/index.html
@@ -3327,7 +3353,7 @@ msgstr "所有目的地"
 msgid "All Documents"
 msgstr "所有文件"
 
-#: pages/support.vue components/support/AdminCreateTicket.vue
+#: pages/inviter.vue pages/support.vue components/support/AdminCreateTicket.vue
 msgid "All fields are required."
 msgstr "各個領域都需要。"
 
@@ -3342,6 +3368,12 @@ msgstr ""
 #: components/support/TicketViewer.vue
 msgid "All included with-in this ticket"
 msgstr "全部包含在此票中"
+
+#: components/referral_activity/all-invitations-table.vue
+#, fuzzy
+#| msgid "Available Invitations"
+msgid "All Invitations"
+msgstr "可用邀請"
 
 #: pages/communications.vue pages/resources.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
@@ -3423,6 +3455,12 @@ msgid ""
 msgstr ""
 "解决此问题的所有流程和步骤都在我们网站（您的后台）资源（文档）部分的政策和程"
 "序文档中进行了说明。"
+
+#: pages/referral_activity.vue
+#, fuzzy
+#| msgid "All Titles"
+msgid "All Time"
+msgstr "所有标题"
 
 #: pages/builders_base.vue
 msgid "All Titles"
@@ -3715,11 +3753,11 @@ msgstr ""
 "壹個無限制的電子郵件營銷系統，可以讓您像專業人士壹樣。您的電子郵件邀請將包含"
 "壹個Duplicator鏈接，以便您可以跟蹤並在他們成功註冊時獲得相應的信用積分。"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Analytics data began on 03/24/2021"
 msgstr "分析數據始於03/24/2021"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Analytics data is not language specific."
 msgstr "分析數據不是特定於語言的。"
 
@@ -3861,8 +3899,8 @@ msgid "Applicant Signature"
 msgstr "申請人簽名"
 
 #: components/filter-chip-range.vue components/month_picker.vue
-#: pages/checkout.vue pages/cruises.vue pages/intours_details.vue
-#: components/tours/intours_results.vue
+#: pages/checkout.vue pages/contacts.vue pages/cruises.vue
+#: pages/intours_details.vue components/tours/intours_results.vue
 msgid "Apply"
 msgstr "申请"
 
@@ -3888,6 +3926,12 @@ msgstr "應用"
 #: components/settings_page/modify-saved-passengers.vue
 msgid "April"
 msgstr "四月"
+
+#: components/data_table/table.vue
+#, fuzzy
+#| msgid "Archived"
+msgid "Archive"
+msgstr "存档的"
 
 #: pages/support.vue
 msgid "Archive Tickets"
@@ -3938,6 +3982,12 @@ msgid ""
 "Are you sure you do not want to use your Wallet Balance to pay the remaing "
 "Balance?"
 msgstr "您确定不想使用您的电子钱包余额来支付剩余余额吗？"
+
+#: pages/inviter.vue
+msgid ""
+"Are you sure you want to change the invitation type? Doing so will overwrite "
+"all the text in the text editor. Are you sure you want to proceed?"
+msgstr ""
 
 #: pages/settings.vue
 msgid ""
@@ -4110,6 +4160,10 @@ msgid ""
 "Assign First Name, Last Name and Email Address to the correct columns below. "
 "Then Click Import"
 msgstr "將名字，姓氏和電子郵件分別填寫到對應的位置。然後單擊導入"
+
+#: pages/contacts.vue
+msgid "Assign Tags"
+msgstr ""
 
 #: pages/public/leadership.vue
 msgid "Astana, Kazakhstan"
@@ -4377,8 +4431,9 @@ msgstr "b. National Director"
 msgid "b. Time of the Essence"
 msgstr "b. 重要的時間"
 
-#: pages/courses.vue pages/cruise.vue pages/intours_details.vue
-#: pages/leadership_academy.vue pages/multi_factor.vue pages/settings.vue
+#: pages/contacts.vue pages/courses.vue pages/cruise.vue pages/import.vue
+#: pages/intours_details.vue pages/leadership_academy.vue
+#: pages/multi_factor.vue pages/settings.vue
 #: components/agreements/italian_agreement.vue
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
@@ -4809,6 +4864,10 @@ msgstr "預訂和巡航風險自負"
 #: pages/cruise_old.vue
 msgid "Book Cruise"
 msgstr "預定郵輪"
+
+#: pages/welcome.vue
+msgid "Book Last Minute INcredible Costa Cruise Offers and Travel This Season!"
+msgstr "预订超值Costa邮轮限时优惠，享受这个季节的完美旅行！"
 
 #: pages/hotels_details.vue components/tours/details/available-plans.vue
 msgid "Book now"
@@ -5338,11 +5397,11 @@ msgstr ""
 msgid "Can only be between 1 and 20 characters long."
 msgstr "長度只能在1到20個字符之間。"
 
-#: pages/account_setup.vue pages/referral_links.vue
+#: pages/account_setup.vue pages/referral_links_old.vue
 msgid "Can only be between 3 and 20 characters long."
 msgstr "長度只能在3到20個字符之間。"
 
-#: components/onboarding/email-address-step.vue
+#: pages/referral_links.vue components/onboarding/email-address-step.vue
 #: components/onboarding/referral-link-step.vue
 msgid "Can only contain letters (A-Z and a-z), numbers (0-9), and dashes (-)"
 msgstr "只能包含字母（A-Z和a-z），数字（0-9），和短横线（-）"
@@ -5354,7 +5413,7 @@ msgid ""
 msgstr ""
 "只能包含字母（AZ和az），數字（0-9），短劃線（-），下劃線（_）和句號（。）。"
 
-#: pages/account_setup.vue pages/referral_links.vue
+#: pages/account_setup.vue pages/referral_links_old.vue
 msgid "Can only contain letters (A-Z and a-z), numbers (0-9), dashes (-)."
 msgstr "只能包含字母（AZ和az），數字（0-9），短劃線（-）。"
 
@@ -5367,11 +5426,13 @@ msgid "Canada/New England"
 msgstr "加拿大/新英格蘭"
 
 #: components/fast-growing-legs.vue components/month_picker.vue
-#: pages/admin_department.vue pages/admin_permission.vue
-#: pages/admin_permission_group.vue pages/checkout.vue pages/connect.vue
+#: components/recipients_modal.vue pages/admin_department.vue
+#: pages/admin_permission.vue pages/admin_permission_group.vue
+#: pages/checkout.vue pages/connect.vue pages/contacts.vue
 #: pages/cruises_booking_old.vue pages/email.vue pages/intours_details.vue
-#: pages/invoices.vue pages/invoices_new.vue pages/reports.vue
-#: pages/settings.vue components/admin_booking/admin_cruise_featured.vue
+#: pages/inviter.vue pages/invoices.vue pages/invoices_new.vue
+#: pages/referral_links.vue pages/reports.vue pages/settings.vue
+#: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
 #: components/admin_management/admin_departments.vue
@@ -5382,6 +5443,9 @@ msgstr "加拿大/新英格蘭"
 #: components/agreements/partner_code_of_conduct_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
 #: components/booking/add-cd-user.vue
+#: components/contacts/contact-edit-modal.vue
+#: components/contacts/export-contacts.vue
+#: components/contacts/mass-contact-modal.vue
 #: components/cruises_booking/reward_points_step.vue
 #: components/cruises_booking_old/confirmation-step.vue
 #: components/onboarding/name-birthday-avatar-step.vue
@@ -5515,7 +5579,7 @@ msgid "Català"
 msgstr "加泰罗尼亚语"
 
 #: pages/communications.vue pages/facebook_marketing.vue pages/invite.vue
-#: pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Catalan"
@@ -5601,7 +5665,7 @@ msgstr "证书名称选项"
 msgid "Certificates"
 msgstr "证书"
 
-#: pages/email_address.vue pages/referral_links.vue
+#: pages/email_address.vue pages/referral_links_old.vue
 msgid "Change"
 msgstr "改變"
 
@@ -5621,6 +5685,12 @@ msgstr "更改密码"
 msgid "Change Subscription"
 msgstr "更改订阅"
 
+#: components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "User locked successfully"
+msgid "Changes Saved Successfully"
+msgstr "用户锁定成功"
+
 #: pages/cruise_price_match_guarantee.vue
 msgid "Chartered sailings"
 msgstr "包船航行"
@@ -5637,6 +5707,12 @@ msgstr "報到"
 #: pages/hotel_booking.vue
 msgid "Check in:"
 msgstr "報到："
+
+#: components/news-modal.vue
+#, fuzzy
+#| msgid "Check Out"
+msgid "Check It Out"
+msgstr "退房"
 
 #: pages/welcome.vue
 msgid "Check it out!"
@@ -5735,13 +5811,13 @@ msgid "Children:"
 msgstr "兒童；"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Chinese"
 msgstr "中文"
 
-#: pages/email_address.vue pages/referral_links.vue
+#: pages/email_address.vue pages/referral_links_old.vue
 msgid "Choose"
 msgstr "選擇"
 
@@ -5814,6 +5890,12 @@ msgstr "仅选择保护您的自付费用或保护自付费用和您正在使用
 msgid "Choose Package"
 msgstr "选择套餐"
 
+#: pages/contacts.vue
+msgid ""
+"Choose the tag you would like to assign to the %{selected_users}  selected "
+"contacts."
+msgstr ""
+
 #: pages/elevate_registration.vue
 #: components/cruises_booking_old/passenger-info-step.vue
 msgid "Choose Title"
@@ -5835,7 +5917,7 @@ msgstr "選擇您的貨幣"
 msgid "Choose Your Package!"
 msgstr "选择您的套餐！"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Choose your Referral Link:"
 msgstr "選擇推薦鏈接："
 
@@ -5851,6 +5933,7 @@ msgstr "參觀過的城市"
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 #: components/checkout/CardStep.vue components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
+#: components/contacts/contact-edit-modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/onboarding/address-step.vue
 #: components/receipts/italian_receipt.vue
@@ -5860,7 +5943,7 @@ msgstr "參觀過的城市"
 msgid "City"
 msgstr "城市"
 
-#: pages/contacts.vue pages/elevate_registration.vue pages/track_results.vue
+#: pages/elevate_registration.vue pages/track_results.vue
 #: components/checkout/CardStep.vue
 #: components/cruises_booking_old/passenger-info-step.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -6033,7 +6116,7 @@ msgstr "客戶端配置"
 
 #: components/global-summit-reminder.vue components/tmt-modal.vue
 #: components/weekly-competition.vue pages/connect.vue pages/hotels_details.vue
-#: pages/menu_page.vue pages/referral_links.vue pages/resources.vue
+#: pages/menu_page.vue pages/referral_links_old.vue pages/resources.vue
 #: pages/welcome.vue components/compensation/info_modal.vue
 #: components/compensation/leadership_bonus.vue
 #: components/cruises_booking_old/itinerary-modal.vue
@@ -6099,6 +6182,12 @@ msgstr "联合创始人及联席总裁"
 #: components/user/permission-group.vue components/user/permissions.vue
 msgid "Code"
 msgstr "编码"
+
+#: components/data_table/table.vue
+#, fuzzy
+#| msgid "Clear Selections"
+msgid "Column Selection"
+msgstr "清除選擇"
 
 #: components/data_table/column-selection-widget.vue
 msgid "Columns"
@@ -6194,14 +6283,11 @@ msgstr "完成乘客信息"
 msgid "Complete your booking before"
 msgstr "在此之前完成您的预订"
 
-#: pages/export.vue pages/invoices_new.vue pages/leadership_academy.vue
-#: pages/reports.vue reports/index.html
+#: pages/contacts.vue pages/export.vue pages/invoices_new.vue
+#: pages/leadership_academy.vue pages/reports.vue
+#: components/contacts/contact-edit-modal.vue reports/index.html
 msgid "Completed"
 msgstr "完成"
-
-#: pages/contacts.vue
-msgid "Completed Invites"
-msgstr "完成的邀請"
 
 #: pages/invoices.vue pages/invoices_new.vue
 msgid "Completed Invoices"
@@ -6459,7 +6545,7 @@ msgstr "请查看不同会员计划的具体详情。"
 msgid "Contact by Mail:"
 msgstr "通過郵件聯繫："
 
-#: pages/hotel_booking.vue
+#: pages/hotel_booking.vue components/contacts/contact-edit-modal.vue
 msgid "Contact Information"
 msgstr "聯繫信息"
 
@@ -6475,8 +6561,21 @@ msgstr "聯繫我們"
 msgid "Contacts"
 msgstr "聯繫人"
 
+#: components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "Group deleted successfully"
+msgid "Contacts exported successfully"
+msgstr "群组删除成功"
+
+#: pages/contacts.vue pages/import.vue
 #: components/onboarding/import-contacts.vue
 msgid "Contacts Imported"
+msgstr "联系人已导入"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Contacts Imported"
+msgid "Contacts Imported Successfully."
 msgstr "联系人已导入"
 
 #: components/onboarding/import-contacts.vue
@@ -6494,7 +6593,9 @@ msgstr ""
 msgid "continue"
 msgstr "继续"
 
-#: pages/courses.vue pages/italian_onboarding.vue pages/leadership_academy.vue
+#: pages/contacts.vue pages/courses.vue pages/import.vue
+#: pages/italian_onboarding.vue pages/leadership_academy.vue
+#: components/contacts/mass-contact-modal.vue
 #: components/onboarding/welcome-video-step.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
@@ -6511,6 +6612,12 @@ msgstr "在下方繼續付款"
 #: pages/intours_confirmation.vue
 msgid "Continue to checkout"
 msgstr "继续结账"
+
+#: components/contacts/mass-contact-modal.vue
+#, fuzzy
+#| msgid "Continue at all costs."
+msgid "Continue with all selected contacts"
+msgstr "不惜一切代價繼續。"
 
 #: components/checkout/CurrencyStep.vue components/checkout/ItalianStep.vue
 #: components/checkout/ProcessorTmt.vue
@@ -6581,15 +6688,16 @@ msgstr "國家和計數"
 #: components/info-reminder.vue components/mercy-ship-modals.vue
 #: components/weekly-competition.vue pages/additional_info.vue
 #: pages/admin_user.vue pages/builders_base.vue pages/competition.vue
-#: pages/contacts.vue pages/giving_society.vue pages/new_ranks.vue
-#: pages/partner_success.vue pages/reach.vue pages/referral_links.vue
-#: pages/reports.vue pages/settings.vue pages/team_rankings.vue
-#: pages/track_results.vue components/checkout/ItalianStep.vue
+#: pages/giving_society.vue pages/new_ranks.vue pages/partner_success.vue
+#: pages/reach.vue pages/referral_links_old.vue pages/reports.vue
+#: pages/settings.vue pages/team_rankings.vue pages/track_results.vue
+#: components/checkout/ItalianStep.vue
 #: components/compensation/active_partner_modal.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus_preview.vue
+#: components/contacts/contact-edit-modal.vue
 #: components/onboarding/address-step.vue components/public/JoinModal.vue
 #: components/receipts/italian_receipt.vue
 #: components/settings_page/login-activity.vue pages/public/signup.vue
@@ -6622,7 +6730,7 @@ msgstr "居住国家"
 msgid "Country of Residency:"
 msgstr "居住國家："
 
-#: pages/contacts.vue track_results/index.html
+#: track_results/index.html
 msgid "Country:"
 msgstr "國家："
 
@@ -6668,7 +6776,7 @@ msgid ""
 msgstr ""
 "涵盖的事件包括个人或家庭疾病、事故、自然灾害、裁员、文件盗窃、交通故障等。"
 
-#: pages/account_setup.vue pages/email_address.vue pages/referral_links.vue
+#: pages/account_setup.vue pages/email_address.vue pages/referral_links_old.vue
 msgid "Create"
 msgstr "創建"
 
@@ -6699,6 +6807,12 @@ msgstr "創建ePayments錢包"
 #: pages/invoices_new.vue
 msgid "Create Invoice"
 msgstr "创建发票"
+
+#: components/contacts/tags-modal.vue
+#, fuzzy
+#| msgid "Create Date"
+msgid "Create New"
+msgstr "創建日期"
 
 #: components/payout/payoneer-withdraw.vue
 msgid "Create Payoneer Account"
@@ -7028,7 +7142,11 @@ msgstr "定制邮件"
 msgid "Customer Name"
 msgstr "客戶姓名"
 
-#: components/onboarding/referral-link-step.vue
+#: pages/inviter.vue
+msgid "Customize your invite"
+msgstr ""
+
+#: components/affiliate_link_url.vue pages/referral_links.vue
 msgid "customlink"
 msgstr "定制链接"
 
@@ -7091,13 +7209,13 @@ msgstr "每日会员激活"
 msgid "Dashboard"
 msgstr "界面"
 
-#: components/onboarding/referral-link-step.vue
+#: pages/referral_links.vue components/onboarding/referral-link-step.vue
 msgid ""
 "Dashes cannot be placed at the beginning, at the end, nor consecutively. (i."
 "e. ex--ample)"
 msgstr "破折号不能放置在开头、结尾或连续使用。（例如，例--如）"
 
-#: pages/account_setup.vue pages/referral_links.vue
+#: pages/account_setup.vue pages/referral_links_old.vue
 msgid ""
 "Dashes cannot be placed at the beginning, at the end, nor consecutively. "
 "(ie. ex--ample)."
@@ -7136,9 +7254,14 @@ msgstr "數據字段"
 msgid "Data Not Found"
 msgstr "未找到数据"
 
-#: pages/contacts.vue pages/email.vue pages/intours_details.vue
-#: pages/notifications.vue pages/reward_points.vue
-#: components/compensation/statements.vue
+#: pages/welcome.vue
+#, fuzzy
+#| msgid "data"
+msgid "data_new"
+msgstr "数据"
+
+#: pages/email.vue pages/intours_details.vue pages/notifications.vue
+#: pages/reward_points.vue components/compensation/statements.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
 #: components/receipts/tour_booking_receipt.vue
@@ -7150,7 +7273,13 @@ msgstr "日期"
 msgid "DATE"
 msgstr "日期"
 
-#: pages/contacts.vue pages/receipts.vue
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Card Added"
+msgid "Date Added"
+msgstr "卡片已添加"
+
+#: pages/receipts.vue
 msgid "Date Ascending"
 msgstr "升序排列日期"
 
@@ -7158,7 +7287,7 @@ msgstr "升序排列日期"
 msgid "Date Created"
 msgstr "創建日期"
 
-#: pages/contacts.vue pages/receipts.vue
+#: pages/receipts.vue
 msgid "Date Descending"
 msgstr "降序排列日期"
 
@@ -7337,8 +7466,7 @@ msgstr "扣除"
 msgid "DEFAULT"
 msgstr "默認"
 
-#: pages/contacts.vue pages/email_address.vue
-#: components/admin_booking/admin_cruise_featured.vue
+#: pages/email_address.vue components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/settings_page/modify-saved-passengers.vue
 msgid "Delete"
@@ -7380,6 +7508,12 @@ msgstr "删除权限组"
 msgid "Delete recipient account"
 msgstr "删除收件人帐户"
 
+#: components/contacts/tags-modal.vue
+#, fuzzy
+#| msgid "Delete Card"
+msgid "Delete Tag"
+msgstr "刪除卡"
+
 #: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Delivery Date"
 msgstr "郵寄日期"
@@ -7391,6 +7525,12 @@ msgstr "演示邮件地址"
 #: components/navigation/demo-mode-toggle.vue
 msgid "Demo mode"
 msgstr "演示模式"
+
+#: pages/referral_links.vue
+#, fuzzy
+#| msgid "Demo referral link"
+msgid "demo referral link"
+msgstr "演示推荐链接"
 
 #: components/onboarding/referral-link-step.vue
 msgid "Demo referral link"
@@ -7677,6 +7817,12 @@ msgstr "与待定建设者的指导"
 #: pages/settings.vue
 msgid "Disable 2FA"
 msgstr "禁用 2FA"
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Disclaimer"
+msgid "Discard"
+msgstr "免责声明"
 
 #: pages/support.vue components/inchat/disclaimer_modal.vue
 msgid "Disclaimer"
@@ -8017,7 +8163,7 @@ msgstr "尽职调查文件"
 msgid "Due Monthly"
 msgstr "每月付款"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid ""
 "Due to compatibility issues with iOS devices, we've created the option for "
 "referral links to contain dashes ( - ) as well as underscores ( _ ). "
@@ -8444,11 +8590,15 @@ msgstr "電郵類型"
 msgid "Email Warning"
 msgstr "郵件警告"
 
-#: pages/contacts.vue pages/elevate_registration.vue
+#: pages/elevate_registration.vue
 #: components/cruises_booking_old/passenger-info-step.vue
 #: track_results/index.html
 msgid "Email:"
 msgstr "電子郵件："
+
+#: pages/contacts.vue
+msgid "email@example.com"
+msgstr ""
 
 #: pages/cruises_old.vue
 msgid "Embarkation Port:"
@@ -8535,6 +8685,12 @@ msgstr "输入CVC/CVV："
 msgid "Enter display name (Optional)"
 msgstr "输入展示名称（可选）"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Enter name"
+msgid "Enter Manually"
+msgstr "输入姓名："
+
 #: components/recurring/recurring-cards.vue
 msgid "Enter name"
 msgstr "输入姓名："
@@ -8587,7 +8743,7 @@ msgstr "输入您的国家"
 msgid "Enter your custom email address"
 msgstr "输入您的定制邮件地址"
 
-#: components/onboarding/referral-link-step.vue
+#: pages/referral_links.vue components/onboarding/referral-link-step.vue
 msgid "Enter your custom referral link"
 msgstr "输入您的定制推荐链接"
 
@@ -8637,6 +8793,12 @@ msgstr "错误"
 msgid "Error Adding Cruise"
 msgstr "添加邮轮时出错"
 
+#: components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "Export Contacts"
+msgid "Error exporting contacts"
+msgstr "導出聯繫人"
+
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Error fetching cruise lines"
 msgstr "获取邮轮航线时出错"
@@ -8645,6 +8807,16 @@ msgstr "获取邮轮航线时出错"
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Error fetching data"
 msgstr "获取数据时出错"
+
+#: components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "Error fetching data"
+msgid "Error finding contact"
+msgstr "获取数据时出错"
+
+#: components/recipients_modal.vue
+msgid "Error in looking up contacts."
+msgstr ""
 
 #: components/admin_booking/admin_cruise_featured.vue
 msgid "Error in refresh"
@@ -8775,6 +8947,10 @@ msgstr ""
 msgid "Exchange rate"
 msgstr "汇率"
 
+#: components/contacts/mass-contact-modal.vue
+msgid "Exclude previously invited"
+msgstr ""
+
 #: pages/cruises.vue
 msgid "Exclude results with mandatory pre-paid tips"
 msgstr "排除包含强制预付小费的结果"
@@ -8846,7 +9022,7 @@ msgstr "Executive Team"
 msgid "Existing Leaders:"
 msgstr "现有领导者："
 
-#: CheckoutTopBar.vue components/blog/navbar.vue
+#: CheckoutTopBar.vue LayoutTopBar.vue components/blog/navbar.vue
 msgid "Exit"
 msgstr "出口"
 
@@ -8910,7 +9086,7 @@ msgstr "探索全新的俱乐部会员计划！"
 msgid "Export"
 msgstr "導出"
 
-#: pages/export.vue
+#: pages/contacts.vue pages/export.vue components/contacts/export-contacts.vue
 msgid "Export Contacts"
 msgstr "導出聯繫人"
 
@@ -9114,7 +9290,8 @@ msgstr "過濾"
 
 #: pages/cruises.vue pages/reports.vue
 #: components/data_table/filter-selection-widget.vue
-#: components/tours/intours_results.vue reports/index.html
+#: components/data_table/table.vue components/tours/intours_results.vue
+#: reports/index.html
 msgid "Filters"
 msgstr "過濾器"
 
@@ -9197,9 +9374,9 @@ msgstr "第一个孩子的出生日期"
 msgid "First Leader"
 msgstr "第一领导者"
 
-#: pages/admin_restricted_paybonus.vue pages/hotel_booking.vue
-#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
-#: components/cruises_booking/passenger_info_step.vue
+#: pages/admin_restricted_paybonus.vue pages/contacts.vue
+#: pages/hotel_booking.vue pages/intours_confirmation.vue pages/invite.vue
+#: pages/settings.vue components/cruises_booking/passenger_info_step.vue
 #: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -9445,7 +9622,7 @@ msgid "Free Registered"
 msgstr "免费注册"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "French"
@@ -9481,8 +9658,15 @@ msgstr "从：<span class=\"text-blue font-italic\">{{ from }}</span>"
 msgid "FSG"
 msgstr "FSG"
 
-#: pages/cards.vue pages/certificates.vue pages/invite.vue cards/index.html
-#: certificates/index.html certificates/view.html import/index.html
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Full Name"
+msgid "Full name"
+msgstr "全名"
+
+#: components/recipients_modal.vue pages/cards.vue pages/certificates.vue
+#: pages/invite.vue cards/index.html certificates/index.html
+#: certificates/view.html import/index.html
 msgid "Full Name"
 msgstr "全名"
 
@@ -9547,7 +9731,7 @@ msgid "Generate a New Password"
 msgstr "生成一個新的密碼"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "German"
@@ -11427,7 +11611,7 @@ msgstr "导入预订状态"
 msgid "Import Contacts"
 msgstr "導入聯繫人"
 
-#: import/index.html
+#: pages/import.vue import/index.html
 msgid ""
 "Import contacts from dozens of email clients using the button above. You "
 "will then be redirected to the contacts page where you will see your newly "
@@ -11436,9 +11620,13 @@ msgstr ""
 "使用上面的按鈕從數十個電子郵件導入聯繫人。然後，您將被帶到聯繫人頁面，並在其"
 "中看到新導入的聯繫人。"
 
-#: import/index.html
+#: pages/import.vue import/index.html
 msgid "Import Email Contacts"
 msgstr "導入電子郵件聯繫人"
+
+#: pages/contacts.vue
+msgid "Import from address book"
+msgstr ""
 
 #: import/create.html
 msgid "Import These Contacts"
@@ -11490,10 +11678,6 @@ msgstr "有關退款的重要信息："
 #: components/receipts/hotel_booking_receipt.vue
 msgid "IMPORTANT REFUND INFORMATION:"
 msgstr "重要退款信息："
-
-#: pages/contacts.vue
-msgid "Imported Contacts"
-msgstr "導入的聯繫人"
 
 #: pages/apps.vue
 msgid "Improved Performace"
@@ -11751,6 +11935,12 @@ msgstr "接收郵件服務器（IMAP） - 需要SSL加密"
 #: pages/leadership_academy.vue
 msgid "Incomplete"
 msgstr "不完整"
+
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Import Email Contacts"
+msgid "Incorrect Email Format"
+msgstr "導入電子郵件聯繫人"
 
 #: courses/view.html
 msgid "Incorrect!"
@@ -12223,8 +12413,20 @@ msgstr "介绍会员3.0！"
 msgid "Invitation Details"
 msgstr "邀請詳情"
 
-#: pages/contacts.vue pages/invite.vue
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Invitation Type"
+msgstr "邀請詳情"
+
+#: pages/invite.vue components/contacts/contact-edit-modal.vue
 msgid "Invite"
+msgstr "邀請"
+
+#: pages/contacts.vue pages/import.vue
+#, fuzzy
+#| msgid "Invite"
+msgid "Invite All"
 msgstr "邀請"
 
 #: import/create.html
@@ -12234,6 +12436,30 @@ msgstr "邀請成為會員"
 #: import/create.html
 msgid "Invite as Partner"
 msgstr "邀請成為合作夥伴"
+
+#: pages/referral_links.vue
+msgid ""
+"Invite people to join InCruises and you'll receive automatic credit when "
+"they sign up through your invite."
+msgstr ""
+
+#: components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "Invite"
+msgid "Invite Sent"
+msgstr "邀請"
+
+#: pages/contacts.vue components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "Invites"
+msgid "Invite Status"
+msgstr "邀請"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Invite"
+msgid "Invited"
+msgstr "邀請"
 
 #: components/public/Testimonials.vue
 msgid "invited you to inCruises®."
@@ -12439,7 +12665,7 @@ msgstr ""
 "每次购买都享有我们100%的14天退款保证。每笔付款经过14天后，将不再允许退款。"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html webinar_recordings/index.html
 msgid "Italian"
 msgstr "意大利"
@@ -12535,7 +12761,7 @@ msgid "January 1st 2025 - June 30th 2025."
 msgstr "2025年1月1日至2025年6月30日。"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Japanese"
@@ -12688,7 +12914,7 @@ msgstr ""
 "Puerto Rico LLC）的合作伙伴协议的一部分。"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Korean"
@@ -12706,9 +12932,10 @@ msgstr "Kyrgyz"
 msgid "Laminated Presentations"
 msgstr "多層演示文稿"
 
-#: pages/admin_user.vue pages/contacts.vue pages/reports.vue pages/settings.vue
+#: pages/admin_user.vue pages/reports.vue pages/settings.vue
 #: pages/team_rankings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
+#: components/contacts/contact-edit-modal.vue
 #: components/inchat/user/user_create_room.vue old_compensation/index.html
 #: reports/index.html track_results/index.html
 msgid "Language"
@@ -12717,10 +12944,6 @@ msgstr "語言"
 #: components/language-reminder.vue
 msgid "Language Reminder"
 msgstr "語言提醒"
-
-#: pages/contacts.vue
-msgid "Language:"
-msgstr "語言:"
 
 #: pages/team_rankings.vue
 msgid "Last 12 Months"
@@ -12769,9 +12992,9 @@ msgstr "上个月重复"
 msgid "Last month's Leadership Bonus has been requested and is pending payout."
 msgstr "上個月的領導獎金已申請，正在等待支付。"
 
-#: pages/admin_restricted_paybonus.vue pages/hotel_booking.vue
-#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
-#: components/cruises_booking/passenger_info_step.vue
+#: pages/admin_restricted_paybonus.vue pages/contacts.vue
+#: pages/hotel_booking.vue pages/intours_confirmation.vue pages/invite.vue
+#: pages/settings.vue components/cruises_booking/passenger_info_step.vue
 #: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -12803,7 +13026,7 @@ msgid "Latest first"
 msgstr "最新的优先"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Latvian"
@@ -12829,7 +13052,8 @@ msgstr "领导者还必须赢得整体旅行才能获得旅行奖品。"
 msgid ""
 "Leaders who achieve and/or maintain an Ambassador level or above rank for at "
 "least 50% of the contest months automatically earn a place at GLS-X."
-msgstr "在竞赛期间，达到和/或保持大使等级或更高级别排名至少50%的领导者将自动获得GLS-X"
+msgstr ""
+"在竞赛期间，达到和/或保持大使等级或更高级别排名至少50%的领导者将自动获得GLS-X"
 "的席位。"
 
 #: pages/public/leadership.vue
@@ -13064,10 +13288,16 @@ msgid "Link (optional)"
 msgstr "鏈接（可選）"
 
 #: components/ShareModal.vue components/qrCodeBtn.vue pages/admin_support.vue
-#: pages/reward_points.vue components/support/GroupViewer.vue
-#: components/top_bar/Connect.vue
+#: pages/referral_links.vue pages/reward_points.vue
+#: components/support/GroupViewer.vue components/top_bar/Connect.vue
 msgid "Link copied to clipboard"
 msgstr "鏈接已復製到剪貼板"
+
+#: pages/referral_links.vue
+#, fuzzy
+#| msgid "Finish Setup"
+msgid "Link Setup "
+msgstr "完成設置"
 
 #: components/top_bar/Connect.vue
 msgid "Links"
@@ -13317,6 +13547,12 @@ msgstr "管理权限"
 msgid "Manage Recurring Billing and Payments"
 msgstr "管理定期计费和付款"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Manage Admins"
+msgid "Manage Tags"
+msgstr "管理管理员"
+
 #: components/user/departments.vue
 msgid "Manage User Departments"
 msgstr "管理用户部门"
@@ -13407,7 +13643,8 @@ msgstr "Marketing Directors保持合格状态，每月可获得 300 美元的团
 #: pages/glsx.vue
 msgid ""
 "Marketing/Senior Marketing Directors (MD/SMD) Top 5 Eligible Point Earners."
-msgstr "Marketing/Senior Marketing Directors (MD/SMD)，前5名符合资格的积分最高者。"
+msgstr ""
+"Marketing/Senior Marketing Directors (MD/SMD)，前5名符合资格的积分最高者。"
 
 #: pages/glsx.vue
 msgid "Marketing/Senior Marketing Directors (MD/SMD):"
@@ -13497,6 +13734,14 @@ msgstr "最高收入门槛为<strong>${{ $filters.money(maxIncome) }}</strong>"
 msgid "Maximum reached for this rank!"
 msgstr "此等级已达到最高值！"
 
+#: pages/inviter.vue
+msgid "Maximum Recipients Reached"
+msgstr ""
+
+#: components/recipients_modal.vue
+msgid "Maximum recipients reached."
+msgstr ""
+
 #: pages/elevate_registration.vue
 msgid "Maxiumum Allowed 1 for 1 Points"
 msgstr "最多允许 1 换 1"
@@ -13516,7 +13761,7 @@ msgstr "五月"
 msgid "May or may not include taxes/port expenses"
 msgstr "可能包括也可能不包括稅收/港口費用"
 
-#: components/onboarding/win_50_rp.vue
+#: pages/contacts.vue pages/import.vue components/onboarding/win_50_rp.vue
 msgid "Maybe Later"
 msgstr "稍后再说"
 
@@ -13574,7 +13819,8 @@ msgid "Meetings"
 msgstr "会议"
 
 #: pages/receipts.vue pages/team_rankings.vue
-#: components/compensation/leadership_bonus.vue pages/public/pricing.vue
+#: components/compensation/leadership_bonus.vue
+#: components/contacts/contact-edit-modal.vue pages/public/pricing.vue
 #: old_compensation/index.html subscriptions/index.html upgrade/index.html
 msgid "Member"
 msgstr "會員"
@@ -13616,11 +13862,11 @@ msgstr "会员状态"
 msgid "Member Type"
 msgstr "会员类型"
 
-#: pages/contacts.vue pages/track_results.vue track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Member:"
 msgstr "會員："
 
-#: pages/apps.vue pages/referral_links.vue pages/track_growth.vue
+#: pages/apps.vue pages/referral_links_old.vue pages/track_growth.vue
 #: components/widgets/stats.vue reports/index.html track_growth/index.html
 msgid "Members"
 msgstr "會員"
@@ -13818,6 +14064,10 @@ msgstr ""
 "目前，Mercy Ships經營著世界上最大的非政府醫院船，提供人道主義援助，例如免費醫"
 "療，社區發展項目，社區健康教育等。"
 
+#: pages/welcome.vue
+msgid "Mercy Ships Fundraiser"
+msgstr "Mercy Ships 筹款活动"
+
 #: components/support/TicketList.vue
 msgid "Merged"
 msgstr "合并"
@@ -13944,11 +14194,15 @@ msgid "Mobile Ticket"
 msgstr "移动票据"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Mongolian"
 msgstr "蒙古人"
+
+#: pages/referral_activity.vue
+msgid "Monitor and manage all your referral invitations and their statuses."
+msgstr ""
 
 #: pages/invoices.vue pages/invoices_new.vue pages/notifications.vue
 #: components/compensation/weekly_bonus.vue
@@ -14287,17 +14541,17 @@ msgid ""
 "the 10th of the month)."
 msgstr "加倍器将等待直到等级被分配/更新（通常在每月的10日或之后）。"
 
-#: components/onboarding/email-address-step.vue
+#: pages/referral_links.vue components/onboarding/email-address-step.vue
 #: components/onboarding/referral-link-step.vue
 msgid "Must be between 3 and 20 characters long"
 msgstr "只能在3到20个字符之间"
 
-#: components/onboarding/email-address-step.vue
+#: pages/referral_links.vue components/onboarding/email-address-step.vue
 #: components/onboarding/referral-link-step.vue
 msgid "Must be unique and available"
 msgstr "必须是唯一的和可用的"
 
-#: pages/account_setup.vue pages/referral_links.vue
+#: pages/account_setup.vue pages/referral_links_old.vue
 msgid "Must be unique and available."
 msgstr "必須是唯一的和可用的。"
 
@@ -14405,7 +14659,7 @@ msgstr "不适用"
 msgid "Name"
 msgstr "名"
 
-#: pages/contacts.vue import/create.html
+#: import/create.html
 msgid "Name Ascending"
 msgstr "名字升序"
 
@@ -14427,7 +14681,7 @@ msgstr ""
 "與、更改或以其他方式處置您的任何權利或義務和/或利益，包括獎勵積分。 會員去世"
 "後，如果所有會員費都是最新的，會員資格可以轉移給他們的配偶或合法繼承人。"
 
-#: pages/contacts.vue import/create.html
+#: import/create.html
 msgid "Name Descending"
 msgstr "名字降序"
 
@@ -14694,9 +14948,9 @@ msgstr "新晋排名的合作伙伴： "
 msgid "News App"
 msgstr "新闻应用"
 
-#: pages/cruises_booking.vue pages/email.vue pages/leadership_academy.vue
-#: pages/multi_factor.vue pages/notifications.vue pages/receipts.vue
-#: components/cruises_booking/deck_step.vue
+#: pages/contacts.vue pages/cruises_booking.vue pages/email.vue
+#: pages/leadership_academy.vue pages/multi_factor.vue pages/notifications.vue
+#: pages/receipts.vue components/cruises_booking/deck_step.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking/protection_step.vue
 #: components/cruises_booking/reward_points_step.vue
@@ -14722,10 +14976,6 @@ msgstr "下一个结算日期"
 #: reports/index.html track_results/index.html
 msgid "Next Billing Date"
 msgstr "下一個結算日期"
-
-#: pages/contacts.vue
-msgid "Next Billing Date:"
-msgstr "下一個結算日期:"
 
 #: subscriptions/index.html
 msgid "Next Billing Date: {{ subscription.expires | date : 'MMM dd, yyyy'}}"
@@ -14773,6 +15023,7 @@ msgstr "晚:"
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/partner_code_of_conduct_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
+#: components/contacts/contact-edit-modal.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -14783,6 +15034,12 @@ msgstr "沒有"
 #: components/navigation/notifications.vue
 msgid "No Active Notifications"
 msgstr "没有活跃的通知"
+
+#: components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "No Contacts Found"
+msgid "No contacts found"
+msgstr "找不到聯繫人"
 
 #: import/create.html
 msgid "No Contacts Found"
@@ -14829,7 +15086,7 @@ msgstr "没有长期合同"
 msgid "No long-term contracts; cancel anytime"
 msgstr "么有长期合同；可以随时取消"
 
-#: pages/contacts.vue pages/invite.vue
+#: pages/invite.vue
 msgid "No Name Imported"
 msgstr "沒有輸入名稱"
 
@@ -15026,7 +15283,7 @@ msgstr "没有足够的数据来计算 QBI。"
 msgid "Not Finished"
 msgstr "未完成"
 
-#: pages/contacts.vue
+#: components/contacts/contact-edit-modal.vue
 msgid "Not Invited"
 msgstr "未邀請"
 
@@ -15097,7 +15354,7 @@ msgid ""
 "($USD)."
 msgstr "注意：此处提到的所有货币值均为美元（$USD）。"
 
-#: pages/admin_user_id.vue components/user/user_notes.vue
+#: pages/admin_user_id.vue pages/contacts.vue components/user/user_notes.vue
 msgid "Notes"
 msgstr "笔记"
 
@@ -15105,7 +15362,8 @@ msgstr "笔记"
 msgid "Notes:"
 msgstr "筆記："
 
-#: components/data_table/empty_table.vue
+#: components/data_table/empty_table.vue components/widgets/PieChart.vue
+#: components/widgets/description_list.vue components/widgets/stats.vue
 msgid "Nothing Here Yet"
 msgstr "这里还没有任何内容"
 
@@ -15164,7 +15422,7 @@ msgstr "在领导奖金支付和新等级之后，数字将显示。"
 msgid "Nursultan, Kazakhstan"
 msgstr "Nursultan, 哈萨克斯坦"
 
-#: pages/facebook_marketing.vue pages/invite.vue pages/referral_links.vue
+#: pages/facebook_marketing.vue pages/invite.vue pages/referral_links_old.vue
 msgid "O'zbek"
 msgstr "烏茲別克"
 
@@ -15482,10 +15740,6 @@ msgstr "公開的"
 msgid "Opened: {{ formatDate(invite.lastViewDate) }}"
 msgstr "公開的: {{ formatDate(invite.lastViewDate) }}"
 
-#: pages/contacts.vue
-msgid "Opened!"
-msgstr "公开的！"
-
 #: pages/intours_details.vue components/reservations/tour-details.vue
 msgid "Operated by"
 msgstr "由...运营"
@@ -15507,6 +15761,10 @@ msgstr "或者，您可以升級您的 Connect Suite 並像專業人士一樣推
 #: pages/multi_factor.vue
 msgid "or"
 msgstr "或者"
+
+#: pages/referral_links.vue
+msgid "Or"
+msgstr ""
 
 #: pages/public/disclosure.vue
 msgid "OR"
@@ -15688,7 +15946,7 @@ msgid ""
 "page and send a new ticket to the ”Cruise Booking Questions” department."
 msgstr "页面并将新票发送到“邮轮预订问题”部门。"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Page Data"
 msgstr "頁面數據"
 
@@ -15722,7 +15980,7 @@ msgstr "付款日期"
 msgid "Paid Months"
 msgstr "付款月份"
 
-#: pages/contacts.vue pages/track_results.vue track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Paid Months:"
 msgstr "付款月份："
 
@@ -16107,11 +16365,7 @@ msgstr "合作伙伴-会员"
 msgid "Partner-Members"
 msgstr "合作夥伴-會員"
 
-#: pages/contacts.vue
-msgid "Partner:"
-msgstr "合作夥伴:"
-
-#: pages/apps.vue pages/referral_links.vue pages/reports.vue
+#: pages/apps.vue pages/referral_links_old.vue pages/reports.vue
 #: pages/track_growth.vue components/widgets/stats.vue reports/index.html
 #: track_growth/index.html
 msgid "Partners"
@@ -16386,7 +16640,7 @@ msgstr "付款审核"
 msgid "Paypal"
 msgstr "Paypal"
 
-#: pages/invoices_new.vue pages/track_results.vue
+#: pages/contacts.vue pages/invoices_new.vue pages/track_results.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/support/TicketList.vue components/welcome/members-modal.vue
 msgid "Pending"
@@ -16415,10 +16669,6 @@ msgstr "本月结果待定"
 #: pages/export.vue
 msgid "Pending Invitations"
 msgstr "待定邀請"
-
-#: pages/contacts.vue
-msgid "Pending Invites"
-msgstr "等待邀請"
 
 #: pages/reports.vue pages/welcome.vue reports/index.html
 msgid "Pending Invoice"
@@ -16512,6 +16762,12 @@ msgstr "权限组"
 msgid "Permissions"
 msgstr "权限"
 
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Personal QBI"
+msgid "Personal"
+msgstr "Personal QBI"
+
 #: components/compensation/weekly_bonus.vue
 msgid "Personal Activations"
 msgstr "个人激活"
@@ -16552,8 +16808,9 @@ msgstr "個人觀點"
 msgid "Phase Highlights:"
 msgstr "阶段亮点："
 
-#: pages/admin_user.vue pages/contacts.vue pages/elevate_registration.vue
+#: pages/admin_user.vue pages/elevate_registration.vue
 #: pages/intours_confirmation.vue pages/negative_balances.vue
+#: components/contacts/contact-edit-modal.vue
 #: components/cruises_booking_old/passenger-info-step.vue
 msgid "Phone"
 msgstr "電話號碼"
@@ -16579,8 +16836,7 @@ msgstr "輸入的電話號碼無效。"
 msgid "Phone Verification"
 msgstr "電話驗證"
 
-#: pages/contacts.vue pages/track_results.vue
-#: components/settings_page/modify-saved-passengers.vue
+#: pages/track_results.vue components/settings_page/modify-saved-passengers.vue
 #: track_results/index.html
 msgid "Phone:"
 msgstr "電話號碼："
@@ -16620,6 +16876,18 @@ msgstr "播放"
 #: pages/cruises_booking.vue
 msgid "Please accept all terms and conditions before proceeding."
 msgstr "请在继续操作之前接受所有条款和条件。"
+
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Please Wait"
+msgid "Please add email"
+msgstr "請等待"
+
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Please enter a name"
+msgid "Please add name"
+msgstr "请输入姓名"
 
 #: components/cruises_booking_old/reward-points-step.vue
 msgid "Please add the inCruises members that will be a part of this booking:"
@@ -16803,6 +17071,12 @@ msgstr "请输入姓名"
 #: pages/account-recovery.vue
 msgid "Please enter a new password to initiate the account recovery process:"
 msgstr "请您输入新密码以启动账户恢复流程："
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Please enter a name"
+msgid "Please enter a subject"
+msgstr "请输入姓名"
 
 #: components/cruises_booking/passenger_info_step.vue
 msgid "Please enter a valid 5 digit zip code."
@@ -17031,6 +17305,12 @@ msgstr ""
 msgid "Please redo the wrong answers using the questions menu"
 msgstr "請使用問題菜單重做錯誤的答案"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Please reload the page and try again."
+msgid "Please reload the page"
+msgstr "请刷新页面，然后再试一次。"
+
 #: pages/info_center.vue
 msgid "Please reload the page and try again."
 msgstr "请刷新页面，然后再试一次。"
@@ -17181,6 +17461,12 @@ msgstr "请选择传输类型"
 msgid "Please select an annual income"
 msgstr "請選擇年收入"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Please select at least one rank"
+msgid "Please select at least one option."
+msgstr "请至少选择一个等级"
+
 #: components/inchat/user/user_create_room.vue
 msgid "Please select at least one rank"
 msgstr "请至少选择一个等级"
@@ -17200,6 +17486,12 @@ msgstr "請選擇船艙"
 #: pages/support.vue components/support/AdminCreateTicket.vue
 msgid "Please select department"
 msgstr "请选择部门"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Please select a plan to continue."
+msgid "Please select how you want to upload contacts"
+msgstr "请选择一个计划以继续。"
 
 #: components/inchat/user/user_create_room.vue
 msgid "Please select jpg, png files..."
@@ -17404,7 +17696,7 @@ msgid "Português"
 msgstr "葡萄牙"
 
 #: pages/all_in.vue pages/communications.vue pages/invite.vue
-#: pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Portuguese"
@@ -17524,8 +17816,8 @@ msgstr ""
 "美元的团队领导奖金！"
 
 #: components/feature_card.vue pages/downgrade.vue pages/subscriptions.vue
-#: pages/upgrade.vue components/welcome/members-modal.vue
-#: pages/public/pricing.vue
+#: pages/upgrade.vue components/contacts/contact-edit-modal.vue
+#: components/welcome/members-modal.vue pages/public/pricing.vue
 msgid "Premium"
 msgstr "Premium"
 
@@ -18350,6 +18642,18 @@ msgstr "最近的邀請"
 msgid "Recipient"
 msgstr "收件人"
 
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Recipient Card details"
+msgid "Recipient added."
+msgstr "收款人卡详细信息"
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Recipient Card details"
+msgid "Recipient already added"
+msgstr "收款人卡详细信息"
+
 #: components/payout/brightwell/review.vue
 msgid "Recipient Bank details"
 msgstr "收款银行详细信息"
@@ -18370,11 +18674,17 @@ msgstr "收件人详细信息"
 msgid "Recipient does not belong to this account. Please try again."
 msgstr "接收者不属于此账户。请再试一次。"
 
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Recipient"
+msgid "Recipient removed."
+msgstr "收件人"
+
 #: components/payout/brightwell/recipient-account-details.vue
 msgid "Recipient's Bank Details"
 msgstr "收款人银行详细信息"
 
-#: pages/email_tracking.vue
+#: components/recipients_modal.vue pages/email_tracking.vue
 msgid "Recipients"
 msgstr "收件人"
 
@@ -18464,25 +18774,30 @@ msgstr "將您帶到Ingenico頁面"
 msgid "Reference: %{ hotelbeds_reference }"
 msgstr "参考：%{ hotelbeds_reference }"
 
+#: pages/referral_activity.vue
+#, fuzzy
+#| msgid "Refereal Activity"
+msgid "Referral Activity"
+msgstr "推荐活动"
+
 #: pages/account_setup.vue pages/admin_user.vue pages/team_rankings.vue
 #: components/compensation/leadership_bonus.vue old_compensation/index.html
 msgid "Referral Link"
 msgstr "推薦鏈接"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Referral Link Compatibility"
 msgstr "推荐链接兼容性"
 
-#: components/onboarding/referral-link-step.vue
+#: pages/referral_links.vue components/onboarding/referral-link-step.vue
 msgid "Referral Link Created!"
 msgstr "推荐链接已创建！"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Referral link language"
 msgstr "推薦鏈接語言"
 
-#: pages/account_setup.vue pages/contacts.vue pages/track_results.vue
-#: track_results/index.html
+#: pages/account_setup.vue pages/track_results.vue track_results/index.html
 msgid "Referral Link:"
 msgstr "推薦鏈接："
 
@@ -18490,13 +18805,19 @@ msgstr "推薦鏈接："
 msgid "Referral Links"
 msgstr "推薦鏈接"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid ""
 "Referral links are your own personal URL to give to others to register. You "
 "will get automatic credit when anyone signs up using this link."
 msgstr ""
 "推薦鏈接是您自己的個人URL，以便其他人註冊。當有人使用此鏈接註冊時，您將獲得自"
 "動信用。"
+
+#: pages/referral_activity.vue
+#, fuzzy
+#| msgid "Referral Links"
+msgid "Referral Page Stats"
+msgstr "推薦鏈接"
 
 #: pages/admin_user.vue components/compensation/weekly_bonus.vue
 msgid "Referrer"
@@ -18537,11 +18858,12 @@ msgstr ""
 "間在我的郵輪體驗之前和/或之前/之後發生的任何事情，我不會以任何方式讓 "
 "inCruises 承擔任何責任。"
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: components/compensation/leadership_bonus.vue
+#: components/contacts/contact-edit-modal.vue old_compensation/index.html
 msgid "Region"
 msgstr "區域"
 
-#: pages/contacts.vue pages/track_results.vue track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Region:"
 msgstr "區域："
 
@@ -18625,7 +18947,7 @@ msgstr "剩余余额"
 msgid "Reminded"
 msgstr "提醒"
 
-#: pages/settings.vue
+#: components/recipients_modal.vue pages/settings.vue
 msgid "Remove"
 msgstr "消除"
 
@@ -18992,7 +19314,7 @@ msgid "Română"
 msgstr "罗马尼亚语"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Romanian"
@@ -19130,7 +19452,7 @@ msgid "Run reports"
 msgstr "运行报告"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Russian"
@@ -19198,13 +19520,15 @@ msgid "Santorini"
 msgstr "圣托里尼"
 
 #: pages/admin_department.vue pages/admin_partner_success.vue
-#: pages/admin_permission_group.vue
+#: pages/admin_permission_group.vue pages/referral_links.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
 #: components/admin_booking/tour_bookings.vue
 #: components/admin_management/admin_departments.vue
 #: components/admin_management/admin_permission_groups.vue
+#: components/contacts/contact-edit-modal.vue
+#: components/contacts/export-contacts.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue components/user/departments.vue
 #: components/payout/brightwell/recipient-account.vue
@@ -19262,6 +19586,12 @@ msgstr "搜索船舱"
 msgid "Search Columns"
 msgstr "搜索列"
 
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Sengrid Contacts"
+msgid "Search Contacts"
+msgstr "Sendgrid联系人"
+
 #: resources/index.html
 msgid "Search Documents.."
 msgstr "搜索文件.."
@@ -19278,7 +19608,7 @@ msgstr "搜索船艙"
 msgid "Search for Member"
 msgstr "搜索会员"
 
-#: pages/contacts.vue components/translations/placeholders.vue
+#: components/translations/placeholders.vue
 msgid "Search for Names or Emails"
 msgstr "搜索姓名或電子郵件."
 
@@ -19550,12 +19880,30 @@ msgstr "選擇子類別"
 msgid "Select Subscription"
 msgstr "选择订阅"
 
+#: components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "Select state"
+msgid "Select tag"
+msgstr "选择州"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Select"
+msgid "Select Tag"
+msgstr "选择"
+
 #: pages/hotel_booking.vue
 msgid "Select the balance you want to use"
 msgstr "选择您希望使用的余额"
 
 #: notification_settings/index.html
 msgid "Select the emails you wish to receive."
+msgstr "選擇您希望收信的電子郵件。"
+
+#: components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "Select the emails you wish to receive."
+msgid "Select the information you would like to export:"
 msgstr "選擇您希望收信的電子郵件。"
 
 #: pages/team_rankings.vue
@@ -19625,7 +19973,7 @@ msgstr "旅行賣家"
 msgid "Seller:"
 msgstr "賣方："
 
-#: pages/reports.vue reports/index.html
+#: pages/inviter.vue pages/reports.vue reports/index.html
 msgid "Send"
 msgstr "發送"
 
@@ -19649,6 +19997,12 @@ msgstr "直接向您的某個聯繫人發送邀請。"
 msgid "Send Birthday Email"
 msgstr "發送生日電子郵件"
 
+#: pages/referral_links.vue
+#, fuzzy
+#| msgid "Send Invite"
+msgid "Send email invite"
+msgstr "發送邀請"
+
 #: pages/facebook_marketing.vue
 msgid "Send Facebook Post to Friends"
 msgstr "给朋友發送Facebook帖子"
@@ -19661,7 +20015,7 @@ msgstr "發送邀請"
 msgid "Send Invite"
 msgstr "發送邀請"
 
-#: apps/index.html
+#: pages/referral_links.vue apps/index.html
 msgid "Send Invites"
 msgstr "发送邀请"
 
@@ -19672,6 +20026,10 @@ msgstr "發信息"
 #: components/payout/brightwell/recipient-account.vue
 msgid "Send money"
 msgstr "汇款"
+
+#: pages/referral_links.vue
+msgid "Send personalized emails and invite people to join InCruises."
+msgstr ""
 
 #: pages/facebook_marketing.vue
 msgid "Send Private Invitation"
@@ -19685,6 +20043,12 @@ msgid ""
 msgstr ""
 "向您的朋友發送私人邀請。如果他們點擊並註冊，您將自動獲得信用。您可以發送任意"
 "數量的邀請。"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Send money"
+msgid "Send reminder"
+msgstr "汇款"
 
 #: pages/multi_factor.vue
 msgid "Send SMS"
@@ -19760,7 +20124,7 @@ msgstr "上個月高級團隊負責人"
 msgid "Senior Team Leader This Month"
 msgstr "本月高級團隊負責人"
 
-#: pages/contacts.vue pages/email_tracking.vue
+#: pages/email_tracking.vue
 msgid "Sent"
 msgstr "已發送"
 
@@ -19877,13 +20241,27 @@ msgstr "Share capital:：根據另一州法律註冊成立的公司"
 msgid "Share Qr Code"
 msgstr "分享二维码"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Share your"
 msgstr "分享你的"
 
 #: pages/all_in.vue
 msgid "Share your events on social media using the hashtags:"
 msgstr "使用主题标签在社交媒体上分享您的活动："
+
+#: pages/contacts.vue
+msgid "Share your InCruise Journey"
+msgstr ""
+
+#: components/contacts/mass-contact-modal.vue
+msgid "Share Your InCruises Journey"
+msgstr ""
+
+#: pages/referral_links.vue
+#, fuzzy
+#| msgid "Set Your Referral Link"
+msgid "Share your referral link"
+msgstr "设置您的推荐链接"
 
 #: components/inchat/user_actions.vue
 msgid "Shared Files"
@@ -19935,6 +20313,12 @@ msgstr "显示全部"
 #: pages/reward_points.vue
 msgid "Show balance"
 msgstr "显示余额"
+
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Contacts"
+msgid "Show Contacts"
+msgstr "聯繫人"
 
 #: hidden/hidden.html
 msgid "Show conversion always?"
@@ -20032,7 +20416,7 @@ msgstr "註冊"
 msgid "Signed Up Users"
 msgstr "已注册用户"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Signups"
 msgstr "註冊"
 
@@ -20202,11 +20586,18 @@ msgstr ""
 msgid "Something was wrong"
 msgstr "出了點問題"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Something went wrong, please try again."
+msgid "Something went wrong assigning tags. Please try again."
+msgstr "发生错误。请再试。"
+
 #: components/won_50_rp.vue pages/claim_free_rp.vue
 msgid "Something went wrong please reload the page."
 msgstr "出了些问题，请刷新页面。"
 
-#: pages/import.vue components/onboarding/import-contacts.vue
+#: pages/contacts.vue pages/import.vue
+#: components/onboarding/import-contacts.vue
 msgid "Something went wrong submitting your request, please try again."
 msgstr "提交您的请求时出错，请重试。"
 
@@ -20257,7 +20648,7 @@ msgid "South America"
 msgstr "南美洲"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Spanish"
@@ -20294,6 +20685,10 @@ msgstr "贊助商"
 #: pages/reports.vue reports/index.html
 msgid "Sponsor / Upline"
 msgstr "贊助商/上線"
+
+#: pages/referral_activity.vue
+msgid "Spread the word, start growing your referrals now!"
+msgstr ""
 
 #: pages/email_address.vue
 msgid "SSL"
@@ -20345,8 +20740,8 @@ msgid "Start:"
 msgstr "開始："
 
 #: components/feature_card.vue pages/downgrade.vue pages/subscriptions.vue
-#: pages/upgrade.vue components/welcome/members-modal.vue
-#: pages/public/pricing.vue
+#: pages/upgrade.vue components/contacts/contact-edit-modal.vue
+#: components/welcome/members-modal.vue pages/public/pricing.vue
 msgid "Starter"
 msgstr "Starter"
 
@@ -20461,7 +20856,13 @@ msgstr ""
 msgid "Stats"
 msgstr "統計數據"
 
-#: pages/contacts.vue pages/invoices_new.vue pages/negative_balances.vue
+#: components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "Status"
+msgid "status"
+msgstr "狀態"
+
+#: pages/invoices_new.vue pages/negative_balances.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/recurring_income_levels.vue
@@ -20506,7 +20907,7 @@ msgstr "停止显示"
 msgid "Stop Showing Archived"
 msgstr "停止显示归档内容"
 
-#: pages/contacts.vue pages/track_results.vue track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Street Address:"
 msgstr "街道地址："
 
@@ -20518,9 +20919,9 @@ msgstr "小计"
 msgid "Subcategories"
 msgstr "子類別"
 
-#: pages/email.vue pages/email_tracking.vue pages/notifications.vue
-#: pages/support.vue components/support/AdminCreateTicket.vue
-#: email_notifications/index.html
+#: pages/email.vue pages/email_tracking.vue pages/inviter.vue
+#: pages/notifications.vue pages/support.vue
+#: components/support/AdminCreateTicket.vue email_notifications/index.html
 msgid "Subject"
 msgstr "主題"
 
@@ -20561,6 +20962,12 @@ msgstr "提交像素編號"
 msgid "Submit Ticket"
 msgstr "提交票證"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Subscriptions"
+msgid "Subscription"
+msgstr "訂閱"
+
 #: components/recurring/add-recurring.vue
 #: components/recurring/recurring-cards.vue
 msgid "Subscription Agreement"
@@ -20582,6 +20989,18 @@ msgstr "成功"
 msgid "Successful Growth"
 msgstr "成功的成長"
 
+#: components/referral_activity/activity_table.vue
+#, fuzzy
+#| msgid "Successful Growth"
+msgid "Successful Referrals"
+msgstr "成功的成長"
+
+#: pages/referral_activity.vue
+#, fuzzy
+#| msgid "Access Resources"
+msgid "Successful Referrals Source"
+msgstr "访问资源"
+
 #: pages/account_setup.vue
 msgid "Successfully created your email address."
 msgstr "成功創建您的電子郵件地址。"
@@ -20599,7 +21018,7 @@ msgstr "已成功更新用户权限。"
 msgid "Successfully updated your display name."
 msgstr "成功更新您的顯示名稱。"
 
-#: pages/email_address.vue pages/referral_links.vue
+#: pages/email_address.vue pages/referral_links_old.vue
 msgid "Suggestions"
 msgstr "建議"
 
@@ -20658,7 +21077,29 @@ msgstr "符号"
 msgid "tab"
 msgstr "标签"
 
-#: pages/reports.vue
+#: pages/contacts.vue components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "Tags"
+msgid "Tag"
+msgstr "标签"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Card Added"
+msgid "Tag added"
+msgstr "卡片已添加"
+
+#: components/contacts/tags-modal.vue
+msgid "Tag Label"
+msgstr ""
+
+#: components/contacts/tags-modal.vue
+#, fuzzy
+#| msgid "Management"
+msgid "Tag Management"
+msgstr "管理"
+
+#: pages/contacts.vue pages/reports.vue components/contacts/export-contacts.vue
 msgid "Tags"
 msgstr "标签"
 
@@ -21180,6 +21621,12 @@ msgstr ""
 "比较必须针对完全相同的邮轮：相同的日期、客人的数量和年龄、促销套餐、客舱类"
 "别、甲板和位置。"
 
+#: components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "Passenger information saved successfully."
+msgid "The contact information has been saved successfully."
+msgstr "乘客信息保存成功。"
+
 #: components/cruises_booking/protection_step.vue
 msgid ""
 "The cost of this protection is non-refundable. Only redeemed reward points "
@@ -21279,7 +21726,8 @@ msgid ""
 "The following travel prizes will be awarded to the top eligible point "
 "earners in the following rank divisions during PHASE 1 (January 1 – March "
 "31, 2025) of GLS-X"
-msgstr "在GLS-X第一阶段（2025年1月1日至3月31日）期间，将向以下等级组别中符合资格的积"
+msgstr ""
+"在GLS-X第一阶段（2025年1月1日至3月31日）期间，将向以下等级组别中符合资格的积"
 "分最高者颁发以下旅行奖品"
 
 #: pages/giving_society.vue
@@ -21640,7 +22088,7 @@ msgstr ""
 "這次旅行有一位年長乘客，但您在一開始沒有指定年長折扣。 請重新開始並指定年長折"
 "扣。"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "There is currently no data on this page at this time."
 msgstr "目前此頁面上沒有數據。"
 
@@ -22347,6 +22795,12 @@ msgstr "這是在過去 6 個月內賺取佣金的合作夥伴總數。"
 msgid "This is to certify that"
 msgstr "這是為了證明"
 
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "This is not legal advice."
+msgid "This is your email preview."
+msgstr "這不是法律建議。"
+
 #: pages/cruises_booking.vue pages/cruises_booking_old.vue
 #: pages/hotel_booking.vue
 msgid "This member is already added."
@@ -22449,6 +22903,12 @@ msgstr ""
 #: components/data_table/empty_table.vue
 msgid "This table has no data yet."
 msgstr "此表尚无数据。"
+
+#: components/contacts/tags-modal.vue
+msgid ""
+"This tag is linked to %{tagCount}  contacts. Deleting it will remove the "
+"association for all of them. are you sure you want to delete this tag?"
+msgstr ""
 
 #: components/support/TicketViewer.vue
 msgid "This ticket is currently being viewed by <u>{{ agent_name }}</u>"
@@ -22656,6 +23116,12 @@ msgstr "在您當地時區顯示的時間。"
 msgid "Times may vary but we estimate the funds will be available within"
 msgstr "时间可能会有所不同，但我们估计资金将在"
 
+#: LayoutTopBar.vue
+#, fuzzy
+#| msgid "Title"
+msgid "title"
+msgstr "標題"
+
 #: pages/admin_partner_success.vue pages/admin_user.vue
 #: pages/banner_tracking.vue pages/builders_base.vue pages/gls_winners.vue
 #: pages/glsx.vue pages/new_ranks.vue pages/partner_success.vue
@@ -22694,7 +23160,7 @@ msgstr "TMT 财务保护"
 msgid "to"
 msgstr "至"
 
-#: components/support/TicketViewer.vue
+#: pages/inviter.vue components/support/TicketViewer.vue
 msgid "To"
 msgstr "目的地"
 
@@ -23012,6 +23478,10 @@ msgstr "顶级合作伙伴"
 msgid "Top Producers"
 msgstr "最佳制作人"
 
+#: pages/referral_activity.vue
+msgid "Top Successful Referrals By Country"
+msgstr ""
+
 #: pages/hotels.vue
 msgid "total"
 msgstr "合計"
@@ -23062,6 +23532,12 @@ msgstr "总余额"
 #: receipts/team_residual_bonus_statement.html
 msgid "Total Comp."
 msgstr "總報酬。"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Map Contacts"
+msgid "Total Contacts"
+msgstr "聯繫人地圖"
 
 #: components/payout/brightwell/review.vue
 #: components/payout/brightwell/transfer-details.vue
@@ -23583,7 +24059,7 @@ msgid "Type your questions or comment and press 'enter'."
 msgstr "輸入您的問題或評論，然後按“輸入”。"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Ukrainian"
@@ -23706,7 +24182,7 @@ msgstr "未使用的奖励积分"
 msgid "Upcoming Booking!"
 msgstr "即将预订！"
 
-#: components/admin_booking/admin_cruise_featured.vue
+#: pages/inviter.vue components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/user/user_notes.vue
 msgid "Update"
@@ -23715,6 +24191,12 @@ msgstr "更新"
 #: components/admin_operations/modals/kyc_flagged_modal.vue
 msgid "Update Customer"
 msgstr "客户更新"
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Send Private Invitation"
+msgid "update Invitation Type"
+msgstr "發送私人邀請"
 
 #: components/recurring/confirm-recurring.vue
 msgid "Update Later"
@@ -23947,7 +24429,7 @@ msgstr "使用該密碼和以下設置訪問您的電子郵件帳戶。"
 msgid "Use Wallet Balance"
 msgstr "使用钱包余额"
 
-#: components/onboarding/referral-link-step.vue
+#: pages/referral_links.vue components/onboarding/referral-link-step.vue
 msgid ""
 "Use your personalized referral link in social media, blogs, and emails you "
 "send using your email service. When someone clicks on one of your links, and "
@@ -24019,6 +24501,45 @@ msgstr "用户"
 #: components/inchat/list_modals/users_room_list_modal.vue
 msgid "Users in Room"
 msgstr "房间内的用户"
+
+#: pages/referral_activity.vue
+msgid ""
+"Users who have registered on inCruises through your link listed by countries."
+msgstr ""
+
+#: pages/referral_activity.vue
+msgid ""
+"Users who have registered on inCruises through your link listed by referral "
+"type."
+msgstr ""
+
+#: pages/referral_activity.vue
+msgid ""
+"Users who have registered on inCruises through your link listed by "
+"subscription type."
+msgstr ""
+
+#: components/widgets/stats.vue
+msgid ""
+"Users who have registered with inCruises either with a free or an upgraded "
+"account through your link."
+msgstr ""
+
+#: components/widgets/stats.vue
+msgid ""
+"Users who have registered with inCruises with a membership plan through your "
+"link."
+msgstr ""
+
+#: components/widgets/stats.vue
+msgid ""
+"Users who have registered with inCruises with a partnership plan through "
+"your link."
+msgstr ""
+
+#: components/widgets/stats.vue
+msgid "Users who have seen our website through your link."
+msgstr ""
 
 #: pages/reports.vue reports/index.html
 msgid "Users with Pending Invoices"
@@ -24141,7 +24662,7 @@ msgstr "视频演示来自："
 msgid "Video, Images, and Other Links"
 msgstr "視頻，圖像和其他鏈接"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "video!"
 msgstr "视频！"
 
@@ -24162,11 +24683,15 @@ msgstr "查看全部"
 msgid "View all of your notifications."
 msgstr "查看您的所有通知。"
 
+#: components/widgets/stats.vue
+msgid "View all statistics related to the activity of your referral links."
+msgstr ""
+
 #: pages/menu_page.vue
 msgid "View all the negative wallet balances of your downline Partners."
 msgstr "查看您的下線合作夥伴的所有負錢包餘額。"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "View Analytics"
 msgstr "查看分析"
 
@@ -24248,9 +24773,8 @@ msgstr "查看在意大利開展業務的意大利銷售徽章。"
 msgid "View List"
 msgstr "查看清单"
 
-#: pages/contacts.vue pages/notifications.vue pages/team_rankings.vue
-#: pages/track_results.vue components/media/media_list.vue
-#: track_results/index.html
+#: pages/notifications.vue pages/team_rankings.vue pages/track_results.vue
+#: components/media/media_list.vue track_results/index.html
 msgid "View More"
 msgstr "查看更多"
 
@@ -24299,7 +24823,7 @@ msgstr "查看贊助商"
 msgid "View Testimonial Script"
 msgstr "會員評價"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "View Total Analytics"
 msgstr "查看總分析"
 
@@ -24337,7 +24861,7 @@ msgstr "查看您的可用獎勵積分餘額。"
 msgid "Viewing %{bookingId} book response"
 msgstr "查看 %{bookingId} 图书回复"
 
-#: pages/referral_links.vue components/widgets/stats.vue
+#: pages/referral_links_old.vue components/widgets/stats.vue
 msgid "Views"
 msgstr "觀看次數"
 
@@ -24984,6 +25508,12 @@ msgstr "什麼是inCruises Duplicator？"
 msgid "What makes your booking ineligible for a price match?"
 msgstr "什么情况下您的预订不符合价格匹配条件？"
 
+#: pages/welcome.vue
+#, fuzzy
+#| msgid "Whatsapp #"
+msgid "What's new"
+msgstr "Whatsapp #"
+
 #: pages/reports.vue
 msgid "Whatsapp #"
 msgstr "Whatsapp #"
@@ -25296,6 +25826,7 @@ msgstr "永同邑，韓國"
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/partner_code_of_conduct_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
+#: components/contacts/contact-edit-modal.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -26544,7 +27075,7 @@ msgstr "您的直接介紹人"
 msgid "Your Direct Partner's Activations"
 msgstr "您的直接合作伙伴的激活情况"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Your Direct Referral Links"
 msgstr "您的直接推薦鏈接"
 
@@ -26591,6 +27122,12 @@ msgstr "跟蹤您的電子郵件"
 #: components/public/JoinModal.vue pages/public/signup.vue
 msgid "Your emails don't match, please fix and try again."
 msgstr "您的電子郵件不匹配，請修改並重試。"
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "You've been invited to inCruises® by"
+msgid "Your Exclusive Invitation to Join inCruises®"
+msgstr "您已受邀參加 inCruises®"
 
 #: components/payout/payquicker-ita-withdraw.vue
 #: components/payout/payquicker-withdraw.vue
@@ -26866,7 +27403,7 @@ msgstr "您使用的积分超出了允许的数量。"
 msgid "Your VAT number has been successfully updated."
 msgstr "您的VAT号码已经成功更新。"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Your Video Referral Links"
 msgstr "您的視頻引薦鏈接"
 
@@ -37638,6 +38175,30 @@ msgstr "与Costa代表一起的团队邮轮活动"
 msgid "Group Cruise in Asia onboard Bellissima"
 msgstr "在亚洲乘坐Bellissima号的团队邮轮活动"
 
+#~ msgid "<i class=\"fe fe-mail mr-1\"/> Send Invitation"
+#~ msgstr "<i class=\"fe fe-mail mr-1\"/> 发送邀请"
+
+#~ msgid "Completed Invites"
+#~ msgstr "完成的邀請"
+
+#~ msgid "Imported Contacts"
+#~ msgstr "導入的聯繫人"
+
+#~ msgid "Language:"
+#~ msgstr "語言:"
+
+#~ msgid "Next Billing Date:"
+#~ msgstr "下一個結算日期:"
+
+#~ msgid "Opened!"
+#~ msgstr "公开的！"
+
+#~ msgid "Partner:"
+#~ msgstr "合作夥伴:"
+
+#~ msgid "Pending Invites"
+#~ msgstr "等待邀請"
+
 #~ msgid "<strong>Air Allowance:</strong> Available for certain ranks"
 #~ msgstr "<strong>航班津贴：</strong>仅适用于某些级别"
 
@@ -37838,15 +38399,8 @@ msgstr "在亚洲乘坐Bellissima号的团队邮轮活动"
 #~ msgid "Become an Active Partner by referring 1 direct Member this month."
 #~ msgstr "<i class=\"fa fa-square-o\"></i>通過推薦3位直接會員成為合作夥伴."
 
-#~ msgid ""
-#~ "Book Last Minute INcredible Costa Cruise Offers and Travel This Season!"
-#~ msgstr "预订超值Costa邮轮限时优惠，享受这个季节的完美旅行！"
-
 #~ msgid "Get In, Book now!"
 #~ msgstr "入住，立即预订！"
-
-#~ msgid "Mercy Ships Fundraiser"
-#~ msgstr "Mercy Ships 筹款活动"
 
 #~ msgid ""
 #~ "This cruise has a mandatory gratuity (also known as Hotel Service "
@@ -42050,9 +42604,6 @@ msgstr "在亚洲乘坐Bellissima号的团队邮轮活动"
 #~ msgid "Accepted Invitations"
 #~ msgstr "接受的邀請"
 
-#~ msgid "Available Invitations"
-#~ msgstr "可用邀請"
-
 #~ msgid "I have watched the video"
 #~ msgstr "我已經觀看過這個視頻"
 
@@ -42222,9 +42773,6 @@ msgstr "在亚洲乘坐Bellissima号的团队邮轮活动"
 #~ "利用这些限时优惠，预订未来几天或几周内出发的游轮。 这些航行让您可以看到更"
 #~ "多的世界，并使用比以往更多的奖励积分，同时获得更多的船上积分，让您的\n"
 #~ "\t\t\t\t\t\t\t\t\t下次假期更难忘。"
-
-#~ msgid "Personal QBI"
-#~ msgstr "Personal QBI"
 
 #~ msgid ""
 #~ "%{ name }, download our app to import more contacts, start chatting with "
@@ -45466,9 +46014,6 @@ msgstr "在亚洲乘坐Bellissima号的团队邮轮活动"
 #~ msgid "Conversions"
 #~ msgstr "會話"
 
-#~ msgid "Invites"
-#~ msgstr "邀請"
-
 #~ msgid "Territory Director - Europe"
 #~ msgstr "區域總監- 歐洲"
 
@@ -48578,9 +49123,6 @@ msgstr "在亚洲乘坐Bellissima号的团队邮轮活动"
 #~ msgstr ""
 #~ "為了創建電子錢包，您必須已經通過銷售獲得報酬。完成後，您可以創建電子錢包帳"
 #~ "戶。"
-
-#~ msgid "Map Contacts"
-#~ msgstr "聯繫人地圖"
 
 #~ msgid "Not Invited Top"
 #~ msgstr "没有邀请Top"

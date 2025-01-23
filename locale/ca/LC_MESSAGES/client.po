@@ -54,7 +54,7 @@ msgstr " Membre "
 
 #: components/accordion-v2.vue pages/claim_free_rp.vue pages/courses.vue
 #: pages/intours_details.vue components/checkout/ProcessorNetcents.vue
-#: components/reservations/tour-details.vue
+#: components/reservations/tour-details.vue components/widgets/PieChart.vue
 msgid "_ctx"
 msgstr "_ctx"
 
@@ -716,6 +716,12 @@ msgstr ""
 "{{ requirePassengerNames ? 'Convidats addicionals requerits' : 'Convidats "
 "addicionals (Optional)' }}"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "{{ course.description }}"
+msgid "{{ selectedContact.subscription }}"
+msgstr "{{ course.description }}"
+
 #: pages/builders_base.vue
 msgid "{{ selectedMonth }} Base Builders"
 msgstr "{{ selectedMonth }} Constructors de Base"
@@ -1099,6 +1105,12 @@ msgstr "%{sellingRate} per nit"
 msgid "%{startDate} to %{endDate}"
 msgstr "%{startDate} de %{endDate}"
 
+#: components/contacts/mass-contact-modal.vue
+msgid ""
+"%{total1} out of %{total2} selected contacts have already been invited. "
+"Please select how you would like to continue."
+msgstr ""
+
 #: pages/admin_department.vue pages/admin_permission_group.vue
 msgid "+ Add Admins"
 msgstr "+ Afegir Administradors"
@@ -1445,7 +1457,7 @@ msgstr "<i class=\"fal fa-ticket-alt mr-1\"/> Registrat Ara"
 msgid "<i class=\"fal fa-ticket-alt mr-1\"/> Remove Registration"
 msgstr "<i class=\"fal fa-ticket-alt mr-1\"/> Eliminar Registre"
 
-#: pages/account_setup.vue
+#: pages/account_setup.vue pages/import.vue
 msgid "<i class=\"far fa-address-book mr-1\"/> Begin Import"
 msgstr "<i class=\"far fa-address-book mr-1\"/> Comença a importar"
 
@@ -1534,10 +1546,6 @@ msgstr ""
 #: components/global_convention/event_info.vue
 msgid "<i class=\"fe fe-link\"/> Visit Event Link"
 msgstr "<i class=\"fe fe-link\"/> Visita l’enllaç d’esdeveniments"
-
-#: pages/contacts.vue
-msgid "<i class=\"fe fe-mail mr-1\"/> Send Invitation"
-msgstr "<i class=\"fe fe-mail mr-1\"/> Enviar invitació"
 
 #: components/support/TicketViewer.vue
 msgid "<i class=\"fe fe-message-circle\"/> Comment"
@@ -2877,15 +2885,15 @@ msgstr "Acció"
 
 #: pages/admin_account_recovery.vue pages/admin_certificates.vue
 #: pages/admin_restricted_paybonus.vue pages/certificates.vue
-#: pages/contacts.vue pages/invoices_new.vue pages/negative_balances.vue
-#: pages/reports.vue components/admin_booking/admin_cruise_featured.vue
+#: pages/invoices_new.vue pages/negative_balances.vue pages/reports.vue
+#: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/admin_finance/payment_fulfillment.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/recurring_income_levels.vue
-#: components/compensation/statements.vue
+#: components/compensation/statements.vue components/data_table/table.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue certificates/index.html
 #: certificates/view.html old_compensation/index.html reports/index.html
@@ -3043,6 +3051,7 @@ msgstr "Activitats"
 msgid "Activities found"
 msgstr "S'han trobat activitats"
 
+#: components/recipients_modal.vue pages/contacts.vue
 #: components/inchat/user_room_actions.vue components/user/user_notes.vue
 #: components/inchat/search/search-people.vue
 msgid "Add"
@@ -3095,7 +3104,7 @@ msgstr "Afegir Targeta"
 msgid "Add card information for recurring payments."
 msgstr "Afegeix informació de la targeta per a pagaments recurrents."
 
-#: apps/index.html
+#: pages/contacts.vue apps/index.html
 msgid "Add Contacts"
 msgstr "Afegir Contactes"
 
@@ -3133,6 +3142,12 @@ msgstr "Afegir un Membre"
 msgid "Add Members to your Booking"
 msgstr "Afegeix Membres a la teva Reserva."
 
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Add New"
+msgid "Add new"
+msgstr "Afegir Nou"
+
 #: components/data_table/create_widget.vue
 msgid "Add New"
 msgstr "Afegir Nou"
@@ -3140,6 +3155,10 @@ msgstr "Afegir Nou"
 #: components/user/user_notes.vue
 msgid "Add Note"
 msgstr "Afegir nota"
+
+#: pages/contacts.vue components/contacts/contact-edit-modal.vue
+msgid "Add notes about this contact"
+msgstr ""
 
 #: components/recurring/recurring-cards.vue
 msgid "Add Payment method"
@@ -3156,6 +3175,12 @@ msgstr "Afegir grups de permisos"
 #: pages/checkout.vue
 msgid "Add Promotion Code"
 msgstr "Afegeix el Codi Promocional"
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Recipients"
+msgid "Add recipients"
+msgstr "Destinataris"
 
 #: components/navigation/add-recurring-notice.vue
 msgid "Add Recurring Billing"
@@ -3271,6 +3296,7 @@ msgstr ""
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 #: components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
+#: components/contacts/contact-edit-modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/onboarding/address-step.vue
 #: components/receipts/italian_receipt.vue old_compensation/index.html
@@ -3513,7 +3539,7 @@ msgstr "Totes les destinacions"
 msgid "All Documents"
 msgstr "Tots els Documents"
 
-#: pages/support.vue components/support/AdminCreateTicket.vue
+#: pages/inviter.vue pages/support.vue components/support/AdminCreateTicket.vue
 msgid "All fields are required."
 msgstr "Tots els camps són obligatoris."
 
@@ -3529,6 +3555,12 @@ msgstr ""
 #: components/support/TicketViewer.vue
 msgid "All included with-in this ticket"
 msgstr "Tot inclòs dins d'aquest tiquet"
+
+#: components/referral_activity/all-invitations-table.vue
+#, fuzzy
+#| msgid "Available Invitations"
+msgid "All Invitations"
+msgstr "Invitacions disponibles"
 
 #: pages/communications.vue pages/resources.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
@@ -3618,6 +3650,12 @@ msgstr ""
 "Tots els processos i passos per a abordar això s'expliquen en el nostre "
 "document de Polítiques i Procediments que es troba en la secció de Recursos "
 "(Documents) de la nostra pàgina web (el teu Back office)."
+
+#: pages/referral_activity.vue
+#, fuzzy
+#| msgid "All Titles"
+msgid "All Time"
+msgstr "Tots els títols"
 
 #: pages/builders_base.vue
 msgid "All Titles"
@@ -3940,11 +3978,11 @@ msgstr ""
 "obtenir crèdit per la seva inscripció. Posa la teva prospecció en pilot "
 "automàtic!"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Analytics data began on 03/24/2021"
 msgstr "Les dades d’anàlisis van començar el 24/03/2021"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Analytics data is not language specific."
 msgstr "Les dades d'anàlisis no són específiques de l'idioma."
 
@@ -4096,8 +4134,8 @@ msgid "Applicant Signature"
 msgstr "Signatura del sol·licitant"
 
 #: components/filter-chip-range.vue components/month_picker.vue
-#: pages/checkout.vue pages/cruises.vue pages/intours_details.vue
-#: components/tours/intours_results.vue
+#: pages/checkout.vue pages/contacts.vue pages/cruises.vue
+#: pages/intours_details.vue components/tours/intours_results.vue
 msgid "Apply"
 msgstr "Aplicar"
 
@@ -4123,6 +4161,12 @@ msgstr "Aplicacions"
 #: components/settings_page/modify-saved-passengers.vue
 msgid "April"
 msgstr "Abril"
+
+#: components/data_table/table.vue
+#, fuzzy
+#| msgid "Archived"
+msgid "Archive"
+msgstr "Arxivat"
 
 #: pages/support.vue
 msgid "Archive Tickets"
@@ -4179,6 +4223,12 @@ msgid ""
 msgstr ""
 "Estàs segur que no desitges utilitzar el saldo del teu moneder per a pagar "
 "el saldo restant?"
+
+#: pages/inviter.vue
+msgid ""
+"Are you sure you want to change the invitation type? Doing so will overwrite "
+"all the text in the text editor. Are you sure you want to proceed?"
+msgstr ""
 
 #: pages/settings.vue
 msgid ""
@@ -4372,6 +4422,10 @@ msgid ""
 msgstr ""
 "Assigneu el nom, cognom i adreça de correu electrònic a les columnes de "
 "baix. A continuació, feu Clic a Importar"
+
+#: pages/contacts.vue
+msgid "Assign Tags"
+msgstr ""
 
 #: pages/public/leadership.vue
 msgid "Astana, Kazakhstan"
@@ -4666,8 +4720,9 @@ msgstr "b. Director nacional"
 msgid "b. Time of the Essence"
 msgstr "b. Temps de l’Essència"
 
-#: pages/courses.vue pages/cruise.vue pages/intours_details.vue
-#: pages/leadership_academy.vue pages/multi_factor.vue pages/settings.vue
+#: pages/contacts.vue pages/courses.vue pages/cruise.vue pages/import.vue
+#: pages/intours_details.vue pages/leadership_academy.vue
+#: pages/multi_factor.vue pages/settings.vue
 #: components/agreements/italian_agreement.vue
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
@@ -5123,6 +5178,12 @@ msgstr "RESERVA I NAVEGA EN CREUER SOTA EL TEU PROPI RISC"
 #: pages/cruise_old.vue
 msgid "Book Cruise"
 msgstr "Reservar un creuer"
+
+#: pages/welcome.vue
+msgid "Book Last Minute INcredible Costa Cruise Offers and Travel This Season!"
+msgstr ""
+"Reserva, ofertes de creuers Costa d'última hora INcreïbles i viatja aquesta "
+"Temporada!"
 
 #: pages/hotels_details.vue components/tours/details/available-plans.vue
 msgid "Book now"
@@ -5695,11 +5756,11 @@ msgstr ""
 msgid "Can only be between 1 and 20 characters long."
 msgstr "Només pot tenir entre 1 i 20 caràcters de longitud."
 
-#: pages/account_setup.vue pages/referral_links.vue
+#: pages/account_setup.vue pages/referral_links_old.vue
 msgid "Can only be between 3 and 20 characters long."
 msgstr "Només pot tenir entre 3 i 20 caràcters de longitud."
 
-#: components/onboarding/email-address-step.vue
+#: pages/referral_links.vue components/onboarding/email-address-step.vue
 #: components/onboarding/referral-link-step.vue
 msgid "Can only contain letters (A-Z and a-z), numbers (0-9), and dashes (-)"
 msgstr "Només pot contenir lletres (A-Z i a-z), números (0-9) i guions (-)."
@@ -5712,7 +5773,7 @@ msgstr ""
 "Només pot contenir lletres (A-Z i a-z), números (0-9), guions (-), guions "
 "baixos (_) i punts (.)."
 
-#: pages/account_setup.vue pages/referral_links.vue
+#: pages/account_setup.vue pages/referral_links_old.vue
 msgid "Can only contain letters (A-Z and a-z), numbers (0-9), dashes (-)."
 msgstr "Només pot contenir lletres (A-Z i a-z), números (0-9), guions (-)."
 
@@ -5725,11 +5786,13 @@ msgid "Canada/New England"
 msgstr "Canada/New England"
 
 #: components/fast-growing-legs.vue components/month_picker.vue
-#: pages/admin_department.vue pages/admin_permission.vue
-#: pages/admin_permission_group.vue pages/checkout.vue pages/connect.vue
+#: components/recipients_modal.vue pages/admin_department.vue
+#: pages/admin_permission.vue pages/admin_permission_group.vue
+#: pages/checkout.vue pages/connect.vue pages/contacts.vue
 #: pages/cruises_booking_old.vue pages/email.vue pages/intours_details.vue
-#: pages/invoices.vue pages/invoices_new.vue pages/reports.vue
-#: pages/settings.vue components/admin_booking/admin_cruise_featured.vue
+#: pages/inviter.vue pages/invoices.vue pages/invoices_new.vue
+#: pages/referral_links.vue pages/reports.vue pages/settings.vue
+#: components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_update.vue
 #: components/admin_management/admin_departments.vue
@@ -5740,6 +5803,9 @@ msgstr "Canada/New England"
 #: components/agreements/partner_code_of_conduct_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
 #: components/booking/add-cd-user.vue
+#: components/contacts/contact-edit-modal.vue
+#: components/contacts/export-contacts.vue
+#: components/contacts/mass-contact-modal.vue
 #: components/cruises_booking/reward_points_step.vue
 #: components/cruises_booking_old/confirmation-step.vue
 #: components/onboarding/name-birthday-avatar-step.vue
@@ -5873,7 +5939,7 @@ msgid "Català"
 msgstr "Català"
 
 #: pages/communications.vue pages/facebook_marketing.vue pages/invite.vue
-#: pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Catalan"
@@ -5963,7 +6029,7 @@ msgstr "Opcions per al nom al certificat"
 msgid "Certificates"
 msgstr "Certificats"
 
-#: pages/email_address.vue pages/referral_links.vue
+#: pages/email_address.vue pages/referral_links_old.vue
 msgid "Change"
 msgstr "Canviar"
 
@@ -5983,6 +6049,12 @@ msgstr "Canviar contrasenya"
 msgid "Change Subscription"
 msgstr "Canviar Subscripció"
 
+#: components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "User locked successfully"
+msgid "Changes Saved Successfully"
+msgstr "Usuari bloquejat correctament"
+
 #: pages/cruise_price_match_guarantee.vue
 msgid "Chartered sailings"
 msgstr "Sortides xàrter"
@@ -5999,6 +6071,12 @@ msgstr "Registre d'entrada"
 #: pages/hotel_booking.vue
 msgid "Check in:"
 msgstr "Registre d'entrada:"
+
+#: components/news-modal.vue
+#, fuzzy
+#| msgid "Check Out"
+msgid "Check It Out"
+msgstr "Comprovar la sortida"
 
 #: pages/welcome.vue
 msgid "Check it out!"
@@ -6109,13 +6187,13 @@ msgid "Children:"
 msgstr "Nens:"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Chinese"
 msgstr "Xinès"
 
-#: pages/email_address.vue pages/referral_links.vue
+#: pages/email_address.vue pages/referral_links_old.vue
 msgid "Choose"
 msgstr "Tria"
 
@@ -6191,6 +6269,12 @@ msgstr ""
 msgid "Choose Package"
 msgstr "Tria un paquet"
 
+#: pages/contacts.vue
+msgid ""
+"Choose the tag you would like to assign to the %{selected_users}  selected "
+"contacts."
+msgstr ""
+
 #: pages/elevate_registration.vue
 #: components/cruises_booking_old/passenger-info-step.vue
 msgid "Choose Title"
@@ -6212,7 +6296,7 @@ msgstr "Tria la teva moneda"
 msgid "Choose Your Package!"
 msgstr "Selecciona el teu paquet"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Choose your Referral Link:"
 msgstr "Tria l'enllaç de referència:"
 
@@ -6228,6 +6312,7 @@ msgstr "Ciutats Visitades"
 #: components/info-reminder.vue pages/additional_info.vue pages/settings.vue
 #: components/checkout/CardStep.vue components/checkout/ItalianStep.vue
 #: components/compensation/leadership_bonus.vue
+#: components/contacts/contact-edit-modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/onboarding/address-step.vue
 #: components/receipts/italian_receipt.vue
@@ -6237,7 +6322,7 @@ msgstr "Ciutats Visitades"
 msgid "City"
 msgstr "Ciutat"
 
-#: pages/contacts.vue pages/elevate_registration.vue pages/track_results.vue
+#: pages/elevate_registration.vue pages/track_results.vue
 #: components/checkout/CardStep.vue
 #: components/cruises_booking_old/passenger-info-step.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -6415,7 +6500,7 @@ msgstr "Configuració del Client"
 
 #: components/global-summit-reminder.vue components/tmt-modal.vue
 #: components/weekly-competition.vue pages/connect.vue pages/hotels_details.vue
-#: pages/menu_page.vue pages/referral_links.vue pages/resources.vue
+#: pages/menu_page.vue pages/referral_links_old.vue pages/resources.vue
 #: pages/welcome.vue components/compensation/info_modal.vue
 #: components/compensation/leadership_bonus.vue
 #: components/cruises_booking_old/itinerary-modal.vue
@@ -6481,6 +6566,12 @@ msgstr "Cofundador i Co-CEO"
 #: components/user/permission-group.vue components/user/permissions.vue
 msgid "Code"
 msgstr "Codi"
+
+#: components/data_table/table.vue
+#, fuzzy
+#| msgid "Clear Selections"
+msgid "Column Selection"
+msgstr "Suprimir Seleccions"
 
 #: components/data_table/column-selection-widget.vue
 msgid "Columns"
@@ -6578,14 +6669,11 @@ msgstr "Completa els detalls del passatger"
 msgid "Complete your booking before"
 msgstr "Completa la teva reserva abans de"
 
-#: pages/export.vue pages/invoices_new.vue pages/leadership_academy.vue
-#: pages/reports.vue reports/index.html
+#: pages/contacts.vue pages/export.vue pages/invoices_new.vue
+#: pages/leadership_academy.vue pages/reports.vue
+#: components/contacts/contact-edit-modal.vue reports/index.html
 msgid "Completed"
 msgstr "Completat"
-
-#: pages/contacts.vue
-msgid "Completed Invites"
-msgstr "Invitacions Completades"
 
 #: pages/invoices.vue pages/invoices_new.vue
 msgid "Completed Invoices"
@@ -6851,7 +6939,7 @@ msgstr "Consulta els detalls específics dels diferents plans de Membresia."
 msgid "Contact by Mail:"
 msgstr "Contacte per Correu:"
 
-#: pages/hotel_booking.vue
+#: pages/hotel_booking.vue components/contacts/contact-edit-modal.vue
 msgid "Contact Information"
 msgstr "Informació de contacte"
 
@@ -6867,8 +6955,21 @@ msgstr "Contacti amb Nosaltres"
 msgid "Contacts"
 msgstr "Contactes"
 
+#: components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "Group deleted successfully"
+msgid "Contacts exported successfully"
+msgstr "Grup eliminat correctament"
+
+#: pages/contacts.vue pages/import.vue
 #: components/onboarding/import-contacts.vue
 msgid "Contacts Imported"
+msgstr "Contactes Importats"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Contacts Imported"
+msgid "Contacts Imported Successfully."
 msgstr "Contactes Importats"
 
 #: components/onboarding/import-contacts.vue
@@ -6888,7 +6989,9 @@ msgstr ""
 msgid "continue"
 msgstr "Continuar"
 
-#: pages/courses.vue pages/italian_onboarding.vue pages/leadership_academy.vue
+#: pages/contacts.vue pages/courses.vue pages/import.vue
+#: pages/italian_onboarding.vue pages/leadership_academy.vue
+#: components/contacts/mass-contact-modal.vue
 #: components/onboarding/welcome-video-step.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
@@ -6905,6 +7008,12 @@ msgstr "Continua amb el Pagament"
 #: pages/intours_confirmation.vue
 msgid "Continue to checkout"
 msgstr "Continua amb el pagament"
+
+#: components/contacts/mass-contact-modal.vue
+#, fuzzy
+#| msgid "Continue at all costs."
+msgid "Continue with all selected contacts"
+msgstr "Continua a tota costa."
 
 #: components/checkout/CurrencyStep.vue components/checkout/ItalianStep.vue
 #: components/checkout/ProcessorTmt.vue
@@ -6976,15 +7085,16 @@ msgstr "Països i recompte"
 #: components/info-reminder.vue components/mercy-ship-modals.vue
 #: components/weekly-competition.vue pages/additional_info.vue
 #: pages/admin_user.vue pages/builders_base.vue pages/competition.vue
-#: pages/contacts.vue pages/giving_society.vue pages/new_ranks.vue
-#: pages/partner_success.vue pages/reach.vue pages/referral_links.vue
-#: pages/reports.vue pages/settings.vue pages/team_rankings.vue
-#: pages/track_results.vue components/checkout/ItalianStep.vue
+#: pages/giving_society.vue pages/new_ranks.vue pages/partner_success.vue
+#: pages/reach.vue pages/referral_links_old.vue pages/reports.vue
+#: pages/settings.vue pages/team_rankings.vue pages/track_results.vue
+#: components/checkout/ItalianStep.vue
 #: components/compensation/active_partner_modal.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus_preview.vue
+#: components/contacts/contact-edit-modal.vue
 #: components/onboarding/address-step.vue components/public/JoinModal.vue
 #: components/receipts/italian_receipt.vue
 #: components/settings_page/login-activity.vue pages/public/signup.vue
@@ -7017,7 +7127,7 @@ msgstr "País De Residència"
 msgid "Country of Residency:"
 msgstr "País de Residència:"
 
-#: pages/contacts.vue track_results/index.html
+#: track_results/index.html
 msgid "Country:"
 msgstr "País:"
 
@@ -7065,7 +7175,7 @@ msgstr ""
 "accidents, desastres naturals, acomiadaments, robatori de documents, "
 "fallades en el transport i molt més."
 
-#: pages/account_setup.vue pages/email_address.vue pages/referral_links.vue
+#: pages/account_setup.vue pages/email_address.vue pages/referral_links_old.vue
 msgid "Create"
 msgstr "Crea"
 
@@ -7097,6 +7207,12 @@ msgstr "Crear Cartera de pagaments"
 #: pages/invoices_new.vue
 msgid "Create Invoice"
 msgstr "Crea una factura"
+
+#: components/contacts/tags-modal.vue
+#, fuzzy
+#| msgid "Create Date"
+msgid "Create New"
+msgstr "Data de creació"
 
 #: components/payout/payoneer-withdraw.vue
 msgid "Create Payoneer Account"
@@ -7430,7 +7546,11 @@ msgstr "Correu electrònic personalitzat customemail"
 msgid "Customer Name"
 msgstr "Nom del Client"
 
-#: components/onboarding/referral-link-step.vue
+#: pages/inviter.vue
+msgid "Customize your invite"
+msgstr ""
+
+#: components/affiliate_link_url.vue pages/referral_links.vue
 msgid "customlink"
 msgstr "enllaç personalitzat customlink"
 
@@ -7499,7 +7619,7 @@ msgstr "Activacions diàries de Membres"
 msgid "Dashboard"
 msgstr "Panell de control"
 
-#: components/onboarding/referral-link-step.vue
+#: pages/referral_links.vue components/onboarding/referral-link-step.vue
 msgid ""
 "Dashes cannot be placed at the beginning, at the end, nor consecutively. (i."
 "e. ex--ample)"
@@ -7507,7 +7627,7 @@ msgstr ""
 "Els guions no es poden col·locar al principi o al final ni de manera "
 "consecutiva. (és a dir, ex--emple)"
 
-#: pages/account_setup.vue pages/referral_links.vue
+#: pages/account_setup.vue pages/referral_links_old.vue
 msgid ""
 "Dashes cannot be placed at the beginning, at the end, nor consecutively. "
 "(ie. ex--ample)."
@@ -7550,9 +7670,14 @@ msgstr "Camp de dades"
 msgid "Data Not Found"
 msgstr "Dades no trobades"
 
-#: pages/contacts.vue pages/email.vue pages/intours_details.vue
-#: pages/notifications.vue pages/reward_points.vue
-#: components/compensation/statements.vue
+#: pages/welcome.vue
+#, fuzzy
+#| msgid "data"
+msgid "data_new"
+msgstr "dades"
+
+#: pages/email.vue pages/intours_details.vue pages/notifications.vue
+#: pages/reward_points.vue components/compensation/statements.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/payout/wallet-transfers.vue
 #: components/receipts/tour_booking_receipt.vue
@@ -7564,7 +7689,13 @@ msgstr "Data"
 msgid "DATE"
 msgstr "DATA"
 
-#: pages/contacts.vue pages/receipts.vue
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Card Added"
+msgid "Date Added"
+msgstr "Targeta Afegida"
+
+#: pages/receipts.vue
 msgid "Date Ascending"
 msgstr "Data Ascendent"
 
@@ -7572,7 +7703,7 @@ msgstr "Data Ascendent"
 msgid "Date Created"
 msgstr "Data Creada"
 
-#: pages/contacts.vue pages/receipts.vue
+#: pages/receipts.vue
 msgid "Date Descending"
 msgstr "Data Descendent"
 
@@ -7753,8 +7884,7 @@ msgstr "Deduccions"
 msgid "DEFAULT"
 msgstr "PREDETERMINAT"
 
-#: pages/contacts.vue pages/email_address.vue
-#: components/admin_booking/admin_cruise_featured.vue
+#: pages/email_address.vue components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/settings_page/modify-saved-passengers.vue
 msgid "Delete"
@@ -7796,6 +7926,12 @@ msgstr "Eliminar grup de permisos"
 msgid "Delete recipient account"
 msgstr "Eliminar el compte del destinatari"
 
+#: components/contacts/tags-modal.vue
+#, fuzzy
+#| msgid "Delete Card"
+msgid "Delete Tag"
+msgstr "Suprimir Targeta"
+
 #: components/receipts/italian_receipt.vue receipts/italian_receipt.html
 msgid "Delivery Date"
 msgstr "Data d'entrega"
@@ -7807,6 +7943,12 @@ msgstr "Adreça de correu electrònic de demostració"
 #: components/navigation/demo-mode-toggle.vue
 msgid "Demo mode"
 msgstr "Mode de Demostració"
+
+#: pages/referral_links.vue
+#, fuzzy
+#| msgid "Demo referral link"
+msgid "demo referral link"
+msgstr "Enllaç de referència de demostració"
 
 #: components/onboarding/referral-link-step.vue
 msgid "Demo referral link"
@@ -8094,6 +8236,12 @@ msgstr "Directe amb Constructors pendents"
 #: pages/settings.vue
 msgid "Disable 2FA"
 msgstr "Deshabilitar 2FA"
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Disclaimer"
+msgid "Discard"
+msgstr "Descàrrec de responsabilitat"
 
 #: pages/support.vue components/inchat/disclaimer_modal.vue
 msgid "Disclaimer"
@@ -8448,7 +8596,7 @@ msgstr "Informe de verificació"
 msgid "Due Monthly"
 msgstr "Pago Mensual"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid ""
 "Due to compatibility issues with iOS devices, we've created the option for "
 "referral links to contain dashes ( - ) as well as underscores ( _ ). "
@@ -8919,11 +9067,15 @@ msgstr "Tipus de Correu Electrònic"
 msgid "Email Warning"
 msgstr "Advertència per correu electrònic"
 
-#: pages/contacts.vue pages/elevate_registration.vue
+#: pages/elevate_registration.vue
 #: components/cruises_booking_old/passenger-info-step.vue
 #: track_results/index.html
 msgid "Email:"
 msgstr "Adreça de Correu Electrònic:"
+
+#: pages/contacts.vue
+msgid "email@example.com"
+msgstr ""
 
 #: pages/cruises_old.vue
 msgid "Embarkation Port:"
@@ -9013,6 +9165,12 @@ msgstr "Introdueix el CVC/CVV"
 msgid "Enter display name (Optional)"
 msgstr "Introdueix el nom visible (Opcional)"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Enter name"
+msgid "Enter Manually"
+msgstr "Introdueix el nom"
+
 #: components/recurring/recurring-cards.vue
 msgid "Enter name"
 msgstr "Introdueix el nom"
@@ -9066,7 +9224,7 @@ msgstr "Introdueix el teu país"
 msgid "Enter your custom email address"
 msgstr "Introdueix la teva adreça de correu electrònic personalitzada"
 
-#: components/onboarding/referral-link-step.vue
+#: pages/referral_links.vue components/onboarding/referral-link-step.vue
 msgid "Enter your custom referral link"
 msgstr "Introdueix el teu enllaç de referència personalitzat"
 
@@ -9116,6 +9274,12 @@ msgstr "Error"
 msgid "Error Adding Cruise"
 msgstr "Error en afegir un creuer"
 
+#: components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "Export Contacts"
+msgid "Error exporting contacts"
+msgstr "Exportar Contactes"
+
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Error fetching cruise lines"
 msgstr "Error en buscar línies de creuers"
@@ -9124,6 +9288,16 @@ msgstr "Error en buscar línies de creuers"
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Error fetching data"
 msgstr "Error en l'obtenció de dades"
+
+#: components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "Error fetching data"
+msgid "Error finding contact"
+msgstr "Error en l'obtenció de dades"
+
+#: components/recipients_modal.vue
+msgid "Error in looking up contacts."
+msgstr ""
 
 #: components/admin_booking/admin_cruise_featured.vue
 msgid "Error in refresh"
@@ -9261,6 +9435,10 @@ msgstr ""
 msgid "Exchange rate"
 msgstr "Tipus de canvi"
 
+#: components/contacts/mass-contact-modal.vue
+msgid "Exclude previously invited"
+msgstr ""
+
 #: pages/cruises.vue
 msgid "Exclude results with mandatory pre-paid tips"
 msgstr "Exclou resultats amb propines prepagades obligatòries"
@@ -9335,7 +9513,7 @@ msgstr "Equip Executiu"
 msgid "Existing Leaders:"
 msgstr "Líders existents:"
 
-#: CheckoutTopBar.vue components/blog/navbar.vue
+#: CheckoutTopBar.vue LayoutTopBar.vue components/blog/navbar.vue
 msgid "Exit"
 msgstr "Sortir"
 
@@ -9403,7 +9581,7 @@ msgstr "Explora els nous plans de membresia del club!"
 msgid "Export"
 msgstr "Exportació"
 
-#: pages/export.vue
+#: pages/contacts.vue pages/export.vue components/contacts/export-contacts.vue
 msgid "Export Contacts"
 msgstr "Exportar Contactes"
 
@@ -9625,7 +9803,8 @@ msgstr "Filtratge"
 
 #: pages/cruises.vue pages/reports.vue
 #: components/data_table/filter-selection-widget.vue
-#: components/tours/intours_results.vue reports/index.html
+#: components/data_table/table.vue components/tours/intours_results.vue
+#: reports/index.html
 msgid "Filters"
 msgstr "Filtres"
 
@@ -9712,9 +9891,9 @@ msgstr "Data de naixement del primer infant"
 msgid "First Leader"
 msgstr "Primer Líder"
 
-#: pages/admin_restricted_paybonus.vue pages/hotel_booking.vue
-#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
-#: components/cruises_booking/passenger_info_step.vue
+#: pages/admin_restricted_paybonus.vue pages/contacts.vue
+#: pages/hotel_booking.vue pages/intours_confirmation.vue pages/invite.vue
+#: pages/settings.vue components/cruises_booking/passenger_info_step.vue
 #: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -9979,7 +10158,7 @@ msgid "Free Registered"
 msgstr "Registrat Gratuïtament"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "French"
@@ -10015,8 +10194,15 @@ msgstr "Des de: <span class=\"text-blue font-italic\">{{ from }}</span>"
 msgid "FSG"
 msgstr "FSG"
 
-#: pages/cards.vue pages/certificates.vue pages/invite.vue cards/index.html
-#: certificates/index.html certificates/view.html import/index.html
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Full Name"
+msgid "Full name"
+msgstr "Nom Complet"
+
+#: components/recipients_modal.vue pages/cards.vue pages/certificates.vue
+#: pages/invite.vue cards/index.html certificates/index.html
+#: certificates/view.html import/index.html
 msgid "Full Name"
 msgstr "Nom Complet"
 
@@ -10081,7 +10267,7 @@ msgid "Generate a New Password"
 msgstr "Genera una Contrasenya Nova"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "German"
@@ -12179,7 +12365,7 @@ msgstr "Importar l'Estat de la reserva"
 msgid "Import Contacts"
 msgstr "Importar Contactes"
 
-#: import/index.html
+#: pages/import.vue import/index.html
 msgid ""
 "Import contacts from dozens of email clients using the button above. You "
 "will then be redirected to the contacts page where you will see your newly "
@@ -12189,9 +12375,13 @@ msgstr ""
 "el botó de dalt. A continuació, seràs redirigit a la pàgina de contactes on "
 "veuràs els teus contactes importats recentment."
 
-#: import/index.html
+#: pages/import.vue import/index.html
 msgid "Import Email Contacts"
 msgstr "Importa els contactes de correu electrònic"
+
+#: pages/contacts.vue
+msgid "Import from address book"
+msgstr ""
 
 #: import/create.html
 msgid "Import These Contacts"
@@ -12245,10 +12435,6 @@ msgstr "Informació Important de reemborsament:"
 #: components/receipts/hotel_booking_receipt.vue
 msgid "IMPORTANT REFUND INFORMATION:"
 msgstr "INFORMACIÓ IMPORTANT SOBRE EL REEMBORSAMENT:"
-
-#: pages/contacts.vue
-msgid "Imported Contacts"
-msgstr "Contactes Importats"
 
 #: pages/apps.vue
 msgid "Improved Performace"
@@ -12529,6 +12715,12 @@ msgstr "Servidor de correu entrant (IMAP): requereix xifrat SSL"
 #: pages/leadership_academy.vue
 msgid "Incomplete"
 msgstr "Incomplet"
+
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Import Email Contacts"
+msgid "Incorrect Email Format"
+msgstr "Importa els contactes de correu electrònic"
 
 #: courses/view.html
 msgid "Incorrect!"
@@ -13046,8 +13238,20 @@ msgstr "Presentem la Membresia 3.0!"
 msgid "Invitation Details"
 msgstr "Detalls d'invitació"
 
-#: pages/contacts.vue pages/invite.vue
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Invitation Details"
+msgid "Invitation Type"
+msgstr "Detalls d'invitació"
+
+#: pages/invite.vue components/contacts/contact-edit-modal.vue
 msgid "Invite"
+msgstr "Invitació"
+
+#: pages/contacts.vue pages/import.vue
+#, fuzzy
+#| msgid "Invite"
+msgid "Invite All"
 msgstr "Invitació"
 
 #: import/create.html
@@ -13057,6 +13261,30 @@ msgstr "Convida com a membre"
 #: import/create.html
 msgid "Invite as Partner"
 msgstr "Convida com a soci"
+
+#: pages/referral_links.vue
+msgid ""
+"Invite people to join InCruises and you'll receive automatic credit when "
+"they sign up through your invite."
+msgstr ""
+
+#: components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "Invite"
+msgid "Invite Sent"
+msgstr "Invitació"
+
+#: pages/contacts.vue components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "Invites"
+msgid "Invite Status"
+msgstr "Invitacions"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Invite"
+msgid "Invited"
+msgstr "Invitació"
 
 #: components/public/Testimonials.vue
 msgid "invited you to inCruises®."
@@ -13279,7 +13507,7 @@ msgstr ""
 "devolucions."
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html webinar_recordings/index.html
 msgid "Italian"
 msgstr "Italià"
@@ -13379,7 +13607,7 @@ msgid "January 1st 2025 - June 30th 2025."
 msgstr "1 de Gener de 2025 - 30 de Juny de 2025."
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Japanese"
@@ -13546,7 +13774,7 @@ msgstr ""
 "LLC."
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Korean"
@@ -13564,9 +13792,10 @@ msgstr "Kirguís"
 msgid "Laminated Presentations"
 msgstr "Presentacions laminades"
 
-#: pages/admin_user.vue pages/contacts.vue pages/reports.vue pages/settings.vue
+#: pages/admin_user.vue pages/reports.vue pages/settings.vue
 #: pages/team_rankings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
+#: components/contacts/contact-edit-modal.vue
 #: components/inchat/user/user_create_room.vue old_compensation/index.html
 #: reports/index.html track_results/index.html
 msgid "Language"
@@ -13575,10 +13804,6 @@ msgstr "Idioma"
 #: components/language-reminder.vue
 msgid "Language Reminder"
 msgstr "Recordatori d’idioma"
-
-#: pages/contacts.vue
-msgid "Language:"
-msgstr "Idioma:"
 
 #: pages/team_rankings.vue
 msgid "Last 12 Months"
@@ -13629,9 +13854,9 @@ msgstr ""
 "S'ha sol·licitat la Bonificació de Lideratge del mes passat i està pendent "
 "de pagament."
 
-#: pages/admin_restricted_paybonus.vue pages/hotel_booking.vue
-#: pages/intours_confirmation.vue pages/invite.vue pages/settings.vue
-#: components/cruises_booking/passenger_info_step.vue
+#: pages/admin_restricted_paybonus.vue pages/contacts.vue
+#: pages/hotel_booking.vue pages/intours_confirmation.vue pages/invite.vue
+#: pages/settings.vue components/cruises_booking/passenger_info_step.vue
 #: components/public/JoinModal.vue
 #: components/receipts/hotel_booking_receipt.vue
 #: components/settings_page/modify-saved-passengers.vue
@@ -13663,7 +13888,7 @@ msgid "Latest first"
 msgstr "Començant pels més recents"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Latvian"
@@ -13938,10 +14163,16 @@ msgid "Link (optional)"
 msgstr "Enllaç (opcional)"
 
 #: components/ShareModal.vue components/qrCodeBtn.vue pages/admin_support.vue
-#: pages/reward_points.vue components/support/GroupViewer.vue
-#: components/top_bar/Connect.vue
+#: pages/referral_links.vue pages/reward_points.vue
+#: components/support/GroupViewer.vue components/top_bar/Connect.vue
 msgid "Link copied to clipboard"
 msgstr "Enllaç copiat en el portapapers"
+
+#: pages/referral_links.vue
+#, fuzzy
+#| msgid "Finish Setup"
+msgid "Link Setup "
+msgstr "Configuració Acabada"
 
 #: components/top_bar/Connect.vue
 msgid "Links"
@@ -14195,6 +14426,12 @@ msgstr "Gestionar els permisos"
 msgid "Manage Recurring Billing and Payments"
 msgstr "Gestió de factures i pagaments recurrents"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Manage Admins"
+msgid "Manage Tags"
+msgstr "Gestiona els administradors"
+
 #: components/user/departments.vue
 msgid "Manage User Departments"
 msgstr "Gestionar els departaments d'usuaris"
@@ -14383,6 +14620,14 @@ msgstr ""
 msgid "Maximum reached for this rank!"
 msgstr "Màxim aconseguit per a aquest rang!"
 
+#: pages/inviter.vue
+msgid "Maximum Recipients Reached"
+msgstr ""
+
+#: components/recipients_modal.vue
+msgid "Maximum recipients reached."
+msgstr ""
+
 #: pages/elevate_registration.vue
 msgid "Maxiumum Allowed 1 for 1 Points"
 msgstr "Màxima quantitat permesa de Punts de Recompensa al (1 per 1)"
@@ -14402,7 +14647,7 @@ msgstr "Maig"
 msgid "May or may not include taxes/port expenses"
 msgstr "Pot o no incloure impostos/despeses portuàries"
 
-#: components/onboarding/win_50_rp.vue
+#: pages/contacts.vue pages/import.vue components/onboarding/win_50_rp.vue
 msgid "Maybe Later"
 msgstr "Potser més tard"
 
@@ -14460,7 +14705,8 @@ msgid "Meetings"
 msgstr "Reunions"
 
 #: pages/receipts.vue pages/team_rankings.vue
-#: components/compensation/leadership_bonus.vue pages/public/pricing.vue
+#: components/compensation/leadership_bonus.vue
+#: components/contacts/contact-edit-modal.vue pages/public/pricing.vue
 #: old_compensation/index.html subscriptions/index.html upgrade/index.html
 msgid "Member"
 msgstr "Membre"
@@ -14502,11 +14748,11 @@ msgstr "Estat de Membre"
 msgid "Member Type"
 msgstr "Categoria de Membre"
 
-#: pages/contacts.vue pages/track_results.vue track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Member:"
 msgstr "Membre:"
 
-#: pages/apps.vue pages/referral_links.vue pages/track_growth.vue
+#: pages/apps.vue pages/referral_links_old.vue pages/track_growth.vue
 #: components/widgets/stats.vue reports/index.html track_growth/index.html
 msgid "Members"
 msgstr "Membres"
@@ -14719,6 +14965,10 @@ msgstr ""
 "projectes de desenvolupament comunitari, educació sanitària comunitària i "
 "molt més."
 
+#: pages/welcome.vue
+msgid "Mercy Ships Fundraiser"
+msgstr "Recaptació de Fons de Mercy Ships"
+
 #: components/support/TicketList.vue
 msgid "Merged"
 msgstr "Unificat"
@@ -14845,11 +15095,15 @@ msgid "Mobile Ticket"
 msgstr "Tiquet pel mòbil"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Mongolian"
 msgstr "Mongol"
+
+#: pages/referral_activity.vue
+msgid "Monitor and manage all your referral invitations and their statuses."
+msgstr ""
 
 #: pages/invoices.vue pages/invoices_new.vue pages/notifications.vue
 #: components/compensation/weekly_bonus.vue
@@ -15211,17 +15465,17 @@ msgstr ""
 "El Multiplicador està pendent fins que s'assigni/actualitzi el rang. "
 "(Normalment, a partir del dia 10 del mes)."
 
-#: components/onboarding/email-address-step.vue
+#: pages/referral_links.vue components/onboarding/email-address-step.vue
 #: components/onboarding/referral-link-step.vue
 msgid "Must be between 3 and 20 characters long"
 msgstr "Ha de tenir entre 3 i 20 caràcters de llargada."
 
-#: components/onboarding/email-address-step.vue
+#: pages/referral_links.vue components/onboarding/email-address-step.vue
 #: components/onboarding/referral-link-step.vue
 msgid "Must be unique and available"
 msgstr "Ha de ser únic i estar disponible"
 
-#: pages/account_setup.vue pages/referral_links.vue
+#: pages/account_setup.vue pages/referral_links_old.vue
 msgid "Must be unique and available."
 msgstr "Ha de ser únic i estar disponible."
 
@@ -15329,7 +15583,7 @@ msgstr "N/A"
 msgid "Name"
 msgstr "Nom"
 
-#: pages/contacts.vue import/create.html
+#: import/create.html
 msgid "Name Ascending"
 msgstr "Nom Ascendent"
 
@@ -15356,7 +15610,7 @@ msgstr ""
 "totes les quotes de Membresia estan actualitzades, la Membresia es pot "
 "transferir al seu cònjuge o hereus legals."
 
-#: pages/contacts.vue import/create.html
+#: import/create.html
 msgid "Name Descending"
 msgstr "Nom Descendent"
 
@@ -15628,9 +15882,9 @@ msgstr "Nous Socis Classificats: "
 msgid "News App"
 msgstr "Notícies App"
 
-#: pages/cruises_booking.vue pages/email.vue pages/leadership_academy.vue
-#: pages/multi_factor.vue pages/notifications.vue pages/receipts.vue
-#: components/cruises_booking/deck_step.vue
+#: pages/contacts.vue pages/cruises_booking.vue pages/email.vue
+#: pages/leadership_academy.vue pages/multi_factor.vue pages/notifications.vue
+#: pages/receipts.vue components/cruises_booking/deck_step.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking/protection_step.vue
 #: components/cruises_booking/reward_points_step.vue
@@ -15656,10 +15910,6 @@ msgstr "Pròxim dia de facturació"
 #: reports/index.html track_results/index.html
 msgid "Next Billing Date"
 msgstr "Pròxima data de facturació"
-
-#: pages/contacts.vue
-msgid "Next Billing Date:"
-msgstr "Pròxima Data de Facturació:"
 
 #: subscriptions/index.html
 msgid "Next Billing Date: {{ subscription.expires | date : 'MMM dd, yyyy'}}"
@@ -15708,6 +15958,7 @@ msgstr "Nits:"
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/partner_code_of_conduct_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
+#: components/contacts/contact-edit-modal.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -15718,6 +15969,12 @@ msgstr "No"
 #: components/navigation/notifications.vue
 msgid "No Active Notifications"
 msgstr "Notificacions Inactives"
+
+#: components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "No Contacts Found"
+msgid "No contacts found"
+msgstr "No s'ha trobat cap contacte"
 
 #: import/create.html
 msgid "No Contacts Found"
@@ -15764,7 +16021,7 @@ msgstr "Sense contractes a llarg termini"
 msgid "No long-term contracts; cancel anytime"
 msgstr "Sense contractes a llarg termini; cancel·la en qualsevol moment"
 
-#: pages/contacts.vue pages/invite.vue
+#: pages/invite.vue
 msgid "No Name Imported"
 msgstr "Cap Nom Importat"
 
@@ -15975,7 +16232,7 @@ msgstr "No hi ha dades suficients per a calcular el QBI."
 msgid "Not Finished"
 msgstr "Sense acabar"
 
-#: pages/contacts.vue
+#: components/contacts/contact-edit-modal.vue
 msgid "Not Invited"
 msgstr "No està convidat"
 
@@ -16052,7 +16309,7 @@ msgstr ""
 "NOTA: Tots els valors monetaris mencionats aquí estan en dòlars "
 "estatunidencs ($ dòlars)."
 
-#: pages/admin_user_id.vue components/user/user_notes.vue
+#: pages/admin_user_id.vue pages/contacts.vue components/user/user_notes.vue
 msgid "Notes"
 msgstr "Notes"
 
@@ -16060,7 +16317,8 @@ msgstr "Notes"
 msgid "Notes:"
 msgstr "Notes:"
 
-#: components/data_table/empty_table.vue
+#: components/data_table/empty_table.vue components/widgets/PieChart.vue
+#: components/widgets/description_list.vue components/widgets/stats.vue
 msgid "Nothing Here Yet"
 msgstr "Encara no hi ha res Aquí"
 
@@ -16121,7 +16379,7 @@ msgstr ""
 msgid "Nursultan, Kazakhstan"
 msgstr "Nursultan, Kazakhstan"
 
-#: pages/facebook_marketing.vue pages/invite.vue pages/referral_links.vue
+#: pages/facebook_marketing.vue pages/invite.vue pages/referral_links_old.vue
 msgid "O'zbek"
 msgstr "O'zbek"
 
@@ -16467,10 +16725,6 @@ msgstr "Obrir"
 msgid "Opened: {{ formatDate(invite.lastViewDate) }}"
 msgstr "Obrir: {{ formatDate(invite.lastViewDate) }}"
 
-#: pages/contacts.vue
-msgid "Opened!"
-msgstr "Obert!"
-
 #: pages/intours_details.vue components/reservations/tour-details.vue
 msgid "Operated by"
 msgstr "Gestionat per"
@@ -16494,6 +16748,10 @@ msgstr ""
 #: pages/multi_factor.vue
 msgid "or"
 msgstr "o"
+
+#: pages/referral_links.vue
+msgid "Or"
+msgstr ""
 
 #: pages/public/disclosure.vue
 msgid "OR"
@@ -16687,7 +16945,7 @@ msgstr ""
 "pàgina i envia un nou tiquet al departament de \"Preguntes de reserva de "
 "creuers\"."
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Page Data"
 msgstr "Dades de la pàgina"
 
@@ -16721,7 +16979,7 @@ msgstr "Data de pagament"
 msgid "Paid Months"
 msgstr "Mesos de pagament"
 
-#: pages/contacts.vue pages/track_results.vue track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Paid Months:"
 msgstr "Mesos de pagament:"
 
@@ -17167,11 +17425,7 @@ msgstr "Soci-Membre"
 msgid "Partner-Members"
 msgstr "Membres associats"
 
-#: pages/contacts.vue
-msgid "Partner:"
-msgstr "Soci:"
-
-#: pages/apps.vue pages/referral_links.vue pages/reports.vue
+#: pages/apps.vue pages/referral_links_old.vue pages/reports.vue
 #: pages/track_growth.vue components/widgets/stats.vue reports/index.html
 #: track_growth/index.html
 msgid "Partners"
@@ -17454,7 +17708,7 @@ msgstr "Revisió dels pagaments"
 msgid "Paypal"
 msgstr "Paypal"
 
-#: pages/invoices_new.vue pages/track_results.vue
+#: pages/contacts.vue pages/invoices_new.vue pages/track_results.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/support/TicketList.vue components/welcome/members-modal.vue
 msgid "Pending"
@@ -17483,10 +17737,6 @@ msgstr "Resultats pendents del mes actual"
 #: pages/export.vue
 msgid "Pending Invitations"
 msgstr "Invitacions pendents"
-
-#: pages/contacts.vue
-msgid "Pending Invites"
-msgstr "Invitacions Pendents"
 
 #: pages/reports.vue pages/welcome.vue reports/index.html
 msgid "Pending Invoice"
@@ -17580,6 +17830,12 @@ msgstr "Grups de permisos"
 msgid "Permissions"
 msgstr "Permisos"
 
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Personal QBI"
+msgid "Personal"
+msgstr "QBI personal"
+
 #: components/compensation/weekly_bonus.vue
 msgid "Personal Activations"
 msgstr "Activacions Personals"
@@ -17620,8 +17876,9 @@ msgstr "Vista personal"
 msgid "Phase Highlights:"
 msgstr "Punts Destacats de la Fase:"
 
-#: pages/admin_user.vue pages/contacts.vue pages/elevate_registration.vue
+#: pages/admin_user.vue pages/elevate_registration.vue
 #: pages/intours_confirmation.vue pages/negative_balances.vue
+#: components/contacts/contact-edit-modal.vue
 #: components/cruises_booking_old/passenger-info-step.vue
 msgid "Phone"
 msgstr "Telèfon"
@@ -17647,8 +17904,7 @@ msgstr "El número de telèfon introduït no és vàlid."
 msgid "Phone Verification"
 msgstr "Verificació telefònica"
 
-#: pages/contacts.vue pages/track_results.vue
-#: components/settings_page/modify-saved-passengers.vue
+#: pages/track_results.vue components/settings_page/modify-saved-passengers.vue
 #: track_results/index.html
 msgid "Phone:"
 msgstr "Telèfon:"
@@ -17688,6 +17944,18 @@ msgstr "Reproduir"
 #: pages/cruises_booking.vue
 msgid "Please accept all terms and conditions before proceeding."
 msgstr "Si us plau, accepta tots els termes i condicions abans de continuar"
+
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Please Wait"
+msgid "Please add email"
+msgstr "Si Us Plau, Esperi"
+
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Please enter a name"
+msgid "Please add name"
+msgstr "Si us plau, introdueix un nom"
 
 #: components/cruises_booking_old/reward-points-step.vue
 msgid "Please add the inCruises members that will be a part of this booking:"
@@ -17893,6 +18161,12 @@ msgid "Please enter a new password to initiate the account recovery process:"
 msgstr ""
 "Si us plau, introdueix una nova contrasenya per iniciar el procés de "
 "recuperació del compte:"
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Please enter a name"
+msgid "Please enter a subject"
+msgstr "Si us plau, introdueix un nom"
 
 #: components/cruises_booking/passenger_info_step.vue
 msgid "Please enter a valid 5 digit zip code."
@@ -18137,6 +18411,12 @@ msgstr ""
 "Si us plau, torna a fer les respostes incorrectes utilitzant el menú de "
 "preguntes"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Please reload the page and try again."
+msgid "Please reload the page"
+msgstr "Si us plau, recarrega la pàgina i torna-ho a intentar."
+
 #: pages/info_center.vue
 msgid "Please reload the page and try again."
 msgstr "Si us plau, recarrega la pàgina i torna-ho a intentar."
@@ -18297,6 +18577,12 @@ msgstr "Selecciona un tipus de transferència"
 msgid "Please select an annual income"
 msgstr "Si us plau, Selecciona un ingrés anual"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Please select at least one rank"
+msgid "Please select at least one option."
+msgstr "Si us plau, tria almenys un rang"
+
 #: components/inchat/user/user_create_room.vue
 msgid "Please select at least one rank"
 msgstr "Si us plau, tria almenys un rang"
@@ -18316,6 +18602,12 @@ msgstr "Si us plau selecciona la coberta"
 #: pages/support.vue components/support/AdminCreateTicket.vue
 msgid "Please select department"
 msgstr "Si us plau selecciona el departament"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Please select a plan to continue."
+msgid "Please select how you want to upload contacts"
+msgstr "Si us plau, selecciona un pla per a continuar."
 
 #: components/inchat/user/user_create_room.vue
 msgid "Please select jpg, png files..."
@@ -18531,7 +18823,7 @@ msgid "Português"
 msgstr "Portuguès"
 
 #: pages/all_in.vue pages/communications.vue pages/invite.vue
-#: pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Portuguese"
@@ -18658,8 +18950,8 @@ msgstr ""
 "Lideratge d'Equip de <strong>155.000<strong> dòlars!"
 
 #: components/feature_card.vue pages/downgrade.vue pages/subscriptions.vue
-#: pages/upgrade.vue components/welcome/members-modal.vue
-#: pages/public/pricing.vue
+#: pages/upgrade.vue components/contacts/contact-edit-modal.vue
+#: components/welcome/members-modal.vue pages/public/pricing.vue
 msgid "Premium"
 msgstr "Premium"
 
@@ -19513,6 +19805,18 @@ msgstr "Invitacions Recents"
 msgid "Recipient"
 msgstr "Destinatari"
 
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Recipient Card details"
+msgid "Recipient added."
+msgstr "Dades de la targeta del beneficiari"
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Recipient Card details"
+msgid "Recipient already added"
+msgstr "Dades de la targeta del beneficiari"
+
 #: components/payout/brightwell/review.vue
 msgid "Recipient Bank details"
 msgstr "Dades bancàries del beneficiari"
@@ -19534,11 +19838,17 @@ msgid "Recipient does not belong to this account. Please try again."
 msgstr ""
 "El destinatari no pertany a aquest compte. Si us plau, torna-ho a intentar."
 
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Recipient"
+msgid "Recipient removed."
+msgstr "Destinatari"
+
 #: components/payout/brightwell/recipient-account-details.vue
 msgid "Recipient's Bank Details"
 msgstr "Dades bancàries del beneficiari"
 
-#: pages/email_tracking.vue
+#: components/recipients_modal.vue pages/email_tracking.vue
 msgid "Recipients"
 msgstr "Destinataris"
 
@@ -19629,25 +19939,30 @@ msgstr "Redirigint a Ingenico."
 msgid "Reference: %{ hotelbeds_reference }"
 msgstr "Referència: %{ hotelbeds_reference }"
 
+#: pages/referral_activity.vue
+#, fuzzy
+#| msgid "Referral Activity"
+msgid "Referral Activity"
+msgstr "Activitat de Referència"
+
 #: pages/account_setup.vue pages/admin_user.vue pages/team_rankings.vue
 #: components/compensation/leadership_bonus.vue old_compensation/index.html
 msgid "Referral Link"
 msgstr "Link de Referits"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Referral Link Compatibility"
 msgstr "Compatibilitat de l'Enllaç de Referència"
 
-#: components/onboarding/referral-link-step.vue
+#: pages/referral_links.vue components/onboarding/referral-link-step.vue
 msgid "Referral Link Created!"
 msgstr "Enllaç de referència Creat!"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Referral link language"
 msgstr "Idioma d'Enllaç de referència"
 
-#: pages/account_setup.vue pages/contacts.vue pages/track_results.vue
-#: track_results/index.html
+#: pages/account_setup.vue pages/track_results.vue track_results/index.html
 msgid "Referral Link:"
 msgstr "Enllaç de referència:"
 
@@ -19655,7 +19970,7 @@ msgstr "Enllaç de referència:"
 msgid "Referral Links"
 msgstr "Links de Referits"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid ""
 "Referral links are your own personal URL to give to others to register. You "
 "will get automatic credit when anyone signs up using this link."
@@ -19663,6 +19978,12 @@ msgstr ""
 "Els enllaços de referència són els teus propis URL personals per enviar-los "
 "a altres persones per registrar-se. Obtindràs crèdit automàtic quan algú es "
 "registri mitjançant aquest enllaç."
+
+#: pages/referral_activity.vue
+#, fuzzy
+#| msgid "Referral Links"
+msgid "Referral Page Stats"
+msgstr "Links de Referits"
 
 #: pages/admin_user.vue components/compensation/weekly_bonus.vue
 msgid "Referrer"
@@ -19704,11 +20025,12 @@ msgstr ""
 "de la meva experiència de creuer en el reinici de la indústria de creuers en "
 "aquests temps."
 
-#: components/compensation/leadership_bonus.vue old_compensation/index.html
+#: components/compensation/leadership_bonus.vue
+#: components/contacts/contact-edit-modal.vue old_compensation/index.html
 msgid "Region"
 msgstr "Regió"
 
-#: pages/contacts.vue pages/track_results.vue track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Region:"
 msgstr "Region:"
 
@@ -19796,7 +20118,7 @@ msgstr "Saldo restant"
 msgid "Reminded"
 msgstr "Recordat"
 
-#: pages/settings.vue
+#: components/recipients_modal.vue pages/settings.vue
 msgid "Remove"
 msgstr "Eliminar"
 
@@ -20174,7 +20496,7 @@ msgid "Română"
 msgstr "Romanès"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Romanian"
@@ -20312,7 +20634,7 @@ msgid "Run reports"
 msgstr "Executar informes"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Russian"
@@ -20383,13 +20705,15 @@ msgid "Santorini"
 msgstr "Santorini"
 
 #: pages/admin_department.vue pages/admin_partner_success.vue
-#: pages/admin_permission_group.vue
+#: pages/admin_permission_group.vue pages/referral_links.vue
 #: components/admin_booking/admin_cruise_featured_dynamic_sailings.vue
 #: components/admin_booking/cruise_bookings.vue
 #: components/admin_booking/hotel_bookings.vue
 #: components/admin_booking/tour_bookings.vue
 #: components/admin_management/admin_departments.vue
 #: components/admin_management/admin_permission_groups.vue
+#: components/contacts/contact-edit-modal.vue
+#: components/contacts/export-contacts.vue
 #: components/settings_page/modify-saved-passengers.vue
 #: components/top_bar/Connect.vue components/user/departments.vue
 #: components/payout/brightwell/recipient-account.vue
@@ -20447,6 +20771,12 @@ msgstr "Cerca Habitacions"
 msgid "Search Columns"
 msgstr "Cercar Columnes"
 
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Sengrid Contacts"
+msgid "Search Contacts"
+msgstr "Contactes de Sengrid"
+
 #: resources/index.html
 msgid "Search Documents.."
 msgstr "Cerca de documents ..."
@@ -20463,7 +20793,7 @@ msgstr "Cerca de cabines"
 msgid "Search for Member"
 msgstr "Buscar Membre"
 
-#: pages/contacts.vue components/translations/placeholders.vue
+#: components/translations/placeholders.vue
 msgid "Search for Names or Emails"
 msgstr "Cercar per Noms o Correus electrònics"
 
@@ -20742,12 +21072,30 @@ msgstr "Seleccionar subcategories"
 msgid "Select Subscription"
 msgstr "Selecciona la Subscripció"
 
+#: components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "Select state"
+msgid "Select tag"
+msgstr "Seleccionar estat"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Select"
+msgid "Select Tag"
+msgstr "Selecciona"
+
 #: pages/hotel_booking.vue
 msgid "Select the balance you want to use"
 msgstr "Selecciona el saldo que vols utilitzar"
 
 #: notification_settings/index.html
 msgid "Select the emails you wish to receive."
+msgstr "Selecciona els correus electrònics que vols rebre."
+
+#: components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "Select the emails you wish to receive."
+msgid "Select the information you would like to export:"
 msgstr "Selecciona els correus electrònics que vols rebre."
 
 #: pages/team_rankings.vue
@@ -20818,7 +21166,7 @@ msgstr "Venedor de viatges"
 msgid "Seller:"
 msgstr "Venedor:"
 
-#: pages/reports.vue reports/index.html
+#: pages/inviter.vue pages/reports.vue reports/index.html
 msgid "Send"
 msgstr "Enviar"
 
@@ -20842,6 +21190,12 @@ msgstr "Envia una invitació directament a un dels teus contactes."
 msgid "Send Birthday Email"
 msgstr "Enviar un email d'aniversari"
 
+#: pages/referral_links.vue
+#, fuzzy
+#| msgid "Send Invite"
+msgid "Send email invite"
+msgstr "Enviar invitació"
+
 #: pages/facebook_marketing.vue
 msgid "Send Facebook Post to Friends"
 msgstr "Enviar missatges de Facebook a amics"
@@ -20854,7 +21208,7 @@ msgstr "Enviar invitació"
 msgid "Send Invite"
 msgstr "Enviar invitació"
 
-#: apps/index.html
+#: pages/referral_links.vue apps/index.html
 msgid "Send Invites"
 msgstr "Enviar invitacions"
 
@@ -20865,6 +21219,10 @@ msgstr "Enviar Missatge"
 #: components/payout/brightwell/recipient-account.vue
 msgid "Send money"
 msgstr "Enviar diners"
+
+#: pages/referral_links.vue
+msgid "Send personalized emails and invite people to join InCruises."
+msgstr ""
 
 #: pages/facebook_marketing.vue
 msgid "Send Private Invitation"
@@ -20879,6 +21237,12 @@ msgstr ""
 "Envia invitacions privades als teus amics. Si cliquen en elles, i es "
 "registren amb nosaltres, obtindràs un abonament automàtic. Pots enviar-ne "
 "tantes com vulguis."
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Send money"
+msgid "Send reminder"
+msgstr "Enviar diners"
 
 #: pages/multi_factor.vue
 msgid "Send SMS"
@@ -20956,7 +21320,7 @@ msgstr "Líder d'Equip Sènior del Mes Passat"
 msgid "Senior Team Leader This Month"
 msgstr "Líder Sénior d'Equip d'Aquest Mes"
 
-#: pages/contacts.vue pages/email_tracking.vue
+#: pages/email_tracking.vue
 msgid "Sent"
 msgstr "Enviat"
 
@@ -21086,7 +21450,7 @@ msgstr ""
 msgid "Share Qr Code"
 msgstr "Compartir el Codi QR"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Share your"
 msgstr "Comparteix el teu"
 
@@ -21095,6 +21459,20 @@ msgid "Share your events on social media using the hashtags:"
 msgstr ""
 "Comparteix els teus esdeveniments en les xarxes socials utilitzant les "
 "etiquetes:"
+
+#: pages/contacts.vue
+msgid "Share your InCruise Journey"
+msgstr ""
+
+#: components/contacts/mass-contact-modal.vue
+msgid "Share Your InCruises Journey"
+msgstr ""
+
+#: pages/referral_links.vue
+#, fuzzy
+#| msgid "Set Your Referral Link"
+msgid "Share your referral link"
+msgstr "Configura el teu Enllaç de Referència"
 
 #: components/inchat/user_actions.vue
 msgid "Shared Files"
@@ -21147,6 +21525,12 @@ msgstr "Mostrar tot"
 #: pages/reward_points.vue
 msgid "Show balance"
 msgstr "Mostra el saldo"
+
+#: components/recipients_modal.vue
+#, fuzzy
+#| msgid "Contacts"
+msgid "Show Contacts"
+msgstr "Contactes"
 
 #: hidden/hidden.html
 msgid "Show conversion always?"
@@ -21244,7 +21628,7 @@ msgstr "Registra't"
 msgid "Signed Up Users"
 msgstr "Usuaris Inscrits"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Signups"
 msgstr "Registres"
 
@@ -21420,11 +21804,18 @@ msgstr ""
 msgid "Something was wrong"
 msgstr "Alguna cosa ha anat malament"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Something went wrong, please try again."
+msgid "Something went wrong assigning tags. Please try again."
+msgstr "Alguna cosa ha anat malament, si us plau, intenta-ho de nou"
+
 #: components/won_50_rp.vue pages/claim_free_rp.vue
 msgid "Something went wrong please reload the page."
 msgstr "Alguna cosa ha anat malament. Si us plau, torna a carregar la pàgina."
 
-#: pages/import.vue components/onboarding/import-contacts.vue
+#: pages/contacts.vue pages/import.vue
+#: components/onboarding/import-contacts.vue
 msgid "Something went wrong submitting your request, please try again."
 msgstr ""
 "Alguna cosa ha anat malament en enviar la teva sol·licitud, si us plau, "
@@ -21480,7 +21871,7 @@ msgid "South America"
 msgstr "Sud-amèrica"
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Spanish"
@@ -21519,6 +21910,10 @@ msgstr "Patrocinador"
 #: pages/reports.vue reports/index.html
 msgid "Sponsor / Upline"
 msgstr "Patrocinador / Línia Ascendent"
+
+#: pages/referral_activity.vue
+msgid "Spread the word, start growing your referrals now!"
+msgstr ""
 
 #: pages/email_address.vue
 msgid "SSL"
@@ -21570,8 +21965,8 @@ msgid "Start:"
 msgstr "Iniciar:"
 
 #: components/feature_card.vue pages/downgrade.vue pages/subscriptions.vue
-#: pages/upgrade.vue components/welcome/members-modal.vue
-#: pages/public/pricing.vue
+#: pages/upgrade.vue components/contacts/contact-edit-modal.vue
+#: components/welcome/members-modal.vue pages/public/pricing.vue
 msgid "Starter"
 msgstr "Starter"
 
@@ -21687,7 +22082,13 @@ msgstr ""
 msgid "Stats"
 msgstr "Estadístiques"
 
-#: pages/contacts.vue pages/invoices_new.vue pages/negative_balances.vue
+#: components/contacts/export-contacts.vue
+#, fuzzy
+#| msgid "Status"
+msgid "status"
+msgstr "Estat"
+
+#: pages/invoices_new.vue pages/negative_balances.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/recurring_income_levels.vue
@@ -21735,7 +22136,7 @@ msgstr "Deixa de Mostrar"
 msgid "Stop Showing Archived"
 msgstr "Deixa de Mostrar Arxius"
 
-#: pages/contacts.vue pages/track_results.vue track_results/index.html
+#: pages/track_results.vue track_results/index.html
 msgid "Street Address:"
 msgstr "Adreça:"
 
@@ -21747,9 +22148,9 @@ msgstr "Subtotal"
 msgid "Subcategories"
 msgstr "Subcategories"
 
-#: pages/email.vue pages/email_tracking.vue pages/notifications.vue
-#: pages/support.vue components/support/AdminCreateTicket.vue
-#: email_notifications/index.html
+#: pages/email.vue pages/email_tracking.vue pages/inviter.vue
+#: pages/notifications.vue pages/support.vue
+#: components/support/AdminCreateTicket.vue email_notifications/index.html
 msgid "Subject"
 msgstr "Tema"
 
@@ -21790,6 +22191,12 @@ msgstr "Enviar ID de Píxel"
 msgid "Submit Ticket"
 msgstr "Envia el tiquet"
 
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Subscriptions"
+msgid "Subscription"
+msgstr "Subscripcions"
+
 #: components/recurring/add-recurring.vue
 #: components/recurring/recurring-cards.vue
 msgid "Subscription Agreement"
@@ -21811,6 +22218,18 @@ msgstr "Èxit"
 msgid "Successful Growth"
 msgstr "Creixement reeixit"
 
+#: components/referral_activity/activity_table.vue
+#, fuzzy
+#| msgid "Successful Growth"
+msgid "Successful Referrals"
+msgstr "Creixement reeixit"
+
+#: pages/referral_activity.vue
+#, fuzzy
+#| msgid "Access Resources"
+msgid "Successful Referrals Source"
+msgstr "Accedir a Recursos"
+
 #: pages/account_setup.vue
 msgid "Successfully created your email address."
 msgstr "La teva adreça de correu electrònic s'ha creat amb èxit."
@@ -21828,7 +22247,7 @@ msgstr "S'han actualitzat correctament els permisos d'usuari."
 msgid "Successfully updated your display name."
 msgstr "El nom de visualització s'ha actualitzat correctament."
 
-#: pages/email_address.vue pages/referral_links.vue
+#: pages/email_address.vue pages/referral_links_old.vue
 msgid "Suggestions"
 msgstr "Suggeriments"
 
@@ -21887,7 +22306,29 @@ msgstr "Símbols"
 msgid "tab"
 msgstr "pestanya"
 
-#: pages/reports.vue
+#: pages/contacts.vue components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "Tags"
+msgid "Tag"
+msgstr "Etiquetes"
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Card Added"
+msgid "Tag added"
+msgstr "Targeta Afegida"
+
+#: components/contacts/tags-modal.vue
+msgid "Tag Label"
+msgstr ""
+
+#: components/contacts/tags-modal.vue
+#, fuzzy
+#| msgid "Management"
+msgid "Tag Management"
+msgstr "Gestió"
+
+#: pages/contacts.vue pages/reports.vue components/contacts/export-contacts.vue
 msgid "Tags"
 msgstr "Etiquetes"
 
@@ -22452,6 +22893,12 @@ msgstr ""
 "número i edats dels hostes, paquet promocional, categoria de cabina, coberta "
 "i ubicació."
 
+#: components/contacts/contact-edit-modal.vue
+#, fuzzy
+#| msgid "Passenger information saved successfully."
+msgid "The contact information has been saved successfully."
+msgstr "Informació del passatger desada correctament."
+
 #: components/cruises_booking/protection_step.vue
 msgid ""
 "The cost of this protection is non-refundable. Only redeemed reward points "
@@ -22973,7 +23420,7 @@ msgstr ""
 "descomptes per a la gent gran. Comença de nou i designa els descomptes per a "
 "Sèniors."
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "There is currently no data on this page at this time."
 msgstr "En aquest moment no hi ha dades en aquesta pàgina."
 
@@ -23798,6 +24245,12 @@ msgstr ""
 msgid "This is to certify that"
 msgstr "Això és per certificar que"
 
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "This is not legal advice."
+msgid "This is your email preview."
+msgstr "Aquesta no és una opinió legal."
+
 #: pages/cruises_booking.vue pages/cruises_booking_old.vue
 #: pages/hotel_booking.vue
 msgid "This member is already added."
@@ -23915,6 +24368,12 @@ msgstr ""
 #: components/data_table/empty_table.vue
 msgid "This table has no data yet."
 msgstr "Aquesta taula encara no té dades."
+
+#: components/contacts/tags-modal.vue
+msgid ""
+"This tag is linked to %{tagCount}  contacts. Deleting it will remove the "
+"association for all of them. are you sure you want to delete this tag?"
+msgstr ""
 
 #: components/support/TicketViewer.vue
 msgid "This ticket is currently being viewed by <u>{{ agent_name }}</u>"
@@ -24133,6 +24592,12 @@ msgid "Times may vary but we estimate the funds will be available within"
 msgstr ""
 "Els horaris poden variar, però estimem que els fons estaran disponibles dins"
 
+#: LayoutTopBar.vue
+#, fuzzy
+#| msgid "Title"
+msgid "title"
+msgstr "Títol"
+
 #: pages/admin_partner_success.vue pages/admin_user.vue
 #: pages/banner_tracking.vue pages/builders_base.vue pages/gls_winners.vue
 #: pages/glsx.vue pages/new_ranks.vue pages/partner_success.vue
@@ -24171,7 +24636,7 @@ msgstr "Protecció financera TMT"
 msgid "to"
 msgstr "a"
 
-#: components/support/TicketViewer.vue
+#: pages/inviter.vue components/support/TicketViewer.vue
 msgid "To"
 msgstr "A"
 
@@ -24548,6 +25013,10 @@ msgstr "Socis Principals"
 msgid "Top Producers"
 msgstr "Els Millors Productors"
 
+#: pages/referral_activity.vue
+msgid "Top Successful Referrals By Country"
+msgstr ""
+
 #: pages/hotels.vue
 msgid "total"
 msgstr "total"
@@ -24600,6 +25069,12 @@ msgstr "Saldo Total"
 #: receipts/team_residual_bonus_statement.html
 msgid "Total Comp."
 msgstr "Compensació total."
+
+#: pages/contacts.vue
+#, fuzzy
+#| msgid "Map Contacts"
+msgid "Total Contacts"
+msgstr "Contactes del mapa"
 
 #: components/payout/brightwell/review.vue
 #: components/payout/brightwell/transfer-details.vue
@@ -25138,7 +25613,7 @@ msgid "Type your questions or comment and press 'enter'."
 msgstr "Escriu les teves preguntes o comentaris i prem \"Enter\"."
 
 #: pages/all_in.vue pages/communications.vue pages/facebook_marketing.vue
-#: pages/invite.vue pages/referral_links.vue pages/webinar_recordings.vue
+#: pages/invite.vue pages/referral_links_old.vue pages/webinar_recordings.vue
 #: communications/index.html communications/view.html
 #: webinar_recordings/index.html
 msgid "Ukrainian"
@@ -25265,7 +25740,7 @@ msgstr "PR no utilitzats"
 msgid "Upcoming Booking!"
 msgstr "Pròxima Reserva!"
 
-#: components/admin_booking/admin_cruise_featured.vue
+#: pages/inviter.vue components/admin_booking/admin_cruise_featured.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/user/user_notes.vue
 msgid "Update"
@@ -25274,6 +25749,12 @@ msgstr "Actualització"
 #: components/admin_operations/modals/kyc_flagged_modal.vue
 msgid "Update Customer"
 msgstr "Actualitzar client"
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "Send Private Invitation"
+msgid "update Invitation Type"
+msgstr "Envia invitació privada"
 
 #: components/recurring/confirm-recurring.vue
 msgid "Update Later"
@@ -25527,7 +26008,7 @@ msgstr ""
 msgid "Use Wallet Balance"
 msgstr "Utilitzar el Saldo del Moneder"
 
-#: components/onboarding/referral-link-step.vue
+#: pages/referral_links.vue components/onboarding/referral-link-step.vue
 msgid ""
 "Use your personalized referral link in social media, blogs, and emails you "
 "send using your email service. When someone clicks on one of your links, and "
@@ -25604,6 +26085,45 @@ msgstr "Usuaris"
 #: components/inchat/list_modals/users_room_list_modal.vue
 msgid "Users in Room"
 msgstr "Usuaris en sala"
+
+#: pages/referral_activity.vue
+msgid ""
+"Users who have registered on inCruises through your link listed by countries."
+msgstr ""
+
+#: pages/referral_activity.vue
+msgid ""
+"Users who have registered on inCruises through your link listed by referral "
+"type."
+msgstr ""
+
+#: pages/referral_activity.vue
+msgid ""
+"Users who have registered on inCruises through your link listed by "
+"subscription type."
+msgstr ""
+
+#: components/widgets/stats.vue
+msgid ""
+"Users who have registered with inCruises either with a free or an upgraded "
+"account through your link."
+msgstr ""
+
+#: components/widgets/stats.vue
+msgid ""
+"Users who have registered with inCruises with a membership plan through your "
+"link."
+msgstr ""
+
+#: components/widgets/stats.vue
+msgid ""
+"Users who have registered with inCruises with a partnership plan through "
+"your link."
+msgstr ""
+
+#: components/widgets/stats.vue
+msgid "Users who have seen our website through your link."
+msgstr ""
 
 #: pages/reports.vue reports/index.html
 msgid "Users with Pending Invoices"
@@ -25730,7 +26250,7 @@ msgstr "Presentacions en vídeo de:"
 msgid "Video, Images, and Other Links"
 msgstr "Vídeo, imatges i altres enllaços"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "video!"
 msgstr "Vídeo!"
 
@@ -25751,13 +26271,17 @@ msgstr "Veure-ho Tot"
 msgid "View all of your notifications."
 msgstr "Veure totes les teves notificacions."
 
+#: components/widgets/stats.vue
+msgid "View all statistics related to the activity of your referral links."
+msgstr ""
+
 #: pages/menu_page.vue
 msgid "View all the negative wallet balances of your downline Partners."
 msgstr ""
 "Consulta tots els saldos negatius de la cartera dels teus socis de línia "
 "descendent."
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "View Analytics"
 msgstr "Veure Anàlisis"
 
@@ -25839,9 +26363,8 @@ msgstr "Veure el distintiu de vendes italià per a fer negocis a Itàlia."
 msgid "View List"
 msgstr "Visualitzar Llista"
 
-#: pages/contacts.vue pages/notifications.vue pages/team_rankings.vue
-#: pages/track_results.vue components/media/media_list.vue
-#: track_results/index.html
+#: pages/notifications.vue pages/team_rankings.vue pages/track_results.vue
+#: components/media/media_list.vue track_results/index.html
 msgid "View More"
 msgstr "Veure més"
 
@@ -25890,7 +26413,7 @@ msgstr "Veure patrocinadors"
 msgid "View Testimonial Script"
 msgstr "Veure l’escriptura del testimoni"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "View Total Analytics"
 msgstr "Veure Anàlisis Total"
 
@@ -25930,7 +26453,7 @@ msgstr "Mira el teu saldo total i disponible del Punts de Recompensa."
 msgid "Viewing %{bookingId} book response"
 msgstr "Mostra les respostes de les reserves %{bookingId}"
 
-#: pages/referral_links.vue components/widgets/stats.vue
+#: pages/referral_links_old.vue components/widgets/stats.vue
 msgid "Views"
 msgstr "Vistes"
 
@@ -26638,6 +27161,12 @@ msgstr ""
 "Quins factors exclouen la teva reserva de la possibilitat de rebre el "
 "reemborsament de la diferència?"
 
+#: pages/welcome.vue
+#, fuzzy
+#| msgid "Whatsapp #"
+msgid "What's new"
+msgstr "Whatsapp #"
+
 #: pages/reports.vue
 msgid "Whatsapp #"
 msgstr "Whatsapp #"
@@ -26979,6 +27508,7 @@ msgstr "Yeongdong-eup, Corea"
 #: components/agreements/national_director_agreement.vue
 #: components/agreements/partner_code_of_conduct_agreement.vue
 #: components/agreements/ukranian_addendum_agreement.vue
+#: components/contacts/contact-edit-modal.vue
 #: agreements/italian_addendum_agreement.html
 #: agreements/leadership_agreement.html
 #: agreements/national_director_agreement.html
@@ -28397,7 +28927,7 @@ msgstr "El teu directe"
 msgid "Your Direct Partner's Activations"
 msgstr "Les Activacions del teu Soci Directe"
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Your Direct Referral Links"
 msgstr "Els teus enllaços de referència directa"
 
@@ -28449,6 +28979,12 @@ msgstr "Els teus buscadors de correu electrònic"
 msgid "Your emails don't match, please fix and try again."
 msgstr ""
 "Els emails no coincideixen, si us plau arregla-ho i torna a intentar-ho."
+
+#: pages/inviter.vue
+#, fuzzy
+#| msgid "You've been invited to inCruises® by"
+msgid "Your Exclusive Invitation to Join inCruises®"
+msgstr "T'han convidat a inCruises® per"
 
 #: components/payout/payquicker-ita-withdraw.vue
 #: components/payout/payquicker-withdraw.vue
@@ -28755,7 +29291,7 @@ msgstr "Els teus punts usats superen la quantitat permesa."
 msgid "Your VAT number has been successfully updated."
 msgstr "El teu número d'IVA s'ha actualitzat correctament."
 
-#: pages/referral_links.vue
+#: pages/referral_links_old.vue
 msgid "Your Video Referral Links"
 msgstr "Els teus enllaços de referència del Video"
 
@@ -40857,6 +41393,30 @@ msgstr ""
 msgid "Group Cruise in Asia onboard Bellissima"
 msgstr ""
 
+#~ msgid "<i class=\"fe fe-mail mr-1\"/> Send Invitation"
+#~ msgstr "<i class=\"fe fe-mail mr-1\"/> Enviar invitació"
+
+#~ msgid "Completed Invites"
+#~ msgstr "Invitacions Completades"
+
+#~ msgid "Imported Contacts"
+#~ msgstr "Contactes Importats"
+
+#~ msgid "Language:"
+#~ msgstr "Idioma:"
+
+#~ msgid "Next Billing Date:"
+#~ msgstr "Pròxima Data de Facturació:"
+
+#~ msgid "Opened!"
+#~ msgstr "Obert!"
+
+#~ msgid "Partner:"
+#~ msgstr "Soci:"
+
+#~ msgid "Pending Invites"
+#~ msgstr "Invitacions Pendents"
+
 #~ msgid "<strong>Air Allowance:</strong> Available for certain ranks"
 #~ msgstr "<strong>Pagament de vols: </strong> Disponible per a certs rangs"
 
@@ -41082,17 +41642,8 @@ msgstr ""
 #~ "<i class=\"fa fa-square-o\"></i>Converteix-te en un Soci Actiu inscrivint "
 #~ "3 Membres directes."
 
-#~ msgid ""
-#~ "Book Last Minute INcredible Costa Cruise Offers and Travel This Season!"
-#~ msgstr ""
-#~ "Reserva, ofertes de creuers Costa d'última hora INcreïbles i viatja "
-#~ "aquesta Temporada!"
-
 #~ msgid "Get In, Book now!"
 #~ msgstr "Posa't In, Reserva ara!"
-
-#~ msgid "Mercy Ships Fundraiser"
-#~ msgstr "Recaptació de Fons de Mercy Ships"
 
 #~ msgid ""
 #~ "This cruise has a mandatory gratuity (also known as Hotel Service "
@@ -45707,9 +46258,6 @@ msgstr ""
 #~ msgid "Accepted Invitations"
 #~ msgstr "Invitacions acceptades"
 
-#~ msgid "Available Invitations"
-#~ msgstr "Invitacions disponibles"
-
 #~ msgid "I have watched the video"
 #~ msgstr "He vist el vídeo"
 
@@ -45896,9 +46444,6 @@ msgstr ""
 #~ "permetran veure MÉS món i utilitzar MÉS Punts de Recompensa que mai, a "
 #~ "més de rebre MÉS crèdits a bord perquè \n"
 #~ "         les teves pròximes vacances siguin encara més memorables."
-
-#~ msgid "Personal QBI"
-#~ msgstr "QBI personal"
 
 #~ msgid ""
 #~ "%{ name }, download our app to import more contacts, start chatting with "
@@ -49557,9 +50102,6 @@ msgstr ""
 #~ msgid "Conversions"
 #~ msgstr "Conversions"
 
-#~ msgid "Invites"
-#~ msgstr "Invitacions"
-
 #~ msgid "Territory Director - Europe"
 #~ msgstr "Director del territori - Europa"
 
@@ -53032,9 +53574,6 @@ msgstr ""
 #~ "Per crear un eWallet, heu d'haver realitzat una venda per rebre una "
 #~ "compensació. Una vegada completat, podeu crear el vostre compte de "
 #~ "eWallet."
-
-#~ msgid "Map Contacts"
-#~ msgstr "Contactes del mapa"
 
 #~ msgid "Not Invited Top"
 #~ msgstr "Top no convidat"
