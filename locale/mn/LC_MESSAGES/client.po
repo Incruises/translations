@@ -532,7 +532,7 @@ msgstr "{{ itineraryItem.description }}"
 msgid "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 msgstr "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
 
@@ -793,6 +793,18 @@ msgstr "%{ cd_used } Шагналын Оноонууд"
 msgid "%{ city }"
 msgstr "%{ хот }"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "%{ n } Days"
+msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "%{ n } Days Left to Pay"
+msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
+
 #: pages/partner_success.vue
 msgid "%{ name } from %{ country }"
 msgstr "%{ name } from %{ country }"
@@ -889,6 +901,12 @@ msgid "%{count} more %{plan} %{activationLabel} to reach $%{amount}/member"
 msgstr ""
 "Нэг гишүүний $%{amount}-д хүрэхийн тулд танд %{count} %{plan} "
 "%{activationLabel} хэрэгтэй байна."
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Verification email sent successfully."
+msgid "%{count} push notifications were sent successfully."
+msgstr "Баталгаажуулах имэйл амжилттай илгээгдлээ."
 
 #: components/earnings_tile.vue
 msgid "%{countDownWord} %{time}"
@@ -2098,8 +2116,15 @@ msgstr ""
 "destinationCountryAndCurrency.currency.code }}"
 
 #: pages/admin_support_analytics.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 msgid "1 Day"
 msgstr "1 Өдөр"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "1 Day Left to Pay"
+msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
 
 #: components/cruises_booking_old/reward-points-step.vue
 #: components/cruises_booking_old/reward-points-confirm-step.vue
@@ -2183,6 +2208,12 @@ msgstr "1:2 Баланс"
 #: components/checkout/Processor2For1.vue
 msgid "2 For 1 RP"
 msgstr "1-ийн оронд 2 ШО"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "2 Invoices Dates"
+msgstr "Нэхэмжлэхийн огноо"
 
 #: pages/elevate.vue
 msgid "2 nights in Dubai with pre-cruise accommodations"
@@ -2526,6 +2557,13 @@ msgstr ""
 "байна. Банк баталгаажуулж дууссаны дараа энэ хуудас автоматаар шинэчлэгдэх "
 "болно."
 
+#: components/reports/new_reports.vue
+msgid ""
+"A set of ready-to-use report templates featuring the most requested insights "
+"by top Partners. Get instant access to popular data views with just one "
+"click."
+msgstr ""
+
 #: pages/apps.vue
 msgid ""
 "A simple ‘Add-to-home-screen’ prompt and push notifications make staying IN "
@@ -2775,13 +2813,19 @@ msgstr "PREMIUM-д хандах эрх"
 msgid "Account"
 msgstr "Бүртгэл"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Account Created"
 msgstr "Бүртгэл үүсгэгдлээ"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Account Creation Date"
 msgstr "Бүртгэл үүсгэсэн огноо"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Accounts"
+msgid "Account Expires"
+msgstr "Бүртгэлүүд"
 
 #: components/user/functions.vue
 msgid "Account has been deducted. Transaction successfully completed"
@@ -2842,18 +2886,19 @@ msgid "Action"
 msgstr "Үйлдэл"
 
 #: pages/certificates.vue pages/admin_account_recovery.vue
-#: pages/negative_balances.vue pages/reports.vue pages/admin_emails.vue
-#: pages/agreements.vue pages/team_documentation_requests.vue
-#: pages/admin_certificates.vue pages/receipts.vue pages/invoices.vue
-#: pages/admin_restricted_paybonus.vue pages/price_match_requests.vue
-#: components/support/InstantTools.vue components/compensation/statements.vue
+#: pages/negative_balances.vue pages/admin_emails.vue pages/agreements.vue
+#: pages/team_documentation_requests.vue pages/admin_certificates.vue
+#: pages/receipts.vue pages/invoices.vue pages/admin_restricted_paybonus.vue
+#: pages/price_match_requests.vue components/support/InstantTools.vue
+#: components/compensation/statements.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/fast_start_matching.vue
 #: components/compensation/recurring_income_levels.vue
 #: components/compensation/qbi_members_table.vue
 #: components/settings_page/modify-saved-passengers.vue
-#: components/data_table/table.vue components/high_risk/high_risk_accounts.vue
+#: components/data_table/table.vue components/reports/old_reports.vue
+#: components/high_risk/high_risk_accounts.vue
 #: components/admin_finance/payment_fulfillment.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
@@ -2914,9 +2959,9 @@ msgstr "Идэвхжүүлэх урамшуулал"
 msgid "Activation Bonuses (Daily and Monthly)"
 msgstr "Идэвхжүүлэх урамшууллууд (Өдөр бүрийн болон Сарын)"
 
-#: pages/reports.vue components/compensation/members-qbi-modal.vue
+#: components/compensation/members-qbi-modal.vue
 #: components/compensation/qbi_members_table.vue
-#: pages/compensation/member_activations.vue
+#: components/reports/old_reports.vue pages/compensation/member_activations.vue
 msgid "Activation Date"
 msgstr "Идэвхжүүлсэн огноо"
 
@@ -2975,6 +3020,7 @@ msgstr "Идэвхжүүлэлтийн хэмжээний шаардлага"
 
 #: pages/track_results.vue components/welcome/members-modal.vue
 #: components/compensation/qbi_members_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Active"
 msgstr "Идэвхтэй"
 
@@ -3000,7 +3046,7 @@ msgstr "inCruises клубын идэвхтэй Гишүүд нь "
 msgid "Active Member"
 msgstr "Идэвхтэй Гишүүн"
 
-#: pages/reports.vue components/compensation/qbi-details.vue
+#: components/compensation/qbi-details.vue components/reports/old_reports.vue
 msgid "Active Members"
 msgstr "Идэвхтэй Гишүүд"
 
@@ -3596,9 +3642,10 @@ msgstr "Аляска"
 msgid "Alipay"
 msgstr "Alipay"
 
-#: pages/reports.vue pages/info_center.vue pages/team_rankings.vue
+#: pages/info_center.vue pages/team_rankings.vue
 #: pages/admin_support_analytics.vue pages/track_results.vue
-#: pages/leadership_academy.vue components/user/timeline.vue
+#: pages/leadership_academy.vue components/reports/old_reports.vue
+#: components/user/timeline.vue
 msgid "All"
 msgstr "Бүх"
 
@@ -3630,6 +3677,7 @@ msgid "All children must be younger than 18 years old."
 msgstr "Бүх хүүхдийн нас 18-аас доош байх ёстой."
 
 #: pages/mercy_ships.vue components/business_intelligence/comp_to_sales.vue
+#: components/reports/filters/country.vue
 msgid "All Countries"
 msgstr "Бүх орнууд"
 
@@ -3696,6 +3744,7 @@ msgid "All Invitations"
 msgstr "Бүх урилгууд"
 
 #: pages/communications.vue pages/webinar_recordings.vue
+#: components/reports/filters/language.vue
 msgid "All Languages"
 msgstr "Бүх хэлээр"
 
@@ -3839,6 +3888,12 @@ msgstr ""
 #: pages/export.vue
 msgid "All Team Partners"
 msgstr "Бүх багийн Түншүүд"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "All Titles"
+msgid "All Teams"
+msgstr "Бүх цол зэрэг"
 
 #: components/public/Faq.vue pages/public/faq.vue
 msgid ""
@@ -4187,6 +4242,12 @@ msgstr "Алдаа гарсан байна, дараа дахин оролдон
 msgid "An error occurred while loading the meeting"
 msgstr "Уулзалтыг ачааллахад алдаа гарлаа."
 
+#: vue/composables/useSendBroadcastPwaNotification.js
+#, fuzzy
+#| msgid "An error occurred while loading the meeting"
+msgid "An error occurred while sending notification"
+msgstr "Уулзалтыг ачааллахад алдаа гарлаа."
+
 #: pages/business_performance.vue
 msgid "An error occurred while updating the widget."
 msgstr "Вижэт шинэчлэх явцад алдаа гарлаа."
@@ -4257,6 +4318,52 @@ msgstr "Хэрэглэгчийн филтерийг тохируулахад а�
 msgid ""
 "An unexpected error occurred while initializing the local client filters."
 msgstr "Хэрэглэгчийн филтерийг эхлүүлэхэд алдаа гарлаа."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid "An unexpected error occurred while loading countries."
+msgstr "Хэрэглэгчийн филтерийг тохируулахад алдаа гарлаа."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid "An unexpected error occurred while loading languages."
+msgstr "Филтерийг дахин тохируулахад алдаа гарлаа."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid ""
+"An unexpected error occurred while loading members with pending invoices."
+msgstr "Филтерийг дахин тохируулахад алдаа гарлаа."
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid ""
+"An unexpected error occurred while loading partners still eligible fast "
+"start."
+msgstr "Хэрэглэгчийн филтерийг тохируулахад алдаа гарлаа."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid "An unexpected error occurred while loading teams."
+msgstr "Филтерийг дахин тохируулахад алдаа гарлаа."
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid ""
+"An unexpected error occurred while loading users recurring payment status."
+msgstr "Хэрэглэгчийн филтерийг тохируулахад алдаа гарлаа."
 
 #: components/data_table/column-selection-widget.vue
 msgid "An unexpected error occurred while opening the column selection widget."
@@ -5012,7 +5119,7 @@ msgstr ""
 msgid "Attachments"
 msgstr "Хавсралтууд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "Attachments are temporarily disable for Email Blast. You can only send "
 "emails without attachments."
@@ -5020,7 +5127,7 @@ msgstr ""
 "Имэйл Бластын хавсралтуудыг түр идэвхгүй болгосон. Та зөвхөн хавсралтгүйгээр "
 "имэйл илгээх боломжтой."
 
-#: pages/reports.vue pages/email.vue
+#: pages/email.vue components/reports/old_reports.vue
 msgid "Attachments:"
 msgstr "Хавсралт:"
 
@@ -5225,7 +5332,7 @@ msgstr "Үндсэн мэдээлэл"
 msgid "Basic Training"
 msgstr "Үндсэн сургалт"
 
-#: pages/reports.vue pages/courses.vue
+#: pages/courses.vue components/reports/old_reports.vue
 msgid "Basic Training Courses"
 msgstr "Үндсэн сургалт"
 
@@ -5401,7 +5508,7 @@ msgstr "УНДААНЫ БАГЦ"
 msgid "Bill to:"
 msgstr "Төлөгчийн хаяг:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Billing Date"
 msgstr "Төлбөр хийх өдөр"
 
@@ -5472,7 +5579,7 @@ msgstr ""
 msgid "Board of Directors and above"
 msgstr "Board of Directors болон дээш"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Board of Directors Member"
 msgstr "Board of Directors Гишүүн"
 
@@ -5597,6 +5704,12 @@ msgstr "Урамшуулал төлөгдсөн"
 #: components/receipts/new_residual_bonus_statement.vue
 #: components/receipts/new_team_residual_bonus_statement.vue
 msgid "Bonus Paid For"
+msgstr "Урамшуулал төлөгдсөн"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Bonus Paid"
+msgid "Bonus Payed In"
 msgstr "Урамшуулал төлөгдсөн"
 
 #: pages/glsx.vue pages/gls.vue
@@ -5783,6 +5896,7 @@ msgid "Booking Type"
 msgstr "Захиалгын төрөл"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Both"
 msgstr "хоёул"
 
@@ -5831,7 +5945,7 @@ msgstr ""
 "Ур чадвараа хөгжүүлж, салбарын чиг хандлагатэй зэрэгцэн явахад туслах "
 "сургалтын нөөц багцуудыг хэрэглэнэ."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Builder Plan - $32"
 msgstr "Билдер Төлөвлөгөө - $32"
 
@@ -5905,11 +6019,11 @@ msgstr "Билдерс урамшууллын хамгийн их хэмжээ $
 msgid "Builders Points"
 msgstr "Билдерс Бэйсийн Оноонууд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Building a Compliant Business"
 msgstr "Зүй зохистой бизнес бий болгох"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Building Wide and Deep"
 msgstr "Өргөн, гүн барих"
 
@@ -5925,7 +6039,7 @@ msgstr "Таны өсөлтийг дэмжихээр бүтээгдсэн"
 msgid "Business Cards"
 msgstr "Нэрийн хуудас"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership"
 msgstr "Business Ownership"
 
@@ -5933,11 +6047,11 @@ msgstr "Business Ownership"
 msgid "BUSINESS OWNERSHIP CERTIFICATE"
 msgstr "БИЗНЕС ЭРХЛЭХ ГЭРЧИЛГЭЭ"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership Last Month"
 msgstr "Өмнөх сард бизнес эхэлсэн хүмүүс"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership This Month"
 msgstr "Энэ сард бизнес эхэлсэн хүмүүс"
 
@@ -6380,7 +6494,8 @@ msgstr "Өрөө:"
 msgid "Calendar"
 msgstr "Вэбинарын хуваарь"
 
-#: pages/reports.vue components/receipts/monthly_member_activation.vue
+#: components/reports/old_reports.vue
+#: components/receipts/monthly_member_activation.vue
 #: components/receipts/super_builders_bonus.vue
 #: components/receipts/qualified_residual_bonus.vue
 msgid "Calendar Month"
@@ -6525,10 +6640,10 @@ msgstr "Канадын Доллар (CAD)"
 #: components/fast-growing-legs.vue components/recipients_modal.vue
 #: components/avatar_cropper.vue pages/referral_links.vue pages/inviter.vue
 #: pages/tours_details.vue pages/checkout.vue pages/hotels.vue
-#: pages/reports.vue pages/admin_permission_group.vue
-#: pages/admin_department.vue pages/connect.vue pages/admin_permission.vue
-#: pages/contacts.vue pages/settings.vue pages/kyc_verification.vue
-#: pages/invoices.vue pages/email.vue pages/business_performance.vue
+#: pages/admin_permission_group.vue pages/admin_department.vue
+#: pages/connect.vue pages/admin_permission.vue pages/contacts.vue
+#: pages/settings.vue pages/kyc_verification.vue pages/invoices.vue
+#: pages/email.vue pages/business_performance.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/admin_management/admin_departments.vue
 #: components/payout/euro-conversion.vue
@@ -6540,7 +6655,7 @@ msgstr "Канадын Доллар (CAD)"
 #: components/contacts/contact-edit-modal.vue
 #: components/settings_page/remove-display-name-modal.vue
 #: components/cruises_booking_old/confirmation-step.vue
-#: components/hotels/GuestsDropdown.vue
+#: components/reports/old_reports.vue components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsPanel.vue
 #: components/recurring/add-recurring.vue
 #: components/recurring/recurring_payment_method_checkout.vue
@@ -6834,7 +6949,8 @@ msgstr ""
 "(жишээ нь, IP хаяг) зөвхөн сонгогдсон ажилчид болон гэрээт гүйцэтгэгч нар "
 "нууц үгээр дамжуулан нэвтрэх боломжтой юм."
 
-#: pages/certificates.vue pages/reports.vue
+#: pages/certificates.vue components/reports/quick_reports.vue
+#: components/reports/old_reports.vue
 msgid "Certificate"
 msgstr "Гэрчилгээ"
 
@@ -6860,6 +6976,7 @@ msgid "Certificates"
 msgstr "Гэрчилгээнүүд"
 
 #: pages/email_address.vue pages/referral_links_old.vue
+#: components/reports/quick_reports.vue
 msgid "Change"
 msgstr "Өөрчлөх"
 
@@ -7061,7 +7178,7 @@ msgstr "Хятадын Юан (CNY)"
 msgid "Choose"
 msgstr "Сонгоно уу"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Choose a Quick Report"
 msgstr "Түргэн Тайлан"
 
@@ -7232,6 +7349,7 @@ msgstr "Үнэгүй 50 Шагналын Оноо авах!"
 msgid "Classic"
 msgstr "Classic"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 msgid "CLASSIC"
@@ -7246,7 +7364,7 @@ msgstr "Classic Гишүүн"
 msgid "CLASSIC Member"
 msgstr "CLASSIC Гишүүн"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Classic Members"
 msgstr "Classic Гишүүд"
 
@@ -7269,7 +7387,7 @@ msgstr "Шалгуурыг арилгах"
 msgid "Clear Filters"
 msgstr "Филтерүүдийг арилгах"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Clear Selections"
 msgstr "Сонголтыг цуцлах"
 
@@ -7351,6 +7469,11 @@ msgstr "Ваучер харах"
 #: pages/create_price_match_cruises.vue
 msgid "Click here to view your Price Match Requests:"
 msgstr "Өөрийн Үнийн тохиргооны хүсэлтийг энд дарж үзэх:"
+
+#: components/reports/new_reports.vue
+#: components/reports/quick_reports_modal/templates-list.vue
+msgid "Click on a card below to run report based on a specific template"
+msgstr ""
 
 #: pages/cruise_price_match_guarantee.vue
 msgid "click the"
@@ -7464,6 +7587,7 @@ msgid "Column Selection"
 msgstr "Багана сонголт"
 
 #: components/data_table/column-selection-widget.vue
+#: components/reports/report_card.vue
 msgid "Columns"
 msgstr "Эгнээнүүд"
 
@@ -7487,6 +7611,12 @@ msgstr ""
 "Сонгогдсон бусад inCruises-ийн Түншүүдтэй хамт 2024 оны 1-р сард Дубайд ирж, "
 "энэхүү түүхэн анхны аялалд хамрагдаарай. Энэ бол"
 
+#: components/reports/report_card.vue
+#, fuzzy
+#| msgid "Coming Soon!"
+msgid "Coming Soon"
+msgstr "Тун удахгүй!"
+
 #: pages/public/the_global_convention.vue
 msgid "Coming Soon!"
 msgstr "Тун удахгүй!"
@@ -7495,7 +7625,8 @@ msgstr "Тун удахгүй!"
 msgid "Commercial Partnerships Manager"
 msgstr "Арилжааны түншлэлийн менежер"
 
-#: pages/reports.vue components/receipts/commission_statement.vue
+#: components/reports/old_reports.vue
+#: components/receipts/commission_statement.vue
 msgid "Commission"
 msgstr "Орлого шагнал"
 
@@ -7560,7 +7691,8 @@ msgstr "Шагнал урамшуулал"
 msgid "Compensation Details"
 msgstr "Шагнал урамшууллын дэлгэрэнгүй"
 
-#: pages/reports.vue components/certificates/CompensationProgram.vue
+#: components/reports/old_reports.vue
+#: components/certificates/CompensationProgram.vue
 #: components/public/FooterDocs.vue
 msgid "Compensation Program"
 msgstr "Шагнал урамшууллын хөтөлбөр"
@@ -7607,9 +7739,10 @@ msgstr "Аялах хүмүүсийн дэлгэрэнгүй мэдээлэл"
 msgid "Complete your booking before"
 msgstr "Захиалгаа дуусгах"
 
-#: pages/export.vue pages/reports.vue pages/agreements.vue
-#: pages/team_documentation_requests.vue pages/contacts.vue pages/invoices.vue
-#: pages/leadership_academy.vue components/contacts/contact-edit-modal.vue
+#: pages/export.vue pages/agreements.vue pages/team_documentation_requests.vue
+#: pages/contacts.vue pages/invoices.vue pages/leadership_academy.vue
+#: components/contacts/contact-edit-modal.vue
+#: components/reports/old_reports.vue
 msgid "Completed"
 msgstr "Дууссан"
 
@@ -7682,13 +7815,12 @@ msgstr "Вижэт тохируулах"
 
 #: components/alert_modal.vue components/fast-growing-legs.vue
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: pages/reports.vue pages/create_price_match_cruises.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/admin_permission.vue pages/settings.vue
+#: pages/create_price_match_cruises.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/admin_permission.vue pages/settings.vue
 #: components/payout/birthday-modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
-#: components/receipts/booking_receipt.vue
+#: components/reports/old_reports.vue components/receipts/booking_receipt.vue
 msgid "Confirm"
 msgstr "Баталгаажуулах"
 
@@ -7863,7 +7995,7 @@ msgstr ""
 msgid "Congratulations! You have claimed your reward points."
 msgstr "Танд баяр хүргэе, та Шагналын Оноогоо авах хүсэлт гаргасан байна!"
 
-#: pages/reports.vue pages/connect.vue pages/account_setup.vue
+#: pages/connect.vue pages/account_setup.vue components/reports/old_reports.vue
 msgid "Connect"
 msgstr "Конект"
 
@@ -7871,7 +8003,7 @@ msgstr "Конект"
 msgid "CONNECT 1500"
 msgstr "КОНЕКТ 1500"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect 1500 - $500"
 msgstr "Конект 1500 - $500"
 
@@ -7879,7 +8011,7 @@ msgstr "Конект 1500 - $500"
 msgid "CONNECT 500"
 msgstr "КОНЕКТ 500"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect 500 - $50"
 msgstr "Конект 500 - $50"
 
@@ -7893,7 +8025,7 @@ msgstr ""
 "дамжуулан өөрийн багийн Түншүүд болон сонирхогч нартайгаа холбогдох бизнес "
 "уулзалтын арга юм."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect Plan"
 msgstr "Конект Төлөвлөгөө"
 
@@ -8244,6 +8376,12 @@ msgstr "Улс орнууд"
 msgid "Countries and counting"
 msgstr "Улс орон"
 
+#: components/reports/filters/country.vue
+#, fuzzy
+#| msgid "Countries Selected"
+msgid "countries selected"
+msgstr "Сонгосон улс орнууд"
+
 #: pages/mercy_ships.vue
 msgid "Countries Selected"
 msgstr "Сонгосон улс орнууд"
@@ -8259,10 +8397,10 @@ msgstr "улс"
 #: components/mercy-ship-modals.vue components/info-reminder.vue
 #: components/weekly-competition.vue pages/additional_info.vue
 #: pages/competition.vue pages/referral_links_old.vue pages/admin_user.vue
-#: pages/new_ranks.vue pages/mercy_ships.vue pages/reports.vue
-#: pages/partner_success.vue pages/builders_base.vue pages/team_rankings.vue
-#: pages/settings.vue pages/reach.vue pages/track_results.vue
-#: pages/giving_society.vue components/checkout/ItalianStep.vue
+#: pages/new_ranks.vue pages/mercy_ships.vue pages/partner_success.vue
+#: pages/builders_base.vue pages/team_rankings.vue pages/settings.vue
+#: pages/reach.vue pages/track_results.vue pages/giving_society.vue
+#: components/checkout/ItalianStep.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus_preview.vue
 #: components/compensation/leadership_bonus.vue
@@ -8271,12 +8409,17 @@ msgstr "улс"
 #: components/compensation/my_team_breakdown_table.vue
 #: components/contacts/contact-edit-modal.vue
 #: components/settings_page/login-activity.vue
+#: components/reports/old_reports.vue
 #: components/high_risk/high_risk_accounts.vue
 #: components/receipts/italian_receipt.vue components/public/JoinModal.vue
 #: components/onboarding/address-step.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/business_intelligence/comp_to_sales.vue pages/public/signup.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
+#: components/reports/filters/country.vue
 msgid "Country"
 msgstr "Улс Орон"
 
@@ -8319,7 +8462,7 @@ msgstr "сургалт"
 msgid "Course"
 msgstr "Сургалт"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Course Certificate"
 msgstr "Сургалтын Гэрчилгээ"
 
@@ -8433,6 +8576,7 @@ msgid "Created:"
 msgstr "Үүсгэгдсэн:"
 
 #: components/admin_finance/payment_fulfillment.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/mercy_ships/donate_modal/payment-selection.vue
 msgid "Credit Card"
 msgstr "Зээлийн Карт"
@@ -8692,7 +8836,7 @@ msgstr "Далайн аяллын компаниуд"
 msgid "Cruise Member"
 msgstr "inCruises-ийн Гишүүн"
 
-#: components/support/InstantTools.vue
+#: components/support/InstantTools.vue components/reports/quick_reports.vue
 msgid "Cruise Name"
 msgstr "Далайн аяллын нэр"
 
@@ -8812,6 +8956,12 @@ msgstr "Еврогоор мэдэгдсэн валютын дүн"
 msgid "Currency Selected"
 msgstr "Одоогоор сонгогдсон"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Direct Activations"
+msgid "Current Activations"
+msgstr "Хувьчлан идэвхжүүлэлтүүд"
+
 #: components/growth_calculator/potential_recurring.vue
 msgid "Current Active Levels"
 msgstr "Одоогийн идэвхтэй үеүүд"
@@ -8844,8 +8994,15 @@ msgid "Current Plan"
 msgstr "Одоогийн багц"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/quick_reports.vue
 msgid "Current QBI"
 msgstr "Одоогийн QBI"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Recurring Qualified Production"
+msgid "Current Qualified Production"
+msgstr "Давтамжит төлбөрийн борлуулалт"
 
 #: components/growth_calculator/potential_leadership.vue
 msgid "Current Rank"
@@ -9059,7 +9216,7 @@ msgstr "мэдээлэл"
 msgid "Data"
 msgstr "Мэдээлэл"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Data Fields"
 msgstr "Мэдээлэл"
 
@@ -9105,7 +9262,7 @@ msgstr "Огноо буурах дарааллаар"
 msgid "Date Earned"
 msgstr "Авсан он сар өдөр"
 
-#: pages/reports.vue pages/team_rankings.vue
+#: pages/team_rankings.vue components/reports/old_reports.vue
 msgid "Date From"
 msgstr "Эхлэх Огноо"
 
@@ -9138,7 +9295,7 @@ msgstr "Гарсан огноо"
 msgid "Date Range"
 msgstr "Мэдээллийн хугацаа:"
 
-#: pages/reports.vue pages/team_rankings.vue
+#: pages/team_rankings.vue components/reports/old_reports.vue
 msgid "Date To"
 msgstr "Хүртэл"
 
@@ -9172,6 +9329,7 @@ msgid "days"
 msgstr "өдөр"
 
 #: components/cards/countdown-card.vue components/public/tgc-countdown.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
 msgid "Days"
 msgstr "Өдөр"
 
@@ -9180,11 +9338,37 @@ msgid "Days In Negative"
 msgstr "Идэвхгүй байсан өдөрүүд"
 
 #: components/compensation/members-qbi-modal.vue
+#: components/reports/quick_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
 msgid "Days Left"
 msgstr "Үлдсэн өдрүүд"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Count"
+msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left to Pay"
+msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Pay"
+msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
+
 #: components/compensation/qbi_members_table.vue
 msgid "Days Left To Qualify"
+msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Still Be Eligible"
 msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
 
 #: pages/admin_user_id.vue
@@ -9345,7 +9529,7 @@ msgstr "Явах"
 msgid "DEPART"
 msgstr "ХӨДЛӨХ"
 
-#: pages/reports.vue pages/price_match_requests.vue
+#: pages/price_match_requests.vue components/reports/old_reports.vue
 #: components/receipts/booking_receipt.vue
 #: components/admin_booking/admin_cruise_featured.vue
 msgid "Depart Date"
@@ -9613,7 +9797,7 @@ msgstr "Энэ сард хувьчлан элсүүлсэн Түншүүд"
 msgid "Direct Pending Members"
 msgstr "Хувьчлан урьсан хүлээгдэж буй Гишүүд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Direct Pending with Cruise Bookings"
 msgstr "Далайн аялал захиалсан, хүлээгдэж буй Гишүүд"
 
@@ -9688,6 +9872,13 @@ msgstr "Хувьчлан элсүүлсэн бүх хүмүүс"
 #: pages/info_center.vue
 msgid "Directs (Month to Date)"
 msgstr "Хувьчлан элсүүлсэн хүмүүс (Сарын эхнээс өнөөдрийг хүртэл)"
+
+#: components/reports/filters/my_directs.vue
+#, fuzzy
+#| msgid "Total of Members or Partners you have personally Activated"
+msgid ""
+"Directs are members or partners you have referred to inCruises personally."
+msgstr "Таны хувьчлан идэвхжүүлсэн Гишүүд, Түншүүдийн тоо"
 
 #: pages/new_partners_tracker.vue
 msgid "Directs Leaderboard"
@@ -10031,11 +10222,11 @@ msgstr "Ангилал бууруулах боломжтой эсэх"
 msgid "Downgreadable"
 msgstr "Ангилал бууруулах боломж"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline level limit must be a number!"
 msgstr "Доод үеийн хязгаарт тоо бичигдэх ёстой!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline limit must be set between 1 and 50."
 msgstr "Доод үеийн хязгаарын тоо 1-50 хооронд байх ёстой."
 
@@ -10043,13 +10234,20 @@ msgstr "Доод үеийн хязгаарын тоо 1-50 хооронд бай
 msgid "Downline Name"
 msgstr "Доод түвшний Нэр"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline Select"
 msgstr "Доод түвшин Сонгох"
 
-#: pages/reports.vue components/inchat/user/user_create_room.vue
+#: components/reports/old_reports.vue
+#: components/inchat/user/user_create_room.vue
 msgid "Downlines"
 msgstr "Доод үеүд"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Downline Select"
+msgid "Downlines Eligible"
+msgstr "Доод түвшин Сонгох"
 
 #: components/receipts/instant_bonus_statement.vue
 msgid "Downlines Names"
@@ -10096,8 +10294,8 @@ msgstr "Карт татаж авах (png файлаар)"
 msgid "Download Completed CSV"
 msgstr "Гүйцэтгэж дууссан CSV файлыг татаж авах"
 
-#: pages/reports.vue pages/team_documentation_requests.vue
-#: pages/track_results.vue
+#: pages/team_documentation_requests.vue pages/track_results.vue
+#: vue/composables/reports/useBulkActions.js components/reports/old_reports.vue
 msgid "Download CSV"
 msgstr "CSV файл татаж авах"
 
@@ -10193,8 +10391,8 @@ msgstr "Дубай"
 msgid "Due date"
 msgstr "Дуусах огноо"
 
-#: pages/reports.vue pages/invoices.vue components/invoices/invoice.vue
-#: components/user/invoices.vue
+#: pages/invoices.vue components/invoices/invoice.vue
+#: components/reports/old_reports.vue components/user/invoices.vue
 msgid "Due Date"
 msgstr "Төлөх огноо"
 
@@ -10226,6 +10424,13 @@ msgstr ""
 #: components/payout/brightwell/transfer-details.vue
 msgid "Due to your"
 msgstr "Due to your"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Due Today"
+msgid "Due today"
+msgstr "Өнөөдөр дуусч байна"
 
 #: pages/duplicator.vue
 msgid "Duplicator"
@@ -10790,7 +10995,7 @@ msgstr "Шагнал урамшуулал авах болзол"
 #: components/welcome/profile-card.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
-#: components/navigation/mobile-menu.vue
+#: components/reports/quick_reports.vue components/navigation/mobile-menu.vue
 #: components/navigation/avatar-dropdown.vue
 #: components/compensation/fast_start/breakdown_table.vue
 msgid "Eligible"
@@ -10825,14 +11030,15 @@ msgstr "Элит аяллын ашиг тус урамшууллыг хэрэг�
 #: components/birthday-modal.vue pages/email_address.vue
 #: pages/additional_info.vue pages/cards.vue pages/account-recovery.vue
 #: pages/admin_account_recovery.vue pages/negative_balances.vue
-#: pages/admin_user.vue pages/invite.vue pages/reports.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/contacts.vue pages/team_rankings.vue pages/settings.vue
-#: pages/track_results.vue pages/admin_restricted_paybonus.vue
-#: pages/notifications.vue pages/password.vue pages/email.vue
-#: pages/multi_factor.vue components/negative_balances/uplines_modal.vue
+#: pages/admin_user.vue pages/invite.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/contacts.vue pages/team_rankings.vue
+#: pages/settings.vue pages/track_results.vue
+#: pages/admin_restricted_paybonus.vue pages/notifications.vue
+#: pages/password.vue pages/email.vue pages/multi_factor.vue
+#: components/negative_balances/uplines_modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/invoices/invoice.vue components/compensation/leadership_bonus.vue
+#: components/reports/old_reports.vue
 #: components/high_risk/high_risk_accounts.vue
 #: components/receipts/monthly_member_activation.vue
 #: components/receipts/tour_booking_receipt.vue
@@ -10852,6 +11058,9 @@ msgstr "Элит аяллын ашиг тус урамшууллыг хэрэг�
 #: components/receipts/hotel_booking_receipt.vue
 #: components/receipts/leadership_bonus_statement.vue
 #: components/receipts/builders_bonus_new.vue components/public/JoinModal.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/hotel_booking/guest_info_step.vue
 #: components/user/notifications.vue pages/login/login.vue
 #: pages/public/signup.vue pages/public/contact.vue
@@ -10876,7 +11085,7 @@ msgstr "Имэйл хаяг үүсгэгдлээ!"
 msgid "Email Address:"
 msgstr "Имэйл хаяг:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Email Blast"
 msgstr "Имэйл бласт"
 
@@ -10928,6 +11137,12 @@ msgstr "Имэйл хаяг:"
 #: pages/contacts.vue
 msgid "email@example.com"
 msgstr "email@example.com"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Email Date"
+msgid "Embarking Date"
+msgstr "Имэйлийн огноо"
 
 #: pages/glsx.vue pages/gls.vue
 msgid "Embrace the Challenge"
@@ -11146,6 +11361,18 @@ msgstr "Нэр"
 msgid "Enter new password"
 msgstr "Шинэ нууц үгээ бичнэ үү"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Enter Verification Code"
+msgid "Enter notification content"
+msgstr "Баталгаажуулах кодоо бичнэ үү"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Enter Verification Code"
+msgid "Enter notification title"
+msgstr "Баталгаажуулах кодоо бичнэ үү"
+
 #: pages/login/login.vue pages/public/signup.vue
 msgid "Enter password"
 msgstr "Нууц үгээ бичнэ үү"
@@ -11292,7 +11519,8 @@ msgstr ""
 msgid "error"
 msgstr "алдаа"
 
-#: vue/main.js components/recurring/recurring-cards.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/recurring/recurring-cards.vue
 msgid "Error"
 msgstr "Алдаа"
 
@@ -11538,11 +11766,12 @@ msgstr "Урьд урьсан хаягуудыг хасах"
 msgid "Exclude results with mandatory pre-paid tips"
 msgstr "Заавал урьдчилан төлөх үйлчилгээний хөлсийг оруулаагүй"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
+#: components/reports/filters/exclude_teams.vue
 msgid "Exclude Teams"
 msgstr "Багуудыг хасах"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Excluding Teams"
 msgstr "Хасагдсан багууд"
 
@@ -11583,11 +11812,12 @@ msgstr "АЯЛАЛ 2"
 msgid "EXCURSION 3"
 msgstr "АЯЛАЛ 3"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -11659,8 +11889,9 @@ msgstr ""
 msgid "Expiration date"
 msgstr "Хугацаа дуусах огноо"
 
-#: pages/reports.vue pages/invoices.vue pages/admin_price_match.vue
-#: components/recurring/recurring-cards.vue components/user/invoices.vue
+#: pages/invoices.vue pages/admin_price_match.vue
+#: components/reports/old_reports.vue components/recurring/recurring-cards.vue
+#: components/user/invoices.vue
 msgid "Expiration Date"
 msgstr "Хугацаа дуусах огноо"
 
@@ -11684,11 +11915,11 @@ msgstr "Хугацаа дуусах огноо (UTC)"
 msgid "Expired"
 msgstr "Хугацаа нь дууссан"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Expired Partners"
 msgstr "Идэвхгүй Түншүүд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Expired Partners with Pending Invoices"
 msgstr "Төлөөгүй нэхэмжлэх бүхий хугацаа нь дууссан Түншүүд"
 
@@ -11804,6 +12035,18 @@ msgstr ""
 msgid "Failed to create session. Please try again."
 msgstr "Session үүсгэхэд алдаа гарлаа. Дахин оролдоно уу."
 
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "Failed to load members"
+msgid "Failed to download users"
+msgstr "Гишүүдийг ачааллахад алдаа гарлаа"
+
+#: vue/composables/useDownloadCsv.js
+#, fuzzy
+#| msgid "Error generating CSV"
+msgid "Failed to generate CSV"
+msgstr "CSV файл үүсгэх үед алдаа гарлаа."
+
 #: components/compensation/overview.vue
 msgid "Failed to get compensation layout."
 msgstr "Орлого урамшууллын бүтцийг гаргахад алдаа гарлаа."
@@ -11883,6 +12126,13 @@ msgstr "Хэрэглэгч нарыг харахад алдаа гарлаа. Д
 #: components/compensation/overview.vue
 msgid "Failed to save layout."
 msgstr "Загвар хадгалахад алдаа гарлаа."
+
+#: vue/composables/useSendBroadcastPwaNotification.js
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "e-mail & push notifications"
+msgid "Failed to send notification"
+msgstr "имэйл, мэдэгдэл"
 
 #: components/payout/brightwell/recipient-account.vue
 msgid "Failed to send verification email. Please try again."
@@ -11984,11 +12234,11 @@ msgstr "Хурдацтай өсөж буй Түншүүд"
 msgid "Fast Start"
 msgstr "Түргэн эхлэх"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Bonus"
 msgstr "Түргэн эхлэх урамшуулал"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Earned"
 msgstr "Түргэн эхлэх урамшуулал авсан"
 
@@ -12005,7 +12255,7 @@ msgstr "Түргэн эхлэх урамшуулал"
 msgid "FAST START INCENTIVE = $500.00 MD BONUS!"
 msgstr "ТҮРГЭН ЭХЛЭХ УРАМШУУЛАЛ = MЗ-ийн $500-ын УРАМШУУЛАЛ!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Last Month"
 msgstr "Өмнөх сард Түргэн эхлэх урамшуулал авсан хүмүүс"
 
@@ -12015,7 +12265,7 @@ msgstr "Өмнөх сард Түргэн эхлэх урамшуулал авс�
 msgid "Fast Start Matching"
 msgstr "Түргэн эхлэх тохируулах урамшуулал"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start This Month"
 msgstr "Энэ сард Түргэн эхлэх урамшуулал авсан хүмүүс"
 
@@ -12163,9 +12413,10 @@ msgstr "Цолоор ангилах"
 msgid "Filtering"
 msgstr "Филтер"
 
-#: components/leader_board_component.vue pages/hotels.vue pages/reports.vue
-#: pages/cruises.vue components/data_table/filter-selection-widget.vue
-#: components/data_table/table.vue components/tours/intours_results.vue
+#: components/leader_board_component.vue pages/hotels.vue pages/cruises.vue
+#: components/data_table/filter-selection-widget.vue
+#: components/data_table/table.vue components/reports/old_reports.vue
+#: components/tours/intours_results.vue
 #: components/partner_cruise_contest/leader_board.vue
 msgid "Filters"
 msgstr "Филтер"
@@ -12324,6 +12575,19 @@ msgstr "Анхны хариуны дундаж"
 #: components/admin_field_communicators/field_stats.vue
 msgid "First Start Date"
 msgstr "Эхний удаа эхлэх огноо"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "First Leader"
+msgid "First Up leader"
+msgstr "Анхны манлайлагч"
+
+#: components/reports/quick_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "First Leader"
+msgid "First Up Leader"
+msgstr "Анхны манлайлагч"
 
 #: components/admin_field_communicators/field_stats.vue
 msgid "First Year"
@@ -12638,7 +12902,7 @@ msgstr "ҮНЭГҮЙ"
 msgid "Free and Registered"
 msgstr "Үнэгүй бүртгүүлсэн"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Free Plan"
 msgstr "Үнэгүй"
 
@@ -12657,6 +12921,8 @@ msgstr "Баасан"
 
 #: pages/mercy_ships.vue pages/elevate_registration.vue pages/email.vue
 #: components/cruises_booking/cruise_card.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "From"
 msgstr "Эхлэх үнэ"
 
@@ -12741,7 +13007,7 @@ msgstr "Мөнгөн дүн хасагдсан. Гүйлгээ амжилтта�
 msgid "Funds:"
 msgstr "Дүн:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Future Bookings"
 msgstr "Ирээдүйн захиалга"
 
@@ -13273,8 +13539,7 @@ msgstr "Зочид"
 msgid "Guest Account"
 msgstr "Зочны бүртгэл"
 
-#: pages/reports.vue pages/track_results.vue
-#: components/hotels/GuestsDropdown.vue
+#: pages/track_results.vue components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsTrigger.vue
 #: components/receipts/hotel_booking_receipt.vue components/user/directs.vue
 msgid "Guests"
@@ -13521,6 +13786,10 @@ msgstr "\"Түүхэн\" QBI Индекс"
 #: components/compensation/qbi.vue
 msgid "Historical QBI Date Range:"
 msgstr "“Түүхэн” QBI-ийг тооцох хугацаа"
+
+#: components/reports/old_reports.vue
+msgid "Historical QBI Report"
+msgstr "\"Түүхэн\" QBI Индексийн тайлан"
 
 #: components/receipts/tour_booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue
@@ -15855,6 +16124,7 @@ msgid "in Withholding Taxes and"
 msgstr "шимтгэл татвар болон"
 
 #: pages/track_results.vue components/compensation/qbi_members_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Inactive"
 msgstr "Идэвхгүй"
 
@@ -15864,7 +16134,7 @@ msgstr "Идэвхгүй"
 msgid "Inactive Balance"
 msgstr "Идэвхгүй баланс"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Inactive Date"
 msgstr "Идэвхгүй өдөр"
 
@@ -15898,7 +16168,7 @@ msgstr "Урамшууллын тухай мэдээлэл:"
 msgid "Incentive Program Overview"
 msgstr "Урамшууллын Хөтөлбөр"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Include"
 msgstr "Багтаасан"
 
@@ -15963,6 +16233,12 @@ msgstr "InCruises - Шагнал урамшуулал"
 #: pages/compensation/member_activations.vue
 msgid "InCruises - Member Activation Bonuses"
 msgstr "inCruises - Гишүүн идэвхжүүлэх урамшуулал"
+
+#: pages/reports.vue
+#, fuzzy
+#| msgid "inCruises - Receipt"
+msgid "InCruises - Reports"
+msgstr "InCruises - Тооцооны баримт"
 
 #: pages/compensation/team_leadership_bonus.vue
 #, fuzzy
@@ -16644,6 +16920,12 @@ msgstr ""
 "илгээгдсэн мэдээлэл, жишээлбэл күүки эсвэл таны IP хаягийн хүсэлт зэргийг "
 "цуглуулах боломжтой юм."
 
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "InCruises Wallet"
+msgid "inCruises Wallet"
+msgstr "InCruises Түрийвч"
+
 #: components/checkout/ProcessorWallet.vue
 msgid "InCruises Wallet"
 msgstr "InCruises Түрийвч"
@@ -16778,7 +17060,8 @@ msgstr ""
 "Энэ далайн аяллын компани хөлөгт суух үед %{infantAgeMax}-аас бага настай "
 "нярай хүүхдүүдийг хөлөг дээр зорчихыг зөвшөөрдөггүй болно."
 
-#: vue/main.js components/compensation/member_activations.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/compensation/member_activations.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/weekly_bonus.vue components/user/permissions.vue
@@ -16849,6 +17132,10 @@ msgstr "Энд Пиксел ID-г бичнэ үү"
 #: pages/email.vue
 msgid "Insert your email..."
 msgstr "Имэйл хаягаа бичнэ үү..."
+
+#: components/reports/old_reports.vue
+msgid "Insert your message..."
+msgstr "Мессежээ бичнэ үү..."
 
 #: pages/cruise.vue pages/tenth_anniversary_cruises.vue
 #: components/cruises_booking/cabin_price_showcase.vue
@@ -16960,11 +17247,12 @@ msgstr ""
 msgid "Internal Price"
 msgstr "Дотоод үнэ"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -17117,7 +17405,8 @@ msgstr "нэхэмжлэх"
 msgid "Invoice"
 msgstr "Нэхэмжлэх"
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 msgid "Invoice Created"
 msgstr "Нэхэмжлэх ирсэн"
 
@@ -17151,6 +17440,24 @@ msgstr "Нэхэмжлэхийн дугаар"
 msgid "Invoice Statement"
 msgstr "Нэхэмжлэхийн Мэдэгдэл"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Invite Status"
+msgid "Invoice Status"
+msgstr "Урилгын төлөв"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "Invoice Type"
+msgstr "Нэхэмжлэхийн огноо"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Pending Invoices (within 5 days)"
+msgid "Invoice Within First 5 Days"
+msgstr "Хүлээгдэж буй нэхэмжлэхүүд (5 өдрийн дотор төлөх)"
+
 #: QuickPayTopBar.vue pages/admin_user_id.vue pages/menu_page.vue
 #: pages/invoices.vue
 msgid "Invoices"
@@ -17164,7 +17471,7 @@ msgstr "Нэхэмжлэх төлөгдлөө"
 msgid "Invoices Pending"
 msgstr "Нэхэмжлэх хүлээгдэж байна"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Invoices Total"
 msgstr "Нэхэмжлэхийн нийт дүн"
 
@@ -17705,15 +18012,20 @@ msgstr "KYC туг хатгагдлаа"
 msgid "Kyrgyz"
 msgstr "Киргиз"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Laminated Presentations"
 msgstr "Ламинат танилцуулга"
 
-#: pages/admin_user.vue pages/reports.vue pages/team_documentation_requests.vue
+#: pages/admin_user.vue pages/team_documentation_requests.vue
 #: pages/team_rankings.vue pages/settings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
 #: components/contacts/contact-edit-modal.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#: components/reports/filters/language.vue
 #: components/inchat/user/user_create_room.vue
 msgid "Language"
 msgstr "Хэл"
@@ -17721,6 +18033,12 @@ msgstr "Хэл"
 #: components/language-reminder.vue
 msgid "Language Reminder"
 msgstr "Хэл Сануулга"
+
+#: components/reports/filters/language.vue
+#, fuzzy
+#| msgid "Package selected:"
+msgid "languages selected"
+msgstr "Сонгосон багц:"
 
 #: pages/team_rankings.vue components/compensation/overview.vue
 msgid "Last 12 Months"
@@ -17794,6 +18112,12 @@ msgstr "Овог"
 msgid "Last Name:"
 msgstr "Овог:"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Rank Achieved"
+msgid "Last Rank Achieved"
+msgstr "Авсан цол"
+
 #: pages/admin_emails.vue
 msgid "Last Sent"
 msgstr "Хамгийн сүүлд илгээсэн"
@@ -17852,7 +18176,7 @@ msgstr "Латви хэл"
 msgid "Layout has been successfully updated."
 msgstr "Бүтэц амжилттай шинэчлэгдлээ."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Leader Plan - $49"
 msgstr "Манлайлагч Төлөвлөгөө - $49"
 
@@ -18109,7 +18433,11 @@ msgstr ""
 "Платформ дээр дэлгэцийн нэр ашигласан тохиолдолд таны хууль ёсны нэр "
 "харагдахгүй байх болно."
 
-#: pages/reports.vue pages/reach.vue
+#: pages/reach.vue components/reports/quick_reports.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Level"
 msgstr "Үе"
 
@@ -18117,7 +18445,7 @@ msgstr "Үе"
 msgid "Level {{ index + 1 }}"
 msgstr "Үе {{ index + 1 }}"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Level Limit"
 msgstr "Үеийн Хязгаар"
 
@@ -18215,6 +18543,11 @@ msgstr "Холбоосууд"
 msgid "List any specific needs"
 msgstr "Тодорхой хэрэгцээт зүйлүүд"
 
+#: components/reports/quick_reports.vue
+msgid ""
+"Lists members counting for your QBI metric with days left to count and status"
+msgstr ""
+
 #: components/checkout/ProcessorNetcents.vue
 msgid "Litecoin"
 msgstr "Litecoin"
@@ -18247,11 +18580,11 @@ msgstr "Ачааллах Үе"
 msgid "Load more"
 msgstr "Үргэлжлүүлэх"
 
-#: pages/reward_points.vue pages/admin_partner_success.vue pages/reports.vue
+#: pages/reward_points.vue pages/admin_partner_success.vue
 #: pages/webinar_recordings.vue pages/partner_success.vue pages/invoices.vue
 #: pages/track_results.vue pages/cruises.vue
 #: components/payout/wallet-transfers.vue
-#: components/cruises_booking/cabin_step.vue
+#: components/cruises_booking/cabin_step.vue components/reports/old_reports.vue
 #: components/tours/intours_results.vue
 msgid "Load More"
 msgstr "Үргэлжлүүлэх"
@@ -18659,12 +18992,13 @@ msgstr "Төлөгдсөн гэж тэмдэглэгдэх"
 msgid "Market Adjustment"
 msgstr "Зах зээлийн тохируулга"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -18714,7 +19048,7 @@ msgstr "Их хэмжээний шинэчлэлт"
 msgid "Master Controls"
 msgstr "Гол Хяналт"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Master Plan - $119"
 msgstr "Мастер Төлөвлөгөө - $119"
 
@@ -18782,6 +19116,10 @@ msgstr ""
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Max Lead Time"
 msgstr "Захиалах хамгийн их хугацаа"
+
+#: components/reports/filters/max_levels_down.vue
+msgid "Max Levels Down"
+msgstr ""
 
 #: components/filter-chip-range.vue pages/hotels.vue pages/cruises.vue
 #: components/tours/intours_results.vue
@@ -18996,6 +19334,12 @@ msgstr "Гишүүний үзүүлэлтүүд"
 msgid "Member reached insider pricing limit"
 msgstr "Гишүүн insider pricing үнийн хязгаарт хүрсэн байна"
 
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Member Reports"
+msgstr "Дэлгэрэнгүй тайлан"
+
 #: pages/admin_user.vue pages/giving_society.vue
 msgid "Member Since"
 msgstr "Гишүүн болсон огноо"
@@ -19031,6 +19375,12 @@ msgstr ""
 #: components/compensation/active_partner_modal.vue
 msgid "Members Counting for my active partner status"
 msgstr "Миний идэвхтэй түншид тоологдох гишүүд"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Members in your QBI"
+msgid "Members Counting Toward Your QBI"
+msgstr "Таны QBI-д буй Гишүүд"
 
 #: pages/public/membership.vue
 msgid "Members Enjoy Unparalleled Value With"
@@ -19069,11 +19419,25 @@ msgstr ""
 "30 хоногийн шаардлагатай хугацаанд төлбөрөө төлөөгүй гишүүд төлбөрөө "
 "үргэлжлүүлэн хийхийн тулд бүртгэлээ дахин идэвхжүүлэх ёстой."
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Pending Members with Pending Invoices"
+msgid "Members With Cruise Bookings & Pending Invoices"
+msgstr "Төлөөгүй нэхэмжлэхтэй хүлээгдэж буй Гишүүд"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Members with Pending Invoices"
+msgstr "Нэхэмжлэхээ төлөөгүй хэрэглэгч"
+
 #: Footer.vue components/upgrade-marketing-modal.vue pages/referral_links.vue
 #: pages/inviter.vue pages/team_documentation_requests.vue
 #: components/compensation/qbi_members_table.vue
 #: components/cruises/upgrade_premium_drawer.vue
+#: components/reports/quick_reports.vue
 #: components/hotels/upgrade_premium_drawer.vue components/public/Header.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 #: components/navigation/mobile-menu.vue
 #: components/navigation/avatar-dropdown.vue
 #: components/public/webflow/Footer.vue
@@ -19126,15 +19490,15 @@ msgstr "Гишүүнчлэлийн Гэрээ"
 msgid "Membership and Partnership Support"
 msgstr "Гишүүнчлэл ба Түншлэлийн дэмжлэг"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Course"
 msgstr "Гишүүнчлэлийн сургалт"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Created"
 msgstr "Гишүүнчлэл үүсгэгдсэн"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Creation Date"
 msgstr "Гишүүнчлэл үүсгэгдсэн огноо"
 
@@ -19142,15 +19506,21 @@ msgstr "Гишүүнчлэл үүсгэгдсэн огноо"
 msgid "Membership Date"
 msgstr "Элссэн огноо"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Membership First Month"
+msgid "Membership Discount"
+msgstr "Эхний сарын Гишүүнчлэл"
+
 #: components/upgrade/tiles/checkout-tile.vue
 msgid "Membership First Month"
 msgstr "Эхний сарын Гишүүнчлэл"
 
-#: pages/reports.vue components/welcome/members-modal.vue
+#: components/welcome/members-modal.vue components/reports/old_reports.vue
 msgid "Membership free"
 msgstr "Үнэгүй Гишүүнчлэл"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Free Date"
 msgstr "Үнэгүй Гишүүнчлэлтэй болсон огноо"
 
@@ -19158,7 +19528,7 @@ msgstr "Үнэгүй Гишүүнчлэлтэй болсон огноо"
 msgid "Membership Free Directs:"
 msgstr "Хувьчлан элсүүлсэн Гишүүнчлэл-Үнэгүй Гишүүдийн тоо:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Free Last Month"
 msgstr "Өмнөх сард Гишүүнчлэл-Үнэгүй болсон Гишүүд"
 
@@ -19168,6 +19538,12 @@ msgstr "Үнэгүй Гишүүнчлэлтэй болсон!"
 
 #: pages/admin_user_id.vue pages/settings.vue
 msgid "Membership Info"
+msgstr "Гишүүнчлэлийн мэдээлэл"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Membership Info"
+msgid "Membership Invoice"
 msgstr "Гишүүнчлэлийн мэдээлэл"
 
 #: pages/public/payment_terms.vue
@@ -19185,7 +19561,7 @@ msgstr ""
 msgid "Membership plan"
 msgstr "Гишүүнчлэлийн хувилбар"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Plan"
 msgstr "Гишүүнчлэлийн хувилбар"
 
@@ -19212,6 +19588,12 @@ msgstr "Гишүүнчлэлийн статус"
 #: components/welcome/members-modal.vue components/user/directs.vue
 msgid "Membership Type"
 msgstr "Гишүүнчлэлийн төрөл"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Membership Free Date"
+msgid "Membership Upgrades & Downgrades"
+msgstr "Үнэгүй Гишүүнчлэлтэй болсон огноо"
 
 #: pages/referral_links.vue
 msgid "Membership Video"
@@ -19275,8 +19657,9 @@ msgstr "Нэгтгэсэн"
 msgid "message"
 msgstr "мессеж"
 
-#: pages/referral_widget.vue pages/reports.vue pages/support.vue
-#: components/support/AdminCreateTicket.vue pages/public/contact.vue
+#: pages/referral_widget.vue pages/support.vue
+#: components/support/AdminCreateTicket.vue components/reports/old_reports.vue
+#: components/reports/send_push_notification_modal.vue pages/public/contact.vue
 msgid "Message"
 msgstr "Мессеж"
 
@@ -19377,6 +19760,10 @@ msgstr "минут"
 #: components/cards/countdown-card.vue components/public/tgc-countdown.vue
 msgid "Minutes"
 msgstr "Минут"
+
+#: vue/composables/useSendBroadcastPwaNotification.js
+msgid "Missing required parameters: title, body, and account_ids array"
+msgstr ""
 
 #: pages/admin_missing_sales.vue
 msgid "Missing Sales - InCruises"
@@ -19567,6 +19954,7 @@ msgid "More for Less"
 msgstr "Бага зардлаар илүү"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/avatar_column.vue
 msgid "more info"
 msgstr "дэлгэрэнгүй мэдээлэл"
 
@@ -19863,6 +20251,12 @@ msgstr "Миний мэдээлэл"
 msgid "My Cruise Savings"
 msgstr "Миний далайн аяллын хэмнэлтүүд"
 
+#: components/reports/filters/my_directs.vue
+#, fuzzy
+#| msgid "Directs"
+msgid "My Directs"
+msgstr "Хувьчлан урьсан"
+
 #: pages/menu_page.vue
 msgid "My Reach"
 msgstr "Миний бизнесийн тархац"
@@ -19893,7 +20287,7 @@ msgstr "N/A"
 #: pages/admin_account_recovery.vue pages/admin_partner_success.vue
 #: pages/negative_balances.vue pages/gls.vue pages/admin_user.vue
 #: pages/banner_tracking.vue pages/new_ranks.vue pages/mercy_ships.vue
-#: pages/reports.vue pages/admin_permission_group.vue pages/partner_success.vue
+#: pages/admin_permission_group.vue pages/partner_success.vue
 #: pages/team_documentation_requests.vue pages/admin_department.vue
 #: pages/contacts.vue pages/builders_base.vue pages/team_rankings.vue
 #: pages/settings.vue pages/duplicator.vue pages/track_results.vue
@@ -19917,6 +20311,7 @@ msgstr "N/A"
 #: components/settings_page/modify-saved-passengers.vue
 #: components/skeleton_loaders/card_animation.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
 #: components/receipts/monthly_member_activation.vue
 #: components/receipts/tour_booking_receipt.vue
 #: components/receipts/new_residual_bonus_statement.vue
@@ -19938,6 +20333,9 @@ msgstr "N/A"
 #: components/receipts/builders_bonus_new.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/business_intelligence/comp_to_sales.vue
 #: components/user/permissions.vue components/user/permission-assignation.vue
 #: components/user/department.vue components/user/permission-group.vue
@@ -19998,12 +20396,12 @@ msgstr "Нэр:"
 msgid "Named in honor of our founding year, the"
 msgstr "Үүсгэн байгуулагдсан жилээ хүндэтгэн нэрлэсэн"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue pages/settings.vue
-#: components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: pages/settings.vue components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -20161,7 +20559,7 @@ msgstr ""
 msgid "Nevermind"
 msgstr "Бүү тоо"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New"
 msgstr "Шинэ"
 
@@ -20177,15 +20575,22 @@ msgstr "Шинэ ламинат танилцуулга"
 msgid "New Group {{ selectedNamespace }}"
 msgstr "Шинэ групп {{ selectedNamespace }}"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Guests"
+msgid "New Guests"
+msgstr "Зорчигчид"
+
 #: pages/reservations.vue
 msgid "New inTours Feature Available!"
 msgstr "inTours-ийн шинэ функц бэлэн боллоо!"
 
-#: pages/resources.vue components/growth_calculator/potential_leadership.vue
+#: pages/resources.vue components/reports/quick_reports.vue
+#: components/growth_calculator/potential_leadership.vue
 msgid "New Members"
 msgstr "Шинэ гишүүд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Membership Free"
 msgstr "Гишүүнчлэл-Үнэгүй болсон шинэ Гишүүд"
 
@@ -20194,7 +20599,7 @@ msgid "New Message"
 msgstr "Шинэ бичвэр"
 
 #: pages/resources.vue pages/new_partners_tracker.vue
-#: pages/new_partners_tracker_goals.vue
+#: pages/new_partners_tracker_goals.vue components/reports/quick_reports.vue
 msgid "New Partners"
 msgstr "Шинэ Түншүүд"
 
@@ -20202,7 +20607,7 @@ msgstr "Шинэ Түншүүд"
 msgid "NEW Partners Last Month"
 msgstr "Өмнөх сарын шинэ Түншүүд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Partners Last Month (10 Levels)"
 msgstr "Өмнөх сарын шинэ Түншүүд (10 үе хүртэл)"
 
@@ -20214,7 +20619,7 @@ msgstr "Энэ сарын Шинэ Түншүүд"
 msgid "NEW Partners This Month"
 msgstr "Энэ сарын шинэ Түншүүд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Partners This Month (10 Levels)"
 msgstr "Энэ сарын шинэ Түншүүд (10 үе хүртэл)"
 
@@ -20263,25 +20668,31 @@ msgstr ""
 "Шинэ цолтонуудын жагсаалт сар бүрийн 10-н болон 10-ноос хойш шинэчлэгдэх "
 "болно."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks last month"
 msgstr "Өмнөх сарын шинэ цолтонууд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks Last Month"
 msgstr "Өмнөх сарын шинэ цолтонууд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks this month"
 msgstr "Энэ сарын шинэ цолтонууд"
 
-#: pages/new_ranks.vue pages/reports.vue
+#: pages/new_ranks.vue components/reports/old_reports.vue
 msgid "New Ranks This Month"
 msgstr "Энэ сарын шинэ цолтонууд"
 
 #: components/user/basic-info.vue
 msgid "New Referrer ID is Invalid"
 msgstr "Шинэ элсүүлэгчийн ID хүчингүй байна"
+
+#: pages/reports.vue
+#, fuzzy
+#| msgid "New Message"
+msgid "New Reports Page"
+msgstr "Шинэ бичвэр"
 
 #: pages/support.vue
 msgid "New Ticket"
@@ -20349,8 +20760,9 @@ msgstr "Дараагийн боломжит"
 msgid "Next billing date"
 msgstr "Дараагийн төлөх өдөр"
 
-#: pages/reports.vue pages/team_rankings.vue pages/track_results.vue
+#: pages/team_rankings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
+#: components/reports/old_reports.vue
 msgid "Next Billing Date"
 msgstr "Дараагийн төлөх өдөр"
 
@@ -20358,9 +20770,28 @@ msgstr "Дараагийн төлөх өдөр"
 msgid "Next Billing:"
 msgstr "Дараагийн төлбөрийн өдөр:"
 
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Create Invoice"
+msgid "Next Invoice"
+msgstr "Нэхэмжлэх үүсгэх"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Membership Info"
+msgid "Next Membership Invoice"
+msgstr "Гишүүнчлэлийн мэдээлэл"
+
 #: components/payout/wallet-transfers.vue
 msgid "Next Month"
 msgstr "Дараах сар"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Partnership Video"
+msgid "Next Partnership Invoice"
+msgstr "Түншлэлийн тухай видео"
 
 #: pages/checkout.vue
 msgid "Next Payment Month:"
@@ -20434,6 +20865,12 @@ msgstr "Мэдээлэл байхгүй байна"
 msgid "No data available for download"
 msgstr "Татаж авах мэдээлэл байхгүй байна"
 
+#: vue/composables/useDownloadCsv.js
+#, fuzzy
+#| msgid "No data available for download"
+msgid "No data to download"
+msgstr "Татаж авах мэдээлэл байхгүй байна"
+
 #: pages/hotels.vue
 msgid "No destination options available."
 msgstr "Очих газрын сонголт алга байна."
@@ -20495,7 +20932,7 @@ msgstr "Нэр татагдаагүй байна"
 msgid "No Obligation, No Cost"
 msgstr "Ямар ч үүрэг хариуцлагагүй, ямар ч зардалгүй"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "No Plan"
 msgstr "Аль нь ч биш"
 
@@ -20512,7 +20949,7 @@ msgstr "Цолгүй Гишүүд"
 msgid "No receipts available at this time."
 msgstr "Одоогоор ямар ч төлбөрийн баримт байхгүй байна."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "No Recurring Billing"
 msgstr "Давтамжит төлбөрийн арга тохируулаагүй"
 
@@ -20732,6 +21169,7 @@ msgid "Non-Refundable Fare"
 msgstr "Төлбөрийг буцаан олгохгүй үнэ"
 
 #: pages/track_results.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "None"
 msgstr "Байхгүй"
 
@@ -20788,7 +21226,7 @@ msgstr "Идэвхгүй учраас боломжгүй байна"
 msgid "Not available for this cruise line"
 msgstr "Энэ далайн аяллын компаний хувьд боломжгүй байна"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Not Completed"
 msgstr "Үзэж дуусгаагүй"
 
@@ -21315,16 +21753,16 @@ msgstr ""
 "үнэ гэх мэт) үнийн саналаас бус, зөвхөн inStays платформоор баталгаажсан "
 "захиалгаас хойш"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Members or Partner Members."
 msgstr "Зөвхөн Гишүүд эсвэл Түнш Гишүүдийг сонгосон тохиолдолд боломжтой."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Partners or Partner Members."
 msgstr ""
 "Зөвхөн Гишүүд эсвэл Түнш Гишүүдийг сонгосон тохиолдолд хэрэглэх боломжтой."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Pending Members."
 msgstr "Зөвхөн хүлээгдэж буй Гишүүдийг сонгосон тохиолдолд хэрэглэх боломжтой."
 
@@ -21371,7 +21809,7 @@ msgstr ""
 msgid "Only Roman/Latin alphabet letters (A-Z)."
 msgstr "Зөвхөн Латин цагаан толгойн үсгээр (A-Z)."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only select one course per report."
 msgstr "Тайлан бүрт нэг сургалтыг сонгоно уу."
 
@@ -21477,6 +21915,12 @@ msgstr "Захиалгын тэмдэглэл:"
 #: components/receipts/italian_receipt.vue
 msgid "Order Number"
 msgstr "Захиалгын дугаар"
+
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Other Reports"
+msgstr "Дэлгэрэнгүй тайлан"
 
 #: components/support/OtherUserTickets.vue components/support/TicketViewer.vue
 msgid "Other User Tickets"
@@ -21685,6 +22129,13 @@ msgstr "Технологийн шийдэл - МӨНГӨН ШАГНАЛ"
 msgid "Overall Training Program - SILVER AWARD"
 msgstr "Сургалтын нэгдсэн хөтөлбөр - МӨНГӨН ШАГНАЛ"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Overview"
+msgid "Overdue"
+msgstr "Ерөнхий тойм"
+
 #: pages/tours_details.vue pages/hotels_details.vue pages/menu_page.vue
 #: pages/info_center.vue pages/business_performance.vue
 #: components/reservations/tour-details.vue
@@ -21815,7 +22266,7 @@ msgstr "Өөрөөс төлсөн дүн"
 msgid "Paid out on %{date}"
 msgstr "Төлбөр хийсэн өдөр %{date}"
 
-#: pages/reports.vue pages/info_center.vue
+#: pages/info_center.vue components/reports/old_reports.vue
 msgid "Paid Partners Last Month"
 msgstr "Өнгөрсөн сард орлого авсан Түншүүд"
 
@@ -21823,11 +22274,11 @@ msgstr "Өнгөрсөн сард орлого авсан Түншүүд"
 msgid "Paid Partners Only"
 msgstr "Зөвхөн төлбөр хийсэн Түншүүд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Paid Partners This Month"
 msgstr "Энэ сард орлого авсан Түншүүд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Paid Plans"
 msgstr "Төлбөртэй"
 
@@ -21897,7 +22348,7 @@ msgstr "Түнш / Гишүүн биш"
 msgid "Partner / Pending Member"
 msgstr "Түнш / хүлээгдэж буй Гишүүн"
 
-#: pages/additional_info.vue pages/reports.vue
+#: pages/additional_info.vue components/reports/old_reports.vue
 msgid "Partner Access Only"
 msgstr "Зөвхөн Түншийн Эрхтэй"
 
@@ -22104,6 +22555,18 @@ msgstr ""
 msgid "Partner Refund And Compress"
 msgstr "Түншийн буцаан олголт ба шахалт"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners That Will Be Renewing Next Month"
+msgid "Partner Renewing Next Month"
+msgstr "Дараа сард Түншийн сунгалт хийх Түншүүд"
+
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Partner Reports"
+msgstr "Дэлгэрэнгүй тайлан"
+
 #: pages/italian_onboarding.vue
 #: components/compensation/active_partner_modal.vue
 #: components/compensation/my_team_breakdown_table.vue
@@ -22150,12 +22613,12 @@ msgstr ""
 msgid "Partner VAT / Tax Code"
 msgstr "Түншийн НӨАТ / Татварын код"
 
-#: pages/reports.vue pages/track_growth.vue
+#: pages/track_growth.vue components/reports/old_reports.vue
 msgid "Partner-Members"
 msgstr "Түнш-Гишүүд"
 
-#: pages/referral_links_old.vue pages/reports.vue
-#: pages/new_partners_tracker.vue pages/track_growth.vue pages/apps.vue
+#: pages/referral_links_old.vue pages/new_partners_tracker.vue
+#: pages/track_growth.vue pages/apps.vue components/reports/old_reports.vue
 #: components/high_risk/high_risk_fingerprints.vue
 #: components/business_performance/NewDirectsEnrolled.vue
 #: components/business_performance/TeamActiveEnrollments.vue
@@ -22179,6 +22642,18 @@ msgstr "Түншүүд <br/> <small>(5 Үе)</small>"
 msgid "Partners are Membership Free."
 msgstr "Гишүүнчлэл-Үнэгүй нийт Түншүүдийн тоо."
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Ineligible for compensation"
+msgid "Partners Eligible for Compensation"
+msgstr "Орлого урамшуулал авах болзол хангаагүй байна"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners are Membership Free."
+msgid "Partners Eligible For Membership Free"
+msgstr "Гишүүнчлэл-Үнэгүй нийт Түншүүдийн тоо."
+
 #: pages/public/partnership.vue
 msgid "Partners enjoy an unparalleled opportunity"
 msgstr "Манай Түнш нар хосгүй боломжуудыг эдэлдэг"
@@ -22199,26 +22674,76 @@ msgstr "12 сарын хугацаанд $10,000-аас их орлого авс
 msgid "Partners have reached the International Director or Above rank."
 msgstr "International Director эсвэл түүнээс дээш цолд хүрсэн Түншийн тоо."
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Understanding Builders Base Bonus"
+msgid "Partners Pending to Receive Builders Base Bonus"
+msgstr "Билдерс Бэйс урамшууллын тухай"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "You have no direct partners currently eligible for Fast Start."
+msgid "Partners Still Eligible for Fast Start"
+msgstr ""
+"Танд одоогийн байдлаар Түргэн эхлэх урамшууллыг авах хувьчлан элсүүлсэн түнш "
+"байхгүй байна."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Potential Fast Start Matching"
+msgid "Partners Still Eligible for Fast Start Matching"
+msgstr "Боломжит Түргэн эхлэх тохируулах урамшуулал"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Potential Team Leadership Bonus"
+msgid "Partners Team Leadership Performance"
+msgstr "Боломжит Багийн манлайллын урамшуулал"
+
+#: components/reports/old_reports.vue
 msgid "Partners That Have Not Renewed"
 msgstr "Түншийн сунгалтаа хийгээгүй хүмүүс"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partners That Will Be Renewing Next Month"
 msgstr "Дараа сард Түншийн сунгалт хийх Түншүүд"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partner Activation Date"
+msgid "Partners Who Achieved Fast Start"
+msgstr "Түншийн идэвхжсэн Огноо"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partner with travel agencies"
+msgid "Partners with New Ranks"
+msgstr "Аяллын компанитай Түнш нар"
 
 #: Footer.vue pages/referral_links.vue pages/inviter.vue pages/upgrade.vue
 #: components/public/Header.vue components/public/webflow/Footer.vue
 msgid "Partnership"
 msgstr "Түншлэл"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partnership Created"
 msgstr "Түншлэл үүсгэгдлээ"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partnership Creation Date"
 msgstr "Түншлэл үүсгэгдсэн огноо"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Partnership Video"
+msgid "Partnership Invoice"
+msgstr "Түншлэлийн тухай видео"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners That Have Not Renewed"
+msgid "Partnership Not Renewed"
+msgstr "Ахиулалт хийж амжаагүй Түншүүд"
 
 #: pages/subscriptions.vue pages/upgrade.vue pages/public/faq.vue
 #: pages/public/testimonials.vue components/upgrade/tiles/checkout-tile.vue
@@ -22458,6 +22983,19 @@ msgstr ""
 msgid "Payment Fulfillment"
 msgstr "Төлбөр төлөгдсөн байдал"
 
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Add Payment Method"
+msgid "Payment Method"
+msgstr "Төлбөрийн арга нэмэх"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Add Payment Method"
+msgid "Payment Methods"
+msgstr "Төлбөрийн арга нэмэх"
+
 #: pages/payment_protection.vue
 msgid "Payment Protection"
 msgstr "Төлбөрийн хамгаалалт"
@@ -22539,6 +23077,7 @@ msgstr "Paypal"
 #: components/welcome/members-modal.vue components/support/TicketList.vue
 #: components/compensation/qbi_members_table.vue
 #: components/admin_finance/cruise_bookings.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Pending"
 msgstr "Хүлээгдэж буй"
 
@@ -22546,11 +23085,11 @@ msgstr "Хүлээгдэж буй"
 msgid "Pending Builder's Base"
 msgstr "Хүлээгдэж буй Билдерс Бэйс"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Builders Base"
 msgstr "Хүлээгдэж буй Билдерс Бэйс"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Builders Base Members"
 msgstr "Хүлээгдэж буй Билдерс Бэйсийн Гишүүд"
 
@@ -22566,11 +23105,12 @@ msgstr "Хүлээгдэж буй Урилгууд"
 msgid "Pending Invoice"
 msgstr "Хүлээгдэж буй нэхэмжлэх"
 
-#: pages/reports.vue pages/invoices.vue components/user/invoices.vue
+#: pages/invoices.vue components/reports/old_reports.vue
+#: components/user/invoices.vue
 msgid "Pending Invoices"
 msgstr "Хүлээгдэж буй нэхэмжлэхүүд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Invoices (within 5 days)"
 msgstr "Хүлээгдэж буй нэхэмжлэхүүд (5 өдрийн дотор төлөх)"
 
@@ -22586,7 +23126,7 @@ msgstr "Хүлээгдэж буй Гишүүн"
 msgid "Pending Member Invoice"
 msgstr "Хүлээгдэж буй Гишүүний нэхэмжлэх"
 
-#: pages/reports.vue components/compensation/qbi-details.vue
+#: components/compensation/qbi-details.vue components/reports/old_reports.vue
 msgid "Pending Members"
 msgstr "Хүлээгдэж буй Гишүүд"
 
@@ -22613,6 +23153,10 @@ msgstr "Хүлээгдэж буй Түншийн сунгалт"
 #: components/admin_finance/cruise_bookings.vue
 msgid "Pending Payments"
 msgstr "Хүлээгдэж буй төлбөр"
+
+#: components/reports/old_reports.vue
+msgid "Pending QBI Report"
+msgstr "Хүлээгдэж буй QBI тайлан"
 
 #: pages/invoices.vue
 msgid "Pending Transaction"
@@ -22728,13 +23272,17 @@ msgstr "Утасны дугаар"
 msgid "Phone (optional)"
 msgstr "Утас (сонголтоор)"
 
-#: pages/reports.vue pages/settings.vue
+#: pages/settings.vue components/reports/old_reports.vue
 msgid "Phone #"
 msgstr "Утасны дугаар #"
 
-#: components/fast-growing-legs.vue pages/reports.vue pages/settings.vue
-#: pages/multi_factor.vue components/cruises_booking/passenger_info_step.vue
+#: components/fast-growing-legs.vue pages/settings.vue pages/multi_factor.vue
+#: components/cruises_booking/passenger_info_step.vue
 #: components/settings_page/modify-saved-passengers.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/hotel_booking/guest_info_step.vue components/top_bar/Connect.vue
 #: pages/public/signup.vue
 msgid "Phone Number"
@@ -23340,7 +23888,7 @@ msgstr "Хүлээгдэж буй нэхэмжлэхээ төлнө үү."
 msgid "Please provide a check-in and check-out date before searching"
 msgstr "Хайлт хийхээс өмнө бүртгүүлэх болон гарах огноог оруулна уу"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "Please provide a Date From and Date To. If not, reset filters at the top of "
 "the page."
@@ -23751,7 +24299,8 @@ msgstr "Аяллын тухай дэлгэрэнгүй мэдээллийг ха
 msgid "Please wait while we redirect you back to inCruises®."
 msgstr "InCruises®-ийн вэб хуудас руу очиж байна, түр хүлээнэ үү."
 
-#: pages/compensation.vue components/compensation/fast_start_matching.vue
+#: pages/reports.vue pages/compensation.vue
+#: components/compensation/fast_start_matching.vue
 #: components/compensation/fast_start.vue components/compensation/overview.vue
 #: pages/compensation/recurring_income.vue
 #: pages/compensation/member_activations.vue
@@ -23999,6 +24548,7 @@ msgstr ""
 msgid "Premium"
 msgstr "Premium"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 msgid "PREMIUM"
@@ -24026,7 +24576,7 @@ msgstr "Premium Гишүүн"
 msgid "PREMIUM Member"
 msgstr "PREMIUM Гишүүн"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Premium Members"
 msgstr "Premium Гишүүд"
 
@@ -24613,12 +25163,18 @@ msgstr ""
 "авах хүсэлт гаргаж болно. Дэлгэрэнгүй мэдээллийг Түншлэлийн гэрээнээс харна "
 "уу."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Push Blast"
 msgstr "Push Blast"
 
 #: pages/push_notifications_center.vue
 msgid "Push Notifications Center"
+msgstr "Мэдээлэл илгээх төв"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Push Notifications Sent"
 msgstr "Мэдээлэл илгээх төв"
 
 #: components/payout/brightwell/recipient-account-details.vue
@@ -24643,12 +25199,12 @@ msgstr "PWA"
 msgid "PWA vs News App"
 msgstr "PWA болон Шинэ Апп"
 
-#: pages/reports.vue components/compensation/qbi.vue
-#: components/compensation/builders_bonus.vue
+#: components/compensation/qbi.vue components/compensation/builders_bonus.vue
 #: components/compensation/fast_start_matching.vue
 #: components/compensation/fast_start.vue
 #: components/compensation/old_compensation.vue
-#: components/compensation/team.vue pages/compensation/recurring_income.vue
+#: components/compensation/team.vue components/reports/old_reports.vue
+#: pages/compensation/recurring_income.vue
 #: pages/compensation/member_activations.vue
 #: pages/compensation/weekly_matching_bonus.vue pages/compensation/qbi.vue
 #: pages/compensation/builders_base_bonus.vue
@@ -24676,7 +25232,7 @@ msgstr "QBI Индексийн тухай"
 msgid "QBI Update Notice"
 msgstr "QBI-ийн тухай шинэ мэдээлэл"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "QBI: Pending Members"
 msgstr "QBI: Хүлээгдэж буй Гишүүд"
 
@@ -24780,7 +25336,9 @@ msgstr "Түргэн хандалт"
 msgid "Quick Member View"
 msgstr "Гишүүний товч харагдац"
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/reports/new_reports.vue
+#: components/reports/quick_reports_modal/index.vue
 msgid "Quick Reports"
 msgstr "Түргэн Тайлан"
 
@@ -24824,7 +25382,7 @@ msgstr "Цол, орлогын жагсаалт"
 msgid "Rank Breakdown"
 msgstr "Багийн задаргаа"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Rank Certificate"
 msgstr "Зэрэглэлийн Гэрчилгээ"
 
@@ -24840,7 +25398,7 @@ msgstr "Цолны ангиллууд"
 msgid "Rank Maintained"
 msgstr "Хадгалсан цол"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Rank Status"
 msgstr "Цол зэрэг"
 
@@ -25114,7 +25672,7 @@ msgstr "Вижэтээ харах"
 msgid "Reason"
 msgstr "Шалтгаан"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Reattained"
 msgstr "Дахин хүрсэн"
 
@@ -25248,7 +25806,8 @@ msgstr "Бичлэгүүд"
 msgid "Recurring"
 msgstr "Давтамжит төлбөр"
 
-#: pages/reports.vue components/admin_field_communicators/field_stats.vue
+#: components/reports/old_reports.vue
+#: components/admin_field_communicators/field_stats.vue
 msgid "Recurring Billing"
 msgstr "Давтамжит төлбөр хийх"
 
@@ -25307,6 +25866,19 @@ msgstr "Сарын давтамжит төлбөр"
 #: components/compensation/recurring_income_levels.vue
 msgid "Recurring Multiplier"
 msgstr "Давтамжит Үржүүлэгч"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Recurring Payment Terms"
+msgid "Recurring payment"
+msgstr "Давтамжит Төлбөрийн Нөхцөл"
+
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Recurring Payment Terms"
+msgid "Recurring Payment"
+msgstr "Давтамжит Төлбөрийн Нөхцөл"
 
 #: components/recurring/rpm-onboarding-invoices.vue
 msgid "Recurring Payment Agreement Terms"
@@ -25403,6 +25975,7 @@ msgstr "Элсүүлэлтийн байдал"
 
 #: pages/admin_user.vue pages/team_rankings.vue pages/account_setup.vue
 #: components/compensation/leadership_bonus.vue
+#: components/reports/quick_reports.vue
 msgid "Referral Link"
 msgstr "Элсүүлэх холбоос"
 
@@ -25502,12 +26075,13 @@ msgstr "Бүс"
 msgid "Region:"
 msgstr "Бүс:"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -25691,10 +26265,31 @@ msgid "Report will not show accurate results until the 10th of each month."
 msgstr "Уг тайлангийн үнэн зөв үр дүн сар бүрийн 10-наас хойш гарна."
 
 #: pages/welcome.vue pages/menu_page.vue pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Reports"
 msgstr "Тайлан"
 
-#: pages/reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Reports - Members with Pending Invoices"
+msgstr "Нэхэмжлэхээ төлөөгүй хэрэглэгч"
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "You have no direct partners currently eligible for Fast Start."
+msgid "Reports - Partners Still Eligible for Fast Start"
+msgstr ""
+"Танд одоогийн байдлаар Түргэн эхлэх урамшууллыг авах хувьчлан элсүүлсэн түнш "
+"байхгүй байна."
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Enable Recurring Payments"
+msgid "Reports - Users Recurring Payment Status"
+msgstr "Давтамжит төлбөрийг идэвхжүүлэх"
+
+#: components/reports/old_reports.vue
 msgid ""
 "Reports are real-time viewable and downloadable reports for just about every "
 "aspect of your business. You can download reports for recognition purposes "
@@ -25817,7 +26412,8 @@ msgstr "Дахин тохируулах"
 msgid "Reset Columns"
 msgstr "Эгнээ тохируулах"
 
-#: pages/reports.vue components/data_table/filter-selection-widget.vue
+#: components/data_table/filter-selection-widget.vue
+#: components/reports/old_reports.vue
 msgid "Reset Filters"
 msgstr "Филтерийг дахин тохируулах"
 
@@ -25867,15 +26463,15 @@ msgstr "Баталгаажуултыг дахин хийх"
 msgid "result"
 msgstr "үр дүн"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit"
 msgstr "Үр дүнгийн хязгаар"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit must be a number!"
 msgstr "Үр дүнгийн хязгаар тоо байх ёстой!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit must be set between 100 and 25000."
 msgstr "Үр дүнгийн хязгаар 100-аас 25000 хооронд байх ёстой."
 
@@ -26195,11 +26791,11 @@ msgstr "Хэрэглэх ШО"
 msgid "RP used!"
 msgstr "Шагналын Оноо!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Run Quick Report"
 msgstr "Түргэн Тайланг ажиллуулах"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Run Report"
 msgstr "Тайлан гаргах"
 
@@ -26352,6 +26948,7 @@ msgstr "Хэмнэлтийн баталгаа"
 #: components/partner_cruise_contest/leader_board.vue
 #: components/recurring/recurring-cards.vue components/blog/blog_list.vue
 #: components/public/blog_category_search.vue
+#: components/reports/quick_reports_modal/search-input.vue
 #: components/tours/details/available-plans.vue
 #: components/inchat/search/search-people.vue
 msgid "Search"
@@ -26383,6 +26980,7 @@ msgid "Search Contacts"
 msgstr "Харилцагч нарыг хайх"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/filters/country.vue
 msgid "Search Country"
 msgstr "Орноор хайх"
 
@@ -26407,6 +27005,7 @@ msgid "Search for your question"
 msgstr "Өөрийн асуултыг хайх"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/filters/language.vue
 msgid "Search Language"
 msgstr "Хэлээр хайх"
 
@@ -26450,6 +27049,12 @@ msgstr "Хайлтын илэрц"
 #: components/inchat/user_list_inchat.vue
 msgid "Search rooms"
 msgstr "Өрөө хайх"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Search Tours"
+msgid "Search Teams"
+msgstr "Аялал хайх"
 
 #: pages/notifications.vue
 msgid "Search this month..."
@@ -26850,13 +27455,31 @@ msgstr "Сонгосон"
 msgid "Selected cabin category"
 msgstr "Өрөөний төрөл сонгох"
 
+#: components/reports/filters/country.vue
+#, fuzzy
+#| msgid "Selected Country:"
+msgid "Selected Countries"
+msgstr "Орон сонгох:"
+
 #: components/inchat/user/user_create_room.vue
 msgid "Selected Country:"
 msgstr "Орон сонгох:"
 
+#: components/reports/filters/language.vue
+#, fuzzy
+#| msgid "Select a Language"
+msgid "Selected Languages"
+msgstr "Хэл сонгох"
+
 #: pages/elevate_registration.vue
 msgid "Selected Package"
 msgstr "Сонгосон багц"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Select Tag"
+msgid "Selected Teams"
+msgstr "Tag сонгох"
 
 #: components/public/FooterLinks.vue
 msgid "Seller of Travel"
@@ -26874,11 +27497,11 @@ msgstr "Борлуулагч:"
 msgid "Selling Rate"
 msgstr "Борлуулах үнэ"
 
-#: pages/inviter.vue pages/reports.vue
+#: pages/inviter.vue components/reports/old_reports.vue
 msgid "Send"
 msgstr "Илгээх"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Send a Push Blast"
 msgstr "Push Blast илгээх"
 
@@ -26886,7 +27509,7 @@ msgstr "Push Blast илгээх"
 msgid "Send Amount"
 msgstr "Илгээх дүн"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Send an Email"
 msgstr "Имэйл илгээх"
 
@@ -26928,6 +27551,12 @@ msgstr "Илгээх"
 msgid "Send money"
 msgstr "Шилжүүлэг хийх"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Notification"
+msgid "Send Notification"
+msgstr "Мэдэгдэл"
+
 #: pages/referral_links.vue
 msgid "Send personalized emails and invite people to join InCruises."
 msgstr "Имэйл илгээж хүмүүсийг inCruises-д нэгдэхийг урих."
@@ -26945,6 +27574,18 @@ msgstr ""
 "Энэ бол Facebook-ийн найзууддаа хувьчилсан урилга илгээх арга юм. Хэрэв тэд "
 "таны багт бүртгүүлвэл та автоматаар орлого авах бөгөөд цаашид энэ аргыг "
 "ашиглан хэдэн ч хүнд хувьчлан урилга илгээх боломжтой болно."
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Send Push Notification"
+msgstr "Мэдээлэл илгээх төв"
+
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Send Push Notifications"
+msgstr "Мэдээлэл илгээх төв"
 
 #: pages/contacts.vue
 msgid "Send reminder"
@@ -26966,6 +27607,12 @@ msgstr "Сэндгрид"
 msgid "Sending"
 msgstr "Илгээж байна"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Sending Push Notifications to %{count} records..."
+msgstr "Мэдээлэл илгээх төв"
+
 #: pages/admin_sendgrid.vue
 msgid "Sengrid Contacts"
 msgstr "Харилцагч нар"
@@ -26974,12 +27621,13 @@ msgstr "Харилцагч нар"
 msgid "Senior Managers and Advisors"
 msgstr "Ахлах менежер болон зөвлөхүүд"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -27021,15 +27669,15 @@ msgstr ""
 "Ахмад зорчигч: Хэрэв тантай хамт аялах хүмүүсийн дотор 55-аас дээш насны хүн "
 "байгаа бол чагтална уу."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader"
 msgstr "Senior Team Leader"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader Last Month"
 msgstr "Өмнөх сард Senior Team Leader болсон хүмүүс"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader This Month"
 msgstr "Энэ сард Senior Team Leader болсон хүмүүс"
 
@@ -27364,7 +28012,7 @@ msgstr "Багийг харуулах"
 msgid "Show Web-Registration"
 msgstr "Вэб бүртгэлийг харах"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Showing All Teams"
 msgstr "Бүх багуудыг харуулах"
 
@@ -27395,6 +28043,12 @@ msgstr "Бүртгүүлэх"
 
 #: components/high_risk/high_risk_accounts.vue
 msgid "Signup Date"
+msgstr "Бүртгүүлсэн огноо"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Signup Date"
+msgid "SignUp Date"
 msgstr "Бүртгүүлсэн огноо"
 
 #: pages/referral_links_old.vue
@@ -27717,11 +28371,14 @@ msgstr ""
 "Танай тохилог өрөөнөөс харагдах үзэсгэлэнт газрууд, гайхалтай харагдах "
 "байдал."
 
-#: pages/reports.vue components/compensation/members-qbi-modal.vue
+#: components/compensation/members-qbi-modal.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Sponsor"
 msgstr "Спонсор"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Sponsor / Upline"
 msgstr "Спонсор / Дээд үе"
 
@@ -27819,6 +28476,7 @@ msgstr "Эхлэх:"
 msgid "Starter"
 msgstr "Starter"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 msgid "STARTER"
 msgstr "STARTER"
@@ -27832,7 +28490,7 @@ msgstr "Starter Гишүүн"
 msgid "STARTER Member"
 msgstr "STARTER Гишүүн"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Starter Members"
 msgstr "Starter Гишүүд"
 
@@ -27840,7 +28498,7 @@ msgstr "Starter Гишүүд"
 msgid "STARTER PLAN"
 msgstr "ГАРААНЫ БАГЦ"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Starter Plan - $0"
 msgstr "Гарааны Багц - $0"
 
@@ -27943,8 +28601,10 @@ msgstr "төлөв"
 #: components/invoices/invoice.vue components/compensation/leadership_bonus.vue
 #: components/compensation/recurring_income_levels.vue
 #: components/compensation/qbi_members_table.vue
+#: components/reports/quick_reports.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/growth_calculator/potential_leadership.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/user/invoices.vue
 msgid "Status"
 msgstr "Статус"
@@ -28039,7 +28699,7 @@ msgstr "Дэд төрөл"
 msgid "Subject"
 msgstr "Гарчиг"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Subject:"
 msgstr "Гарчиг:"
 
@@ -28117,11 +28777,12 @@ msgstr ""
 "Нийлбэр дүн: <b>${{ $filters.money(this.selectedRequest."
 "additional_booking_data.subtotal) }}</b>"
 
-#: vue/main.js components/high_risk/high_risk_accounts.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/high_risk/high_risk_accounts.vue
 msgid "Success"
 msgstr "Амжилт"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Successful Growth"
 msgstr "Амжилттай өсөлт"
 
@@ -28253,6 +28914,15 @@ msgstr "Цааш нь харахын тулд эргүүлнэ үү"
 msgid "Swiss Franc (CHF)"
 msgstr "Швейцарын Франк (CHF)"
 
+#: components/reports/quick_reports_modal/modal-content.vue
+#: components/reports/quick_reports_modal/index.vue
+msgid "Switch To Classic"
+msgstr ""
+
+#: pages/reports.vue
+msgid "Switch To New"
+msgstr ""
+
 #: components/inchat/emoji/emoji_modal.vue
 msgid "Symbols"
 msgstr "Тэмдгүүд"
@@ -28296,6 +28966,7 @@ msgid "Tag Management"
 msgstr "Tag менежмент"
 
 #: pages/contacts.vue components/contacts/export-contacts.vue
+#: components/reports/old_reports.vue
 msgid "Tags"
 msgstr "Tags"
 
@@ -28327,7 +28998,7 @@ msgstr ""
 msgid "Take Me to DittoTouch"
 msgstr "DittoTouch-руу намайг хүргэх"
 
-#: pages/additional_info.vue pages/reports.vue
+#: pages/additional_info.vue components/reports/old_reports.vue
 msgid "Take me to upgrade."
 msgstr "Зэргээ ахиулахыг хүсэж байвэл энд дарна уу."
 
@@ -28548,7 +29219,7 @@ msgstr "Төлбөр төлсөн багийн Түншүүд"
 msgid "Team Pending Members"
 msgstr "Багийн хүлээгдэж буй Гишүүд"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Team Pending with Cruise Bookings"
 msgstr "Далайн аялал захиалсан, хүлээгдэж буй баг"
 
@@ -28564,7 +29235,7 @@ msgstr "Багийн борлуулалт"
 msgid "Team Production Tracker"
 msgstr "Багийн борлуулалтын үзүүлэлт"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Team QBI"
 msgstr "QBI баг"
 
@@ -28596,6 +29267,19 @@ msgstr "Багийн Үлдэгдэлийн урамшууллын тухай"
 #: pages/track_results.vue
 msgid "Team Starter Members"
 msgstr "Starter Гишүүдийн баг"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Please select gender"
+msgid "team(s) selected"
+msgstr "Хүйсээ сонгоно уу"
+
+#: components/reports/quick_reports_modal/modal-content.vue
+#: components/reports/quick_reports_modal/templates-list.vue
+#, fuzzy
+#| msgid "Use Template"
+msgid "Templates"
+msgstr "Загвар хэрэглэх"
 
 #: components/user/functions.vue
 msgid "Terminated"
@@ -29010,19 +29694,19 @@ msgstr ""
 "Биднийг шалгах үед далайн аяллын үнэ бага үнээрээ олон нийтэд нээлттэй байх "
 "ёстой."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user first became membership free."
 msgstr "Хэрэглэгчийн гишүүнчлэл нь анхны удаа үнэгүй болсон огноо."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user first signed up on our website."
 msgstr "Манай вэб хуудсанд анхны удаа бүртгүүлсэн огноо."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user paid to activate and become a Member."
 msgstr "Идэвхжүүлэх хураамжийг төлж Гишүүн болсон огноо."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user paid to activate and become a Partner."
 msgstr "Идэвхжүүлэх хураамжийг төлж Түнш болсон огноо."
 
@@ -29057,7 +29741,7 @@ msgstr ""
 "Энэхүү Нууцлалын бодлого нь 2015 оны 9 дүгээр сарын 1-нээс эхлэн хүчин "
 "төгөлдөр үйлчилж эхэлсэн болно."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "The email and push blast actions have been disabled due to the results size "
 "exceeds their limit. If you want to use these actions, please run the report "
@@ -29587,7 +30271,7 @@ msgstr ""
 msgid "The Spirit Of Giving At inCruises"
 msgstr "inCruises-ийн өгөх сэтгэл"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The subject field is required!"
 msgstr "Гарчиг хэсэгт бичнэ үү!"
 
@@ -30016,11 +30700,11 @@ msgstr ""
 msgid "There was no results for your search."
 msgstr "Таны хайланд илэрц гарсангүй."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "There were %{resultAmount} results based on your selections."
 msgstr "Таны хайлтанд %{resultAmount} илэрц байна."
 
-#: pages/reports.vue pages/leadership_academy.vue
+#: pages/leadership_academy.vue components/reports/old_reports.vue
 msgid "There were no results based on your selections."
 msgstr "Таны сонголтонд илэрц байхгүй байна."
 
@@ -30956,6 +31640,13 @@ msgstr "Энэ 7 хоног"
 msgid "This Week's Potential"
 msgstr "Энэ 7 хоногийн боломж"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+msgid ""
+"This will only show members who are still within the first 5 days after "
+"their invoice has been generated. this will grant them double their reward "
+"points."
+msgstr ""
+
 #: components/growth_calculator/potential_recurring.vue
 #: components/growth_calculator/potential_leadership.vue
 msgid "This will take a few seconds. Please be patient."
@@ -31225,11 +31916,12 @@ msgstr ""
 
 #: pages/glsx.vue pages/referral_widget.vue pages/gls_winners.vue
 #: pages/admin_partner_success.vue pages/gls.vue pages/admin_user.vue
-#: pages/banner_tracking.vue pages/new_ranks.vue pages/reports.vue
-#: pages/partner_success.vue pages/builders_base.vue
-#: components/compensation/residual_bonus_preview.vue
+#: pages/banner_tracking.vue pages/new_ranks.vue pages/partner_success.vue
+#: pages/builders_base.vue components/compensation/residual_bonus_preview.vue
 #: components/compensation/builders_bonus.vue
 #: components/settings_page/modify-saved-passengers.vue
+#: components/reports/old_reports.vue
+#: components/reports/send_push_notification_modal.vue
 #: components/business_intelligence/comp_to_sales.vue
 msgid "Title"
 msgstr "Гарчиг"
@@ -31244,7 +31936,8 @@ msgstr "Цолны болзол хангалаа!"
 msgid "Title:"
 msgstr "Гарчиг:"
 
-#: pages/menu_page.vue pages/reports.vue pages/settings.vue pages/titles.vue
+#: pages/menu_page.vue pages/settings.vue pages/titles.vue
+#: components/reports/old_reports.vue
 msgid "Titles"
 msgstr "Гарчиг"
 
@@ -31262,6 +31955,8 @@ msgstr "-аас"
 
 #: pages/inviter.vue pages/mercy_ships.vue
 #: components/support/TicketViewerAdmin.vue components/support/TicketViewer.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "To"
 msgstr "Хэнд"
 
@@ -32082,11 +32777,125 @@ msgstr ""
 msgid "Track your world-wide reach below!"
 msgstr "Таны бизнесийн тархац!"
 
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks members who changed their membership plan up or down this month/ last "
+"month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Tracks members with pending invoices."
+msgstr "Нэхэмжлэхээ төлөөгүй хэрэглэгч"
+
 #: components/business_performance/TeamProductionLines.vue
 msgid ""
 "Tracks monthly cumulative new and total cumulative Production for your team."
 msgstr ""
 "Өөрийн багийн сарын шинэ борлуулалтын нийлбэр болон нийт бүтээмжийг хянах."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks new members this month/ last month (members purchasing a membership "
+"for the first time in inCruises.)"
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners eligible for compensation by bringing a direct this month/"
+"last month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid "Tracks partners eligible for membership free or membership discount."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners pending Builders Base payment due to QBI < 75%, showing time "
+"left until payout anyways."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Produce the required Total Activation Volume."
+msgid "Tracks partners qualified production and activation volume."
+msgstr "Шаардлагатай нийт идэвхжүүлэлтийн хэмжээг биелүүлэх."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners who achieved a new rank for the first time this month/ last "
+"month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid "Tracks partners who achieved Fast Start this month/last month."
+msgstr ""
+"Танай багаас Түргэн эхлэх тохируулах урамшууллыг авах болзол хангах "
+"боломжтой Түнш нар."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid ""
+"Tracks partners who are still eligible for Fast Start Matching based on "
+"their downlines."
+msgstr ""
+"Танай багаас Түргэн эхлэх тохируулах урамшууллыг авах болзол хангах "
+"боломжтой Түнш нар."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid ""
+"Tracks partners who are still eligible for Fast Start with days left to "
+"qualify."
+msgstr ""
+"Танай багаас Түргэн эхлэх тохируулах урамшууллыг авах болзол хангах "
+"боломжтой Түнш нар."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners whose 6‑month renewal invoice is pending and not yet paid "
+"within the allowed month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners whose 6‑month renewal invoice will be generated next month"
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "One or more members has an active sailing or a pending invoice."
+msgid ""
+"Tracks team members with an active cruise booking but a pending invoice."
+msgstr ""
+"Нэг болон түүнээс дээш тооны гишүүд идэвхтэй аялалтай эсвэл хүлээгдэж буй "
+"нэхэмжлэхтэй байна."
+
+#: components/reports/quick_reports.vue
+msgid "Tracks users who acquired a partnership this month/ last month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks users who signed up this month/ last month but have not yet purchased "
+"a membership."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid "Tracks users with recurring payment status and payment method type."
+msgstr ""
 
 #: pages/m3.vue
 msgid "Trade Partner Testimonials"
@@ -32334,6 +33143,11 @@ msgstr "Trustly"
 msgid "Try again"
 msgstr "Дахин оролдоно уу"
 
+#: pages/reports.vue
+msgid ""
+"Try our new reports view for easier access to reports and faster report runs."
+msgstr ""
+
 #: components/recurring/recurring-cards.vue
 msgid "Turkish Lira (TRY)"
 msgstr "Туркийн Лир (TRY)"
@@ -32370,19 +33184,14 @@ msgstr "Хоёр сарын өмнөх нийт"
 msgid "Two Weeks Prior Contest"
 msgstr "Хоёр долоо хоногийн өмнөх уралдаан"
 
-#: pages/admin_user.vue pages/reports.vue pages/receipts.vue
-#: pages/track_results.vue pages/notifications.vue
+#: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
+#: pages/notifications.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/support/InstantTools.vue components/compensation/weekly_bonus.vue
 #: components/compensation/active_partner_modal.vue
+#: components/reports/old_reports.vue
 msgid "Type"
 msgstr "Хувилбар"
-
-#: pages/reports.vue
-msgid ""
-"Type @ to insert dynamic tokens (like @Name, @Email) that will be replaced "
-"with each recipient's data."
-msgstr ""
 
 #: pages/cruise_price_match_guarantee.vue
 msgid "type when applicable"
@@ -32654,7 +33463,7 @@ msgstr "Захиалга цуцлах"
 msgid "Unsubscribe from our mailing list:"
 msgstr "Манай имэйлийн жагсаалтаас хасагдах:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Unsubscribe here"
 msgstr "Захиалга цуцлах"
 
@@ -32868,7 +33677,7 @@ msgstr ""
 "iNsider pricing үнээр илүү олон удаа захиалга хийхийн тулд гишүүнчлэлийн "
 "ахиулалт хийнэ үү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Upgrades This Month"
 msgstr "Энэ сарын ахиулалтууд"
 
@@ -33055,6 +33864,7 @@ msgid "User Hotels"
 msgstr "Таны зочид буудлууд:"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/more_info_hover_card.vue
 msgid "User Info"
 msgstr "Хэрэглэгчийн мэдээлэл"
 
@@ -33065,6 +33875,12 @@ msgstr "Таны нэхэмжлэхүүд"
 #: components/inchat/user_room_actions.vue
 msgid "User locked successfully"
 msgstr "Хэрэглэгч амжилттай цоожлогдлоо"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "User Invoices"
+msgid "User Next Invoices"
+msgstr "Таны нэхэмжлэхүүд"
 
 #: components/user/user_notes.vue
 msgid "User Notes"
@@ -33127,10 +33943,22 @@ msgstr ""
 "Хэрэглэгч нар inCruises Wallet давтамжит төлбөрийн аргыг уг аргаар идэвхгүй "
 "болгож болно."
 
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "User unlocked successfully"
+msgid "Users downloaded successfully"
+msgstr "Хэрэглэгч амжилттай нээгдлээ"
+
 #: components/inchat/admin/ShowParticipants.vue
 #: components/inchat/list_modals/users_room_list_modal.vue
 msgid "Users in Room"
 msgstr "Өрөөнд буй хэрэглэгч нар"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Enable Recurring Payments"
+msgid "Users Recurring Payment Status"
+msgstr "Давтамжит төлбөрийг идэвхжүүлэх"
 
 #: pages/referral_activity.vue
 msgid ""
@@ -33177,7 +34005,7 @@ msgstr "Таны холбоосоор inCruises-д төлбөртэй түншэ
 msgid "Users who have seen our website through your link."
 msgstr "Таны холбоосоор манай вэб хуудсанд зочилсон хүмүүс."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Users with Pending Invoices"
 msgstr "Нэхэмжлэхээ төлөөгүй хэрэглэгч"
 
@@ -33414,7 +34242,7 @@ msgstr "Нэрсийг харах"
 msgid "View Booking Summary"
 msgstr "Захиалгын хураангуйг харах"
 
-#: pages/certificates.vue pages/reports.vue
+#: pages/certificates.vue components/reports/old_reports.vue
 msgid "View Certificate"
 msgstr "Гэрчилгээг харах"
 
@@ -33771,7 +34599,7 @@ msgstr "inCruises-ийн орлого урамшууллын тухай илүү
 msgid "Want to make this into a Refundable Booking?"
 msgstr "Үүнийг төлбөр буцаан олголт бүхий захиалга болгохыг хүсэж байна уу?"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Want to stop receiving Email Blasts?"
 msgstr "Цаашид имэйл хүлээн авахыг хүсэхгүй бол холбоос дээр дарна уу?"
 
@@ -33779,7 +34607,8 @@ msgstr "Цаашид имэйл хүлээн авахыг хүсэхгүй бо�
 msgid "Want to Try DittoTouch?"
 msgstr "DittoTouch юу болохыг үзмээр байна уу?"
 
-#: vue/main.js components/inchat/user/warning_modal.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/inchat/user/warning_modal.vue
 msgid "Warning"
 msgstr "Анхааруулга"
 
@@ -34327,6 +35156,12 @@ msgstr "Тавтай морилно уу"
 msgid "Welcome To InCruises"
 msgstr "inCruises-д тавтай морилно уу."
 
+#: components/reports/new_reports.vue
+#, fuzzy
+#| msgid "Welcome To InCruises"
+msgid "Welcome To Reports"
+msgstr "inCruises-д тавтай морилно уу."
+
 #: pages/courses.vue
 msgid "Welcome to the Basic Training Courses!"
 msgstr "Үндсэн сургалтуудад тавтай морилно уу!"
@@ -34464,11 +35299,19 @@ msgstr "Зочны хувьд та юу хүртэх вэ?"
 msgid "What's new"
 msgstr "Шинэ мэдээ"
 
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "Whatsapp #"
+msgid "Whatsapp"
+msgstr "Whatsapp #"
+
 #: components/compensation/qbi_members_table.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "WhatsApp"
 msgstr "WhatsАpp"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Whatsapp #"
 msgstr "Whatsapp #"
 
@@ -35657,6 +36500,12 @@ msgstr "Та дараах зөвшөөрлийн бүлгээс зөвшөөрл
 msgid "You are about to restart your identity verification process."
 msgstr "Та өөрийн баталгаажуулах явцыг дахин эхлүүлэх гэж байна."
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "You are about to restart your identity verification process."
+msgid "You are about to send a push notification to %{count} users."
+msgstr "Та өөрийн баталгаажуулах явцыг дахин эхлүүлэх гэж байна."
+
 #: pages/downgrade.vue
 msgid ""
 "You are about to switch to the Classic membership. By doing so, you will "
@@ -35962,7 +36811,7 @@ msgstr ""
 msgid "You cannot login as this user."
 msgstr "Та энэ хэрэглэгчээр нэвтэрч болохгүй."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You cannot search for New Ranks for this month and last month at the same "
 "time. Please disable one and try again."
@@ -35970,9 +36819,14 @@ msgstr ""
 "Та энэ сарын болон өмнөх сарын шинэ цол зэргийг нэгэн зэрэг хайх боломжгүй. "
 "Аль нэгийг нь идэвхгүй болгон дахин хайлт хийнэ үү."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
+#, fuzzy
+#| msgid ""
+#| "You cannot select Membership Plan with Partners, Expired Partners, or "
+#| "Guests."
 msgid ""
-"You cannot select Membership Plan with Partners, Expired Partners, or Guests."
+"You cannot select Membership Plan with Partners, Expired Partners, or No "
+"Plans."
 msgstr ""
 "Та Түнш, хугацаа нь дууссан Түнш, эсвэл Зочины статустай үед Гишүүнчлэлийн "
 "хувилбарыг сонгох боломжгүй."
@@ -36304,7 +37158,7 @@ msgstr ""
 "Та бүртгэлийн дээд хязгаарт хүрсэн байна. Шинэ бүртгэл нэмэхийн тулд одоо "
 "ашиглаж буй бүртгэлээ устгана уу."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You have selected member data but have partnership creation date fields "
 "active, please remove before proceeding."
@@ -36312,7 +37166,7 @@ msgstr ""
 "Та гишүүний мэдээлэл сонгосон байна. Гэвч түншлэлийн үүсгэсэн огноо идэвхтэй "
 "байна, гүйцэтгэхийн өмнө үүнийг арилгана уу."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You have selected partner data but have membership creation date fields "
 "active, please remove before proceeding."
@@ -36527,11 +37381,7 @@ msgstr ""
 "a>ний дагуу энэ аяллын хөлөг онгоцонд суух хүртлээ идэвхтэй Гишүүн байх "
 "ёстой."
 
-#: pages/reports.vue
-msgid "You must run a report and have results to send an email blast."
-msgstr ""
-
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "You must select at least one user type."
 msgstr "Та дор хаяж нэг хэрэглэгчийн төрлийг сонгох ёстой."
 
@@ -37492,7 +38342,7 @@ msgstr ""
 msgid "Your Region"
 msgstr "Таны бүс нутаг"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Your report results will appear in this area."
 msgstr "Таны тайлангийн үр дүн энд харагдах болно."
 
@@ -49764,6 +50614,20 @@ msgstr "Тест 3"
 msgid "Final Test"
 msgstr "Финал"
 
+#: Courses
+msgid "xxxz"
+msgstr ""
+
+#: Courses (descriptions)
+#, fuzzy
+#| msgid "TEST 2"
+msgid "TEST B"
+msgstr "ТЕСТ 2"
+
+#: Courses (descriptions)
+msgid "eee3we"
+msgstr ""
+
 #: Courses (descriptions)
 msgid ""
 "In order to access your inCruises® Wallet, you must complete this course on "
@@ -49840,15 +50704,6 @@ msgstr ""
 #~ msgid "Percent Growth Needed"
 #~ msgstr "Өсөлтийн хувь хэрэгтэй"
 
-#~ msgid "Historical QBI Report"
-#~ msgstr "\"Түүхэн\" QBI Индексийн тайлан"
-
-#~ msgid "Insert your message..."
-#~ msgstr "Мессежээ бичнэ үү..."
-
-#~ msgid "Pending QBI Report"
-#~ msgstr "Хүлээгдэж буй QBI тайлан"
-
 #~ msgid "Price may vary based on availability"
 #~ msgstr "Үнэ боломжоос хамаарч өөрчлөгдөх боломжтой"
 
@@ -49856,144 +50711,12 @@ msgstr ""
 #~ msgstr "(Насанд хүрсэн гишүүн)"
 
 #, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "%{ n } Days Left to Pay"
-#~ msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "1 Day Left to Pay"
-#~ msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
-
-#, fuzzy
-#~| msgid "Invoice Date"
-#~ msgid "2 Invoices Dates"
-#~ msgstr "Нэхэмжлэхийн огноо"
-
-#, fuzzy
-#~| msgid "Accounts"
-#~ msgid "Account Expires"
-#~ msgstr "Бүртгэлүүд"
-
-#, fuzzy
-#~| msgid "All Titles"
-#~ msgid "All Teams"
-#~ msgstr "Бүх цол зэрэг"
-
-#, fuzzy
 #~| msgid "An error occurred while fetching the data."
 #~ msgid "An error occurred while fetching the report"
 #~ msgstr "Өгөгдөл татах үед алдаа гарлаа."
 
-#, fuzzy
-#~| msgid "An unexpected error occurred while applying the client filters."
-#~ msgid "An unexpected error occurred while loading countries."
-#~ msgstr "Хэрэглэгчийн филтерийг тохируулахад алдаа гарлаа."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while resetting the filters."
-#~ msgid "An unexpected error occurred while loading languages."
-#~ msgstr "Филтерийг дахин тохируулахад алдаа гарлаа."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while applying the client filters."
-#~ msgid ""
-#~ "An unexpected error occurred while loading partners still eligible fast "
-#~ "start."
-#~ msgstr "Хэрэглэгчийн филтерийг тохируулахад алдаа гарлаа."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while resetting the filters."
-#~ msgid "An unexpected error occurred while loading teams."
-#~ msgstr "Филтерийг дахин тохируулахад алдаа гарлаа."
-
-#, fuzzy
-#~| msgid "Bonus Paid"
-#~ msgid "Bonus Payed In"
-#~ msgstr "Урамшуулал төлөгдсөн"
-
-#, fuzzy
-#~| msgid "Coming Soon!"
-#~ msgid "Coming Soon"
-#~ msgstr "Тун удахгүй!"
-
-#, fuzzy
-#~| msgid "Countries Selected"
-#~ msgid "countries selected"
-#~ msgstr "Сонгосон улс орнууд"
-
-#, fuzzy
-#~| msgid "Direct Activations"
-#~ msgid "Current Activations"
-#~ msgstr "Хувьчлан идэвхжүүлэлтүүд"
-
-#, fuzzy
-#~| msgid "Recurring Qualified Production"
-#~ msgid "Current Qualified Production"
-#~ msgstr "Давтамжит төлбөрийн борлуулалт"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Count"
-#~ msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Pay"
-#~ msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Still Be Elegible"
-#~ msgstr "Болзол хангахад үлдсэн хоногийн тоо:"
-
-#, fuzzy
-#~| msgid "Downline Select"
-#~ msgid "Downlines Elegible"
-#~ msgstr "Доод түвшин Сонгох"
-
-#, fuzzy
-#~| msgid "Due Today"
-#~ msgid "Due today"
-#~ msgstr "Өнөөдөр дуусч байна"
-
 #~ msgid "Elegible"
 #~ msgstr "Болзол хангасан"
-
-#, fuzzy
-#~| msgid "Email Date"
-#~ msgid "Embarking Date"
-#~ msgstr "Имэйлийн огноо"
-
-#, fuzzy
-#~| msgid "First Leader"
-#~ msgid "First Up leader"
-#~ msgstr "Анхны манлайлагч"
-
-#, fuzzy
-#~| msgid "First Leader"
-#~ msgid "First Up Leader"
-#~ msgstr "Анхны манлайлагч"
-
-#, fuzzy
-#~| msgid "inCruises - Receipt"
-#~ msgid "InCruises - Reports"
-#~ msgstr "InCruises - Тооцооны баримт"
-
-#, fuzzy
-#~| msgid "InCruises Wallet"
-#~ msgid "inCruises Wallet"
-#~ msgstr "InCruises Түрийвч"
-
-#, fuzzy
-#~| msgid "Invite Status"
-#~ msgid "Invoice Status"
-#~ msgstr "Урилгын төлөв"
-
-#, fuzzy
-#~| msgid "Invoice Date"
-#~ msgid "Invoice Type"
-#~ msgstr "Нэхэмжлэхийн огноо"
 
 #, fuzzy
 #~| msgid "Language"
@@ -50002,165 +50725,8 @@ msgstr ""
 
 #, fuzzy
 #~| msgid "Package selected:"
-#~ msgid "languages selected"
-#~ msgstr "Сонгосон багц:"
-
-#, fuzzy
-#~| msgid "Package selected:"
 #~ msgid "Languages Selected"
 #~ msgstr "Сонгосон багц:"
-
-#, fuzzy
-#~| msgid "Rank Achieved"
-#~ msgid "Last Rank Achieved"
-#~ msgstr "Авсан цол"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Member Reports"
-#~ msgstr "Дэлгэрэнгүй тайлан"
-
-#, fuzzy
-#~| msgid "Members in your QBI"
-#~ msgid "Members Counting Toward Your QBI"
-#~ msgstr "Таны QBI-д буй Гишүүд"
-
-#, fuzzy
-#~| msgid "Pending Members with Pending Invoices"
-#~ msgid "Members With Cruise Bookings & Pending Invoices"
-#~ msgstr "Төлөөгүй нэхэмжлэхтэй хүлээгдэж буй Гишүүд"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Members with pending Invoices"
-#~ msgstr "Нэхэмжлэхээ төлөөгүй хэрэглэгч"
-
-#, fuzzy
-#~| msgid "Membership First Month"
-#~ msgid "Membership Discount"
-#~ msgstr "Эхний сарын Гишүүнчлэл"
-
-#, fuzzy
-#~| msgid "Membership Info"
-#~ msgid "Membership Invoice"
-#~ msgstr "Гишүүнчлэлийн мэдээлэл"
-
-#, fuzzy
-#~| msgid "Membership Free Date"
-#~ msgid "Membership Upgrades & Downgrades"
-#~ msgstr "Үнэгүй Гишүүнчлэлтэй болсон огноо"
-
-#, fuzzy
-#~| msgid "Directs"
-#~ msgid "My Directs"
-#~ msgstr "Хувьчлан урьсан"
-
-#, fuzzy
-#~| msgid "Guests"
-#~ msgid "New Guests"
-#~ msgstr "Зорчигчид"
-
-#, fuzzy
-#~| msgid "New Message"
-#~ msgid "New Reports Page"
-#~ msgstr "Шинэ бичвэр"
-
-#, fuzzy
-#~| msgid "Create Invoice"
-#~ msgid "Next Invoice"
-#~ msgstr "Нэхэмжлэх үүсгэх"
-
-#, fuzzy
-#~| msgid "Membership Info"
-#~ msgid "Next Membership Invoice"
-#~ msgstr "Гишүүнчлэлийн мэдээлэл"
-
-#, fuzzy
-#~| msgid "Partnership Video"
-#~ msgid "Next Partnership Invoice"
-#~ msgstr "Түншлэлийн тухай видео"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Other Reports"
-#~ msgstr "Дэлгэрэнгүй тайлан"
-
-#, fuzzy
-#~| msgid "Overview"
-#~ msgid "Overdue"
-#~ msgstr "Ерөнхий тойм"
-
-#, fuzzy
-#~| msgid "Partners That Will Be Renewing Next Month"
-#~ msgid "Partner Renewing Next Month"
-#~ msgstr "Дараа сард Түншийн сунгалт хийх Түншүүд"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Partner Reports"
-#~ msgstr "Дэлгэрэнгүй тайлан"
-
-#, fuzzy
-#~| msgid "Ineligible for compensation"
-#~ msgid "Partners Elegible for Compensation"
-#~ msgstr "Орлого урамшуулал авах болзол хангаагүй байна"
-
-#, fuzzy
-#~| msgid "Partners are Membership Free."
-#~ msgid "Partners Elegible For Membership Free"
-#~ msgstr "Гишүүнчлэл-Үнэгүй нийт Түншүүдийн тоо."
-
-#, fuzzy
-#~| msgid "Understanding Builders Base Bonus"
-#~ msgid "Partners Pending to Receive Builders Base Bonus"
-#~ msgstr "Билдерс Бэйс урамшууллын тухай"
-
-#, fuzzy
-#~| msgid "You have no direct partners currently eligible for Fast Start."
-#~ msgid "Partners Still Elegible for Fast Start"
-#~ msgstr ""
-#~ "Танд одоогийн байдлаар Түргэн эхлэх урамшууллыг авах хувьчлан элсүүлсэн "
-#~ "түнш байхгүй байна."
-
-#, fuzzy
-#~| msgid "Potential Fast Start Matching"
-#~ msgid "Partners Still Elegible for Fast Start Matching"
-#~ msgstr "Боломжит Түргэн эхлэх тохируулах урамшуулал"
-
-#, fuzzy
-#~| msgid "Potential Team Leadership Bonus"
-#~ msgid "Partners Team Leadership Performance"
-#~ msgstr "Боломжит Багийн манлайллын урамшуулал"
-
-#, fuzzy
-#~| msgid "Partner Activation Date"
-#~ msgid "Partners Who Achieved Fast Start"
-#~ msgstr "Түншийн идэвхжсэн Огноо"
-
-#, fuzzy
-#~| msgid "Partner with travel agencies"
-#~ msgid "Partners with new ranks"
-#~ msgstr "Аяллын компанитай Түнш нар"
-
-#, fuzzy
-#~| msgid "Partnership Video"
-#~ msgid "Partnership Invoice"
-#~ msgstr "Түншлэлийн тухай видео"
-
-#, fuzzy
-#~| msgid "Partners That Have Not Renewed"
-#~ msgid "Partnership Not Renewed"
-#~ msgstr "Ахиулалт хийж амжаагүй Түншүүд"
-
-#, fuzzy
-#~| msgid "Add Payment Method"
-#~ msgid "Payment Method"
-#~ msgstr "Төлбөрийн арга нэмэх"
-
-#, fuzzy
-#~| msgid "Add Payment Method"
-#~ msgid "Payment Methods"
-#~ msgstr "Төлбөрийн арга нэмэх"
 
 #~ msgid ""
 #~ "Processing can take a moment depending on the information provided. If "
@@ -50172,121 +50738,9 @@ msgstr ""
 #~ "очихгүй бол мэдэгдлийг дуустал хүлээх болно."
 
 #, fuzzy
-#~| msgid "Recurring Payment Terms"
-#~ msgid "Recurring payment"
-#~ msgstr "Давтамжит Төлбөрийн Нөхцөл"
-
-#, fuzzy
-#~| msgid "Recurring Payment Terms"
-#~ msgid "Recurring Payment"
-#~ msgstr "Давтамжит Төлбөрийн Нөхцөл"
-
-#, fuzzy
-#~| msgid "You have no direct partners currently eligible for Fast Start."
-#~ msgid "Reports - Partners Still Elegible for Fast Start"
-#~ msgstr ""
-#~ "Танд одоогийн байдлаар Түргэн эхлэх урамшууллыг авах хувьчлан элсүүлсэн "
-#~ "түнш байхгүй байна."
-
-#, fuzzy
-#~| msgid "Search Tours"
-#~ msgid "Search Teams"
-#~ msgstr "Аялал хайх"
-
-#, fuzzy
-#~| msgid "Selected Country:"
-#~ msgid "Selected Countries"
-#~ msgstr "Орон сонгох:"
-
-#, fuzzy
-#~| msgid "Select a Language"
-#~ msgid "Selected Language"
-#~ msgstr "Хэл сонгох"
-
-#, fuzzy
-#~| msgid "Select Tag"
-#~ msgid "Selected Teams"
-#~ msgstr "Tag сонгох"
-
-#, fuzzy
 #~| msgid "Direct partners"
 #~ msgid "Show only my direct partners"
 #~ msgstr "Хувьчлан идэвхжүүлсэн Түншүүд"
-
-#, fuzzy
-#~| msgid "Signup Date"
-#~ msgid "SignUp Date"
-#~ msgstr "Бүртгүүлсэн огноо"
-
-#, fuzzy
-#~| msgid "Please select gender"
-#~ msgid "team(s) selected"
-#~ msgstr "Хүйсээ сонгоно уу"
-
-#, fuzzy
-#~| msgid "Use Template"
-#~ msgid "Templates"
-#~ msgstr "Загвар хэрэглэх"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Tracks members with pending invoices."
-#~ msgstr "Нэхэмжлэхээ төлөөгүй хэрэглэгч"
-
-#, fuzzy
-#~| msgid "Produce the required Total Activation Volume."
-#~ msgid "Tracks partners qualified production and activation volume."
-#~ msgstr "Шаардлагатай нийт идэвхжүүлэлтийн хэмжээг биелүүлэх."
-
-#, fuzzy
-#~| msgid ""
-#~| "Partners from your team which are still eligible for Fast Start matching "
-#~| "bonus."
-#~ msgid ""
-#~ "Tracks partners who are still eligible for Fast Start Matching based on "
-#~ "their downlines."
-#~ msgstr ""
-#~ "Танай багаас Түргэн эхлэх тохируулах урамшууллыг авах болзол хангах "
-#~ "боломжтой Түнш нар."
-
-#, fuzzy
-#~| msgid ""
-#~| "Partners from your team which are still eligible for Fast Start matching "
-#~| "bonus."
-#~ msgid ""
-#~ "Tracks partners who are still eligible for Fast Start with days left to "
-#~ "qualify."
-#~ msgstr ""
-#~ "Танай багаас Түргэн эхлэх тохируулах урамшууллыг авах болзол хангах "
-#~ "боломжтой Түнш нар."
-
-#, fuzzy
-#~| msgid "One or more members has an active sailing or a pending invoice."
-#~ msgid ""
-#~ "Tracks team members with an active cruise booking but a pending invoice."
-#~ msgstr ""
-#~ "Нэг болон түүнээс дээш тооны гишүүд идэвхтэй аялалтай эсвэл хүлээгдэж буй "
-#~ "нэхэмжлэхтэй байна."
-
-#, fuzzy
-#~| msgid "User Invoices"
-#~ msgid "User Next Invoices"
-#~ msgstr "Таны нэхэмжлэхүүд"
-
-#, fuzzy
-#~| msgid "Enable Recurring Payments"
-#~ msgid "Users Recurring Payment Status"
-#~ msgstr "Давтамжит төлбөрийг идэвхжүүлэх"
-
-#, fuzzy
-#~| msgid "Welcome To InCruises"
-#~ msgid "Welcome To Reports"
-#~ msgstr "inCruises-д тавтай морилно уу."
-
-#, fuzzy
-#~| msgid "Whatsapp #"
-#~ msgid "Whatsapp"
-#~ msgstr "Whatsapp #"
 
 #~ msgid ""
 #~ "Your information has been submitted successfully and verification is "
@@ -58813,9 +59267,6 @@ msgstr ""
 
 #~ msgid "Reset password to \"incruises1234\""
 #~ msgstr "Нууц үгийг \"incruises1234\" болгон тохируул"
-
-#~ msgid "TEST 2"
-#~ msgstr "ТЕСТ 2"
 
 #~ msgid "test 2"
 #~ msgstr "тест 2"

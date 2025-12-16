@@ -524,7 +524,7 @@ msgstr "{{ itineraryItem.description }}"
 msgid "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 msgstr "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
 
@@ -777,6 +777,18 @@ msgstr "%{ cd_used } 리워드 포인트"
 msgid "%{ city }"
 msgstr "%{ 도시 }"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "%{ n } Days"
+msgstr "자격 요건 충족까지 남은 날짜"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "%{ n } Days Left to Pay"
+msgstr "자격 요건 충족까지 남은 날짜"
+
 #: pages/partner_success.vue
 msgid "%{ name } from %{ country }"
 msgstr "%{ country }의 %{ name }"
@@ -871,6 +883,12 @@ msgid "%{count} more %{plan} %{activationLabel} to reach $%{amount}/member"
 msgstr ""
 "멤버당 $%{amount}에 도달하려면 %{count}명의 더 많은 %{plan} "
 "%{activationLabel} 가 필요합니다"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Verification email sent successfully."
+msgid "%{count} push notifications were sent successfully."
+msgstr "인증 이메일이 성공적으로 전송되었습니다."
 
 #: components/earnings_tile.vue
 msgid "%{countDownWord} %{time}"
@@ -2042,8 +2060,15 @@ msgstr ""
 "destinationCountryAndCurrency.currency.code }}"
 
 #: pages/admin_support_analytics.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 msgid "1 Day"
 msgstr "1일"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "1 Day Left to Pay"
+msgstr "자격 요건 충족까지 남은 날짜"
 
 #: components/cruises_booking_old/reward-points-step.vue
 #: components/cruises_booking_old/reward-points-confirm-step.vue
@@ -2127,6 +2152,12 @@ msgstr "1대 2 잔액"
 #: components/checkout/Processor2For1.vue
 msgid "2 For 1 RP"
 msgstr "1대 2 리워드 포인트"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "2 Invoices Dates"
+msgstr "청구서 날짜"
 
 #: pages/elevate.vue
 msgid "2 nights in Dubai with pre-cruise accommodations"
@@ -2459,6 +2490,13 @@ msgstr ""
 "추가한 반복 결제가 은행 인증 대기 중입니다. 은행 인증이 완료되면 이 페이지가 "
 "자동으로 업데이트됩니다."
 
+#: components/reports/new_reports.vue
+msgid ""
+"A set of ready-to-use report templates featuring the most requested insights "
+"by top Partners. Get instant access to popular data views with just one "
+"click."
+msgstr ""
+
 #: pages/apps.vue
 msgid ""
 "A simple ‘Add-to-home-screen’ prompt and push notifications make staying IN "
@@ -2699,13 +2737,19 @@ msgstr "PREMIUM으로 이용 가능"
 msgid "Account"
 msgstr "계정"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Account Created"
 msgstr "계정 생정"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Account Creation Date"
 msgstr "계정 셍상 일자"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Accounts"
+msgid "Account Expires"
+msgstr "계정"
 
 #: components/user/functions.vue
 msgid "Account has been deducted. Transaction successfully completed"
@@ -2766,18 +2810,19 @@ msgid "Action"
 msgstr "액션"
 
 #: pages/certificates.vue pages/admin_account_recovery.vue
-#: pages/negative_balances.vue pages/reports.vue pages/admin_emails.vue
-#: pages/agreements.vue pages/team_documentation_requests.vue
-#: pages/admin_certificates.vue pages/receipts.vue pages/invoices.vue
-#: pages/admin_restricted_paybonus.vue pages/price_match_requests.vue
-#: components/support/InstantTools.vue components/compensation/statements.vue
+#: pages/negative_balances.vue pages/admin_emails.vue pages/agreements.vue
+#: pages/team_documentation_requests.vue pages/admin_certificates.vue
+#: pages/receipts.vue pages/invoices.vue pages/admin_restricted_paybonus.vue
+#: pages/price_match_requests.vue components/support/InstantTools.vue
+#: components/compensation/statements.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/fast_start_matching.vue
 #: components/compensation/recurring_income_levels.vue
 #: components/compensation/qbi_members_table.vue
 #: components/settings_page/modify-saved-passengers.vue
-#: components/data_table/table.vue components/high_risk/high_risk_accounts.vue
+#: components/data_table/table.vue components/reports/old_reports.vue
+#: components/high_risk/high_risk_accounts.vue
 #: components/admin_finance/payment_fulfillment.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
@@ -2837,9 +2882,9 @@ msgstr "활성화 보너스"
 msgid "Activation Bonuses (Daily and Monthly)"
 msgstr "활성화 보너스(일일 및 월간)"
 
-#: pages/reports.vue components/compensation/members-qbi-modal.vue
+#: components/compensation/members-qbi-modal.vue
 #: components/compensation/qbi_members_table.vue
-#: pages/compensation/member_activations.vue
+#: components/reports/old_reports.vue pages/compensation/member_activations.vue
 msgid "Activation Date"
 msgstr "활성화 날짜"
 
@@ -2898,6 +2943,7 @@ msgstr "활성화 볼륨 요건."
 
 #: pages/track_results.vue components/welcome/members-modal.vue
 #: components/compensation/qbi_members_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Active"
 msgstr "활성화"
 
@@ -2923,7 +2969,7 @@ msgstr "활성화 inCruises 클럽 멤버는 "
 msgid "Active Member"
 msgstr "활성화 멤버"
 
-#: pages/reports.vue components/compensation/qbi-details.vue
+#: components/compensation/qbi-details.vue components/reports/old_reports.vue
 msgid "Active Members"
 msgstr "활성화 멤버"
 
@@ -3499,9 +3545,10 @@ msgstr "알래스카"
 msgid "Alipay"
 msgstr "Alipay(알리페이)"
 
-#: pages/reports.vue pages/info_center.vue pages/team_rankings.vue
+#: pages/info_center.vue pages/team_rankings.vue
 #: pages/admin_support_analytics.vue pages/track_results.vue
-#: pages/leadership_academy.vue components/user/timeline.vue
+#: pages/leadership_academy.vue components/reports/old_reports.vue
+#: components/user/timeline.vue
 msgid "All"
 msgstr "전부"
 
@@ -3533,6 +3580,7 @@ msgid "All children must be younger than 18 years old."
 msgstr "모든 어린이는 만 18 세 미만이어야합니다."
 
 #: pages/mercy_ships.vue components/business_intelligence/comp_to_sales.vue
+#: components/reports/filters/country.vue
 msgid "All Countries"
 msgstr "모든 국가"
 
@@ -3595,6 +3643,7 @@ msgid "All Invitations"
 msgstr "모든 초대"
 
 #: pages/communications.vue pages/webinar_recordings.vue
+#: components/reports/filters/language.vue
 msgid "All Languages"
 msgstr "모든 언어"
 
@@ -3728,6 +3777,12 @@ msgstr "모든 세금, 수수료, 팁이 포함되어 있으며 — 추가 비�
 #: pages/export.vue
 msgid "All Team Partners"
 msgstr "모든 팀 파트너"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "All Titles"
+msgid "All Teams"
+msgstr "모든 직급"
 
 #: components/public/Faq.vue pages/public/faq.vue
 msgid ""
@@ -4064,6 +4119,12 @@ msgstr "게시물을 가져오는 중에 오류가 발생했습니다. 나중에
 msgid "An error occurred while loading the meeting"
 msgstr "미팅을 로드하는 동안 오류가 발생했습니다"
 
+#: vue/composables/useSendBroadcastPwaNotification.js
+#, fuzzy
+#| msgid "An error occurred while loading the meeting"
+msgid "An error occurred while sending notification"
+msgstr "미팅을 로드하는 동안 오류가 발생했습니다"
+
 #: pages/business_performance.vue
 msgid "An error occurred while updating the widget."
 msgstr "위젯을 업데이트하는 동안 오류가 발생했습니다."
@@ -4131,6 +4192,52 @@ msgid ""
 "An unexpected error occurred while initializing the local client filters."
 msgstr ""
 "로컬 클라이언트 필터를 초기화하는 동안 예기치 않은 오류가 발생했습니다."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid "An unexpected error occurred while loading countries."
+msgstr "클라이언트 필터를 적용하는 동안 예기치 않은 오류가 발생했습니다."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid "An unexpected error occurred while loading languages."
+msgstr "필터를 재설정하는 동안 예기치 않은 오류가 발생했습니다."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid ""
+"An unexpected error occurred while loading members with pending invoices."
+msgstr "필터를 재설정하는 동안 예기치 않은 오류가 발생했습니다."
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid ""
+"An unexpected error occurred while loading partners still eligible fast "
+"start."
+msgstr "클라이언트 필터를 적용하는 동안 예기치 않은 오류가 발생했습니다."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid "An unexpected error occurred while loading teams."
+msgstr "필터를 재설정하는 동안 예기치 않은 오류가 발생했습니다."
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid ""
+"An unexpected error occurred while loading users recurring payment status."
+msgstr "클라이언트 필터를 적용하는 동안 예기치 않은 오류가 발생했습니다."
 
 #: components/data_table/column-selection-widget.vue
 msgid "An unexpected error occurred while opening the column selection widget."
@@ -4846,7 +4953,7 @@ msgstr "이 잠재 등급에서는 신규 비즈니스 생산 보너스 5%도 �
 msgid "Attachments"
 msgstr "첨부 파일"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "Attachments are temporarily disable for Email Blast. You can only send "
 "emails without attachments."
@@ -4854,7 +4961,7 @@ msgstr ""
 "이메일 블라스트에 대한 첨부 파일이 일시적으로 비활성화됩니다. 첨부 파일이 없"
 "는 이메일만 보낼 수 있습니다."
 
-#: pages/reports.vue pages/email.vue
+#: pages/email.vue components/reports/old_reports.vue
 msgid "Attachments:"
 msgstr "첨부문서:"
 
@@ -5057,7 +5164,7 @@ msgstr "기본 정보"
 msgid "Basic Training"
 msgstr "기초 교육 과정"
 
-#: pages/reports.vue pages/courses.vue
+#: pages/courses.vue components/reports/old_reports.vue
 msgid "Basic Training Courses"
 msgstr "기초 교육 과정"
 
@@ -5226,7 +5333,7 @@ msgstr "음료 패키지"
 msgid "Bill to:"
 msgstr "청구일:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Billing Date"
 msgstr "청구일"
 
@@ -5296,7 +5403,7 @@ msgstr "Board of Directors (BoD) 상위 7명의 적격 포인트 획득자."
 msgid "Board of Directors and above"
 msgstr "Board of Directors 이상"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Board of Directors Member"
 msgstr "보드 오브 디렉터"
 
@@ -5419,6 +5526,12 @@ msgstr "보너스 지급"
 #: components/receipts/new_residual_bonus_statement.vue
 #: components/receipts/new_team_residual_bonus_statement.vue
 msgid "Bonus Paid For"
+msgstr "보너스 지급"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Bonus Paid"
+msgid "Bonus Payed In"
 msgstr "보너스 지급"
 
 #: pages/glsx.vue pages/gls.vue
@@ -5603,6 +5716,7 @@ msgid "Booking Type"
 msgstr "예약 유형"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Both"
 msgstr "둘 다"
 
@@ -5649,7 +5763,7 @@ msgstr ""
 "업계 동향을 파악하고 탁월한 성과를 내도록 설계된 다양한 교육 자료를 통해 역량"
 "을 강화하세요."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Builder Plan - $32"
 msgstr "빌더 요금제 - $32"
 
@@ -5723,11 +5837,11 @@ msgstr "빌더 베이스 보너스 최대 $30,000*"
 msgid "Builders Points"
 msgstr "빌더 포인트"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Building a Compliant Business"
 msgstr "법과 규정을 준수하는 비즈니스 구축의 중요성"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Building Wide and Deep"
 msgstr "넓고 깊은 비즈니스 구축"
 
@@ -5743,7 +5857,7 @@ msgstr "성장을 지원하도록 구축"
 msgid "Business Cards"
 msgstr "명함"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership"
 msgstr "비즈니스 오너십"
 
@@ -5751,11 +5865,11 @@ msgstr "비즈니스 오너십"
 msgid "BUSINESS OWNERSHIP CERTIFICATE"
 msgstr "비즈니스 오너십 수료증"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership Last Month"
 msgstr "지난 달 비즈니스 오너십"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership This Month"
 msgstr "이달의 비즈니스 오너십"
 
@@ -6174,7 +6288,8 @@ msgstr "객실:"
 msgid "Calendar"
 msgstr "일정"
 
-#: pages/reports.vue components/receipts/monthly_member_activation.vue
+#: components/reports/old_reports.vue
+#: components/receipts/monthly_member_activation.vue
 #: components/receipts/super_builders_bonus.vue
 #: components/receipts/qualified_residual_bonus.vue
 msgid "Calendar Month"
@@ -6314,10 +6429,10 @@ msgstr "캐나다 달러 (CAD)"
 #: components/fast-growing-legs.vue components/recipients_modal.vue
 #: components/avatar_cropper.vue pages/referral_links.vue pages/inviter.vue
 #: pages/tours_details.vue pages/checkout.vue pages/hotels.vue
-#: pages/reports.vue pages/admin_permission_group.vue
-#: pages/admin_department.vue pages/connect.vue pages/admin_permission.vue
-#: pages/contacts.vue pages/settings.vue pages/kyc_verification.vue
-#: pages/invoices.vue pages/email.vue pages/business_performance.vue
+#: pages/admin_permission_group.vue pages/admin_department.vue
+#: pages/connect.vue pages/admin_permission.vue pages/contacts.vue
+#: pages/settings.vue pages/kyc_verification.vue pages/invoices.vue
+#: pages/email.vue pages/business_performance.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/admin_management/admin_departments.vue
 #: components/payout/euro-conversion.vue
@@ -6329,7 +6444,7 @@ msgstr "캐나다 달러 (CAD)"
 #: components/contacts/contact-edit-modal.vue
 #: components/settings_page/remove-display-name-modal.vue
 #: components/cruises_booking_old/confirmation-step.vue
-#: components/hotels/GuestsDropdown.vue
+#: components/reports/old_reports.vue components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsPanel.vue
 #: components/recurring/add-recurring.vue
 #: components/recurring/recurring_payment_method_checkout.vue
@@ -6617,7 +6732,8 @@ msgstr ""
 "소)는 비밀번호를 통해서만 선택된 직원 및 계약자만 접근할 수 있으며, 귀하는 해"
 "당 정보를 수정할 수 없습니다."
 
-#: pages/certificates.vue pages/reports.vue
+#: pages/certificates.vue components/reports/quick_reports.vue
+#: components/reports/old_reports.vue
 msgid "Certificate"
 msgstr "인증서"
 
@@ -6643,6 +6759,7 @@ msgid "Certificates"
 msgstr "인증서"
 
 #: pages/email_address.vue pages/referral_links_old.vue
+#: components/reports/quick_reports.vue
 msgid "Change"
 msgstr "변경"
 
@@ -6839,7 +6956,7 @@ msgstr "중국 위안 (CNY)"
 msgid "Choose"
 msgstr "선택하십시오"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Choose a Quick Report"
 msgstr "간편 보고서 선택"
 
@@ -7009,6 +7126,7 @@ msgstr "지금 50 무료 리워드 포인트를 신청하세요 !"
 msgid "Classic"
 msgstr "CLASSIC"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 msgid "CLASSIC"
@@ -7023,7 +7141,7 @@ msgstr "CLASSIC 멤버"
 msgid "CLASSIC Member"
 msgstr "CLASSIC 멤버"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Classic Members"
 msgstr "CLASSIC 멤버"
 
@@ -7046,7 +7164,7 @@ msgstr "기준 해제"
 msgid "Clear Filters"
 msgstr "필터 해제"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Clear Selections"
 msgstr "선택 해제"
 
@@ -7126,6 +7244,11 @@ msgstr "바우처를 보려면 여기를 클릭하세요"
 #: pages/create_price_match_cruises.vue
 msgid "Click here to view your Price Match Requests:"
 msgstr "가격 일치 요청을 보려면 여기를 클릭하세요 :"
+
+#: components/reports/new_reports.vue
+#: components/reports/quick_reports_modal/templates-list.vue
+msgid "Click on a card below to run report based on a specific template"
+msgstr ""
 
 #: pages/cruise_price_match_guarantee.vue
 msgid "click the"
@@ -7237,6 +7360,7 @@ msgid "Column Selection"
 msgstr "열 선택"
 
 #: components/data_table/column-selection-widget.vue
+#: components/reports/report_card.vue
 msgid "Columns"
 msgstr "열"
 
@@ -7260,6 +7384,12 @@ msgstr ""
 "2024년 1월, 선발된 다른 inCruises 파트너와 함께 두바이에서 최초의 경험에 빠져"
 "보세요"
 
+#: components/reports/report_card.vue
+#, fuzzy
+#| msgid "Coming Soon!"
+msgid "Coming Soon"
+msgstr "곧 공개됩니다 !"
+
 #: pages/public/the_global_convention.vue
 msgid "Coming Soon!"
 msgstr "곧 공개됩니다 !"
@@ -7268,7 +7398,8 @@ msgstr "곧 공개됩니다 !"
 msgid "Commercial Partnerships Manager"
 msgstr "상업 파트너십 관리자"
 
-#: pages/reports.vue components/receipts/commission_statement.vue
+#: components/reports/old_reports.vue
+#: components/receipts/commission_statement.vue
 msgid "Commission"
 msgstr "보상금"
 
@@ -7333,7 +7464,8 @@ msgstr "보상"
 msgid "Compensation Details"
 msgstr "보상 세부내용"
 
-#: pages/reports.vue components/certificates/CompensationProgram.vue
+#: components/reports/old_reports.vue
+#: components/certificates/CompensationProgram.vue
 #: components/public/FooterDocs.vue
 msgid "Compensation Program"
 msgstr "보상 프로그램"
@@ -7380,9 +7512,10 @@ msgstr "승객 정보 완료"
 msgid "Complete your booking before"
 msgstr "예약을 완료하세요"
 
-#: pages/export.vue pages/reports.vue pages/agreements.vue
-#: pages/team_documentation_requests.vue pages/contacts.vue pages/invoices.vue
-#: pages/leadership_academy.vue components/contacts/contact-edit-modal.vue
+#: pages/export.vue pages/agreements.vue pages/team_documentation_requests.vue
+#: pages/contacts.vue pages/invoices.vue pages/leadership_academy.vue
+#: components/contacts/contact-edit-modal.vue
+#: components/reports/old_reports.vue
 msgid "Completed"
 msgstr "완료됨"
 
@@ -7449,13 +7582,12 @@ msgstr "위젯 구성"
 
 #: components/alert_modal.vue components/fast-growing-legs.vue
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: pages/reports.vue pages/create_price_match_cruises.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/admin_permission.vue pages/settings.vue
+#: pages/create_price_match_cruises.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/admin_permission.vue pages/settings.vue
 #: components/payout/birthday-modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
-#: components/receipts/booking_receipt.vue
+#: components/reports/old_reports.vue components/receipts/booking_receipt.vue
 msgid "Confirm"
 msgstr "확인"
 
@@ -7623,7 +7755,7 @@ msgstr "축하합니다! 인증서를 받으려면 \"최종\" 버튼을 클릭�
 msgid "Congratulations! You have claimed your reward points."
 msgstr "축하합니다! 리워드 포인트를 청구했습니다."
 
-#: pages/reports.vue pages/connect.vue pages/account_setup.vue
+#: pages/connect.vue pages/account_setup.vue components/reports/old_reports.vue
 msgid "Connect"
 msgstr "커넥트"
 
@@ -7631,7 +7763,7 @@ msgstr "커넥트"
 msgid "CONNECT 1500"
 msgstr "커넥트 1500"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect 1500 - $500"
 msgstr "커넥트 1500 - $500"
 
@@ -7639,7 +7771,7 @@ msgstr "커넥트 1500 - $500"
 msgid "CONNECT 500"
 msgstr "커넥트 500"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect 500 - $50"
 msgstr "커넥트 500 - $50"
 
@@ -7652,7 +7784,7 @@ msgstr ""
 "inCruises 백오피스에 포함된 온라인 미팅도구인 커넥트를 통해 잠재 고객 및 파트"
 "너 팀과 연결할 수 있습니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect Plan"
 msgstr "커넥트 요금제"
 
@@ -7995,6 +8127,12 @@ msgstr "국가"
 msgid "Countries and counting"
 msgstr "국가 및 수"
 
+#: components/reports/filters/country.vue
+#, fuzzy
+#| msgid "Countries Selected"
+msgid "countries selected"
+msgstr "선택된 국가"
+
 #: pages/mercy_ships.vue
 msgid "Countries Selected"
 msgstr "선택된 국가"
@@ -8010,10 +8148,10 @@ msgstr "국가"
 #: components/mercy-ship-modals.vue components/info-reminder.vue
 #: components/weekly-competition.vue pages/additional_info.vue
 #: pages/competition.vue pages/referral_links_old.vue pages/admin_user.vue
-#: pages/new_ranks.vue pages/mercy_ships.vue pages/reports.vue
-#: pages/partner_success.vue pages/builders_base.vue pages/team_rankings.vue
-#: pages/settings.vue pages/reach.vue pages/track_results.vue
-#: pages/giving_society.vue components/checkout/ItalianStep.vue
+#: pages/new_ranks.vue pages/mercy_ships.vue pages/partner_success.vue
+#: pages/builders_base.vue pages/team_rankings.vue pages/settings.vue
+#: pages/reach.vue pages/track_results.vue pages/giving_society.vue
+#: components/checkout/ItalianStep.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus_preview.vue
 #: components/compensation/leadership_bonus.vue
@@ -8022,12 +8160,17 @@ msgstr "국가"
 #: components/compensation/my_team_breakdown_table.vue
 #: components/contacts/contact-edit-modal.vue
 #: components/settings_page/login-activity.vue
+#: components/reports/old_reports.vue
 #: components/high_risk/high_risk_accounts.vue
 #: components/receipts/italian_receipt.vue components/public/JoinModal.vue
 #: components/onboarding/address-step.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/business_intelligence/comp_to_sales.vue pages/public/signup.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
+#: components/reports/filters/country.vue
 msgid "Country"
 msgstr "국가"
 
@@ -8070,7 +8213,7 @@ msgstr "기초교육과정"
 msgid "Course"
 msgstr "기초교육과정"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Course Certificate"
 msgstr "기초교육과정 수료증 보기"
 
@@ -8181,6 +8324,7 @@ msgid "Created:"
 msgstr "생성:"
 
 #: components/admin_finance/payment_fulfillment.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/mercy_ships/donate_modal/payment-selection.vue
 msgid "Credit Card"
 msgstr "신용 카드"
@@ -8413,7 +8557,7 @@ msgstr "크루즈선사"
 msgid "Cruise Member"
 msgstr "크루즈 멤버"
 
-#: components/support/InstantTools.vue
+#: components/support/InstantTools.vue components/reports/quick_reports.vue
 msgid "Cruise Name"
 msgstr "크루즈명"
 
@@ -8529,6 +8673,12 @@ msgstr "통화 금액은 유로화로 보고됩니다"
 msgid "Currency Selected"
 msgstr "선택된 통화"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Direct Activations"
+msgid "Current Activations"
+msgstr "직접 추천 활성화"
+
 #: components/growth_calculator/potential_recurring.vue
 msgid "Current Active Levels"
 msgstr "현재 활성 레벨"
@@ -8559,8 +8709,15 @@ msgid "Current Plan"
 msgstr "현재 요금제"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/quick_reports.vue
 msgid "Current QBI"
 msgstr "현재 QBI"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Recurring Qualified Production"
+msgid "Current Qualified Production"
+msgstr "리커링 적격 생산액"
 
 #: components/growth_calculator/potential_leadership.vue
 msgid "Current Rank"
@@ -8766,7 +8923,7 @@ msgstr "데이타"
 msgid "Data"
 msgstr "데이터"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Data Fields"
 msgstr "데이터 입력란"
 
@@ -8812,7 +8969,7 @@ msgstr "날짜 내림차순"
 msgid "Date Earned"
 msgstr "적립일"
 
-#: pages/reports.vue pages/team_rankings.vue
+#: pages/team_rankings.vue components/reports/old_reports.vue
 msgid "Date From"
 msgstr "시작 날짜"
 
@@ -8845,7 +9002,7 @@ msgstr "발급일"
 msgid "Date Range"
 msgstr "날짜 범위"
 
-#: pages/reports.vue pages/team_rankings.vue
+#: pages/team_rankings.vue components/reports/old_reports.vue
 msgid "Date To"
 msgstr "종료 날짜"
 
@@ -8879,6 +9036,7 @@ msgid "days"
 msgstr "일"
 
 #: components/cards/countdown-card.vue components/public/tgc-countdown.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
 msgid "Days"
 msgstr "일"
 
@@ -8887,11 +9045,37 @@ msgid "Days In Negative"
 msgstr "마이너스 상태인 날짜들"
 
 #: components/compensation/members-qbi-modal.vue
+#: components/reports/quick_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
 msgid "Days Left"
 msgstr "잔여 일수"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Count"
+msgstr "자격 요건 충족까지 남은 날짜"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left to Pay"
+msgstr "자격 요건 충족까지 남은 날짜"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Pay"
+msgstr "자격 요건 충족까지 남은 날짜"
+
 #: components/compensation/qbi_members_table.vue
 msgid "Days Left To Qualify"
+msgstr "자격 요건 충족까지 남은 날짜"
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Still Be Eligible"
 msgstr "자격 요건 충족까지 남은 날짜"
 
 #: pages/admin_user_id.vue
@@ -9052,7 +9236,7 @@ msgstr "출발"
 msgid "DEPART"
 msgstr "출발"
 
-#: pages/reports.vue pages/price_match_requests.vue
+#: pages/price_match_requests.vue components/reports/old_reports.vue
 #: components/receipts/booking_receipt.vue
 #: components/admin_booking/admin_cruise_featured.vue
 msgid "Depart Date"
@@ -9318,7 +9502,7 @@ msgstr "신규 등록 직접 추천 파트너"
 msgid "Direct Pending Members"
 msgstr "직접 추천 미납 멤버"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Direct Pending with Cruise Bookings"
 msgstr "크루즈 예약이 있는 미납 직추"
 
@@ -9393,6 +9577,13 @@ msgstr "직접 추천 (모든 날짜)"
 #: pages/info_center.vue
 msgid "Directs (Month to Date)"
 msgstr "직접 추천 (당월 합계)"
+
+#: components/reports/filters/my_directs.vue
+#, fuzzy
+#| msgid "Total of Members or Partners you have personally Activated"
+msgid ""
+"Directs are members or partners you have referred to inCruises personally."
+msgstr "개인적으로 활성화한 멤버 또는 파트너의 총 수"
 
 #: pages/new_partners_tracker.vue
 msgid "Directs Leaderboard"
@@ -9728,11 +9919,11 @@ msgstr "다운그레이드 가능"
 msgid "Downgreadable"
 msgstr "다운그레이드 가능"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline level limit must be a number!"
 msgstr "다운라인 레벨은 숫자여야만 합니다!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline limit must be set between 1 and 50."
 msgstr "다운라인 한도는 1에서 50 사이로 설정해야합니다."
 
@@ -9740,13 +9931,20 @@ msgstr "다운라인 한도는 1에서 50 사이로 설정해야합니다."
 msgid "Downline Name"
 msgstr "다운라인 이름"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline Select"
 msgstr "다운라인 선택"
 
-#: pages/reports.vue components/inchat/user/user_create_room.vue
+#: components/reports/old_reports.vue
+#: components/inchat/user/user_create_room.vue
 msgid "Downlines"
 msgstr "다운라인"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Downline Select"
+msgid "Downlines Eligible"
+msgstr "다운라인 선택"
 
 #: components/receipts/instant_bonus_statement.vue
 msgid "Downlines Names"
@@ -9793,8 +9991,8 @@ msgstr "카드를 .png 화일로 다운로드하십시오"
 msgid "Download Completed CSV"
 msgstr "완료된 CSV 파일 다운로드"
 
-#: pages/reports.vue pages/team_documentation_requests.vue
-#: pages/track_results.vue
+#: pages/team_documentation_requests.vue pages/track_results.vue
+#: vue/composables/reports/useBulkActions.js components/reports/old_reports.vue
 msgid "Download CSV"
 msgstr "CSV 다운로드"
 
@@ -9887,8 +10085,8 @@ msgstr "두바이"
 msgid "Due date"
 msgstr "마감일"
 
-#: pages/reports.vue pages/invoices.vue components/invoices/invoice.vue
-#: components/user/invoices.vue
+#: pages/invoices.vue components/invoices/invoice.vue
+#: components/reports/old_reports.vue components/user/invoices.vue
 msgid "Due Date"
 msgstr "마감일"
 
@@ -9919,6 +10117,13 @@ msgstr ""
 #: components/payout/brightwell/transfer-details.vue
 msgid "Due to your"
 msgstr "으로 인해"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Due Today"
+msgid "Due today"
+msgstr "당일 지불"
 
 #: pages/duplicator.vue
 msgid "Duplicator"
@@ -10458,7 +10663,7 @@ msgstr "커미션 수령 자격"
 #: components/welcome/profile-card.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
-#: components/navigation/mobile-menu.vue
+#: components/reports/quick_reports.vue components/navigation/mobile-menu.vue
 #: components/navigation/avatar-dropdown.vue
 #: components/compensation/fast_start/breakdown_table.vue
 msgid "Eligible"
@@ -10493,14 +10698,15 @@ msgstr "엘리트여행 혜택"
 #: components/birthday-modal.vue pages/email_address.vue
 #: pages/additional_info.vue pages/cards.vue pages/account-recovery.vue
 #: pages/admin_account_recovery.vue pages/negative_balances.vue
-#: pages/admin_user.vue pages/invite.vue pages/reports.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/contacts.vue pages/team_rankings.vue pages/settings.vue
-#: pages/track_results.vue pages/admin_restricted_paybonus.vue
-#: pages/notifications.vue pages/password.vue pages/email.vue
-#: pages/multi_factor.vue components/negative_balances/uplines_modal.vue
+#: pages/admin_user.vue pages/invite.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/contacts.vue pages/team_rankings.vue
+#: pages/settings.vue pages/track_results.vue
+#: pages/admin_restricted_paybonus.vue pages/notifications.vue
+#: pages/password.vue pages/email.vue pages/multi_factor.vue
+#: components/negative_balances/uplines_modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/invoices/invoice.vue components/compensation/leadership_bonus.vue
+#: components/reports/old_reports.vue
 #: components/high_risk/high_risk_accounts.vue
 #: components/receipts/monthly_member_activation.vue
 #: components/receipts/tour_booking_receipt.vue
@@ -10520,6 +10726,9 @@ msgstr "엘리트여행 혜택"
 #: components/receipts/hotel_booking_receipt.vue
 #: components/receipts/leadership_bonus_statement.vue
 #: components/receipts/builders_bonus_new.vue components/public/JoinModal.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/hotel_booking/guest_info_step.vue
 #: components/user/notifications.vue pages/login/login.vue
 #: pages/public/signup.vue pages/public/contact.vue
@@ -10544,7 +10753,7 @@ msgstr "이메일 주소가 생성되었습니다!"
 msgid "Email Address:"
 msgstr "이메일 주소:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Email Blast"
 msgstr "이메일 블라스트"
 
@@ -10596,6 +10805,12 @@ msgstr "이메일:"
 #: pages/contacts.vue
 msgid "email@example.com"
 msgstr "email@example.com"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Email Date"
+msgid "Embarking Date"
+msgstr "이메일 날짜"
 
 #: pages/glsx.vue pages/gls.vue
 msgid "Embrace the Challenge"
@@ -10806,6 +11021,18 @@ msgstr "이름 입력"
 msgid "Enter new password"
 msgstr "새로운 비밀번호를 입력하세요"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Enter Verification Code"
+msgid "Enter notification content"
+msgstr "인증 코드를 입력하세요"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Enter Verification Code"
+msgid "Enter notification title"
+msgstr "인증 코드를 입력하세요"
+
 #: pages/login/login.vue pages/public/signup.vue
 msgid "Enter password"
 msgstr "비밀번호를 입력하세요"
@@ -10949,7 +11176,8 @@ msgstr ""
 msgid "error"
 msgstr "오류"
 
-#: vue/main.js components/recurring/recurring-cards.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/recurring/recurring-cards.vue
 msgid "Error"
 msgstr "오류"
 
@@ -11194,11 +11422,12 @@ msgstr "이전에 초대된 항목 제외"
 msgid "Exclude results with mandatory pre-paid tips"
 msgstr "필수 선불 팁이 포함된 결과 제외"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
+#: components/reports/filters/exclude_teams.vue
 msgid "Exclude Teams"
 msgstr "팀 배제"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Excluding Teams"
 msgstr "팀 포함"
 
@@ -11239,11 +11468,12 @@ msgstr "여행 2"
 msgid "EXCURSION 3"
 msgstr "여행 3"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -11312,8 +11542,9 @@ msgstr ""
 msgid "Expiration date"
 msgstr "만료일"
 
-#: pages/reports.vue pages/invoices.vue pages/admin_price_match.vue
-#: components/recurring/recurring-cards.vue components/user/invoices.vue
+#: pages/invoices.vue pages/admin_price_match.vue
+#: components/reports/old_reports.vue components/recurring/recurring-cards.vue
+#: components/user/invoices.vue
 msgid "Expiration Date"
 msgstr "유효기간"
 
@@ -11337,11 +11568,11 @@ msgstr "만료일 UTC"
 msgid "Expired"
 msgstr "만료"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Expired Partners"
 msgstr "만료된 파트너들"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Expired Partners with Pending Invoices"
 msgstr "미납 청구서가 있는 만료된 멤버들"
 
@@ -11456,6 +11687,18 @@ msgstr ""
 msgid "Failed to create session. Please try again."
 msgstr "세션을 생성하지 못했습니다. 다시 시도해 주세요."
 
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "Failed to load members"
+msgid "Failed to download users"
+msgstr "멤버를 불러오지 못했습니다"
+
+#: vue/composables/useDownloadCsv.js
+#, fuzzy
+#| msgid "Error generating CSV"
+msgid "Failed to generate CSV"
+msgstr "CSV 생성 중 오류 발생"
+
 #: components/compensation/overview.vue
 msgid "Failed to get compensation layout."
 msgstr "보상 레이아웃을 가져오는 데 실패했습니다."
@@ -11528,6 +11771,13 @@ msgstr "이용자를 로드하는 데 실패했습니다. 나중에 다시 시�
 #: components/compensation/overview.vue
 msgid "Failed to save layout."
 msgstr "레이아웃을 저장하지 못했습니다."
+
+#: vue/composables/useSendBroadcastPwaNotification.js
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "e-mail & push notifications"
+msgid "Failed to send notification"
+msgstr "이메일 & 푸시 알림"
 
 #: components/payout/brightwell/recipient-account.vue
 msgid "Failed to send verification email. Please try again."
@@ -11624,11 +11874,11 @@ msgstr "빠르게 성장하는 파트너"
 msgid "Fast Start"
 msgstr "패스트 스타트"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Bonus"
 msgstr "패스트 스타트 보너스"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Earned"
 msgstr "패스트 스타트 달성"
 
@@ -11645,7 +11895,7 @@ msgstr "패스트 스타트 인센티브"
 msgid "FAST START INCENTIVE = $500.00 MD BONUS!"
 msgstr "패스트 스타트 인센티브 = $500.00 MD 보너스!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Last Month"
 msgstr "지난 달 패스트 스타트"
 
@@ -11655,7 +11905,7 @@ msgstr "지난 달 패스트 스타트"
 msgid "Fast Start Matching"
 msgstr "패스트 스타트 매칭"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start This Month"
 msgstr "이번 달 패스트스타트"
 
@@ -11801,9 +12051,10 @@ msgstr "직급별 필터링"
 msgid "Filtering"
 msgstr "필터링"
 
-#: components/leader_board_component.vue pages/hotels.vue pages/reports.vue
-#: pages/cruises.vue components/data_table/filter-selection-widget.vue
-#: components/data_table/table.vue components/tours/intours_results.vue
+#: components/leader_board_component.vue pages/hotels.vue pages/cruises.vue
+#: components/data_table/filter-selection-widget.vue
+#: components/data_table/table.vue components/reports/old_reports.vue
+#: components/tours/intours_results.vue
 #: components/partner_cruise_contest/leader_board.vue
 msgid "Filters"
 msgstr "필터"
@@ -11959,6 +12210,19 @@ msgstr "평균 첫 응답"
 #: components/admin_field_communicators/field_stats.vue
 msgid "First Start Date"
 msgstr "첫 시작일"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "First Leader"
+msgid "First Up leader"
+msgstr "첫번째 리더"
+
+#: components/reports/quick_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "First Leader"
+msgid "First Up Leader"
+msgstr "첫번째 리더"
 
 #: components/admin_field_communicators/field_stats.vue
 msgid "First Year"
@@ -12258,7 +12522,7 @@ msgstr "무료"
 msgid "Free and Registered"
 msgstr "무료 및 등록"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Free Plan"
 msgstr "무료 요금제"
 
@@ -12277,6 +12541,8 @@ msgstr "금요일"
 
 #: pages/mercy_ships.vue pages/elevate_registration.vue pages/email.vue
 #: components/cruises_booking/cruise_card.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "From"
 msgstr "시작"
 
@@ -12359,7 +12625,7 @@ msgstr "자금이 제거되었습니다. 거래가 성공적으로 완료되었�
 msgid "Funds:"
 msgstr "자금 :"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Future Bookings"
 msgstr "향후 예약"
 
@@ -12884,8 +13150,7 @@ msgstr "게스트"
 msgid "Guest Account"
 msgstr "게스트 계정"
 
-#: pages/reports.vue pages/track_results.vue
-#: components/hotels/GuestsDropdown.vue
+#: pages/track_results.vue components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsTrigger.vue
 #: components/receipts/hotel_booking_receipt.vue components/user/directs.vue
 msgid "Guests"
@@ -13125,6 +13390,10 @@ msgstr "과거 QBI"
 #: components/compensation/qbi.vue
 msgid "Historical QBI Date Range:"
 msgstr "과거 QBI 날짜 범위:"
+
+#: components/reports/old_reports.vue
+msgid "Historical QBI Report"
+msgstr "과거 QBI 리포트"
 
 #: components/receipts/tour_booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue
@@ -15307,6 +15576,7 @@ msgid "in Withholding Taxes and"
 msgstr "원천징수세와"
 
 #: pages/track_results.vue components/compensation/qbi_members_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Inactive"
 msgstr "비활성화"
 
@@ -15316,7 +15586,7 @@ msgstr "비활성화"
 msgid "Inactive Balance"
 msgstr "비활성화 잔액"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Inactive Date"
 msgstr "비활성 일자"
 
@@ -15350,7 +15620,7 @@ msgstr "인센티브 메시지 :"
 msgid "Incentive Program Overview"
 msgstr "인센티브 프로그램 개요"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Include"
 msgstr "포함"
 
@@ -15414,6 +15684,12 @@ msgstr "InCruises - 보상"
 #: pages/compensation/member_activations.vue
 msgid "InCruises - Member Activation Bonuses"
 msgstr "InCruises - 멤버 활성화 보너스"
+
+#: pages/reports.vue
+#, fuzzy
+#| msgid "inCruises - Receipt"
+msgid "InCruises - Reports"
+msgstr "inCruises - 영수증"
 
 #: pages/compensation/team_leadership_bonus.vue
 msgid "InCruises - Team Leadership Bonus"
@@ -16049,6 +16325,12 @@ msgstr ""
 "양한 서비스를 이용합니다. 이러한 서비스는 쿠키 또는 IP 요청과 같이 웹페이지 "
 "요청의 일부로 브라우저에서 전송된 정보를 수집할 수 있습니다."
 
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "InCruises Wallet"
+msgid "inCruises Wallet"
+msgstr "InCruises 지갑"
+
 #: components/checkout/ProcessorWallet.vue
 msgid "InCruises Wallet"
 msgstr "InCruises 지갑"
@@ -16177,7 +16459,8 @@ msgstr ""
 "탑승 시점에 %{infantAgeMax}세 미만인 영유아는 이 크루즈 선사에 탑승할 수 없습"
 "니다."
 
-#: vue/main.js components/compensation/member_activations.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/compensation/member_activations.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/weekly_bonus.vue components/user/permissions.vue
@@ -16248,6 +16531,10 @@ msgstr "픽셀 아이디를 여기에 입력하십시오"
 #: pages/email.vue
 msgid "Insert your email..."
 msgstr "이메일을 기입하십시오..."
+
+#: components/reports/old_reports.vue
+msgid "Insert your message..."
+msgstr "메시지를 기입하십시오..."
 
 #: pages/cruise.vue pages/tenth_anniversary_cruises.vue
 #: components/cruises_booking/cabin_price_showcase.vue
@@ -16355,11 +16642,12 @@ msgstr "실내 전용실에는 온 가족이 즐길 수있는 다양한 편의 �
 msgid "Internal Price"
 msgstr "내부 가격"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -16508,7 +16796,8 @@ msgstr "청구서"
 msgid "Invoice"
 msgstr "청구서"
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 msgid "Invoice Created"
 msgstr "청구서 생성"
 
@@ -16542,6 +16831,24 @@ msgstr "청구서 번호"
 msgid "Invoice Statement"
 msgstr "청구내역서"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Invite Status"
+msgid "Invoice Status"
+msgstr "초대 상태"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "Invoice Type"
+msgstr "청구서 날짜"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Pending Invoices (within 5 days)"
+msgid "Invoice Within First 5 Days"
+msgstr "미납 청구서 (5일 이내)"
+
 #: QuickPayTopBar.vue pages/admin_user_id.vue pages/menu_page.vue
 #: pages/invoices.vue
 msgid "Invoices"
@@ -16555,7 +16862,7 @@ msgstr "청구서 지불"
 msgid "Invoices Pending"
 msgstr "청구서 지연"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Invoices Total"
 msgstr "청구서 합계"
 
@@ -17079,15 +17386,20 @@ msgstr "KYC 표시됨"
 msgid "Kyrgyz"
 msgstr "키르기스어"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Laminated Presentations"
 msgstr "라미네이트 프레젠테이션"
 
-#: pages/admin_user.vue pages/reports.vue pages/team_documentation_requests.vue
+#: pages/admin_user.vue pages/team_documentation_requests.vue
 #: pages/team_rankings.vue pages/settings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
 #: components/contacts/contact-edit-modal.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#: components/reports/filters/language.vue
 #: components/inchat/user/user_create_room.vue
 msgid "Language"
 msgstr "언어"
@@ -17095,6 +17407,12 @@ msgstr "언어"
 #: components/language-reminder.vue
 msgid "Language Reminder"
 msgstr "언어 확인"
+
+#: components/reports/filters/language.vue
+#, fuzzy
+#| msgid "Package selected:"
+msgid "languages selected"
+msgstr "선택한 패키지 :"
 
 #: pages/team_rankings.vue components/compensation/overview.vue
 msgid "Last 12 Months"
@@ -17166,6 +17484,12 @@ msgstr "성"
 msgid "Last Name:"
 msgstr "성(姓):"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Rank Achieved"
+msgid "Last Rank Achieved"
+msgstr "직급 달성"
+
 #: pages/admin_emails.vue
 msgid "Last Sent"
 msgstr "마지막 발송"
@@ -17224,7 +17548,7 @@ msgstr "라트비아어"
 msgid "Layout has been successfully updated."
 msgstr "레이아웃이 성공적으로 업데이트되었습니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Leader Plan - $49"
 msgstr "리더 요금제 - $49"
 
@@ -17460,7 +17784,11 @@ msgstr ""
 "플랫폼 전반에서 표시 이름을 사용할 수 있도록 하여 본명 대신 사용할 수 있습니"
 "다."
 
-#: pages/reports.vue pages/reach.vue
+#: pages/reach.vue components/reports/quick_reports.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Level"
 msgstr "레벨"
 
@@ -17468,7 +17796,7 @@ msgstr "레벨"
 msgid "Level {{ index + 1 }}"
 msgstr "레벨 {{ index + 1 }}"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Level Limit"
 msgstr "레벨 한도"
 
@@ -17563,6 +17891,11 @@ msgstr "링크"
 msgid "List any specific needs"
 msgstr "구체적으로 필요한 사항을 나열하십시오"
 
+#: components/reports/quick_reports.vue
+msgid ""
+"Lists members counting for your QBI metric with days left to count and status"
+msgstr ""
+
 #: components/checkout/ProcessorNetcents.vue
 msgid "Litecoin"
 msgstr "Litecoin(라이트코인)"
@@ -17595,11 +17928,11 @@ msgstr "레벨 로드"
 msgid "Load more"
 msgstr "추가 로드"
 
-#: pages/reward_points.vue pages/admin_partner_success.vue pages/reports.vue
+#: pages/reward_points.vue pages/admin_partner_success.vue
 #: pages/webinar_recordings.vue pages/partner_success.vue pages/invoices.vue
 #: pages/track_results.vue pages/cruises.vue
 #: components/payout/wallet-transfers.vue
-#: components/cruises_booking/cabin_step.vue
+#: components/cruises_booking/cabin_step.vue components/reports/old_reports.vue
 #: components/tours/intours_results.vue
 msgid "Load More"
 msgstr "더 보기"
@@ -18003,12 +18336,13 @@ msgstr "지불됨으로 표시"
 msgid "Market Adjustment"
 msgstr "마켓 조정"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -18058,7 +18392,7 @@ msgstr "대량 업데이트"
 msgid "Master Controls"
 msgstr "마스터 컨트롤"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Master Plan - $119"
 msgstr "마스터 요금제 - $119"
 
@@ -18124,6 +18458,10 @@ msgstr "최대 파일 크기는 25MB이며, 파일은 비어 있을 수 없습�
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Max Lead Time"
 msgstr "최대 리드타임"
+
+#: components/reports/filters/max_levels_down.vue
+msgid "Max Levels Down"
+msgstr ""
 
 #: components/filter-chip-range.vue pages/hotels.vue pages/cruises.vue
 #: components/tours/intours_results.vue
@@ -18327,6 +18665,12 @@ msgstr "멤버 지표"
 msgid "Member reached insider pricing limit"
 msgstr "멤버가 insider pricing 제한에 도달했습니다"
 
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Member Reports"
+msgstr "파워 리포트"
+
 #: pages/admin_user.vue pages/giving_society.vue
 msgid "Member Since"
 msgstr "멤버 가입시기"
@@ -18362,6 +18706,12 @@ msgstr ""
 #: components/compensation/active_partner_modal.vue
 msgid "Members Counting for my active partner status"
 msgstr "내 활성화 파트너 상태의 회원 수 계산"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Members in your QBI"
+msgid "Members Counting Toward Your QBI"
+msgstr "QBI의 멤버"
 
 #: pages/public/membership.vue
 msgid "Members Enjoy Unparalleled Value With"
@@ -18400,11 +18750,25 @@ msgstr ""
 "지정된 30일 기간 내에 결제를 하지 못한 멤버들은 계정을 재활성화해야만 결제를 "
 "지속할 수 있습니다."
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Pending Members with Pending Invoices"
+msgid "Members With Cruise Bookings & Pending Invoices"
+msgstr "보류 청구서가 있는 보류 멤버"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Members with Pending Invoices"
+msgstr "미납 청구서가 있는 사용자"
+
 #: Footer.vue components/upgrade-marketing-modal.vue pages/referral_links.vue
 #: pages/inviter.vue pages/team_documentation_requests.vue
 #: components/compensation/qbi_members_table.vue
 #: components/cruises/upgrade_premium_drawer.vue
+#: components/reports/quick_reports.vue
 #: components/hotels/upgrade_premium_drawer.vue components/public/Header.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 #: components/navigation/mobile-menu.vue
 #: components/navigation/avatar-dropdown.vue
 #: components/public/webflow/Footer.vue
@@ -18457,15 +18821,15 @@ msgstr "멤버십 약관"
 msgid "Membership and Partnership Support"
 msgstr "멤버십 및 파트너십 지원"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Course"
 msgstr "멤버십 기초교육과정"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Created"
 msgstr "무료 멤버십"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Creation Date"
 msgstr "무료 멤버십"
 
@@ -18473,15 +18837,21 @@ msgstr "무료 멤버십"
 msgid "Membership Date"
 msgstr "멤버십 일자"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Membership First Month"
+msgid "Membership Discount"
+msgstr "멤버십 첫 달"
+
 #: components/upgrade/tiles/checkout-tile.vue
 msgid "Membership First Month"
 msgstr "멤버십 첫 달"
 
-#: pages/reports.vue components/welcome/members-modal.vue
+#: components/welcome/members-modal.vue components/reports/old_reports.vue
 msgid "Membership free"
 msgstr "무료 멤버십"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Free Date"
 msgstr "무료 멤버십 달성일"
 
@@ -18489,7 +18859,7 @@ msgstr "무료 멤버십 달성일"
 msgid "Membership Free Directs:"
 msgstr "직접 추천 무료 멤버십:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Free Last Month"
 msgstr "지난 달 무료 멤버십"
 
@@ -18499,6 +18869,12 @@ msgstr "무료 멤버십!"
 
 #: pages/admin_user_id.vue pages/settings.vue
 msgid "Membership Info"
+msgstr "회원 정보"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Membership Info"
+msgid "Membership Invoice"
 msgstr "회원 정보"
 
 #: pages/public/payment_terms.vue
@@ -18515,7 +18891,7 @@ msgstr ""
 msgid "Membership plan"
 msgstr "멤버십 플랜"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Plan"
 msgstr "멤버십 플랜"
 
@@ -18542,6 +18918,12 @@ msgstr "멤버십 상태"
 #: components/welcome/members-modal.vue components/user/directs.vue
 msgid "Membership Type"
 msgstr "멤버십 형태"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Membership Free Date"
+msgid "Membership Upgrades & Downgrades"
+msgstr "무료 멤버십 달성일"
 
 #: pages/referral_links.vue
 msgid "Membership Video"
@@ -18606,8 +18988,9 @@ msgstr "합병"
 msgid "message"
 msgstr "메시지"
 
-#: pages/referral_widget.vue pages/reports.vue pages/support.vue
-#: components/support/AdminCreateTicket.vue pages/public/contact.vue
+#: pages/referral_widget.vue pages/support.vue
+#: components/support/AdminCreateTicket.vue components/reports/old_reports.vue
+#: components/reports/send_push_notification_modal.vue pages/public/contact.vue
 msgid "Message"
 msgstr "메시지"
 
@@ -18708,6 +19091,10 @@ msgstr "분"
 #: components/cards/countdown-card.vue components/public/tgc-countdown.vue
 msgid "Minutes"
 msgstr "분"
+
+#: vue/composables/useSendBroadcastPwaNotification.js
+msgid "Missing required parameters: title, body, and account_ids array"
+msgstr ""
 
 #: pages/admin_missing_sales.vue
 msgid "Missing Sales - InCruises"
@@ -18898,6 +19285,7 @@ msgid "More for Less"
 msgstr "더 적은 비용으로 더 많이"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/avatar_column.vue
 msgid "more info"
 msgstr "더 많은 정보"
 
@@ -19186,6 +19574,12 @@ msgstr "나의 연락처 정보"
 msgid "My Cruise Savings"
 msgstr "나의 크루즈 절감액"
 
+#: components/reports/filters/my_directs.vue
+#, fuzzy
+#| msgid "Directs"
+msgid "My Directs"
+msgstr "직접 추천"
+
 #: pages/menu_page.vue
 msgid "My Reach"
 msgstr "나의 초대정보 확산현황"
@@ -19216,7 +19610,7 @@ msgstr "해당없음"
 #: pages/admin_account_recovery.vue pages/admin_partner_success.vue
 #: pages/negative_balances.vue pages/gls.vue pages/admin_user.vue
 #: pages/banner_tracking.vue pages/new_ranks.vue pages/mercy_ships.vue
-#: pages/reports.vue pages/admin_permission_group.vue pages/partner_success.vue
+#: pages/admin_permission_group.vue pages/partner_success.vue
 #: pages/team_documentation_requests.vue pages/admin_department.vue
 #: pages/contacts.vue pages/builders_base.vue pages/team_rankings.vue
 #: pages/settings.vue pages/duplicator.vue pages/track_results.vue
@@ -19240,6 +19634,7 @@ msgstr "해당없음"
 #: components/settings_page/modify-saved-passengers.vue
 #: components/skeleton_loaders/card_animation.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
 #: components/receipts/monthly_member_activation.vue
 #: components/receipts/tour_booking_receipt.vue
 #: components/receipts/new_residual_bonus_statement.vue
@@ -19261,6 +19656,9 @@ msgstr "해당없음"
 #: components/receipts/builders_bonus_new.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/business_intelligence/comp_to_sales.vue
 #: components/user/permissions.vue components/user/permission-assignation.vue
 #: components/user/department.vue components/user/permission-group.vue
@@ -19319,12 +19717,12 @@ msgstr "이름:"
 msgid "Named in honor of our founding year, the"
 msgstr "창립 연도를 기념하여 명명된"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue pages/settings.vue
-#: components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: pages/settings.vue components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -19471,7 +19869,7 @@ msgstr "이제 호텔 및 리조트에서 소매가를 지불하지 마세요"
 msgid "Nevermind"
 msgstr "괜찮습니다"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New"
 msgstr "신규"
 
@@ -19487,15 +19885,22 @@ msgstr "새로운 형식의 라미네이트 프레젠테이션"
 msgid "New Group {{ selectedNamespace }}"
 msgstr "신규 그룹 {{ selectedNamespace }}"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Guests"
+msgid "New Guests"
+msgstr "게스트"
+
 #: pages/reservations.vue
 msgid "New inTours Feature Available!"
 msgstr "새로운 inTours 기능을 사용할 수 있습니다 !"
 
-#: pages/resources.vue components/growth_calculator/potential_leadership.vue
+#: pages/resources.vue components/reports/quick_reports.vue
+#: components/growth_calculator/potential_leadership.vue
 msgid "New Members"
 msgstr "새 멤버"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Membership Free"
 msgstr "신규 무료 멤버십"
 
@@ -19504,7 +19909,7 @@ msgid "New Message"
 msgstr "새로운 메시지"
 
 #: pages/resources.vue pages/new_partners_tracker.vue
-#: pages/new_partners_tracker_goals.vue
+#: pages/new_partners_tracker_goals.vue components/reports/quick_reports.vue
 msgid "New Partners"
 msgstr "신규 파트너"
 
@@ -19512,7 +19917,7 @@ msgstr "신규 파트너"
 msgid "NEW Partners Last Month"
 msgstr "지난 달의 신규 파트너"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Partners Last Month (10 Levels)"
 msgstr "지난 달 신규 파트너(10레벨)"
 
@@ -19524,7 +19929,7 @@ msgstr "이 달의 신규 파트너"
 msgid "NEW Partners This Month"
 msgstr "이 달의 신규 파트너"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Partners This Month (10 Levels)"
 msgstr "이 달의 신규 파트너(10레벨)"
 
@@ -19570,25 +19975,31 @@ msgstr "신규 직급"
 msgid "New ranks are updated on or after the 10th of each month."
 msgstr "새로운 직급은 매월 10일에 반영됩니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks last month"
 msgstr "지난 달의 신규 직급자"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks Last Month"
 msgstr "지난 달의 신규 직급자"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks this month"
 msgstr "이 달의 신규 직급자"
 
-#: pages/new_ranks.vue pages/reports.vue
+#: pages/new_ranks.vue components/reports/old_reports.vue
 msgid "New Ranks This Month"
 msgstr "이 달의 신규 직급자"
 
 #: components/user/basic-info.vue
 msgid "New Referrer ID is Invalid"
 msgstr "새 추천인 ID가 잘못되었습니다"
+
+#: pages/reports.vue
+#, fuzzy
+#| msgid "New Message"
+msgid "New Reports Page"
+msgstr "새로운 메시지"
 
 #: pages/support.vue
 msgid "New Ticket"
@@ -19656,8 +20067,9 @@ msgstr "다음 이용 가능"
 msgid "Next billing date"
 msgstr "다음 청구일"
 
-#: pages/reports.vue pages/team_rankings.vue pages/track_results.vue
+#: pages/team_rankings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
+#: components/reports/old_reports.vue
 msgid "Next Billing Date"
 msgstr "다음 청구일"
 
@@ -19665,9 +20077,28 @@ msgstr "다음 청구일"
 msgid "Next Billing:"
 msgstr "다음 청구:"
 
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Create Invoice"
+msgid "Next Invoice"
+msgstr "청구서 생성"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Membership Info"
+msgid "Next Membership Invoice"
+msgstr "회원 정보"
+
 #: components/payout/wallet-transfers.vue
 msgid "Next Month"
 msgstr "다음 달"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Partnership Video"
+msgid "Next Partnership Invoice"
+msgstr "파트너십 영상"
 
 #: pages/checkout.vue
 msgid "Next Payment Month:"
@@ -19741,6 +20172,12 @@ msgstr "사용 가능한 데이터가 없습니다"
 msgid "No data available for download"
 msgstr "다운로드 가능한 데이터가 없습니다"
 
+#: vue/composables/useDownloadCsv.js
+#, fuzzy
+#| msgid "No data available for download"
+msgid "No data to download"
+msgstr "다운로드 가능한 데이터가 없습니다"
+
 #: pages/hotels.vue
 msgid "No destination options available."
 msgstr "목적지 옵션을 사용할 수 없습니다."
@@ -19802,7 +20239,7 @@ msgstr "불러온 이름 없습니다"
 msgid "No Obligation, No Cost"
 msgstr "의무 없음, 비용 없음"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "No Plan"
 msgstr "계획 없음"
 
@@ -19819,7 +20256,7 @@ msgstr "비직급"
 msgid "No receipts available at this time."
 msgstr "현재 확인할 수 있는 영수증이 없습니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "No Recurring Billing"
 msgstr "자동 청구 없음"
 
@@ -20027,6 +20464,7 @@ msgid "Non-Refundable Fare"
 msgstr "환불 불가 운임"
 
 #: pages/track_results.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "None"
 msgstr "없습니다"
 
@@ -20079,7 +20517,7 @@ msgstr "사용 불가"
 msgid "Not available for this cruise line"
 msgstr "이 크루즈 선사에서는 이용하실 수 없습니다"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Not Completed"
 msgstr "완료되지 않았습니다"
 
@@ -20590,15 +21028,15 @@ msgstr ""
 "니다(예: 도매 여행사를 통해). 그것은 또한 다음에서 발견된 더 낮은 요금에만 적"
 "용됩니다"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Members or Partner Members."
 msgstr "멤버 또는 파트너 멤버를 선택한 경우에만 사용할 수 있습니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Partners or Partner Members."
 msgstr "파트너 또는 파트너 멤버를 선택한 경우에만 사용할 수 있습니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Pending Members."
 msgstr "미납 멤버를 선택한 경우에만 사용할 수 있습니다."
 
@@ -20644,7 +21082,7 @@ msgstr ""
 msgid "Only Roman/Latin alphabet letters (A-Z)."
 msgstr "로마/라틴 알파벳 문자(A-Z)만 사용합니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only select one course per report."
 msgstr "보고서마다 하나의 기초교육과정을 선택하십시오."
 
@@ -20751,6 +21189,12 @@ msgstr "주문 참고 사항:"
 #: components/receipts/italian_receipt.vue
 msgid "Order Number"
 msgstr "주문 번호"
+
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Other Reports"
+msgstr "파워 리포트"
 
 #: components/support/OtherUserTickets.vue components/support/TicketViewer.vue
 msgid "Other User Tickets"
@@ -20952,6 +21396,13 @@ msgstr "전체 기술 솔루션 - 은상"
 msgid "Overall Training Program - SILVER AWARD"
 msgstr "전체 교육 프로그램 - 은상"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Overview"
+msgid "Overdue"
+msgstr "통합관리"
+
 #: pages/tours_details.vue pages/hotels_details.vue pages/menu_page.vue
 #: pages/info_center.vue pages/business_performance.vue
 #: components/reservations/tour-details.vue
@@ -21080,7 +21531,7 @@ msgstr "본인부담금 지불"
 msgid "Paid out on %{date}"
 msgstr "%{date}에 지급 완료"
 
-#: pages/reports.vue pages/info_center.vue
+#: pages/info_center.vue components/reports/old_reports.vue
 msgid "Paid Partners Last Month"
 msgstr "지난 달 보상을 획득한 파트너"
 
@@ -21088,11 +21539,11 @@ msgstr "지난 달 보상을 획득한 파트너"
 msgid "Paid Partners Only"
 msgstr "유료 파트너 전용"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Paid Partners This Month"
 msgstr "이 달 보상을 획득한 파트너"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Paid Plans"
 msgstr "유료 요금제"
 
@@ -21160,7 +21611,7 @@ msgstr "파트너 / 멤버 아님"
 msgid "Partner / Pending Member"
 msgstr "파트너/ 미납 멤버"
 
-#: pages/additional_info.vue pages/reports.vue
+#: pages/additional_info.vue components/reports/old_reports.vue
 msgid "Partner Access Only"
 msgstr "파트너만 이용 가능"
 
@@ -21349,6 +21800,18 @@ msgstr ""
 msgid "Partner Refund And Compress"
 msgstr "파트너 환불 및 압축"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners That Will Be Renewing Next Month"
+msgid "Partner Renewing Next Month"
+msgstr "다음 달에 재갱신하는 파트너들"
+
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Partner Reports"
+msgstr "파워 리포트"
+
 #: pages/italian_onboarding.vue
 #: components/compensation/active_partner_modal.vue
 #: components/compensation/my_team_breakdown_table.vue
@@ -21392,12 +21855,12 @@ msgstr ""
 msgid "Partner VAT / Tax Code"
 msgstr "파트너 부가가치세 / 세금 코드"
 
-#: pages/reports.vue pages/track_growth.vue
+#: pages/track_growth.vue components/reports/old_reports.vue
 msgid "Partner-Members"
 msgstr "파트너-멤버"
 
-#: pages/referral_links_old.vue pages/reports.vue
-#: pages/new_partners_tracker.vue pages/track_growth.vue pages/apps.vue
+#: pages/referral_links_old.vue pages/new_partners_tracker.vue
+#: pages/track_growth.vue pages/apps.vue components/reports/old_reports.vue
 #: components/high_risk/high_risk_fingerprints.vue
 #: components/business_performance/NewDirectsEnrolled.vue
 #: components/business_performance/TeamActiveEnrollments.vue
@@ -21421,6 +21884,18 @@ msgstr "파트너 <br/> <small>(5 레벨)</small>"
 msgid "Partners are Membership Free."
 msgstr "파트너는 무료 멤버십입니다."
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Ineligible for compensation"
+msgid "Partners Eligible for Compensation"
+msgstr "보상 대상에 해당되지 않음"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners are Membership Free."
+msgid "Partners Eligible For Membership Free"
+msgstr "파트너는 무료 멤버십입니다."
+
 #: pages/public/partnership.vue
 msgid "Partners enjoy an unparalleled opportunity"
 msgstr "파트너는 비교할 수 없는 기회를 누립니다"
@@ -21439,26 +21914,74 @@ msgstr "파트너는 12개월 동안 10,000달러 이상을 벌었습니다."
 msgid "Partners have reached the International Director or Above rank."
 msgstr "파트너는 인터내셔널 디렉터 또는 그 이상 등급에 도달했습니다."
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Understanding Builders Base Bonus"
+msgid "Partners Pending to Receive Builders Base Bonus"
+msgstr "빌더 베이스 보너스 이해"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "You have no direct partners currently eligible for Fast Start."
+msgid "Partners Still Eligible for Fast Start"
+msgstr "현재 패스트 스타트 자격이 있는 직추 파트너가 없습니다."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Potential Fast Start Matching"
+msgid "Partners Still Eligible for Fast Start Matching"
+msgstr "예상 패스트 스타트 매칭"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Potential Team Leadership Bonus"
+msgid "Partners Team Leadership Performance"
+msgstr "예상 팀 리더십 보너스"
+
+#: components/reports/old_reports.vue
 msgid "Partners That Have Not Renewed"
 msgstr "재갱신하지 않은 파트너들"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partners That Will Be Renewing Next Month"
 msgstr "다음 달에 재갱신하는 파트너들"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partner Activation Date"
+msgid "Partners Who Achieved Fast Start"
+msgstr "파트너 가입일"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partner with travel agencies"
+msgid "Partners with New Ranks"
+msgstr "여행사와 제휴"
 
 #: Footer.vue pages/referral_links.vue pages/inviter.vue pages/upgrade.vue
 #: components/public/Header.vue components/public/webflow/Footer.vue
 msgid "Partnership"
 msgstr "파트너십"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partnership Created"
 msgstr "파트너십 생성"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partnership Creation Date"
 msgstr "파트너십 생성 날짜"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Partnership Video"
+msgid "Partnership Invoice"
+msgstr "파트너십 영상"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners That Have Not Renewed"
+msgid "Partnership Not Renewed"
+msgstr "재갱신하지 않은 파트너들"
 
 #: pages/subscriptions.vue pages/upgrade.vue pages/public/faq.vue
 #: pages/public/testimonials.vue components/upgrade/tiles/checkout-tile.vue
@@ -21695,6 +22218,19 @@ msgstr ""
 msgid "Payment Fulfillment"
 msgstr "지불 이행"
 
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Add Payment Method"
+msgid "Payment Method"
+msgstr "결제 수단 추가"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Add Payment Method"
+msgid "Payment Methods"
+msgstr "결제 수단 추가"
+
 #: pages/payment_protection.vue
 msgid "Payment Protection"
 msgstr "결제 보호"
@@ -21772,6 +22308,7 @@ msgstr "Paypal(페이팔)"
 #: components/welcome/members-modal.vue components/support/TicketList.vue
 #: components/compensation/qbi_members_table.vue
 #: components/admin_finance/cruise_bookings.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Pending"
 msgstr "미납"
 
@@ -21779,11 +22316,11 @@ msgstr "미납"
 msgid "Pending Builder's Base"
 msgstr "보류 중인 빌더스 베이스"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Builders Base"
 msgstr "보류 중인 빌더 베이스"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Builders Base Members"
 msgstr "보류 중인 빌더 베이스 멤버"
 
@@ -21799,11 +22336,12 @@ msgstr "미기입 가입안내"
 msgid "Pending Invoice"
 msgstr "미납 청구서"
 
-#: pages/reports.vue pages/invoices.vue components/user/invoices.vue
+#: pages/invoices.vue components/reports/old_reports.vue
+#: components/user/invoices.vue
 msgid "Pending Invoices"
 msgstr "미납 청구서"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Invoices (within 5 days)"
 msgstr "미납 청구서 (5일 이내)"
 
@@ -21819,7 +22357,7 @@ msgstr "미납 멤버"
 msgid "Pending Member Invoice"
 msgstr "보류중인 멤버 청구서"
 
-#: pages/reports.vue components/compensation/qbi-details.vue
+#: components/compensation/qbi-details.vue components/reports/old_reports.vue
 msgid "Pending Members"
 msgstr "미납 멤버"
 
@@ -21846,6 +22384,10 @@ msgstr "보류중인 파트너십 갱신"
 #: components/admin_finance/cruise_bookings.vue
 msgid "Pending Payments"
 msgstr "보류중인 지불"
+
+#: components/reports/old_reports.vue
+msgid "Pending QBI Report"
+msgstr "보류 중인 QBI 보고서"
 
 #: pages/invoices.vue
 msgid "Pending Transaction"
@@ -21961,13 +22503,17 @@ msgstr "전화번호"
 msgid "Phone (optional)"
 msgstr "폰 (선택사항)"
 
-#: pages/reports.vue pages/settings.vue
+#: pages/settings.vue components/reports/old_reports.vue
 msgid "Phone #"
 msgstr "전화번호 #"
 
-#: components/fast-growing-legs.vue pages/reports.vue pages/settings.vue
-#: pages/multi_factor.vue components/cruises_booking/passenger_info_step.vue
+#: components/fast-growing-legs.vue pages/settings.vue pages/multi_factor.vue
+#: components/cruises_booking/passenger_info_step.vue
 #: components/settings_page/modify-saved-passengers.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/hotel_booking/guest_info_step.vue components/top_bar/Connect.vue
 #: pages/public/signup.vue
 msgid "Phone Number"
@@ -22563,7 +23109,7 @@ msgstr "보류 중인 청구서를 결제해 주십시오."
 msgid "Please provide a check-in and check-out date before searching"
 msgstr "검색 전 체크인 및 체크아웃 날짜를 입력해주세요"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "Please provide a Date From and Date To. If not, reset filters at the top of "
 "the page."
@@ -22968,7 +23514,8 @@ msgstr "투어 세부정보를 수집하는 동안 기다려주십시오..."
 msgid "Please wait while we redirect you back to inCruises®."
 msgstr "inCruises®로 다시 리디렉션되는 동안 잠시 기다려주십시오."
 
-#: pages/compensation.vue components/compensation/fast_start_matching.vue
+#: pages/reports.vue pages/compensation.vue
+#: components/compensation/fast_start_matching.vue
 #: components/compensation/fast_start.vue components/compensation/overview.vue
 #: pages/compensation/recurring_income.vue
 #: pages/compensation/member_activations.vue
@@ -23213,6 +23760,7 @@ msgstr ""
 msgid "Premium"
 msgstr "PREMIUM"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 msgid "PREMIUM"
@@ -23240,7 +23788,7 @@ msgstr "Premium 멤버"
 msgid "PREMIUM Member"
 msgstr "PREMIUM 멤버"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Premium Members"
 msgstr "Premium 멤버"
 
@@ -23814,12 +24362,18 @@ msgstr ""
 "다. 파트너 및 파트너 멤버는 특정 조건하에서 최대 90 일 동안 취소하고 환불을 "
 "요청할 수 있습니다. 자세한 내용은 파트너십 계약을 참조하십시오."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Push Blast"
 msgstr "푸쉬 블라스트"
 
 #: pages/push_notifications_center.vue
 msgid "Push Notifications Center"
+msgstr "푸시 알림 센터"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Push Notifications Sent"
 msgstr "푸시 알림 센터"
 
 #: components/payout/brightwell/recipient-account-details.vue
@@ -23843,12 +24397,12 @@ msgstr "PWA"
 msgid "PWA vs News App"
 msgstr "PWA vs 뉴스 App"
 
-#: pages/reports.vue components/compensation/qbi.vue
-#: components/compensation/builders_bonus.vue
+#: components/compensation/qbi.vue components/compensation/builders_bonus.vue
 #: components/compensation/fast_start_matching.vue
 #: components/compensation/fast_start.vue
 #: components/compensation/old_compensation.vue
-#: components/compensation/team.vue pages/compensation/recurring_income.vue
+#: components/compensation/team.vue components/reports/old_reports.vue
+#: pages/compensation/recurring_income.vue
 #: pages/compensation/member_activations.vue
 #: pages/compensation/weekly_matching_bonus.vue pages/compensation/qbi.vue
 #: pages/compensation/builders_base_bonus.vue
@@ -23876,7 +24430,7 @@ msgstr "QBI 상세 정보"
 msgid "QBI Update Notice"
 msgstr "QBI 업데이트 공지"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "QBI: Pending Members"
 msgstr "QBI : 미납 멤버"
 
@@ -23980,7 +24534,9 @@ msgstr "빠른 액세스"
 msgid "Quick Member View"
 msgstr "간편 멤버 보기"
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/reports/new_reports.vue
+#: components/reports/quick_reports_modal/index.vue
 msgid "Quick Reports"
 msgstr "간편 보고서"
 
@@ -24021,7 +24577,7 @@ msgstr "직급 및 소득 차트"
 msgid "Rank Breakdown"
 msgstr "직급 분석"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Rank Certificate"
 msgstr "직급 인증서"
 
@@ -24037,7 +24593,7 @@ msgstr "직급 부문"
 msgid "Rank Maintained"
 msgstr "직급 유지"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Rank Status"
 msgstr "직급 현황"
 
@@ -24296,7 +24852,7 @@ msgstr "실시간 위젯 미리보기"
 msgid "Reason"
 msgstr "이유"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Reattained"
 msgstr "재달성"
 
@@ -24427,7 +24983,8 @@ msgstr "녹화본"
 msgid "Recurring"
 msgstr "리커링"
 
-#: pages/reports.vue components/admin_field_communicators/field_stats.vue
+#: components/reports/old_reports.vue
+#: components/admin_field_communicators/field_stats.vue
 msgid "Recurring Billing"
 msgstr "자동 청구"
 
@@ -24486,6 +25043,19 @@ msgstr "매월 멤버십 비용"
 #: components/compensation/recurring_income_levels.vue
 msgid "Recurring Multiplier"
 msgstr "리커링 승수"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Recurring Payment Terms"
+msgid "Recurring payment"
+msgstr "정기 결제 약관"
+
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Recurring Payment Terms"
+msgid "Recurring Payment"
+msgstr "정기 결제 약관"
 
 #: components/recurring/rpm-onboarding-invoices.vue
 msgid "Recurring Payment Agreement Terms"
@@ -24581,6 +25151,7 @@ msgstr "추천 액티비티"
 
 #: pages/admin_user.vue pages/team_rankings.vue pages/account_setup.vue
 #: components/compensation/leadership_bonus.vue
+#: components/reports/quick_reports.vue
 msgid "Referral Link"
 msgstr "추천 링크"
 
@@ -24676,12 +25247,13 @@ msgstr "지역"
 msgid "Region:"
 msgstr "지역:"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -24866,10 +25438,29 @@ msgid "Report will not show accurate results until the 10th of each month."
 msgstr "보고서에는 매월 10일까지 정확한 결과가 표시되지 않습니다."
 
 #: pages/welcome.vue pages/menu_page.vue pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Reports"
 msgstr "리포트"
 
-#: pages/reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Reports - Members with Pending Invoices"
+msgstr "미납 청구서가 있는 사용자"
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "You have no direct partners currently eligible for Fast Start."
+msgid "Reports - Partners Still Eligible for Fast Start"
+msgstr "현재 패스트 스타트 자격이 있는 직추 파트너가 없습니다."
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Enable Recurring Payments"
+msgid "Reports - Users Recurring Payment Status"
+msgstr "정기 결제 활성화"
+
+#: components/reports/old_reports.vue
 msgid ""
 "Reports are real-time viewable and downloadable reports for just about every "
 "aspect of your business. You can download reports for recognition purposes "
@@ -24988,7 +25579,8 @@ msgstr "재설정"
 msgid "Reset Columns"
 msgstr "열 재설정"
 
-#: pages/reports.vue components/data_table/filter-selection-widget.vue
+#: components/data_table/filter-selection-widget.vue
+#: components/reports/old_reports.vue
 msgid "Reset Filters"
 msgstr "필터 재설정하기"
 
@@ -25037,15 +25629,15 @@ msgstr "인증 재시작"
 msgid "result"
 msgstr "결과"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit"
 msgstr "결과 한도"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit must be a number!"
 msgstr "결과 한도는 숫자여야만 합니다!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit must be set between 100 and 25000."
 msgstr "결과 한도는 100에서 25,000 사이로 설정해야합니다."
 
@@ -25361,11 +25953,11 @@ msgstr "RP 사용됨"
 msgid "RP used!"
 msgstr "RP 사용됨 !"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Run Quick Report"
 msgstr "간편 보고서 실행"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Run Report"
 msgstr "리포트 작성"
 
@@ -25515,6 +26107,7 @@ msgstr "절감 보장"
 #: components/partner_cruise_contest/leader_board.vue
 #: components/recurring/recurring-cards.vue components/blog/blog_list.vue
 #: components/public/blog_category_search.vue
+#: components/reports/quick_reports_modal/search-input.vue
 #: components/tours/details/available-plans.vue
 #: components/inchat/search/search-people.vue
 msgid "Search"
@@ -25546,6 +26139,7 @@ msgid "Search Contacts"
 msgstr "연락처 검색"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/filters/country.vue
 msgid "Search Country"
 msgstr "국가 검색"
 
@@ -25570,6 +26164,7 @@ msgid "Search for your question"
 msgstr "질문을 검색하세요"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/filters/language.vue
 msgid "Search Language"
 msgstr "언어 검색"
 
@@ -25612,6 +26207,12 @@ msgstr "검색 결과"
 #: components/inchat/user_list_inchat.vue
 msgid "Search rooms"
 msgstr "객실 검색"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Search Tours"
+msgid "Search Teams"
+msgstr "투어 검색"
 
 #: pages/notifications.vue
 msgid "Search this month..."
@@ -26005,13 +26606,31 @@ msgstr "선택"
 msgid "Selected cabin category"
 msgstr "선택된 객실 목록"
 
+#: components/reports/filters/country.vue
+#, fuzzy
+#| msgid "Selected Country:"
+msgid "Selected Countries"
+msgstr "선택된 국가 :"
+
 #: components/inchat/user/user_create_room.vue
 msgid "Selected Country:"
 msgstr "선택된 국가 :"
 
+#: components/reports/filters/language.vue
+#, fuzzy
+#| msgid "Select a Language"
+msgid "Selected Languages"
+msgstr "언어 선택"
+
 #: pages/elevate_registration.vue
 msgid "Selected Package"
 msgstr "선택된 패키지"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Select Tag"
+msgid "Selected Teams"
+msgstr "태그 선택"
 
 #: components/public/FooterLinks.vue
 msgid "Seller of Travel"
@@ -26029,11 +26648,11 @@ msgstr "판매자:"
 msgid "Selling Rate"
 msgstr "판매율"
 
-#: pages/inviter.vue pages/reports.vue
+#: pages/inviter.vue components/reports/old_reports.vue
 msgid "Send"
 msgstr "보내기"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Send a Push Blast"
 msgstr "푸쉬 블라스트 보내기"
 
@@ -26041,7 +26660,7 @@ msgstr "푸쉬 블라스트 보내기"
 msgid "Send Amount"
 msgstr "송금액"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Send an Email"
 msgstr "이메일 발송"
 
@@ -26083,6 +26702,12 @@ msgstr "메시지 발송"
 msgid "Send money"
 msgstr "송금하기"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Notification"
+msgid "Send Notification"
+msgstr "알림"
+
 #: pages/referral_links.vue
 msgid "Send personalized emails and invite people to join InCruises."
 msgstr "맞춤형 이메일을 보내고 사람들을 InCruises에 초대하세요."
@@ -26099,6 +26724,18 @@ msgid ""
 msgstr ""
 "친구에게 개인적 가입안내를 보냅니다. 그들이 클릭하여 등록하면 귀하는 자동으"
 "로 보상을 받습니다. 원하는만큼 보낼 수 있습니다."
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Send Push Notification"
+msgstr "푸시 알림 센터"
+
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Send Push Notifications"
+msgstr "푸시 알림 센터"
 
 #: pages/contacts.vue
 msgid "Send reminder"
@@ -26120,6 +26757,12 @@ msgstr "센드그리드"
 msgid "Sending"
 msgstr "배상"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Sending Push Notifications to %{count} records..."
+msgstr "푸시 알림 센터"
+
 #: pages/admin_sendgrid.vue
 msgid "Sengrid Contacts"
 msgstr "센그리드 연락처"
@@ -26128,12 +26771,13 @@ msgstr "센그리드 연락처"
 msgid "Senior Managers and Advisors"
 msgstr "시니어 매니저 및 고문"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -26173,15 +26817,15 @@ msgid ""
 "old."
 msgstr "노인 승객: 일행이 55 세 이상이면 지정하십시오."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader"
 msgstr "시니어 팀 리더"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader Last Month"
 msgstr "지난 달 시니어 팀 리더"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader This Month"
 msgstr "이 달의 시니어 팀 리더"
 
@@ -26495,7 +27139,7 @@ msgstr "팀 보기"
 msgid "Show Web-Registration"
 msgstr "웹 등록 표시"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Showing All Teams"
 msgstr "모든 팀 보기"
 
@@ -26526,6 +27170,12 @@ msgstr "가입하기"
 
 #: components/high_risk/high_risk_accounts.vue
 msgid "Signup Date"
+msgstr "가입한 날짜"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Signup Date"
+msgid "SignUp Date"
 msgstr "가입한 날짜"
 
 #: pages/referral_links_old.vue
@@ -26841,11 +27491,14 @@ msgid ""
 "Spectacular sights and amazing views from the comfort of your stateroom."
 msgstr "객실에서 편안하게 즐기는 장엄한 풍경과 놀라운 전망."
 
-#: pages/reports.vue components/compensation/members-qbi-modal.vue
+#: components/compensation/members-qbi-modal.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Sponsor"
 msgstr "스폰서"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Sponsor / Upline"
 msgstr "스폰서 / 업라인"
 
@@ -26943,6 +27596,7 @@ msgstr "시작:"
 msgid "Starter"
 msgstr "STARTER"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 msgid "STARTER"
 msgstr "STARTER"
@@ -26956,7 +27610,7 @@ msgstr "STARTER 멤버"
 msgid "STARTER Member"
 msgstr "STARTER 멤버"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Starter Members"
 msgstr "STARTER 멤버"
 
@@ -26964,7 +27618,7 @@ msgstr "STARTER 멤버"
 msgid "STARTER PLAN"
 msgstr "STARTER 플랜"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Starter Plan - $0"
 msgstr "STARTER 플랜 - $0"
 
@@ -27066,8 +27720,10 @@ msgstr "현황"
 #: components/invoices/invoice.vue components/compensation/leadership_bonus.vue
 #: components/compensation/recurring_income_levels.vue
 #: components/compensation/qbi_members_table.vue
+#: components/reports/quick_reports.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/growth_calculator/potential_leadership.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/user/invoices.vue
 msgid "Status"
 msgstr "현황"
@@ -27162,7 +27818,7 @@ msgstr "하위 목록"
 msgid "Subject"
 msgstr "제목"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Subject:"
 msgstr "제목:"
 
@@ -27238,11 +27894,12 @@ msgstr ""
 "소계 : <b>${{ $filters.money(this.selectedRequest.additional_booking_data."
 "subtotal) }}</b>"
 
-#: vue/main.js components/high_risk/high_risk_accounts.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/high_risk/high_risk_accounts.vue
 msgid "Success"
 msgstr "성공"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Successful Growth"
 msgstr "성공적인 성장"
 
@@ -27375,6 +28032,15 @@ msgstr "더 보려면 화면을 위로 올리세요"
 msgid "Swiss Franc (CHF)"
 msgstr "스위스 프랑 (CHF)"
 
+#: components/reports/quick_reports_modal/modal-content.vue
+#: components/reports/quick_reports_modal/index.vue
+msgid "Switch To Classic"
+msgstr ""
+
+#: pages/reports.vue
+msgid "Switch To New"
+msgstr ""
+
 #: components/inchat/emoji/emoji_modal.vue
 msgid "Symbols"
 msgstr "기호"
@@ -27416,6 +28082,7 @@ msgid "Tag Management"
 msgstr "태그 관리"
 
 #: pages/contacts.vue components/contacts/export-contacts.vue
+#: components/reports/old_reports.vue
 msgid "Tags"
 msgstr "태그"
 
@@ -27447,7 +28114,7 @@ msgstr ""
 msgid "Take Me to DittoTouch"
 msgstr "디토터치에 연결해 주십시오"
 
-#: pages/additional_info.vue pages/reports.vue
+#: pages/additional_info.vue components/reports/old_reports.vue
 msgid "Take me to upgrade."
 msgstr "업그레이드로 연결합니다."
 
@@ -27669,7 +28336,7 @@ msgstr "지급받은 팀 파트너"
 msgid "Team Pending Members"
 msgstr "미납 팀 멤버"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Team Pending with Cruise Bookings"
 msgstr "크루즈 예약이 있는 미납 팀"
 
@@ -27685,7 +28352,7 @@ msgstr "팀 생산액"
 msgid "Team Production Tracker"
 msgstr "팀 생산액 추적기"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Team QBI"
 msgstr "팀 QBI"
 
@@ -27717,6 +28384,19 @@ msgstr "팀 리지듀얼 보너스 내역서"
 #: pages/track_results.vue
 msgid "Team Starter Members"
 msgstr "팀 STARTER 멤버"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Please select gender"
+msgid "team(s) selected"
+msgstr "성별을 선택하세요"
+
+#: components/reports/quick_reports_modal/modal-content.vue
+#: components/reports/quick_reports_modal/templates-list.vue
+#, fuzzy
+#| msgid "Use Template"
+msgid "Templates"
+msgstr "템플릿 사용"
 
 #: components/user/functions.vue
 msgid "Terminated"
@@ -28106,19 +28786,19 @@ msgid ""
 "evaluation"
 msgstr "크루즈는 평가 시점에 여전히 더 낮은 가격으로 이용 가능해야 합니다"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user first became membership free."
 msgstr "처음으로 무료 멤버십을 달성한 날짜."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user first signed up on our website."
 msgstr "사용자가 당사 웹사이트에 처음 가입한 날짜입니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user paid to activate and become a Member."
 msgstr "멤버십 비용을 지불하고 멤버가 된 날."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user paid to activate and become a Partner."
 msgstr "파트너십 비용을 지불하고 파트너가 된 날."
 
@@ -28147,7 +28827,7 @@ msgstr ""
 msgid "The effective date of this Privacy Policy is September 1st, 2015."
 msgstr "본 개인정보 처리방침의 발효일은 2015년 9월 1일입니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "The email and push blast actions have been disabled due to the results size "
 "exceeds their limit. If you want to use these actions, please run the report "
@@ -28647,7 +29327,7 @@ msgstr ""
 msgid "The Spirit Of Giving At inCruises"
 msgstr "inCruises의 기부 정신"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The subject field is required!"
 msgstr "제목란이 요구됩니다!"
 
@@ -29067,11 +29747,11 @@ msgstr "선택한 호텔에 예약 가능한 객실이 없습니다. 다른 예�
 msgid "There was no results for your search."
 msgstr "검색사항에 대해 결과가 없었습니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "There were %{resultAmount} results based on your selections."
 msgstr "선택에 따른 결과가 %{resultAmount} 개 있습니다."
 
-#: pages/reports.vue pages/leadership_academy.vue
+#: pages/leadership_academy.vue components/reports/old_reports.vue
 msgid "There were no results based on your selections."
 msgstr "선택 사항에 대해 결과가 없습니다."
 
@@ -29945,6 +30625,13 @@ msgstr "이번 주간"
 msgid "This Week's Potential"
 msgstr "이번 주 잠재력"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+msgid ""
+"This will only show members who are still within the first 5 days after "
+"their invoice has been generated. this will grant them double their reward "
+"points."
+msgstr ""
+
 #: components/growth_calculator/potential_recurring.vue
 #: components/growth_calculator/potential_leadership.vue
 msgid "This will take a few seconds. Please be patient."
@@ -30201,11 +30888,12 @@ msgstr "착금까지의 시간은 다를 수 있지만 자금을 이용할 수 �
 
 #: pages/glsx.vue pages/referral_widget.vue pages/gls_winners.vue
 #: pages/admin_partner_success.vue pages/gls.vue pages/admin_user.vue
-#: pages/banner_tracking.vue pages/new_ranks.vue pages/reports.vue
-#: pages/partner_success.vue pages/builders_base.vue
-#: components/compensation/residual_bonus_preview.vue
+#: pages/banner_tracking.vue pages/new_ranks.vue pages/partner_success.vue
+#: pages/builders_base.vue components/compensation/residual_bonus_preview.vue
 #: components/compensation/builders_bonus.vue
 #: components/settings_page/modify-saved-passengers.vue
+#: components/reports/old_reports.vue
+#: components/reports/send_push_notification_modal.vue
 #: components/business_intelligence/comp_to_sales.vue
 msgid "Title"
 msgstr "직급"
@@ -30220,7 +30908,8 @@ msgstr "직급 달성!"
 msgid "Title:"
 msgstr "직급:"
 
-#: pages/menu_page.vue pages/reports.vue pages/settings.vue pages/titles.vue
+#: pages/menu_page.vue pages/settings.vue pages/titles.vue
+#: components/reports/old_reports.vue
 msgid "Titles"
 msgstr "호칭"
 
@@ -30238,6 +30927,8 @@ msgstr "목적지"
 
 #: pages/inviter.vue pages/mercy_ships.vue
 #: components/support/TicketViewerAdmin.vue components/support/TicketViewer.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "To"
 msgstr "대상"
 
@@ -31031,10 +31722,116 @@ msgstr ""
 msgid "Track your world-wide reach below!"
 msgstr "아래의 전 세계 초대정보 확산 결과를 살펴보십시오!"
 
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks members who changed their membership plan up or down this month/ last "
+"month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Tracks members with pending invoices."
+msgstr "미납 청구서가 있는 사용자"
+
 #: components/business_performance/TeamProductionLines.vue
 msgid ""
 "Tracks monthly cumulative new and total cumulative Production for your team."
 msgstr "팀의 월별 누적 신규 및 총 누적 생산액을 추적하세요."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks new members this month/ last month (members purchasing a membership "
+"for the first time in inCruises.)"
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners eligible for compensation by bringing a direct this month/"
+"last month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid "Tracks partners eligible for membership free or membership discount."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners pending Builders Base payment due to QBI < 75%, showing time "
+"left until payout anyways."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Produce the required Total Activation Volume."
+msgid "Tracks partners qualified production and activation volume."
+msgstr "필요한 총 활성화 매출을 달성합니다."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners who achieved a new rank for the first time this month/ last "
+"month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid "Tracks partners who achieved Fast Start this month/last month."
+msgstr "귀하의 팀에서 패스트 스타트 매칭 보너스를 받을 수 있는 파트너입니다."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid ""
+"Tracks partners who are still eligible for Fast Start Matching based on "
+"their downlines."
+msgstr "귀하의 팀에서 패스트 스타트 매칭 보너스를 받을 수 있는 파트너입니다."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid ""
+"Tracks partners who are still eligible for Fast Start with days left to "
+"qualify."
+msgstr "귀하의 팀에서 패스트 스타트 매칭 보너스를 받을 수 있는 파트너입니다."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners whose 6‑month renewal invoice is pending and not yet paid "
+"within the allowed month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners whose 6‑month renewal invoice will be generated next month"
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "One or more members has an active sailing or a pending invoice."
+msgid ""
+"Tracks team members with an active cruise booking but a pending invoice."
+msgstr "한 명 이상의 멤버에게 활성 항해 및 미지불 청구서가 있습니다."
+
+#: components/reports/quick_reports.vue
+msgid "Tracks users who acquired a partnership this month/ last month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks users who signed up this month/ last month but have not yet purchased "
+"a membership."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid "Tracks users with recurring payment status and payment method type."
+msgstr ""
 
 #: pages/m3.vue
 msgid "Trade Partner Testimonials"
@@ -31277,6 +32074,11 @@ msgstr "Trustly"
 msgid "Try again"
 msgstr "다시 시도하십시오"
 
+#: pages/reports.vue
+msgid ""
+"Try our new reports view for easier access to reports and faster report runs."
+msgstr ""
+
 #: components/recurring/recurring-cards.vue
 msgid "Turkish Lira (TRY)"
 msgstr "터키 리라 (TRY)"
@@ -31313,21 +32115,14 @@ msgstr "2 개월 전 합계"
 msgid "Two Weeks Prior Contest"
 msgstr "2주 전의 주간 경연"
 
-#: pages/admin_user.vue pages/reports.vue pages/receipts.vue
-#: pages/track_results.vue pages/notifications.vue
+#: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
+#: pages/notifications.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/support/InstantTools.vue components/compensation/weekly_bonus.vue
 #: components/compensation/active_partner_modal.vue
+#: components/reports/old_reports.vue
 msgid "Type"
 msgstr "타입"
-
-#: pages/reports.vue
-msgid ""
-"Type @ to insert dynamic tokens (like @Name, @Email) that will be replaced "
-"with each recipient's data."
-msgstr ""
-"동적 토큰(예: @Name, @Email)을 삽입하려면 @를 입력하세요. 각 토큰은 수신자의 "
-"데이터로 자동 대체됩니다."
 
 #: pages/cruise_price_match_guarantee.vue
 msgid "type when applicable"
@@ -31594,7 +32389,7 @@ msgstr "주소 삭제"
 msgid "Unsubscribe from our mailing list:"
 msgstr "메일 리스트에서 주소 삭제:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Unsubscribe here"
 msgstr "여기에서 구독 취소"
 
@@ -31802,7 +32597,7 @@ msgstr "오늘 귀하의 라이프 스타일을 업그레이드하세요 !"
 msgid "Upgrade your membership to get more iNsider pricing"
 msgstr "더 많은 iNsider pricing을 받으려면 멤버십을 업그레이드하세요"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Upgrades This Month"
 msgstr "이번 달 업그레이드"
 
@@ -31981,6 +32776,7 @@ msgid "User Hotels"
 msgstr "사용자 호텔"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/more_info_hover_card.vue
 msgid "User Info"
 msgstr "사용자 정보"
 
@@ -31991,6 +32787,12 @@ msgstr "사용자 청구서"
 #: components/inchat/user_room_actions.vue
 msgid "User locked successfully"
 msgstr "사용자가 성공적으로 잠겼습니다"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "User Invoices"
+msgid "User Next Invoices"
+msgstr "사용자 청구서"
 
 #: components/user/user_notes.vue
 msgid "User Notes"
@@ -32050,10 +32852,22 @@ msgid "Users can disable inCruises Wallet Recurring via"
 msgstr ""
 "사용자는 다음을 통해 inCruises Wallet 정기 결제를 비활성화할 수 있습니다 -"
 
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "User unlocked successfully"
+msgid "Users downloaded successfully"
+msgstr "사용자가 성공적으로 잠금 해제되었습니다"
+
 #: components/inchat/admin/ShowParticipants.vue
 #: components/inchat/list_modals/users_room_list_modal.vue
 msgid "Users in Room"
 msgstr "방에 있는 사용자"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Enable Recurring Payments"
+msgid "Users Recurring Payment Status"
+msgstr "정기 결제 활성화"
 
 #: pages/referral_activity.vue
 msgid ""
@@ -32096,7 +32910,7 @@ msgstr "귀하의 링크를 통해 파트너십 플랜으로 inCruises에 등록
 msgid "Users who have seen our website through your link."
 msgstr "귀하의 링크를 통해 우리 웹사이트를 방문한 사용자."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Users with Pending Invoices"
 msgstr "미납 청구서가 있는 사용자"
 
@@ -32331,7 +33145,7 @@ msgstr "생일 보기"
 msgid "View Booking Summary"
 msgstr "예약 요약 보기"
 
-#: pages/certificates.vue pages/reports.vue
+#: pages/certificates.vue components/reports/old_reports.vue
 msgid "View Certificate"
 msgstr "인증서 보기"
 
@@ -32685,7 +33499,7 @@ msgstr "inCruises의 소득 및 인센티브에 대해 자세히 알고 싶으�
 msgid "Want to make this into a Refundable Booking?"
 msgstr "환불 가능한 예약으로 변경하시겠습니까?"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Want to stop receiving Email Blasts?"
 msgstr "이메일 수신을 중지하시겠습니까?"
 
@@ -32693,7 +33507,8 @@ msgstr "이메일 수신을 중지하시겠습니까?"
 msgid "Want to Try DittoTouch?"
 msgstr "DittoTouch를 사용해 보시겠습니까?"
 
-#: vue/main.js components/inchat/user/warning_modal.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/inchat/user/warning_modal.vue
 msgid "Warning"
 msgstr "경고"
 
@@ -33228,6 +34043,12 @@ msgstr "환영합니다"
 msgid "Welcome To InCruises"
 msgstr "inCruises에 오신 것을 환영합니다"
 
+#: components/reports/new_reports.vue
+#, fuzzy
+#| msgid "Welcome To InCruises"
+msgid "Welcome To Reports"
+msgstr "inCruises에 오신 것을 환영합니다"
+
 #: pages/courses.vue
 msgid "Welcome to the Basic Training Courses!"
 msgstr "기본 교육 과정에 오신 것을 환영합니다!"
@@ -33361,11 +34182,19 @@ msgstr "게스트에게 제공되는 혜택 :"
 msgid "What's new"
 msgstr "새로운 소식"
 
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "Whatsapp #"
+msgid "Whatsapp"
+msgstr "Whatsapp #"
+
 #: components/compensation/qbi_members_table.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Whatsapp #"
 msgstr "Whatsapp #"
 
@@ -34482,6 +35311,12 @@ msgstr "다음 권한 그룹에서 권한을 제거하려고 합니다"
 msgid "You are about to restart your identity verification process."
 msgstr "신원 확인 절차를 다시 시작하려고 합니다."
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "You are about to restart your identity verification process."
+msgid "You are about to send a push notification to %{count} users."
+msgstr "신원 확인 절차를 다시 시작하려고 합니다."
+
 #: pages/downgrade.vue
 msgid ""
 "You are about to switch to the Classic membership. By doing so, you will "
@@ -34784,7 +35619,7 @@ msgstr ""
 msgid "You cannot login as this user."
 msgstr "이 사용자로는 로그인할 수 없습니다."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You cannot search for New Ranks for this month and last month at the same "
 "time. Please disable one and try again."
@@ -34792,9 +35627,14 @@ msgstr ""
 "이번 달과 지난 달의 새 순위를 동시에 검색할 수 없습니다. 하나를 비활성화하고 "
 "다시 시도하십시오."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
+#, fuzzy
+#| msgid ""
+#| "You cannot select Membership Plan with Partners, Expired Partners, or "
+#| "Guests."
 msgid ""
-"You cannot select Membership Plan with Partners, Expired Partners, or Guests."
+"You cannot select Membership Plan with Partners, Expired Partners, or No "
+"Plans."
 msgstr ""
 "파트너, 만료된 파트너, 또는 게스트로는 멤버십 플랜을 선택할 수 없습니다."
 
@@ -35100,7 +35940,7 @@ msgid ""
 msgstr ""
 "최대 계정 수에 도달했습니다. 새 계정을 추가하려면 기존 계정을 삭제하십시오."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You have selected member data but have partnership creation date fields "
 "active, please remove before proceeding."
@@ -35108,7 +35948,7 @@ msgstr ""
 "멤버 데이터를 선택했지만, 파트너십 생성 날짜 필드가 활성화되었습니다. 진행하"
 "기 전에 제외하십시오."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You have selected partner data but have membership creation date fields "
 "active, please remove before proceeding."
@@ -35313,12 +36153,7 @@ msgstr ""
 "target=\"_blank\" href=\"%{link}\">inCruises 멤버십 약관</a> 에 따른 것입니"
 "다."
 
-#: pages/reports.vue
-msgid "You must run a report and have results to send an email blast."
-msgstr ""
-"이메일 대량 발송을 위해서는 보고서를 실행하고, 그 결과를 확보해야 합니다."
-
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "You must select at least one user type."
 msgstr "하나 이상의 사용자 유형을 선택해야합니다."
 
@@ -36247,7 +37082,7 @@ msgstr ""
 msgid "Your Region"
 msgstr "귀하의 지역"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Your report results will appear in this area."
 msgstr "보고서 결과가 이 영역에 나타납니다."
 
@@ -48049,6 +48884,20 @@ msgstr "테스트 3"
 msgid "Final Test"
 msgstr "최종"
 
+#: Courses
+msgid "xxxz"
+msgstr ""
+
+#: Courses (descriptions)
+#, fuzzy
+#| msgid "TEST 2"
+msgid "TEST B"
+msgstr "테스트 2"
+
+#: Courses (descriptions)
+msgid "eee3we"
+msgstr ""
+
 #: Courses (descriptions)
 msgid ""
 "In order to access your inCruises® Wallet, you must complete this course on "
@@ -48096,6 +48945,17 @@ msgstr ""
 "기 위해 떠나는 것을 상상할 수 있습니까?!"
 
 #~ msgid ""
+#~ "Type @ to insert dynamic tokens (like @Name, @Email) that will be "
+#~ "replaced with each recipient's data."
+#~ msgstr ""
+#~ "동적 토큰(예: @Name, @Email)을 삽입하려면 @를 입력하세요. 각 토큰은 수신자"
+#~ "의 데이터로 자동 대체됩니다."
+
+#~ msgid "You must run a report and have results to send an email blast."
+#~ msgstr ""
+#~ "이메일 대량 발송을 위해서는 보고서를 실행하고, 그 결과를 확보해야 합니다."
+
+#~ msgid ""
 #~ "An unexpected error occurred while initializing the filter selection "
 #~ "widget."
 #~ msgstr "필터 선택 위젯을 초기화하는 동안 예기치 않은 오류가 발생했습니다."
@@ -48124,15 +48984,6 @@ msgstr ""
 #~ msgid "Percent Growth Needed"
 #~ msgstr "요구 성장률"
 
-#~ msgid "Historical QBI Report"
-#~ msgstr "과거 QBI 리포트"
-
-#~ msgid "Insert your message..."
-#~ msgstr "메시지를 기입하십시오..."
-
-#~ msgid "Pending QBI Report"
-#~ msgstr "보류 중인 QBI 보고서"
-
 #~ msgid "Price may vary based on availability"
 #~ msgstr "가격은 재고 상황에 따라 달라질 수 있습니다"
 
@@ -48140,144 +48991,12 @@ msgstr ""
 #~ msgstr "(성인 멤버)"
 
 #, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "%{ n } Days Left to Pay"
-#~ msgstr "자격 요건 충족까지 남은 날짜"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "1 Day Left to Pay"
-#~ msgstr "자격 요건 충족까지 남은 날짜"
-
-#, fuzzy
-#~| msgid "Invoice Date"
-#~ msgid "2 Invoices Dates"
-#~ msgstr "청구서 날짜"
-
-#, fuzzy
-#~| msgid "Accounts"
-#~ msgid "Account Expires"
-#~ msgstr "계정"
-
-#, fuzzy
-#~| msgid "All Titles"
-#~ msgid "All Teams"
-#~ msgstr "모든 직급"
-
-#, fuzzy
 #~| msgid "An error occurred while fetching the data."
 #~ msgid "An error occurred while fetching the report"
 #~ msgstr "데이터를 가져오는 동안 오류가 발생했습니다."
 
-#, fuzzy
-#~| msgid "An unexpected error occurred while applying the client filters."
-#~ msgid "An unexpected error occurred while loading countries."
-#~ msgstr "클라이언트 필터를 적용하는 동안 예기치 않은 오류가 발생했습니다."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while resetting the filters."
-#~ msgid "An unexpected error occurred while loading languages."
-#~ msgstr "필터를 재설정하는 동안 예기치 않은 오류가 발생했습니다."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while applying the client filters."
-#~ msgid ""
-#~ "An unexpected error occurred while loading partners still eligible fast "
-#~ "start."
-#~ msgstr "클라이언트 필터를 적용하는 동안 예기치 않은 오류가 발생했습니다."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while resetting the filters."
-#~ msgid "An unexpected error occurred while loading teams."
-#~ msgstr "필터를 재설정하는 동안 예기치 않은 오류가 발생했습니다."
-
-#, fuzzy
-#~| msgid "Bonus Paid"
-#~ msgid "Bonus Payed In"
-#~ msgstr "보너스 지급"
-
-#, fuzzy
-#~| msgid "Coming Soon!"
-#~ msgid "Coming Soon"
-#~ msgstr "곧 공개됩니다 !"
-
-#, fuzzy
-#~| msgid "Countries Selected"
-#~ msgid "countries selected"
-#~ msgstr "선택된 국가"
-
-#, fuzzy
-#~| msgid "Direct Activations"
-#~ msgid "Current Activations"
-#~ msgstr "직접 추천 활성화"
-
-#, fuzzy
-#~| msgid "Recurring Qualified Production"
-#~ msgid "Current Qualified Production"
-#~ msgstr "리커링 적격 생산액"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Count"
-#~ msgstr "자격 요건 충족까지 남은 날짜"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Pay"
-#~ msgstr "자격 요건 충족까지 남은 날짜"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Still Be Elegible"
-#~ msgstr "자격 요건 충족까지 남은 날짜"
-
-#, fuzzy
-#~| msgid "Downline Select"
-#~ msgid "Downlines Elegible"
-#~ msgstr "다운라인 선택"
-
-#, fuzzy
-#~| msgid "Due Today"
-#~ msgid "Due today"
-#~ msgstr "당일 지불"
-
 #~ msgid "Elegible"
 #~ msgstr "적격"
-
-#, fuzzy
-#~| msgid "Email Date"
-#~ msgid "Embarking Date"
-#~ msgstr "이메일 날짜"
-
-#, fuzzy
-#~| msgid "First Leader"
-#~ msgid "First Up leader"
-#~ msgstr "첫번째 리더"
-
-#, fuzzy
-#~| msgid "First Leader"
-#~ msgid "First Up Leader"
-#~ msgstr "첫번째 리더"
-
-#, fuzzy
-#~| msgid "inCruises - Receipt"
-#~ msgid "InCruises - Reports"
-#~ msgstr "inCruises - 영수증"
-
-#, fuzzy
-#~| msgid "InCruises Wallet"
-#~ msgid "inCruises Wallet"
-#~ msgstr "InCruises 지갑"
-
-#, fuzzy
-#~| msgid "Invite Status"
-#~ msgid "Invoice Status"
-#~ msgstr "초대 상태"
-
-#, fuzzy
-#~| msgid "Invoice Date"
-#~ msgid "Invoice Type"
-#~ msgstr "청구서 날짜"
 
 #, fuzzy
 #~| msgid "Language"
@@ -48286,163 +49005,8 @@ msgstr ""
 
 #, fuzzy
 #~| msgid "Package selected:"
-#~ msgid "languages selected"
-#~ msgstr "선택한 패키지 :"
-
-#, fuzzy
-#~| msgid "Package selected:"
 #~ msgid "Languages Selected"
 #~ msgstr "선택한 패키지 :"
-
-#, fuzzy
-#~| msgid "Rank Achieved"
-#~ msgid "Last Rank Achieved"
-#~ msgstr "직급 달성"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Member Reports"
-#~ msgstr "파워 리포트"
-
-#, fuzzy
-#~| msgid "Members in your QBI"
-#~ msgid "Members Counting Toward Your QBI"
-#~ msgstr "QBI의 멤버"
-
-#, fuzzy
-#~| msgid "Pending Members with Pending Invoices"
-#~ msgid "Members With Cruise Bookings & Pending Invoices"
-#~ msgstr "보류 청구서가 있는 보류 멤버"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Members with pending Invoices"
-#~ msgstr "미납 청구서가 있는 사용자"
-
-#, fuzzy
-#~| msgid "Membership First Month"
-#~ msgid "Membership Discount"
-#~ msgstr "멤버십 첫 달"
-
-#, fuzzy
-#~| msgid "Membership Info"
-#~ msgid "Membership Invoice"
-#~ msgstr "회원 정보"
-
-#, fuzzy
-#~| msgid "Membership Free Date"
-#~ msgid "Membership Upgrades & Downgrades"
-#~ msgstr "무료 멤버십 달성일"
-
-#, fuzzy
-#~| msgid "Directs"
-#~ msgid "My Directs"
-#~ msgstr "직접 추천"
-
-#, fuzzy
-#~| msgid "Guests"
-#~ msgid "New Guests"
-#~ msgstr "게스트"
-
-#, fuzzy
-#~| msgid "New Message"
-#~ msgid "New Reports Page"
-#~ msgstr "새로운 메시지"
-
-#, fuzzy
-#~| msgid "Create Invoice"
-#~ msgid "Next Invoice"
-#~ msgstr "청구서 생성"
-
-#, fuzzy
-#~| msgid "Membership Info"
-#~ msgid "Next Membership Invoice"
-#~ msgstr "회원 정보"
-
-#, fuzzy
-#~| msgid "Partnership Video"
-#~ msgid "Next Partnership Invoice"
-#~ msgstr "파트너십 영상"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Other Reports"
-#~ msgstr "파워 리포트"
-
-#, fuzzy
-#~| msgid "Overview"
-#~ msgid "Overdue"
-#~ msgstr "통합관리"
-
-#, fuzzy
-#~| msgid "Partners That Will Be Renewing Next Month"
-#~ msgid "Partner Renewing Next Month"
-#~ msgstr "다음 달에 재갱신하는 파트너들"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Partner Reports"
-#~ msgstr "파워 리포트"
-
-#, fuzzy
-#~| msgid "Ineligible for compensation"
-#~ msgid "Partners Elegible for Compensation"
-#~ msgstr "보상 대상에 해당되지 않음"
-
-#, fuzzy
-#~| msgid "Partners are Membership Free."
-#~ msgid "Partners Elegible For Membership Free"
-#~ msgstr "파트너는 무료 멤버십입니다."
-
-#, fuzzy
-#~| msgid "Understanding Builders Base Bonus"
-#~ msgid "Partners Pending to Receive Builders Base Bonus"
-#~ msgstr "빌더 베이스 보너스 이해"
-
-#, fuzzy
-#~| msgid "You have no direct partners currently eligible for Fast Start."
-#~ msgid "Partners Still Elegible for Fast Start"
-#~ msgstr "현재 패스트 스타트 자격이 있는 직추 파트너가 없습니다."
-
-#, fuzzy
-#~| msgid "Potential Fast Start Matching"
-#~ msgid "Partners Still Elegible for Fast Start Matching"
-#~ msgstr "예상 패스트 스타트 매칭"
-
-#, fuzzy
-#~| msgid "Potential Team Leadership Bonus"
-#~ msgid "Partners Team Leadership Performance"
-#~ msgstr "예상 팀 리더십 보너스"
-
-#, fuzzy
-#~| msgid "Partner Activation Date"
-#~ msgid "Partners Who Achieved Fast Start"
-#~ msgstr "파트너 가입일"
-
-#, fuzzy
-#~| msgid "Partner with travel agencies"
-#~ msgid "Partners with new ranks"
-#~ msgstr "여행사와 제휴"
-
-#, fuzzy
-#~| msgid "Partnership Video"
-#~ msgid "Partnership Invoice"
-#~ msgstr "파트너십 영상"
-
-#, fuzzy
-#~| msgid "Partners That Have Not Renewed"
-#~ msgid "Partnership Not Renewed"
-#~ msgstr "재갱신하지 않은 파트너들"
-
-#, fuzzy
-#~| msgid "Add Payment Method"
-#~ msgid "Payment Method"
-#~ msgstr "결제 수단 추가"
-
-#, fuzzy
-#~| msgid "Add Payment Method"
-#~ msgid "Payment Methods"
-#~ msgstr "결제 수단 추가"
 
 #~ msgid ""
 #~ "Processing can take a moment depending on the information provided. If "
@@ -48453,115 +49017,9 @@ msgstr ""
 #~ "으면 다른 곳으로 이동하여 프로세스 완료 알림을 기다릴 수 있습니다."
 
 #, fuzzy
-#~| msgid "Recurring Payment Terms"
-#~ msgid "Recurring payment"
-#~ msgstr "정기 결제 약관"
-
-#, fuzzy
-#~| msgid "Recurring Payment Terms"
-#~ msgid "Recurring Payment"
-#~ msgstr "정기 결제 약관"
-
-#, fuzzy
-#~| msgid "You have no direct partners currently eligible for Fast Start."
-#~ msgid "Reports - Partners Still Elegible for Fast Start"
-#~ msgstr "현재 패스트 스타트 자격이 있는 직추 파트너가 없습니다."
-
-#, fuzzy
-#~| msgid "Search Tours"
-#~ msgid "Search Teams"
-#~ msgstr "투어 검색"
-
-#, fuzzy
-#~| msgid "Selected Country:"
-#~ msgid "Selected Countries"
-#~ msgstr "선택된 국가 :"
-
-#, fuzzy
-#~| msgid "Select a Language"
-#~ msgid "Selected Language"
-#~ msgstr "언어 선택"
-
-#, fuzzy
-#~| msgid "Select Tag"
-#~ msgid "Selected Teams"
-#~ msgstr "태그 선택"
-
-#, fuzzy
 #~| msgid "Direct partners"
 #~ msgid "Show only my direct partners"
 #~ msgstr "직추 파트너"
-
-#, fuzzy
-#~| msgid "Signup Date"
-#~ msgid "SignUp Date"
-#~ msgstr "가입한 날짜"
-
-#, fuzzy
-#~| msgid "Please select gender"
-#~ msgid "team(s) selected"
-#~ msgstr "성별을 선택하세요"
-
-#, fuzzy
-#~| msgid "Use Template"
-#~ msgid "Templates"
-#~ msgstr "템플릿 사용"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Tracks members with pending invoices."
-#~ msgstr "미납 청구서가 있는 사용자"
-
-#, fuzzy
-#~| msgid "Produce the required Total Activation Volume."
-#~ msgid "Tracks partners qualified production and activation volume."
-#~ msgstr "필요한 총 활성화 매출을 달성합니다."
-
-#, fuzzy
-#~| msgid ""
-#~| "Partners from your team which are still eligible for Fast Start matching "
-#~| "bonus."
-#~ msgid ""
-#~ "Tracks partners who are still eligible for Fast Start Matching based on "
-#~ "their downlines."
-#~ msgstr ""
-#~ "귀하의 팀에서 패스트 스타트 매칭 보너스를 받을 수 있는 파트너입니다."
-
-#, fuzzy
-#~| msgid ""
-#~| "Partners from your team which are still eligible for Fast Start matching "
-#~| "bonus."
-#~ msgid ""
-#~ "Tracks partners who are still eligible for Fast Start with days left to "
-#~ "qualify."
-#~ msgstr ""
-#~ "귀하의 팀에서 패스트 스타트 매칭 보너스를 받을 수 있는 파트너입니다."
-
-#, fuzzy
-#~| msgid "One or more members has an active sailing or a pending invoice."
-#~ msgid ""
-#~ "Tracks team members with an active cruise booking but a pending invoice."
-#~ msgstr "한 명 이상의 멤버에게 활성 항해 및 미지불 청구서가 있습니다."
-
-#, fuzzy
-#~| msgid "User Invoices"
-#~ msgid "User Next Invoices"
-#~ msgstr "사용자 청구서"
-
-#, fuzzy
-#~| msgid "Enable Recurring Payments"
-#~ msgid "Users Recurring Payment Status"
-#~ msgstr "정기 결제 활성화"
-
-#, fuzzy
-#~| msgid "Welcome To InCruises"
-#~ msgid "Welcome To Reports"
-#~ msgstr "inCruises에 오신 것을 환영합니다"
-
-#, fuzzy
-#~| msgid "Whatsapp #"
-#~ msgid "Whatsapp"
-#~ msgstr "Whatsapp #"
 
 #~ msgid ""
 #~ "Your information has been submitted successfully and verification is "
@@ -56883,9 +57341,6 @@ msgstr ""
 
 #~ msgid "Reset password to \"incruises1234\""
 #~ msgstr "비밀번호를 \"incruises1234\"로 재설정"
-
-#~ msgid "TEST 2"
-#~ msgstr "테스트 2"
 
 #~ msgid "test 2"
 #~ msgstr "테스트 2"

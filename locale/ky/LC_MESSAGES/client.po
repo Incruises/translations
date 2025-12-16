@@ -533,7 +533,7 @@ msgstr "{{ itineraryItem.description }}"
 msgid "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 msgstr "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
 
@@ -792,6 +792,18 @@ msgstr "%{ cd_used } Бонустук Упайлар"
 msgid "%{ city }"
 msgstr "%{ city }"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "%{ n } Days"
+msgstr "Талаптарга жооп берүү үчүн калган күндөр"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "%{ n } Days Left to Pay"
+msgstr "Талаптарга жооп берүү үчүн калган күндөр"
+
 #: pages/partner_success.vue
 msgid "%{ name } from %{ country }"
 msgstr "{ country }%дан { name } %"
@@ -886,6 +898,14 @@ msgid "%{count} more %{plan} %{activationLabel} to reach $%{amount}/member"
 msgstr ""
 "%{count} дагы көбүрөөк %{plan} %{activationLabel} $%{amount}/мүчөгө жетүү "
 "үчүн"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Verification email sent successfully."
+msgid "%{count} push notifications were sent successfully."
+msgstr ""
+"Ырастоо электрондук каты ийгиликтүү жөнөтүлдү.\n"
+"Irastoo elektronduk ka"
 
 #: components/earnings_tile.vue
 msgid "%{countDownWord} %{time}"
@@ -2106,8 +2126,15 @@ msgstr ""
 "destinationCountryAndCurrency.currency.code }}"
 
 #: pages/admin_support_analytics.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 msgid "1 Day"
 msgstr "1 күн"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "1 Day Left to Pay"
+msgstr "Талаптарга жооп берүү үчүн калган күндөр"
 
 #: components/cruises_booking_old/reward-points-step.vue
 #: components/cruises_booking_old/reward-points-confirm-step.vue
@@ -2193,6 +2220,12 @@ msgstr "1ге 2 Баланс"
 #: components/checkout/Processor2For1.vue
 msgid "2 For 1 RP"
 msgstr "1 ге 2 ББ"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "2 Invoices Dates"
+msgstr "Эсеп-фактура күнү"
 
 #: pages/elevate.vue
 msgid "2 nights in Dubai with pre-cruise accommodations"
@@ -2535,6 +2568,13 @@ msgstr ""
 "Сиз кошкон кайталануучу төлөм банктан тастыктоону күтүп жатат. Тастыктоодон "
 "кийин бул барак автоматтык түрдө жаңыртылат."
 
+#: components/reports/new_reports.vue
+msgid ""
+"A set of ready-to-use report templates featuring the most requested insights "
+"by top Partners. Get instant access to popular data views with just one "
+"click."
+msgstr ""
+
 #: pages/apps.vue
 msgid ""
 "A simple ‘Add-to-home-screen’ prompt and push notifications make staying IN "
@@ -2782,13 +2822,19 @@ msgstr "PREMIUM менен кирүү"
 msgid "Account"
 msgstr "Аккаунт"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Account Created"
 msgstr "Аккаунт түзүлдү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Account Creation Date"
 msgstr "Аккаунт түзүлгөн күн"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Accounts"
+msgid "Account Expires"
+msgstr "Аккаунттар"
 
 #: components/user/functions.vue
 msgid "Account has been deducted. Transaction successfully completed"
@@ -2849,18 +2895,19 @@ msgid "Action"
 msgstr "Иш-аракет"
 
 #: pages/certificates.vue pages/admin_account_recovery.vue
-#: pages/negative_balances.vue pages/reports.vue pages/admin_emails.vue
-#: pages/agreements.vue pages/team_documentation_requests.vue
-#: pages/admin_certificates.vue pages/receipts.vue pages/invoices.vue
-#: pages/admin_restricted_paybonus.vue pages/price_match_requests.vue
-#: components/support/InstantTools.vue components/compensation/statements.vue
+#: pages/negative_balances.vue pages/admin_emails.vue pages/agreements.vue
+#: pages/team_documentation_requests.vue pages/admin_certificates.vue
+#: pages/receipts.vue pages/invoices.vue pages/admin_restricted_paybonus.vue
+#: pages/price_match_requests.vue components/support/InstantTools.vue
+#: components/compensation/statements.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/fast_start_matching.vue
 #: components/compensation/recurring_income_levels.vue
 #: components/compensation/qbi_members_table.vue
 #: components/settings_page/modify-saved-passengers.vue
-#: components/data_table/table.vue components/high_risk/high_risk_accounts.vue
+#: components/data_table/table.vue components/reports/old_reports.vue
+#: components/high_risk/high_risk_accounts.vue
 #: components/admin_finance/payment_fulfillment.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
@@ -2922,9 +2969,9 @@ msgstr "Активдештирүү бонусу"
 msgid "Activation Bonuses (Daily and Monthly)"
 msgstr "Активдештирүү бонустары (Күндүк жанан Айлык)"
 
-#: pages/reports.vue components/compensation/members-qbi-modal.vue
+#: components/compensation/members-qbi-modal.vue
 #: components/compensation/qbi_members_table.vue
-#: pages/compensation/member_activations.vue
+#: components/reports/old_reports.vue pages/compensation/member_activations.vue
 msgid "Activation Date"
 msgstr "Активдештирүү күнү"
 
@@ -2984,6 +3031,7 @@ msgstr "Талап кылынган активдештирүү көлөмү"
 
 #: pages/track_results.vue components/welcome/members-modal.vue
 #: components/compensation/qbi_members_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Active"
 msgstr "Активдүү"
 
@@ -3009,7 +3057,7 @@ msgstr "inCruises клубунун активдүү мүчөлөрү төмөн�
 msgid "Active Member"
 msgstr "Активдүү мүчө"
 
-#: pages/reports.vue components/compensation/qbi-details.vue
+#: components/compensation/qbi-details.vue components/reports/old_reports.vue
 msgid "Active Members"
 msgstr "Активдүү Мүчөлөр"
 
@@ -3602,9 +3650,10 @@ msgstr "Аляска"
 msgid "Alipay"
 msgstr "Alipay"
 
-#: pages/reports.vue pages/info_center.vue pages/team_rankings.vue
+#: pages/info_center.vue pages/team_rankings.vue
 #: pages/admin_support_analytics.vue pages/track_results.vue
-#: pages/leadership_academy.vue components/user/timeline.vue
+#: pages/leadership_academy.vue components/reports/old_reports.vue
+#: components/user/timeline.vue
 msgid "All"
 msgstr "Бардыгы"
 
@@ -3636,6 +3685,7 @@ msgid "All children must be younger than 18 years old."
 msgstr "Бардык балдар 18 жаштан кичүү болушу керек."
 
 #: pages/mercy_ships.vue components/business_intelligence/comp_to_sales.vue
+#: components/reports/filters/country.vue
 msgid "All Countries"
 msgstr "Бардык Өлкөлөр"
 
@@ -3702,6 +3752,7 @@ msgid "All Invitations"
 msgstr "Бардык чакыруулар"
 
 #: pages/communications.vue pages/webinar_recordings.vue
+#: components/reports/filters/language.vue
 msgid "All Languages"
 msgstr "Бардык тилдер"
 
@@ -3844,6 +3895,12 @@ msgstr ""
 #: pages/export.vue
 msgid "All Team Partners"
 msgstr "Бардык команда өнөктөштөрү"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "All Titles"
+msgid "All Teams"
+msgstr "Бардык Даражалар"
 
 #: components/public/Faq.vue pages/public/faq.vue
 msgid ""
@@ -4191,6 +4248,12 @@ msgstr ""
 msgid "An error occurred while loading the meeting"
 msgstr "Отурумду жүктөө учурунда ката пайда болду"
 
+#: vue/composables/useSendBroadcastPwaNotification.js
+#, fuzzy
+#| msgid "An error occurred while loading the meeting"
+msgid "An error occurred while sending notification"
+msgstr "Отурумду жүктөө учурунда ката пайда болду"
+
 #: pages/business_performance.vue
 msgid "An error occurred while updating the widget."
 msgstr "Виджетти жаңыртуу учурунда ката кетти."
@@ -4262,6 +4325,52 @@ msgstr "Кардар фильтрлерин колдонууда күтүлбө�
 msgid ""
 "An unexpected error occurred while initializing the local client filters."
 msgstr "Жергиликтүү кардар фильтрлерин баштоодо күтүлбөгөн ката кетти."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid "An unexpected error occurred while loading countries."
+msgstr "Кардар фильтрлерин колдонууда күтүлбөгөн ката кетти."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid "An unexpected error occurred while loading languages."
+msgstr "Фильтрлерди баштапкы абалга келтирүүдө күтүлбөгөн ката кетти."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid ""
+"An unexpected error occurred while loading members with pending invoices."
+msgstr "Фильтрлерди баштапкы абалга келтирүүдө күтүлбөгөн ката кетти."
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid ""
+"An unexpected error occurred while loading partners still eligible fast "
+"start."
+msgstr "Кардар фильтрлерин колдонууда күтүлбөгөн ката кетти."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid "An unexpected error occurred while loading teams."
+msgstr "Фильтрлерди баштапкы абалга келтирүүдө күтүлбөгөн ката кетти."
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid ""
+"An unexpected error occurred while loading users recurring payment status."
+msgstr "Кардар фильтрлерин колдонууда күтүлбөгөн ката кетти."
 
 #: components/data_table/column-selection-widget.vue
 msgid "An unexpected error occurred while opening the column selection widget."
@@ -5015,7 +5124,7 @@ msgstr ""
 msgid "Attachments"
 msgstr "Тиркемелер"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "Attachments are temporarily disable for Email Blast. You can only send "
 "emails without attachments."
@@ -5023,7 +5132,7 @@ msgstr ""
 "Тиркемелер Email Blast үчүн убактылуу өчүрүлгөн. Сиз каттарды тиркемелерсиз "
 "гана жөнөтө аласыз."
 
-#: pages/reports.vue pages/email.vue
+#: pages/email.vue components/reports/old_reports.vue
 msgid "Attachments:"
 msgstr "Тиркемелер:"
 
@@ -5227,7 +5336,7 @@ msgstr "Негизги Маалымат"
 msgid "Basic Training"
 msgstr "Негизги Тренинг"
 
-#: pages/reports.vue pages/courses.vue
+#: pages/courses.vue components/reports/old_reports.vue
 msgid "Basic Training Courses"
 msgstr "Негизги тренинг курстары"
 
@@ -5405,7 +5514,7 @@ msgstr "СУУСУНДУК ПАКЕТИ"
 msgid "Bill to:"
 msgstr "Төлөм үчүн:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Billing Date"
 msgstr "Төлөө күнү"
 
@@ -5475,7 +5584,7 @@ msgstr "Board of Directors: топтогон упайлары боюнча ал�
 msgid "Board of Directors and above"
 msgstr "Board of Directors жана жогорку"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Board of Directors Member"
 msgstr "Board of Directors мүчөсү"
 
@@ -5601,6 +5710,12 @@ msgstr "Төлөнгөн Бонус"
 #: components/receipts/new_team_residual_bonus_statement.vue
 msgid "Bonus Paid For"
 msgstr "үчүн төлөнгөн бонус"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Bonus Paid"
+msgid "Bonus Payed In"
+msgstr "Төлөнгөн Бонус"
 
 #: pages/glsx.vue pages/gls.vue
 msgid "Bonus Points"
@@ -5787,6 +5902,7 @@ msgid "Booking Type"
 msgstr "Брондоо түрү"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Both"
 msgstr "Экөө тең"
 
@@ -5837,7 +5953,7 @@ msgstr ""
 "жөндөмдөрүңүздү өнүктүрүп, тармактагы акыркы тенденциялардан кабардар болуп "
 "туруңуз."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Builder Plan - $32"
 msgstr "Куруу Планы - 32$"
 
@@ -5911,11 +6027,11 @@ msgstr "Куруучунун максималдуу бонусу 30,000$*"
 msgid "Builders Points"
 msgstr "Куруучулардын упайлары"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Building a Compliant Business"
 msgstr "Ылайыктуу Бизнес Куруу"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Building Wide and Deep"
 msgstr "Кенен жана Терең Куруу"
 
@@ -5931,7 +6047,7 @@ msgstr "Өсүшкө өбөлгө түзүү үчүн курулган"
 msgid "Business Cards"
 msgstr "Визит картасы"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership"
 msgstr "Жеке Бизнес"
 
@@ -5939,11 +6055,11 @@ msgstr "Жеке Бизнес"
 msgid "BUSINESS OWNERSHIP CERTIFICATE"
 msgstr "БИЗНЕСКЕ ЭЭ БОЛГОНДУГУ ТУУРАЛУУ КҮБӨЛҮК"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership Last Month"
 msgstr "Өткөн Айдагы Жеке Бизнес"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership This Month"
 msgstr "Бул Айдагы Жеке Бизнес"
 
@@ -6393,7 +6509,8 @@ msgstr "Каюталар:"
 msgid "Calendar"
 msgstr "Календарь"
 
-#: pages/reports.vue components/receipts/monthly_member_activation.vue
+#: components/reports/old_reports.vue
+#: components/receipts/monthly_member_activation.vue
 #: components/receipts/super_builders_bonus.vue
 #: components/receipts/qualified_residual_bonus.vue
 msgid "Calendar Month"
@@ -6540,10 +6657,10 @@ msgstr "Канада доллары (CAD)"
 #: components/fast-growing-legs.vue components/recipients_modal.vue
 #: components/avatar_cropper.vue pages/referral_links.vue pages/inviter.vue
 #: pages/tours_details.vue pages/checkout.vue pages/hotels.vue
-#: pages/reports.vue pages/admin_permission_group.vue
-#: pages/admin_department.vue pages/connect.vue pages/admin_permission.vue
-#: pages/contacts.vue pages/settings.vue pages/kyc_verification.vue
-#: pages/invoices.vue pages/email.vue pages/business_performance.vue
+#: pages/admin_permission_group.vue pages/admin_department.vue
+#: pages/connect.vue pages/admin_permission.vue pages/contacts.vue
+#: pages/settings.vue pages/kyc_verification.vue pages/invoices.vue
+#: pages/email.vue pages/business_performance.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/admin_management/admin_departments.vue
 #: components/payout/euro-conversion.vue
@@ -6555,7 +6672,7 @@ msgstr "Канада доллары (CAD)"
 #: components/contacts/contact-edit-modal.vue
 #: components/settings_page/remove-display-name-modal.vue
 #: components/cruises_booking_old/confirmation-step.vue
-#: components/hotels/GuestsDropdown.vue
+#: components/reports/old_reports.vue components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsPanel.vue
 #: components/recurring/add-recurring.vue
 #: components/recurring/recurring_payment_method_checkout.vue
@@ -6852,7 +6969,8 @@ msgstr ""
 "подрядчыларга гана сырсөз аркылуу жеткиликтүү жана сиз тарабынан "
 "өзгөртүлбөйт."
 
-#: pages/certificates.vue pages/reports.vue
+#: pages/certificates.vue components/reports/quick_reports.vue
+#: components/reports/old_reports.vue
 msgid "Certificate"
 msgstr "Сертификат"
 
@@ -6878,6 +6996,7 @@ msgid "Certificates"
 msgstr "Сертификаттар"
 
 #: pages/email_address.vue pages/referral_links_old.vue
+#: components/reports/quick_reports.vue
 msgid "Change"
 msgstr "Өзгөртүү"
 
@@ -7081,7 +7200,7 @@ msgstr "Кытай юаны (CNY)"
 msgid "Choose"
 msgstr "Тандаңыз"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Choose a Quick Report"
 msgstr "Ыкчам отчетту тандаңыз"
 
@@ -7252,6 +7371,7 @@ msgstr "50 бонустук упайыңызды азыр талап кылың�
 msgid "Classic"
 msgstr "Классикалык"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 msgid "CLASSIC"
@@ -7266,7 +7386,7 @@ msgstr "Classic планынын мүчөсү"
 msgid "CLASSIC Member"
 msgstr "CLASSIC мүчө"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Classic Members"
 msgstr "Classic планынын мүчөлөрү"
 
@@ -7289,7 +7409,7 @@ msgstr "Фильтрлерди алып салуу"
 msgid "Clear Filters"
 msgstr "Фильтрлерди алып салуу"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Clear Selections"
 msgstr "Тандоолорду тазалоо"
 
@@ -7371,6 +7491,11 @@ msgstr "Көрүү үчүн бул жерди басыңыз"
 #: pages/create_price_match_cruises.vue
 msgid "Click here to view your Price Match Requests:"
 msgstr "Бааларды дал келтирүү өтүнүчтөрүңүздү көрүү үчүн бул жерди басыңыз"
+
+#: components/reports/new_reports.vue
+#: components/reports/quick_reports_modal/templates-list.vue
+msgid "Click on a card below to run report based on a specific template"
+msgstr ""
 
 #: pages/cruise_price_match_guarantee.vue
 msgid "click the"
@@ -7482,6 +7607,7 @@ msgid "Column Selection"
 msgstr "Тилкени тандоо"
 
 #: components/data_table/column-selection-widget.vue
+#: components/reports/report_card.vue
 msgid "Columns"
 msgstr "Тилкелер"
 
@@ -7505,6 +7631,12 @@ msgstr ""
 "2024-жылдын Январь айында Дубайдагы башка тандалган inCruises өнөктөштөрү "
 "менен биригип, өзүңүздүн тарыхтагы алгачкы Круизиңизге чөмүлүңүз"
 
+#: components/reports/report_card.vue
+#, fuzzy
+#| msgid "Coming Soon!"
+msgid "Coming Soon"
+msgstr "Жакында!"
+
 #: pages/public/the_global_convention.vue
 msgid "Coming Soon!"
 msgstr "Жакында!"
@@ -7513,7 +7645,8 @@ msgstr "Жакында!"
 msgid "Commercial Partnerships Manager"
 msgstr "Коммерциялык өнөктөштүктөр боюнча менеджер"
 
-#: pages/reports.vue components/receipts/commission_statement.vue
+#: components/reports/old_reports.vue
+#: components/receipts/commission_statement.vue
 msgid "Commission"
 msgstr "Комиссиялар"
 
@@ -7580,7 +7713,8 @@ msgstr "Төлөм"
 msgid "Compensation Details"
 msgstr "Төлөм тууралуу кенен маалымат"
 
-#: pages/reports.vue components/certificates/CompensationProgram.vue
+#: components/reports/old_reports.vue
+#: components/certificates/CompensationProgram.vue
 #: components/public/FooterDocs.vue
 msgid "Compensation Program"
 msgstr "Төлөм Программасы"
@@ -7627,9 +7761,10 @@ msgstr "Жүргүнчүлөрдүн толук маалыматтары"
 msgid "Complete your booking before"
 msgstr "... дан мурун брондооңузду бүтүрүңүз"
 
-#: pages/export.vue pages/reports.vue pages/agreements.vue
-#: pages/team_documentation_requests.vue pages/contacts.vue pages/invoices.vue
-#: pages/leadership_academy.vue components/contacts/contact-edit-modal.vue
+#: pages/export.vue pages/agreements.vue pages/team_documentation_requests.vue
+#: pages/contacts.vue pages/invoices.vue pages/leadership_academy.vue
+#: components/contacts/contact-edit-modal.vue
+#: components/reports/old_reports.vue
 msgid "Completed"
 msgstr "Аяктады"
 
@@ -7704,13 +7839,12 @@ msgstr "Виджетти конфигурациялоо"
 
 #: components/alert_modal.vue components/fast-growing-legs.vue
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: pages/reports.vue pages/create_price_match_cruises.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/admin_permission.vue pages/settings.vue
+#: pages/create_price_match_cruises.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/admin_permission.vue pages/settings.vue
 #: components/payout/birthday-modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
-#: components/receipts/booking_receipt.vue
+#: components/reports/old_reports.vue components/receipts/booking_receipt.vue
 msgid "Confirm"
 msgstr "Тастыктоо"
 
@@ -7884,7 +8018,7 @@ msgstr "Куттуктайбыз! Сертификатыңызды алуу үч
 msgid "Congratulations! You have claimed your reward points."
 msgstr "Куттуктайбыз! Сиз бонустук упайларыңызды талап кылдыңыз."
 
-#: pages/reports.vue pages/connect.vue pages/account_setup.vue
+#: pages/connect.vue pages/account_setup.vue components/reports/old_reports.vue
 msgid "Connect"
 msgstr "Коннект"
 
@@ -7892,7 +8026,7 @@ msgstr "Коннект"
 msgid "CONNECT 1500"
 msgstr "КОННЕКТ 1500"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect 1500 - $500"
 msgstr "Коннект-1500 - 500$"
 
@@ -7900,7 +8034,7 @@ msgstr "Коннект-1500 - 500$"
 msgid "CONNECT 500"
 msgstr "КОННЕКТ-500"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect 500 - $50"
 msgstr "Коннект-500 - 50$"
 
@@ -7914,7 +8048,7 @@ msgstr ""
 "жолугушуу куралы. Сиз бир баскычты басуу менен потенциалдуу кардарларыңыз "
 "жана өнөктөштөрүңүз менен байланыша аласыз."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect Plan"
 msgstr "Коннект планы"
 
@@ -8273,6 +8407,12 @@ msgstr "Өлкөлөр"
 msgid "Countries and counting"
 msgstr "Өлкөлөр жана эсептөө"
 
+#: components/reports/filters/country.vue
+#, fuzzy
+#| msgid "Countries Selected"
+msgid "countries selected"
+msgstr "Тандалган өлкөлөр"
+
 #: pages/mercy_ships.vue
 msgid "Countries Selected"
 msgstr "Тандалган өлкөлөр"
@@ -8288,10 +8428,10 @@ msgstr "өлкө"
 #: components/mercy-ship-modals.vue components/info-reminder.vue
 #: components/weekly-competition.vue pages/additional_info.vue
 #: pages/competition.vue pages/referral_links_old.vue pages/admin_user.vue
-#: pages/new_ranks.vue pages/mercy_ships.vue pages/reports.vue
-#: pages/partner_success.vue pages/builders_base.vue pages/team_rankings.vue
-#: pages/settings.vue pages/reach.vue pages/track_results.vue
-#: pages/giving_society.vue components/checkout/ItalianStep.vue
+#: pages/new_ranks.vue pages/mercy_ships.vue pages/partner_success.vue
+#: pages/builders_base.vue pages/team_rankings.vue pages/settings.vue
+#: pages/reach.vue pages/track_results.vue pages/giving_society.vue
+#: components/checkout/ItalianStep.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus_preview.vue
 #: components/compensation/leadership_bonus.vue
@@ -8300,12 +8440,17 @@ msgstr "өлкө"
 #: components/compensation/my_team_breakdown_table.vue
 #: components/contacts/contact-edit-modal.vue
 #: components/settings_page/login-activity.vue
+#: components/reports/old_reports.vue
 #: components/high_risk/high_risk_accounts.vue
 #: components/receipts/italian_receipt.vue components/public/JoinModal.vue
 #: components/onboarding/address-step.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/business_intelligence/comp_to_sales.vue pages/public/signup.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
+#: components/reports/filters/country.vue
 msgid "Country"
 msgstr "Өлкө"
 
@@ -8348,7 +8493,7 @@ msgstr "Курс"
 msgid "Course"
 msgstr "Курс"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Course Certificate"
 msgstr "Курс сертификаты"
 
@@ -8462,6 +8607,7 @@ msgid "Created:"
 msgstr "Түзүлгөн:"
 
 #: components/admin_finance/payment_fulfillment.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/mercy_ships/donate_modal/payment-selection.vue
 msgid "Credit Card"
 msgstr "Кредиттик карта"
@@ -8716,7 +8862,7 @@ msgstr "Круиздик линиялар"
 msgid "Cruise Member"
 msgstr "Круиз мүчөсү"
 
-#: components/support/InstantTools.vue
+#: components/support/InstantTools.vue components/reports/quick_reports.vue
 msgid "Cruise Name"
 msgstr "Круиздин аты"
 
@@ -8834,6 +8980,12 @@ msgstr "Валюталык суммалар евродо көрсөтүлөт"
 msgid "Currency Selected"
 msgstr "Тандалган валюта"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Direct Activations"
+msgid "Current Activations"
+msgstr "Түздөн-түз активдештирүүлөр"
+
 #: components/growth_calculator/potential_recurring.vue
 msgid "Current Active Levels"
 msgstr "Учурдагы активдүү деңгээлдер"
@@ -8866,8 +9018,15 @@ msgid "Current Plan"
 msgstr "Учурдагы план"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/quick_reports.vue
 msgid "Current QBI"
 msgstr "Учурдагы БСИ"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Recurring Qualified Production"
+msgid "Current Qualified Production"
+msgstr "Кайталануучу жарамдуу өндүрүмдүүлүк"
 
 #: components/growth_calculator/potential_leadership.vue
 msgid "Current Rank"
@@ -9082,7 +9241,7 @@ msgstr "маалыматтар"
 msgid "Data"
 msgstr "Маалыматтар"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Data Fields"
 msgstr "Маалымат кутучалары"
 
@@ -9128,7 +9287,7 @@ msgstr "Дата азаюу"
 msgid "Date Earned"
 msgstr "Алынган дата"
 
-#: pages/reports.vue pages/team_rankings.vue
+#: pages/team_rankings.vue components/reports/old_reports.vue
 msgid "Date From"
 msgstr "Датадан баштап"
 
@@ -9161,7 +9320,7 @@ msgstr "Чыккан датасы"
 msgid "Date Range"
 msgstr "Дата диапазону:"
 
-#: pages/reports.vue pages/team_rankings.vue
+#: pages/team_rankings.vue components/reports/old_reports.vue
 msgid "Date To"
 msgstr "күнгө"
 
@@ -9195,6 +9354,7 @@ msgid "days"
 msgstr "күндөрү"
 
 #: components/cards/countdown-card.vue components/public/tgc-countdown.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
 msgid "Days"
 msgstr "Күндөр"
 
@@ -9203,11 +9363,37 @@ msgid "Days In Negative"
 msgstr "Терс күндөр"
 
 #: components/compensation/members-qbi-modal.vue
+#: components/reports/quick_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
 msgid "Days Left"
 msgstr "Күн калды"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Count"
+msgstr "Талаптарга жооп берүү үчүн калган күндөр"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left to Pay"
+msgstr "Талаптарга жооп берүү үчүн калган күндөр"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Pay"
+msgstr "Талаптарга жооп берүү үчүн калган күндөр"
+
 #: components/compensation/qbi_members_table.vue
 msgid "Days Left To Qualify"
+msgstr "Талаптарга жооп берүү үчүн калган күндөр"
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Still Be Eligible"
 msgstr "Талаптарга жооп берүү үчүн калган күндөр"
 
 #: pages/admin_user_id.vue
@@ -9371,7 +9557,7 @@ msgstr "Кет"
 msgid "DEPART"
 msgstr "КЕТҮҮ"
 
-#: pages/reports.vue pages/price_match_requests.vue
+#: pages/price_match_requests.vue components/reports/old_reports.vue
 #: components/receipts/booking_receipt.vue
 #: components/admin_booking/admin_cruise_featured.vue
 msgid "Depart Date"
@@ -9638,7 +9824,7 @@ msgstr "Түз өнөктөштөр MTD"
 msgid "Direct Pending Members"
 msgstr "Түздөн-түз күтүүдөгү мүчөлөр"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Direct Pending with Cruise Bookings"
 msgstr "Круиздик брондоолору бар күтүүдөгү мүчөлөр"
 
@@ -9713,6 +9899,13 @@ msgstr "Түз өнөктөштөр (бардык күндөр)"
 #: pages/info_center.vue
 msgid "Directs (Month to Date)"
 msgstr "Түз өнөктөштөр (бир ай мурун)"
+
+#: components/reports/filters/my_directs.vue
+#, fuzzy
+#| msgid "Total of Members or Partners you have personally Activated"
+msgid ""
+"Directs are members or partners you have referred to inCruises personally."
+msgstr "Жеке өзүңүз активдештирген Мүчөлөрдүн же Өнөктөштөрдүн жалпы саны."
 
 #: pages/new_partners_tracker.vue
 msgid "Directs Leaderboard"
@@ -10062,11 +10255,11 @@ msgstr "Төмөндөтүлө турган"
 msgid "Downgreadable"
 msgstr "Төмөндөтүлүүчү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline level limit must be a number!"
 msgstr "Төмөнкү даражанын чеги сан болушу керек!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline limit must be set between 1 and 50."
 msgstr "Төмөнкү катардын чеги 1ден 50гө чейин белгилениши керек."
 
@@ -10074,13 +10267,20 @@ msgstr "Төмөнкү катардын чеги 1ден 50гө чейин бе�
 msgid "Downline Name"
 msgstr "Кийинки аталыш"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline Select"
 msgstr "Төмөнкү тандоо"
 
-#: pages/reports.vue components/inchat/user/user_create_room.vue
+#: components/reports/old_reports.vue
+#: components/inchat/user/user_create_room.vue
 msgid "Downlines"
 msgstr "Төмөнкү сызыктар"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Downline Select"
+msgid "Downlines Eligible"
+msgstr "Төмөнкү тандоо"
 
 #: components/receipts/instant_bonus_statement.vue
 msgid "Downlines Names"
@@ -10129,8 +10329,8 @@ msgstr "Картаны .png катары жүктөп алыңыз"
 msgid "Download Completed CSV"
 msgstr "Аякталган CSV жүктөө"
 
-#: pages/reports.vue pages/team_documentation_requests.vue
-#: pages/track_results.vue
+#: pages/team_documentation_requests.vue pages/track_results.vue
+#: vue/composables/reports/useBulkActions.js components/reports/old_reports.vue
 msgid "Download CSV"
 msgstr "CSV жүктөп алыңыз"
 
@@ -10228,8 +10428,8 @@ msgstr "Дубай"
 msgid "Due date"
 msgstr "Аяктоо датасы"
 
-#: pages/reports.vue pages/invoices.vue components/invoices/invoice.vue
-#: components/user/invoices.vue
+#: pages/invoices.vue components/invoices/invoice.vue
+#: components/reports/old_reports.vue components/user/invoices.vue
 msgid "Due Date"
 msgstr "Аяктоо датасы"
 
@@ -10261,6 +10461,13 @@ msgstr ""
 #: components/payout/brightwell/transfer-details.vue
 msgid "Due to your"
 msgstr "Сиздин аркаңыздан"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Due Today"
+msgid "Due today"
+msgstr "Бүгүн бүтөт"
 
 #: pages/duplicator.vue
 msgid "Duplicator"
@@ -10831,7 +11038,7 @@ msgstr "Комиссия алууга укуктуулук"
 #: components/welcome/profile-card.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
-#: components/navigation/mobile-menu.vue
+#: components/reports/quick_reports.vue components/navigation/mobile-menu.vue
 #: components/navigation/avatar-dropdown.vue
 #: components/compensation/fast_start/breakdown_table.vue
 msgid "Eligible"
@@ -10866,14 +11073,15 @@ msgstr "Элиталык саякаттын артыкчылыктары"
 #: components/birthday-modal.vue pages/email_address.vue
 #: pages/additional_info.vue pages/cards.vue pages/account-recovery.vue
 #: pages/admin_account_recovery.vue pages/negative_balances.vue
-#: pages/admin_user.vue pages/invite.vue pages/reports.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/contacts.vue pages/team_rankings.vue pages/settings.vue
-#: pages/track_results.vue pages/admin_restricted_paybonus.vue
-#: pages/notifications.vue pages/password.vue pages/email.vue
-#: pages/multi_factor.vue components/negative_balances/uplines_modal.vue
+#: pages/admin_user.vue pages/invite.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/contacts.vue pages/team_rankings.vue
+#: pages/settings.vue pages/track_results.vue
+#: pages/admin_restricted_paybonus.vue pages/notifications.vue
+#: pages/password.vue pages/email.vue pages/multi_factor.vue
+#: components/negative_balances/uplines_modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/invoices/invoice.vue components/compensation/leadership_bonus.vue
+#: components/reports/old_reports.vue
 #: components/high_risk/high_risk_accounts.vue
 #: components/receipts/monthly_member_activation.vue
 #: components/receipts/tour_booking_receipt.vue
@@ -10893,6 +11101,9 @@ msgstr "Элиталык саякаттын артыкчылыктары"
 #: components/receipts/hotel_booking_receipt.vue
 #: components/receipts/leadership_bonus_statement.vue
 #: components/receipts/builders_bonus_new.vue components/public/JoinModal.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/hotel_booking/guest_info_step.vue
 #: components/user/notifications.vue pages/login/login.vue
 #: pages/public/signup.vue pages/public/contact.vue
@@ -10917,7 +11128,7 @@ msgstr "Электрондук почта түзүлдү"
 msgid "Email Address:"
 msgstr "Электрондук почта дареги:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Email Blast"
 msgstr "Электрондук почта жардыруусу"
 
@@ -10969,6 +11180,12 @@ msgstr "Электрондук почта:"
 #: pages/contacts.vue
 msgid "email@example.com"
 msgstr "email@example.com"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Email Date"
+msgid "Embarking Date"
+msgstr "Электрондук кат жиберилген күн"
 
 #: pages/glsx.vue pages/gls.vue
 msgid "Embrace the Challenge"
@@ -11184,6 +11401,18 @@ msgstr "Aтыңызды киргизиңиз"
 msgid "Enter new password"
 msgstr "Жаңы сырсөздү киргизиңиз"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Enter Verification Code"
+msgid "Enter notification content"
+msgstr "Ырастоо кодун киргизиңиз"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Enter Verification Code"
+msgid "Enter notification title"
+msgstr "Ырастоо кодун киргизиңиз"
+
 #: pages/login/login.vue pages/public/signup.vue
 msgid "Enter password"
 msgstr "Сырсөздү киргизиңиз"
@@ -11332,7 +11561,8 @@ msgstr ""
 msgid "error"
 msgstr "ката"
 
-#: vue/main.js components/recurring/recurring-cards.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/recurring/recurring-cards.vue
 msgid "Error"
 msgstr "Ката"
 
@@ -11578,11 +11808,12 @@ msgstr "Мурда чакырылгандарды алып салуу"
 msgid "Exclude results with mandatory pre-paid tips"
 msgstr "Милдеттүү алдын ала төлөнүүчү чайпулдарды алып таштаңыз"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
+#: components/reports/filters/exclude_teams.vue
 msgid "Exclude Teams"
 msgstr "Командаларды кошпоңуз"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Excluding Teams"
 msgstr "Командалардан башкасы"
 
@@ -11623,11 +11854,12 @@ msgstr "ЭКСКУРСИЯ 2"
 msgid "EXCURSION 3"
 msgstr "ЭКСКУРСИЯ 3"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -11698,8 +11930,9 @@ msgstr ""
 msgid "Expiration date"
 msgstr "Жарамдуулук мөөнөтү"
 
-#: pages/reports.vue pages/invoices.vue pages/admin_price_match.vue
-#: components/recurring/recurring-cards.vue components/user/invoices.vue
+#: pages/invoices.vue pages/admin_price_match.vue
+#: components/reports/old_reports.vue components/recurring/recurring-cards.vue
+#: components/user/invoices.vue
 msgid "Expiration Date"
 msgstr "Жарамдуулук мөөнөтү"
 
@@ -11723,11 +11956,11 @@ msgstr "Жарамдуулук мөөнөтү (UTC)"
 msgid "Expired"
 msgstr "Мөөнөтү бүттү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Expired Partners"
 msgstr "Мөөнөтү бүткөн өнөктөштөр"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Expired Partners with Pending Invoices"
 msgstr "Күтүүдөгү эсеп-фактуралары менен мөөнөтү бүткөн өнөктөштөр"
 
@@ -11844,6 +12077,18 @@ msgstr ""
 msgid "Failed to create session. Please try again."
 msgstr "Сеанс түзүлгөн жок. Сураныч, кайра аракет кылыңыз."
 
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "Failed to load members"
+msgid "Failed to download users"
+msgstr "Мүчөлөр жүктөлгөн жок"
+
+#: vue/composables/useDownloadCsv.js
+#, fuzzy
+#| msgid "Error generating CSV"
+msgid "Failed to generate CSV"
+msgstr "CSV файлын түзүүдө ката кетти"
+
 #: components/compensation/overview.vue
 msgid "Failed to get compensation layout."
 msgstr "Компенсациянын схемасы алынбай калды."
@@ -11926,6 +12171,13 @@ msgstr ""
 #: components/compensation/overview.vue
 msgid "Failed to save layout."
 msgstr "Макетин сактоо мүмкүн болгон жок."
+
+#: vue/composables/useSendBroadcastPwaNotification.js
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "e-mail & push notifications"
+msgid "Failed to send notification"
+msgstr "электрондук почта & push эскертмелери"
 
 #: components/payout/brightwell/recipient-account.vue
 msgid "Failed to send verification email. Please try again."
@@ -12028,11 +12280,11 @@ msgstr "Тез өсүп жаткан өнөктөштөр"
 msgid "Fast Start"
 msgstr "Ыкчам баштоо"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Bonus"
 msgstr "Ыкчам Баштоо Бонусу"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Earned"
 msgstr "Ыкчам баштоо"
 
@@ -12049,7 +12301,7 @@ msgstr "\"Ыкчам баштоо\" стимулу"
 msgid "FAST START INCENTIVE = $500.00 MD BONUS!"
 msgstr "ЫКЧАМ БАШТОО СЫЙЛЫГЫ = $500.00 MD БОНУС!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Last Month"
 msgstr "Өткөн айдагы ыкчам баштоо"
 
@@ -12059,7 +12311,7 @@ msgstr "Өткөн айдагы ыкчам баштоо"
 msgid "Fast Start Matching"
 msgstr "\"Ыкчам баштоо\" үчүн шайкеш бонус"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start This Month"
 msgstr "Бул айдагы ыкчам баштоо"
 
@@ -12205,9 +12457,10 @@ msgstr "Аталышы боюнча фильтрлөө"
 msgid "Filtering"
 msgstr "Фильтрлөө (чыпкалоо)"
 
-#: components/leader_board_component.vue pages/hotels.vue pages/reports.vue
-#: pages/cruises.vue components/data_table/filter-selection-widget.vue
-#: components/data_table/table.vue components/tours/intours_results.vue
+#: components/leader_board_component.vue pages/hotels.vue pages/cruises.vue
+#: components/data_table/filter-selection-widget.vue
+#: components/data_table/table.vue components/reports/old_reports.vue
+#: components/tours/intours_results.vue
 #: components/partner_cruise_contest/leader_board.vue
 msgid "Filters"
 msgstr "Фильтрлар"
@@ -12366,6 +12619,19 @@ msgstr "Биринчи жооп Орт"
 #: components/admin_field_communicators/field_stats.vue
 msgid "First Start Date"
 msgstr "Биринчи баштоо датасы"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "First Leader"
+msgid "First Up leader"
+msgstr "Биринчи лидер"
+
+#: components/reports/quick_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "First Leader"
+msgid "First Up Leader"
+msgstr "Биринчи лидер"
 
 #: components/admin_field_communicators/field_stats.vue
 msgid "First Year"
@@ -12676,7 +12942,7 @@ msgstr "АКЫСЫЗ"
 msgid "Free and Registered"
 msgstr "Акысыз жана катталган"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Free Plan"
 msgstr "Акысыз план"
 
@@ -12695,6 +12961,8 @@ msgstr "Жума"
 
 #: pages/mercy_ships.vue pages/elevate_registration.vue pages/email.vue
 #: components/cruises_booking/cruise_card.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "From"
 msgstr "баштап"
 
@@ -12780,7 +13048,7 @@ msgstr "Каражаттар алынып салынды. Транзакция �
 msgid "Funds:"
 msgstr "Каражаттар:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Future Bookings"
 msgstr "Келечектеги брондор"
 
@@ -13314,8 +13582,7 @@ msgstr "Конок"
 msgid "Guest Account"
 msgstr "Конок аккаунту"
 
-#: pages/reports.vue pages/track_results.vue
-#: components/hotels/GuestsDropdown.vue
+#: pages/track_results.vue components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsTrigger.vue
 #: components/receipts/hotel_booking_receipt.vue components/user/directs.vue
 msgid "Guests"
@@ -13565,6 +13832,10 @@ msgstr "Тарыхый QBI (БСИ)"
 #: components/compensation/qbi.vue
 msgid "Historical QBI Date Range:"
 msgstr "Тарыхый QBI (БСИ) дата диапазону:"
+
+#: components/reports/old_reports.vue
+msgid "Historical QBI Report"
+msgstr "Тарыхый QBI (БСИ) отчету"
 
 #: components/receipts/tour_booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue
@@ -15906,6 +16177,7 @@ msgid "in Withholding Taxes and"
 msgstr "Салыктарды кармоодо жана"
 
 #: pages/track_results.vue components/compensation/qbi_members_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Inactive"
 msgstr "Активдүү эмес"
 
@@ -15915,7 +16187,7 @@ msgstr "Активдүү эмес"
 msgid "Inactive Balance"
 msgstr "Активдүү эмес баланс"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Inactive Date"
 msgstr "Кыймылсыз дата"
 
@@ -15949,7 +16221,7 @@ msgstr "Сыйлык боюнча Кабардама:"
 msgid "Incentive Program Overview"
 msgstr "Сыйлык Программасына Сереп салуу"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Include"
 msgstr "Камтуу"
 
@@ -16014,6 +16286,12 @@ msgstr "InCruises - Компенсация"
 #: pages/compensation/member_activations.vue
 msgid "InCruises - Member Activation Bonuses"
 msgstr "InCruises - Мүчө активдештирүү бонустары"
+
+#: pages/reports.vue
+#, fuzzy
+#| msgid "inCruises - Receipt"
+msgid "InCruises - Reports"
+msgstr "inCruises - Квитанция"
 
 #: pages/compensation/team_leadership_bonus.vue
 msgid "InCruises - Team Leadership Bonus"
@@ -16721,6 +16999,12 @@ msgstr ""
 "веб-баракчанын суроо-талабынын бир бөлүгү катары браузериңиз тарабынан "
 "жөнөтүлгөн маалыматты чогултушу мүмкүн."
 
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "InCruises Wallet"
+msgid "inCruises Wallet"
+msgstr "InСruises Капчыгы"
+
 #: components/checkout/ProcessorWallet.vue
 msgid "InCruises Wallet"
 msgstr "InСruises Капчыгы"
@@ -16854,7 +17138,8 @@ msgstr ""
 "Кемеге отургузуу учурунда %{infantAgeMax} жашка чейинки ымыркайларга бул "
 "круиздик линияда сүзүүгө уруксат берилбейт."
 
-#: vue/main.js components/compensation/member_activations.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/compensation/member_activations.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/weekly_bonus.vue components/user/permissions.vue
@@ -16925,6 +17210,10 @@ msgstr "Пикселдин ID номерин бул жерге киргизиң�
 #: pages/email.vue
 msgid "Insert your email..."
 msgstr "Электрондук почтаңызды кириңиз..."
+
+#: components/reports/old_reports.vue
+msgid "Insert your message..."
+msgstr "Кабадамыңызды киргизиңиз..."
 
 #: pages/cruise.vue pages/tenth_anniversary_cruises.vue
 #: components/cruises_booking/cabin_price_showcase.vue
@@ -17035,11 +17324,12 @@ msgstr ""
 msgid "Internal Price"
 msgstr "Ички баа"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -17191,7 +17481,8 @@ msgstr "эсеп-фактура"
 msgid "Invoice"
 msgstr "Эсеп-фактура"
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 msgid "Invoice Created"
 msgstr "Эсеп-фактура түзүлдү"
 
@@ -17225,6 +17516,24 @@ msgstr "Эсеп-фактуранын саны"
 msgid "Invoice Statement"
 msgstr "Эсеп-фактура боюнча Маалымат"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Invite Status"
+msgid "Invoice Status"
+msgstr "Чакыруу статусу"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "Invoice Type"
+msgstr "Эсеп-фактура күнү"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Pending Invoices (within 5 days)"
+msgid "Invoice Within First 5 Days"
+msgstr "Күтүүдөгү Эсеп-фактуралар (5 күндүн ичинде)"
+
 #: QuickPayTopBar.vue pages/admin_user_id.vue pages/menu_page.vue
 #: pages/invoices.vue
 msgid "Invoices"
@@ -17238,7 +17547,7 @@ msgstr "Төлөнгөн эсеп-фактуралар"
 msgid "Invoices Pending"
 msgstr "Төлөнө турган эсеп-фактуралар"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Invoices Total"
 msgstr "Жалпы эсеп-фактура"
 
@@ -17779,15 +18088,20 @@ msgstr "KYC Желегине ээ"
 msgid "Kyrgyz"
 msgstr "Кыргызча"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Laminated Presentations"
 msgstr "Ламинацияланган презентациялар"
 
-#: pages/admin_user.vue pages/reports.vue pages/team_documentation_requests.vue
+#: pages/admin_user.vue pages/team_documentation_requests.vue
 #: pages/team_rankings.vue pages/settings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
 #: components/contacts/contact-edit-modal.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#: components/reports/filters/language.vue
 #: components/inchat/user/user_create_room.vue
 msgid "Language"
 msgstr "Тил"
@@ -17795,6 +18109,12 @@ msgstr "Тил"
 #: components/language-reminder.vue
 msgid "Language Reminder"
 msgstr "Тил тууралуу эскертүү"
+
+#: components/reports/filters/language.vue
+#, fuzzy
+#| msgid "Package selected:"
+msgid "languages selected"
+msgstr "Тандалган пакет:"
 
 #: pages/team_rankings.vue components/compensation/overview.vue
 msgid "Last 12 Months"
@@ -17866,6 +18186,12 @@ msgstr "Фамилиясы"
 msgid "Last Name:"
 msgstr "Фамилиясы:"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Rank Achieved"
+msgid "Last Rank Achieved"
+msgstr "Жетишилген даража"
+
 #: pages/admin_emails.vue
 msgid "Last Sent"
 msgstr "Акыркы жөнөтүлгөн"
@@ -17924,7 +18250,7 @@ msgstr "Латвия тили"
 msgid "Layout has been successfully updated."
 msgstr "Макет ийгиликтүү жаңыртылды."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Leader Plan - $49"
 msgstr "Лидердик План- $49"
 
@@ -18177,7 +18503,11 @@ msgstr ""
 "Платформада расмий атыңыз көрсөтүлбөй, дисплей атыңызды колдонууга "
 "мүмкүнчүлүк берет."
 
-#: pages/reports.vue pages/reach.vue
+#: pages/reach.vue components/reports/quick_reports.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Level"
 msgstr "Деңгээл"
 
@@ -18185,7 +18515,7 @@ msgstr "Деңгээл"
 msgid "Level {{ index + 1 }}"
 msgstr "Деңгээл {{ index + 1 }}"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Level Limit"
 msgstr "Деңгээлдин чеги"
 
@@ -18284,6 +18614,11 @@ msgstr "Шилтемелер"
 msgid "List any specific needs"
 msgstr "Бардык өзгөчө муктаждыктарын тизмеси"
 
+#: components/reports/quick_reports.vue
+msgid ""
+"Lists members counting for your QBI metric with days left to count and status"
+msgstr ""
+
 #: components/checkout/ProcessorNetcents.vue
 msgid "Litecoin"
 msgstr "Litecoin"
@@ -18316,11 +18651,11 @@ msgstr "Деңгээлди жүктө"
 msgid "Load more"
 msgstr "Көбүрөөк жүктө"
 
-#: pages/reward_points.vue pages/admin_partner_success.vue pages/reports.vue
+#: pages/reward_points.vue pages/admin_partner_success.vue
 #: pages/webinar_recordings.vue pages/partner_success.vue pages/invoices.vue
 #: pages/track_results.vue pages/cruises.vue
 #: components/payout/wallet-transfers.vue
-#: components/cruises_booking/cabin_step.vue
+#: components/cruises_booking/cabin_step.vue components/reports/old_reports.vue
 #: components/tours/intours_results.vue
 msgid "Load More"
 msgstr "Көбүрөөк Жүктө"
@@ -18728,12 +19063,13 @@ msgstr "Төлөнгөн деп белгилөө"
 msgid "Market Adjustment"
 msgstr "Рынокту жөнгө салуу"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -18783,7 +19119,7 @@ msgstr "Массалык жаңыртуу"
 msgid "Master Controls"
 msgstr "Мастер-Контролдору"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Master Plan - $119"
 msgstr "Мастер План- $119"
 
@@ -18851,6 +19187,10 @@ msgstr "Файлдын максималдуу көлөмү - 25 МБ ошонд�
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Max Lead Time"
 msgstr "Максималдуу Жеткирүү Убактысы"
+
+#: components/reports/filters/max_levels_down.vue
+msgid "Max Levels Down"
+msgstr ""
 
 #: components/filter-chip-range.vue pages/hotels.vue pages/cruises.vue
 #: components/tours/intours_results.vue
@@ -19056,6 +19396,12 @@ msgstr "Мүчөлөрдүн көрсөткүчтөрү"
 msgid "Member reached insider pricing limit"
 msgstr "Мүчө insider pricing баасынын чегине жетти"
 
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Member Reports"
+msgstr "Power отчеттору"
+
 #: pages/admin_user.vue pages/giving_society.vue
 msgid "Member Since"
 msgstr "Төмөңкү күндөн бери Мүчө"
@@ -19091,6 +19437,12 @@ msgstr ""
 #: components/compensation/active_partner_modal.vue
 msgid "Members Counting for my active partner status"
 msgstr "Менин активдүү өнөктөш статусум үчүн эсептеле турган мүчөлөрүм"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Members in your QBI"
+msgid "Members Counting Toward Your QBI"
+msgstr "Сиздин QBI (БСИ) мүчөлөрү"
 
 #: pages/public/membership.vue
 msgid "Members Enjoy Unparalleled Value With"
@@ -19131,11 +19483,25 @@ msgstr ""
 "30 күндүк талап кылынган мөөнөт ичинде төлөм жасабай калган мүчөлөр "
 "эсептерин кайра активдештирмейинче төлөм жүргүзүүнү уланта алышпайт."
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Members With Cruise Bookings & Pending Invoices"
+msgstr "Төлөнбөгөн эсеп-фактуралары бар колдонуучулар"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Members with Pending Invoices"
+msgstr "Төлөнбөгөн эсеп-фактуралары бар колдонуучулар"
+
 #: Footer.vue components/upgrade-marketing-modal.vue pages/referral_links.vue
 #: pages/inviter.vue pages/team_documentation_requests.vue
 #: components/compensation/qbi_members_table.vue
 #: components/cruises/upgrade_premium_drawer.vue
+#: components/reports/quick_reports.vue
 #: components/hotels/upgrade_premium_drawer.vue components/public/Header.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 #: components/navigation/mobile-menu.vue
 #: components/navigation/avatar-dropdown.vue
 #: components/public/webflow/Footer.vue
@@ -19190,15 +19556,15 @@ msgstr "Мүчөлүк Келишими"
 msgid "Membership and Partnership Support"
 msgstr "Мүчөлүк жана өнөктөштүк программаларын колдоо"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Course"
 msgstr "Мүчөлүк курсу"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Created"
 msgstr "Мүчөлүк түзүлдү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Creation Date"
 msgstr "Мүчөлүктүн башталган күн"
 
@@ -19206,15 +19572,21 @@ msgstr "Мүчөлүктүн башталган күн"
 msgid "Membership Date"
 msgstr "Мүчөлүк Күнү"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Membership First Month"
+msgid "Membership Discount"
+msgstr "Мүчөлүктүн биринчи айы"
+
 #: components/upgrade/tiles/checkout-tile.vue
 msgid "Membership First Month"
 msgstr "Мүчөлүктүн биринчи айы"
 
-#: pages/reports.vue components/welcome/members-modal.vue
+#: components/welcome/members-modal.vue components/reports/old_reports.vue
 msgid "Membership free"
 msgstr "Акысыз Мүчөлүк"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Free Date"
 msgstr "Акысыз Мүчөлүк баштатылган күн"
 
@@ -19222,7 +19594,7 @@ msgstr "Акысыз Мүчөлүк баштатылган күн"
 msgid "Membership Free Directs:"
 msgstr "Акысыз Мүчөлүк менен Түз:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Free Last Month"
 msgstr "Акысыз Мүчөлүктүн Акыркы Айы"
 
@@ -19232,6 +19604,12 @@ msgstr "Мүчөлүк Акысыз!"
 
 #: pages/admin_user_id.vue pages/settings.vue
 msgid "Membership Info"
+msgstr "Мүчөлүк тууралуу Маалымат"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Membership Info"
+msgid "Membership Invoice"
 msgstr "Мүчөлүк тууралуу Маалымат"
 
 #: pages/public/payment_terms.vue
@@ -19250,7 +19628,7 @@ msgstr ""
 msgid "Membership plan"
 msgstr "Мүчөлүк планы"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Plan"
 msgstr "Мүчөлүк планы"
 
@@ -19277,6 +19655,12 @@ msgstr "Мүчөлүк статусу"
 #: components/welcome/members-modal.vue components/user/directs.vue
 msgid "Membership Type"
 msgstr "Мүчөлүктүн Түрү"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Membership Free Date"
+msgid "Membership Upgrades & Downgrades"
+msgstr "Акысыз Мүчөлүк баштатылган күн"
 
 #: pages/referral_links.vue
 msgid "Membership Video"
@@ -19342,8 +19726,9 @@ msgstr "Бириктирилди"
 msgid "message"
 msgstr "кабардама"
 
-#: pages/referral_widget.vue pages/reports.vue pages/support.vue
-#: components/support/AdminCreateTicket.vue pages/public/contact.vue
+#: pages/referral_widget.vue pages/support.vue
+#: components/support/AdminCreateTicket.vue components/reports/old_reports.vue
+#: components/reports/send_push_notification_modal.vue pages/public/contact.vue
 msgid "Message"
 msgstr "Кабардама"
 
@@ -19444,6 +19829,10 @@ msgstr "мүнөттөр"
 #: components/cards/countdown-card.vue components/public/tgc-countdown.vue
 msgid "Minutes"
 msgstr "Мүнөттөр"
+
+#: vue/composables/useSendBroadcastPwaNotification.js
+msgid "Missing required parameters: title, body, and account_ids array"
+msgstr ""
 
 #: pages/admin_missing_sales.vue
 msgid "Missing Sales - InCruises"
@@ -19636,6 +20025,7 @@ msgid "More for Less"
 msgstr "Азыраак төлөп көбүрөөк"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/avatar_column.vue
 msgid "more info"
 msgstr "көбүрөөк маалымат"
 
@@ -19935,6 +20325,12 @@ msgstr "Менин байланыш маалыматым"
 msgid "My Cruise Savings"
 msgstr "Менин круизден үнөмдөөм"
 
+#: components/reports/filters/my_directs.vue
+#, fuzzy
+#| msgid "Directs"
+msgid "My Directs"
+msgstr "Түзөтөт"
+
 #: pages/menu_page.vue
 msgid "My Reach"
 msgstr "Менин камтуум"
@@ -19966,7 +20362,7 @@ msgstr "N/A"
 #: pages/admin_account_recovery.vue pages/admin_partner_success.vue
 #: pages/negative_balances.vue pages/gls.vue pages/admin_user.vue
 #: pages/banner_tracking.vue pages/new_ranks.vue pages/mercy_ships.vue
-#: pages/reports.vue pages/admin_permission_group.vue pages/partner_success.vue
+#: pages/admin_permission_group.vue pages/partner_success.vue
 #: pages/team_documentation_requests.vue pages/admin_department.vue
 #: pages/contacts.vue pages/builders_base.vue pages/team_rankings.vue
 #: pages/settings.vue pages/duplicator.vue pages/track_results.vue
@@ -19990,6 +20386,7 @@ msgstr "N/A"
 #: components/settings_page/modify-saved-passengers.vue
 #: components/skeleton_loaders/card_animation.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
 #: components/receipts/monthly_member_activation.vue
 #: components/receipts/tour_booking_receipt.vue
 #: components/receipts/new_residual_bonus_statement.vue
@@ -20011,6 +20408,9 @@ msgstr "N/A"
 #: components/receipts/builders_bonus_new.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/business_intelligence/comp_to_sales.vue
 #: components/user/permissions.vue components/user/permission-assignation.vue
 #: components/user/department.vue components/user/permission-group.vue
@@ -20071,12 +20471,12 @@ msgstr "Ысым:"
 msgid "Named in honor of our founding year, the"
 msgstr "Биздин негизделген жылыбыздын урматына аталган"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue pages/settings.vue
-#: components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: pages/settings.vue components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -20236,7 +20636,7 @@ msgstr ""
 msgid "Nevermind"
 msgstr "Маанилүү эмес"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New"
 msgstr "Жаңы"
 
@@ -20252,15 +20652,22 @@ msgstr "ЖАҢЫ форматтагы ламинацияланган презе�
 msgid "New Group {{ selectedNamespace }}"
 msgstr "Жаңы топ {{ selectedNamespace }}"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Guests"
+msgid "New Guests"
+msgstr "Коноктор"
+
 #: pages/reservations.vue
 msgid "New inTours Feature Available!"
 msgstr "Жаңы inTours функциясы жеткиликтүү!"
 
-#: pages/resources.vue components/growth_calculator/potential_leadership.vue
+#: pages/resources.vue components/reports/quick_reports.vue
+#: components/growth_calculator/potential_leadership.vue
 msgid "New Members"
 msgstr "Жаңы Мүчөлөр"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Membership Free"
 msgstr "Жаңы Акысыз Мүчөлүк"
 
@@ -20269,7 +20676,7 @@ msgid "New Message"
 msgstr "Жаңы Кабардама"
 
 #: pages/resources.vue pages/new_partners_tracker.vue
-#: pages/new_partners_tracker_goals.vue
+#: pages/new_partners_tracker_goals.vue components/reports/quick_reports.vue
 msgid "New Partners"
 msgstr "Жаңы Өнөктөштөр"
 
@@ -20277,7 +20684,7 @@ msgstr "Жаңы Өнөктөштөр"
 msgid "NEW Partners Last Month"
 msgstr "Акыркы айдагы ЖАҢЫ Өнөктөштөр"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Partners Last Month (10 Levels)"
 msgstr "Өткөн айдагы Жаңы Өнөктөшөр (10 Деңгээл)"
 
@@ -20289,7 +20696,7 @@ msgstr "Ушул айдагы Жаңы Өнөктөштөр"
 msgid "NEW Partners This Month"
 msgstr "Ушул айдагы ЖАҢЫ Өнөктөштөр"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Partners This Month (10 Levels)"
 msgstr "Ушул айдагы Жаңы Өнөктөштөр (10 деңгээл)"
 
@@ -20336,25 +20743,31 @@ msgstr "Жаңы рангдар"
 msgid "New ranks are updated on or after the 10th of each month."
 msgstr "Жаңы рейтингдер ар бир айдын 10унда же андан кийин жаңыртылып турат."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks last month"
 msgstr "Өткөн айдын жаңы рангдары"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks Last Month"
 msgstr "Өткөн Айдын Жаңы Рангдары"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks this month"
 msgstr "Ушул айдын жаңы рангдары"
 
-#: pages/new_ranks.vue pages/reports.vue
+#: pages/new_ranks.vue components/reports/old_reports.vue
 msgid "New Ranks This Month"
 msgstr "Ушул Айдын Жаңы Рангдары"
 
 #: components/user/basic-info.vue
 msgid "New Referrer ID is Invalid"
 msgstr "Жаңы реферердин ID жараксыз"
+
+#: pages/reports.vue
+#, fuzzy
+#| msgid "New Message"
+msgid "New Reports Page"
+msgstr "Жаңы Кабардама"
 
 #: pages/support.vue
 msgid "New Ticket"
@@ -20422,8 +20835,9 @@ msgstr "Кийинки жеткиликтүү"
 msgid "Next billing date"
 msgstr "Кийинки төлөм күнү"
 
-#: pages/reports.vue pages/team_rankings.vue pages/track_results.vue
+#: pages/team_rankings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
+#: components/reports/old_reports.vue
 msgid "Next Billing Date"
 msgstr "Кийинки Төлөм Күнү"
 
@@ -20431,9 +20845,28 @@ msgstr "Кийинки Төлөм Күнү"
 msgid "Next Billing:"
 msgstr "Кийинки Төлөм:"
 
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Create Invoice"
+msgid "Next Invoice"
+msgstr "Эсеп-фактура түзүңүз"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Membership Info"
+msgid "Next Membership Invoice"
+msgstr "Мүчөлүк тууралуу Маалымат"
+
 #: components/payout/wallet-transfers.vue
 msgid "Next Month"
 msgstr "Кийинки Ай"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Partnership Video"
+msgid "Next Partnership Invoice"
+msgstr "Өнөктөштүк тууралуу видео"
 
 #: pages/checkout.vue
 msgid "Next Payment Month:"
@@ -20508,6 +20941,12 @@ msgstr "Маалымат жок"
 msgid "No data available for download"
 msgstr "Жүктөө үчүн маалымат жеткиликтүү эмес"
 
+#: vue/composables/useDownloadCsv.js
+#, fuzzy
+#| msgid "No data available for download"
+msgid "No data to download"
+msgstr "Жүктөө үчүн маалымат жеткиликтүү эмес"
+
 #: pages/hotels.vue
 msgid "No destination options available."
 msgstr "Бара турган жерлердин варианты жок"
@@ -20569,7 +21008,7 @@ msgstr "Ысым импорттолбоду"
 msgid "No Obligation, No Cost"
 msgstr "Эч кандай милдеттенме, чыгым жок"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "No Plan"
 msgstr "План жок"
 
@@ -20586,7 +21025,7 @@ msgstr "Даражасы жок"
 msgid "No receipts available at this time."
 msgstr "Азырынча эсеп-фактуралар жеткиликтүү эмес."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "No Recurring Billing"
 msgstr "Кайталанган төлөмдөр жок"
 
@@ -20806,6 +21245,7 @@ msgid "Non-Refundable Fare"
 msgstr "Кайтарылбаган тариф"
 
 #: pages/track_results.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "None"
 msgstr "Жок"
 
@@ -20860,7 +21300,7 @@ msgstr "Жеткиликтүү эмес"
 msgid "Not available for this cruise line"
 msgstr "Бул круиздик линия үчүн жеткиликтүү эмес"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Not Completed"
 msgstr "Аяктала элек"
 
@@ -21395,15 +21835,15 @@ msgstr ""
 "тарифтерин кошпойт . Ал ошондой эле ичинде табылган төмөнкү тарифтерге гана "
 "тиешелүү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Members or Partner Members."
 msgstr "Мүчөлөрдү же Өнөктөш мүчөлөрдү тандаганда гана жеткиликтүү."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Partners or Partner Members."
 msgstr "Өнөктөштөрдү же Өнөктөш мүчөлөрдү тандаганда гана жеткиликтүү."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Pending Members."
 msgstr "Күтүүдөгү мүчөлөрдү тандоодо гана жеткиликтүү."
 
@@ -21450,7 +21890,7 @@ msgstr ""
 msgid "Only Roman/Latin alphabet letters (A-Z)."
 msgstr "Рим/латын алфавитинин тамгалары гана (A-Z)"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only select one course per report."
 msgstr "Ар бир отчет үчүн бир гана курс тандаңыз."
 
@@ -21554,6 +21994,12 @@ msgstr "Буюртма боюнча эскертмелер:"
 #: components/receipts/italian_receipt.vue
 msgid "Order Number"
 msgstr "Заказдын номери"
+
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Other Reports"
+msgstr "Power отчеттору"
 
 #: components/support/OtherUserTickets.vue components/support/TicketViewer.vue
 msgid "Other User Tickets"
@@ -21763,6 +22209,13 @@ msgstr "Технологиянын жалпы чечимдери - КҮМҮШ С
 msgid "Overall Training Program - SILVER AWARD"
 msgstr "Жалпы билим беруу программасы- КҮМҮШ СЫЙЛЫК"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Overview"
+msgid "Overdue"
+msgstr "Сереп"
+
 #: pages/tours_details.vue pages/hotels_details.vue pages/menu_page.vue
 #: pages/info_center.vue pages/business_performance.vue
 #: components/reservations/tour-details.vue
@@ -21892,7 +22345,7 @@ msgstr "Өз каражатынан төлөндү"
 msgid "Paid out on %{date}"
 msgstr "Төлөм %{date} күнү жасалды"
 
-#: pages/reports.vue pages/info_center.vue
+#: pages/info_center.vue components/reports/old_reports.vue
 msgid "Paid Partners Last Month"
 msgstr "Өткөн айда төлөнгөн өнөктөштөр"
 
@@ -21900,11 +22353,11 @@ msgstr "Өткөн айда төлөнгөн өнөктөштөр"
 msgid "Paid Partners Only"
 msgstr "Акы төлөнүүчү өнөктөштөр гана"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Paid Partners This Month"
 msgstr "Бул айда акы төлөнүүчү өнөктөштөр"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Paid Plans"
 msgstr "Акы төлөнүүчү пландар"
 
@@ -21974,7 +22427,7 @@ msgstr "Өнөктөш/Мүчө эмес"
 msgid "Partner / Pending Member"
 msgstr "Өнөктөш/Күтүүдөгү Мүчө"
 
-#: pages/additional_info.vue pages/reports.vue
+#: pages/additional_info.vue components/reports/old_reports.vue
 msgid "Partner Access Only"
 msgstr "Өнөктөштөр үчүн гана жеткиликтүү"
 
@@ -22185,6 +22638,18 @@ msgstr ""
 msgid "Partner Refund And Compress"
 msgstr "Өнөктөштүн каражаттарын кайтаруу жана кыскартуу"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners That Will Be Renewing Next Month"
+msgid "Partner Renewing Next Month"
+msgstr "Кийинки айда жаңылана турган Өнөктөштөр"
+
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Partner Reports"
+msgstr "Power отчеттору"
+
 #: pages/italian_onboarding.vue
 #: components/compensation/active_partner_modal.vue
 #: components/compensation/my_team_breakdown_table.vue
@@ -22232,12 +22697,12 @@ msgstr ""
 msgid "Partner VAT / Tax Code"
 msgstr "Өнөктөш КНС / Салык кодекси"
 
-#: pages/reports.vue pages/track_growth.vue
+#: pages/track_growth.vue components/reports/old_reports.vue
 msgid "Partner-Members"
 msgstr "Өнөктөш-мүчөлөр"
 
-#: pages/referral_links_old.vue pages/reports.vue
-#: pages/new_partners_tracker.vue pages/track_growth.vue pages/apps.vue
+#: pages/referral_links_old.vue pages/new_partners_tracker.vue
+#: pages/track_growth.vue pages/apps.vue components/reports/old_reports.vue
 #: components/high_risk/high_risk_fingerprints.vue
 #: components/business_performance/NewDirectsEnrolled.vue
 #: components/business_performance/TeamActiveEnrollments.vue
@@ -22261,6 +22726,18 @@ msgstr "Өнөктөштөр <br> <small>(5 деңгээл)</small>"
 msgid "Partners are Membership Free."
 msgstr "Мүчөлүгү Акысыз Өнөктөштөр ."
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Ineligible for compensation"
+msgid "Partners Eligible for Compensation"
+msgstr "Компенсацияга жарамдуу"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners are Membership Free."
+msgid "Partners Eligible For Membership Free"
+msgstr "Мүчөлүгү Акысыз Өнөктөштөр ."
+
 #: pages/public/partnership.vue
 msgid "Partners enjoy an unparalleled opportunity"
 msgstr "Өнөктөштөр теңдешсиз мүмкүнчүлүккө ээ"
@@ -22281,26 +22758,74 @@ msgstr "Өнөктөштөр 12 айлык мөөнөттө 10 000 доллар�
 msgid "Partners have reached the International Director or Above rank."
 msgstr "Өнөктөштөр Эл аралык Директор же андан Жогору рангга жетишти."
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Understanding Builders Base Bonus"
+msgid "Partners Pending to Receive Builders Base Bonus"
+msgstr "Курулушчулардын базалык бонусун түшүнүү"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "You have no direct partners currently eligible for Fast Start."
+msgid "Partners Still Eligible for Fast Start"
+msgstr "Учурда Fast Start үчүн жарамдуу түз өнөктөштөрүңүз жок."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Potential Fast Start Matching"
+msgid "Partners Still Eligible for Fast Start Matching"
+msgstr "\"Ыкчам баштоо\" үчүн потенциалдуу Шайкеш бонус"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Potential Team Leadership Bonus"
+msgid "Partners Team Leadership Performance"
+msgstr "Потенциалдуу Команда лидерлиги бонусу"
+
+#: components/reports/old_reports.vue
 msgid "Partners That Have Not Renewed"
 msgstr "Жаңыланбаган Өнөктөштөр"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partners That Will Be Renewing Next Month"
 msgstr "Кийинки айда жаңылана турган Өнөктөштөр"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partner Activation Date"
+msgid "Partners Who Achieved Fast Start"
+msgstr "Өнөктөштү Активдештирүү Күнү"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partner with travel agencies"
+msgid "Partners with New Ranks"
+msgstr "Туристтик агенттиктер менен кызматташуу"
 
 #: Footer.vue pages/referral_links.vue pages/inviter.vue pages/upgrade.vue
 #: components/public/Header.vue components/public/webflow/Footer.vue
 msgid "Partnership"
 msgstr "Өнөктөштүк"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partnership Created"
 msgstr "Өнөктөштүк түзүлдү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partnership Creation Date"
 msgstr "Өнөктөштүк башталган күн"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Partnership Video"
+msgid "Partnership Invoice"
+msgstr "Өнөктөштүк тууралуу видео"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners That Have Not Renewed"
+msgid "Partnership Not Renewed"
+msgstr "Жаңыланбаган Өнөктөштөр"
 
 #: pages/subscriptions.vue pages/upgrade.vue pages/public/faq.vue
 #: pages/public/testimonials.vue components/upgrade/tiles/checkout-tile.vue
@@ -22539,6 +23064,19 @@ msgstr ""
 msgid "Payment Fulfillment"
 msgstr "Төлөмдүн аткарылышы"
 
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Add Payment Method"
+msgid "Payment Method"
+msgstr "Төлөм ыкмасын кошуңуз"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Add Payment Method"
+msgid "Payment Methods"
+msgstr "Төлөм ыкмасын кошуңуз"
+
 #: pages/payment_protection.vue
 msgid "Payment Protection"
 msgstr "Төлөм Коргоосу"
@@ -22621,6 +23159,7 @@ msgstr "Paypal"
 #: components/welcome/members-modal.vue components/support/TicketList.vue
 #: components/compensation/qbi_members_table.vue
 #: components/admin_finance/cruise_bookings.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Pending"
 msgstr "Күтүлүүдө"
 
@@ -22628,11 +23167,11 @@ msgstr "Күтүлүүдө"
 msgid "Pending Builder's Base"
 msgstr "Күтүүдөгү Куруучунун Базасы"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Builders Base"
 msgstr "Күтүүдөгү Куруучулардын Базасы"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Builders Base Members"
 msgstr "Күтүүдөгү Куруучулар Базасынын Мүчөлөрү"
 
@@ -22648,11 +23187,12 @@ msgstr "Күтүүдөгү Чакыруулар"
 msgid "Pending Invoice"
 msgstr "Күтүүдөгү Эсеп-фактуралар"
 
-#: pages/reports.vue pages/invoices.vue components/user/invoices.vue
+#: pages/invoices.vue components/reports/old_reports.vue
+#: components/user/invoices.vue
 msgid "Pending Invoices"
 msgstr "Күтүүдөгү Эсеп-фактуралар"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Invoices (within 5 days)"
 msgstr "Күтүүдөгү Эсеп-фактуралар (5 күндүн ичинде)"
 
@@ -22668,7 +23208,7 @@ msgstr "Күтүүдөгү Мүчө"
 msgid "Pending Member Invoice"
 msgstr "Күтүүдөгү мүчөнүн эсеп-фактурасы"
 
-#: pages/reports.vue components/compensation/qbi-details.vue
+#: components/compensation/qbi-details.vue components/reports/old_reports.vue
 msgid "Pending Members"
 msgstr "Күтүүдөгү Мүчөлөр"
 
@@ -22695,6 +23235,10 @@ msgstr "Күтүүдөгү өнөктөштүк жаңыртуусу"
 #: components/admin_finance/cruise_bookings.vue
 msgid "Pending Payments"
 msgstr "Күтүүдөгү төлөмдөр"
+
+#: components/reports/old_reports.vue
+msgid "Pending QBI Report"
+msgstr "Күтүүдөгү QBI (БСИ) отчету"
 
 #: pages/invoices.vue
 msgid "Pending Transaction"
@@ -22810,13 +23354,17 @@ msgstr "Телефон"
 msgid "Phone (optional)"
 msgstr "Телефон (милдетүү эмес)"
 
-#: pages/reports.vue pages/settings.vue
+#: pages/settings.vue components/reports/old_reports.vue
 msgid "Phone #"
 msgstr "Телефон #"
 
-#: components/fast-growing-legs.vue pages/reports.vue pages/settings.vue
-#: pages/multi_factor.vue components/cruises_booking/passenger_info_step.vue
+#: components/fast-growing-legs.vue pages/settings.vue pages/multi_factor.vue
+#: components/cruises_booking/passenger_info_step.vue
 #: components/settings_page/modify-saved-passengers.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/hotel_booking/guest_info_step.vue components/top_bar/Connect.vue
 #: pages/public/signup.vue
 msgid "Phone Number"
@@ -23429,7 +23977,7 @@ msgstr "Күтүүдөгү эсеп-фактурасын төлөңүз."
 msgid "Please provide a check-in and check-out date before searching"
 msgstr "Сураныч, издөөнү баштоодон мурун кирүү жана чыгуу күндөрүн белгилеңиз"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "Please provide a Date From and Date To. If not, reset filters at the top of "
 "the page."
@@ -23852,7 +24400,8 @@ msgstr "Тур тууралу маалыматтарды чогултканча 
 msgid "Please wait while we redirect you back to inCruises®."
 msgstr "Сураныч, сизди кайра inCruises® баракчасына багыттообузду күтүңүз."
 
-#: pages/compensation.vue components/compensation/fast_start_matching.vue
+#: pages/reports.vue pages/compensation.vue
+#: components/compensation/fast_start_matching.vue
 #: components/compensation/fast_start.vue components/compensation/overview.vue
 #: pages/compensation/recurring_income.vue
 #: pages/compensation/member_activations.vue
@@ -24099,6 +24648,7 @@ msgstr ""
 msgid "Premium"
 msgstr "Premium"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 msgid "PREMIUM"
@@ -24128,7 +24678,7 @@ msgstr "Премиум Мүчө"
 msgid "PREMIUM Member"
 msgstr "PREMIUM мүчө"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Premium Members"
 msgstr "Премиум Мүчөлөр"
 
@@ -24716,12 +25266,18 @@ msgstr ""
 "берүүнү талап кыла алышат. Сураныч, так маалымат үчүн Өнөктөштүк келишимди "
 "караңыз."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Push Blast"
 msgstr "Blastы басыңыз"
 
 #: pages/push_notifications_center.vue
 msgid "Push Notifications Center"
+msgstr "Push эскертмелер борбору"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Push Notifications Sent"
 msgstr "Push эскертмелер борбору"
 
 #: components/payout/brightwell/recipient-account-details.vue
@@ -24747,12 +25303,12 @@ msgstr "PWA"
 msgid "PWA vs News App"
 msgstr "PWA же жаңылык колдонмосу"
 
-#: pages/reports.vue components/compensation/qbi.vue
-#: components/compensation/builders_bonus.vue
+#: components/compensation/qbi.vue components/compensation/builders_bonus.vue
 #: components/compensation/fast_start_matching.vue
 #: components/compensation/fast_start.vue
 #: components/compensation/old_compensation.vue
-#: components/compensation/team.vue pages/compensation/recurring_income.vue
+#: components/compensation/team.vue components/reports/old_reports.vue
+#: pages/compensation/recurring_income.vue
 #: pages/compensation/member_activations.vue
 #: pages/compensation/weekly_matching_bonus.vue pages/compensation/qbi.vue
 #: pages/compensation/builders_base_bonus.vue
@@ -24780,7 +25336,7 @@ msgstr "QBI (БСИ) чоо-жайы"
 msgid "QBI Update Notice"
 msgstr "БСИ жаңыртуусу жөнүндө билдирүү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "QBI: Pending Members"
 msgstr "QBI: Күтүүдөгү Мүчөлөр"
 
@@ -24886,7 +25442,9 @@ msgstr "Ыкчам жетүү"
 msgid "Quick Member View"
 msgstr "Ыкчам мүчө көрүнүшү"
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/reports/new_reports.vue
+#: components/reports/quick_reports_modal/index.vue
 msgid "Quick Reports"
 msgstr "Ыкчам отчеттор"
 
@@ -24927,7 +25485,7 @@ msgstr "Даражалар жана кирешелер диаграммасы"
 msgid "Rank Breakdown"
 msgstr "Даража боюнча бөлүштүрүлүшү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Rank Certificate"
 msgstr "Ранг сертификаты"
 
@@ -24943,7 +25501,7 @@ msgstr "Даражалык бөлүмдөр"
 msgid "Rank Maintained"
 msgstr "Даражасы сакталды"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Rank Status"
 msgstr "Ранг абалы"
 
@@ -25213,7 +25771,7 @@ msgstr "Виджеттин реалдуу убакыттагы алдын ала
 msgid "Reason"
 msgstr "Себеп"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Reattained"
 msgstr "Калыбына келтирилген"
 
@@ -25345,7 +25903,8 @@ msgstr "Жаздыруулар"
 msgid "Recurring"
 msgstr "Кайталануучу"
 
-#: pages/reports.vue components/admin_field_communicators/field_stats.vue
+#: components/reports/old_reports.vue
+#: components/admin_field_communicators/field_stats.vue
 msgid "Recurring Billing"
 msgstr "Кайталануучу эсеп"
 
@@ -25404,6 +25963,19 @@ msgstr "Кайталануучу айлык чыгым"
 #: components/compensation/recurring_income_levels.vue
 msgid "Recurring Multiplier"
 msgstr "Кайталануучу мультипликатор"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Recurring Payment Terms"
+msgid "Recurring payment"
+msgstr "Кайталануучу төлөм шарттары"
+
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Recurring Payment Terms"
+msgid "Recurring Payment"
+msgstr "Кайталануучу төлөм шарттары"
 
 #: components/recurring/rpm-onboarding-invoices.vue
 msgid "Recurring Payment Agreement Terms"
@@ -25503,6 +26075,7 @@ msgstr "Рефералдык иш-аракет"
 
 #: pages/admin_user.vue pages/team_rankings.vue pages/account_setup.vue
 #: components/compensation/leadership_bonus.vue
+#: components/reports/quick_reports.vue
 msgid "Referral Link"
 msgstr "Рефералдык шилтеме"
 
@@ -25603,12 +26176,13 @@ msgstr "Аймак"
 msgid "Region:"
 msgstr "Аймак:"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -25794,10 +26368,29 @@ msgid "Report will not show accurate results until the 10th of each month."
 msgstr "Эсеп ар бир айдын 10ундан кийинки так натыйжаларды көрсөтпөйт."
 
 #: pages/welcome.vue pages/menu_page.vue pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Reports"
 msgstr "Отчеттор"
 
-#: pages/reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Reports - Members with Pending Invoices"
+msgstr "Төлөнбөгөн эсеп-фактуралары бар колдонуучулар"
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "You have no direct partners currently eligible for Fast Start."
+msgid "Reports - Partners Still Eligible for Fast Start"
+msgstr "Учурда Fast Start үчүн жарамдуу түз өнөктөштөрүңүз жок."
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Enable Recurring Payments"
+msgid "Reports - Users Recurring Payment Status"
+msgstr "Кайталануучу төлөмдөрдү жандырыңыз"
+
+#: components/reports/old_reports.vue
 msgid ""
 "Reports are real-time viewable and downloadable reports for just about every "
 "aspect of your business. You can download reports for recognition purposes "
@@ -25918,7 +26511,8 @@ msgstr "Кайра орнотуу"
 msgid "Reset Columns"
 msgstr "Тилкелерди калыбына келтирүү"
 
-#: pages/reports.vue components/data_table/filter-selection-widget.vue
+#: components/data_table/filter-selection-widget.vue
+#: components/reports/old_reports.vue
 msgid "Reset Filters"
 msgstr "Чыпкаларды калыбына келтирүү"
 
@@ -25969,15 +26563,15 @@ msgstr "Ырастоону кайра баштоо"
 msgid "result"
 msgstr "натыйжа"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit"
 msgstr "Жыйынтык чеги"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit must be a number!"
 msgstr "Жыйынтык чеги сан болушу керек!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit must be set between 100 and 25000."
 msgstr "Жыйынтык чеги 100 жана 25000 ортосунда болушу керек."
 
@@ -26296,11 +26890,11 @@ msgstr "Колдонулган БУ"
 msgid "RP used!"
 msgstr "БУ колдонулду!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Run Quick Report"
 msgstr "Ыкчам Отчетту Иштетүү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Run Report"
 msgstr "Отчетту Иштетүү"
 
@@ -26450,6 +27044,7 @@ msgstr "Үнөмдөө кепилдиги"
 #: components/partner_cruise_contest/leader_board.vue
 #: components/recurring/recurring-cards.vue components/blog/blog_list.vue
 #: components/public/blog_category_search.vue
+#: components/reports/quick_reports_modal/search-input.vue
 #: components/tours/details/available-plans.vue
 #: components/inchat/search/search-people.vue
 msgid "Search"
@@ -26481,6 +27076,7 @@ msgid "Search Contacts"
 msgstr "Байланыштарды издөө"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/filters/country.vue
 msgid "Search Country"
 msgstr "Өлкө боюнча издөө"
 
@@ -26505,6 +27101,7 @@ msgid "Search for your question"
 msgstr "Сурооңуз боюнча издөө"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/filters/language.vue
 msgid "Search Language"
 msgstr "Тилди издеңиз"
 
@@ -26548,6 +27145,12 @@ msgstr "Издөөнүн жыйынтыгы"
 #: components/inchat/user_list_inchat.vue
 msgid "Search rooms"
 msgstr "Бөлмөлөрдү издөө"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Search Tours"
+msgid "Search Teams"
+msgstr "Турларды издөө"
 
 #: pages/notifications.vue
 msgid "Search this month..."
@@ -26948,13 +27551,31 @@ msgstr "Тандалган"
 msgid "Selected cabin category"
 msgstr "Танланган каютанын категориясы"
 
+#: components/reports/filters/country.vue
+#, fuzzy
+#| msgid "Selected Country:"
+msgid "Selected Countries"
+msgstr "Тандалган өлкө:"
+
 #: components/inchat/user/user_create_room.vue
 msgid "Selected Country:"
 msgstr "Тандалган өлкө:"
 
+#: components/reports/filters/language.vue
+#, fuzzy
+#| msgid "Select a Language"
+msgid "Selected Languages"
+msgstr "Тилди тандаңыз"
+
 #: pages/elevate_registration.vue
 msgid "Selected Package"
 msgstr "Тандалган тариф"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Select Tag"
+msgid "Selected Teams"
+msgstr "Тегди тандаңыз"
 
 #: components/public/FooterLinks.vue
 msgid "Seller of Travel"
@@ -26972,11 +27593,11 @@ msgstr "Сатуучу:"
 msgid "Selling Rate"
 msgstr "Сатуу тарифи"
 
-#: pages/inviter.vue pages/reports.vue
+#: pages/inviter.vue components/reports/old_reports.vue
 msgid "Send"
 msgstr "Жөнөтүү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Send a Push Blast"
 msgstr "Push Blast жөнөтүү"
 
@@ -26984,7 +27605,7 @@ msgstr "Push Blast жөнөтүү"
 msgid "Send Amount"
 msgstr "Сумманы жөнөтүү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Send an Email"
 msgstr "Электрондук кат жөнөтүү"
 
@@ -27026,6 +27647,12 @@ msgstr "Кабардама жөнөтүү"
 msgid "Send money"
 msgstr "Акча жөнөтүү"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Notification"
+msgid "Send Notification"
+msgstr "Эскертме"
+
 #: pages/referral_links.vue
 msgid "Send personalized emails and invite people to join InCruises."
 msgstr ""
@@ -27045,6 +27672,18 @@ msgstr ""
 "Досторуңузга жеке чакырууларды жөнөтүңүз. Эгер алар сиз жөнөткөн шилтемеге "
 "басып, биздин баракчабызга катталса, сиз автоматтык түрдө кредит аласыз. "
 "Каалаганыңызча чакыруу шилтемеси жөнөтсөңүз болот."
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Send Push Notification"
+msgstr "Push эскертмелер борбору"
+
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Send Push Notifications"
+msgstr "Push эскертмелер борбору"
 
 #: pages/contacts.vue
 msgid "Send reminder"
@@ -27066,6 +27705,12 @@ msgstr "Sendgrid"
 msgid "Sending"
 msgstr "Жөнөтүү"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Sending Push Notifications to %{count} records..."
+msgstr "Push эскертмелер борбору"
+
 #: pages/admin_sendgrid.vue
 msgid "Sengrid Contacts"
 msgstr "Sengrid байланыштары"
@@ -27074,12 +27719,13 @@ msgstr "Sengrid байланыштары"
 msgid "Senior Managers and Advisors"
 msgstr "Улук менеджерлер жана кеңешчилер"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -27121,15 +27767,15 @@ msgstr ""
 "Улгайган жүргүнчүлөр: Сиздин группаңызда 55 жаштан жогору мүчө бар болсо, "
 "кабардаңыз."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader"
 msgstr "Команданын Сеньор жетекчиси"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader Last Month"
 msgstr "Өткөн Айда Команданын Сеньор Лидери"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader This Month"
 msgstr "Учурдагы айда Команданын Сеньор Лидери"
 
@@ -27453,7 +28099,7 @@ msgstr "Командаларды көрсөтүү"
 msgid "Show Web-Registration"
 msgstr "Веб катталууну көрсөтүү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Showing All Teams"
 msgstr "Бардык командалар көрсөтүлүүдө"
 
@@ -27485,6 +28131,12 @@ msgstr "Катталуу"
 
 #: components/high_risk/high_risk_accounts.vue
 msgid "Signup Date"
+msgstr "Катталуу датасы"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Signup Date"
+msgid "SignUp Date"
 msgstr "Катталуу датасы"
 
 #: pages/referral_links_old.vue
@@ -27808,11 +28460,14 @@ msgid ""
 "Spectacular sights and amazing views from the comfort of your stateroom."
 msgstr "Каютанын терезесинен укмуштуудай керемет көрүнүштөр ачылат."
 
-#: pages/reports.vue components/compensation/members-qbi-modal.vue
+#: components/compensation/members-qbi-modal.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Sponsor"
 msgstr "Спонсор"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Sponsor / Upline"
 msgstr "Спонсор / Өйдө"
 
@@ -27914,6 +28569,7 @@ msgstr "Баштоо:"
 msgid "Starter"
 msgstr "Starter"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 msgid "STARTER"
 msgstr "STARTER"
@@ -27927,7 +28583,7 @@ msgstr "Башталгыч мүчө"
 msgid "STARTER Member"
 msgstr "STARTER Мүчөсү"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Starter Members"
 msgstr "Башталгыч мүчөлөр"
 
@@ -27935,7 +28591,7 @@ msgstr "Башталгыч мүчөлөр"
 msgid "STARTER PLAN"
 msgstr "БАШТАПКЫ ПЛАН"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Starter Plan - $0"
 msgstr "Баштапкы план - $0"
 
@@ -28038,8 +28694,10 @@ msgstr "статус"
 #: components/invoices/invoice.vue components/compensation/leadership_bonus.vue
 #: components/compensation/recurring_income_levels.vue
 #: components/compensation/qbi_members_table.vue
+#: components/reports/quick_reports.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/growth_calculator/potential_leadership.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/user/invoices.vue
 msgid "Status"
 msgstr "Статус"
@@ -28136,7 +28794,7 @@ msgstr "Түрчөлөр"
 msgid "Subject"
 msgstr "Тема"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Subject:"
 msgstr "Тема:"
 
@@ -28214,11 +28872,12 @@ msgstr ""
 "Жалпы сумма: <b>${{ $filters.money(this.selectedRequest."
 "additional_booking_data.subtotal) }}</b>"
 
-#: vue/main.js components/high_risk/high_risk_accounts.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/high_risk/high_risk_accounts.vue
 msgid "Success"
 msgstr "Ийгилик"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Successful Growth"
 msgstr "Ийгиликтүү өсүү"
 
@@ -28352,6 +29011,15 @@ msgstr "Көбүрөөк көрүү үчүн экранды сүрүңүз"
 msgid "Swiss Franc (CHF)"
 msgstr "Швейцария франкы (CHF)"
 
+#: components/reports/quick_reports_modal/modal-content.vue
+#: components/reports/quick_reports_modal/index.vue
+msgid "Switch To Classic"
+msgstr ""
+
+#: pages/reports.vue
+msgid "Switch To New"
+msgstr ""
+
 #: components/inchat/emoji/emoji_modal.vue
 msgid "Symbols"
 msgstr "Белгилер"
@@ -28393,6 +29061,7 @@ msgid "Tag Management"
 msgstr "Тегди башкаруу"
 
 #: pages/contacts.vue components/contacts/export-contacts.vue
+#: components/reports/old_reports.vue
 msgid "Tags"
 msgstr "Тегдер"
 
@@ -28426,7 +29095,7 @@ msgstr ""
 msgid "Take Me to DittoTouch"
 msgstr "Мени DittoTouch'ты пайладанууга бериңиз"
 
-#: pages/additional_info.vue pages/reports.vue
+#: pages/additional_info.vue components/reports/old_reports.vue
 msgid "Take me to upgrade."
 msgstr "Мени жаңыртуу барагына өткөрүңүз."
 
@@ -28649,7 +29318,7 @@ msgstr "Төлөнгөн команда өнөктөштөрү"
 msgid "Team Pending Members"
 msgstr "Командадагы Күтүүдөгү Мүчөлөр"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Team Pending with Cruise Bookings"
 msgstr "Команданын күтүүдөгү круиздик брондору бар мүчөлөрү"
 
@@ -28665,7 +29334,7 @@ msgstr "Командалык өндүрүш"
 msgid "Team Production Tracker"
 msgstr "Командалык өндүрүш трекери"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Team QBI"
 msgstr "QBI (БСИ) Командасы"
 
@@ -28697,6 +29366,19 @@ msgstr "Команданын резидуалдык бонустук билди�
 #: pages/track_results.vue
 msgid "Team Starter Members"
 msgstr "Starter планындагы команда мүчөлөрү"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Please select gender"
+msgid "team(s) selected"
+msgstr "Жынысын тандаңыз"
+
+#: components/reports/quick_reports_modal/modal-content.vue
+#: components/reports/quick_reports_modal/templates-list.vue
+#, fuzzy
+#| msgid "Use Template"
+msgid "Templates"
+msgstr "Шаблон колдонуу"
 
 #: components/user/functions.vue
 msgid "Terminated"
@@ -29104,19 +29786,19 @@ msgid ""
 "evaluation"
 msgstr "Круиз баалоо учурунда да төмөнкү баада жеткиликтүү болушу керек"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user first became membership free."
 msgstr "Колдонуучу биринчи жолу акысыз мүчөлүккө ээ болгон күн."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user first signed up on our website."
 msgstr "Колдонуучу биринчи жолу веб сайтка катталган күн."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user paid to activate and become a Member."
 msgstr "Колдонуучу активдештирүү жана мүчө болуу үчүн төлөм төлөгөн күн."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user paid to activate and become a Partner."
 msgstr "Колдонуучу активдештирүү жана Өнөктөш болуу үчүн төлөм төлөгөн күн."
 
@@ -29149,7 +29831,7 @@ msgstr ""
 msgid "The effective date of this Privacy Policy is September 1st, 2015."
 msgstr "Бул Купуялык саясатынын күчүнө кирген күнү - 2015-жылдын 1-сентябры."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "The email and push blast actions have been disabled due to the results size "
 "exceeds their limit. If you want to use these actions, please run the report "
@@ -29698,7 +30380,7 @@ msgstr ""
 msgid "The Spirit Of Giving At inCruises"
 msgstr "inCruises'те берүү руху/берешендик"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The subject field is required!"
 msgstr "Тема кутучасынын толтурулуусу талап кылынат!"
 
@@ -30146,11 +30828,11 @@ msgstr "Тандалган мейманканада бош орундар таб
 msgid "There was no results for your search."
 msgstr "Издөөңүз боюнча эч кандай жыйынтык жок."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "There were %{resultAmount} results based on your selections."
 msgstr "Тандооңуздун негизинде %{resultAmount} натыйжа кайтарылды."
 
-#: pages/reports.vue pages/leadership_academy.vue
+#: pages/leadership_academy.vue components/reports/old_reports.vue
 msgid "There were no results based on your selections."
 msgstr "Тандооңуздун негизинде эч кандай натыйжа болгон жок."
 
@@ -31077,6 +31759,13 @@ msgstr "Бул апта"
 msgid "This Week's Potential"
 msgstr "Бул аптанын потенциалы"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+msgid ""
+"This will only show members who are still within the first 5 days after "
+"their invoice has been generated. this will grant them double their reward "
+"points."
+msgstr ""
+
 #: components/growth_calculator/potential_recurring.vue
 #: components/growth_calculator/potential_leadership.vue
 msgid "This will take a few seconds. Please be patient."
@@ -31342,11 +32031,12 @@ msgstr ""
 
 #: pages/glsx.vue pages/referral_widget.vue pages/gls_winners.vue
 #: pages/admin_partner_success.vue pages/gls.vue pages/admin_user.vue
-#: pages/banner_tracking.vue pages/new_ranks.vue pages/reports.vue
-#: pages/partner_success.vue pages/builders_base.vue
-#: components/compensation/residual_bonus_preview.vue
+#: pages/banner_tracking.vue pages/new_ranks.vue pages/partner_success.vue
+#: pages/builders_base.vue components/compensation/residual_bonus_preview.vue
 #: components/compensation/builders_bonus.vue
 #: components/settings_page/modify-saved-passengers.vue
+#: components/reports/old_reports.vue
+#: components/reports/send_push_notification_modal.vue
 #: components/business_intelligence/comp_to_sales.vue
 msgid "Title"
 msgstr "Даражасы"
@@ -31361,7 +32051,8 @@ msgstr "Титулга жетишилди!"
 msgid "Title:"
 msgstr "Аталышы:"
 
-#: pages/menu_page.vue pages/reports.vue pages/settings.vue pages/titles.vue
+#: pages/menu_page.vue pages/settings.vue pages/titles.vue
+#: components/reports/old_reports.vue
 msgid "Titles"
 msgstr "Даражалар"
 
@@ -31379,6 +32070,8 @@ msgstr "чейин"
 
 #: pages/inviter.vue pages/mercy_ships.vue
 #: components/support/TicketViewerAdmin.vue components/support/TicketViewer.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "To"
 msgstr "Кимге"
 
@@ -32206,12 +32899,125 @@ msgstr ""
 msgid "Track your world-wide reach below!"
 msgstr "Төмөндө дүйнөлүк камтууңузду текшериңиз!"
 
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks members who changed their membership plan up or down this month/ last "
+"month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Tracks members with pending invoices."
+msgstr "Төлөнбөгөн эсеп-фактуралары бар колдонуучулар"
+
 #: components/business_performance/TeamProductionLines.vue
 msgid ""
 "Tracks monthly cumulative new and total cumulative Production for your team."
 msgstr ""
 "Командаңыз боюнча айлык топтолгон жаңы өндүрүштү жана жалпы топтолгон "
 "өндүрүштү көзөмөлдөйт."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks new members this month/ last month (members purchasing a membership "
+"for the first time in inCruises.)"
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners eligible for compensation by bringing a direct this month/"
+"last month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid "Tracks partners eligible for membership free or membership discount."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners pending Builders Base payment due to QBI < 75%, showing time "
+"left until payout anyways."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Produce the required Total Activation Volume."
+msgid "Tracks partners qualified production and activation volume."
+msgstr "Керектүү Жалпы Активдүүлүктүн көлөмүн иштеп чыгуу."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners who achieved a new rank for the first time this month/ last "
+"month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid "Tracks partners who achieved Fast Start this month/last month."
+msgstr ""
+"Командаңыздын өнөктөштөрү, алар дагы эле Fast Start шайкеш бонусун ала "
+"алышат."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid ""
+"Tracks partners who are still eligible for Fast Start Matching based on "
+"their downlines."
+msgstr ""
+"Командаңыздын өнөктөштөрү, алар дагы эле Fast Start шайкеш бонусун ала "
+"алышат."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid ""
+"Tracks partners who are still eligible for Fast Start with days left to "
+"qualify."
+msgstr ""
+"Командаңыздын өнөктөштөрү, алар дагы эле Fast Start шайкеш бонусун ала "
+"алышат."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners whose 6‑month renewal invoice is pending and not yet paid "
+"within the allowed month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners whose 6‑month renewal invoice will be generated next month"
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "One or more members has an active sailing or a pending invoice."
+msgid ""
+"Tracks team members with an active cruise booking but a pending invoice."
+msgstr ""
+"Бир же бир нече катышуучуда активдүү сүзүү же төлөнбөгөн эсеп-фактура бар."
+
+#: components/reports/quick_reports.vue
+msgid "Tracks users who acquired a partnership this month/ last month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks users who signed up this month/ last month but have not yet purchased "
+"a membership."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid "Tracks users with recurring payment status and payment method type."
+msgstr ""
 
 #: pages/m3.vue
 msgid "Trade Partner Testimonials"
@@ -32458,6 +33264,11 @@ msgstr "Ишенимдүү түрдө"
 msgid "Try again"
 msgstr "Сураныч, кайра аракет кылыңыз"
 
+#: pages/reports.vue
+msgid ""
+"Try our new reports view for easier access to reports and faster report runs."
+msgstr ""
+
 #: components/recurring/recurring-cards.vue
 msgid "Turkish Lira (TRY)"
 msgstr "Түрк лирасы (TRY)"
@@ -32494,21 +33305,14 @@ msgstr "Жалпысынан эки ай мурун"
 msgid "Two Weeks Prior Contest"
 msgstr "Таймашууга эки апта калганда"
 
-#: pages/admin_user.vue pages/reports.vue pages/receipts.vue
-#: pages/track_results.vue pages/notifications.vue
+#: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
+#: pages/notifications.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/support/InstantTools.vue components/compensation/weekly_bonus.vue
 #: components/compensation/active_partner_modal.vue
+#: components/reports/old_reports.vue
 msgid "Type"
 msgstr "Түр"
-
-#: pages/reports.vue
-msgid ""
-"Type @ to insert dynamic tokens (like @Name, @Email) that will be replaced "
-"with each recipient's data."
-msgstr ""
-"Ар бир алуучунун маалыматы менен алмаштырыла турган динамикалык белгилерди "
-"(мисалы, @Name, @Email) киргизүү үчүн @ деп жазыңыз."
 
 #: pages/cruise_price_match_guarantee.vue
 msgid "type when applicable"
@@ -32783,7 +33587,7 @@ msgstr "Жазылууну токтотуу"
 msgid "Unsubscribe from our mailing list:"
 msgstr "Биздин почта тизмебизден чыгуу үчүн:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Unsubscribe here"
 msgstr "Бул жерден жазылууну токтотуңуз"
 
@@ -32999,7 +33803,7 @@ msgstr ""
 "iNsider баалары боюнча көбүрөөк брондоолорду алуу үчүн Мүчөлүк "
 "программаңызды жогорулатыңыз"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Upgrades This Month"
 msgstr "Ушул айдагы жаңыртуулар"
 
@@ -33190,6 +33994,7 @@ msgid "User Hotels"
 msgstr "Колдонуучунун мейманканалары"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/more_info_hover_card.vue
 msgid "User Info"
 msgstr "Колдонуучунун маалыматы"
 
@@ -33200,6 +34005,12 @@ msgstr "Колдонуучунун эсеп-фактуралары"
 #: components/inchat/user_room_actions.vue
 msgid "User locked successfully"
 msgstr "Колдонуучу ийгиликтүү түрдө бөгөттөлдү"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "User Invoices"
+msgid "User Next Invoices"
+msgstr "Колдонуучунун эсеп-фактуралары"
 
 #: components/user/user_notes.vue
 msgid "User Notes"
@@ -33260,10 +34071,22 @@ msgstr ""
 "Колдонуучулар inCruises капчыгы аркылуу кайталануучу төлөм функциясын "
 "төмөнкү жол менен өчүрө алышат"
 
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "User unlocked successfully"
+msgid "Users downloaded successfully"
+msgstr "Колдонуучу ийгиликтүү түрдө бөгөттөөдөн чыгарылды"
+
 #: components/inchat/admin/ShowParticipants.vue
 #: components/inchat/list_modals/users_room_list_modal.vue
 msgid "Users in Room"
 msgstr "Бөлмөдөгү колдонуучулар"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Enable Recurring Payments"
+msgid "Users Recurring Payment Status"
+msgstr "Кайталануучу төлөмдөрдү жандырыңыз"
 
 #: pages/referral_activity.vue
 msgid ""
@@ -33316,7 +34139,7 @@ msgstr ""
 msgid "Users who have seen our website through your link."
 msgstr "Сиздин шилтеме аркылуу биздин вебсайтты көргөн колдонуучулар."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Users with Pending Invoices"
 msgstr "Төлөнбөгөн эсеп-фактуралары бар колдонуучулар"
 
@@ -33558,7 +34381,7 @@ msgstr "Туулган күндөрдү көрүңүз"
 msgid "View Booking Summary"
 msgstr "Жаңы брондоо корутундусу"
 
-#: pages/certificates.vue pages/reports.vue
+#: pages/certificates.vue components/reports/old_reports.vue
 msgid "View Certificate"
 msgstr "Сертификатты көрүү"
 
@@ -33919,7 +34742,7 @@ msgstr ""
 msgid "Want to make this into a Refundable Booking?"
 msgstr "Муну кайтарылуучу брондого айланткыңыз келеби?"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Want to stop receiving Email Blasts?"
 msgstr "Электрондук каттарды алууну токтоткуңуз келеби?"
 
@@ -33927,7 +34750,8 @@ msgstr "Электрондук каттарды алууну токтоткуң�
 msgid "Want to Try DittoTouch?"
 msgstr "DittoTouch сынап көргүңүз келеби?"
 
-#: vue/main.js components/inchat/user/warning_modal.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/inchat/user/warning_modal.vue
 msgid "Warning"
 msgstr "Эскертүү"
 
@@ -34490,6 +35314,12 @@ msgstr "кош келиңиз"
 msgid "Welcome To InCruises"
 msgstr "inCruisesке кош келиңиз"
 
+#: components/reports/new_reports.vue
+#, fuzzy
+#| msgid "Welcome To InCruises"
+msgid "Welcome To Reports"
+msgstr "inCruisesке кош келиңиз"
+
 #: pages/courses.vue
 msgid "Welcome to the Basic Training Courses!"
 msgstr "Негизги окутуу курстарына кош келиңиз!"
@@ -34627,11 +35457,19 @@ msgstr "Конок катары эмнелерди аласыз:"
 msgid "What's new"
 msgstr "Эмне жаңылык"
 
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "Whatsapp #"
+msgid "Whatsapp"
+msgstr "Whatsapp #"
+
 #: components/compensation/qbi_members_table.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Whatsapp #"
 msgstr "Whatsapp #"
 
@@ -35827,6 +36665,12 @@ msgstr "Сиз төмөнкү уруксат тобунан уруксатты �
 msgid "You are about to restart your identity verification process."
 msgstr "Сиз өздүгүңүздү ырастоо процессин кайра баштоого даярданып жатасыз."
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "You are about to restart your identity verification process."
+msgid "You are about to send a push notification to %{count} users."
+msgstr "Сиз өздүгүңүздү ырастоо процессин кайра баштоого даярданып жатасыз."
+
 #: pages/downgrade.vue
 msgid ""
 "You are about to switch to the Classic membership. By doing so, you will "
@@ -36143,7 +36987,7 @@ msgstr ""
 msgid "You cannot login as this user."
 msgstr "Сиз бул колдонуучу катары кире албайсыз."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You cannot search for New Ranks for this month and last month at the same "
 "time. Please disable one and try again."
@@ -36151,9 +36995,14 @@ msgstr ""
 "Ушул жана өткөн ай үчүн Жаңы саптарды бир убакта издей албайсыз. Сураныч, "
 "бирин өчүрүп, кайра аракет кылыңыз."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
+#, fuzzy
+#| msgid ""
+#| "You cannot select Membership Plan with Partners, Expired Partners, or "
+#| "Guests."
 msgid ""
-"You cannot select Membership Plan with Partners, Expired Partners, or Guests."
+"You cannot select Membership Plan with Partners, Expired Partners, or No "
+"Plans."
 msgstr ""
 "Сиз Өнөктөштөр, мөөнөтү бүткөн Өнөктөштөр же коноктор менен мүчөлүк план "
 "тандай албайсыз."
@@ -36484,7 +37333,7 @@ msgstr ""
 "Сиз эсептердин максималдуу санына жеттиңиз. Жаңысын кошуу үчүн учурдагы "
 "каттоо эсебин өчүрүп салыңыз."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You have selected member data but have partnership creation date fields "
 "active, please remove before proceeding."
@@ -36492,7 +37341,7 @@ msgstr ""
 "Сиз Клуб мүчөсү болуу опциясын тандадыңыз, бирок сизде дагы эле Өнөктөштүк "
 "түзүү күнү активдүү. Улантуудан мурун дайындарыңызды өчүрүп салыңыз."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You have selected partner data but have membership creation date fields "
 "active, please remove before proceeding."
@@ -36711,13 +37560,7 @@ msgstr ""
 "a> бул круизге кемесине түшүү/отуруу аркылуу активдүү мүчө бойдон калууңуз "
 "керек"
 
-#: pages/reports.vue
-msgid "You must run a report and have results to send an email blast."
-msgstr ""
-"Сиз электрондук почта аркылуу массалык кат жөнөтүүдөн мурун отчет жүргүзүп, "
-"натыйжаларды алышыңыз керек."
-
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "You must select at least one user type."
 msgstr "Сиз кеминде бир колдонуучунун түрүн тандашыңыз керек."
 
@@ -37698,7 +38541,7 @@ msgstr ""
 msgid "Your Region"
 msgstr "Сиздин аймактар"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Your report results will appear in this area."
 msgstr "Сиздин отчеттун натыйжасы бул кутучада көрсөтүлөт."
 
@@ -49853,6 +50696,18 @@ msgstr ""
 msgid "Final Test"
 msgstr "Жыйынтыктоочу"
 
+#: Courses
+msgid "xxxz"
+msgstr ""
+
+#: Courses (descriptions)
+msgid "TEST B"
+msgstr ""
+
+#: Courses (descriptions)
+msgid "eee3we"
+msgstr ""
+
 #: Courses (descriptions)
 msgid ""
 "In order to access your inCruises® Wallet, you must complete this course on "
@@ -49900,6 +50755,18 @@ msgstr ""
 "кетип, кыялдарыңызды курууну элестете аласызбы?"
 
 #~ msgid ""
+#~ "Type @ to insert dynamic tokens (like @Name, @Email) that will be "
+#~ "replaced with each recipient's data."
+#~ msgstr ""
+#~ "Ар бир алуучунун маалыматы менен алмаштырыла турган динамикалык "
+#~ "белгилерди (мисалы, @Name, @Email) киргизүү үчүн @ деп жазыңыз."
+
+#~ msgid "You must run a report and have results to send an email blast."
+#~ msgstr ""
+#~ "Сиз электрондук почта аркылуу массалык кат жөнөтүүдөн мурун отчет "
+#~ "жүргүзүп, натыйжаларды алышыңыз керек."
+
+#~ msgid ""
 #~ "An unexpected error occurred while initializing the filter selection "
 #~ "widget."
 #~ msgstr "Фильтр тандоо виджетин баштоодо күтүлбөгөн ката кетти."
@@ -49929,15 +50796,6 @@ msgstr ""
 #~ msgid "Percent Growth Needed"
 #~ msgstr "Керектүү Пайыздык Өсүш"
 
-#~ msgid "Historical QBI Report"
-#~ msgstr "Тарыхый QBI (БСИ) отчету"
-
-#~ msgid "Insert your message..."
-#~ msgstr "Кабадамыңызды киргизиңиз..."
-
-#~ msgid "Pending QBI Report"
-#~ msgstr "Күтүүдөгү QBI (БСИ) отчету"
-
 #~ msgid "Price may vary based on availability"
 #~ msgstr "Баа жеткиликтүүлүгүнө жараша өзгөрүшү мүмкүн"
 
@@ -49945,144 +50803,12 @@ msgstr ""
 #~ msgstr "(Улгайган мүчө)"
 
 #, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "%{ n } Days Left to Pay"
-#~ msgstr "Талаптарга жооп берүү үчүн калган күндөр"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "1 Day Left to Pay"
-#~ msgstr "Талаптарга жооп берүү үчүн калган күндөр"
-
-#, fuzzy
-#~| msgid "Invoice Date"
-#~ msgid "2 Invoices Dates"
-#~ msgstr "Эсеп-фактура күнү"
-
-#, fuzzy
-#~| msgid "Accounts"
-#~ msgid "Account Expires"
-#~ msgstr "Аккаунттар"
-
-#, fuzzy
-#~| msgid "All Titles"
-#~ msgid "All Teams"
-#~ msgstr "Бардык Даражалар"
-
-#, fuzzy
 #~| msgid "An error occurred while fetching the data."
 #~ msgid "An error occurred while fetching the report"
 #~ msgstr "Маалыматты алуу учурунда ката кетти."
 
-#, fuzzy
-#~| msgid "An unexpected error occurred while applying the client filters."
-#~ msgid "An unexpected error occurred while loading countries."
-#~ msgstr "Кардар фильтрлерин колдонууда күтүлбөгөн ката кетти."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while resetting the filters."
-#~ msgid "An unexpected error occurred while loading languages."
-#~ msgstr "Фильтрлерди баштапкы абалга келтирүүдө күтүлбөгөн ката кетти."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while applying the client filters."
-#~ msgid ""
-#~ "An unexpected error occurred while loading partners still eligible fast "
-#~ "start."
-#~ msgstr "Кардар фильтрлерин колдонууда күтүлбөгөн ката кетти."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while resetting the filters."
-#~ msgid "An unexpected error occurred while loading teams."
-#~ msgstr "Фильтрлерди баштапкы абалга келтирүүдө күтүлбөгөн ката кетти."
-
-#, fuzzy
-#~| msgid "Bonus Paid"
-#~ msgid "Bonus Payed In"
-#~ msgstr "Төлөнгөн Бонус"
-
-#, fuzzy
-#~| msgid "Coming Soon!"
-#~ msgid "Coming Soon"
-#~ msgstr "Жакында!"
-
-#, fuzzy
-#~| msgid "Countries Selected"
-#~ msgid "countries selected"
-#~ msgstr "Тандалган өлкөлөр"
-
-#, fuzzy
-#~| msgid "Direct Activations"
-#~ msgid "Current Activations"
-#~ msgstr "Түздөн-түз активдештирүүлөр"
-
-#, fuzzy
-#~| msgid "Recurring Qualified Production"
-#~ msgid "Current Qualified Production"
-#~ msgstr "Кайталануучу жарамдуу өндүрүмдүүлүк"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Count"
-#~ msgstr "Талаптарга жооп берүү үчүн калган күндөр"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Pay"
-#~ msgstr "Талаптарга жооп берүү үчүн калган күндөр"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Still Be Elegible"
-#~ msgstr "Талаптарга жооп берүү үчүн калган күндөр"
-
-#, fuzzy
-#~| msgid "Downline Select"
-#~ msgid "Downlines Elegible"
-#~ msgstr "Төмөнкү тандоо"
-
-#, fuzzy
-#~| msgid "Due Today"
-#~ msgid "Due today"
-#~ msgstr "Бүгүн бүтөт"
-
 #~ msgid "Elegible"
 #~ msgstr "Жарамдуу"
-
-#, fuzzy
-#~| msgid "Email Date"
-#~ msgid "Embarking Date"
-#~ msgstr "Электрондук кат жиберилген күн"
-
-#, fuzzy
-#~| msgid "First Leader"
-#~ msgid "First Up leader"
-#~ msgstr "Биринчи лидер"
-
-#, fuzzy
-#~| msgid "First Leader"
-#~ msgid "First Up Leader"
-#~ msgstr "Биринчи лидер"
-
-#, fuzzy
-#~| msgid "inCruises - Receipt"
-#~ msgid "InCruises - Reports"
-#~ msgstr "inCruises - Квитанция"
-
-#, fuzzy
-#~| msgid "InCruises Wallet"
-#~ msgid "inCruises Wallet"
-#~ msgstr "InСruises Капчыгы"
-
-#, fuzzy
-#~| msgid "Invite Status"
-#~ msgid "Invoice Status"
-#~ msgstr "Чакыруу статусу"
-
-#, fuzzy
-#~| msgid "Invoice Date"
-#~ msgid "Invoice Type"
-#~ msgstr "Эсеп-фактура күнү"
 
 #, fuzzy
 #~| msgid "Language"
@@ -50091,163 +50817,8 @@ msgstr ""
 
 #, fuzzy
 #~| msgid "Package selected:"
-#~ msgid "languages selected"
-#~ msgstr "Тандалган пакет:"
-
-#, fuzzy
-#~| msgid "Package selected:"
 #~ msgid "Languages Selected"
 #~ msgstr "Тандалган пакет:"
-
-#, fuzzy
-#~| msgid "Rank Achieved"
-#~ msgid "Last Rank Achieved"
-#~ msgstr "Жетишилген даража"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Member Reports"
-#~ msgstr "Power отчеттору"
-
-#, fuzzy
-#~| msgid "Members in your QBI"
-#~ msgid "Members Counting Toward Your QBI"
-#~ msgstr "Сиздин QBI (БСИ) мүчөлөрү"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Members With Cruise Bookings & Pending Invoices"
-#~ msgstr "Төлөнбөгөн эсеп-фактуралары бар колдонуучулар"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Members with pending Invoices"
-#~ msgstr "Төлөнбөгөн эсеп-фактуралары бар колдонуучулар"
-
-#, fuzzy
-#~| msgid "Membership First Month"
-#~ msgid "Membership Discount"
-#~ msgstr "Мүчөлүктүн биринчи айы"
-
-#, fuzzy
-#~| msgid "Membership Info"
-#~ msgid "Membership Invoice"
-#~ msgstr "Мүчөлүк тууралуу Маалымат"
-
-#, fuzzy
-#~| msgid "Membership Free Date"
-#~ msgid "Membership Upgrades & Downgrades"
-#~ msgstr "Акысыз Мүчөлүк баштатылган күн"
-
-#, fuzzy
-#~| msgid "Directs"
-#~ msgid "My Directs"
-#~ msgstr "Түзөтөт"
-
-#, fuzzy
-#~| msgid "Guests"
-#~ msgid "New Guests"
-#~ msgstr "Коноктор"
-
-#, fuzzy
-#~| msgid "New Message"
-#~ msgid "New Reports Page"
-#~ msgstr "Жаңы Кабардама"
-
-#, fuzzy
-#~| msgid "Create Invoice"
-#~ msgid "Next Invoice"
-#~ msgstr "Эсеп-фактура түзүңүз"
-
-#, fuzzy
-#~| msgid "Membership Info"
-#~ msgid "Next Membership Invoice"
-#~ msgstr "Мүчөлүк тууралуу Маалымат"
-
-#, fuzzy
-#~| msgid "Partnership Video"
-#~ msgid "Next Partnership Invoice"
-#~ msgstr "Өнөктөштүк тууралуу видео"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Other Reports"
-#~ msgstr "Power отчеттору"
-
-#, fuzzy
-#~| msgid "Overview"
-#~ msgid "Overdue"
-#~ msgstr "Сереп"
-
-#, fuzzy
-#~| msgid "Partners That Will Be Renewing Next Month"
-#~ msgid "Partner Renewing Next Month"
-#~ msgstr "Кийинки айда жаңылана турган Өнөктөштөр"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Partner Reports"
-#~ msgstr "Power отчеттору"
-
-#, fuzzy
-#~| msgid "Ineligible for compensation"
-#~ msgid "Partners Elegible for Compensation"
-#~ msgstr "Компенсацияга жарамдуу"
-
-#, fuzzy
-#~| msgid "Partners are Membership Free."
-#~ msgid "Partners Elegible For Membership Free"
-#~ msgstr "Мүчөлүгү Акысыз Өнөктөштөр ."
-
-#, fuzzy
-#~| msgid "Understanding Builders Base Bonus"
-#~ msgid "Partners Pending to Receive Builders Base Bonus"
-#~ msgstr "Курулушчулардын базалык бонусун түшүнүү"
-
-#, fuzzy
-#~| msgid "You have no direct partners currently eligible for Fast Start."
-#~ msgid "Partners Still Elegible for Fast Start"
-#~ msgstr "Учурда Fast Start үчүн жарамдуу түз өнөктөштөрүңүз жок."
-
-#, fuzzy
-#~| msgid "Potential Fast Start Matching"
-#~ msgid "Partners Still Elegible for Fast Start Matching"
-#~ msgstr "\"Ыкчам баштоо\" үчүн потенциалдуу Шайкеш бонус"
-
-#, fuzzy
-#~| msgid "Potential Team Leadership Bonus"
-#~ msgid "Partners Team Leadership Performance"
-#~ msgstr "Потенциалдуу Команда лидерлиги бонусу"
-
-#, fuzzy
-#~| msgid "Partner Activation Date"
-#~ msgid "Partners Who Achieved Fast Start"
-#~ msgstr "Өнөктөштү Активдештирүү Күнү"
-
-#, fuzzy
-#~| msgid "Partner with travel agencies"
-#~ msgid "Partners with new ranks"
-#~ msgstr "Туристтик агенттиктер менен кызматташуу"
-
-#, fuzzy
-#~| msgid "Partnership Video"
-#~ msgid "Partnership Invoice"
-#~ msgstr "Өнөктөштүк тууралуу видео"
-
-#, fuzzy
-#~| msgid "Partners That Have Not Renewed"
-#~ msgid "Partnership Not Renewed"
-#~ msgstr "Жаңыланбаган Өнөктөштөр"
-
-#, fuzzy
-#~| msgid "Add Payment Method"
-#~ msgid "Payment Method"
-#~ msgstr "Төлөм ыкмасын кошуңуз"
-
-#, fuzzy
-#~| msgid "Add Payment Method"
-#~ msgid "Payment Methods"
-#~ msgstr "Төлөм ыкмасын кошуңуз"
 
 #~ msgid ""
 #~ "Processing can take a moment depending on the information provided. If "
@@ -50259,118 +50830,9 @@ msgstr ""
 #~ "тууралуу эскертмени күтсөңүз болот."
 
 #, fuzzy
-#~| msgid "Recurring Payment Terms"
-#~ msgid "Recurring payment"
-#~ msgstr "Кайталануучу төлөм шарттары"
-
-#, fuzzy
-#~| msgid "Recurring Payment Terms"
-#~ msgid "Recurring Payment"
-#~ msgstr "Кайталануучу төлөм шарттары"
-
-#, fuzzy
-#~| msgid "You have no direct partners currently eligible for Fast Start."
-#~ msgid "Reports - Partners Still Elegible for Fast Start"
-#~ msgstr "Учурда Fast Start үчүн жарамдуу түз өнөктөштөрүңүз жок."
-
-#, fuzzy
-#~| msgid "Search Tours"
-#~ msgid "Search Teams"
-#~ msgstr "Турларды издөө"
-
-#, fuzzy
-#~| msgid "Selected Country:"
-#~ msgid "Selected Countries"
-#~ msgstr "Тандалган өлкө:"
-
-#, fuzzy
-#~| msgid "Select a Language"
-#~ msgid "Selected Language"
-#~ msgstr "Тилди тандаңыз"
-
-#, fuzzy
-#~| msgid "Select Tag"
-#~ msgid "Selected Teams"
-#~ msgstr "Тегди тандаңыз"
-
-#, fuzzy
 #~| msgid "Direct partners"
 #~ msgid "Show only my direct partners"
 #~ msgstr "Түз өнөктөштөр"
-
-#, fuzzy
-#~| msgid "Signup Date"
-#~ msgid "SignUp Date"
-#~ msgstr "Катталуу датасы"
-
-#, fuzzy
-#~| msgid "Please select gender"
-#~ msgid "team(s) selected"
-#~ msgstr "Жынысын тандаңыз"
-
-#, fuzzy
-#~| msgid "Use Template"
-#~ msgid "Templates"
-#~ msgstr "Шаблон колдонуу"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Tracks members with pending invoices."
-#~ msgstr "Төлөнбөгөн эсеп-фактуралары бар колдонуучулар"
-
-#, fuzzy
-#~| msgid "Produce the required Total Activation Volume."
-#~ msgid "Tracks partners qualified production and activation volume."
-#~ msgstr "Керектүү Жалпы Активдүүлүктүн көлөмүн иштеп чыгуу."
-
-#, fuzzy
-#~| msgid ""
-#~| "Partners from your team which are still eligible for Fast Start matching "
-#~| "bonus."
-#~ msgid ""
-#~ "Tracks partners who are still eligible for Fast Start Matching based on "
-#~ "their downlines."
-#~ msgstr ""
-#~ "Командаңыздын өнөктөштөрү, алар дагы эле Fast Start шайкеш бонусун ала "
-#~ "алышат."
-
-#, fuzzy
-#~| msgid ""
-#~| "Partners from your team which are still eligible for Fast Start matching "
-#~| "bonus."
-#~ msgid ""
-#~ "Tracks partners who are still eligible for Fast Start with days left to "
-#~ "qualify."
-#~ msgstr ""
-#~ "Командаңыздын өнөктөштөрү, алар дагы эле Fast Start шайкеш бонусун ала "
-#~ "алышат."
-
-#, fuzzy
-#~| msgid "One or more members has an active sailing or a pending invoice."
-#~ msgid ""
-#~ "Tracks team members with an active cruise booking but a pending invoice."
-#~ msgstr ""
-#~ "Бир же бир нече катышуучуда активдүү сүзүү же төлөнбөгөн эсеп-фактура бар."
-
-#, fuzzy
-#~| msgid "User Invoices"
-#~ msgid "User Next Invoices"
-#~ msgstr "Колдонуучунун эсеп-фактуралары"
-
-#, fuzzy
-#~| msgid "Enable Recurring Payments"
-#~ msgid "Users Recurring Payment Status"
-#~ msgstr "Кайталануучу төлөмдөрдү жандырыңыз"
-
-#, fuzzy
-#~| msgid "Welcome To InCruises"
-#~ msgid "Welcome To Reports"
-#~ msgstr "inCruisesке кош келиңиз"
-
-#, fuzzy
-#~| msgid "Whatsapp #"
-#~ msgid "Whatsapp"
-#~ msgstr "Whatsapp #"
 
 #~ msgid ""
 #~ "Your information has been submitted successfully and verification is "

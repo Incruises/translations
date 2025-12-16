@@ -528,7 +528,7 @@ msgstr "{{ itineraryItem.description }}"
 msgid "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 msgstr "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
 
@@ -786,6 +786,18 @@ msgstr "%{ cd_used } Balvu Punkti"
 msgid "%{ city }"
 msgstr "%{ city }"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "%{ n } Days"
+msgstr "Atlikušās Ddienas Lai Kvalificētos"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "%{ n } Days Left to Pay"
+msgstr "Atlikušās Ddienas Lai Kvalificētos"
+
 #: pages/partner_success.vue
 msgid "%{ name } from %{ country }"
 msgstr "%{ name } no %{ country }"
@@ -879,6 +891,12 @@ msgstr "%{competitionName} Uzvarētāj — Esiet Sveicināti Samitā!"
 msgid "%{count} more %{plan} %{activationLabel} to reach $%{amount}/member"
 msgstr ""
 "%{count} more %{plan} %{activationLabel} lai sasniegtu $%{amount}/biedru"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Verification email sent successfully."
+msgid "%{count} push notifications were sent successfully."
+msgstr "Pārbaudes e-pasta ziņojums nosūtīts sekmīgi."
 
 #: components/earnings_tile.vue
 msgid "%{countDownWord} %{time}"
@@ -2060,8 +2078,15 @@ msgstr ""
 "destinationCountryAndCurrency.currency.code }}"
 
 #: pages/admin_support_analytics.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 msgid "1 Day"
 msgstr "1 diena"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "1 Day Left to Pay"
+msgstr "Atlikušās Ddienas Lai Kvalificētos"
 
 #: components/cruises_booking_old/reward-points-step.vue
 #: components/cruises_booking_old/reward-points-confirm-step.vue
@@ -2147,6 +2172,12 @@ msgstr "2 Par 1 Bilance"
 #: components/checkout/Processor2For1.vue
 msgid "2 For 1 RP"
 msgstr "2 Par 1 BP"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "2 Invoices Dates"
+msgstr "Rēķina datums"
 
 #: pages/elevate.vue
 msgid "2 nights in Dubai with pre-cruise accommodations"
@@ -2485,6 +2516,13 @@ msgstr ""
 "Jūsu pievienotais periodiskais maksājums gaida bankas apstiprinājumu. Šī "
 "lapa tiks automātiski atjaunināta, kad banka pabeigs validāciju."
 
+#: components/reports/new_reports.vue
+msgid ""
+"A set of ready-to-use report templates featuring the most requested insights "
+"by top Partners. Get instant access to popular data views with just one "
+"click."
+msgstr ""
+
 #: pages/apps.vue
 msgid ""
 "A simple ‘Add-to-home-screen’ prompt and push notifications make staying IN "
@@ -2730,13 +2768,19 @@ msgstr "Piekļuve ar PREMIUM"
 msgid "Account"
 msgstr "Konts"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Account Created"
 msgstr "Rēķins gatavs"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Account Creation Date"
 msgstr "Rēķina izveidošanas datums"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Accounts"
+msgid "Account Expires"
+msgstr "Konti"
 
 #: components/user/functions.vue
 msgid "Account has been deducted. Transaction successfully completed"
@@ -2797,18 +2841,19 @@ msgid "Action"
 msgstr "Darbība"
 
 #: pages/certificates.vue pages/admin_account_recovery.vue
-#: pages/negative_balances.vue pages/reports.vue pages/admin_emails.vue
-#: pages/agreements.vue pages/team_documentation_requests.vue
-#: pages/admin_certificates.vue pages/receipts.vue pages/invoices.vue
-#: pages/admin_restricted_paybonus.vue pages/price_match_requests.vue
-#: components/support/InstantTools.vue components/compensation/statements.vue
+#: pages/negative_balances.vue pages/admin_emails.vue pages/agreements.vue
+#: pages/team_documentation_requests.vue pages/admin_certificates.vue
+#: pages/receipts.vue pages/invoices.vue pages/admin_restricted_paybonus.vue
+#: pages/price_match_requests.vue components/support/InstantTools.vue
+#: components/compensation/statements.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/fast_start_matching.vue
 #: components/compensation/recurring_income_levels.vue
 #: components/compensation/qbi_members_table.vue
 #: components/settings_page/modify-saved-passengers.vue
-#: components/data_table/table.vue components/high_risk/high_risk_accounts.vue
+#: components/data_table/table.vue components/reports/old_reports.vue
+#: components/high_risk/high_risk_accounts.vue
 #: components/admin_finance/payment_fulfillment.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
@@ -2869,9 +2914,9 @@ msgstr "Aktivizācijas Bonus"
 msgid "Activation Bonuses (Daily and Monthly)"
 msgstr "Aktivizācijas Bonusi) Ikdienas un Ikmēneša)"
 
-#: pages/reports.vue components/compensation/members-qbi-modal.vue
+#: components/compensation/members-qbi-modal.vue
 #: components/compensation/qbi_members_table.vue
-#: pages/compensation/member_activations.vue
+#: components/reports/old_reports.vue pages/compensation/member_activations.vue
 msgid "Activation Date"
 msgstr "Aktivizācijas datums"
 
@@ -2930,6 +2975,7 @@ msgstr "Aktivizāciju Apjoma Reg."
 
 #: pages/track_results.vue components/welcome/members-modal.vue
 #: components/compensation/qbi_members_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Active"
 msgstr "Aktīvs"
 
@@ -2955,7 +3001,7 @@ msgstr "Aktīvie inCruises Kluba Biedri var "
 msgid "Active Member"
 msgstr "Aktīvs biedrs"
 
-#: pages/reports.vue components/compensation/qbi-details.vue
+#: components/compensation/qbi-details.vue components/reports/old_reports.vue
 msgid "Active Members"
 msgstr "Aktīvie Biedri"
 
@@ -3538,9 +3584,10 @@ msgstr "Aļaska"
 msgid "Alipay"
 msgstr "Alipay maksājumi"
 
-#: pages/reports.vue pages/info_center.vue pages/team_rankings.vue
+#: pages/info_center.vue pages/team_rankings.vue
 #: pages/admin_support_analytics.vue pages/track_results.vue
-#: pages/leadership_academy.vue components/user/timeline.vue
+#: pages/leadership_academy.vue components/reports/old_reports.vue
+#: components/user/timeline.vue
 msgid "All"
 msgstr "Visi"
 
@@ -3570,6 +3617,7 @@ msgid "All children must be younger than 18 years old."
 msgstr "Visiem bērniem jābūt jaunākiem par 18 gadiem."
 
 #: pages/mercy_ships.vue components/business_intelligence/comp_to_sales.vue
+#: components/reports/filters/country.vue
 msgid "All Countries"
 msgstr "Visas Valstis"
 
@@ -3635,6 +3683,7 @@ msgid "All Invitations"
 msgstr "Visi ielūgumi"
 
 #: pages/communications.vue pages/webinar_recordings.vue
+#: components/reports/filters/language.vue
 msgid "All Languages"
 msgstr "Visas valodass"
 
@@ -3775,6 +3824,12 @@ msgstr "Iekļautas visas nodevas un maksas — nav slēptu izmaksu"
 #: pages/export.vue
 msgid "All Team Partners"
 msgstr "Visi komandas partneri"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "All Titles"
+msgid "All Teams"
+msgstr "Visi Virsraksti/Nosaukumi"
 
 #: components/public/Faq.vue pages/public/faq.vue
 msgid ""
@@ -4114,6 +4169,12 @@ msgstr "Ienesot ziņu, radās kļūda. Lūdzu, vēlāk mēģiniet vēlreiz."
 msgid "An error occurred while loading the meeting"
 msgstr "Ielādējot sapulci, radās kļūda"
 
+#: vue/composables/useSendBroadcastPwaNotification.js
+#, fuzzy
+#| msgid "An error occurred while loading the meeting"
+msgid "An error occurred while sending notification"
+msgstr "Ielādējot sapulci, radās kļūda"
+
 #: pages/business_performance.vue
 msgid "An error occurred while updating the widget."
 msgstr "Atjauninot logrīku, radās kļūda."
@@ -4182,6 +4243,52 @@ msgstr "Lietojot klienta filtrus, radās neparedzēta kļūda."
 msgid ""
 "An unexpected error occurred while initializing the local client filters."
 msgstr "Inicializējot lokālā klienta filtrus, radās neparedzēta kļūda."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid "An unexpected error occurred while loading countries."
+msgstr "Lietojot klienta filtrus, radās neparedzēta kļūda."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid "An unexpected error occurred while loading languages."
+msgstr "Atiestatot filtrus, radās neparedzēta kļūda."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid ""
+"An unexpected error occurred while loading members with pending invoices."
+msgstr "Atiestatot filtrus, radās neparedzēta kļūda."
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid ""
+"An unexpected error occurred while loading partners still eligible fast "
+"start."
+msgstr "Lietojot klienta filtrus, radās neparedzēta kļūda."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid "An unexpected error occurred while loading teams."
+msgstr "Atiestatot filtrus, radās neparedzēta kļūda."
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid ""
+"An unexpected error occurred while loading users recurring payment status."
+msgstr "Lietojot klienta filtrus, radās neparedzēta kļūda."
 
 #: components/data_table/column-selection-widget.vue
 msgid "An unexpected error occurred while opening the column selection widget."
@@ -4917,7 +5024,7 @@ msgstr ""
 msgid "Attachments"
 msgstr "Pielikumi"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "Attachments are temporarily disable for Email Blast. You can only send "
 "emails without attachments."
@@ -4925,7 +5032,7 @@ msgstr ""
 "Pielikumi uz laiku tiek atspējoti uz e-pastu. E-pasta ziņojumus var nosūtīt "
 "tikai bez pielikumiem."
 
-#: pages/reports.vue pages/email.vue
+#: pages/email.vue components/reports/old_reports.vue
 msgid "Attachments:"
 msgstr "Pielikumi:"
 
@@ -5130,7 +5237,7 @@ msgstr "Pamata informācija"
 msgid "Basic Training"
 msgstr "Pamatapmācība"
 
-#: pages/reports.vue pages/courses.vue
+#: pages/courses.vue components/reports/old_reports.vue
 msgid "Basic Training Courses"
 msgstr "Pamatu apmācības kursi"
 
@@ -5305,7 +5412,7 @@ msgstr "DZĒRIENU PAKETE"
 msgid "Bill to:"
 msgstr "Rēķinu uz:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Billing Date"
 msgstr "Norēķinu datums"
 
@@ -5375,7 +5482,7 @@ msgstr "Board of Directors (BoD) Top 7 Atbilstīgie Punktu Pelnītāji."
 msgid "Board of Directors and above"
 msgstr "Board of Directors un augstāk"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Board of Directors Member"
 msgstr "Direktoru valdes biedrs"
 
@@ -5500,6 +5607,12 @@ msgstr "Bonuss samaksāts"
 #: components/receipts/new_team_residual_bonus_statement.vue
 msgid "Bonus Paid For"
 msgstr "Bonuss maksāts par"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Bonus Paid"
+msgid "Bonus Payed In"
+msgstr "Bonuss samaksāts"
 
 #: pages/glsx.vue pages/gls.vue
 msgid "Bonus Points"
@@ -5684,6 +5797,7 @@ msgid "Booking Type"
 msgstr "Rezervācijas Tips"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Both"
 msgstr "Abi"
 
@@ -5729,7 +5843,7 @@ msgstr ""
 "Veidojiet prasmes un sekojiet nozares tendencēm, izmantojot apmācības "
 "resursu komplektu, kas paredzēts, lai palīdzētu programmai Excel."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Builder Plan - $32"
 msgstr "Veidotāja plāns - $32"
 
@@ -5803,11 +5917,11 @@ msgstr "Lietotāju bonusi $30,000*"
 msgid "Builders Points"
 msgstr "Lietot'ju Punkti"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Building a Compliant Business"
 msgstr "Atbilstošas uzņēmējdarbības veidošana"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Building Wide and Deep"
 msgstr "Veidošana plaši un dziļi"
 
@@ -5823,7 +5937,7 @@ msgstr "Veidojiet,lai atbalstītu izaugsmi"
 msgid "Business Cards"
 msgstr "Vizītkartes"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership"
 msgstr "Biznesa piederība"
 
@@ -5831,11 +5945,11 @@ msgstr "Biznesa piederība"
 msgid "BUSINESS OWNERSHIP CERTIFICATE"
 msgstr "BIZNESA ĪPAŠUMTIESĪBU SERTIFIKĀTS"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership Last Month"
 msgstr "Biznesa tiesības pagājušāajā mēnes"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership This Month"
 msgstr "Biznesa tiesības šajā mēnesī"
 
@@ -6270,7 +6384,8 @@ msgstr "Kajītes:"
 msgid "Calendar"
 msgstr "Kalendārs"
 
-#: pages/reports.vue components/receipts/monthly_member_activation.vue
+#: components/reports/old_reports.vue
+#: components/receipts/monthly_member_activation.vue
 #: components/receipts/super_builders_bonus.vue
 #: components/receipts/qualified_residual_bonus.vue
 msgid "Calendar Month"
@@ -6413,10 +6528,10 @@ msgstr "Kanādas Dolārs (CAD)"
 #: components/fast-growing-legs.vue components/recipients_modal.vue
 #: components/avatar_cropper.vue pages/referral_links.vue pages/inviter.vue
 #: pages/tours_details.vue pages/checkout.vue pages/hotels.vue
-#: pages/reports.vue pages/admin_permission_group.vue
-#: pages/admin_department.vue pages/connect.vue pages/admin_permission.vue
-#: pages/contacts.vue pages/settings.vue pages/kyc_verification.vue
-#: pages/invoices.vue pages/email.vue pages/business_performance.vue
+#: pages/admin_permission_group.vue pages/admin_department.vue
+#: pages/connect.vue pages/admin_permission.vue pages/contacts.vue
+#: pages/settings.vue pages/kyc_verification.vue pages/invoices.vue
+#: pages/email.vue pages/business_performance.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/admin_management/admin_departments.vue
 #: components/payout/euro-conversion.vue
@@ -6428,7 +6543,7 @@ msgstr "Kanādas Dolārs (CAD)"
 #: components/contacts/contact-edit-modal.vue
 #: components/settings_page/remove-display-name-modal.vue
 #: components/cruises_booking_old/confirmation-step.vue
-#: components/hotels/GuestsDropdown.vue
+#: components/reports/old_reports.vue components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsPanel.vue
 #: components/recurring/add-recurring.vue
 #: components/recurring/recurring_payment_method_checkout.vue
@@ -6722,7 +6837,8 @@ msgstr ""
 "personālam un līgumslēdzējiem, izmantojot paroli, un jūs to nevarat "
 "modificēt."
 
-#: pages/certificates.vue pages/reports.vue
+#: pages/certificates.vue components/reports/quick_reports.vue
+#: components/reports/old_reports.vue
 msgid "Certificate"
 msgstr "Sertifikāts"
 
@@ -6748,6 +6864,7 @@ msgid "Certificates"
 msgstr "Sertifikāti"
 
 #: pages/email_address.vue pages/referral_links_old.vue
+#: components/reports/quick_reports.vue
 msgid "Change"
 msgstr "Mainīt"
 
@@ -6949,7 +7066,7 @@ msgstr "Ķīnas juaņa (CNY)"
 msgid "Choose"
 msgstr "Izvēlies"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Choose a Quick Report"
 msgstr "Izvēlies Ātro Ziņojumu/Atskaiti"
 
@@ -7121,6 +7238,7 @@ msgstr "Pieprasiet savus Bezmaksas 50 Balvu Punktus tagad!"
 msgid "Classic"
 msgstr "Klasisks"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 msgid "CLASSIC"
@@ -7135,7 +7253,7 @@ msgstr "Classic Biedrs"
 msgid "CLASSIC Member"
 msgstr "CLASSIC Biedrs"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Classic Members"
 msgstr "Classic Biedri"
 
@@ -7158,7 +7276,7 @@ msgstr "Notīrīt kritērijus"
 msgid "Clear Filters"
 msgstr "Notīrīt filtrus"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Clear Selections"
 msgstr "Notīrīt atlases"
 
@@ -7239,6 +7357,11 @@ msgstr "Noklikšķiniet šeit, lai skatītu talonu/vaučeru"
 #: pages/create_price_match_cruises.vue
 msgid "Click here to view your Price Match Requests:"
 msgstr "Noklikšķiniet šeit, lai skatītu savu Cenu Saskaņošanas Pieprasījumu:"
+
+#: components/reports/new_reports.vue
+#: components/reports/quick_reports_modal/templates-list.vue
+msgid "Click on a card below to run report based on a specific template"
+msgstr ""
 
 #: pages/cruise_price_match_guarantee.vue
 msgid "click the"
@@ -7350,6 +7473,7 @@ msgid "Column Selection"
 msgstr "Kolonnu atlase"
 
 #: components/data_table/column-selection-widget.vue
+#: components/reports/report_card.vue
 msgid "Columns"
 msgstr "Kolonnas"
 
@@ -7373,6 +7497,12 @@ msgstr ""
 "Kopā ar citiem izvēlētajiem inCruises partneriem 2024. gada janvārī Dubaijā "
 "un iegremdējies pirmajā"
 
+#: components/reports/report_card.vue
+#, fuzzy
+#| msgid "Coming Soon!"
+msgid "Coming Soon"
+msgstr "Drīz Sāksies!"
+
 #: pages/public/the_global_convention.vue
 msgid "Coming Soon!"
 msgstr "Drīz Sāksies!"
@@ -7381,7 +7511,8 @@ msgstr "Drīz Sāksies!"
 msgid "Commercial Partnerships Manager"
 msgstr "Komerciālās Partnerības Menedžeris"
 
-#: pages/reports.vue components/receipts/commission_statement.vue
+#: components/reports/old_reports.vue
+#: components/receipts/commission_statement.vue
 msgid "Commission"
 msgstr "Komisija"
 
@@ -7446,7 +7577,8 @@ msgstr "Kompensācija"
 msgid "Compensation Details"
 msgstr "Detalizēta Kompensāciju informācija"
 
-#: pages/reports.vue components/certificates/CompensationProgram.vue
+#: components/reports/old_reports.vue
+#: components/certificates/CompensationProgram.vue
 #: components/public/FooterDocs.vue
 msgid "Compensation Program"
 msgstr "Kompensācijas programma"
@@ -7493,9 +7625,10 @@ msgstr "Papeidziet Pasažiera Datus"
 msgid "Complete your booking before"
 msgstr "Pabeidziet savu rezervāciju pirms"
 
-#: pages/export.vue pages/reports.vue pages/agreements.vue
-#: pages/team_documentation_requests.vue pages/contacts.vue pages/invoices.vue
-#: pages/leadership_academy.vue components/contacts/contact-edit-modal.vue
+#: pages/export.vue pages/agreements.vue pages/team_documentation_requests.vue
+#: pages/contacts.vue pages/invoices.vue pages/leadership_academy.vue
+#: components/contacts/contact-edit-modal.vue
+#: components/reports/old_reports.vue
 msgid "Completed"
 msgstr "Noslēdzies"
 
@@ -7567,13 +7700,12 @@ msgstr "Konfigurēt logrīku"
 
 #: components/alert_modal.vue components/fast-growing-legs.vue
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: pages/reports.vue pages/create_price_match_cruises.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/admin_permission.vue pages/settings.vue
+#: pages/create_price_match_cruises.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/admin_permission.vue pages/settings.vue
 #: components/payout/birthday-modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
-#: components/receipts/booking_receipt.vue
+#: components/reports/old_reports.vue components/receipts/booking_receipt.vue
 msgid "Confirm"
 msgstr "Apstiprināt"
 
@@ -7747,7 +7879,7 @@ msgstr ""
 msgid "Congratulations! You have claimed your reward points."
 msgstr "Apsveicam! Jūs jau esat pieprasījis savus balvu punktus."
 
-#: pages/reports.vue pages/connect.vue pages/account_setup.vue
+#: pages/connect.vue pages/account_setup.vue components/reports/old_reports.vue
 msgid "Connect"
 msgstr "Savieno"
 
@@ -7755,7 +7887,7 @@ msgstr "Savieno"
 msgid "CONNECT 1500"
 msgstr "CONNECT 1500"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect 1500 - $500"
 msgstr "Connect 1500 - $ 500"
 
@@ -7763,7 +7895,7 @@ msgstr "Connect 1500 - $ 500"
 msgid "CONNECT 500"
 msgstr "CONNECT 500"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect 500 - $50"
 msgstr "Conect 500 - $50"
 
@@ -7777,7 +7909,7 @@ msgstr ""
 "birojā, lai jūs varētu sazināties ar paredzamajiem biedriem un partneru "
 "komandu, nospiežot pogu."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect Plan"
 msgstr "Connect Plāns"
 
@@ -8133,6 +8265,12 @@ msgstr "Valstis"
 msgid "Countries and counting"
 msgstr "Valstis un skaitīsana"
 
+#: components/reports/filters/country.vue
+#, fuzzy
+#| msgid "Countries Selected"
+msgid "countries selected"
+msgstr "Izvēlētās valstis"
+
 #: pages/mercy_ships.vue
 msgid "Countries Selected"
 msgstr "Izvēlētās valstis"
@@ -8148,10 +8286,10 @@ msgstr "valsts"
 #: components/mercy-ship-modals.vue components/info-reminder.vue
 #: components/weekly-competition.vue pages/additional_info.vue
 #: pages/competition.vue pages/referral_links_old.vue pages/admin_user.vue
-#: pages/new_ranks.vue pages/mercy_ships.vue pages/reports.vue
-#: pages/partner_success.vue pages/builders_base.vue pages/team_rankings.vue
-#: pages/settings.vue pages/reach.vue pages/track_results.vue
-#: pages/giving_society.vue components/checkout/ItalianStep.vue
+#: pages/new_ranks.vue pages/mercy_ships.vue pages/partner_success.vue
+#: pages/builders_base.vue pages/team_rankings.vue pages/settings.vue
+#: pages/reach.vue pages/track_results.vue pages/giving_society.vue
+#: components/checkout/ItalianStep.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus_preview.vue
 #: components/compensation/leadership_bonus.vue
@@ -8160,12 +8298,17 @@ msgstr "valsts"
 #: components/compensation/my_team_breakdown_table.vue
 #: components/contacts/contact-edit-modal.vue
 #: components/settings_page/login-activity.vue
+#: components/reports/old_reports.vue
 #: components/high_risk/high_risk_accounts.vue
 #: components/receipts/italian_receipt.vue components/public/JoinModal.vue
 #: components/onboarding/address-step.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/business_intelligence/comp_to_sales.vue pages/public/signup.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
+#: components/reports/filters/country.vue
 msgid "Country"
 msgstr "Valsts"
 
@@ -8208,7 +8351,7 @@ msgstr "kurss"
 msgid "Course"
 msgstr "Kurss"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Course Certificate"
 msgstr "Kursa sertifikāts"
 
@@ -8321,6 +8464,7 @@ msgid "Created:"
 msgstr "Radīts/Izveidots:"
 
 #: components/admin_finance/payment_fulfillment.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/mercy_ships/donate_modal/payment-selection.vue
 msgid "Credit Card"
 msgstr "Kredītkarte"
@@ -8567,7 +8711,7 @@ msgstr "Kruīza līnijas"
 msgid "Cruise Member"
 msgstr "Kruīza Biedrs"
 
-#: components/support/InstantTools.vue
+#: components/support/InstantTools.vue components/reports/quick_reports.vue
 msgid "Cruise Name"
 msgstr "Kruīza Nosaukums"
 
@@ -8684,6 +8828,12 @@ msgstr "Naudas summām jābūt EUR"
 msgid "Currency Selected"
 msgstr "Valūta atlasīta"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Direct Activations"
+msgid "Current Activations"
+msgstr "Tiešās Aktivizācijas"
+
 #: components/growth_calculator/potential_recurring.vue
 msgid "Current Active Levels"
 msgstr "Jūsu Patreizējie Līmeņi"
@@ -8716,8 +8866,15 @@ msgid "Current Plan"
 msgstr "Pašreizējais plāns"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/quick_reports.vue
 msgid "Current QBI"
 msgstr "Patreizējais QBI"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Recurring Qualified Production"
+msgid "Current Qualified Production"
+msgstr "Atkārtotais Kvalificētais Apgrozījums"
 
 #: components/growth_calculator/potential_leadership.vue
 msgid "Current Rank"
@@ -8930,7 +9087,7 @@ msgstr "dati"
 msgid "Data"
 msgstr "Dati"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Data Fields"
 msgstr "Datu lauki"
 
@@ -8976,7 +9133,7 @@ msgstr "Datums dilstošā secībā"
 msgid "Date Earned"
 msgstr "Datums Iegūtais"
 
-#: pages/reports.vue pages/team_rankings.vue
+#: pages/team_rankings.vue components/reports/old_reports.vue
 msgid "Date From"
 msgstr "Sākot no"
 
@@ -9009,7 +9166,7 @@ msgstr "Izdošanas datums"
 msgid "Date Range"
 msgstr "Datumu Diapazons"
 
-#: pages/reports.vue pages/team_rankings.vue
+#: pages/team_rankings.vue components/reports/old_reports.vue
 msgid "Date To"
 msgstr "Datums līdz"
 
@@ -9043,6 +9200,7 @@ msgid "days"
 msgstr "dienas"
 
 #: components/cards/countdown-card.vue components/public/tgc-countdown.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
 msgid "Days"
 msgstr "Dienas"
 
@@ -9051,11 +9209,37 @@ msgid "Days In Negative"
 msgstr "Dienas \"In Negative\""
 
 #: components/compensation/members-qbi-modal.vue
+#: components/reports/quick_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
 msgid "Days Left"
 msgstr "Palikušās Dienas"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Count"
+msgstr "Atlikušās Ddienas Lai Kvalificētos"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left to Pay"
+msgstr "Atlikušās Ddienas Lai Kvalificētos"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Pay"
+msgstr "Atlikušās Ddienas Lai Kvalificētos"
+
 #: components/compensation/qbi_members_table.vue
 msgid "Days Left To Qualify"
+msgstr "Atlikušās Ddienas Lai Kvalificētos"
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Still Be Eligible"
 msgstr "Atlikušās Ddienas Lai Kvalificētos"
 
 #: pages/admin_user_id.vue
@@ -9217,7 +9401,7 @@ msgstr "Atiet"
 msgid "DEPART"
 msgstr "ATIEŠANA"
 
-#: pages/reports.vue pages/price_match_requests.vue
+#: pages/price_match_requests.vue components/reports/old_reports.vue
 #: components/receipts/booking_receipt.vue
 #: components/admin_booking/admin_cruise_featured.vue
 msgid "Depart Date"
@@ -9484,7 +9668,7 @@ msgstr "Tiešie PartneriMTD"
 msgid "Direct Pending Members"
 msgstr "Tieši Gaidošie Biedri"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Direct Pending with Cruise Bookings"
 msgstr "Tiešie Gaidošie ar kruīzu rezervācijām"
 
@@ -9559,6 +9743,13 @@ msgstr "Virzītāji/Tiešie (visi datumi)"
 #: pages/info_center.vue
 msgid "Directs (Month to Date)"
 msgstr "Virzītāji/Tiešie (līdz mēneša datumam)"
+
+#: components/reports/filters/my_directs.vue
+#, fuzzy
+#| msgid "Total of Members or Partners you have personally Activated"
+msgid ""
+"Directs are members or partners you have referred to inCruises personally."
+msgstr "Biedru un Partneru kopskaits,ko jūs pats esat personīgi aktivizājis"
 
 #: pages/new_partners_tracker.vue
 msgid "Directs Leaderboard"
@@ -9901,11 +10092,11 @@ msgstr "Pazemināms"
 msgid "Downgreadable"
 msgstr "pazemināms"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline level limit must be a number!"
 msgstr "Lejuplīnijas līmeņa ierobežojumam ir jābūt skaitlim!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline limit must be set between 1 and 50."
 msgstr "Lejuplīnijas ierobežojums ir jāiestata no 1 līdz 50."
 
@@ -9913,13 +10104,20 @@ msgstr "Lejuplīnijas ierobežojums ir jāiestata no 1 līdz 50."
 msgid "Downline Name"
 msgstr "Lejuplīnijas nosaukums"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline Select"
 msgstr "Zemāk minētā atlase"
 
-#: pages/reports.vue components/inchat/user/user_create_room.vue
+#: components/reports/old_reports.vue
+#: components/inchat/user/user_create_room.vue
 msgid "Downlines"
 msgstr "Zemākās līnijas"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Downline Select"
+msgid "Downlines Eligible"
+msgstr "Zemāk minētā atlase"
 
 #: components/receipts/instant_bonus_statement.vue
 msgid "Downlines Names"
@@ -9967,8 +10165,8 @@ msgstr "Lejupielādēt karti kā. png"
 msgid "Download Completed CSV"
 msgstr "Lejupielāde pabeigta CSV"
 
-#: pages/reports.vue pages/team_documentation_requests.vue
-#: pages/track_results.vue
+#: pages/team_documentation_requests.vue pages/track_results.vue
+#: vue/composables/reports/useBulkActions.js components/reports/old_reports.vue
 msgid "Download CSV"
 msgstr "Lejuplādē CSV"
 
@@ -10063,8 +10261,8 @@ msgstr "Dubaija"
 msgid "Due date"
 msgstr "Izpildes Datums"
 
-#: pages/reports.vue pages/invoices.vue components/invoices/invoice.vue
-#: components/user/invoices.vue
+#: pages/invoices.vue components/invoices/invoice.vue
+#: components/reports/old_reports.vue components/user/invoices.vue
 msgid "Due Date"
 msgstr "Izpildes datums"
 
@@ -10096,6 +10294,13 @@ msgstr ""
 #: components/payout/brightwell/transfer-details.vue
 msgid "Due to your"
 msgstr "Jūsu dēļ"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Due Today"
+msgid "Due today"
+msgstr "Izpildi šodien"
 
 #: pages/duplicator.vue
 msgid "Duplicator"
@@ -10655,7 +10860,7 @@ msgstr "Tiesības saņemt komisijas"
 #: components/welcome/profile-card.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
-#: components/navigation/mobile-menu.vue
+#: components/reports/quick_reports.vue components/navigation/mobile-menu.vue
 #: components/navigation/avatar-dropdown.vue
 #: components/compensation/fast_start/breakdown_table.vue
 msgid "Eligible"
@@ -10690,14 +10895,15 @@ msgstr "Elitārās Ceļojumu Priekšrocība"
 #: components/birthday-modal.vue pages/email_address.vue
 #: pages/additional_info.vue pages/cards.vue pages/account-recovery.vue
 #: pages/admin_account_recovery.vue pages/negative_balances.vue
-#: pages/admin_user.vue pages/invite.vue pages/reports.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/contacts.vue pages/team_rankings.vue pages/settings.vue
-#: pages/track_results.vue pages/admin_restricted_paybonus.vue
-#: pages/notifications.vue pages/password.vue pages/email.vue
-#: pages/multi_factor.vue components/negative_balances/uplines_modal.vue
+#: pages/admin_user.vue pages/invite.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/contacts.vue pages/team_rankings.vue
+#: pages/settings.vue pages/track_results.vue
+#: pages/admin_restricted_paybonus.vue pages/notifications.vue
+#: pages/password.vue pages/email.vue pages/multi_factor.vue
+#: components/negative_balances/uplines_modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/invoices/invoice.vue components/compensation/leadership_bonus.vue
+#: components/reports/old_reports.vue
 #: components/high_risk/high_risk_accounts.vue
 #: components/receipts/monthly_member_activation.vue
 #: components/receipts/tour_booking_receipt.vue
@@ -10717,6 +10923,9 @@ msgstr "Elitārās Ceļojumu Priekšrocība"
 #: components/receipts/hotel_booking_receipt.vue
 #: components/receipts/leadership_bonus_statement.vue
 #: components/receipts/builders_bonus_new.vue components/public/JoinModal.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/hotel_booking/guest_info_step.vue
 #: components/user/notifications.vue pages/login/login.vue
 #: pages/public/signup.vue pages/public/contact.vue
@@ -10741,7 +10950,7 @@ msgstr "Epasta adrese izveidota!"
 msgid "Email Address:"
 msgstr "Epasta adrese:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Email Blast"
 msgstr "E-pasta saīsinājums"
 
@@ -10793,6 +11002,12 @@ msgstr "Epasts:"
 #: pages/contacts.vue
 msgid "email@example.com"
 msgstr "email@piemērs.com"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Email Date"
+msgid "Embarking Date"
+msgstr "E-pasta Datums"
 
 #: pages/glsx.vue pages/gls.vue
 msgid "Embrace the Challenge"
@@ -11007,6 +11222,18 @@ msgstr "ievadiet vārdu/nosaukumu"
 msgid "Enter new password"
 msgstr "Ievadi jauno paroli"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Enter Verification Code"
+msgid "Enter notification content"
+msgstr "Ievadīt verifikācijas kodu"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Enter Verification Code"
+msgid "Enter notification title"
+msgstr "Ievadīt verifikācijas kodu"
+
 #: pages/login/login.vue pages/public/signup.vue
 msgid "Enter password"
 msgstr "Ievadi Paroli"
@@ -11153,7 +11380,8 @@ msgstr ""
 msgid "error"
 msgstr "kļūda"
 
-#: vue/main.js components/recurring/recurring-cards.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/recurring/recurring-cards.vue
 msgid "Error"
 msgstr "Kļūda"
 
@@ -11399,11 +11627,12 @@ msgstr "Izslēgt iepriekš uzaicināto"
 msgid "Exclude results with mandatory pre-paid tips"
 msgstr "Izslēdziet rezultātus ar obligātiem priekšapmaksas padomiem"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
+#: components/reports/filters/exclude_teams.vue
 msgid "Exclude Teams"
 msgstr "Izslēdziet komandas"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Excluding Teams"
 msgstr "Izslēdzošās komandaw"
 
@@ -11444,11 +11673,12 @@ msgstr "EKSKURSIJA 2"
 msgid "EXCURSION 3"
 msgstr "EKSKURSIJA 3"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -11518,8 +11748,9 @@ msgstr ""
 msgid "Expiration date"
 msgstr "Termiņa Beigu datums"
 
-#: pages/reports.vue pages/invoices.vue pages/admin_price_match.vue
-#: components/recurring/recurring-cards.vue components/user/invoices.vue
+#: pages/invoices.vue pages/admin_price_match.vue
+#: components/reports/old_reports.vue components/recurring/recurring-cards.vue
+#: components/user/invoices.vue
 msgid "Expiration Date"
 msgstr "Derīguma termiņš"
 
@@ -11543,11 +11774,11 @@ msgstr "Termiņa Beigu Datums UTC"
 msgid "Expired"
 msgstr "Ir beidzies derīguma termiņš"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Expired Partners"
 msgstr "Izslēgtie partneri"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Expired Partners with Pending Invoices"
 msgstr "Zudušie Patneri ar nenokārtotiem rēķiniem"
 
@@ -11665,6 +11896,18 @@ msgstr ""
 msgid "Failed to create session. Please try again."
 msgstr "Neizdevās izveidot sesiju. Lūdzu, mēģiniet vēlreiz."
 
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "Failed to load members"
+msgid "Failed to download users"
+msgstr "Neizdevās ielādēt biedrus"
+
+#: vue/composables/useDownloadCsv.js
+#, fuzzy
+#| msgid "Error generating CSV"
+msgid "Failed to generate CSV"
+msgstr "Ģenerējot CSV, radās kļūda"
+
 #: components/compensation/overview.vue
 msgid "Failed to get compensation layout."
 msgstr "Neizdevās iegūt atlīdzības izkārtojumu/shēmu."
@@ -11741,6 +11984,13 @@ msgstr "Neizdevās ielādēr lietotāju. Lūdzu, mēģiniet vēlreiz."
 #: components/compensation/overview.vue
 msgid "Failed to save layout."
 msgstr "Neizdevās saglabāt izkārtojumu."
+
+#: vue/composables/useSendBroadcastPwaNotification.js
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "e-mail & push notifications"
+msgid "Failed to send notification"
+msgstr "e-mail & paziņojumi"
 
 #: components/payout/brightwell/recipient-account.vue
 msgid "Failed to send verification email. Please try again."
@@ -11841,11 +12091,11 @@ msgstr "Ātri Augošie Partneri"
 msgid "Fast Start"
 msgstr "Ātrais Starts"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Bonus"
 msgstr "Ātrā starta bonus"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Earned"
 msgstr "Ātrais starts uzsākts"
 
@@ -11862,7 +12112,7 @@ msgstr "Ātrā Starta Stimulācija"
 msgid "FAST START INCENTIVE = $500.00 MD BONUS!"
 msgstr "ĀTRĀ STARTA STIMULĀCIJA = $500.00 MD BONUS!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Last Month"
 msgstr "Ātrais starts pagājušajā mēnesī"
 
@@ -11872,7 +12122,7 @@ msgstr "Ātrais starts pagājušajā mēnesī"
 msgid "Fast Start Matching"
 msgstr "Ātrā Starta Matching(Atbilstība)"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start This Month"
 msgstr "Ātrais starts šajā mēnesī"
 
@@ -12018,9 +12268,10 @@ msgstr "Atlasīt Pēc Virsraksta"
 msgid "Filtering"
 msgstr "filtrēšana"
 
-#: components/leader_board_component.vue pages/hotels.vue pages/reports.vue
-#: pages/cruises.vue components/data_table/filter-selection-widget.vue
-#: components/data_table/table.vue components/tours/intours_results.vue
+#: components/leader_board_component.vue pages/hotels.vue pages/cruises.vue
+#: components/data_table/filter-selection-widget.vue
+#: components/data_table/table.vue components/reports/old_reports.vue
+#: components/tours/intours_results.vue
 #: components/partner_cruise_contest/leader_board.vue
 msgid "Filters"
 msgstr "Filtri"
@@ -12179,6 +12430,19 @@ msgstr "Pirmās atbildes vid"
 #: components/admin_field_communicators/field_stats.vue
 msgid "First Start Date"
 msgstr "Prmais Starta datums"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "First Leader"
+msgid "First Up leader"
+msgstr "Pirmai līderi"
+
+#: components/reports/quick_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "First Leader"
+msgid "First Up Leader"
+msgstr "Pirmai līderi"
 
 #: components/admin_field_communicators/field_stats.vue
 msgid "First Year"
@@ -12485,7 +12749,7 @@ msgstr "BEZMAKSAS"
 msgid "Free and Registered"
 msgstr "Bezmaksas un Reģistrējušies"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Free Plan"
 msgstr "Brīvais plāns"
 
@@ -12504,6 +12768,8 @@ msgstr "Piektdiena"
 
 #: pages/mercy_ships.vue pages/elevate_registration.vue pages/email.vue
 #: components/cruises_booking/cruise_card.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "From"
 msgstr "No"
 
@@ -12588,7 +12854,7 @@ msgstr "Līdzekļi ir izņemti. Transakcija veiksmīgi pabeigta"
 msgid "Funds:"
 msgstr "Līdzekļi:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Future Bookings"
 msgstr "Nākotnes Rezervācijas"
 
@@ -13117,8 +13383,7 @@ msgstr "Viesis"
 msgid "Guest Account"
 msgstr "Viesa Konts"
 
-#: pages/reports.vue pages/track_results.vue
-#: components/hotels/GuestsDropdown.vue
+#: pages/track_results.vue components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsTrigger.vue
 #: components/receipts/hotel_booking_receipt.vue components/user/directs.vue
 msgid "Guests"
@@ -13368,6 +13633,10 @@ msgstr "Vēsturiskais QBI"
 #: components/compensation/qbi.vue
 msgid "Historical QBI Date Range:"
 msgstr "Vēsturiskais QBI datumu diapazons:"
+
+#: components/reports/old_reports.vue
+msgid "Historical QBI Report"
+msgstr "Vēsturiskā QBI pārskats"
 
 #: components/receipts/tour_booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue
@@ -15655,6 +15924,7 @@ msgid "in Withholding Taxes and"
 msgstr "Ieturējuma nodokliī un"
 
 #: pages/track_results.vue components/compensation/qbi_members_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Inactive"
 msgstr "Neaktīvs"
 
@@ -15664,7 +15934,7 @@ msgstr "Neaktīvs"
 msgid "Inactive Balance"
 msgstr "Neaktīva bilance"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Inactive Date"
 msgstr "Neaktīvs datums"
 
@@ -15698,7 +15968,7 @@ msgstr "Stimulāciju Ziņojums:"
 msgid "Incentive Program Overview"
 msgstr "Veicināšanas Programmas Pārskats"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Include"
 msgstr "Ietvert"
 
@@ -15763,6 +16033,12 @@ msgstr "inCruises - Kompensācija"
 #: pages/compensation/member_activations.vue
 msgid "InCruises - Member Activation Bonuses"
 msgstr "InCruises -Biedru Aktivizācijas Bonusi"
+
+#: pages/reports.vue
+#, fuzzy
+#| msgid "inCruises - Receipt"
+msgid "InCruises - Reports"
+msgstr "Kruīzi-saņemšana"
 
 #: pages/compensation/team_leadership_bonus.vue
 msgid "InCruises - Team Leadership Bonus"
@@ -16440,6 +16716,12 @@ msgstr ""
 "Šie pakalpojumi var apkopot informāciju, ko pārlūkprogramma nosūta kā daļu "
 "no tīmekļa lapas pieprasījuma, piemēram, sīkfailus vai IP pieprasījumu."
 
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "InCruises Wallet"
+msgid "inCruises Wallet"
+msgstr "InCruises Maciņš"
+
 #: components/checkout/ProcessorWallet.vue
 msgid "InCruises Wallet"
 msgstr "InCruises Maciņš"
@@ -16571,7 +16853,8 @@ msgstr ""
 "Mazuļiem,kas ir jaunāki par %{infantAgeMax} iekāpšanas laikā, nav atļauts "
 "ceļot ar šo kruīzu līniju."
 
-#: vue/main.js components/compensation/member_activations.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/compensation/member_activations.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/weekly_bonus.vue components/user/permissions.vue
@@ -16642,6 +16925,10 @@ msgstr "Šeit ievietojiet pikseļa ID"
 #: pages/email.vue
 msgid "Insert your email..."
 msgstr "Ievieto savu e-pastu ..."
+
+#: components/reports/old_reports.vue
+msgid "Insert your message..."
+msgstr "Ievieto savu ziņojumu ..."
 
 #: pages/cruise.vue pages/tenth_anniversary_cruises.vue
 #: components/cruises_booking/cabin_price_showcase.vue
@@ -16749,11 +17036,12 @@ msgstr "Iekšējās kajītes ietver plašu ērtību klāstu,ko var baudīt visa 
 msgid "Internal Price"
 msgstr "Ieksējā Cena"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -16902,7 +17190,8 @@ msgstr "rēķins"
 msgid "Invoice"
 msgstr "Rēķins"
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 msgid "Invoice Created"
 msgstr "Sastādītais Rēķins"
 
@@ -16936,6 +17225,24 @@ msgstr "Rēķina numurs"
 msgid "Invoice Statement"
 msgstr "Rēķina secinājums"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Invite Status"
+msgid "Invoice Status"
+msgstr "Uzaicinājuma Status"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "Invoice Type"
+msgstr "Rēķina datums"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Pending Invoices (within 5 days)"
+msgid "Invoice Within First 5 Days"
+msgstr "Gaidošie Rēķini (5 dienu laiks)"
+
 #: QuickPayTopBar.vue pages/admin_user_id.vue pages/menu_page.vue
 #: pages/invoices.vue
 msgid "Invoices"
@@ -16949,7 +17256,7 @@ msgstr "Rēķini Samaksāti"
 msgid "Invoices Pending"
 msgstr "Gaidošie Rēķini"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Invoices Total"
 msgstr "Rēķini Kopā"
 
@@ -17487,15 +17794,20 @@ msgstr "Ar karodziņu atzīmēts KYC"
 msgid "Kyrgyz"
 msgstr "Kirgizstāna"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Laminated Presentations"
 msgstr "Laminētas prezentācijas"
 
-#: pages/admin_user.vue pages/reports.vue pages/team_documentation_requests.vue
+#: pages/admin_user.vue pages/team_documentation_requests.vue
 #: pages/team_rankings.vue pages/settings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
 #: components/contacts/contact-edit-modal.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#: components/reports/filters/language.vue
 #: components/inchat/user/user_create_room.vue
 msgid "Language"
 msgstr "Valoda"
@@ -17503,6 +17815,12 @@ msgstr "Valoda"
 #: components/language-reminder.vue
 msgid "Language Reminder"
 msgstr "Valodas izvēle"
+
+#: components/reports/filters/language.vue
+#, fuzzy
+#| msgid "Package selected:"
+msgid "languages selected"
+msgstr "Pakete atlasīta:"
 
 #: pages/team_rankings.vue components/compensation/overview.vue
 msgid "Last 12 Months"
@@ -17574,6 +17892,12 @@ msgstr "Uzvārds"
 msgid "Last Name:"
 msgstr "Uzvārds:"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Rank Achieved"
+msgid "Last Rank Achieved"
+msgstr "Rangs Sasniegts"
+
 #: pages/admin_emails.vue
 msgid "Last Sent"
 msgstr "Pēdējo reizi nosūtīts"
@@ -17632,7 +17956,7 @@ msgstr "latvietis"
 msgid "Layout has been successfully updated."
 msgstr "Izkārtojums ir sekmīgi atjaunināts."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Leader Plan - $49"
 msgstr "Līdera plāns-49$"
 
@@ -17873,7 +18197,11 @@ msgstr ""
 "Ļauj izmantot parādāmo vārdu visā platformā, lai jūsu juridiskais vārds "
 "netiktu rādīts."
 
-#: pages/reports.vue pages/reach.vue
+#: pages/reach.vue components/reports/quick_reports.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Level"
 msgstr "Līmenis"
 
@@ -17881,7 +18209,7 @@ msgstr "Līmenis"
 msgid "Level {{ index + 1 }}"
 msgstr "Līmenis {{ index + 1 }}"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Level Limit"
 msgstr "Līmeņa limits"
 
@@ -17979,6 +18307,11 @@ msgstr "Saites"
 msgid "List any specific needs"
 msgstr "Uzskaitīt visas īpašās vajadzības"
 
+#: components/reports/quick_reports.vue
+msgid ""
+"Lists members counting for your QBI metric with days left to count and status"
+msgstr ""
+
 #: components/checkout/ProcessorNetcents.vue
 msgid "Litecoin"
 msgstr "Litecoin(kriptovalūta)"
@@ -18011,11 +18344,11 @@ msgstr "Ielādēšanas Līmenis"
 msgid "Load more"
 msgstr "Ielādēt/dot vairāk"
 
-#: pages/reward_points.vue pages/admin_partner_success.vue pages/reports.vue
+#: pages/reward_points.vue pages/admin_partner_success.vue
 #: pages/webinar_recordings.vue pages/partner_success.vue pages/invoices.vue
 #: pages/track_results.vue pages/cruises.vue
 #: components/payout/wallet-transfers.vue
-#: components/cruises_booking/cabin_step.vue
+#: components/cruises_booking/cabin_step.vue components/reports/old_reports.vue
 #: components/tours/intours_results.vue
 msgid "Load More"
 msgstr "Ielādēt vairāk"
@@ -18424,12 +18757,13 @@ msgstr "Atzīmēt kā samaksātu"
 msgid "Market Adjustment"
 msgstr "Tirgus Pielāgošana"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -18479,7 +18813,7 @@ msgstr "Masveida atjaunināšana"
 msgid "Master Controls"
 msgstr "Galvenā vadība"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Master Plan - $119"
 msgstr "Generālplāns-119$"
 
@@ -18545,6 +18879,10 @@ msgstr "Maksimālais faila lielums ir 25 MB, un fails nevar būt tukšs."
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Max Lead Time"
 msgstr "Maksimālais potenciālā klienta laiks"
+
+#: components/reports/filters/max_levels_down.vue
+msgid "Max Levels Down"
+msgstr ""
 
 #: components/filter-chip-range.vue pages/hotels.vue pages/cruises.vue
 #: components/tours/intours_results.vue
@@ -18750,6 +19088,12 @@ msgstr "Biedru Metrika"
 msgid "Member reached insider pricing limit"
 msgstr "Biedrs ir sasniedzis Insider pricing limitu"
 
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Member Reports"
+msgstr "Biznesa ziņojumi"
+
 #: pages/admin_user.vue pages/giving_society.vue
 msgid "Member Since"
 msgstr "Biedrs kopš"
@@ -18785,6 +19129,12 @@ msgstr ""
 #: components/compensation/active_partner_modal.vue
 msgid "Members Counting for my active partner status"
 msgstr "Biedri, kas virzās uz manu aktīvā partnera statusu"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Members in your QBI"
+msgid "Members Counting Toward Your QBI"
+msgstr "Jūsu QBI Biedri"
 
 #: pages/public/membership.vue
 msgid "Members Enjoy Unparalleled Value With"
@@ -18823,11 +19173,25 @@ msgstr ""
 "Biedri, kuri nav veikuši maksājumu noteiktajā 30 dienu periodā un kuriem ir "
 "atkārtoti jāaktivizē savs konts, lai turpinātu veikt maksājumus."
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Pending Members with Pending Invoices"
+msgid "Members With Cruise Bookings & Pending Invoices"
+msgstr "Neaktīvie Biedri ar nenokārtotiem rēķiniem"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Members with Pending Invoices"
+msgstr "Lietotāju ar nenokārtotiem rēķiniem"
+
 #: Footer.vue components/upgrade-marketing-modal.vue pages/referral_links.vue
 #: pages/inviter.vue pages/team_documentation_requests.vue
 #: components/compensation/qbi_members_table.vue
 #: components/cruises/upgrade_premium_drawer.vue
+#: components/reports/quick_reports.vue
 #: components/hotels/upgrade_premium_drawer.vue components/public/Header.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 #: components/navigation/mobile-menu.vue
 #: components/navigation/avatar-dropdown.vue
 #: components/public/webflow/Footer.vue
@@ -18880,15 +19244,15 @@ msgstr "Biedru Dalības Līgums"
 msgid "Membership and Partnership Support"
 msgstr "Biedru dalības un Partnerības Atbalsts"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Course"
 msgstr "Partnerības kurss"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Created"
 msgstr "Partnerība nodibināta"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Creation Date"
 msgstr "Partnerības dibināšanas datums"
 
@@ -18896,15 +19260,21 @@ msgstr "Partnerības dibināšanas datums"
 msgid "Membership Date"
 msgstr "Biedru dalības Datums"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Membership First Month"
+msgid "Membership Discount"
+msgstr "Biedru Dalības Pirmais Mēnesis"
+
 #: components/upgrade/tiles/checkout-tile.vue
 msgid "Membership First Month"
 msgstr "Biedru Dalības Pirmais Mēnesis"
 
-#: pages/reports.vue components/welcome/members-modal.vue
+#: components/welcome/members-modal.vue components/reports/old_reports.vue
 msgid "Membership free"
 msgstr "Brīvā partnerība"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Free Date"
 msgstr "Brīvās Partnerības Datums"
 
@@ -18912,7 +19282,7 @@ msgstr "Brīvās Partnerības Datums"
 msgid "Membership Free Directs:"
 msgstr "Brīvās Partnerības Tiešie:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Free Last Month"
 msgstr "Brīvās Partnerības Pēdējais Mēnesis"
 
@@ -18922,6 +19292,12 @@ msgstr "Brīvā partnerība!"
 
 #: pages/admin_user_id.vue pages/settings.vue
 msgid "Membership Info"
+msgstr "Vadības info"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Membership Info"
+msgid "Membership Invoice"
 msgstr "Vadības info"
 
 #: pages/public/payment_terms.vue
@@ -18939,7 +19315,7 @@ msgstr ""
 msgid "Membership plan"
 msgstr "Biedru Dalības plāns"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Plan"
 msgstr "Biedru dalības Plāns"
 
@@ -18966,6 +19342,12 @@ msgstr "Biedru Dalības Statuss"
 #: components/welcome/members-modal.vue components/user/directs.vue
 msgid "Membership Type"
 msgstr "Biedra Dalības veids"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Membership Free Date"
+msgid "Membership Upgrades & Downgrades"
+msgstr "Brīvās Partnerības Datums"
 
 #: pages/referral_links.vue
 msgid "Membership Video"
@@ -19031,8 +19413,9 @@ msgstr "Sapludināts"
 msgid "message"
 msgstr "ziņa"
 
-#: pages/referral_widget.vue pages/reports.vue pages/support.vue
-#: components/support/AdminCreateTicket.vue pages/public/contact.vue
+#: pages/referral_widget.vue pages/support.vue
+#: components/support/AdminCreateTicket.vue components/reports/old_reports.vue
+#: components/reports/send_push_notification_modal.vue pages/public/contact.vue
 msgid "Message"
 msgstr "Ziņa"
 
@@ -19133,6 +19516,10 @@ msgstr "Minūtes"
 #: components/cards/countdown-card.vue components/public/tgc-countdown.vue
 msgid "Minutes"
 msgstr "minūtes"
+
+#: vue/composables/useSendBroadcastPwaNotification.js
+msgid "Missing required parameters: title, body, and account_ids array"
+msgstr ""
 
 #: pages/admin_missing_sales.vue
 msgid "Missing Sales - InCruises"
@@ -19324,6 +19711,7 @@ msgid "More for Less"
 msgstr "Vairāk par Mazāku"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/avatar_column.vue
 msgid "more info"
 msgstr "vairāk info"
 
@@ -19619,6 +20007,12 @@ msgstr "Mana Kontakt informācija"
 msgid "My Cruise Savings"
 msgstr "Mani Kruīza Ietaupījumi"
 
+#: components/reports/filters/my_directs.vue
+#, fuzzy
+#| msgid "Directs"
+msgid "My Directs"
+msgstr "Komanda"
+
 #: pages/menu_page.vue
 msgid "My Reach"
 msgstr "Mani sasniegumi"
@@ -19649,7 +20043,7 @@ msgstr "n/a"
 #: pages/admin_account_recovery.vue pages/admin_partner_success.vue
 #: pages/negative_balances.vue pages/gls.vue pages/admin_user.vue
 #: pages/banner_tracking.vue pages/new_ranks.vue pages/mercy_ships.vue
-#: pages/reports.vue pages/admin_permission_group.vue pages/partner_success.vue
+#: pages/admin_permission_group.vue pages/partner_success.vue
 #: pages/team_documentation_requests.vue pages/admin_department.vue
 #: pages/contacts.vue pages/builders_base.vue pages/team_rankings.vue
 #: pages/settings.vue pages/duplicator.vue pages/track_results.vue
@@ -19673,6 +20067,7 @@ msgstr "n/a"
 #: components/settings_page/modify-saved-passengers.vue
 #: components/skeleton_loaders/card_animation.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
 #: components/receipts/monthly_member_activation.vue
 #: components/receipts/tour_booking_receipt.vue
 #: components/receipts/new_residual_bonus_statement.vue
@@ -19694,6 +20089,9 @@ msgstr "n/a"
 #: components/receipts/builders_bonus_new.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/business_intelligence/comp_to_sales.vue
 #: components/user/permissions.vue components/user/permission-assignation.vue
 #: components/user/department.vue components/user/permission-group.vue
@@ -19754,12 +20152,12 @@ msgstr "Vārds:"
 msgid "Named in honor of our founding year, the"
 msgstr "Nosaukts par godu mūsu dibināšanas gadam,"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue pages/settings.vue
-#: components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: pages/settings.vue components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -19916,7 +20314,7 @@ msgstr ""
 msgid "Nevermind"
 msgstr "nekas"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New"
 msgstr "Jauns"
 
@@ -19932,15 +20330,22 @@ msgstr "Jaunā Formāta Laminētā Prezentācija"
 msgid "New Group {{ selectedNamespace }}"
 msgstr "Jauna Grupa {{ selectedNamespace }}"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Guests"
+msgid "New Guests"
+msgstr "Viesi"
+
 #: pages/reservations.vue
 msgid "New inTours Feature Available!"
 msgstr "Jauns inTours Rīks ir Pieejams!"
 
-#: pages/resources.vue components/growth_calculator/potential_leadership.vue
+#: pages/resources.vue components/reports/quick_reports.vue
+#: components/growth_calculator/potential_leadership.vue
 msgid "New Members"
 msgstr "Jaunie Biedri"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Membership Free"
 msgstr "Jauna brīvā partnerība"
 
@@ -19949,7 +20354,7 @@ msgid "New Message"
 msgstr "Jauns paziņijums"
 
 #: pages/resources.vue pages/new_partners_tracker.vue
-#: pages/new_partners_tracker_goals.vue
+#: pages/new_partners_tracker_goals.vue components/reports/quick_reports.vue
 msgid "New Partners"
 msgstr "Jaunie partneri"
 
@@ -19957,7 +20362,7 @@ msgstr "Jaunie partneri"
 msgid "NEW Partners Last Month"
 msgstr "Jauni partneri pagājušajā mēnesī"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Partners Last Month (10 Levels)"
 msgstr "Jauni partneri pagājušajā mēnesī(10 līmeņi)"
 
@@ -19969,7 +20374,7 @@ msgstr "Jauni partneri šajā mēnesī"
 msgid "NEW Partners This Month"
 msgstr "JAUNI partneri šajā mēnesī"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Partners This Month (10 Levels)"
 msgstr "Jauni partneri šajā mēnesī(10 līmeņi)"
 
@@ -20016,25 +20421,31 @@ msgstr "Jaunie Līmeņi/pakāpes"
 msgid "New ranks are updated on or after the 10th of each month."
 msgstr "Jaunie līmeņi tiek pārskatīti pirms vai pēc katra mēneša 10. datuma."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks last month"
 msgstr "Jaunas pakāpes pagājušajā mēnesī"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks Last Month"
 msgstr "Jaunas pakāpes pagājušajā mēnesī"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks this month"
 msgstr "Jaunas pakāpes šajā mēnesī"
 
-#: pages/new_ranks.vue pages/reports.vue
+#: pages/new_ranks.vue components/reports/old_reports.vue
 msgid "New Ranks This Month"
 msgstr "Jaunas pakāpes šajā mēnesī"
 
 #: components/user/basic-info.vue
 msgid "New Referrer ID is Invalid"
 msgstr "Jaunā nosūtītāja ID nav derīgs"
+
+#: pages/reports.vue
+#, fuzzy
+#| msgid "New Message"
+msgid "New Reports Page"
+msgstr "Jauns paziņijums"
 
 #: pages/support.vue
 msgid "New Ticket"
@@ -20102,8 +20513,9 @@ msgstr "Nākamais Pieejamais"
 msgid "Next billing date"
 msgstr "Nākamais Rēķina datums"
 
-#: pages/reports.vue pages/team_rankings.vue pages/track_results.vue
+#: pages/team_rankings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
+#: components/reports/old_reports.vue
 msgid "Next Billing Date"
 msgstr "Nākamais rēķina datums"
 
@@ -20111,9 +20523,28 @@ msgstr "Nākamais rēķina datums"
 msgid "Next Billing:"
 msgstr "Nākamie rēķini:"
 
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Create Invoice"
+msgid "Next Invoice"
+msgstr "Izveidojiet Rēķinu"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Membership Info"
+msgid "Next Membership Invoice"
+msgstr "Vadības info"
+
 #: components/payout/wallet-transfers.vue
 msgid "Next Month"
 msgstr "Nākamais mēnesis"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Partnership Video"
+msgid "Next Partnership Invoice"
+msgstr "Partnerības Video"
 
 #: pages/checkout.vue
 msgid "Next Payment Month:"
@@ -20187,6 +20618,12 @@ msgstr "Nav Pieejama Informācija"
 msgid "No data available for download"
 msgstr "Lejupielādei nav pieejami dati"
 
+#: vue/composables/useDownloadCsv.js
+#, fuzzy
+#| msgid "No data available for download"
+msgid "No data to download"
+msgstr "Lejupielādei nav pieejami dati"
+
 #: pages/hotels.vue
 msgid "No destination options available."
 msgstr "Neviena galamērķa opcija nav pieejama."
@@ -20248,7 +20685,7 @@ msgstr "Neviens vārds nav importēts"
 msgid "No Obligation, No Cost"
 msgstr "Nav pienākuma, nav izmaksu"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "No Plan"
 msgstr "Nav plāna"
 
@@ -20265,7 +20702,7 @@ msgstr "Bez Ranga"
 msgid "No receipts available at this time."
 msgstr "Patreiz kvītis nav pieejamas."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "No Recurring Billing"
 msgstr "Nav Atkārtota apmaksa"
 
@@ -20483,6 +20920,7 @@ msgid "Non-Refundable Fare"
 msgstr "Neatmaksājama braukšanas maksa"
 
 #: pages/track_results.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "None"
 msgstr "Neviens"
 
@@ -20536,7 +20974,7 @@ msgstr "Nav Pieejams"
 msgid "Not available for this cruise line"
 msgstr "Nav pieejams šajā kruīzu līnijā"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Not Completed"
 msgstr "Nav pabeigts"
 
@@ -21059,15 +21497,15 @@ msgstr ""
 "vairumtirdzniecības ceļojumu kompānijām). as attiecas arī uz zemākām cenām,"
 "kas ir atrodamas"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Members or Partner Members."
 msgstr "Pieejams tikai tad, ja atlasāt Bedrus vai Partnerus Biedrus."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Partners or Partner Members."
 msgstr "Pieejams tikai tad, ja atlasāt Partnerus vai Partnerus Biedrus."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Pending Members."
 msgstr "Iespējams ir tikai izvēloties Gaidošie Biedri."
 
@@ -21113,7 +21551,7 @@ msgstr ""
 msgid "Only Roman/Latin alphabet letters (A-Z)."
 msgstr "Tikai romiešu/latīņu alfabēta burti (A-Z)."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only select one course per report."
 msgstr "Atlasiet tikai vienu kursu vienā atskaitē."
 
@@ -21217,6 +21655,12 @@ msgstr "Pasūtījuma piezīmes:"
 #: components/receipts/italian_receipt.vue
 msgid "Order Number"
 msgstr "Pasūtījuma Numurs"
+
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Other Reports"
+msgstr "Biznesa ziņojumi"
 
 #: components/support/OtherUserTickets.vue components/support/TicketViewer.vue
 msgid "Other User Tickets"
@@ -21422,6 +21866,13 @@ msgstr "Kopējie tehnolģiju risinājumi - SUDRABA BALVA"
 msgid "Overall Training Program - SILVER AWARD"
 msgstr "Kopējā apmācību programma - SUDRABA BALVA"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Overview"
+msgid "Overdue"
+msgstr "Pārskats"
+
 #: pages/tours_details.vue pages/hotels_details.vue pages/menu_page.vue
 #: pages/info_center.vue pages/business_performance.vue
 #: components/reservations/tour-details.vue
@@ -21553,7 +22004,7 @@ msgstr "Samaksāts Skaidrā naudā"
 msgid "Paid out on %{date}"
 msgstr "Izmaksāts %{date}"
 
-#: pages/reports.vue pages/info_center.vue
+#: pages/info_center.vue components/reports/old_reports.vue
 msgid "Paid Partners Last Month"
 msgstr "Samaksājušie partneri pagājušajā mēnesī"
 
@@ -21561,11 +22012,11 @@ msgstr "Samaksājušie partneri pagājušajā mēnesī"
 msgid "Paid Partners Only"
 msgstr "Tikai apmaksātie Partneri"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Paid Partners This Month"
 msgstr "Samaksājušie partneri šajā mēnesī"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Paid Plans"
 msgstr "Apmaksas plāni"
 
@@ -21633,7 +22084,7 @@ msgstr "Partneri/Nav biedrs"
 msgid "Partner / Pending Member"
 msgstr "Partneri/Gaidošs Biedrs"
 
-#: pages/additional_info.vue pages/reports.vue
+#: pages/additional_info.vue components/reports/old_reports.vue
 msgid "Partner Access Only"
 msgstr "Piekļuve tikai Partneriem"
 
@@ -21837,6 +22288,18 @@ msgstr ""
 msgid "Partner Refund And Compress"
 msgstr "Partnera atmaksa"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners That Will Be Renewing Next Month"
+msgid "Partner Renewing Next Month"
+msgstr "Partneri,kuri tiks atjaunoti nākošajā mēnesī"
+
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Partner Reports"
+msgstr "Biznesa ziņojumi"
+
 #: pages/italian_onboarding.vue
 #: components/compensation/active_partner_modal.vue
 #: components/compensation/my_team_breakdown_table.vue
@@ -21882,12 +22345,12 @@ msgstr ""
 msgid "Partner VAT / Tax Code"
 msgstr "Partnera PVN/nodokļu kods"
 
-#: pages/reports.vue pages/track_growth.vue
+#: pages/track_growth.vue components/reports/old_reports.vue
 msgid "Partner-Members"
 msgstr "Partneris-Biedrs"
 
-#: pages/referral_links_old.vue pages/reports.vue
-#: pages/new_partners_tracker.vue pages/track_growth.vue pages/apps.vue
+#: pages/referral_links_old.vue pages/new_partners_tracker.vue
+#: pages/track_growth.vue pages/apps.vue components/reports/old_reports.vue
 #: components/high_risk/high_risk_fingerprints.vue
 #: components/business_performance/NewDirectsEnrolled.vue
 #: components/business_performance/TeamActiveEnrollments.vue
@@ -21909,6 +22372,18 @@ msgstr "Partneri<br/> <small>(5 Līmeņi)</small>"
 
 #: pages/public/disclosure.vue
 msgid "Partners are Membership Free."
+msgstr "Partneriem ir Brīvā Partnerība."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Ineligible for compensation"
+msgid "Partners Eligible for Compensation"
+msgstr "Nepretendē uz kompensāciju"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners are Membership Free."
+msgid "Partners Eligible For Membership Free"
 msgstr "Partneriem ir Brīvā Partnerība."
 
 #: pages/public/partnership.vue
@@ -21933,26 +22408,74 @@ msgstr ""
 msgid "Partners have reached the International Director or Above rank."
 msgstr "Partneri ir sasnieguši Starptautiskā Direktora un augstāku līmeni."
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Understanding Builders Base Bonus"
+msgid "Partners Pending to Receive Builders Base Bonus"
+msgstr "Lietotaju Bāzes Bonusa Izpratne"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "You have no direct partners currently eligible for Fast Start."
+msgid "Partners Still Eligible for Fast Start"
+msgstr "Jums pašlaik nav tiešu partneru Ātrajam Startam."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Potential Fast Start Matching"
+msgid "Partners Still Eligible for Fast Start Matching"
+msgstr "Potenciālais Ātrā Starta Mačing"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Potential Team Leadership Bonus"
+msgid "Partners Team Leadership Performance"
+msgstr "Potenciālais Komandas Līdera Bonus"
+
+#: components/reports/old_reports.vue
 msgid "Partners That Have Not Renewed"
 msgstr "Partneri, kas nav atjaunoti"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partners That Will Be Renewing Next Month"
 msgstr "Partneri,kuri tiks atjaunoti nākošajā mēnesī"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partner Activation Date"
+msgid "Partners Who Achieved Fast Start"
+msgstr "Partnera aktivizācijas datums"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partner with travel agencies"
+msgid "Partners with New Ranks"
+msgstr "Partnerība ar ceļojumu aģentūrām"
 
 #: Footer.vue pages/referral_links.vue pages/inviter.vue pages/upgrade.vue
 #: components/public/Header.vue components/public/webflow/Footer.vue
 msgid "Partnership"
 msgstr "Partnerība"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partnership Created"
 msgstr "Partnerība izveidota"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partnership Creation Date"
 msgstr "Partnerības izveidošanas datums"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Partnership Video"
+msgid "Partnership Invoice"
+msgstr "Partnerības Video"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners That Have Not Renewed"
+msgid "Partnership Not Renewed"
+msgstr "Partneri, kas nav atjaunoti"
 
 #: pages/subscriptions.vue pages/upgrade.vue pages/public/faq.vue
 #: pages/public/testimonials.vue components/upgrade/tiles/checkout-tile.vue
@@ -22194,6 +22717,19 @@ msgstr ""
 msgid "Payment Fulfillment"
 msgstr "Maksājuma izpilde"
 
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Add Payment Method"
+msgid "Payment Method"
+msgstr "Pievieno papildus samaksas metodi"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Add Payment Method"
+msgid "Payment Methods"
+msgstr "Pievieno papildus samaksas metodi"
+
 #: pages/payment_protection.vue
 msgid "Payment Protection"
 msgstr "Maksājumu Aizsardzība"
@@ -22272,6 +22808,7 @@ msgstr "Paypal"
 #: components/welcome/members-modal.vue components/support/TicketList.vue
 #: components/compensation/qbi_members_table.vue
 #: components/admin_finance/cruise_bookings.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Pending"
 msgstr "Gaidošs"
 
@@ -22279,11 +22816,11 @@ msgstr "Gaidošs"
 msgid "Pending Builder's Base"
 msgstr "Gaidoša Lietotāju Bāze"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Builders Base"
 msgstr "Gaidoša Lietotāja Bāze"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Builders Base Members"
 msgstr "Gaidoši Lietotāju Bāzes Biedri"
 
@@ -22299,11 +22836,12 @@ msgstr "Ielūgumi gaidīšanas režīmā"
 msgid "Pending Invoice"
 msgstr "Neapmaksāts rēķins"
 
-#: pages/reports.vue pages/invoices.vue components/user/invoices.vue
+#: pages/invoices.vue components/reports/old_reports.vue
+#: components/user/invoices.vue
 msgid "Pending Invoices"
 msgstr "Neapmaksātie rēķini"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Invoices (within 5 days)"
 msgstr "Gaidošie Rēķini (5 dienu laiks)"
 
@@ -22319,7 +22857,7 @@ msgstr "Iesaldātais Biedrs"
 msgid "Pending Member Invoice"
 msgstr "Neapmaksāts Biedra rēķins"
 
-#: pages/reports.vue components/compensation/qbi-details.vue
+#: components/compensation/qbi-details.vue components/reports/old_reports.vue
 msgid "Pending Members"
 msgstr "Neaktīvie Biedri"
 
@@ -22346,6 +22884,10 @@ msgstr "Gaidoša Partnerības Atjaunošana"
 #: components/admin_finance/cruise_bookings.vue
 msgid "Pending Payments"
 msgstr "Gaidošie maksājumi"
+
+#: components/reports/old_reports.vue
+msgid "Pending QBI Report"
+msgstr "Gaidošais QBI(BKI) pārskats"
 
 #: pages/invoices.vue
 msgid "Pending Transaction"
@@ -22461,13 +23003,17 @@ msgstr "Telefons"
 msgid "Phone (optional)"
 msgstr "Tālrunis (papildaprīkojums)"
 
-#: pages/reports.vue pages/settings.vue
+#: pages/settings.vue components/reports/old_reports.vue
 msgid "Phone #"
 msgstr "Telefons#"
 
-#: components/fast-growing-legs.vue pages/reports.vue pages/settings.vue
-#: pages/multi_factor.vue components/cruises_booking/passenger_info_step.vue
+#: components/fast-growing-legs.vue pages/settings.vue pages/multi_factor.vue
+#: components/cruises_booking/passenger_info_step.vue
 #: components/settings_page/modify-saved-passengers.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/hotel_booking/guest_info_step.vue components/top_bar/Connect.vue
 #: pages/public/signup.vue
 msgid "Phone Number"
@@ -23080,7 +23626,7 @@ msgstr "Lūdzu nomaksājiet savu nenokārtoto rēķinu."
 msgid "Please provide a check-in and check-out date before searching"
 msgstr "Lūdzu, norādiet ček-in un ček-out datumu pirms meklēšanas"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "Please provide a Date From and Date To. If not, reset filters at the top of "
 "the page."
@@ -23506,7 +24052,8 @@ msgstr ""
 msgid "Please wait while we redirect you back to inCruises®."
 msgstr "Lūdzu uzgaidiet, kamēr novirzām jūs atpakaļ uz inCruises."
 
-#: pages/compensation.vue components/compensation/fast_start_matching.vue
+#: pages/reports.vue pages/compensation.vue
+#: components/compensation/fast_start_matching.vue
 #: components/compensation/fast_start.vue components/compensation/overview.vue
 #: pages/compensation/recurring_income.vue
 #: pages/compensation/member_activations.vue
@@ -23752,6 +24299,7 @@ msgstr ""
 msgid "Premium"
 msgstr "Premium"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 msgid "PREMIUM"
@@ -23779,7 +24327,7 @@ msgstr "Premium Biedrs"
 msgid "PREMIUM Member"
 msgstr "PREMIUM Biedrs"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Premium Members"
 msgstr "Premium Biedri"
 
@@ -24361,12 +24909,18 @@ msgstr ""
 "atmaksu līdz 90 dienām. Lai iegūtu pilnīgu informāciju, lūdzu, skatiet mūsu "
 "partnerības līgumu."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Push Blast"
 msgstr "Atbalsta trūkums"
 
 #: pages/push_notifications_center.vue
 msgid "Push Notifications Center"
+msgstr "Push Paziņojumu Centrs"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Push Notifications Sent"
 msgstr "Push Paziņojumu Centrs"
 
 #: components/payout/brightwell/recipient-account-details.vue
@@ -24391,12 +24945,12 @@ msgstr "PWA"
 msgid "PWA vs News App"
 msgstr "PWA un jaunumu programma"
 
-#: pages/reports.vue components/compensation/qbi.vue
-#: components/compensation/builders_bonus.vue
+#: components/compensation/qbi.vue components/compensation/builders_bonus.vue
 #: components/compensation/fast_start_matching.vue
 #: components/compensation/fast_start.vue
 #: components/compensation/old_compensation.vue
-#: components/compensation/team.vue pages/compensation/recurring_income.vue
+#: components/compensation/team.vue components/reports/old_reports.vue
+#: pages/compensation/recurring_income.vue
 #: pages/compensation/member_activations.vue
 #: pages/compensation/weekly_matching_bonus.vue pages/compensation/qbi.vue
 #: pages/compensation/builders_base_bonus.vue
@@ -24424,7 +24978,7 @@ msgstr "QBI(BKI) Detalizēta informācija"
 msgid "QBI Update Notice"
 msgstr "QBI Jauninājuma Paziņojums"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "QBI: Pending Members"
 msgstr "QBI:Gaidošie Biedri"
 
@@ -24530,7 +25084,9 @@ msgstr "Ātra Pieeja"
 msgid "Quick Member View"
 msgstr "Ātrs Biedru Pārskats"
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/reports/new_reports.vue
+#: components/reports/quick_reports_modal/index.vue
 msgid "Quick Reports"
 msgstr "Ātras atskaites"
 
@@ -24571,7 +25127,7 @@ msgstr "Ranga un Ienākumu Diagramma"
 msgid "Rank Breakdown"
 msgstr "Rangu sadalījums"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Rank Certificate"
 msgstr "Pakāpes sertifikāts"
 
@@ -24587,7 +25143,7 @@ msgstr "Rangu Iedalījums"
 msgid "Rank Maintained"
 msgstr "Rangs Paturēts"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Rank Status"
 msgstr "Līmeņa statuss"
 
@@ -24848,7 +25404,7 @@ msgstr "Reāllaika logrīka priekšskatījums"
 msgid "Reason"
 msgstr "Iemesls"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Reattained"
 msgstr "Atgūtais"
 
@@ -24980,7 +25536,8 @@ msgstr "Ieraksti"
 msgid "Recurring"
 msgstr "Atkāŗtots"
 
-#: pages/reports.vue components/admin_field_communicators/field_stats.vue
+#: components/reports/old_reports.vue
+#: components/admin_field_communicators/field_stats.vue
 msgid "Recurring Billing"
 msgstr "Atkārtota apmaksa"
 
@@ -25039,6 +25596,19 @@ msgstr "Atkārtotās Ikmēneša izmaksas/summas"
 #: components/compensation/recurring_income_levels.vue
 msgid "Recurring Multiplier"
 msgstr "Atkārtotais Reizinātājs"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Recurring Payment Terms"
+msgid "Recurring payment"
+msgstr "Atkārtotoā Maksājuma Nosacījumi"
+
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Recurring Payment Terms"
+msgid "Recurring Payment"
+msgstr "Atkārtotoā Maksājuma Nosacījumi"
 
 #: components/recurring/rpm-onboarding-invoices.vue
 msgid "Recurring Payment Agreement Terms"
@@ -25136,6 +25706,7 @@ msgstr "Referāla Aktivitāte"
 
 #: pages/admin_user.vue pages/team_rankings.vue pages/account_setup.vue
 #: components/compensation/leadership_bonus.vue
+#: components/reports/quick_reports.vue
 msgid "Referral Link"
 msgstr "Reģistrācijas saite"
 
@@ -25234,12 +25805,13 @@ msgstr "Rajons"
 msgid "Region:"
 msgstr "Rajons:"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -25424,10 +25996,29 @@ msgid "Report will not show accurate results until the 10th of each month."
 msgstr "Atskaite precīzus rezultātus uzrādīs tikai katra mēneša 10. datumā."
 
 #: pages/welcome.vue pages/menu_page.vue pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Reports"
 msgstr "Atskaites"
 
-#: pages/reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Reports - Members with Pending Invoices"
+msgstr "Lietotāju ar nenokārtotiem rēķiniem"
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "You have no direct partners currently eligible for Fast Start."
+msgid "Reports - Partners Still Eligible for Fast Start"
+msgstr "Jums pašlaik nav tiešu partneru Ātrajam Startam."
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Enable Recurring Payments"
+msgid "Reports - Users Recurring Payment Status"
+msgstr "Iespējot Atkārtotos Maksājumus"
+
+#: components/reports/old_reports.vue
 msgid ""
 "Reports are real-time viewable and downloadable reports for just about every "
 "aspect of your business. You can download reports for recognition purposes "
@@ -25547,7 +26138,8 @@ msgstr "Atiestatīt"
 msgid "Reset Columns"
 msgstr "Atiestatīt kolonnas"
 
-#: pages/reports.vue components/data_table/filter-selection-widget.vue
+#: components/data_table/filter-selection-widget.vue
+#: components/reports/old_reports.vue
 msgid "Reset Filters"
 msgstr "Atpakaļ iestatīšanas filtri"
 
@@ -25598,15 +26190,15 @@ msgstr "Restartēt Verifikāciju"
 msgid "result"
 msgstr "Rezultāts"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit"
 msgstr "rezultātu ierobežojums"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit must be a number!"
 msgstr "Rezultātu ierobežojumam ir jābūt skaitlim!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit must be set between 100 and 25000."
 msgstr "Rezultātu ierobežojumam jābūt noteiktam starp 100 un 25000."
 
@@ -25925,11 +26517,11 @@ msgstr "Izmantotie BP"
 msgid "RP used!"
 msgstr "BP izmantoti!"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Run Quick Report"
 msgstr "zpildīt Ātro atskaiti"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Run Report"
 msgstr "Palaist atskaiti"
 
@@ -26080,6 +26672,7 @@ msgstr "Ietaupījumu Garantija"
 #: components/partner_cruise_contest/leader_board.vue
 #: components/recurring/recurring-cards.vue components/blog/blog_list.vue
 #: components/public/blog_category_search.vue
+#: components/reports/quick_reports_modal/search-input.vue
 #: components/tours/details/available-plans.vue
 #: components/inchat/search/search-people.vue
 msgid "Search"
@@ -26111,6 +26704,7 @@ msgid "Search Contacts"
 msgstr "Meklēt Kontaktus"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/filters/country.vue
 msgid "Search Country"
 msgstr "Meklēt Valsti"
 
@@ -26135,6 +26729,7 @@ msgid "Search for your question"
 msgstr "Meklēt savu jautājumu"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/filters/language.vue
 msgid "Search Language"
 msgstr "Meklēt Valodu"
 
@@ -26177,6 +26772,12 @@ msgstr "Meklēšanas Rezultāti"
 #: components/inchat/user_list_inchat.vue
 msgid "Search rooms"
 msgstr "Meklēt numuriņu/kajīti"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Search Tours"
+msgid "Search Teams"
+msgstr "Meklēt Ekskursijas"
 
 #: pages/notifications.vue
 msgid "Search this month..."
@@ -26572,13 +27173,31 @@ msgstr "Atlasīts"
 msgid "Selected cabin category"
 msgstr "Izvēlētā kajītes kategorija"
 
+#: components/reports/filters/country.vue
+#, fuzzy
+#| msgid "Selected Country:"
+msgid "Selected Countries"
+msgstr "Izvēlētā Valsts:"
+
 #: components/inchat/user/user_create_room.vue
 msgid "Selected Country:"
 msgstr "Izvēlētā Valsts:"
 
+#: components/reports/filters/language.vue
+#, fuzzy
+#| msgid "Select a Language"
+msgid "Selected Languages"
+msgstr "Izvēlies Valodu"
+
 #: pages/elevate_registration.vue
 msgid "Selected Package"
 msgstr "Izvēlētā Pakete"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Select Tag"
+msgid "Selected Teams"
+msgstr "Atlasīt Tagu"
 
 #: components/public/FooterLinks.vue
 msgid "Seller of Travel"
@@ -26596,11 +27215,11 @@ msgstr "Pārdevējs:"
 msgid "Selling Rate"
 msgstr "Pārdošanas Likme"
 
-#: pages/inviter.vue pages/reports.vue
+#: pages/inviter.vue components/reports/old_reports.vue
 msgid "Send"
 msgstr "Sūti"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Send a Push Blast"
 msgstr "Dalies atbalsta trūkumā"
 
@@ -26608,7 +27227,7 @@ msgstr "Dalies atbalsta trūkumā"
 msgid "Send Amount"
 msgstr "Nosūtīt summu"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Send an Email"
 msgstr "Nosūti epastu"
 
@@ -26650,6 +27269,12 @@ msgstr "Sūti ziņu"
 msgid "Send money"
 msgstr "Sūtīt naudu"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Notification"
+msgid "Send Notification"
+msgstr "Paziņojums"
+
 #: pages/referral_links.vue
 msgid "Send personalized emails and invite people to join InCruises."
 msgstr ""
@@ -26669,6 +27294,18 @@ msgstr ""
 "Sūti privātos ielūgumus saviem draugiem.Ja viņi uz tiem noklikšķinās un "
 "piereģistrēsies,jūs automātiski dabūsiet kredītu.Jūs varat mums nosūtīt cik "
 "daudz jūs vēlaties."
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Send Push Notification"
+msgstr "Push Paziņojumu Centrs"
+
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Send Push Notifications"
+msgstr "Push Paziņojumu Centrs"
 
 #: pages/contacts.vue
 msgid "Send reminder"
@@ -26690,6 +27327,12 @@ msgstr "Sūtīšanas režģis"
 msgid "Sending"
 msgstr "Sūtīšana"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Sending Push Notifications to %{count} records..."
+msgstr "Push Paziņojumu Centrs"
+
 #: pages/admin_sendgrid.vue
 msgid "Sengrid Contacts"
 msgstr "Sūtīšanas Kontakti"
@@ -26698,12 +27341,13 @@ msgstr "Sūtīšanas Kontakti"
 msgid "Senior Managers and Advisors"
 msgstr "Seniori Menedžeri un Padomdevējii"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -26744,15 +27388,15 @@ msgid ""
 msgstr ""
 "Seniori Pasažieri: Lūdzu uzrādiet ja jūsu grupas biedrs ir 55+ gadu vecs."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader"
 msgstr "Seniors Komandas Līderis"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader Last Month"
 msgstr "Seniors Komandas Līderis pagājušajā mēnesī"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader This Month"
 msgstr "Seniors Komandas Līderis šajā mēnesī"
 
@@ -27071,7 +27715,7 @@ msgstr "Parādi Komandas priekš"
 msgid "Show Web-Registration"
 msgstr "Rādīt tīmekļa reģistrāciju"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Showing All Teams"
 msgstr "Parādīt visas komandas"
 
@@ -27102,6 +27746,12 @@ msgstr "pierakstīšanās"
 
 #: components/high_risk/high_risk_accounts.vue
 msgid "Signup Date"
+msgstr "Pierakstīšanās Datums"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Signup Date"
+msgid "SignUp Date"
 msgstr "Pierakstīšanās Datums"
 
 #: pages/referral_links_old.vue
@@ -27421,11 +28071,14 @@ msgid ""
 "Spectacular sights and amazing views from the comfort of your stateroom."
 msgstr "Iespaidīgi un apbrīnojami skati no jūsu komfortablās kajītes."
 
-#: pages/reports.vue components/compensation/members-qbi-modal.vue
+#: components/compensation/members-qbi-modal.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Sponsor"
 msgstr "Sponsors"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Sponsor / Upline"
 msgstr "Sponsors/ Augšējā Līnija"
 
@@ -27523,6 +28176,7 @@ msgstr "Sākt:"
 msgid "Starter"
 msgstr "Starter"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 msgid "STARTER"
 msgstr "STARTER"
@@ -27536,7 +28190,7 @@ msgstr "Iesācējs Biedrs"
 msgid "STARTER Member"
 msgstr "STARTER Biedrs"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Starter Members"
 msgstr "Iesācējs Biedri"
 
@@ -27544,7 +28198,7 @@ msgstr "Iesācējs Biedri"
 msgid "STARTER PLAN"
 msgstr "Sākotnējais plāns"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Starter Plan - $0"
 msgstr "Sākotnējais plāns $0"
 
@@ -27646,8 +28300,10 @@ msgstr "status"
 #: components/invoices/invoice.vue components/compensation/leadership_bonus.vue
 #: components/compensation/recurring_income_levels.vue
 #: components/compensation/qbi_members_table.vue
+#: components/reports/quick_reports.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/growth_calculator/potential_leadership.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/user/invoices.vue
 msgid "Status"
 msgstr "Stāvoklis"
@@ -27743,7 +28399,7 @@ msgstr "Apakškategorijas"
 msgid "Subject"
 msgstr "Priekšmets"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Subject:"
 msgstr "Tēma:"
 
@@ -27821,11 +28477,12 @@ msgstr ""
 "Starpsumma: <b>${{ $filters.money(this.selectedRequest."
 "additional_booking_data.subtotal) }}</b>"
 
-#: vue/main.js components/high_risk/high_risk_accounts.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/high_risk/high_risk_accounts.vue
 msgid "Success"
 msgstr "Veiksme"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Successful Growth"
 msgstr "Veiksmīga izaugsme"
 
@@ -27957,6 +28614,15 @@ msgstr "Pavelciet.lai redzētu virāk"
 msgid "Swiss Franc (CHF)"
 msgstr "Šveices franks (CHF)"
 
+#: components/reports/quick_reports_modal/modal-content.vue
+#: components/reports/quick_reports_modal/index.vue
+msgid "Switch To Classic"
+msgstr ""
+
+#: pages/reports.vue
+msgid "Switch To New"
+msgstr ""
+
 #: components/inchat/emoji/emoji_modal.vue
 msgid "Symbols"
 msgstr "Simboli"
@@ -27998,6 +28664,7 @@ msgid "Tag Management"
 msgstr "Taga Menedžments"
 
 #: pages/contacts.vue components/contacts/export-contacts.vue
+#: components/reports/old_reports.vue
 msgid "Tags"
 msgstr "Azīmes"
 
@@ -28029,7 +28696,7 @@ msgstr ""
 msgid "Take Me to DittoTouch"
 msgstr "Aizved mani uz Dittotouch"
 
-#: pages/additional_info.vue pages/reports.vue
+#: pages/additional_info.vue components/reports/old_reports.vue
 msgid "Take me to upgrade."
 msgstr "Apgreido mani."
 
@@ -28253,7 +28920,7 @@ msgstr "Komandas partneri apmaksāti"
 msgid "Team Pending Members"
 msgstr "Komandas Neaktīvie Biedri"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Team Pending with Cruise Bookings"
 msgstr "Komandas Gaidošie ar kruīzu rezervācijām"
 
@@ -28269,7 +28936,7 @@ msgstr "Komandas apgrozījums"
 msgid "Team Production Tracker"
 msgstr "Komandas Apgrozījuma izsekotājs/rīks"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Team QBI"
 msgstr "Komandas QBI"
 
@@ -28301,6 +28968,19 @@ msgstr "Komandas reziduālā bonusa pārskats"
 #: pages/track_results.vue
 msgid "Team Starter Members"
 msgstr "Starter Komandas Biedri"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Please select gender"
+msgid "team(s) selected"
+msgstr "Lūdzu, atlasiet dzimumu"
+
+#: components/reports/quick_reports_modal/modal-content.vue
+#: components/reports/quick_reports_modal/templates-list.vue
+#, fuzzy
+#| msgid "Use Template"
+msgid "Templates"
+msgstr "Izmantojiet paraugu"
 
 #: components/user/functions.vue
 msgid "Terminated"
@@ -28706,19 +29386,19 @@ msgid ""
 "evaluation"
 msgstr "Kruīzam izvērtēšanas brīdī vēl jābūt pieejamam par zemāku cenu"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user first became membership free."
 msgstr "Datums,kad lietotājs pirmoreizi ieguva brīvo partnerību."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user first signed up on our website."
 msgstr "Datums,kad lietotājs pirmo reizi apciemoja mūsu tīmekļa vietni."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user paid to activate and become a Member."
 msgstr "Datums,kad lietotājs samaksāja aktivizācijas maksu un kļuva Biedrs."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user paid to activate and become a Partner."
 msgstr "Datums,kad lietotājs samaksāja aktivizācijas maksu un kļuva Partneris."
 
@@ -28752,7 +29432,7 @@ msgstr ""
 "Šīs konfidencialitātes politikas spēkā stāšanās datums ir 2015. gada 1. "
 "septembris."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "The email and push blast actions have been disabled due to the results size "
 "exceeds their limit. If you want to use these actions, please run the report "
@@ -29287,7 +29967,7 @@ msgstr ""
 msgid "The Spirit Of Giving At inCruises"
 msgstr "inCruises Došanas Gars"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The subject field is required!"
 msgstr "Nepieciešams tēmas lauks!"
 
@@ -29719,12 +30399,12 @@ msgstr ""
 msgid "There was no results for your search."
 msgstr "Jūsu meklējumam nebija rtezultātu."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "There were %{resultAmount} results based on your selections."
 msgstr ""
 "Bija %{resultAmountrezultāti pamatojoties uz jūsu atlasīto informāciju."
 
-#: pages/reports.vue pages/leadership_academy.vue
+#: pages/leadership_academy.vue components/reports/old_reports.vue
 msgid "There were no results based on your selections."
 msgstr "No jūsu atlasītajiem materiāliem nebija nekāda rezulāta."
 
@@ -30656,6 +31336,13 @@ msgstr "Šī nedēļa"
 msgid "This Week's Potential"
 msgstr "Šīs nedēļas potenciāls"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+msgid ""
+"This will only show members who are still within the first 5 days after "
+"their invoice has been generated. this will grant them double their reward "
+"points."
+msgstr ""
+
 #: components/growth_calculator/potential_recurring.vue
 #: components/growth_calculator/potential_leadership.vue
 msgid "This will take a few seconds. Please be patient."
@@ -30915,11 +31602,12 @@ msgstr "Laiki var mainīties, bet mēs secinām, ka līdzekļi būs pieejami"
 
 #: pages/glsx.vue pages/referral_widget.vue pages/gls_winners.vue
 #: pages/admin_partner_success.vue pages/gls.vue pages/admin_user.vue
-#: pages/banner_tracking.vue pages/new_ranks.vue pages/reports.vue
-#: pages/partner_success.vue pages/builders_base.vue
-#: components/compensation/residual_bonus_preview.vue
+#: pages/banner_tracking.vue pages/new_ranks.vue pages/partner_success.vue
+#: pages/builders_base.vue components/compensation/residual_bonus_preview.vue
 #: components/compensation/builders_bonus.vue
 #: components/settings_page/modify-saved-passengers.vue
+#: components/reports/old_reports.vue
+#: components/reports/send_push_notification_modal.vue
 #: components/business_intelligence/comp_to_sales.vue
 msgid "Title"
 msgstr "Virsraksts"
@@ -30934,7 +31622,8 @@ msgstr "Nosaukums/Tituls sasniegts!"
 msgid "Title:"
 msgstr "Virsraksts:"
 
-#: pages/menu_page.vue pages/reports.vue pages/settings.vue pages/titles.vue
+#: pages/menu_page.vue pages/settings.vue pages/titles.vue
+#: components/reports/old_reports.vue
 msgid "Titles"
 msgstr "Tituli"
 
@@ -30952,6 +31641,8 @@ msgstr "uz"
 
 #: pages/inviter.vue pages/mercy_ships.vue
 #: components/support/TicketViewerAdmin.vue components/support/TicketViewer.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "To"
 msgstr "Uz"
 
@@ -31769,11 +32460,123 @@ msgstr ""
 msgid "Track your world-wide reach below!"
 msgstr "APSKATI SAVU PASAULES REDZES LOKA SASNIEGUMUS ZEMĀK!"
 
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks members who changed their membership plan up or down this month/ last "
+"month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Tracks members with pending invoices."
+msgstr "Lietotāju ar nenokārtotiem rēķiniem"
+
 #: components/business_performance/TeamProductionLines.vue
 msgid ""
 "Tracks monthly cumulative new and total cumulative Production for your team."
 msgstr ""
 "Seko ikmēneša kumulatīvajam jaunajam un kopējam komandas ražošanas apjomam."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks new members this month/ last month (members purchasing a membership "
+"for the first time in inCruises.)"
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners eligible for compensation by bringing a direct this month/"
+"last month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid "Tracks partners eligible for membership free or membership discount."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners pending Builders Base payment due to QBI < 75%, showing time "
+"left until payout anyways."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Produce the required Total Activation Volume."
+msgid "Tracks partners qualified production and activation volume."
+msgstr "Veic pieprasīto Kopējo Aktivizāciju Apjomu."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners who achieved a new rank for the first time this month/ last "
+"month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid "Tracks partners who achieved Fast Start this month/last month."
+msgstr ""
+"Partneri no jūsu komandas, kas joprojām ir piemēroti Atrā Starta "
+"atbilstības(matching)bonusam."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid ""
+"Tracks partners who are still eligible for Fast Start Matching based on "
+"their downlines."
+msgstr ""
+"Partneri no jūsu komandas, kas joprojām ir piemēroti Atrā Starta "
+"atbilstības(matching)bonusam."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid ""
+"Tracks partners who are still eligible for Fast Start with days left to "
+"qualify."
+msgstr ""
+"Partneri no jūsu komandas, kas joprojām ir piemēroti Atrā Starta "
+"atbilstības(matching)bonusam."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners whose 6‑month renewal invoice is pending and not yet paid "
+"within the allowed month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners whose 6‑month renewal invoice will be generated next month"
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "One or more members has an active sailing or a pending invoice."
+msgid ""
+"Tracks team members with an active cruise booking but a pending invoice."
+msgstr "Vienam vai vairākiem Biedriem ir aktīvi ceļojumi vai gaidošs rēķins."
+
+#: components/reports/quick_reports.vue
+msgid "Tracks users who acquired a partnership this month/ last month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks users who signed up this month/ last month but have not yet purchased "
+"a membership."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid "Tracks users with recurring payment status and payment method type."
+msgstr ""
 
 #: pages/m3.vue
 msgid "Trade Partner Testimonials"
@@ -32019,6 +32822,11 @@ msgstr "Uzticams"
 msgid "Try again"
 msgstr "Mēģini vēlreiz"
 
+#: pages/reports.vue
+msgid ""
+"Try our new reports view for easier access to reports and faster report runs."
+msgstr ""
+
 #: components/recurring/recurring-cards.vue
 msgid "Turkish Lira (TRY)"
 msgstr "Turku Lira (TRY)"
@@ -32055,21 +32863,14 @@ msgstr "Kopā divi mēneši atpakaļ"
 msgid "Two Weeks Prior Contest"
 msgstr "Divu nedēļu iepriekšējais konkurss"
 
-#: pages/admin_user.vue pages/reports.vue pages/receipts.vue
-#: pages/track_results.vue pages/notifications.vue
+#: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
+#: pages/notifications.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/support/InstantTools.vue components/compensation/weekly_bonus.vue
 #: components/compensation/active_partner_modal.vue
+#: components/reports/old_reports.vue
 msgid "Type"
 msgstr "Tips"
-
-#: pages/reports.vue
-msgid ""
-"Type @ to insert dynamic tokens (like @Name, @Email) that will be replaced "
-"with each recipient's data."
-msgstr ""
-"Ieraksti @, lai ievietotu dinamiskos tokenus (piemēram, @Name, @Email), kas "
-"tiks aizstāti ar katra saņēmēja datiem."
 
 #: pages/cruise_price_match_guarantee.vue
 msgid "type when applicable"
@@ -32343,7 +33144,7 @@ msgstr "Abonēšana"
 msgid "Unsubscribe from our mailing list:"
 msgstr "Anulēt mūsu adresātu sarakstu:"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Unsubscribe here"
 msgstr "Abonēšana šeit"
 
@@ -32554,7 +33355,7 @@ msgstr "Uzlabo savu dzīves veidu šodien!"
 msgid "Upgrade your membership to get more iNsider pricing"
 msgstr "Apgreidojiet savu biedru dalību, lai gūtu vairāk no INsider pricing"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Upgrades This Month"
 msgstr "Šī Mēneša Apgreidojumi"
 
@@ -32740,6 +33541,7 @@ msgid "User Hotels"
 msgstr "Lietotāju viesnīcas"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/more_info_hover_card.vue
 msgid "User Info"
 msgstr "Lietotāja Info"
 
@@ -32750,6 +33552,12 @@ msgstr "Lietotāju rēķini"
 #: components/inchat/user_room_actions.vue
 msgid "User locked successfully"
 msgstr "Lietotājs ir veiksmīgi bloķēts"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "User Invoices"
+msgid "User Next Invoices"
+msgstr "Lietotāju rēķini"
 
 #: components/user/user_notes.vue
 msgid "User Notes"
@@ -32808,10 +33616,22 @@ msgstr "Lietotāji var atspējot InCruises Maciņa atkārtojuma opciju"
 msgid "Users can disable inCruises Wallet Recurring via"
 msgstr "Lietotāji var atspējot InCruises Maciņa atkārtojuma opciju,izmantojot"
 
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "User unlocked successfully"
+msgid "Users downloaded successfully"
+msgstr "Lietotājs veiksmīgi atbloķēts"
+
 #: components/inchat/admin/ShowParticipants.vue
 #: components/inchat/list_modals/users_room_list_modal.vue
 msgid "Users in Room"
 msgstr "Lietotāji telpā"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Enable Recurring Payments"
+msgid "Users Recurring Payment Status"
+msgstr "Iespējot Atkārtotos Maksājumus"
 
 #: pages/referral_activity.vue
 msgid ""
@@ -32865,7 +33685,7 @@ msgid "Users who have seen our website through your link."
 msgstr ""
 "Lietotāji, kas ir redzējuši mūsu tīmekļa vietni, izmantojot jūsu saiti."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Users with Pending Invoices"
 msgstr "Lietotāju ar nenokārtotiem rēķiniem"
 
@@ -33104,7 +33924,7 @@ msgstr "Skati dzimšanas dienas"
 msgid "View Booking Summary"
 msgstr "Skatiet Rezervācijas Kopsavilkumu"
 
-#: pages/certificates.vue pages/reports.vue
+#: pages/certificates.vue components/reports/old_reports.vue
 msgid "View Certificate"
 msgstr "Skati sertifikātu"
 
@@ -33464,7 +34284,7 @@ msgstr ""
 msgid "Want to make this into a Refundable Booking?"
 msgstr "Vai vēlaties to pārvērst atmaksājamā rezervācijā?"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Want to stop receiving Email Blasts?"
 msgstr "Vai vēlaties pārtraukt e-pasta Blasts saņemšanu?"
 
@@ -33472,7 +34292,8 @@ msgstr "Vai vēlaties pārtraukt e-pasta Blasts saņemšanu?"
 msgid "Want to Try DittoTouch?"
 msgstr "Vai gribi izmēģināt DittoTouch?"
 
-#: vue/main.js components/inchat/user/warning_modal.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/inchat/user/warning_modal.vue
 msgid "Warning"
 msgstr "Brīdinājums"
 
@@ -34025,6 +34846,12 @@ msgstr "Laipni lūdzam uz"
 msgid "Welcome To InCruises"
 msgstr "Laipni Lūgti inCruises"
 
+#: components/reports/new_reports.vue
+#, fuzzy
+#| msgid "Welcome To InCruises"
+msgid "Welcome To Reports"
+msgstr "Laipni Lūgti inCruises"
+
 #: pages/courses.vue
 msgid "Welcome to the Basic Training Courses!"
 msgstr "Esiet sveicināti pamata apmācības kursos!"
@@ -34160,11 +34987,19 @@ msgstr "Ko jūs saņemat kā Viesis:"
 msgid "What's new"
 msgstr "Kas ir jauns"
 
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "Whatsapp #"
+msgid "Whatsapp"
+msgstr "WHatsapp #"
+
 #: components/compensation/qbi_members_table.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "WhatsApp"
 msgstr "WHatsapp"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Whatsapp #"
 msgstr "WHatsapp #"
 
@@ -35333,6 +36168,12 @@ msgstr "Jūs gatavojaties noņemt atļauju šai atļauju grupai"
 msgid "You are about to restart your identity verification process."
 msgstr "Mēs tūlīt sāksim jūsu identitātes verifikācijas procesu."
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "You are about to restart your identity verification process."
+msgid "You are about to send a push notification to %{count} users."
+msgstr "Mēs tūlīt sāksim jūsu identitātes verifikācijas procesu."
+
 #: pages/downgrade.vue
 msgid ""
 "You are about to switch to the Classic membership. By doing so, you will "
@@ -35646,7 +36487,7 @@ msgstr ""
 msgid "You cannot login as this user."
 msgstr "Jūs nevarat pieteikties kā šis lietotājs."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You cannot search for New Ranks for this month and last month at the same "
 "time. Please disable one and try again."
@@ -35654,9 +36495,14 @@ msgstr ""
 "Jūs nevarat meklēt jaunos līmeņus šim un iepriekšējam mēnesim vienlaicīgi. "
 "Lūdzu, atlasiet vienu un mēģiniet vēlreiz."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
+#, fuzzy
+#| msgid ""
+#| "You cannot select Membership Plan with Partners, Expired Partners, or "
+#| "Guests."
 msgid ""
-"You cannot select Membership Plan with Partners, Expired Partners, or Guests."
+"You cannot select Membership Plan with Partners, Expired Partners, or No "
+"Plans."
 msgstr ""
 "Jūs nevarat atlasīt Biedru Dalības Plānu ar Partneriem, Zudušajiem "
 "Partneriem vai Viesiem."
@@ -35976,7 +36822,7 @@ msgstr ""
 "Ir sasniegts mksimums kontu skaitu. Lūdzu, noņemiet esošu kontu, lai "
 "pievienotu jaunu."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You have selected member data but have partnership creation date fields "
 "active, please remove before proceeding."
@@ -35984,7 +36830,7 @@ msgstr ""
 "Jums ir visi biedra dati,bet ir aktīvi partnerības izveides lauki,lūdzu "
 "noņemiet, pirms turpiniet."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You have selected partner data but have membership creation date fields "
 "active, please remove before proceeding."
@@ -36198,13 +37044,7 @@ msgstr ""
 "laikā saskaņā<a target=\"_blank\" href=\"%{link}\">inCruises Biedru Dalības "
 "Līgums</a>."
 
-#: pages/reports.vue
-msgid "You must run a report and have results to send an email blast."
-msgstr ""
-"Lai nosūtītu masveida e-pastu, tev jāizpilda atskaite un jābūt iegūtiem "
-"rezultātiem."
-
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "You must select at least one user type."
 msgstr "Jums ir jāatlasa vismaz viens lietotāja tips.."
 
@@ -37155,7 +37995,7 @@ msgstr ""
 msgid "Your Region"
 msgstr "Jūsu Reģions"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Your report results will appear in this area."
 msgstr "Šeit tiks parādīti jūsu pārskata rezultāti."
 
@@ -49156,6 +49996,20 @@ msgstr "TEsts 2"
 msgid "Final Test"
 msgstr "Pēdējais Tests"
 
+#: Courses
+msgid "xxxz"
+msgstr ""
+
+#: Courses (descriptions)
+#, fuzzy
+#| msgid "TEST 2"
+msgid "TEST B"
+msgstr "TESTS 2"
+
+#: Courses (descriptions)
+msgid "eee3we"
+msgstr ""
+
 #: Courses (descriptions)
 msgid ""
 "In order to access your inCruises® Wallet, you must complete this course on "
@@ -49203,6 +50057,18 @@ msgstr ""
 "attālumā, lai dotos uz citu zemi un īstenotu savus sapņus?!"
 
 #~ msgid ""
+#~ "Type @ to insert dynamic tokens (like @Name, @Email) that will be "
+#~ "replaced with each recipient's data."
+#~ msgstr ""
+#~ "Ieraksti @, lai ievietotu dinamiskos tokenus (piemēram, @Name, @Email), "
+#~ "kas tiks aizstāti ar katra saņēmēja datiem."
+
+#~ msgid "You must run a report and have results to send an email blast."
+#~ msgstr ""
+#~ "Lai nosūtītu masveida e-pastu, tev jāizpilda atskaite un jābūt iegūtiem "
+#~ "rezultātiem."
+
+#~ msgid ""
 #~ "An unexpected error occurred while initializing the filter selection "
 #~ "widget."
 #~ msgstr "Inicializējot filtra atlases logrīku, radās neparedzēta kļūda."
@@ -49232,15 +50098,6 @@ msgstr ""
 #~ msgid "Percent Growth Needed"
 #~ msgstr "Ir vajadzīgs procentuāls pieaugums"
 
-#~ msgid "Historical QBI Report"
-#~ msgstr "Vēsturiskā QBI pārskats"
-
-#~ msgid "Insert your message..."
-#~ msgstr "Ievieto savu ziņojumu ..."
-
-#~ msgid "Pending QBI Report"
-#~ msgstr "Gaidošais QBI(BKI) pārskats"
-
 #~ msgid "Price may vary based on availability"
 #~ msgstr "Cena var mainīties atkarībā no pieejamības"
 
@@ -49248,144 +50105,12 @@ msgstr ""
 #~ msgstr "(Pieaudzis biedrs)"
 
 #, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "%{ n } Days Left to Pay"
-#~ msgstr "Atlikušās Ddienas Lai Kvalificētos"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "1 Day Left to Pay"
-#~ msgstr "Atlikušās Ddienas Lai Kvalificētos"
-
-#, fuzzy
-#~| msgid "Invoice Date"
-#~ msgid "2 Invoices Dates"
-#~ msgstr "Rēķina datums"
-
-#, fuzzy
-#~| msgid "Accounts"
-#~ msgid "Account Expires"
-#~ msgstr "Konti"
-
-#, fuzzy
-#~| msgid "All Titles"
-#~ msgid "All Teams"
-#~ msgstr "Visi Virsraksti/Nosaukumi"
-
-#, fuzzy
 #~| msgid "An error occurred while fetching the data."
 #~ msgid "An error occurred while fetching the report"
 #~ msgstr "Askatot datus, radās kļūda."
 
-#, fuzzy
-#~| msgid "An unexpected error occurred while applying the client filters."
-#~ msgid "An unexpected error occurred while loading countries."
-#~ msgstr "Lietojot klienta filtrus, radās neparedzēta kļūda."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while resetting the filters."
-#~ msgid "An unexpected error occurred while loading languages."
-#~ msgstr "Atiestatot filtrus, radās neparedzēta kļūda."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while applying the client filters."
-#~ msgid ""
-#~ "An unexpected error occurred while loading partners still eligible fast "
-#~ "start."
-#~ msgstr "Lietojot klienta filtrus, radās neparedzēta kļūda."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while resetting the filters."
-#~ msgid "An unexpected error occurred while loading teams."
-#~ msgstr "Atiestatot filtrus, radās neparedzēta kļūda."
-
-#, fuzzy
-#~| msgid "Bonus Paid"
-#~ msgid "Bonus Payed In"
-#~ msgstr "Bonuss samaksāts"
-
-#, fuzzy
-#~| msgid "Coming Soon!"
-#~ msgid "Coming Soon"
-#~ msgstr "Drīz Sāksies!"
-
-#, fuzzy
-#~| msgid "Countries Selected"
-#~ msgid "countries selected"
-#~ msgstr "Izvēlētās valstis"
-
-#, fuzzy
-#~| msgid "Direct Activations"
-#~ msgid "Current Activations"
-#~ msgstr "Tiešās Aktivizācijas"
-
-#, fuzzy
-#~| msgid "Recurring Qualified Production"
-#~ msgid "Current Qualified Production"
-#~ msgstr "Atkārtotais Kvalificētais Apgrozījums"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Count"
-#~ msgstr "Atlikušās Ddienas Lai Kvalificētos"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Pay"
-#~ msgstr "Atlikušās Ddienas Lai Kvalificētos"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Still Be Elegible"
-#~ msgstr "Atlikušās Ddienas Lai Kvalificētos"
-
-#, fuzzy
-#~| msgid "Downline Select"
-#~ msgid "Downlines Elegible"
-#~ msgstr "Zemāk minētā atlase"
-
-#, fuzzy
-#~| msgid "Due Today"
-#~ msgid "Due today"
-#~ msgstr "Izpildi šodien"
-
 #~ msgid "Elegible"
 #~ msgstr "Tiesīgs"
-
-#, fuzzy
-#~| msgid "Email Date"
-#~ msgid "Embarking Date"
-#~ msgstr "E-pasta Datums"
-
-#, fuzzy
-#~| msgid "First Leader"
-#~ msgid "First Up leader"
-#~ msgstr "Pirmai līderi"
-
-#, fuzzy
-#~| msgid "First Leader"
-#~ msgid "First Up Leader"
-#~ msgstr "Pirmai līderi"
-
-#, fuzzy
-#~| msgid "inCruises - Receipt"
-#~ msgid "InCruises - Reports"
-#~ msgstr "Kruīzi-saņemšana"
-
-#, fuzzy
-#~| msgid "InCruises Wallet"
-#~ msgid "inCruises Wallet"
-#~ msgstr "InCruises Maciņš"
-
-#, fuzzy
-#~| msgid "Invite Status"
-#~ msgid "Invoice Status"
-#~ msgstr "Uzaicinājuma Status"
-
-#, fuzzy
-#~| msgid "Invoice Date"
-#~ msgid "Invoice Type"
-#~ msgstr "Rēķina datums"
 
 #, fuzzy
 #~| msgid "Language"
@@ -49394,163 +50119,8 @@ msgstr ""
 
 #, fuzzy
 #~| msgid "Package selected:"
-#~ msgid "languages selected"
-#~ msgstr "Pakete atlasīta:"
-
-#, fuzzy
-#~| msgid "Package selected:"
 #~ msgid "Languages Selected"
 #~ msgstr "Pakete atlasīta:"
-
-#, fuzzy
-#~| msgid "Rank Achieved"
-#~ msgid "Last Rank Achieved"
-#~ msgstr "Rangs Sasniegts"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Member Reports"
-#~ msgstr "Biznesa ziņojumi"
-
-#, fuzzy
-#~| msgid "Members in your QBI"
-#~ msgid "Members Counting Toward Your QBI"
-#~ msgstr "Jūsu QBI Biedri"
-
-#, fuzzy
-#~| msgid "Pending Members with Pending Invoices"
-#~ msgid "Members With Cruise Bookings & Pending Invoices"
-#~ msgstr "Neaktīvie Biedri ar nenokārtotiem rēķiniem"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Members with pending Invoices"
-#~ msgstr "Lietotāju ar nenokārtotiem rēķiniem"
-
-#, fuzzy
-#~| msgid "Membership First Month"
-#~ msgid "Membership Discount"
-#~ msgstr "Biedru Dalības Pirmais Mēnesis"
-
-#, fuzzy
-#~| msgid "Membership Info"
-#~ msgid "Membership Invoice"
-#~ msgstr "Vadības info"
-
-#, fuzzy
-#~| msgid "Membership Free Date"
-#~ msgid "Membership Upgrades & Downgrades"
-#~ msgstr "Brīvās Partnerības Datums"
-
-#, fuzzy
-#~| msgid "Directs"
-#~ msgid "My Directs"
-#~ msgstr "Komanda"
-
-#, fuzzy
-#~| msgid "Guests"
-#~ msgid "New Guests"
-#~ msgstr "Viesi"
-
-#, fuzzy
-#~| msgid "New Message"
-#~ msgid "New Reports Page"
-#~ msgstr "Jauns paziņijums"
-
-#, fuzzy
-#~| msgid "Create Invoice"
-#~ msgid "Next Invoice"
-#~ msgstr "Izveidojiet Rēķinu"
-
-#, fuzzy
-#~| msgid "Membership Info"
-#~ msgid "Next Membership Invoice"
-#~ msgstr "Vadības info"
-
-#, fuzzy
-#~| msgid "Partnership Video"
-#~ msgid "Next Partnership Invoice"
-#~ msgstr "Partnerības Video"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Other Reports"
-#~ msgstr "Biznesa ziņojumi"
-
-#, fuzzy
-#~| msgid "Overview"
-#~ msgid "Overdue"
-#~ msgstr "Pārskats"
-
-#, fuzzy
-#~| msgid "Partners That Will Be Renewing Next Month"
-#~ msgid "Partner Renewing Next Month"
-#~ msgstr "Partneri,kuri tiks atjaunoti nākošajā mēnesī"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Partner Reports"
-#~ msgstr "Biznesa ziņojumi"
-
-#, fuzzy
-#~| msgid "Ineligible for compensation"
-#~ msgid "Partners Elegible for Compensation"
-#~ msgstr "Nepretendē uz kompensāciju"
-
-#, fuzzy
-#~| msgid "Partners are Membership Free."
-#~ msgid "Partners Elegible For Membership Free"
-#~ msgstr "Partneriem ir Brīvā Partnerība."
-
-#, fuzzy
-#~| msgid "Understanding Builders Base Bonus"
-#~ msgid "Partners Pending to Receive Builders Base Bonus"
-#~ msgstr "Lietotaju Bāzes Bonusa Izpratne"
-
-#, fuzzy
-#~| msgid "You have no direct partners currently eligible for Fast Start."
-#~ msgid "Partners Still Elegible for Fast Start"
-#~ msgstr "Jums pašlaik nav tiešu partneru Ātrajam Startam."
-
-#, fuzzy
-#~| msgid "Potential Fast Start Matching"
-#~ msgid "Partners Still Elegible for Fast Start Matching"
-#~ msgstr "Potenciālais Ātrā Starta Mačing"
-
-#, fuzzy
-#~| msgid "Potential Team Leadership Bonus"
-#~ msgid "Partners Team Leadership Performance"
-#~ msgstr "Potenciālais Komandas Līdera Bonus"
-
-#, fuzzy
-#~| msgid "Partner Activation Date"
-#~ msgid "Partners Who Achieved Fast Start"
-#~ msgstr "Partnera aktivizācijas datums"
-
-#, fuzzy
-#~| msgid "Partner with travel agencies"
-#~ msgid "Partners with new ranks"
-#~ msgstr "Partnerība ar ceļojumu aģentūrām"
-
-#, fuzzy
-#~| msgid "Partnership Video"
-#~ msgid "Partnership Invoice"
-#~ msgstr "Partnerības Video"
-
-#, fuzzy
-#~| msgid "Partners That Have Not Renewed"
-#~ msgid "Partnership Not Renewed"
-#~ msgstr "Partneri, kas nav atjaunoti"
-
-#, fuzzy
-#~| msgid "Add Payment Method"
-#~ msgid "Payment Method"
-#~ msgstr "Pievieno papildus samaksas metodi"
-
-#, fuzzy
-#~| msgid "Add Payment Method"
-#~ msgid "Payment Methods"
-#~ msgstr "Pievieno papildus samaksas metodi"
 
 #~ msgid ""
 #~ "Processing can take a moment depending on the information provided. If "
@@ -49562,118 +50132,9 @@ msgstr ""
 #~ "paziņojums par procesu."
 
 #, fuzzy
-#~| msgid "Recurring Payment Terms"
-#~ msgid "Recurring payment"
-#~ msgstr "Atkārtotoā Maksājuma Nosacījumi"
-
-#, fuzzy
-#~| msgid "Recurring Payment Terms"
-#~ msgid "Recurring Payment"
-#~ msgstr "Atkārtotoā Maksājuma Nosacījumi"
-
-#, fuzzy
-#~| msgid "You have no direct partners currently eligible for Fast Start."
-#~ msgid "Reports - Partners Still Elegible for Fast Start"
-#~ msgstr "Jums pašlaik nav tiešu partneru Ātrajam Startam."
-
-#, fuzzy
-#~| msgid "Search Tours"
-#~ msgid "Search Teams"
-#~ msgstr "Meklēt Ekskursijas"
-
-#, fuzzy
-#~| msgid "Selected Country:"
-#~ msgid "Selected Countries"
-#~ msgstr "Izvēlētā Valsts:"
-
-#, fuzzy
-#~| msgid "Select a Language"
-#~ msgid "Selected Language"
-#~ msgstr "Izvēlies Valodu"
-
-#, fuzzy
-#~| msgid "Select Tag"
-#~ msgid "Selected Teams"
-#~ msgstr "Atlasīt Tagu"
-
-#, fuzzy
 #~| msgid "Direct partners"
 #~ msgid "Show only my direct partners"
 #~ msgstr "Tiešie partneri"
-
-#, fuzzy
-#~| msgid "Signup Date"
-#~ msgid "SignUp Date"
-#~ msgstr "Pierakstīšanās Datums"
-
-#, fuzzy
-#~| msgid "Please select gender"
-#~ msgid "team(s) selected"
-#~ msgstr "Lūdzu, atlasiet dzimumu"
-
-#, fuzzy
-#~| msgid "Use Template"
-#~ msgid "Templates"
-#~ msgstr "Izmantojiet paraugu"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Tracks members with pending invoices."
-#~ msgstr "Lietotāju ar nenokārtotiem rēķiniem"
-
-#, fuzzy
-#~| msgid "Produce the required Total Activation Volume."
-#~ msgid "Tracks partners qualified production and activation volume."
-#~ msgstr "Veic pieprasīto Kopējo Aktivizāciju Apjomu."
-
-#, fuzzy
-#~| msgid ""
-#~| "Partners from your team which are still eligible for Fast Start matching "
-#~| "bonus."
-#~ msgid ""
-#~ "Tracks partners who are still eligible for Fast Start Matching based on "
-#~ "their downlines."
-#~ msgstr ""
-#~ "Partneri no jūsu komandas, kas joprojām ir piemēroti Atrā Starta "
-#~ "atbilstības(matching)bonusam."
-
-#, fuzzy
-#~| msgid ""
-#~| "Partners from your team which are still eligible for Fast Start matching "
-#~| "bonus."
-#~ msgid ""
-#~ "Tracks partners who are still eligible for Fast Start with days left to "
-#~ "qualify."
-#~ msgstr ""
-#~ "Partneri no jūsu komandas, kas joprojām ir piemēroti Atrā Starta "
-#~ "atbilstības(matching)bonusam."
-
-#, fuzzy
-#~| msgid "One or more members has an active sailing or a pending invoice."
-#~ msgid ""
-#~ "Tracks team members with an active cruise booking but a pending invoice."
-#~ msgstr ""
-#~ "Vienam vai vairākiem Biedriem ir aktīvi ceļojumi vai gaidošs rēķins."
-
-#, fuzzy
-#~| msgid "User Invoices"
-#~ msgid "User Next Invoices"
-#~ msgstr "Lietotāju rēķini"
-
-#, fuzzy
-#~| msgid "Enable Recurring Payments"
-#~ msgid "Users Recurring Payment Status"
-#~ msgstr "Iespējot Atkārtotos Maksājumus"
-
-#, fuzzy
-#~| msgid "Welcome To InCruises"
-#~ msgid "Welcome To Reports"
-#~ msgstr "Laipni Lūgti inCruises"
-
-#, fuzzy
-#~| msgid "Whatsapp #"
-#~ msgid "Whatsapp"
-#~ msgstr "WHatsapp #"
 
 #~ msgid ""
 #~ "Your information has been submitted successfully and verification is "
@@ -58285,9 +58746,6 @@ msgstr ""
 
 #~ msgid "Reset password to \"incruises1234\""
 #~ msgstr "Atiestatīt paroli uz \"incruises1234\""
-
-#~ msgid "TEST 2"
-#~ msgstr "TESTS 2"
 
 #~ msgid "test 2"
 #~ msgstr "tests 2"

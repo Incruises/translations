@@ -539,7 +539,7 @@ msgstr "{{ itineraryItem.description }}"
 msgid "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 msgstr "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
 
@@ -798,6 +798,18 @@ msgstr "%{ cd_used } Points de Récompense"
 msgid "%{ city }"
 msgstr "%{ ville }"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "%{ n } Days"
+msgstr "Jours Restants Pour se Qualifier"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "%{ n } Days Left to Pay"
+msgstr "Jours Restants Pour se Qualifier"
+
 #: pages/partner_success.vue
 msgid "%{ name } from %{ country }"
 msgstr "%{ name } de %{ country }"
@@ -891,6 +903,12 @@ msgstr "Gagnant %{competitionName} — Bienvenue au Sommet !"
 msgid "%{count} more %{plan} %{activationLabel} to reach $%{amount}/member"
 msgstr ""
 "%{count} autres %{plan} %{activationLabel} pour atteindre $%{amount}/membre"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Verification email sent successfully."
+msgid "%{count} push notifications were sent successfully."
+msgstr "L'email de vérification a été envoyé avec succès."
 
 #: components/earnings_tile.vue
 msgid "%{countDownWord} %{time}"
@@ -2113,8 +2131,15 @@ msgstr ""
 "destinationCountryAndCurrency.currency.code }}"
 
 #: pages/admin_support_analytics.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 msgid "1 Day"
 msgstr "1 Jour"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "1 Day Left to Pay"
+msgstr "Jours Restants Pour se Qualifier"
 
 #: components/cruises_booking_old/reward-points-step.vue
 #: components/cruises_booking_old/reward-points-confirm-step.vue
@@ -2201,6 +2226,12 @@ msgstr "Solde 2 Pour 1"
 #: components/checkout/Processor2For1.vue
 msgid "2 For 1 RP"
 msgstr "RP 2 Pour 1"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "2 Invoices Dates"
+msgstr "Date de Facture"
 
 #: pages/elevate.vue
 msgid "2 nights in Dubai with pre-cruise accommodations"
@@ -2547,6 +2578,13 @@ msgstr ""
 "la banque. Cette page sera automatiquement mise à jour dès que la banque "
 "aura terminé sa validation."
 
+#: components/reports/new_reports.vue
+msgid ""
+"A set of ready-to-use report templates featuring the most requested insights "
+"by top Partners. Get instant access to popular data views with just one "
+"click."
+msgstr ""
+
 #: pages/apps.vue
 msgid ""
 "A simple ‘Add-to-home-screen’ prompt and push notifications make staying IN "
@@ -2802,13 +2840,19 @@ msgstr "Accès AVEC PREMIUM"
 msgid "Account"
 msgstr "Compte"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Account Created"
 msgstr "Compte créé"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Account Creation Date"
 msgstr "Date de création du compte"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Accounts"
+msgid "Account Expires"
+msgstr "Comptes"
 
 #: components/user/functions.vue
 msgid "Account has been deducted. Transaction successfully completed"
@@ -2869,18 +2913,19 @@ msgid "Action"
 msgstr "Action"
 
 #: pages/certificates.vue pages/admin_account_recovery.vue
-#: pages/negative_balances.vue pages/reports.vue pages/admin_emails.vue
-#: pages/agreements.vue pages/team_documentation_requests.vue
-#: pages/admin_certificates.vue pages/receipts.vue pages/invoices.vue
-#: pages/admin_restricted_paybonus.vue pages/price_match_requests.vue
-#: components/support/InstantTools.vue components/compensation/statements.vue
+#: pages/negative_balances.vue pages/admin_emails.vue pages/agreements.vue
+#: pages/team_documentation_requests.vue pages/admin_certificates.vue
+#: pages/receipts.vue pages/invoices.vue pages/admin_restricted_paybonus.vue
+#: pages/price_match_requests.vue components/support/InstantTools.vue
+#: components/compensation/statements.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/fast_start_matching.vue
 #: components/compensation/recurring_income_levels.vue
 #: components/compensation/qbi_members_table.vue
 #: components/settings_page/modify-saved-passengers.vue
-#: components/data_table/table.vue components/high_risk/high_risk_accounts.vue
+#: components/data_table/table.vue components/reports/old_reports.vue
+#: components/high_risk/high_risk_accounts.vue
 #: components/admin_finance/payment_fulfillment.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
@@ -2943,9 +2988,9 @@ msgstr "Bonus d'Activation"
 msgid "Activation Bonuses (Daily and Monthly)"
 msgstr "Bonus d'activation (quotidien et mensuel)"
 
-#: pages/reports.vue components/compensation/members-qbi-modal.vue
+#: components/compensation/members-qbi-modal.vue
 #: components/compensation/qbi_members_table.vue
-#: pages/compensation/member_activations.vue
+#: components/reports/old_reports.vue pages/compensation/member_activations.vue
 msgid "Activation Date"
 msgstr "Date d'activation"
 
@@ -3005,6 +3050,7 @@ msgstr "Volume d'Activations Req."
 
 #: pages/track_results.vue components/welcome/members-modal.vue
 #: components/compensation/qbi_members_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Active"
 msgstr "Actif"
 
@@ -3030,7 +3076,7 @@ msgstr "Les Membres Actifs du Club inCruises peuvent "
 msgid "Active Member"
 msgstr "Membre actif"
 
-#: pages/reports.vue components/compensation/qbi-details.vue
+#: components/compensation/qbi-details.vue components/reports/old_reports.vue
 msgid "Active Members"
 msgstr "Membres actifs"
 
@@ -3629,9 +3675,10 @@ msgstr "Alaska"
 msgid "Alipay"
 msgstr "Alipay"
 
-#: pages/reports.vue pages/info_center.vue pages/team_rankings.vue
+#: pages/info_center.vue pages/team_rankings.vue
 #: pages/admin_support_analytics.vue pages/track_results.vue
-#: pages/leadership_academy.vue components/user/timeline.vue
+#: pages/leadership_academy.vue components/reports/old_reports.vue
+#: components/user/timeline.vue
 msgid "All"
 msgstr "Tout"
 
@@ -3663,6 +3710,7 @@ msgid "All children must be younger than 18 years old."
 msgstr "Tous les enfants doivent être âgés de moins de 18 ans."
 
 #: pages/mercy_ships.vue components/business_intelligence/comp_to_sales.vue
+#: components/reports/filters/country.vue
 msgid "All Countries"
 msgstr "Tous les Pays"
 
@@ -3731,6 +3779,7 @@ msgid "All Invitations"
 msgstr "Toutes les invitations"
 
 #: pages/communications.vue pages/webinar_recordings.vue
+#: components/reports/filters/language.vue
 msgid "All Languages"
 msgstr "Toutes les langues"
 
@@ -3877,6 +3926,12 @@ msgstr "Toutes les taxes, frais et pourboires sont inclus — aucun coût caché
 #: pages/export.vue
 msgid "All Team Partners"
 msgstr "Tous les partenaires de l'équipe"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "All Titles"
+msgid "All Teams"
+msgstr "Tous les titres"
 
 #: components/public/Faq.vue pages/public/faq.vue
 msgid ""
@@ -4228,6 +4283,12 @@ msgstr ""
 msgid "An error occurred while loading the meeting"
 msgstr "Une erreur s'est produite lors du chargement de la réunion"
 
+#: vue/composables/useSendBroadcastPwaNotification.js
+#, fuzzy
+#| msgid "An error occurred while loading the meeting"
+msgid "An error occurred while sending notification"
+msgstr "Une erreur s'est produite lors du chargement de la réunion"
+
 #: pages/business_performance.vue
 msgid "An error occurred while updating the widget."
 msgstr "Une erreur s'est produite lors de la muse à jour du widget."
@@ -4304,6 +4365,61 @@ msgid ""
 msgstr ""
 "Une erreur inattendue s'est produite lors de l'initialisation des filtres "
 "client locaux."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid "An unexpected error occurred while loading countries."
+msgstr ""
+"Une erreur inattendue s'est produite lors de l'application des filtres "
+"client."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid "An unexpected error occurred while loading languages."
+msgstr ""
+"Une erreur inattendue s'est produite lors de la réinitialisation des filtres."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid ""
+"An unexpected error occurred while loading members with pending invoices."
+msgstr ""
+"Une erreur inattendue s'est produite lors de la réinitialisation des filtres."
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid ""
+"An unexpected error occurred while loading partners still eligible fast "
+"start."
+msgstr ""
+"Une erreur inattendue s'est produite lors de l'application des filtres "
+"client."
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while resetting the filters."
+msgid "An unexpected error occurred while loading teams."
+msgstr ""
+"Une erreur inattendue s'est produite lors de la réinitialisation des filtres."
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "An unexpected error occurred while applying the client filters."
+msgid ""
+"An unexpected error occurred while loading users recurring payment status."
+msgstr ""
+"Une erreur inattendue s'est produite lors de l'application des filtres "
+"client."
 
 #: components/data_table/column-selection-widget.vue
 msgid "An unexpected error occurred while opening the column selection widget."
@@ -5068,7 +5184,7 @@ msgstr ""
 msgid "Attachments"
 msgstr "Pièces jointes"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "Attachments are temporarily disable for Email Blast. You can only send "
 "emails without attachments."
@@ -5076,7 +5192,7 @@ msgstr ""
 "Les pièces jointes sont temporairement désactivées pour Email Blast. Vous "
 "pouvez uniquement envoyer des e-mails sans pièces jointes."
 
-#: pages/reports.vue pages/email.vue
+#: pages/email.vue components/reports/old_reports.vue
 msgid "Attachments:"
 msgstr "Attachments :"
 
@@ -5282,7 +5398,7 @@ msgstr "Informations basiques"
 msgid "Basic Training"
 msgstr "Formation de base"
 
-#: pages/reports.vue pages/courses.vue
+#: pages/courses.vue components/reports/old_reports.vue
 msgid "Basic Training Courses"
 msgstr "Cours de la Formation de Base"
 
@@ -5463,7 +5579,7 @@ msgstr "Forfait Boissons"
 msgid "Bill to:"
 msgstr "Facture à :"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Billing Date"
 msgstr "Date de facturation"
 
@@ -5534,7 +5650,7 @@ msgstr ""
 msgid "Board of Directors and above"
 msgstr "Board of Directors et au-dessus (et niveaux supérieurs)"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Board of Directors Member"
 msgstr "Membre du conseil d'administration"
 
@@ -5660,6 +5776,12 @@ msgstr "Bonus payé"
 #: components/receipts/new_team_residual_bonus_statement.vue
 msgid "Bonus Paid For"
 msgstr "Bonus payé pour"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Bonus Paid"
+msgid "Bonus Payed In"
+msgstr "Bonus payé"
 
 #: pages/glsx.vue pages/gls.vue
 msgid "Bonus Points"
@@ -5847,6 +5969,7 @@ msgid "Booking Type"
 msgstr "Type de réservation"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Both"
 msgstr "Les deux"
 
@@ -5897,7 +6020,7 @@ msgstr ""
 "l'industrie grâce à une gamme de Ressources de Formation conçues pour vous "
 "aider à exceller."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Builder Plan - $32"
 msgstr "Plan constructeur - 32 $"
 
@@ -5972,11 +6095,11 @@ msgstr "Le bonus des constructeurs est plafonné à 30 000 $*"
 msgid "Builders Points"
 msgstr "Points de construction"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Building a Compliant Business"
 msgstr "Construire une entreprise conforme"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Building Wide and Deep"
 msgstr "Construire large et profond"
 
@@ -5992,7 +6115,7 @@ msgstr "Conçu pou assister la croissance"
 msgid "Business Cards"
 msgstr "Cartes de visite"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership"
 msgstr "Propriété des Entreprises"
 
@@ -6000,11 +6123,11 @@ msgstr "Propriété des Entreprises"
 msgid "BUSINESS OWNERSHIP CERTIFICATE"
 msgstr "CERTIFICAT DE PROPRIÉTÉ D'ENTREPRISE"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership Last Month"
 msgstr "Propriété des Entreprises du dernier mois"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Business Ownership This Month"
 msgstr "Propriété des Entreprises ce mois-ci"
 
@@ -6457,7 +6580,8 @@ msgstr "Cabines :"
 msgid "Calendar"
 msgstr "Calendrier"
 
-#: pages/reports.vue components/receipts/monthly_member_activation.vue
+#: components/reports/old_reports.vue
+#: components/receipts/monthly_member_activation.vue
 #: components/receipts/super_builders_bonus.vue
 #: components/receipts/qualified_residual_bonus.vue
 msgid "Calendar Month"
@@ -6609,10 +6733,10 @@ msgstr "Dollar canadien (CAD)"
 #: components/fast-growing-legs.vue components/recipients_modal.vue
 #: components/avatar_cropper.vue pages/referral_links.vue pages/inviter.vue
 #: pages/tours_details.vue pages/checkout.vue pages/hotels.vue
-#: pages/reports.vue pages/admin_permission_group.vue
-#: pages/admin_department.vue pages/connect.vue pages/admin_permission.vue
-#: pages/contacts.vue pages/settings.vue pages/kyc_verification.vue
-#: pages/invoices.vue pages/email.vue pages/business_performance.vue
+#: pages/admin_permission_group.vue pages/admin_department.vue
+#: pages/connect.vue pages/admin_permission.vue pages/contacts.vue
+#: pages/settings.vue pages/kyc_verification.vue pages/invoices.vue
+#: pages/email.vue pages/business_performance.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/admin_management/admin_departments.vue
 #: components/payout/euro-conversion.vue
@@ -6624,7 +6748,7 @@ msgstr "Dollar canadien (CAD)"
 #: components/contacts/contact-edit-modal.vue
 #: components/settings_page/remove-display-name-modal.vue
 #: components/cruises_booking_old/confirmation-step.vue
-#: components/hotels/GuestsDropdown.vue
+#: components/reports/old_reports.vue components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsPanel.vue
 #: components/recurring/add-recurring.vue
 #: components/recurring/recurring_payment_method_checkout.vue
@@ -6926,7 +7050,8 @@ msgstr ""
 "personnel et aux sous-traitants sélectionnés via un mot de passe et ne sont "
 "pas modifiables par vous."
 
-#: pages/certificates.vue pages/reports.vue
+#: pages/certificates.vue components/reports/quick_reports.vue
+#: components/reports/old_reports.vue
 msgid "Certificate"
 msgstr "Certificat"
 
@@ -6952,6 +7077,7 @@ msgid "Certificates"
 msgstr "Certificats"
 
 #: pages/email_address.vue pages/referral_links_old.vue
+#: components/reports/quick_reports.vue
 msgid "Change"
 msgstr "Changement"
 
@@ -7156,7 +7282,7 @@ msgstr "Yuan chinois (CNY)"
 msgid "Choose"
 msgstr "Choisir"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Choose a Quick Report"
 msgstr "Choisir un Rapport Rapide"
 
@@ -7328,6 +7454,7 @@ msgstr "Réclamez dès maintenant vos 50 Points de Récompense gratuits !"
 msgid "Classic"
 msgstr "Classique"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 msgid "CLASSIC"
@@ -7342,7 +7469,7 @@ msgstr "Membre Classique"
 msgid "CLASSIC Member"
 msgstr "Membre CLASSIC"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Classic Members"
 msgstr "Membres Classic"
 
@@ -7365,7 +7492,7 @@ msgstr "Des critères clairs"
 msgid "Clear Filters"
 msgstr "Effacer les Filtres"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Clear Selections"
 msgstr "Supprimer les sélections"
 
@@ -7447,6 +7574,11 @@ msgstr "Cliquez ici pour voir les coupons"
 #: pages/create_price_match_cruises.vue
 msgid "Click here to view your Price Match Requests:"
 msgstr "Cliquez ici pour voir vos Demandes d'Alignement de Prix :"
+
+#: components/reports/new_reports.vue
+#: components/reports/quick_reports_modal/templates-list.vue
+msgid "Click on a card below to run report based on a specific template"
+msgstr ""
 
 #: pages/cruise_price_match_guarantee.vue
 msgid "click the"
@@ -7558,6 +7690,7 @@ msgid "Column Selection"
 msgstr "Sélection des colonnes"
 
 #: components/data_table/column-selection-widget.vue
+#: components/reports/report_card.vue
 msgid "Columns"
 msgstr "Colonnes"
 
@@ -7581,6 +7714,12 @@ msgstr ""
 "Rejoignez d'autres Partenaires inCruises select en janvier 2024 à Dubaï et "
 "plongez dans le tout premier"
 
+#: components/reports/report_card.vue
+#, fuzzy
+#| msgid "Coming Soon!"
+msgid "Coming Soon"
+msgstr "À venir !"
+
 #: pages/public/the_global_convention.vue
 msgid "Coming Soon!"
 msgstr "À venir !"
@@ -7589,7 +7728,8 @@ msgstr "À venir !"
 msgid "Commercial Partnerships Manager"
 msgstr "Gestionnaire des partenariats commerciaux"
 
-#: pages/reports.vue components/receipts/commission_statement.vue
+#: components/reports/old_reports.vue
+#: components/receipts/commission_statement.vue
 msgid "Commission"
 msgstr "Une commission"
 
@@ -7654,7 +7794,8 @@ msgstr "Indemnité"
 msgid "Compensation Details"
 msgstr "Détails de la compensation"
 
-#: pages/reports.vue components/certificates/CompensationProgram.vue
+#: components/reports/old_reports.vue
+#: components/certificates/CompensationProgram.vue
 #: components/public/FooterDocs.vue
 msgid "Compensation Program"
 msgstr "Programme d'indemnisation"
@@ -7703,9 +7844,10 @@ msgstr "Détails complets sur les passagers"
 msgid "Complete your booking before"
 msgstr "Effectuez votre réservation avant"
 
-#: pages/export.vue pages/reports.vue pages/agreements.vue
-#: pages/team_documentation_requests.vue pages/contacts.vue pages/invoices.vue
-#: pages/leadership_academy.vue components/contacts/contact-edit-modal.vue
+#: pages/export.vue pages/agreements.vue pages/team_documentation_requests.vue
+#: pages/contacts.vue pages/invoices.vue pages/leadership_academy.vue
+#: components/contacts/contact-edit-modal.vue
+#: components/reports/old_reports.vue
 msgid "Completed"
 msgstr "Terminé"
 
@@ -7782,13 +7924,12 @@ msgstr "Configurer le Widget"
 
 #: components/alert_modal.vue components/fast-growing-legs.vue
 #: components/birthdate-reminder.vue components/italian-vat-reminder.vue
-#: pages/reports.vue pages/create_price_match_cruises.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/admin_permission.vue pages/settings.vue
+#: pages/create_price_match_cruises.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/admin_permission.vue pages/settings.vue
 #: components/payout/birthday-modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
-#: components/receipts/booking_receipt.vue
+#: components/reports/old_reports.vue components/receipts/booking_receipt.vue
 msgid "Confirm"
 msgstr "Confirmer"
 
@@ -7968,7 +8109,7 @@ msgstr ""
 msgid "Congratulations! You have claimed your reward points."
 msgstr "Nous vous félicitons ! Vous avez réclamé vos Points de Récompense."
 
-#: pages/reports.vue pages/connect.vue pages/account_setup.vue
+#: pages/connect.vue pages/account_setup.vue components/reports/old_reports.vue
 msgid "Connect"
 msgstr "Connecter"
 
@@ -7976,7 +8117,7 @@ msgstr "Connecter"
 msgid "CONNECT 1500"
 msgstr "RELIER 1500"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect 1500 - $500"
 msgstr "Connect 1500 - 500 $"
 
@@ -7984,7 +8125,7 @@ msgstr "Connect 1500 - 500 $"
 msgid "CONNECT 500"
 msgstr "RELIER 500"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect 500 - $50"
 msgstr "Connect 500 - 50 $"
 
@@ -7998,7 +8139,7 @@ msgstr ""
 "inCruises afin que vous puissiez vous connecter avec vos prospects et votre "
 "équipe de partenaires en appuyant simplement sur un bouton."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Connect Plan"
 msgstr "Plan Connect"
 
@@ -8354,6 +8495,12 @@ msgstr "Des pays"
 msgid "Countries and counting"
 msgstr "Pays et comptage"
 
+#: components/reports/filters/country.vue
+#, fuzzy
+#| msgid "Countries Selected"
+msgid "countries selected"
+msgstr "Pays Sélectionnés"
+
 #: pages/mercy_ships.vue
 msgid "Countries Selected"
 msgstr "Pays Sélectionnés"
@@ -8369,10 +8516,10 @@ msgstr "pays"
 #: components/mercy-ship-modals.vue components/info-reminder.vue
 #: components/weekly-competition.vue pages/additional_info.vue
 #: pages/competition.vue pages/referral_links_old.vue pages/admin_user.vue
-#: pages/new_ranks.vue pages/mercy_ships.vue pages/reports.vue
-#: pages/partner_success.vue pages/builders_base.vue pages/team_rankings.vue
-#: pages/settings.vue pages/reach.vue pages/track_results.vue
-#: pages/giving_society.vue components/checkout/ItalianStep.vue
+#: pages/new_ranks.vue pages/mercy_ships.vue pages/partner_success.vue
+#: pages/builders_base.vue pages/team_rankings.vue pages/settings.vue
+#: pages/reach.vue pages/track_results.vue pages/giving_society.vue
+#: components/checkout/ItalianStep.vue
 #: components/compensation/member_activations.vue
 #: components/compensation/residual_bonus_preview.vue
 #: components/compensation/leadership_bonus.vue
@@ -8381,12 +8528,17 @@ msgstr "pays"
 #: components/compensation/my_team_breakdown_table.vue
 #: components/contacts/contact-edit-modal.vue
 #: components/settings_page/login-activity.vue
+#: components/reports/old_reports.vue
 #: components/high_risk/high_risk_accounts.vue
 #: components/receipts/italian_receipt.vue components/public/JoinModal.vue
 #: components/onboarding/address-step.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/business_intelligence/comp_to_sales.vue pages/public/signup.vue
 #: components/payout/brightwell/cash-pickup-location.vue
 #: components/payout/brightwell/recipient-account-details.vue
+#: components/reports/filters/country.vue
 msgid "Country"
 msgstr "Pays"
 
@@ -8429,7 +8581,7 @@ msgstr "cours"
 msgid "Course"
 msgstr "Cours"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Course Certificate"
 msgstr "Certificat de cours"
 
@@ -8544,6 +8696,7 @@ msgid "Created:"
 msgstr "Créé :"
 
 #: components/admin_finance/payment_fulfillment.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/mercy_ships/donate_modal/payment-selection.vue
 msgid "Credit Card"
 msgstr "Carte de crédit"
@@ -8800,7 +8953,7 @@ msgstr "Compagnies de Croisière"
 msgid "Cruise Member"
 msgstr "Membre de Croisière"
 
-#: components/support/InstantTools.vue
+#: components/support/InstantTools.vue components/reports/quick_reports.vue
 msgid "Cruise Name"
 msgstr "Nom de croisière"
 
@@ -8919,6 +9072,12 @@ msgstr "Devise Les montants sont présentés en euros"
 msgid "Currency Selected"
 msgstr "Devise Sélectionnée"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Direct Activations"
+msgid "Current Activations"
+msgstr "Activations directes"
+
 #: components/growth_calculator/potential_recurring.vue
 msgid "Current Active Levels"
 msgstr "Niveaux actifs actuels"
@@ -8951,8 +9110,15 @@ msgid "Current Plan"
 msgstr "Plan actuel"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/quick_reports.vue
 msgid "Current QBI"
 msgstr "QBI Actuelle"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Recurring Qualified Production"
+msgid "Current Qualified Production"
+msgstr "Production qualifiée récurrente"
 
 #: components/growth_calculator/potential_leadership.vue
 msgid "Current Rank"
@@ -9168,7 +9334,7 @@ msgstr "data"
 msgid "Data"
 msgstr "Données"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Data Fields"
 msgstr "Champs de Données"
 
@@ -9214,7 +9380,7 @@ msgstr "Date décroissante"
 msgid "Date Earned"
 msgstr "Date d'obtention"
 
-#: pages/reports.vue pages/team_rankings.vue
+#: pages/team_rankings.vue components/reports/old_reports.vue
 msgid "Date From"
 msgstr "Dater de"
 
@@ -9247,7 +9413,7 @@ msgstr "Date d'Emission"
 msgid "Date Range"
 msgstr "Plage de dates"
 
-#: pages/reports.vue pages/team_rankings.vue
+#: pages/team_rankings.vue components/reports/old_reports.vue
 msgid "Date To"
 msgstr "Date à"
 
@@ -9281,6 +9447,7 @@ msgid "days"
 msgstr "Jour"
 
 #: components/cards/countdown-card.vue components/public/tgc-countdown.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
 msgid "Days"
 msgstr "Jours"
 
@@ -9289,11 +9456,37 @@ msgid "Days In Negative"
 msgstr "Jours en Négative"
 
 #: components/compensation/members-qbi-modal.vue
+#: components/reports/quick_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
 msgid "Days Left"
 msgstr "Jours restants"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Count"
+msgstr "Jours Restants Pour se Qualifier"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left to Pay"
+msgstr "Jours Restants Pour se Qualifier"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Pay"
+msgstr "Jours Restants Pour se Qualifier"
+
 #: components/compensation/qbi_members_table.vue
 msgid "Days Left To Qualify"
+msgstr "Jours Restants Pour se Qualifier"
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "Days Left To Qualify"
+msgid "Days Left To Still Be Eligible"
 msgstr "Jours Restants Pour se Qualifier"
 
 #: pages/admin_user_id.vue
@@ -9457,7 +9650,7 @@ msgstr "Départ"
 msgid "DEPART"
 msgstr "DÉPART"
 
-#: pages/reports.vue pages/price_match_requests.vue
+#: pages/price_match_requests.vue components/reports/old_reports.vue
 #: components/receipts/booking_receipt.vue
 #: components/admin_booking/admin_cruise_featured.vue
 msgid "Depart Date"
@@ -9725,7 +9918,7 @@ msgstr "Partenaires directs MTD"
 msgid "Direct Pending Members"
 msgstr "Membres Directs en Attente"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Direct Pending with Cruise Bookings"
 msgstr "Membres Directs en attente avec Réservation de Croisière"
 
@@ -9800,6 +9993,15 @@ msgstr "Directe (Toutes les dates)"
 #: pages/info_center.vue
 msgid "Directs (Month to Date)"
 msgstr "Directe (Le mois courant)"
+
+#: components/reports/filters/my_directs.vue
+#, fuzzy
+#| msgid "Total of Members or Partners you have personally Activated"
+msgid ""
+"Directs are members or partners you have referred to inCruises personally."
+msgstr ""
+"Nombre total de Membres ou de Partenaires que vous avez personnellement "
+"Activés"
 
 #: pages/new_partners_tracker.vue
 msgid "Directs Leaderboard"
@@ -10149,11 +10351,11 @@ msgstr "Rétrogradable"
 msgid "Downgreadable"
 msgstr "Rétrogradable"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline level limit must be a number!"
 msgstr "La limite du niveau descendant doit être un nombre !"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline limit must be set between 1 and 50."
 msgstr "La limite de downline doit être comprise entre 1 et 50."
 
@@ -10161,13 +10363,20 @@ msgstr "La limite de downline doit être comprise entre 1 et 50."
 msgid "Downline Name"
 msgstr "Nom en lignée descendante"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Downline Select"
 msgstr "Sélection en lignée descendante"
 
-#: pages/reports.vue components/inchat/user/user_create_room.vue
+#: components/reports/old_reports.vue
+#: components/inchat/user/user_create_room.vue
 msgid "Downlines"
 msgstr "Lignées descendantes"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Downline Select"
+msgid "Downlines Eligible"
+msgstr "Sélection en lignée descendante"
 
 #: components/receipts/instant_bonus_statement.vue
 msgid "Downlines Names"
@@ -10215,8 +10424,8 @@ msgstr "Télécharger la Carte au format .png"
 msgid "Download Completed CSV"
 msgstr "Télécharger le fichier CSV terminé"
 
-#: pages/reports.vue pages/team_documentation_requests.vue
-#: pages/track_results.vue
+#: pages/team_documentation_requests.vue pages/track_results.vue
+#: vue/composables/reports/useBulkActions.js components/reports/old_reports.vue
 msgid "Download CSV"
 msgstr "Télécharger le CSV"
 
@@ -10310,8 +10519,8 @@ msgstr "Dubai"
 msgid "Due date"
 msgstr "Date d'échéance"
 
-#: pages/reports.vue pages/invoices.vue components/invoices/invoice.vue
-#: components/user/invoices.vue
+#: pages/invoices.vue components/invoices/invoice.vue
+#: components/reports/old_reports.vue components/user/invoices.vue
 msgid "Due Date"
 msgstr "Date d'échéance"
 
@@ -10344,6 +10553,13 @@ msgstr ""
 #: components/payout/brightwell/transfer-details.vue
 msgid "Due to your"
 msgstr "en raison de votre"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Due Today"
+msgid "Due today"
+msgstr "Dû pour aujourd’hui"
 
 #: pages/duplicator.vue
 msgid "Duplicator"
@@ -10924,7 +11140,7 @@ msgstr "Conditions d'éligibilité pour percevoir des commissions"
 #: components/welcome/profile-card.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
-#: components/navigation/mobile-menu.vue
+#: components/reports/quick_reports.vue components/navigation/mobile-menu.vue
 #: components/navigation/avatar-dropdown.vue
 #: components/compensation/fast_start/breakdown_table.vue
 msgid "Eligible"
@@ -10959,14 +11175,15 @@ msgstr "Advantages Voyage Élite"
 #: components/birthday-modal.vue pages/email_address.vue
 #: pages/additional_info.vue pages/cards.vue pages/account-recovery.vue
 #: pages/admin_account_recovery.vue pages/negative_balances.vue
-#: pages/admin_user.vue pages/invite.vue pages/reports.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/contacts.vue pages/team_rankings.vue pages/settings.vue
-#: pages/track_results.vue pages/admin_restricted_paybonus.vue
-#: pages/notifications.vue pages/password.vue pages/email.vue
-#: pages/multi_factor.vue components/negative_balances/uplines_modal.vue
+#: pages/admin_user.vue pages/invite.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/contacts.vue pages/team_rankings.vue
+#: pages/settings.vue pages/track_results.vue
+#: pages/admin_restricted_paybonus.vue pages/notifications.vue
+#: pages/password.vue pages/email.vue pages/multi_factor.vue
+#: components/negative_balances/uplines_modal.vue
 #: components/cruises_booking/passenger_info_step.vue
 #: components/invoices/invoice.vue components/compensation/leadership_bonus.vue
+#: components/reports/old_reports.vue
 #: components/high_risk/high_risk_accounts.vue
 #: components/receipts/monthly_member_activation.vue
 #: components/receipts/tour_booking_receipt.vue
@@ -10986,6 +11203,9 @@ msgstr "Advantages Voyage Élite"
 #: components/receipts/hotel_booking_receipt.vue
 #: components/receipts/leadership_bonus_statement.vue
 #: components/receipts/builders_bonus_new.vue components/public/JoinModal.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/hotel_booking/guest_info_step.vue
 #: components/user/notifications.vue pages/login/login.vue
 #: pages/public/signup.vue pages/public/contact.vue
@@ -11010,7 +11230,7 @@ msgstr "Adresse courriel crée !"
 msgid "Email Address:"
 msgstr "Adresse courriel :"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Email Blast"
 msgstr "Courriel"
 
@@ -11062,6 +11282,12 @@ msgstr "Courriel :"
 #: pages/contacts.vue
 msgid "email@example.com"
 msgstr "email@example.com"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Email Date"
+msgid "Embarking Date"
+msgstr "Date de l'email"
 
 #: pages/glsx.vue pages/gls.vue
 msgid "Embrace the Challenge"
@@ -11280,6 +11506,18 @@ msgstr "Saisir le nom"
 msgid "Enter new password"
 msgstr "Entrez le nouveau mot de passe"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Enter Verification Code"
+msgid "Enter notification content"
+msgstr "Entrez le Code de Vérification"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Enter Verification Code"
+msgid "Enter notification title"
+msgstr "Entrez le Code de Vérification"
+
 #: pages/login/login.vue pages/public/signup.vue
 msgid "Enter password"
 msgstr "Entrez le mot de passe"
@@ -11429,7 +11667,8 @@ msgstr ""
 msgid "error"
 msgstr "erreur"
 
-#: vue/main.js components/recurring/recurring-cards.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/recurring/recurring-cards.vue
 msgid "Error"
 msgstr "Erreur"
 
@@ -11678,11 +11917,12 @@ msgstr "Exclure les personnes déjà invitées"
 msgid "Exclude results with mandatory pre-paid tips"
 msgstr "Exclure les résultats avec des pourboires obligatoires prépayés"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
+#: components/reports/filters/exclude_teams.vue
 msgid "Exclude Teams"
 msgstr "Exclure les équipes"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Excluding Teams"
 msgstr "Equipes exclues"
 
@@ -11723,11 +11963,12 @@ msgstr "SORTIE 2"
 msgid "EXCURSION 3"
 msgstr "SORTIE 3"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -11798,8 +12039,9 @@ msgstr ""
 msgid "Expiration date"
 msgstr "Date d'expiration"
 
-#: pages/reports.vue pages/invoices.vue pages/admin_price_match.vue
-#: components/recurring/recurring-cards.vue components/user/invoices.vue
+#: pages/invoices.vue pages/admin_price_match.vue
+#: components/reports/old_reports.vue components/recurring/recurring-cards.vue
+#: components/user/invoices.vue
 msgid "Expiration Date"
 msgstr "Date d'expiration"
 
@@ -11823,11 +12065,11 @@ msgstr "Date d'expiration UTC"
 msgid "Expired"
 msgstr "Expiré"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Expired Partners"
 msgstr "Partenaires expirés"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Expired Partners with Pending Invoices"
 msgstr "Partenaires Expirés avec des Factures en Attente"
 
@@ -11945,6 +12187,18 @@ msgstr ""
 msgid "Failed to create session. Please try again."
 msgstr "Échec de la création de la session. Veuillez réessayer."
 
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "Failed to load members"
+msgid "Failed to download users"
+msgstr "Échec du chargement des membres"
+
+#: vue/composables/useDownloadCsv.js
+#, fuzzy
+#| msgid "Error generating CSV"
+msgid "Failed to generate CSV"
+msgstr "Erreur lors de la génération du fichier CSV"
+
 #: components/compensation/overview.vue
 msgid "Failed to get compensation layout."
 msgstr "Échec de l'obtention de la mise en page de rémunération."
@@ -12022,6 +12276,13 @@ msgstr "Impossible de charger l'utilisateur, veuillez réessayer plus tard."
 #: components/compensation/overview.vue
 msgid "Failed to save layout."
 msgstr "Impossible d'enregistrer la mise en page."
+
+#: vue/composables/useSendBroadcastPwaNotification.js
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "e-mail & push notifications"
+msgid "Failed to send notification"
+msgstr "e-mail & notifications push"
 
 #: components/payout/brightwell/recipient-account.vue
 msgid "Failed to send verification email. Please try again."
@@ -12123,11 +12384,11 @@ msgstr "Partenaires à croissance rapide"
 msgid "Fast Start"
 msgstr "Bonus de Fast Start"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Bonus"
 msgstr "Bonus commence rapidement"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Earned"
 msgstr "Gagné rapidement au départ"
 
@@ -12144,7 +12405,7 @@ msgstr "Incitation au Démarrage Rapide"
 msgid "FAST START INCENTIVE = $500.00 MD BONUS!"
 msgstr "INCITATION FAST START = BONUS MD DE 500.00 $ !"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start Last Month"
 msgstr "Le mois dernier commence rapidement"
 
@@ -12154,7 +12415,7 @@ msgstr "Le mois dernier commence rapidement"
 msgid "Fast Start Matching"
 msgstr "Correspondance au Démarrage Rapide"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Fast Start This Month"
 msgstr "Ce mois-ci commence rapidement"
 
@@ -12300,9 +12561,10 @@ msgstr "Filtrer Par Titre"
 msgid "Filtering"
 msgstr "Filtration"
 
-#: components/leader_board_component.vue pages/hotels.vue pages/reports.vue
-#: pages/cruises.vue components/data_table/filter-selection-widget.vue
-#: components/data_table/table.vue components/tours/intours_results.vue
+#: components/leader_board_component.vue pages/hotels.vue pages/cruises.vue
+#: components/data_table/filter-selection-widget.vue
+#: components/data_table/table.vue components/reports/old_reports.vue
+#: components/tours/intours_results.vue
 #: components/partner_cruise_contest/leader_board.vue
 msgid "Filters"
 msgstr "Filtres"
@@ -12462,6 +12724,19 @@ msgstr "Moy. Premières Réponses"
 #: components/admin_field_communicators/field_stats.vue
 msgid "First Start Date"
 msgstr "Première Date de Début"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "First Leader"
+msgid "First Up leader"
+msgstr "Premier leader"
+
+#: components/reports/quick_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "First Leader"
+msgid "First Up Leader"
+msgstr "Premier leader"
 
 #: components/admin_field_communicators/field_stats.vue
 msgid "First Year"
@@ -12776,7 +13051,7 @@ msgstr "GRATUIT"
 msgid "Free and Registered"
 msgstr "Gratuit et Enregistré"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Free Plan"
 msgstr "Plan gratuit"
 
@@ -12795,6 +13070,8 @@ msgstr "Vendredi"
 
 #: pages/mercy_ships.vue pages/elevate_registration.vue pages/email.vue
 #: components/cruises_booking/cruise_card.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "From"
 msgstr "De"
 
@@ -12881,7 +13158,7 @@ msgstr "Les fonds ont été retirés. Transaction terminée avec succès"
 msgid "Funds:"
 msgstr "Frais :"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Future Bookings"
 msgstr "Réservations Futures"
 
@@ -13419,8 +13696,7 @@ msgstr "Invité"
 msgid "Guest Account"
 msgstr "Compte Invité"
 
-#: pages/reports.vue pages/track_results.vue
-#: components/hotels/GuestsDropdown.vue
+#: pages/track_results.vue components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsTrigger.vue
 #: components/receipts/hotel_booking_receipt.vue components/user/directs.vue
 msgid "Guests"
@@ -13669,6 +13945,10 @@ msgstr "QBI historique"
 #: components/compensation/qbi.vue
 msgid "Historical QBI Date Range:"
 msgstr "Gamme de dates historiques QBI :"
+
+#: components/reports/old_reports.vue
+msgid "Historical QBI Report"
+msgstr "Rapport du QBI historique"
 
 #: components/receipts/tour_booking_receipt.vue
 #: components/receipts/hotel_booking_receipt.vue
@@ -16054,6 +16334,7 @@ msgid "in Withholding Taxes and"
 msgstr "dans les Impôts à la Source et"
 
 #: pages/track_results.vue components/compensation/qbi_members_table.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Inactive"
 msgstr "Inactif"
 
@@ -16063,7 +16344,7 @@ msgstr "Inactif"
 msgid "Inactive Balance"
 msgstr "Solde inactif"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Inactive Date"
 msgstr "Date Inactive"
 
@@ -16097,7 +16378,7 @@ msgstr "Message d'incitation :"
 msgid "Incentive Program Overview"
 msgstr "Aperçu du Programme Incitatif"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Include"
 msgstr "Comprendre"
 
@@ -16162,6 +16443,12 @@ msgstr "InCruises - Rémunération"
 #: pages/compensation/member_activations.vue
 msgid "InCruises - Member Activation Bonuses"
 msgstr "InCruises - Bonus d'Activation de Membres"
+
+#: pages/reports.vue
+#, fuzzy
+#| msgid "inCruises - Receipt"
+msgid "InCruises - Reports"
+msgstr "inCruises - Le reçu"
 
 #: pages/compensation/team_leadership_bonus.vue
 msgid "InCruises - Team Leadership Bonus"
@@ -16865,6 +17152,12 @@ msgstr ""
 "collecter des informations envoyées par votre navigateur lors d'une "
 "consultation de page web, telles que des cookies ou votre adresse IP."
 
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "InCruises Wallet"
+msgid "inCruises Wallet"
+msgstr "Portefeuille InCruises"
+
 #: components/checkout/ProcessorWallet.vue
 msgid "InCruises Wallet"
 msgstr "Portefeuille InCruises"
@@ -17002,7 +17295,8 @@ msgstr ""
 "l'embarquement ne sont pas autorisés à voyager sur cette compagnie de "
 "croisière."
 
-#: vue/main.js components/compensation/member_activations.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/compensation/member_activations.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/builders_bonus.vue
 #: components/compensation/weekly_bonus.vue components/user/permissions.vue
@@ -17074,6 +17368,10 @@ msgstr "Insérez l'ID Pixel ici"
 #: pages/email.vue
 msgid "Insert your email..."
 msgstr "Insérez votre mail..."
+
+#: components/reports/old_reports.vue
+msgid "Insert your message..."
+msgstr "Insérez votre message..."
 
 #: pages/cruise.vue pages/tenth_anniversary_cruises.vue
 #: components/cruises_booking/cabin_price_showcase.vue
@@ -17186,11 +17484,12 @@ msgstr ""
 msgid "Internal Price"
 msgstr "Prix interne"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -17343,7 +17642,8 @@ msgstr "facture"
 msgid "Invoice"
 msgstr "Facture"
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 msgid "Invoice Created"
 msgstr "Facture créée"
 
@@ -17377,6 +17677,24 @@ msgstr "Numéro de Facture"
 msgid "Invoice Statement"
 msgstr "Déclaration facture"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Invite Status"
+msgid "Invoice Status"
+msgstr "Statut de l'invitation"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Invoice Date"
+msgid "Invoice Type"
+msgstr "Date de Facture"
+
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Pending Invoices (within 5 days)"
+msgid "Invoice Within First 5 Days"
+msgstr "En attendant les factures (dans les 5 jours)"
+
 #: QuickPayTopBar.vue pages/admin_user_id.vue pages/menu_page.vue
 #: pages/invoices.vue
 msgid "Invoices"
@@ -17390,7 +17708,7 @@ msgstr "Factures Payées"
 msgid "Invoices Pending"
 msgstr "Factures en attente"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Invoices Total"
 msgstr "Factures Total"
 
@@ -17942,15 +18260,20 @@ msgstr "Signalement KYC"
 msgid "Kyrgyz"
 msgstr "kirghize"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Laminated Presentations"
 msgstr "Présentations laminées"
 
-#: pages/admin_user.vue pages/reports.vue pages/team_documentation_requests.vue
+#: pages/admin_user.vue pages/team_documentation_requests.vue
 #: pages/team_rankings.vue pages/settings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
 #: components/contacts/contact-edit-modal.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#: components/reports/filters/language.vue
 #: components/inchat/user/user_create_room.vue
 msgid "Language"
 msgstr "Langue"
@@ -17958,6 +18281,12 @@ msgstr "Langue"
 #: components/language-reminder.vue
 msgid "Language Reminder"
 msgstr "Rappel de langue"
+
+#: components/reports/filters/language.vue
+#, fuzzy
+#| msgid "Package selected:"
+msgid "languages selected"
+msgstr "Forfait sélectionné :"
 
 #: pages/team_rankings.vue components/compensation/overview.vue
 msgid "Last 12 Months"
@@ -18031,6 +18360,12 @@ msgstr "Nom de famille"
 msgid "Last Name:"
 msgstr "Nom de famille :"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Rank Achieved"
+msgid "Last Rank Achieved"
+msgstr "Rang Atteint"
+
 #: pages/admin_emails.vue
 msgid "Last Sent"
 msgstr "Dernier Envoi"
@@ -18089,7 +18424,7 @@ msgstr "Lettons"
 msgid "Layout has been successfully updated."
 msgstr "Mise en page a été mise à jour avec succès."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Leader Plan - $49"
 msgstr "Plan Leader - 49 $"
 
@@ -18347,7 +18682,11 @@ msgstr ""
 "Vous permet d'utiliser un nom d'affichage sur la plateforme afin que votre "
 "nom légal ne soit pas affiché."
 
-#: pages/reports.vue pages/reach.vue
+#: pages/reach.vue components/reports/quick_reports.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Level"
 msgstr "Niveau"
 
@@ -18355,7 +18694,7 @@ msgstr "Niveau"
 msgid "Level {{ index + 1 }}"
 msgstr "Niveau {{ index + 1 }}"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Level Limit"
 msgstr "Limite de niveau"
 
@@ -18454,6 +18793,11 @@ msgstr "Liens"
 msgid "List any specific needs"
 msgstr "Indiquer tout besoin spécifique"
 
+#: components/reports/quick_reports.vue
+msgid ""
+"Lists members counting for your QBI metric with days left to count and status"
+msgstr ""
+
 #: components/checkout/ProcessorNetcents.vue
 msgid "Litecoin"
 msgstr "Litecoin"
@@ -18486,11 +18830,11 @@ msgstr "Niveau de charge"
 msgid "Load more"
 msgstr "Charger plus"
 
-#: pages/reward_points.vue pages/admin_partner_success.vue pages/reports.vue
+#: pages/reward_points.vue pages/admin_partner_success.vue
 #: pages/webinar_recordings.vue pages/partner_success.vue pages/invoices.vue
 #: pages/track_results.vue pages/cruises.vue
 #: components/payout/wallet-transfers.vue
-#: components/cruises_booking/cabin_step.vue
+#: components/cruises_booking/cabin_step.vue components/reports/old_reports.vue
 #: components/tours/intours_results.vue
 msgid "Load More"
 msgstr "Charger plus"
@@ -18904,12 +19248,13 @@ msgstr "Marquer comme payé"
 msgid "Market Adjustment"
 msgstr "Ajustement du marché"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -18959,7 +19304,7 @@ msgstr "Mise à jour Générale"
 msgid "Master Controls"
 msgstr "Contrôles principaux"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Master Plan - $119"
 msgstr "Plan Directeur - 119 $"
 
@@ -19029,6 +19374,10 @@ msgstr ""
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 msgid "Max Lead Time"
 msgstr "Délai d'exécution maximum"
+
+#: components/reports/filters/max_levels_down.vue
+msgid "Max Levels Down"
+msgstr ""
 
 #: components/filter-chip-range.vue pages/hotels.vue pages/cruises.vue
 #: components/tours/intours_results.vue
@@ -19237,6 +19586,12 @@ msgstr "Mesures des Membres"
 msgid "Member reached insider pricing limit"
 msgstr "Le membre a atteint la limite de prix pour les initiés"
 
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Member Reports"
+msgstr "Rapports de puissance"
+
 #: pages/admin_user.vue pages/giving_society.vue
 msgid "Member Since"
 msgstr "Membre Depuis"
@@ -19273,6 +19628,12 @@ msgstr ""
 #: components/compensation/active_partner_modal.vue
 msgid "Members Counting for my active partner status"
 msgstr "Les Membres comptent pour mon statut de partenaire actif"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Members in your QBI"
+msgid "Members Counting Toward Your QBI"
+msgstr "Membres de votre QBI"
 
 #: pages/public/membership.vue
 msgid "Members Enjoy Unparalleled Value With"
@@ -19311,11 +19672,25 @@ msgstr ""
 "Membres qui n'ont pas effectué de paiement dans le délai requis de 30 jours "
 "doivent réactiver leur compte afin de continuer à effectuer des paiements."
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Pending Members with Pending Invoices"
+msgid "Members With Cruise Bookings & Pending Invoices"
+msgstr "Membres en suspens avec des Factures en suspens"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Members with Pending Invoices"
+msgstr "Utilisateurs avec des factures en attente"
+
 #: Footer.vue components/upgrade-marketing-modal.vue pages/referral_links.vue
 #: pages/inviter.vue pages/team_documentation_requests.vue
 #: components/compensation/qbi_members_table.vue
 #: components/cruises/upgrade_premium_drawer.vue
+#: components/reports/quick_reports.vue
 #: components/hotels/upgrade_premium_drawer.vue components/public/Header.vue
+#: components/quick_reports/members_with_pending_invoices.vue
 #: components/navigation/mobile-menu.vue
 #: components/navigation/avatar-dropdown.vue
 #: components/public/webflow/Footer.vue
@@ -19370,15 +19745,15 @@ msgstr "Accord d'Adhésion"
 msgid "Membership and Partnership Support"
 msgstr "Assistance a l'Adhésion et au Partenariat"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Course"
 msgstr "Cours d'adhésion"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Created"
 msgstr "Adhésion créée"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Creation Date"
 msgstr "Date de création d'adhésion"
 
@@ -19386,15 +19761,21 @@ msgstr "Date de création d'adhésion"
 msgid "Membership Date"
 msgstr "Date d'Adhésion"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Membership First Month"
+msgid "Membership Discount"
+msgstr "Adhésion gratuite le premier mois"
+
 #: components/upgrade/tiles/checkout-tile.vue
 msgid "Membership First Month"
 msgstr "Adhésion gratuite le premier mois"
 
-#: pages/reports.vue components/welcome/members-modal.vue
+#: components/welcome/members-modal.vue components/reports/old_reports.vue
 msgid "Membership free"
 msgstr "Adhésion gratuite"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Free Date"
 msgstr "Date d'Adhésion Gratuite"
 
@@ -19402,7 +19783,7 @@ msgstr "Date d'Adhésion Gratuite"
 msgid "Membership Free Directs:"
 msgstr "Directives d'Adhésion Gratuite :"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Free Last Month"
 msgstr "Adhésion gratuite le dernier mois"
 
@@ -19412,6 +19793,12 @@ msgstr "Adhésion Gratuite !"
 
 #: pages/admin_user_id.vue pages/settings.vue
 msgid "Membership Info"
+msgstr "Informations d'adhésion"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Membership Info"
+msgid "Membership Invoice"
 msgstr "Informations d'adhésion"
 
 #: pages/public/payment_terms.vue
@@ -19429,7 +19816,7 @@ msgstr ""
 msgid "Membership plan"
 msgstr "Plan d'Adhésion"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Membership Plan"
 msgstr "Plan d'Adhésion"
 
@@ -19456,6 +19843,12 @@ msgstr "Statut d'Adhésion"
 #: components/welcome/members-modal.vue components/user/directs.vue
 msgid "Membership Type"
 msgstr "Type d'Adhésion"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Membership Free Date"
+msgid "Membership Upgrades & Downgrades"
+msgstr "Date d'Adhésion Gratuite"
 
 #: pages/referral_links.vue
 msgid "Membership Video"
@@ -19521,8 +19914,9 @@ msgstr "Fusionné"
 msgid "message"
 msgstr "message"
 
-#: pages/referral_widget.vue pages/reports.vue pages/support.vue
-#: components/support/AdminCreateTicket.vue pages/public/contact.vue
+#: pages/referral_widget.vue pages/support.vue
+#: components/support/AdminCreateTicket.vue components/reports/old_reports.vue
+#: components/reports/send_push_notification_modal.vue pages/public/contact.vue
 msgid "Message"
 msgstr "Message"
 
@@ -19623,6 +20017,10 @@ msgstr "minutes"
 #: components/cards/countdown-card.vue components/public/tgc-countdown.vue
 msgid "Minutes"
 msgstr "Minutes"
+
+#: vue/composables/useSendBroadcastPwaNotification.js
+msgid "Missing required parameters: title, body, and account_ids array"
+msgstr ""
 
 #: pages/admin_missing_sales.vue
 msgid "Missing Sales - InCruises"
@@ -19814,6 +20212,7 @@ msgid "More for Less"
 msgstr "Plus pour Moins"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/avatar_column.vue
 msgid "more info"
 msgstr "plus d'infos"
 
@@ -20122,6 +20521,12 @@ msgstr "Mes informations de contact"
 msgid "My Cruise Savings"
 msgstr "Mes Économies sur les Croisières"
 
+#: components/reports/filters/my_directs.vue
+#, fuzzy
+#| msgid "Directs"
+msgid "My Directs"
+msgstr "Directe"
+
 #: pages/menu_page.vue
 msgid "My Reach"
 msgstr "Mes Atteintes"
@@ -20153,7 +20558,7 @@ msgstr "N/A"
 #: pages/admin_account_recovery.vue pages/admin_partner_success.vue
 #: pages/negative_balances.vue pages/gls.vue pages/admin_user.vue
 #: pages/banner_tracking.vue pages/new_ranks.vue pages/mercy_ships.vue
-#: pages/reports.vue pages/admin_permission_group.vue pages/partner_success.vue
+#: pages/admin_permission_group.vue pages/partner_success.vue
 #: pages/team_documentation_requests.vue pages/admin_department.vue
 #: pages/contacts.vue pages/builders_base.vue pages/team_rankings.vue
 #: pages/settings.vue pages/duplicator.vue pages/track_results.vue
@@ -20177,6 +20582,7 @@ msgstr "N/A"
 #: components/settings_page/modify-saved-passengers.vue
 #: components/skeleton_loaders/card_animation.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
 #: components/receipts/monthly_member_activation.vue
 #: components/receipts/tour_booking_receipt.vue
 #: components/receipts/new_residual_bonus_statement.vue
@@ -20198,6 +20604,9 @@ msgstr "N/A"
 #: components/receipts/builders_bonus_new.vue
 #: components/admin_booking/admin_cruise_featured_dynamic.vue
 #: components/admin_booking/admin_cruise_featured.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/business_intelligence/comp_to_sales.vue
 #: components/user/permissions.vue components/user/permission-assignation.vue
 #: components/user/department.vue components/user/permission-group.vue
@@ -20258,12 +20667,12 @@ msgstr "Nom :"
 msgid "Named in honor of our founding year, the"
 msgstr "Nommée en l'honneur de notre année de fondation, la"
 
-#: components/leader_board_component.vue pages/reports.vue
-#: pages/builders_base.vue pages/settings.vue
-#: components/admin_compensation/leadership_bonus.vue
+#: components/leader_board_component.vue pages/builders_base.vue
+#: pages/settings.vue components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -20423,7 +20832,7 @@ msgstr ""
 msgid "Nevermind"
 msgstr "Peu importe"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New"
 msgstr "Nouveau"
 
@@ -20439,15 +20848,22 @@ msgstr "Présentation stratifiée NOUVEAU FORMAT"
 msgid "New Group {{ selectedNamespace }}"
 msgstr "Nouveau groupe {{ selectedNamespace }}"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Guests"
+msgid "New Guests"
+msgstr "Invités"
+
 #: pages/reservations.vue
 msgid "New inTours Feature Available!"
 msgstr "Nouvelle Fonctionnalité inTours Disponible !"
 
-#: pages/resources.vue components/growth_calculator/potential_leadership.vue
+#: pages/resources.vue components/reports/quick_reports.vue
+#: components/growth_calculator/potential_leadership.vue
 msgid "New Members"
 msgstr "Nouveaux Membres"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Membership Free"
 msgstr "Nouvelle adhésion gratuite"
 
@@ -20456,7 +20872,7 @@ msgid "New Message"
 msgstr "Nouveau Message"
 
 #: pages/resources.vue pages/new_partners_tracker.vue
-#: pages/new_partners_tracker_goals.vue
+#: pages/new_partners_tracker_goals.vue components/reports/quick_reports.vue
 msgid "New Partners"
 msgstr "Nouveaux Partenaires"
 
@@ -20464,7 +20880,7 @@ msgstr "Nouveaux Partenaires"
 msgid "NEW Partners Last Month"
 msgstr "De NOUVEAUX Partenaires du Mois Dernier"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Partners Last Month (10 Levels)"
 msgstr "Nouveaux partenaires le mois dernier (10 niveaux)"
 
@@ -20476,7 +20892,7 @@ msgstr "De nouveaux partenaires ce mois-ci"
 msgid "NEW Partners This Month"
 msgstr "De NOUVEAUX Partenaires Ce Mois-ci"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Partners This Month (10 Levels)"
 msgstr "Nouveaux partenaires ce mois-ci (10 niveaux)"
 
@@ -20523,25 +20939,31 @@ msgstr "Nouveaux Classements"
 msgid "New ranks are updated on or after the 10th of each month."
 msgstr "Les nouveaux rangs sont mis à jour le ou après le 10 de chaque mois."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks last month"
 msgstr "Nouveaux Rangs du dernier mois"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks Last Month"
 msgstr "Nouveaux Rangs du Dernier Mois"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "New Ranks this month"
 msgstr "Nouveaux rangs ce mois-ci"
 
-#: pages/new_ranks.vue pages/reports.vue
+#: pages/new_ranks.vue components/reports/old_reports.vue
 msgid "New Ranks This Month"
 msgstr "Nouveaux rangs ce mois-ci"
 
 #: components/user/basic-info.vue
 msgid "New Referrer ID is Invalid"
 msgstr "L'ID du nouveau référent est invalide"
+
+#: pages/reports.vue
+#, fuzzy
+#| msgid "New Message"
+msgid "New Reports Page"
+msgstr "Nouveau Message"
 
 #: pages/support.vue
 msgid "New Ticket"
@@ -20609,8 +21031,9 @@ msgstr "Prochainement disponible"
 msgid "Next billing date"
 msgstr "Prochaine date de facturation"
 
-#: pages/reports.vue pages/team_rankings.vue pages/track_results.vue
+#: pages/team_rankings.vue pages/track_results.vue
 #: components/compensation/leadership_bonus.vue
+#: components/reports/old_reports.vue
 msgid "Next Billing Date"
 msgstr "Prochaine date de facturation"
 
@@ -20618,9 +21041,28 @@ msgstr "Prochaine date de facturation"
 msgid "Next Billing:"
 msgstr "Prochaine facturation :"
 
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Create Invoice"
+msgid "Next Invoice"
+msgstr "Créer une facture"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Membership Info"
+msgid "Next Membership Invoice"
+msgstr "Informations d'adhésion"
+
 #: components/payout/wallet-transfers.vue
 msgid "Next Month"
 msgstr "Le mois prochain"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Partnership Video"
+msgid "Next Partnership Invoice"
+msgstr "Vidéo de Partenariat"
 
 #: pages/checkout.vue
 msgid "Next Payment Month:"
@@ -20696,6 +21138,12 @@ msgstr "Aucune donnée disponible"
 msgid "No data available for download"
 msgstr "Aucune donnée disponible pour le téléchargement"
 
+#: vue/composables/useDownloadCsv.js
+#, fuzzy
+#| msgid "No data available for download"
+msgid "No data to download"
+msgstr "Aucune donnée disponible pour le téléchargement"
+
 #: pages/hotels.vue
 msgid "No destination options available."
 msgstr "Aucune option de destination disponible."
@@ -20757,7 +21205,7 @@ msgstr "Pas de Nom Importé"
 msgid "No Obligation, No Cost"
 msgstr "Pas d'obligation, pas de frais"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "No Plan"
 msgstr "Aucun plan"
 
@@ -20774,7 +21222,7 @@ msgstr "Aucun Rang"
 msgid "No receipts available at this time."
 msgstr "Aucun reçu disponible pour le moment."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "No Recurring Billing"
 msgstr "Pas de Facturation Récurrente"
 
@@ -20997,6 +21445,7 @@ msgid "Non-Refundable Fare"
 msgstr "Tarifs Non Remboursables"
 
 #: pages/track_results.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "None"
 msgstr "Aucun"
 
@@ -21051,7 +21500,7 @@ msgstr "Non disponible"
 msgid "Not available for this cruise line"
 msgstr "Non disponible pour cette compagnie de croisière"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Not Completed"
 msgstr "Pas complété"
 
@@ -21596,18 +22045,18 @@ msgstr ""
 "(c'est-à-dire par l'intermédiaire des agences de voyages en gros). Il ne "
 "s'applique également qu'aux tarifs inférieurs trouvés dans"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Members or Partner Members."
 msgstr ""
 "Uniquement disponible si vous sélectionnez Membres ou Membres Partenaires."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Partners or Partner Members."
 msgstr ""
 "Uniquement disponible si vous sélectionnez Partenaires ou Membres "
 "Partenaires."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only available if selecting Pending Members."
 msgstr "Disponible uniquement si vous sélectionnez Membres en Attente."
 
@@ -21653,7 +22102,7 @@ msgstr ""
 msgid "Only Roman/Latin alphabet letters (A-Z)."
 msgstr "Uniquement les lettres de l'alphabet romain/latin (A-Z)."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Only select one course per report."
 msgstr "Ne sélectionnez qu'un seul rapport par cours."
 
@@ -21761,6 +22210,12 @@ msgstr "Notes de Commande :"
 #: components/receipts/italian_receipt.vue
 msgid "Order Number"
 msgstr "Numéro de Commande :"
+
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Other Reports"
+msgstr "Rapports de puissance"
 
 #: components/support/OtherUserTickets.vue components/support/TicketViewer.vue
 msgid "Other User Tickets"
@@ -21970,6 +22425,13 @@ msgstr "Solutions technologiques globales - PRIX D'ARGENT"
 msgid "Overall Training Program - SILVER AWARD"
 msgstr "Programme global de formation - PRIX D'ARGENT"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Overview"
+msgid "Overdue"
+msgstr "Vue d'ensemble"
+
 #: pages/tours_details.vue pages/hotels_details.vue pages/menu_page.vue
 #: pages/info_center.vue pages/business_performance.vue
 #: components/reservations/tour-details.vue
@@ -22100,7 +22562,7 @@ msgstr "Payé de la poche"
 msgid "Paid out on %{date}"
 msgstr "Versé le %{date}"
 
-#: pages/reports.vue pages/info_center.vue
+#: pages/info_center.vue components/reports/old_reports.vue
 msgid "Paid Partners Last Month"
 msgstr "Partenaires Payés du Mois Dernier"
 
@@ -22108,11 +22570,11 @@ msgstr "Partenaires Payés du Mois Dernier"
 msgid "Paid Partners Only"
 msgstr "Uniquement les Partenaires Payés"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Paid Partners This Month"
 msgstr "Partenaires Payés ce mois-ci"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Paid Plans"
 msgstr "Plans payés"
 
@@ -22182,7 +22644,7 @@ msgstr "Partenaire / Non membre"
 msgid "Partner / Pending Member"
 msgstr "Partenaire / Membre en suspens"
 
-#: pages/additional_info.vue pages/reports.vue
+#: pages/additional_info.vue components/reports/old_reports.vue
 msgid "Partner Access Only"
 msgstr "accès uniquement de Partenaires"
 
@@ -22398,6 +22860,18 @@ msgstr ""
 msgid "Partner Refund And Compress"
 msgstr "Remboursement et Compression des Partenaires"
 
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners That Will Be Renewing Next Month"
+msgid "Partner Renewing Next Month"
+msgstr "Partenaires qui seront renouvelés le mois prochain"
+
+#: components/reports/quick_reports_modal/index.vue
+#, fuzzy
+#| msgid "Power Reports"
+msgid "Partner Reports"
+msgstr "Rapports de puissance"
+
 #: pages/italian_onboarding.vue
 #: components/compensation/active_partner_modal.vue
 #: components/compensation/my_team_breakdown_table.vue
@@ -22445,12 +22919,12 @@ msgstr ""
 msgid "Partner VAT / Tax Code"
 msgstr "Code TVA / Taxe du Partenaire"
 
-#: pages/reports.vue pages/track_growth.vue
+#: pages/track_growth.vue components/reports/old_reports.vue
 msgid "Partner-Members"
 msgstr "Membres partenaires"
 
-#: pages/referral_links_old.vue pages/reports.vue
-#: pages/new_partners_tracker.vue pages/track_growth.vue pages/apps.vue
+#: pages/referral_links_old.vue pages/new_partners_tracker.vue
+#: pages/track_growth.vue pages/apps.vue components/reports/old_reports.vue
 #: components/high_risk/high_risk_fingerprints.vue
 #: components/business_performance/NewDirectsEnrolled.vue
 #: components/business_performance/TeamActiveEnrollments.vue
@@ -22472,6 +22946,18 @@ msgstr "Partenaires <br/> <small>(5 Niveaux)</small>"
 
 #: pages/public/disclosure.vue
 msgid "Partners are Membership Free."
+msgstr "Les Partenaires ne payent pas l'Adhésion."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Ineligible for compensation"
+msgid "Partners Eligible for Compensation"
+msgstr "Inéligibilité à l'indemnisation"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners are Membership Free."
+msgid "Partners Eligible For Membership Free"
 msgstr "Les Partenaires ne payent pas l'Adhésion."
 
 #: pages/public/partnership.vue
@@ -22496,26 +22982,76 @@ msgid "Partners have reached the International Director or Above rank."
 msgstr ""
 "Les Partenaires ont atteint le rang de Directeur International ou plus."
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Understanding Builders Base Bonus"
+msgid "Partners Pending to Receive Builders Base Bonus"
+msgstr "Comprendre le Bonus de Base des Constructeurs"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "You have no direct partners currently eligible for Fast Start."
+msgid "Partners Still Eligible for Fast Start"
+msgstr ""
+"Vous n'avez aucun partenaires directs actuellement éligibles pour le "
+"programme Fast Start."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Potential Fast Start Matching"
+msgid "Partners Still Eligible for Fast Start Matching"
+msgstr "Correspondance Potentielle à \"Démarrage Rapide\""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Potential Team Leadership Bonus"
+msgid "Partners Team Leadership Performance"
+msgstr "Bonus de Leadership d'Équipe potentiel"
+
+#: components/reports/old_reports.vue
 msgid "Partners That Have Not Renewed"
 msgstr "Partenaires qui n'ont pas renouvelé"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partners That Will Be Renewing Next Month"
 msgstr "Partenaires qui seront renouvelés le mois prochain"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partner Activation Date"
+msgid "Partners Who Achieved Fast Start"
+msgstr "Date d'activation du partenaire"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partner with travel agencies"
+msgid "Partners with New Ranks"
+msgstr "Partenariat avec des agences de voyage"
 
 #: Footer.vue pages/referral_links.vue pages/inviter.vue pages/upgrade.vue
 #: components/public/Header.vue components/public/webflow/Footer.vue
 msgid "Partnership"
 msgstr "Partenaire"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partnership Created"
 msgstr "Partenariat créé"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Partnership Creation Date"
 msgstr "Date de création du partenariat"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Partnership Video"
+msgid "Partnership Invoice"
+msgstr "Vidéo de Partenariat"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Partners That Have Not Renewed"
+msgid "Partnership Not Renewed"
+msgstr "Partenaires qui n'ont pas renouvelé"
 
 #: pages/subscriptions.vue pages/upgrade.vue pages/public/faq.vue
 #: pages/public/testimonials.vue components/upgrade/tiles/checkout-tile.vue
@@ -22756,6 +23292,19 @@ msgstr ""
 msgid "Payment Fulfillment"
 msgstr "Exécution de paiements"
 
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Add Payment Method"
+msgid "Payment Method"
+msgstr "Ajouter un Mode de Paiement"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Add Payment Method"
+msgid "Payment Methods"
+msgstr "Ajouter un Mode de Paiement"
+
 #: pages/payment_protection.vue
 msgid "Payment Protection"
 msgstr "Protection des paiements"
@@ -22839,6 +23388,7 @@ msgstr "Paypal"
 #: components/welcome/members-modal.vue components/support/TicketList.vue
 #: components/compensation/qbi_members_table.vue
 #: components/admin_finance/cruise_bookings.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Pending"
 msgstr "En attente"
 
@@ -22846,11 +23396,11 @@ msgstr "En attente"
 msgid "Pending Builder's Base"
 msgstr "Base de construction en attente"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Builders Base"
 msgstr "Base des Entrepreneurs en attente"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Builders Base Members"
 msgstr "Membres de la Base des Entrepreneurs en attente"
 
@@ -22866,11 +23416,12 @@ msgstr "En attendant des invitations"
 msgid "Pending Invoice"
 msgstr "En attente de facture"
 
-#: pages/reports.vue pages/invoices.vue components/user/invoices.vue
+#: pages/invoices.vue components/reports/old_reports.vue
+#: components/user/invoices.vue
 msgid "Pending Invoices"
 msgstr "En attendant les factures"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Pending Invoices (within 5 days)"
 msgstr "En attendant les factures (dans les 5 jours)"
 
@@ -22886,7 +23437,7 @@ msgstr "Membre en suspens"
 msgid "Pending Member Invoice"
 msgstr "Facture de Membre en attente"
 
-#: pages/reports.vue components/compensation/qbi-details.vue
+#: components/compensation/qbi-details.vue components/reports/old_reports.vue
 msgid "Pending Members"
 msgstr "Membres en suspens"
 
@@ -22913,6 +23464,10 @@ msgstr "En attente du renouvellement du Partenariat"
 #: components/admin_finance/cruise_bookings.vue
 msgid "Pending Payments"
 msgstr "Paiements en attente"
+
+#: components/reports/old_reports.vue
+msgid "Pending QBI Report"
+msgstr "Rapport du QBI en suspens"
 
 #: pages/invoices.vue
 msgid "Pending Transaction"
@@ -23030,13 +23585,17 @@ msgstr "Téléphone"
 msgid "Phone (optional)"
 msgstr "Téléphone (facultatif)"
 
-#: pages/reports.vue pages/settings.vue
+#: pages/settings.vue components/reports/old_reports.vue
 msgid "Phone #"
 msgstr "Téléphone #"
 
-#: components/fast-growing-legs.vue pages/reports.vue pages/settings.vue
-#: pages/multi_factor.vue components/cruises_booking/passenger_info_step.vue
+#: components/fast-growing-legs.vue pages/settings.vue pages/multi_factor.vue
+#: components/cruises_booking/passenger_info_step.vue
 #: components/settings_page/modify-saved-passengers.vue
+#: components/reports/old_reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/hotel_booking/guest_info_step.vue components/top_bar/Connect.vue
 #: pages/public/signup.vue
 msgid "Phone Number"
@@ -23662,7 +24221,7 @@ msgstr ""
 "Veuillez indiquer une date d'arrivée et de départ avant de lancer la "
 "recherche"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "Please provide a Date From and Date To. If not, reset filters at the top of "
 "the page."
@@ -24098,7 +24657,8 @@ msgstr ""
 msgid "Please wait while we redirect you back to inCruises®."
 msgstr "Veuillez patienter pendant que nous vous redirigeons vers inCruises®."
 
-#: pages/compensation.vue components/compensation/fast_start_matching.vue
+#: pages/reports.vue pages/compensation.vue
+#: components/compensation/fast_start_matching.vue
 #: components/compensation/fast_start.vue components/compensation/overview.vue
 #: pages/compensation/recurring_income.vue
 #: pages/compensation/member_activations.vue
@@ -24345,6 +24905,7 @@ msgstr ""
 msgid "Premium"
 msgstr "Premium"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 msgid "PREMIUM"
@@ -24372,7 +24933,7 @@ msgstr "Membre Premium"
 msgid "PREMIUM Member"
 msgstr "Membre PREMIUM"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Premium Members"
 msgstr "Membres Premium"
 
@@ -24960,12 +25521,18 @@ msgstr ""
 "allant jusqu'à 90 jours sous certaines conditions. Veuillez regarder notre "
 "accord de partenariat pour les détails au complets."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Push Blast"
 msgstr "Notification push"
 
 #: pages/push_notifications_center.vue
 msgid "Push Notifications Center"
+msgstr "Centre de notifications push"
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Push Notifications Sent"
 msgstr "Centre de notifications push"
 
 #: components/payout/brightwell/recipient-account-details.vue
@@ -24990,12 +25557,12 @@ msgstr "PWA"
 msgid "PWA vs News App"
 msgstr "PWA vs App de nouvelles"
 
-#: pages/reports.vue components/compensation/qbi.vue
-#: components/compensation/builders_bonus.vue
+#: components/compensation/qbi.vue components/compensation/builders_bonus.vue
 #: components/compensation/fast_start_matching.vue
 #: components/compensation/fast_start.vue
 #: components/compensation/old_compensation.vue
-#: components/compensation/team.vue pages/compensation/recurring_income.vue
+#: components/compensation/team.vue components/reports/old_reports.vue
+#: pages/compensation/recurring_income.vue
 #: pages/compensation/member_activations.vue
 #: pages/compensation/weekly_matching_bonus.vue pages/compensation/qbi.vue
 #: pages/compensation/builders_base_bonus.vue
@@ -25023,7 +25590,7 @@ msgstr "Détails du QBI"
 msgid "QBI Update Notice"
 msgstr "Avis de Mise à jour du QBI"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "QBI: Pending Members"
 msgstr "QBI : Membres en suspens"
 
@@ -25129,7 +25696,9 @@ msgstr "Accès rapide"
 msgid "Quick Member View"
 msgstr "Vue rapide des Membres"
 
-#: pages/reports.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/reports/new_reports.vue
+#: components/reports/quick_reports_modal/index.vue
 msgid "Quick Reports"
 msgstr "Rapports rapides"
 
@@ -25170,7 +25739,7 @@ msgstr "Tableau des rangs et des revenus"
 msgid "Rank Breakdown"
 msgstr "Répartition du rang"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Rank Certificate"
 msgstr "Certificat de classement"
 
@@ -25186,7 +25755,7 @@ msgstr "Divisions de rang"
 msgid "Rank Maintained"
 msgstr "Rang Maintenu"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Rank Status"
 msgstr "Statut du Rang"
 
@@ -25455,7 +26024,7 @@ msgstr "Aperçu du Widget en Temps Réel"
 msgid "Reason"
 msgstr "Raison"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Reattained"
 msgstr "Réatteint"
 
@@ -25587,7 +26156,8 @@ msgstr "Enregistrements"
 msgid "Recurring"
 msgstr "Récurrent"
 
-#: pages/reports.vue components/admin_field_communicators/field_stats.vue
+#: components/reports/old_reports.vue
+#: components/admin_field_communicators/field_stats.vue
 msgid "Recurring Billing"
 msgstr "Facturation récurrente"
 
@@ -25647,6 +26217,19 @@ msgstr "Coût mensuel récurrent"
 #: components/compensation/recurring_income_levels.vue
 msgid "Recurring Multiplier"
 msgstr "Multiplicateur récurrent"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Recurring Payment Terms"
+msgid "Recurring payment"
+msgstr "Conditions de Paiement Récurrent"
+
+#: components/reports/quick_reports.vue
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Recurring Payment Terms"
+msgid "Recurring Payment"
+msgstr "Conditions de Paiement Récurrent"
 
 #: components/recurring/rpm-onboarding-invoices.vue
 msgid "Recurring Payment Agreement Terms"
@@ -25746,6 +26329,7 @@ msgstr "Activité de référence"
 
 #: pages/admin_user.vue pages/team_rankings.vue pages/account_setup.vue
 #: components/compensation/leadership_bonus.vue
+#: components/reports/quick_reports.vue
 msgid "Referral Link"
 msgstr "Lien de référence"
 
@@ -25845,12 +26429,13 @@ msgstr "Région"
 msgid "Region:"
 msgstr "Région :"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -26040,10 +26625,31 @@ msgstr ""
 "Le rapport n'affichera pas de résultats précis avant le 10 de chaque mois."
 
 #: pages/welcome.vue pages/menu_page.vue pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Reports"
 msgstr "Rapports"
 
-#: pages/reports.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Reports - Members with Pending Invoices"
+msgstr "Utilisateurs avec des factures en attente"
+
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "You have no direct partners currently eligible for Fast Start."
+msgid "Reports - Partners Still Eligible for Fast Start"
+msgstr ""
+"Vous n'avez aucun partenaires directs actuellement éligibles pour le "
+"programme Fast Start."
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "Enable Recurring Payments"
+msgid "Reports - Users Recurring Payment Status"
+msgstr "Activer les Paiements Récurrents"
+
+#: components/reports/old_reports.vue
 msgid ""
 "Reports are real-time viewable and downloadable reports for just about every "
 "aspect of your business. You can download reports for recognition purposes "
@@ -26166,7 +26772,8 @@ msgstr "Réinitialiser"
 msgid "Reset Columns"
 msgstr "Réinitialiser les Colonnes"
 
-#: pages/reports.vue components/data_table/filter-selection-widget.vue
+#: components/data_table/filter-selection-widget.vue
+#: components/reports/old_reports.vue
 msgid "Reset Filters"
 msgstr "Réinitialiser les filtres"
 
@@ -26218,15 +26825,15 @@ msgstr "Recommencer la Vérification"
 msgid "result"
 msgstr "résultat"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit"
 msgstr "Limite de résultat"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit must be a number!"
 msgstr "La limite de résultat doit être un nombre !"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Result Limit must be set between 100 and 25000."
 msgstr "La limite de résultat doit être compris entre 100 et 25000."
 
@@ -26549,11 +27156,11 @@ msgstr "RP utilisé"
 msgid "RP used!"
 msgstr "RP utilisé !"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Run Quick Report"
 msgstr "Lancer un rapport rapide"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Run Report"
 msgstr "Exécuter le rapport"
 
@@ -26706,6 +27313,7 @@ msgstr "Garantie d'économies"
 #: components/partner_cruise_contest/leader_board.vue
 #: components/recurring/recurring-cards.vue components/blog/blog_list.vue
 #: components/public/blog_category_search.vue
+#: components/reports/quick_reports_modal/search-input.vue
 #: components/tours/details/available-plans.vue
 #: components/inchat/search/search-people.vue
 msgid "Search"
@@ -26739,6 +27347,7 @@ msgid "Search Contacts"
 msgstr "Recherche de contacts"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/filters/country.vue
 msgid "Search Country"
 msgstr "Rechercher un Pays"
 
@@ -26763,6 +27372,7 @@ msgid "Search for your question"
 msgstr "Recherchez votre question"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/filters/language.vue
 msgid "Search Language"
 msgstr "Rechercher une Langue"
 
@@ -26806,6 +27416,12 @@ msgstr "Résultat de recherche"
 #: components/inchat/user_list_inchat.vue
 msgid "Search rooms"
 msgstr "Rechercher des chambres"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Search Tours"
+msgid "Search Teams"
+msgstr "Recherche de circuits"
 
 #: pages/notifications.vue
 msgid "Search this month..."
@@ -27206,13 +27822,31 @@ msgstr "Sélectionné"
 msgid "Selected cabin category"
 msgstr "Catégorie de cabine choisie"
 
+#: components/reports/filters/country.vue
+#, fuzzy
+#| msgid "Selected Country:"
+msgid "Selected Countries"
+msgstr "Pays sélectionné :"
+
 #: components/inchat/user/user_create_room.vue
 msgid "Selected Country:"
 msgstr "Pays sélectionné :"
 
+#: components/reports/filters/language.vue
+#, fuzzy
+#| msgid "Select a Language"
+msgid "Selected Languages"
+msgstr "Sélectionnez une Langue"
+
 #: pages/elevate_registration.vue
 msgid "Selected Package"
 msgstr "Forfait sélectionné"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Select Tag"
+msgid "Selected Teams"
+msgstr "Sélectionner une étiquette"
 
 #: components/public/FooterLinks.vue
 msgid "Seller of Travel"
@@ -27230,11 +27864,11 @@ msgstr "Vendeur :"
 msgid "Selling Rate"
 msgstr "Taux de vente"
 
-#: pages/inviter.vue pages/reports.vue
+#: pages/inviter.vue components/reports/old_reports.vue
 msgid "Send"
 msgstr "Envoyer"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Send a Push Blast"
 msgstr "Envoie un souffle de poussée"
 
@@ -27242,7 +27876,7 @@ msgstr "Envoie un souffle de poussée"
 msgid "Send Amount"
 msgstr "Envoyer le montant"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Send an Email"
 msgstr "Envoie un E-mail"
 
@@ -27284,6 +27918,12 @@ msgstr "Envoyez le Message"
 msgid "Send money"
 msgstr "Envoyer de l'argent"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Notification"
+msgid "Send Notification"
+msgstr "Notification"
+
 #: pages/referral_links.vue
 msgid "Send personalized emails and invite people to join InCruises."
 msgstr ""
@@ -27302,6 +27942,18 @@ msgstr ""
 "Envoie des invitations privées à tes amis. S'ils cliquent dessus et qu'ils "
 "effectuent une réservation avec nous, tu obtiendras automatiquement du "
 "crédit. Tu peux en envoyer autant que tu le souhaite."
+
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Send Push Notification"
+msgstr "Centre de notifications push"
+
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Send Push Notifications"
+msgstr "Centre de notifications push"
 
 #: pages/contacts.vue
 msgid "Send reminder"
@@ -27323,6 +27975,12 @@ msgstr "Sendgrid"
 msgid "Sending"
 msgstr "Envoi"
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "Push Notifications Center"
+msgid "Sending Push Notifications to %{count} records..."
+msgstr "Centre de notifications push"
+
 #: pages/admin_sendgrid.vue
 msgid "Sengrid Contacts"
 msgstr "Contacts Sengrid"
@@ -27331,12 +27989,13 @@ msgstr "Contacts Sengrid"
 msgid "Senior Managers and Advisors"
 msgstr "Cadres supérieurs et conseillers"
 
-#: components/leader_board_component.vue pages/reports.vue pages/powerup.vue
+#: components/leader_board_component.vue pages/powerup.vue
 #: pages/builders_base.vue pages/settings.vue
 #: components/admin_compensation/leadership_bonus.vue
 #: components/admin_compensation/residual_bonus.vue
 #: components/compensation/leadership_bonus.vue
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/old_reports.vue
 #: components/growth_calculator/potential_leadership.vue
 #: components/inchat/user_card_info.vue
 #: components/business_intelligence/comp_to_sales.vue
@@ -27378,15 +28037,15 @@ msgstr ""
 "Passagers Aînés : Veuillez indiquer si un membre de votre groupe est âgé de "
 "55 ans et plus."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader"
 msgstr "Chef d'Équipe Senior"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader Last Month"
 msgstr "Chef d'Équipe Senior le Dernier Mois"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Senior Team Leader This Month"
 msgstr "Chef d'Équipe Senior Ce Mois-ci"
 
@@ -27709,7 +28368,7 @@ msgstr "Montrer Les Équipes Pour"
 msgid "Show Web-Registration"
 msgstr "Montrer l'enregistrement Web"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Showing All Teams"
 msgstr "Montrant toutes les équipes"
 
@@ -27740,6 +28399,12 @@ msgstr "Inscription"
 
 #: components/high_risk/high_risk_accounts.vue
 msgid "Signup Date"
+msgstr "Date d'Inscription"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Signup Date"
+msgid "SignUp Date"
 msgstr "Date d'Inscription"
 
 #: pages/referral_links_old.vue
@@ -28070,11 +28735,14 @@ msgstr ""
 "Des paysages spectaculaires et des vues imprenables à l'extension du confort "
 "de votre cabine."
 
-#: pages/reports.vue components/compensation/members-qbi-modal.vue
+#: components/compensation/members-qbi-modal.vue
+#: components/reports/quick_reports.vue components/reports/old_reports.vue
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "Sponsor"
 msgstr "Parrain"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Sponsor / Upline"
 msgstr "Parrain / Ligne Ascendante"
 
@@ -28174,6 +28842,7 @@ msgstr "Commencer :"
 msgid "Starter"
 msgstr "Démarrage"
 
+#: components/quick_reports/members_with_pending_invoices.vue
 #: pages/public/membership.vue
 msgid "STARTER"
 msgstr "STARTER"
@@ -28187,7 +28856,7 @@ msgstr "Membre débutant"
 msgid "STARTER Member"
 msgstr "Membre STARTER"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Starter Members"
 msgstr "Membres Starter"
 
@@ -28195,7 +28864,7 @@ msgstr "Membres Starter"
 msgid "STARTER PLAN"
 msgstr "PLAN DE DÉMARRAGE"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Starter Plan - $0"
 msgstr "Plan de démarrage - 0$"
 
@@ -28298,8 +28967,10 @@ msgstr "statut"
 #: components/invoices/invoice.vue components/compensation/leadership_bonus.vue
 #: components/compensation/recurring_income_levels.vue
 #: components/compensation/qbi_members_table.vue
+#: components/reports/quick_reports.vue
 #: components/admin_finance/cruise_bookings.vue
 #: components/growth_calculator/potential_leadership.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 #: components/user/invoices.vue
 msgid "Status"
 msgstr "Statut"
@@ -28395,7 +29066,7 @@ msgstr "Sous-catégories"
 msgid "Subject"
 msgstr "Sujet"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Subject:"
 msgstr "Sujet :"
 
@@ -28473,11 +29144,12 @@ msgstr ""
 "Sous-total : <b>${{ $filters.money(this.selectedRequest."
 "additional_booking_data.subtotal) }}</b>"
 
-#: vue/main.js components/high_risk/high_risk_accounts.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/high_risk/high_risk_accounts.vue
 msgid "Success"
 msgstr "La réussite"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Successful Growth"
 msgstr "Croissance réussie"
 
@@ -28610,6 +29282,15 @@ msgstr "Glisser pour en voir plus"
 msgid "Swiss Franc (CHF)"
 msgstr "Franc Suisse (CHF)"
 
+#: components/reports/quick_reports_modal/modal-content.vue
+#: components/reports/quick_reports_modal/index.vue
+msgid "Switch To Classic"
+msgstr ""
+
+#: pages/reports.vue
+msgid "Switch To New"
+msgstr ""
+
 #: components/inchat/emoji/emoji_modal.vue
 msgid "Symbols"
 msgstr "Symboles"
@@ -28651,6 +29332,7 @@ msgid "Tag Management"
 msgstr "Gestion des étiquettes"
 
 #: pages/contacts.vue components/contacts/export-contacts.vue
+#: components/reports/old_reports.vue
 msgid "Tags"
 msgstr "Étiquettes"
 
@@ -28684,7 +29366,7 @@ msgstr ""
 msgid "Take Me to DittoTouch"
 msgstr "Emmène-moi à Ditto Touch"
 
-#: pages/additional_info.vue pages/reports.vue
+#: pages/additional_info.vue components/reports/old_reports.vue
 msgid "Take me to upgrade."
 msgstr "prenez-moi à améliorer."
 
@@ -28909,7 +29591,7 @@ msgstr "Partenaires d'Équipe Rémunérés"
 msgid "Team Pending Members"
 msgstr "Membres d'Équipe en suspens"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Team Pending with Cruise Bookings"
 msgstr "Membres d'Équipe en Attente avec Réservation de Croisière"
 
@@ -28925,7 +29607,7 @@ msgstr "Production de l'Équipe"
 msgid "Team Production Tracker"
 msgstr "Suivi de la Production de l'Équipe"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Team QBI"
 msgstr "QBI d'équipe"
 
@@ -28957,6 +29639,19 @@ msgstr "Relevé du bonus résiduel de l'équipe"
 #: pages/track_results.vue
 msgid "Team Starter Members"
 msgstr "Membre débutant de l'équipe"
+
+#: components/reports/filters/exclude_teams.vue
+#, fuzzy
+#| msgid "Please select gender"
+msgid "team(s) selected"
+msgstr "Veuillez sélectionner le sexe"
+
+#: components/reports/quick_reports_modal/modal-content.vue
+#: components/reports/quick_reports_modal/templates-list.vue
+#, fuzzy
+#| msgid "Use Template"
+msgid "Templates"
+msgstr "Utiliser le modèle"
 
 #: components/user/functions.vue
 msgid "Terminated"
@@ -29375,24 +30070,24 @@ msgstr ""
 "La croisière doit encore être disponible au tarif réduit au moment de "
 "l'évaluation"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user first became membership free."
 msgstr ""
 "La date à laquelle l'utilisateur a eu l'adhésion gratuite pour la première "
 "fois."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user first signed up on our website."
 msgstr ""
 "La date à laquelle l'utilisateur s'est inscrit pour la première fois sur "
 "notre site web."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user paid to activate and become a Member."
 msgstr ""
 "La date à laquelle l'utilisateur a payé pour s'activer et devenir un Membre."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The date the user paid to activate and become a Partner."
 msgstr ""
 "La date à laquelle l'utilisateur a payé pour s'activer et devenir un "
@@ -29429,7 +30124,7 @@ msgstr ""
 "La date d’entrée en vigueur de cette Politique de Confidentialité est le 1er "
 "septembre 2015."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "The email and push blast actions have been disabled due to the results size "
 "exceeds their limit. If you want to use these actions, please run the report "
@@ -29992,7 +30687,7 @@ msgstr ""
 msgid "The Spirit Of Giving At inCruises"
 msgstr "L'esprit de générosité chez inCruises"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "The subject field is required!"
 msgstr "Le champ objet est obligatoire !"
 
@@ -30467,11 +31162,11 @@ msgstr ""
 msgid "There was no results for your search."
 msgstr "Il n'y avait aucun résultat qui corresponde à votre recherche."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "There were %{resultAmount} results based on your selections."
 msgstr "Il y a eu des résultats %{resultAmount} basés sur vos sélections."
 
-#: pages/reports.vue pages/leadership_academy.vue
+#: pages/leadership_academy.vue components/reports/old_reports.vue
 msgid "There were no results based on your selections."
 msgstr "Il n'y avait aucun résultat basé sur vos sélections."
 
@@ -31451,6 +32146,13 @@ msgstr "Cette semaine"
 msgid "This Week's Potential"
 msgstr "Le potentiel de cette semaine"
 
+#: components/quick_reports/members_with_pending_invoices.vue
+msgid ""
+"This will only show members who are still within the first 5 days after "
+"their invoice has been generated. this will grant them double their reward "
+"points."
+msgstr ""
+
 #: components/growth_calculator/potential_recurring.vue
 #: components/growth_calculator/potential_leadership.vue
 msgid "This will take a few seconds. Please be patient."
@@ -31725,11 +32427,12 @@ msgstr ""
 
 #: pages/glsx.vue pages/referral_widget.vue pages/gls_winners.vue
 #: pages/admin_partner_success.vue pages/gls.vue pages/admin_user.vue
-#: pages/banner_tracking.vue pages/new_ranks.vue pages/reports.vue
-#: pages/partner_success.vue pages/builders_base.vue
-#: components/compensation/residual_bonus_preview.vue
+#: pages/banner_tracking.vue pages/new_ranks.vue pages/partner_success.vue
+#: pages/builders_base.vue components/compensation/residual_bonus_preview.vue
 #: components/compensation/builders_bonus.vue
 #: components/settings_page/modify-saved-passengers.vue
+#: components/reports/old_reports.vue
+#: components/reports/send_push_notification_modal.vue
 #: components/business_intelligence/comp_to_sales.vue
 msgid "Title"
 msgstr "Titre"
@@ -31744,7 +32447,8 @@ msgstr "Titre atteint !"
 msgid "Title:"
 msgstr "Titre :"
 
-#: pages/menu_page.vue pages/reports.vue pages/settings.vue pages/titles.vue
+#: pages/menu_page.vue pages/settings.vue pages/titles.vue
+#: components/reports/old_reports.vue
 msgid "Titles"
 msgstr "Titres"
 
@@ -31762,6 +32466,8 @@ msgstr "à"
 
 #: pages/inviter.vue pages/mercy_ships.vue
 #: components/support/TicketViewerAdmin.vue components/support/TicketViewer.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "To"
 msgstr "À"
 
@@ -32606,12 +33312,125 @@ msgstr ""
 msgid "Track your world-wide reach below!"
 msgstr "Suivez votre portée mondiale ci-dessous !"
 
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks members who changed their membership plan up or down this month/ last "
+"month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Users with Pending Invoices"
+msgid "Tracks members with pending invoices."
+msgstr "Utilisateurs avec des factures en attente"
+
 #: components/business_performance/TeamProductionLines.vue
 msgid ""
 "Tracks monthly cumulative new and total cumulative Production for your team."
 msgstr ""
 "Suit la Production mensuelle cumulative nouvelle et la Production cumulative "
 "totale pour votre équipe."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks new members this month/ last month (members purchasing a membership "
+"for the first time in inCruises.)"
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners eligible for compensation by bringing a direct this month/"
+"last month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid "Tracks partners eligible for membership free or membership discount."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners pending Builders Base payment due to QBI < 75%, showing time "
+"left until payout anyways."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Produce the required Total Activation Volume."
+msgid "Tracks partners qualified production and activation volume."
+msgstr "Produire le volume TOTAL d'activation requis."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners who achieved a new rank for the first time this month/ last "
+"month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid "Tracks partners who achieved Fast Start this month/last month."
+msgstr ""
+"Partenaires de votre équipe qui sont encore éligibles au bonus de Démarrage "
+"Rapide correspondant."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid ""
+"Tracks partners who are still eligible for Fast Start Matching based on "
+"their downlines."
+msgstr ""
+"Partenaires de votre équipe qui sont encore éligibles au bonus de Démarrage "
+"Rapide correspondant."
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid ""
+#| "Partners from your team which are still eligible for Fast Start matching "
+#| "bonus."
+msgid ""
+"Tracks partners who are still eligible for Fast Start with days left to "
+"qualify."
+msgstr ""
+"Partenaires de votre équipe qui sont encore éligibles au bonus de Démarrage "
+"Rapide correspondant."
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners whose 6‑month renewal invoice is pending and not yet paid "
+"within the allowed month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks partners whose 6‑month renewal invoice will be generated next month"
+msgstr ""
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "One or more members has an active sailing or a pending invoice."
+msgid ""
+"Tracks team members with an active cruise booking but a pending invoice."
+msgstr ""
+"Un ou plusieurs membres ont une voile active ou une facture en attente."
+
+#: components/reports/quick_reports.vue
+msgid "Tracks users who acquired a partnership this month/ last month."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid ""
+"Tracks users who signed up this month/ last month but have not yet purchased "
+"a membership."
+msgstr ""
+
+#: components/reports/quick_reports.vue
+msgid "Tracks users with recurring payment status and payment method type."
+msgstr ""
 
 #: pages/m3.vue
 msgid "Trade Partner Testimonials"
@@ -32859,6 +33678,11 @@ msgstr "Trustly"
 msgid "Try again"
 msgstr "Essayez à nouveau"
 
+#: pages/reports.vue
+msgid ""
+"Try our new reports view for easier access to reports and faster report runs."
+msgstr ""
+
 #: components/recurring/recurring-cards.vue
 msgid "Turkish Lira (TRY)"
 msgstr "Livre Turque (TRY)"
@@ -32895,21 +33719,14 @@ msgstr "Il y a deux mois au total"
 msgid "Two Weeks Prior Contest"
 msgstr "Concours des deux Semaines Précédentes"
 
-#: pages/admin_user.vue pages/reports.vue pages/receipts.vue
-#: pages/track_results.vue pages/notifications.vue
+#: pages/admin_user.vue pages/receipts.vue pages/track_results.vue
+#: pages/notifications.vue
 #: components/negative_balances/wallet_balances_modal.vue
 #: components/support/InstantTools.vue components/compensation/weekly_bonus.vue
 #: components/compensation/active_partner_modal.vue
+#: components/reports/old_reports.vue
 msgid "Type"
 msgstr "Type"
-
-#: pages/reports.vue
-msgid ""
-"Type @ to insert dynamic tokens (like @Name, @Email) that will be replaced "
-"with each recipient's data."
-msgstr ""
-"Saisissez @ pour insérer des jetons dynamiques (comme @Nom, @Adresse e-mail) "
-"qui seront remplacés par les données de chaque destinataire."
 
 #: pages/cruise_price_match_guarantee.vue
 msgid "type when applicable"
@@ -33185,7 +34002,7 @@ msgstr "Se désabonner"
 msgid "Unsubscribe from our mailing list:"
 msgstr "Se désabonner de notre liste de diffusion :"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Unsubscribe here"
 msgstr "Se désabonner ici"
 
@@ -33404,7 +34221,7 @@ msgstr "Améliorez votre style de vie dès aujourd'hui !"
 msgid "Upgrade your membership to get more iNsider pricing"
 msgstr "Améliorez votre Adhésion pour bénéficier plus d'INsider Pricing"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Upgrades This Month"
 msgstr "Mises à jour ce mois-ci"
 
@@ -33592,6 +34409,7 @@ msgid "User Hotels"
 msgstr "Hôtels d'utilisateurs"
 
 #: components/compensation/my_team_breakdown_table.vue
+#: components/reports/more_info_hover_card.vue
 msgid "User Info"
 msgstr "Informations Utilisateur"
 
@@ -33602,6 +34420,12 @@ msgstr "Factures des utilisateurs"
 #: components/inchat/user_room_actions.vue
 msgid "User locked successfully"
 msgstr "Utilisateur verrouillé avec succès"
+
+#: components/quick_reports/users_recurring_payment_status.vue
+#, fuzzy
+#| msgid "User Invoices"
+msgid "User Next Invoices"
+msgstr "Factures des utilisateurs"
 
 #: components/user/user_notes.vue
 msgid "User Notes"
@@ -33664,10 +34488,22 @@ msgstr ""
 "Les utilisateurs peuvent désactiver les Paiements Récurrents du Portefeuille "
 "inCruises via"
 
+#: vue/composables/reports/useBulkActions.js
+#, fuzzy
+#| msgid "User unlocked successfully"
+msgid "Users downloaded successfully"
+msgstr "Utilisateur déverrouillé avec succès"
+
 #: components/inchat/admin/ShowParticipants.vue
 #: components/inchat/list_modals/users_room_list_modal.vue
 msgid "Users in Room"
 msgstr "Utilisateurs dans la salle"
+
+#: components/reports/quick_reports.vue
+#, fuzzy
+#| msgid "Enable Recurring Payments"
+msgid "Users Recurring Payment Status"
+msgstr "Activer les Paiements Récurrents"
 
 #: pages/referral_activity.vue
 msgid ""
@@ -33721,7 +34557,7 @@ msgid "Users who have seen our website through your link."
 msgstr ""
 "Les utilisateurs qui ont consulté notre site web par le biais de votre lien."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Users with Pending Invoices"
 msgstr "Utilisateurs avec des factures en attente"
 
@@ -33965,7 +34801,7 @@ msgstr "Regarder les Anniversaires"
 msgid "View Booking Summary"
 msgstr "Voir le résumé de la réservation"
 
-#: pages/certificates.vue pages/reports.vue
+#: pages/certificates.vue components/reports/old_reports.vue
 msgid "View Certificate"
 msgstr "Affichez le certificat"
 
@@ -34327,7 +35163,7 @@ msgid "Want to make this into a Refundable Booking?"
 msgstr ""
 "Vous souhaitez transformer cette réservation en réservation remboursable ?"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Want to stop receiving Email Blasts?"
 msgstr "Vous souhaitez ne plus recevoir de messages électroniques ?"
 
@@ -34335,7 +35171,8 @@ msgstr "Vous souhaitez ne plus recevoir de messages électroniques ?"
 msgid "Want to Try DittoTouch?"
 msgstr "Voulez-vous essayer DittoTouch ?"
 
-#: vue/main.js components/inchat/user/warning_modal.vue
+#: vue/main.js vue/composables/useFlash.js
+#: components/inchat/user/warning_modal.vue
 msgid "Warning"
 msgstr "Attention"
 
@@ -34909,6 +35746,12 @@ msgstr "Bienvenue à"
 msgid "Welcome To InCruises"
 msgstr "Bienvenue à InCruises"
 
+#: components/reports/new_reports.vue
+#, fuzzy
+#| msgid "Welcome To InCruises"
+msgid "Welcome To Reports"
+msgstr "Bienvenue à InCruises"
+
 #: pages/courses.vue
 msgid "Welcome to the Basic Training Courses!"
 msgstr "Bienvenue aux Cours de la Formation de Base !"
@@ -35054,11 +35897,19 @@ msgstr "Ce que Vous Obtenez en tant qu'Invité :"
 msgid "What's new"
 msgstr "Quoi de neuf"
 
+#: components/quick_reports/partners_still_eligible_fast_start.vue
+#, fuzzy
+#| msgid "Whatsapp #"
+msgid "Whatsapp"
+msgstr "Whatsapp #"
+
 #: components/compensation/qbi_members_table.vue
+#: components/quick_reports/members_with_pending_invoices.vue
+#: components/quick_reports/users_recurring_payment_status.vue
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Whatsapp #"
 msgstr "Whatsapp #"
 
@@ -36273,6 +37124,14 @@ msgstr ""
 "Vous êtes sur le point de redémarrer le processus de vérification de votre "
 "identité."
 
+#: components/reports/send_push_notification_modal.vue
+#, fuzzy
+#| msgid "You are about to restart your identity verification process."
+msgid "You are about to send a push notification to %{count} users."
+msgstr ""
+"Vous êtes sur le point de redémarrer le processus de vérification de votre "
+"identité."
+
 #: pages/downgrade.vue
 msgid ""
 "You are about to switch to the Classic membership. By doing so, you will "
@@ -36606,7 +37465,7 @@ msgstr ""
 msgid "You cannot login as this user."
 msgstr "Vous ne pouvez pas vous connecter en tant que cet utilisateur."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You cannot search for New Ranks for this month and last month at the same "
 "time. Please disable one and try again."
@@ -36614,9 +37473,14 @@ msgstr ""
 "Vous ne pouvez pas rechercher les Nouveaux Rangs pour ce mois et le mois "
 "dernier en même temps. Veuillez en désactiver un et réessayer."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
+#, fuzzy
+#| msgid ""
+#| "You cannot select Membership Plan with Partners, Expired Partners, or "
+#| "Guests."
 msgid ""
-"You cannot select Membership Plan with Partners, Expired Partners, or Guests."
+"You cannot select Membership Plan with Partners, Expired Partners, or No "
+"Plans."
 msgstr ""
 "Vous ne pouvez pas sélectionner de Plan d'Adhésion avec Partenaires, "
 "Partenaires Expirés ou Invités."
@@ -36964,7 +37828,7 @@ msgstr ""
 "Vous avez atteint le nombre maximum de comptes. Veuillez supprimer un compte "
 "existant pour en ajouter un nouveau."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You have selected member data but have partnership creation date fields "
 "active, please remove before proceeding."
@@ -36973,7 +37837,7 @@ msgstr ""
 "date de création de partenariats actifs. Veuillez l'enlever avant de "
 "continuer."
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid ""
 "You have selected partner data but have membership creation date fields "
 "active, please remove before proceeding."
@@ -37199,13 +38063,7 @@ msgstr ""
 "cette croisière, conformément à <a target=\"_blank\" href="
 "\"%{link}\">l'Accord d'Adhésion inCruises</a> ."
 
-#: pages/reports.vue
-msgid "You must run a report and have results to send an email blast."
-msgstr ""
-"Vous devez générer un rapport et obtenir des résultats pour envoyer un e-"
-"mail groupé."
-
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "You must select at least one user type."
 msgstr "Vous devez sélectionner au moins un type d'utilisateur."
 
@@ -38194,7 +39052,7 @@ msgstr ""
 msgid "Your Region"
 msgstr "Votre Région"
 
-#: pages/reports.vue
+#: components/reports/old_reports.vue
 msgid "Your report results will appear in this area."
 msgstr "Les résultats de votre rapport apparaîtront dans cette zone."
 
@@ -50773,6 +51631,18 @@ msgstr "TEst 2"
 msgid "Final Test"
 msgstr "Test Final"
 
+#: Courses
+msgid "xxxz"
+msgstr ""
+
+#: Courses (descriptions)
+msgid "TEST B"
+msgstr ""
+
+#: Courses (descriptions)
+msgid "eee3we"
+msgstr ""
+
 #: Courses (descriptions)
 msgid ""
 "In order to access your inCruises® Wallet, you must complete this course on "
@@ -50821,6 +51691,18 @@ msgstr ""
 "kilomètres pour aller dans un autre pays et construire vos rêves ? !"
 
 #~ msgid ""
+#~ "Type @ to insert dynamic tokens (like @Name, @Email) that will be "
+#~ "replaced with each recipient's data."
+#~ msgstr ""
+#~ "Saisissez @ pour insérer des jetons dynamiques (comme @Nom, @Adresse e-"
+#~ "mail) qui seront remplacés par les données de chaque destinataire."
+
+#~ msgid "You must run a report and have results to send an email blast."
+#~ msgstr ""
+#~ "Vous devez générer un rapport et obtenir des résultats pour envoyer un e-"
+#~ "mail groupé."
+
+#~ msgid ""
 #~ "An unexpected error occurred while initializing the filter selection "
 #~ "widget."
 #~ msgstr ""
@@ -50852,15 +51734,6 @@ msgstr ""
 #~ msgid "Percent Growth Needed"
 #~ msgstr "Pourcentage de croissance nécessaire"
 
-#~ msgid "Historical QBI Report"
-#~ msgstr "Rapport du QBI historique"
-
-#~ msgid "Insert your message..."
-#~ msgstr "Insérez votre message..."
-
-#~ msgid "Pending QBI Report"
-#~ msgstr "Rapport du QBI en suspens"
-
 #~ msgid "Price may vary based on availability"
 #~ msgstr "Le prix peut varier en fonction de la disponibilité"
 
@@ -50868,152 +51741,12 @@ msgstr ""
 #~ msgstr "(Membre Adulte)"
 
 #, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "%{ n } Days Left to Pay"
-#~ msgstr "Jours Restants Pour se Qualifier"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "1 Day Left to Pay"
-#~ msgstr "Jours Restants Pour se Qualifier"
-
-#, fuzzy
-#~| msgid "Invoice Date"
-#~ msgid "2 Invoices Dates"
-#~ msgstr "Date de Facture"
-
-#, fuzzy
-#~| msgid "Accounts"
-#~ msgid "Account Expires"
-#~ msgstr "Comptes"
-
-#, fuzzy
-#~| msgid "All Titles"
-#~ msgid "All Teams"
-#~ msgstr "Tous les titres"
-
-#, fuzzy
 #~| msgid "An error occurred while fetching the data."
 #~ msgid "An error occurred while fetching the report"
 #~ msgstr "Une erreur s'est produite lors de la récupération des données."
 
-#, fuzzy
-#~| msgid "An unexpected error occurred while applying the client filters."
-#~ msgid "An unexpected error occurred while loading countries."
-#~ msgstr ""
-#~ "Une erreur inattendue s'est produite lors de l'application des filtres "
-#~ "client."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while resetting the filters."
-#~ msgid "An unexpected error occurred while loading languages."
-#~ msgstr ""
-#~ "Une erreur inattendue s'est produite lors de la réinitialisation des "
-#~ "filtres."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while applying the client filters."
-#~ msgid ""
-#~ "An unexpected error occurred while loading partners still eligible fast "
-#~ "start."
-#~ msgstr ""
-#~ "Une erreur inattendue s'est produite lors de l'application des filtres "
-#~ "client."
-
-#, fuzzy
-#~| msgid "An unexpected error occurred while resetting the filters."
-#~ msgid "An unexpected error occurred while loading teams."
-#~ msgstr ""
-#~ "Une erreur inattendue s'est produite lors de la réinitialisation des "
-#~ "filtres."
-
-#, fuzzy
-#~| msgid "Bonus Paid"
-#~ msgid "Bonus Payed In"
-#~ msgstr "Bonus payé"
-
-#, fuzzy
-#~| msgid "Coming Soon!"
-#~ msgid "Coming Soon"
-#~ msgstr "À venir !"
-
-#, fuzzy
-#~| msgid "Countries Selected"
-#~ msgid "countries selected"
-#~ msgstr "Pays Sélectionnés"
-
-#, fuzzy
-#~| msgid "Direct Activations"
-#~ msgid "Current Activations"
-#~ msgstr "Activations directes"
-
-#, fuzzy
-#~| msgid "Recurring Qualified Production"
-#~ msgid "Current Qualified Production"
-#~ msgstr "Production qualifiée récurrente"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Count"
-#~ msgstr "Jours Restants Pour se Qualifier"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Pay"
-#~ msgstr "Jours Restants Pour se Qualifier"
-
-#, fuzzy
-#~| msgid "Days Left To Qualify"
-#~ msgid "Days Left To Still Be Elegible"
-#~ msgstr "Jours Restants Pour se Qualifier"
-
-#, fuzzy
-#~| msgid "Downline Select"
-#~ msgid "Downlines Elegible"
-#~ msgstr "Sélection en lignée descendante"
-
-#, fuzzy
-#~| msgid "Due Today"
-#~ msgid "Due today"
-#~ msgstr "Dû pour aujourd’hui"
-
 #~ msgid "Elegible"
 #~ msgstr "Éligible"
-
-#, fuzzy
-#~| msgid "Email Date"
-#~ msgid "Embarking Date"
-#~ msgstr "Date de l'email"
-
-#, fuzzy
-#~| msgid "First Leader"
-#~ msgid "First Up leader"
-#~ msgstr "Premier leader"
-
-#, fuzzy
-#~| msgid "First Leader"
-#~ msgid "First Up Leader"
-#~ msgstr "Premier leader"
-
-#, fuzzy
-#~| msgid "inCruises - Receipt"
-#~ msgid "InCruises - Reports"
-#~ msgstr "inCruises - Le reçu"
-
-#, fuzzy
-#~| msgid "InCruises Wallet"
-#~ msgid "inCruises Wallet"
-#~ msgstr "Portefeuille InCruises"
-
-#, fuzzy
-#~| msgid "Invite Status"
-#~ msgid "Invoice Status"
-#~ msgstr "Statut de l'invitation"
-
-#, fuzzy
-#~| msgid "Invoice Date"
-#~ msgid "Invoice Type"
-#~ msgstr "Date de Facture"
 
 #, fuzzy
 #~| msgid "Language"
@@ -51022,165 +51755,8 @@ msgstr ""
 
 #, fuzzy
 #~| msgid "Package selected:"
-#~ msgid "languages selected"
-#~ msgstr "Forfait sélectionné :"
-
-#, fuzzy
-#~| msgid "Package selected:"
 #~ msgid "Languages Selected"
 #~ msgstr "Forfait sélectionné :"
-
-#, fuzzy
-#~| msgid "Rank Achieved"
-#~ msgid "Last Rank Achieved"
-#~ msgstr "Rang Atteint"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Member Reports"
-#~ msgstr "Rapports de puissance"
-
-#, fuzzy
-#~| msgid "Members in your QBI"
-#~ msgid "Members Counting Toward Your QBI"
-#~ msgstr "Membres de votre QBI"
-
-#, fuzzy
-#~| msgid "Pending Members with Pending Invoices"
-#~ msgid "Members With Cruise Bookings & Pending Invoices"
-#~ msgstr "Membres en suspens avec des Factures en suspens"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Members with pending Invoices"
-#~ msgstr "Utilisateurs avec des factures en attente"
-
-#, fuzzy
-#~| msgid "Membership First Month"
-#~ msgid "Membership Discount"
-#~ msgstr "Adhésion gratuite le premier mois"
-
-#, fuzzy
-#~| msgid "Membership Info"
-#~ msgid "Membership Invoice"
-#~ msgstr "Informations d'adhésion"
-
-#, fuzzy
-#~| msgid "Membership Free Date"
-#~ msgid "Membership Upgrades & Downgrades"
-#~ msgstr "Date d'Adhésion Gratuite"
-
-#, fuzzy
-#~| msgid "Directs"
-#~ msgid "My Directs"
-#~ msgstr "Directe"
-
-#, fuzzy
-#~| msgid "Guests"
-#~ msgid "New Guests"
-#~ msgstr "Invités"
-
-#, fuzzy
-#~| msgid "New Message"
-#~ msgid "New Reports Page"
-#~ msgstr "Nouveau Message"
-
-#, fuzzy
-#~| msgid "Create Invoice"
-#~ msgid "Next Invoice"
-#~ msgstr "Créer une facture"
-
-#, fuzzy
-#~| msgid "Membership Info"
-#~ msgid "Next Membership Invoice"
-#~ msgstr "Informations d'adhésion"
-
-#, fuzzy
-#~| msgid "Partnership Video"
-#~ msgid "Next Partnership Invoice"
-#~ msgstr "Vidéo de Partenariat"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Other Reports"
-#~ msgstr "Rapports de puissance"
-
-#, fuzzy
-#~| msgid "Overview"
-#~ msgid "Overdue"
-#~ msgstr "Vue d'ensemble"
-
-#, fuzzy
-#~| msgid "Partners That Will Be Renewing Next Month"
-#~ msgid "Partner Renewing Next Month"
-#~ msgstr "Partenaires qui seront renouvelés le mois prochain"
-
-#, fuzzy
-#~| msgid "Power Reports"
-#~ msgid "Partner Reports"
-#~ msgstr "Rapports de puissance"
-
-#, fuzzy
-#~| msgid "Ineligible for compensation"
-#~ msgid "Partners Elegible for Compensation"
-#~ msgstr "Inéligibilité à l'indemnisation"
-
-#, fuzzy
-#~| msgid "Partners are Membership Free."
-#~ msgid "Partners Elegible For Membership Free"
-#~ msgstr "Les Partenaires ne payent pas l'Adhésion."
-
-#, fuzzy
-#~| msgid "Understanding Builders Base Bonus"
-#~ msgid "Partners Pending to Receive Builders Base Bonus"
-#~ msgstr "Comprendre le Bonus de Base des Constructeurs"
-
-#, fuzzy
-#~| msgid "You have no direct partners currently eligible for Fast Start."
-#~ msgid "Partners Still Elegible for Fast Start"
-#~ msgstr ""
-#~ "Vous n'avez aucun partenaires directs actuellement éligibles pour le "
-#~ "programme Fast Start."
-
-#, fuzzy
-#~| msgid "Potential Fast Start Matching"
-#~ msgid "Partners Still Elegible for Fast Start Matching"
-#~ msgstr "Correspondance Potentielle à \"Démarrage Rapide\""
-
-#, fuzzy
-#~| msgid "Potential Team Leadership Bonus"
-#~ msgid "Partners Team Leadership Performance"
-#~ msgstr "Bonus de Leadership d'Équipe potentiel"
-
-#, fuzzy
-#~| msgid "Partner Activation Date"
-#~ msgid "Partners Who Achieved Fast Start"
-#~ msgstr "Date d'activation du partenaire"
-
-#, fuzzy
-#~| msgid "Partner with travel agencies"
-#~ msgid "Partners with new ranks"
-#~ msgstr "Partenariat avec des agences de voyage"
-
-#, fuzzy
-#~| msgid "Partnership Video"
-#~ msgid "Partnership Invoice"
-#~ msgstr "Vidéo de Partenariat"
-
-#, fuzzy
-#~| msgid "Partners That Have Not Renewed"
-#~ msgid "Partnership Not Renewed"
-#~ msgstr "Partenaires qui n'ont pas renouvelé"
-
-#, fuzzy
-#~| msgid "Add Payment Method"
-#~ msgid "Payment Method"
-#~ msgstr "Ajouter un Mode de Paiement"
-
-#, fuzzy
-#~| msgid "Add Payment Method"
-#~ msgid "Payment Methods"
-#~ msgstr "Ajouter un Mode de Paiement"
 
 #~ msgid ""
 #~ "Processing can take a moment depending on the information provided. If "
@@ -51192,120 +51768,9 @@ msgstr ""
 #~ "ailleurs et attendre la notification de fin de traitement."
 
 #, fuzzy
-#~| msgid "Recurring Payment Terms"
-#~ msgid "Recurring payment"
-#~ msgstr "Conditions de Paiement Récurrent"
-
-#, fuzzy
-#~| msgid "Recurring Payment Terms"
-#~ msgid "Recurring Payment"
-#~ msgstr "Conditions de Paiement Récurrent"
-
-#, fuzzy
-#~| msgid "You have no direct partners currently eligible for Fast Start."
-#~ msgid "Reports - Partners Still Elegible for Fast Start"
-#~ msgstr ""
-#~ "Vous n'avez aucun partenaires directs actuellement éligibles pour le "
-#~ "programme Fast Start."
-
-#, fuzzy
-#~| msgid "Search Tours"
-#~ msgid "Search Teams"
-#~ msgstr "Recherche de circuits"
-
-#, fuzzy
-#~| msgid "Selected Country:"
-#~ msgid "Selected Countries"
-#~ msgstr "Pays sélectionné :"
-
-#, fuzzy
-#~| msgid "Select a Language"
-#~ msgid "Selected Language"
-#~ msgstr "Sélectionnez une Langue"
-
-#, fuzzy
-#~| msgid "Select Tag"
-#~ msgid "Selected Teams"
-#~ msgstr "Sélectionner une étiquette"
-
-#, fuzzy
 #~| msgid "Direct partners"
 #~ msgid "Show only my direct partners"
 #~ msgstr "Partenaires Directs"
-
-#, fuzzy
-#~| msgid "Signup Date"
-#~ msgid "SignUp Date"
-#~ msgstr "Date d'Inscription"
-
-#, fuzzy
-#~| msgid "Please select gender"
-#~ msgid "team(s) selected"
-#~ msgstr "Veuillez sélectionner le sexe"
-
-#, fuzzy
-#~| msgid "Use Template"
-#~ msgid "Templates"
-#~ msgstr "Utiliser le modèle"
-
-#, fuzzy
-#~| msgid "Users with Pending Invoices"
-#~ msgid "Tracks members with pending invoices."
-#~ msgstr "Utilisateurs avec des factures en attente"
-
-#, fuzzy
-#~| msgid "Produce the required Total Activation Volume."
-#~ msgid "Tracks partners qualified production and activation volume."
-#~ msgstr "Produire le volume TOTAL d'activation requis."
-
-#, fuzzy
-#~| msgid ""
-#~| "Partners from your team which are still eligible for Fast Start matching "
-#~| "bonus."
-#~ msgid ""
-#~ "Tracks partners who are still eligible for Fast Start Matching based on "
-#~ "their downlines."
-#~ msgstr ""
-#~ "Partenaires de votre équipe qui sont encore éligibles au bonus de "
-#~ "Démarrage Rapide correspondant."
-
-#, fuzzy
-#~| msgid ""
-#~| "Partners from your team which are still eligible for Fast Start matching "
-#~| "bonus."
-#~ msgid ""
-#~ "Tracks partners who are still eligible for Fast Start with days left to "
-#~ "qualify."
-#~ msgstr ""
-#~ "Partenaires de votre équipe qui sont encore éligibles au bonus de "
-#~ "Démarrage Rapide correspondant."
-
-#, fuzzy
-#~| msgid "One or more members has an active sailing or a pending invoice."
-#~ msgid ""
-#~ "Tracks team members with an active cruise booking but a pending invoice."
-#~ msgstr ""
-#~ "Un ou plusieurs membres ont une voile active ou une facture en attente."
-
-#, fuzzy
-#~| msgid "User Invoices"
-#~ msgid "User Next Invoices"
-#~ msgstr "Factures des utilisateurs"
-
-#, fuzzy
-#~| msgid "Enable Recurring Payments"
-#~ msgid "Users Recurring Payment Status"
-#~ msgstr "Activer les Paiements Récurrents"
-
-#, fuzzy
-#~| msgid "Welcome To InCruises"
-#~ msgid "Welcome To Reports"
-#~ msgstr "Bienvenue à InCruises"
-
-#, fuzzy
-#~| msgid "Whatsapp #"
-#~ msgid "Whatsapp"
-#~ msgstr "Whatsapp #"
 
 #~ msgid ""
 #~ "Your information has been submitted successfully and verification is "
