@@ -567,18 +567,22 @@ msgstr "{{ itineraryItem.pointOfInterestLocation.location.name }}"
 msgid "{{ lang }}"
 msgstr "{{ lang }}"
 
+#: components/tours/TourTravelersDropdown.vue
+#, fuzzy
+#| msgid ""
+#| "{{ pricingInfo.ageBands.length == 1 ? $gettext('TRAVELER') : ageBand."
+#| "ageBand }} {{ ageBand.label }}"
+msgid ""
+"{{ localAgeBands.length == 1 ? $gettext('TRAVELER') : ageBand.ageBand }} "
+"{{ ageBand.label }}"
+msgstr ""
+"{{ pricingInfo.ageBands.length == 1 ? $gettext('TRAVELER') : ageBand."
+"ageBand }} {{ ageBand.label }}"
+
 #: components/upgrade/tiles/tile-horizontal.vue
 #: components/upgrade/tiles/tile-brief.vue
 msgid "{{ monthlyInterval || $gettext('Month') }}"
 msgstr "{{ monthlyInterval || $gettext('Month') }}"
-
-#: pages/tours_details.vue
-msgid ""
-"{{ pricingInfo.ageBands.length == 1 ? $gettext('TRAVELER') : ageBand."
-"ageBand }} {{ ageBand.label }}"
-msgstr ""
-"{{ pricingInfo.ageBands.length == 1 ? $gettext('TRAVELER') : ageBand."
-"ageBand }} {{ ageBand.label }}"
 
 #: pages/courses.vue
 msgid "{{ question.question }}"
@@ -4951,11 +4955,14 @@ msgstr "Signatura del sol·licitant"
 msgid "Applied"
 msgstr "Aplicat"
 
-#: components/filter-chip-range.vue pages/tours_details.vue pages/checkout.vue
-#: pages/hotels.vue pages/contacts.vue pages/cruises.vue
+#: components/filter-chip-range.vue pages/checkout.vue pages/hotels.vue
+#: pages/contacts.vue pages/cruises.vue
 #: components/data_table/column-selection-widget.vue
 #: components/data_table/filter-selection-widget.vue
-#: components/tours/intours_results.vue components/hotels/GuestsDropdown.vue
+#: components/tours/TourSearchParamsPanel.vue
+#: components/tours/intours_results.vue
+#: components/tours/TourTravelersDropdown.vue
+#: components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsPanel.vue
 msgid "Apply"
 msgstr "Aplicar"
@@ -7070,10 +7077,9 @@ msgstr "Dòlar Canadenc (CAD)"
 
 #: components/fast-growing-legs.vue components/recipients_modal.vue
 #: components/avatar_cropper.vue pages/referral_links.vue pages/inviter.vue
-#: pages/tours_details.vue pages/checkout.vue pages/hotels.vue
-#: pages/admin_permission_group.vue pages/admin_department.vue
-#: pages/connect.vue pages/admin_permission.vue pages/contacts.vue
-#: pages/settings.vue pages/invoices.vue pages/email.vue
+#: pages/checkout.vue pages/hotels.vue pages/admin_permission_group.vue
+#: pages/admin_department.vue pages/connect.vue pages/admin_permission.vue
+#: pages/contacts.vue pages/settings.vue pages/invoices.vue pages/email.vue
 #: pages/business_performance.vue
 #: components/admin_management/admin_permission_groups.vue
 #: components/admin_management/admin_departments.vue
@@ -7087,7 +7093,10 @@ msgstr "Dòlar Canadenc (CAD)"
 #: components/settings_page/remove-display-name-modal.vue
 #: components/settings_page/identity-requirements-modal.vue
 #: components/cruises_booking_old/confirmation-step.vue
-#: components/reports/old_reports.vue components/hotels/GuestsDropdown.vue
+#: components/reports/old_reports.vue
+#: components/tours/TourSearchParamsPanel.vue
+#: components/tours/TourTravelersDropdown.vue
+#: components/hotels/GuestsDropdown.vue
 #: components/hotels/HotelSearchParamsPanel.vue
 #: components/recurring/add-recurring.vue
 #: components/recurring/recurring_payment_method_checkout.vue
@@ -9860,6 +9869,7 @@ msgstr "Dada_nova"
 #: components/compensation/statements.vue
 #: components/settings_page/login-activity.vue
 #: components/high_risk/high_risk_accounts.vue
+#: components/tours/TourSearchParamsPanel.vue
 #: components/receipts/tour_booking_receipt.vue components/user/fraud.vue
 #: components/user/user_notes.vue components/user/recordings.vue
 #: components/user/db-logs.vue components/user/timeline.vue
@@ -10881,6 +10891,7 @@ msgstr ""
 "immediata."
 
 #: pages/create_price_match_cruises.vue
+#: components/tours/TourSearchParamsPanel.vue
 #: components/hotels/HotelSearchParamsPanel.vue
 #: components/admin_booking/cruise_line_booking_types.vue
 #: components/admin_booking/cruise_line_ships.vue
@@ -21426,7 +21437,7 @@ msgstr "Quantitat mínima de la Bonificació Obtinguda"
 msgid "Minimum price cannot be greater than maximum price"
 msgstr "El preu mínim no pot ser superior al preu màxim"
 
-#: pages/tours_details.vue
+#: components/tours/TourTravelersDropdown.vue
 msgid ""
 "Minimum: {{ ageBand.minTravelersPerBooking }}, Maximum: {{ ageBand."
 "maxTravelersPerBooking }}"
@@ -21511,6 +21522,12 @@ msgstr "Data de Modificació (UTC)"
 #: components/user/invoices.vue
 msgid "Modified Date UTC"
 msgstr "Data de Modificació UTC"
+
+#: components/tours/TourSearchParamsPanel.vue
+#, fuzzy
+#| msgid "More Details"
+msgid "Modify Details"
+msgstr "Més detalls"
 
 #: pages/all_in.vue pages/referral_links_old.vue pages/communications.vue
 #: pages/invite.vue pages/webinar_recordings.vue pages/facebook_marketing.vue
@@ -29483,7 +29500,8 @@ msgstr "Seleccionar país"
 msgid "Select Country"
 msgstr "Seleccionar país"
 
-#: pages/admin_price_match.vue
+#: pages/tours_details.vue pages/admin_price_match.vue
+#: components/tours/TourSearchParamsPanel.vue
 msgid "Select date"
 msgstr "Selecciona la data"
 
@@ -29618,7 +29636,7 @@ msgstr "Selecciona el Grup d’Entrades"
 msgid "Select Time Period"
 msgstr "Selecciona el període de temps"
 
-#: pages/tours_details.vue
+#: pages/tours_details.vue components/tours/TourTravelersDropdown.vue
 msgid "Select travelers"
 msgstr "Selecciona viatgers"
 
@@ -35726,7 +35744,7 @@ msgstr "Premis de Viatge"
 msgid "Travel Rewards Club"
 msgstr "Club de Recompenses de Viatge"
 
-#: pages/tours_details.vue
+#: components/tours/TourTravelersDropdown.vue
 msgid "TRAVELER"
 msgstr "VIATGER"
 
@@ -35744,7 +35762,7 @@ msgstr ""
 msgid "Traveler Pickup"
 msgstr "Recollida del viatger"
 
-#: pages/tours_details.vue
+#: pages/tours_details.vue components/tours/TourTravelersDropdown.vue
 msgid "Travelers"
 msgstr "Viatgers"
 
