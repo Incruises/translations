@@ -12,10 +12,10 @@ msgstr ""
 "Language: uk\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 "
-"? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > "
-"14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % "
-"100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 "X-Generator: Weblate 4.14.2\n"
 
 #: Course Answers
@@ -184,6 +184,10 @@ msgstr ""
 "\"[УВАГА!!! Цей тікет було створено автоматично за результатами надсилання "
 "контактної форми. Будь-яка особа може створити тікет за допомогою цієї "
 "форми, вказавши будь-яку адресу електронної пошти.]\""
+
+#: /app/components/primary_email_validation.js
+msgid "@incruises.com emails are not allowed."
+msgstr ""
 
 #: /app/views/emails/support/reply.html
 msgid ""
@@ -741,9 +745,9 @@ msgstr ""
 "зображень паспортів (по одному на кожного пасажира). Нагадуємо, що пасажири: "
 "%s.<br><br>2.Підтвердження місця проживання (тільки для дорослих)<br><br>Для "
 "всіх дорослих пасажирів, яким необхідно підтвердити місце проживання за "
-"межами Росії/України/Білорусі, надайте один із наступних документів:<br><br>-"
-" Нещодавня виписка з банківського рахунку із зазначенням імені та адреси "
-"пасажира або\n"
+"межами Росії/України/Білорусі, надайте один із наступних документів:"
+"<br><br>- Нещодавня виписка з банківського рахунку із зазначенням імені та "
+"адреси пасажира або\n"
 "- Рахунок за комунальні послуги із зазначенням імені та адреси пасажира."
 
 #: /app/views/emails/compensation/daily_member_activation.html
@@ -2742,6 +2746,7 @@ msgstr "Шановний%s"
 #: /app/views/emails/upgrade/cruising.html
 #: /app/views/emails/upgrade/cruising_partner.html
 #: /app/views/emails/two_factor/email_code.html
+#: /app/views/emails/primary_email_update/verification_code.html
 #: /app/views/emails/compensation/monthly_member_activation.html
 #: /app/views/emails/compensation/daily_member_activation.html
 #: /app/views/emails/compensation/weekly_bonus.html
@@ -4201,6 +4206,16 @@ msgid "IF YOU DID NOT REQUEST THIS ACCOUNT RECOVERY PLEASE DO THE FOLLOWING:"
 msgstr ""
 "ЯКЩО ВИ НЕ ЗДІЙСНЮВАЛИ ДАНИЙ ЗАПИТ НА ВІДНОВЛЕННЯ ОБЛІКОВОГО ЗАПИСУ, "
 "ЗРОБІТЬ, БУДЬ ЛАСКА, НАСТУПНЕ:"
+
+#: /app/views/emails/primary_email_update/verification_code.html
+#, fuzzy
+#| msgid ""
+#| "If you did not request this password change please contact the customer "
+#| "support team immediately."
+msgid "If you did not request this change, please contact Support immediately."
+msgstr ""
+"Якщо ви не подавали запит на зміну пароля, негайно зверніться до служби "
+"підтримки користувачів."
 
 #: /app/views/emails/two_factor/email_code.html
 msgid ""
@@ -6963,6 +6978,12 @@ msgstr ""
 "БУДЬ ЛАСКА, НЕ ВІДПОВІДАЙТЕ БЕЗПОСЕРЕДНЬО НА ЦЕЙ ЛИСТ. ЦЕ АВТОМАТИЧНЕ "
 "ПОВІДОМЛЕННЯ, ВАША ВІДПОВІДЬ НЕ БУДЕ ОТРИМАНА."
 
+#: /app/controllers/primary_email_update/index.js
+#, fuzzy
+#| msgid "You already have an email address"
+msgid "Please enter a new email address."
+msgstr "Ви вже маєте адресу електронної пошти"
+
 #: /app/controllers/user_functions.js /app/controllers/settings.js
 msgid "Please enter a valid birthdate to continue."
 msgstr "Будь ласка, введіть дійсну дату Вашого нарождения, щоб продовжити."
@@ -6971,6 +6992,16 @@ msgstr "Будь ласка, введіть дійсну дату Вашого �
 #: /app/controllers/mercy_ships_contribution.js
 msgid "Please enter a valid number for your contribution."
 msgstr "Будь ласка, введіть дійсний номер вашого внеску."
+
+#: /app/views/emails/primary_email_update/verification_code.html
+msgid "Please enter the verification code below to complete your email update:"
+msgstr ""
+
+#: /app/controllers/primary_email_update/index.js
+#, fuzzy
+#| msgid "Please complete the reCAPTCHA verification."
+msgid "Please enter the verification code."
+msgstr "Будь ласка, пройдіть перевірку reCAPTCHA."
 
 #: /app/controllers/videos.js
 msgid "Please fill all the fields."
@@ -7262,7 +7293,15 @@ msgid "Please wait 30 seconds before trying to resend a code."
 msgstr ""
 "Зачекайте, будь ласка, 30 секунд, перш ніж спробувати надіслати код заново."
 
+#: /app/controllers/primary_email_update/index.js
+#, fuzzy
+#| msgid "Please wait 60 seconds before trying to resend a code."
+msgid "Please wait 60 seconds before requesting another code."
+msgstr ""
+"Зачекайте, будь ласка, 60 секунд, перш ніж спробувати надіслати код заново."
+
 #: /app/controllers/phone_verification.js
+#: /app/controllers/primary_email_update/index.js
 msgid "Please wait 60 seconds before trying to resend a code."
 msgstr ""
 "Зачекайте, будь ласка, 60 секунд, перш ніж спробувати надіслати код заново."
@@ -8735,6 +8774,16 @@ msgstr ""
 "Введений код перевірки прострочений або некоректний. Будь ласка, спробуйте "
 "ще раз."
 
+#: /app/controllers/primary_email_update/index.js
+#, fuzzy
+#| msgid ""
+#| "That authentication code you entered is either expired or incorrect. "
+#| "Please try again."
+msgid "That code you entered is either expired or incorrect. Please try again."
+msgstr ""
+"Введений код перевірки прострочений або некоректний. Будь ласка, спробуйте "
+"ще раз."
+
 #: /app/controllers/referrer.js
 msgid ""
 "That email address has not been invited to inCruises. Kindly get back to the "
@@ -8969,7 +9018,7 @@ msgstr ""
 "Потрібні параметри електронної пошти. Будь ласка, перезавантажте сторінку та "
 "спробуйте ще раз"
 
-#: /app/controllers/settings.js
+#: /app/controllers/settings.js /app/controllers/primary_email_update/index.js
 msgid "The email you have entered is invalid."
 msgstr "Введена Вами електронна адреса недійсна."
 
@@ -9493,6 +9542,13 @@ msgstr "Виникла помилка"
 msgid "There is a new support ticket requesting your attention."
 msgstr "Зверніть увагу на новий тикет із службою підтримки."
 
+#: /app/controllers/primary_email_update/index.js
+#, fuzzy
+#| msgid "There was an error sending the notification. Please try again."
+msgid "There is no pending email update. Please submit your new email again."
+msgstr ""
+"Під час надсилання сповіщення сталася помилка. Будь ласка, спробуйте ще раз."
+
 #: /app/controllers/leadership_review_protocol/send_warning.js
 msgid "There is no user with that id"
 msgstr "Користувача з таким ідентифікатором (ID) не знайдено"
@@ -9589,7 +9645,7 @@ msgstr "Відбулася помилка, будь ласка, перезава
 msgid "There was an error please reload the page."
 msgstr "Виникла помилка, будь ласка, перезавантажте сторінку."
 
-#: /app/controllers/settings.js
+#: /app/controllers/settings.js /app/controllers/primary_email_update/index.js
 msgid "There was an error processing your request, please try again."
 msgstr ""
 "Сталася помилка в процесі обробки вашого запиту, будь ласка спробуйте знову."
@@ -9846,6 +9902,12 @@ msgstr ""
 "Це замовлення вже завершене або недійсне. Зачекайте, поки ми перенаправимо "
 "вас."
 
+#: /app/views/emails/primary_email_update/verification_code.html
+msgid ""
+"This code is only valid for confirming your new email address and is not a "
+"login authentication code."
+msgstr ""
+
 #: /app/compensation/weekly.js
 msgid "This compensation was already paid out."
 msgstr "Ця компенсація вже була виплачена."
@@ -9894,7 +9956,7 @@ msgstr ""
 msgid "This email address is already registered on inCruises."
 msgstr "Ця адреса електронної пошти вже зареєстрована в inCruises."
 
-#: /app/controllers/settings.js
+#: /app/controllers/settings.js /app/controllers/primary_email_update/index.js
 msgid "This email is already in use."
 msgstr "Ця електронна адреса вже використовується."
 
@@ -10578,6 +10640,12 @@ msgstr ""
 "Занадто багато спроб входу за допомогою 2FA. Будь ласка, трохи зачекайте і "
 "спробуйте знову."
 
+#: /app/controllers/primary_email_update/index.js
+#, fuzzy
+#| msgid "Something went wrong, please try again later."
+msgid "Too many incorrect attempts. Please request a new code."
+msgstr "Щось пішло не так, будь ласка, повторіть спробу пізніше."
+
 #: /app/controllers/two_factor/challenge.js
 #, fuzzy
 #| msgid "Something went wrong, please try again later."
@@ -11024,6 +11092,12 @@ msgstr "Підтвердити рахунок"
 
 #: /app/controllers/email_verification.js
 msgid "Verify your email address"
+msgstr "Підтвердьте адресу вашої електронної пошти"
+
+#: /app/components/two_factor.js
+#, fuzzy
+#| msgid "Verify your email address"
+msgid "Verify your new inCruises email address"
 msgstr "Підтвердьте адресу вашої електронної пошти"
 
 #: /app/views/emails/invoices/unpaid_invoice_second_attempt.html
@@ -11758,6 +11832,13 @@ msgid ""
 "We were not able to verify your Reward Points. Please contact support and DO "
 "NOT rebook."
 msgstr ""
+
+#: /app/controllers/primary_email_update/index.js
+#, fuzzy
+#| msgid "There was an error sending the notification. Please try again."
+msgid "We were unable to send your verification code. Please try again."
+msgstr ""
+"Під час надсилання сповіщення сталася помилка. Будь ласка, спробуйте ще раз."
 
 #: /app/views/emails/billing/recurring_failed_support.html
 msgid "We were unsuccessful at charging <strong>%s %s</strong> for an upgrade."
@@ -12889,6 +12970,12 @@ msgstr ""
 msgid "You must be at least 18 years old to join InCruises."
 msgstr "Вам повинно бути не менше 18 років, щоб вступити в InCruises."
 
+#: /app/controllers/primary_email_update/index.js
+#, fuzzy
+#| msgid "You must be logged in to view this page."
+msgid "You must be logged in to update your email."
+msgstr "Ви повинні бути авторизовані, щоб переглянути цю сторінку."
+
 #: /app/compensation/qualified_residual.js /app/controllers/downgrade.js
 msgid "You must be logged in to view this page."
 msgstr "Ви повинні бути авторизовані, щоб переглянути цю сторінку."
@@ -13269,6 +13356,14 @@ msgstr ""
 "На даний момент ваш обліковий запис знаходиться на перевірці, що означає, що "
 "ми отримали платіж, але його зарахування чи повернення залежить від "
 "результатів цієї перевірки."
+
+#: /app/views/emails/primary_email_update/verification_code.html
+msgid ""
+"Your account is currently using an inCruises email address as its primary "
+"email. To help protect your account and ensure uninterrupted access, we now "
+"require all Partners to use a personal email address as their primary "
+"account email."
+msgstr ""
 
 #: /app/components/check_free_rp.js
 msgid ""
