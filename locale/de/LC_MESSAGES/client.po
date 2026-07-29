@@ -885,7 +885,15 @@ msgstr "%{ n } Tage"
 msgid "%{ n } Days Left to Pay"
 msgstr "%{ n } Tage zum Bezahlen"
 
-#: pages/partner_success.vue
+#: vue/plugins/gettext.spec.js
+#, fuzzy
+#| msgid "Course: %{ name }"
+msgid "%{ name }"
+msgid_plural "%{ name }"
+msgstr[0] "Kurs: %{ name }"
+msgstr[1] "Kurs: %{ name }"
+
+#: pages/partner_success.vue vue/plugins/gettext.spec.js
 msgid "%{ name } from %{ country }"
 msgstr "%{ name } von %{ country }"
 
@@ -1135,6 +1143,31 @@ msgstr ""
 #: pages/reservations.vue
 msgid "%{Tours} Tours"
 msgstr "%{Tours} Touren"
+
+#: vue/plugins/gettext.js
+msgid ""
+"` component, which render through // `innerHTML` and let the browser decode "
+"the entities back. The programmatic `$gettext` family, however, // returns "
+"plain strings that we render in text contexts (`{{ }}`, `:label`, `:title`, "
+"flash/alert messages, // certificate/email copy). There the escaped entities "
+"are shown literally, so a partner display name like // \"Robinson & Lizbeth"
+"\" renders as \"Robinson &amp; Lizbeth\". Default the programmatic helpers "
+"to skip escaping // so special characters in display names render correctly "
+"across the platform. Callers that genuinely need // escaping (e.g. feeding "
+"the result into `v-html`) can still opt back in by passing "
+"`disableHtmlEscaping = false`. // The directive/component path is unaffected "
+"and remains XSS-safe. const rawGettext = gettext.$gettext; gettext.$gettext "
+"= (msgid, parameters, disableHtmlEscaping = true) => rawGettext(msgid, "
+"parameters, disableHtmlEscaping); const rawPgettext = gettext.$pgettext; "
+"gettext.$pgettext = (context, msgid, parameters, disableHtmlEscaping = true) "
+"=> rawPgettext(context, msgid, parameters, disableHtmlEscaping); const "
+"rawNgettext = gettext.$ngettext; gettext.$ngettext = (msgid, plural, n, "
+"parameters, disableHtmlEscaping = true) => rawNgettext(msgid, plural, n, "
+"parameters, disableHtmlEscaping); const rawNpgettext = gettext.$npgettext; "
+"gettext.$npgettext = (context, msgid, plural, n, parameters, "
+"disableHtmlEscaping = true) => rawNpgettext(context, msgid, plural, n, "
+"parameters, disableHtmlEscaping); export default gettext;"
+msgstr ""
 
 #: pages/public/terms_of_service.vue
 msgid "© 2015-Present, inCruises, All Rights Reserved."
@@ -62901,6 +62934,15 @@ msgstr ""
 "Können Sie sich vorstellen, alles, was Sie besitzen, Tausende von Kilometern "
 "weit weg zu lassen, um in ein anderes Land zu gehen und Ihre Träume zu "
 "verwirklichen?"
+
+#: vue/plugins/gettext.spec.js
+#, fuzzy
+#| msgid "Course: %{ name }"
+msgctxt "context"
+msgid "%{ name }"
+msgid_plural "%{ name }"
+msgstr[0] "Kurs: %{ name }"
+msgstr[1] "Kurs: %{ name }"
 
 #~ msgid "Change Subscription"
 #~ msgstr "Abonnements ändern"
