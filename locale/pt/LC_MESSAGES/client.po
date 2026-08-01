@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: incruises\n"
-"PO-Revision-Date: 2026-07-30 15:35+0000\n"
+"PO-Revision-Date: 2026-08-03 14:05+0000\n"
 "Last-Translator: Adriana Tavares <adrianaincruises@gmail.com>\n"
 "Language-Team: Portuguese <http://translate.incruises.com/projects/incruises/"
 "client/pt/>\n"
@@ -1152,6 +1152,30 @@ msgid ""
 "disableHtmlEscaping = true) => rawNpgettext(context, msgid, plural, n, "
 "parameters, disableHtmlEscaping); export default gettext;"
 msgstr ""
+"// O componente `translate`, que renderiza por meio de `innerHTML` e permite "
+"que o navegador decodifique novamente as entidades HTML. Já a família "
+"programática `$gettext` retorna strings simples que renderizamos em "
+"contextos de texto (`{{ }}`, `:label`, `:title`, mensagens flash/alerta, "
+"textos de certificados e e-mails). Nesses casos, as entidades HTML escapadas "
+"são exibidas literalmente, de modo que um nome de exibição de Parceiro como "
+"\"Robinson & Lizbeth\" é mostrado como \"Robinson &amp; Lizbeth\". Por "
+"padrão, configure os helpers programáticos para ignorarem o escape de HTML, "
+"permitindo que caracteres especiais nos nomes de exibição sejam renderizados "
+"corretamente em toda a plataforma. Os pontos do código que realmente "
+"precisarem do escape (por exemplo, ao passar o resultado para `v-html`) "
+"ainda poderão optar por reativá-lo definindo `disableHtmlEscaping = false`. "
+"O caminho utilizado pelo directive/component permanece inalterado e continua "
+"protegido contra XSS. const rawGettext = gettext.$gettext; gettext.$gettext "
+"= (msgid, parameters, disableHtmlEscaping = true) => rawGettext(msgid, "
+"parameters, disableHtmlEscaping); const rawPgettext = gettext.$pgettext; "
+"gettext.$pgettext = (context, msgid, parameters, disableHtmlEscaping = true) "
+"=> rawPgettext(context, msgid, parameters, disableHtmlEscaping); const "
+"rawNgettext = gettext.$ngettext; gettext.$ngettext = (msgid, plural, n, "
+"parameters, disableHtmlEscaping = true) => rawNgettext(msgid, plural, n, "
+"parameters, disableHtmlEscaping); const rawNpgettext = gettext.$npgettext; "
+"gettext.$npgettext = (context, msgid, plural, n, parameters, "
+"disableHtmlEscaping = true) => rawNpgettext(context, msgid, plural, n, "
+"parameters, disableHtmlEscaping); export default gettext;"
 
 #: pages/public/terms_of_service.vue
 msgid "© 2015-Present, inCruises, All Rights Reserved."
@@ -8264,10 +8288,8 @@ msgid "Cash Pickup Location"
 msgstr "Local da retirada de dinheiro"
 
 #: components/payout/redesign/inpay-withdraw/add-recipient-flow/transfer-type-details.vue
-#, fuzzy
-#| msgid "Cash Pickup Location"
 msgid "Cash Pickup Partner Locations."
-msgstr "Local da retirada de dinheiro"
+msgstr "Pontos de Retirada de Dinheiro dos Parceiros."
 
 #: components/settings_page/profile.vue
 msgid "Català"
@@ -14932,10 +14954,8 @@ msgid "Failed to load members"
 msgstr "Falha ao carregar membros"
 
 #: components/payout/redesign/inpay-withdraw/add-recipient-flow/cash-pickup-flow/pickup-details.vue
-#, fuzzy
-#| msgid "Failed to load bank details. Please try again."
 msgid "Failed to load pickup details. Please try again."
-msgstr "Não foi possível carregar os dados bancários. Tente novamente."
+msgstr "Não foi possível carregar os detalhes da retirada. Tente novamente."
 
 #: pages/admin_report_view.vue
 msgid "Failed to load preview."
@@ -28282,10 +28302,8 @@ msgid "Pickup details"
 msgstr "Detalhes da retirada"
 
 #: components/payout/redesign/inpay-withdraw/add-recipient-flow/cash-pickup-flow/pickup-details.vue
-#, fuzzy
-#| msgid "Pickup details"
 msgid "Pickup Details"
-msgstr "Detalhes da retirada"
+msgstr "Detalhes da Retirada"
 
 #: pages/tours_confirmation.vue components/tours/details/available-plans.vue
 msgid "pickup included"
@@ -39735,6 +39753,8 @@ msgid ""
 "To see a full list of supported cash pickup partner locations please refer "
 "to this document: "
 msgstr ""
+"Para ver a lista completa dos pontos de parceiros que oferecem o serviço de "
+"retirada de dinheiro, consulte este documento: "
 
 #: components/payout/legacy/brightwell/transfer-details.vue
 msgid ""
@@ -43496,6 +43516,11 @@ msgid ""
 "recipient won't be saved for future transfers. Once initiated, this "
 "transaction can not be canceled."
 msgstr ""
+"Ao selecionar “Retirada em Dinheiro”, insira o valor e os dados do "
+"destinatário diretamente na tela de transferência. Como se trata de uma "
+"transação única em dinheiro, o destinatário não será salvo para "
+"transferências futuras. Uma vez iniciada, essa transação não pode ser "
+"cancelada."
 
 #: components/payout/redesign/inpay-withdraw/add-recipient-flow/transfer-details.vue
 #: components/payout/redesign/inpay-withdraw/add-recipient-flow/transfer-type-details.vue
@@ -61816,13 +61841,11 @@ msgstr ""
 "para ir para outro terreno e construir seus sonhos?!"
 
 #: vue/plugins/gettext.spec.js
-#, fuzzy
-#| msgid "Course: %{ name }"
 msgctxt "context"
 msgid "%{ name }"
 msgid_plural "%{ name }"
-msgstr[0] "Curso: %{ name }"
-msgstr[1] "Curso: %{ name }"
+msgstr[0] "%{ name }"
+msgstr[1] "%{ name }"
 
 #~ msgid "Cash pickup location step"
 #~ msgstr "Etapa de escolha do local de retirada de dinheiro"
