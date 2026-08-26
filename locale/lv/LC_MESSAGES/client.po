@@ -420,7 +420,7 @@ msgstr "(Saistīt ar maksājumu līguma lapu)"
 msgid "(Multiplier pending Builder's Base Payout)"
 msgstr "Gaidoša Lietotāju Bāzes Reizinātāja Iamaksa"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "(One time payment)"
 msgstr "(Vienreizējs maksājums)"
 
@@ -445,7 +445,7 @@ msgstr ""
 "(iepriekšējā aizpildīšana nākamajā ekrānā) un apstipriniet, ka tās atbilst "
 "atrastajam piedāvājumam."
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "(Renewal every 6 months)"
 msgstr "(Atjaunošana pec katriem sešiem mēnešiem)"
 
@@ -535,7 +535,7 @@ msgstr "{{ bankField.placeholderTeksts }}"
 msgid "{{ box.box }}"
 msgstr "{{ box.box }}"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "{{ content }}"
 msgstr "{{ content }}"
 
@@ -816,6 +816,12 @@ msgstr "/Nav biedrs"
 msgid "/ per passenger"
 msgstr "/ pzr pasažieri"
 
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "month"
+msgid "/month"
+msgstr "mēnesis"
+
 #: components/upgrade/modals/upgrade-plan-detail.vue
 msgid "/Month"
 msgstr "/Mēnesis"
@@ -944,6 +950,12 @@ msgstr "%{Bookings} Reaervācijas"
 #: components/gls_winners_hub/image_banner.vue
 msgid "%{competitionName} Winner — Welcome to the Summit!"
 msgstr "%{competitionName} Uzvarētāj — Esiet Sveicināti Samitā!"
+
+#: vue/components/upgrade/plan-catalog.js
+#, fuzzy
+#| msgid "2 annual INsider Pricing Bookings"
+msgid "%{count} annual INsider Pricing Bookings"
+msgstr "2 gadskārtējās Insider Pricing Rezervācijas"
 
 #: components/reports/download_certificates_modal.vue
 msgid "%{count} certificates downloaded successfully."
@@ -1077,6 +1089,16 @@ msgstr "%{OutOfPocket} skaidrā nauda"
 msgid "%{plan} Activations"
 msgstr "%{plan} Aktivizācijas"
 
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "First Month"
+msgid "%{plan} First Month"
+msgstr "Pirmais mēnesis"
+
+#: components/upgrade/tiles/summary-card/content.vue
+msgid "%{plan} Monthly Payment"
+msgstr ""
+
 #: components/partner_cruise_contest/partner_cruise_leader_board.vue
 msgid "%{points} Points"
 msgstr "%{points} Punkti"
@@ -1209,6 +1231,18 @@ msgstr "+ Pievieno Atļaujas"
 #: layouts/AdminSupportLayout.vue
 msgid "+ New"
 msgstr "+ Jauns"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "Premium Activation Payment"
+msgid "+$%{amount} (One Time Activation Payment)"
+msgstr "Premium Aktivizācjas maksājums"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "(Renewal every 6 months)"
+msgid "+$95 (every 6 months)"
+msgstr "(Atjaunošana pec katriem sešiem mēnešiem)"
 
 #: components/tgc_content_2026/rules-section.vue
 msgid "+1 Point/$10 USD of paid volume"
@@ -1946,6 +1980,12 @@ msgstr ""
 "<strong>THE Global Convention</strong> ir atvērta VISIEM patreizējiem un "
 "topošajiem inCruises Biedriem un Patneriem visā pasaulē."
 
+#: components/upgrade/redesign/index.vue
+msgid ""
+"<strong>This is your final Premium upgrade.</strong> After this, you won't "
+"be able to downgrade to Classic."
+msgstr ""
+
 #: pages/public/testimonials.vue
 msgid ""
 "<strong>TRANSFORMING LIVES.</strong> <br/><br/>This has been a TOTAL "
@@ -1988,6 +2028,27 @@ msgstr ""
 "iepazinos ar kluba dibinātāju, kura misija ir padarīt pasauli labāku vietu "
 "mums visiem.<br/><br/> Tagad mana misija ir parādīt citiem, ka arī viņi spēj "
 "sevi piepildīt, ceļot un baudīt dzīvi. Arī jūs varat gūt labumu."
+
+#: components/settings_page/membership-info.vue
+msgid ""
+"<strong>You have one or more prepaid invoices on your account.</strong> "
+"Downgrading is paused until they've been processed. Once they clear, you'll "
+"be able to downgrade right away."
+msgstr ""
+
+#: components/settings_page/membership-info.vue
+msgid ""
+"<strong>Your account is under compliance review.</strong> Downgrading is "
+"paused until the review is complete. Once it's cleared, you'll be able to "
+"downgrade right away."
+msgstr ""
+
+#: components/upgrade/redesign/index.vue
+msgid ""
+"<strong>Your account is under compliance review.</strong> Upgrading is "
+"paused until the review is complete. Once it's cleared, you'll be able to "
+"upgrade right away."
+msgstr ""
 
 #: pages/elevate.vue
 msgid ""
@@ -2147,11 +2208,13 @@ msgstr ""
 "1.8 2.5 2.5 2.5M21 7.5c-.491.506-1.8 2.5-2.5 2.5m0 0V2\"/> </g> </svg> </"
 "template> <span>Exportēt</span>"
 
-#: pages/upgrade.vue components/recurring/rpm-onboarding-invoices.vue
+#: components/recurring/rpm-onboarding-invoices.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "$%{amount} USD charged every six months (next charge: %{date})."
 msgstr "$%{amount} USD maksa ik pēc sešiem mēnešiem (next charge: %{date})."
 
-#: pages/upgrade.vue components/recurring/rpm-onboarding-invoices.vue
+#: components/recurring/rpm-onboarding-invoices.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "$%{amount} USD monthly (next charge: %{date})."
 msgstr "$%{amount} USD katrā mēnesī (next charge: %{date})."
 
@@ -2414,7 +2477,8 @@ msgstr "1-mā Globālā Konvencija"
 msgid "1st Level"
 msgstr "1. Līmenis"
 
-#: pages/upgrade.vue components/settings_page/membership-info.vue
+#: components/settings_page/membership-info.vue
+#: components/upgrade/legacy/index.vue
 msgid "2 annual INsider Pricing Bookings"
 msgstr "2 gadskārtējās Insider Pricing Rezervācijas"
 
@@ -2670,7 +2734,8 @@ msgstr "41–50"
 msgid "4th"
 msgstr "4"
 
-#: pages/upgrade.vue components/settings_page/membership-info.vue
+#: components/settings_page/membership-info.vue
+#: components/upgrade/legacy/index.vue
 msgid "5 annual INsider Pricing Bookings"
 msgstr "5 gadskārtējās Insider Pricing Rezervācijas"
 
@@ -3190,10 +3255,11 @@ msgstr ""
 
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "Access to Thousands of Global Cruise Itineraries"
 msgstr "Piekļuve tūkstošiem Globālu Kruīzau Maršrutiem"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Access to world-class marketing tools"
 msgstr "Piekļuve pasaules- līmeņa mārketinga rīkiem"
 
@@ -3436,7 +3502,7 @@ msgstr "Akvizētie Partneri"
 msgid "Activation"
 msgstr "Aktivizācija"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "Activation (One time payment)"
 msgstr "Aktivizācija (vienreizējs maksājums)"
 
@@ -3459,11 +3525,11 @@ msgstr "Aktivizācijas Bonusi) Ikdienas un Ikmēneša)"
 msgid "Activation Date"
 msgstr "Aktivizācijas datums"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Activation Fee"
 msgstr "Aktivizācijas Maksa"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "Activation Fee (Renewal every 6 months)"
 msgstr "Aktivizācijas maksa(Atjaunošana pec katriem sešiem mēnešiem)"
 
@@ -4140,6 +4206,7 @@ msgstr "Dienas Kārtība"
 #: pages/receipts.vue components/recurring/rpm-onboarding-invoices.vue
 #: components/recurring/fallback_agreement.vue
 #: components/compensation/account_status.vue
+#: components/upgrade/redesign/index.vue
 msgid "Agree"
 msgstr "Piekrītu"
 
@@ -4366,6 +4433,12 @@ msgstr "Visi Maksājumi"
 msgid "All plans include"
 msgstr "Visi plāni ietver"
 
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "All plans include"
+msgid "All Plans Include:"
+msgstr "Visi plāni ietver"
+
 #: components/compensation/fast_start.vue
 #: components/compensation/team_leadership_bonus/cards_breakdown.vue
 msgid ""
@@ -4380,7 +4453,7 @@ msgid "All purchases are backed by our 14-day no risk money back guarantee."
 msgstr ""
 "Visus pirkumus atbalsta mūsu 14 dienas bez riska naudas atpakaļgarantijas."
 
-#: pages/checkout.vue
+#: pages/checkout.vue components/upgrade/redesign/upgrade-main-card.vue
 msgid "All purchases are subject to our"
 msgstr "Visi pirkumi ir pakļauti mūsu"
 
@@ -4506,9 +4579,12 @@ msgstr "Visas lietotāju atļaujas"
 msgid "All Verified Identities"
 msgstr "Visas Pārbaudītās Identitātes"
 
-#: components/upgrade/tiles/checkout-tile.vue
-msgid "All your payments are fully guaranteed/"
-msgstr "Visi jūsu maksājumi ir pilnībā garantēti/"
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "All your payments are fully guaranteed/protected through Repayd."
+msgid "All your payments are fully guaranteed/protected through repayd."
+msgstr ""
+"Visi jūsu maksājumi tiek pilnībā garantēti/aizsargāti, izmantojot Repayd."
 
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
@@ -6277,6 +6353,12 @@ msgstr "Atpakaļ"
 msgid "Back to Login"
 msgstr "Atpakaļ uz pieteikšanos"
 
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "Return to Welcome Page"
+msgid "Back to Welcome Page"
+msgstr "Atgriezties sākumlapā"
+
 #: components/compensation/team.vue
 msgid "Back to your Directs"
 msgstr "Atpakaļ pie saviem tiešajiem"
@@ -6289,6 +6371,14 @@ msgstr "Atpakaļ pie jūsu jautājumiem/lūgumiem"
 #: components/recurring/add-recurring.vue
 msgid "BACK UP"
 msgstr "Saņemies"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid ""
+#| "Backed by award-winning tools, training, and a passionate global "
+#| "community."
+msgid "Backed by award-winning tools and a passionate global community."
+msgstr "Pamatā ir godalgoti rīki, apmācība un varoša globālā sabiedrība."
 
 #: components/settings_page/membership-info.vue
 msgid ""
@@ -6516,7 +6606,9 @@ msgstr ""
 "Kļūstiet par inCruises ģimenes daļu un baudiet nepārspējamu ceļojuma vērtību "
 "un iespējas."
 
-#: pages/upgrade.vue pages/welcome.vue pages/public/partnership.vue
+#: pages/welcome.vue pages/public/partnership.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
+#: components/upgrade/legacy/index.vue
 msgid "Become a Partner"
 msgstr "Kļūsti par Partneri"
 
@@ -7988,6 +8080,7 @@ msgstr "Kanādas Dolārs (CAD)"
 #: components/hotels/GuestsDropdown.vue
 #: components/onboarding/name-birthday-avatar-step.vue
 #: components/cruises_booking_old/confirmation-step.vue
+#: components/upgrade/redesign/index.vue
 #: components/settings_page/change-password-modal/change-password-modal-shell.vue
 #: components/settings_page/display-name-modal/modal-footer.vue
 #: components/admin_operations/modals/kyc_flagged_note_modal.vue
@@ -8845,7 +8938,7 @@ msgstr "Classic Biedru Dalība"
 msgid "CLASSIC Partner-Member"
 msgstr "CLASSIC Partneris - Biedrs"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Classic Plan"
 msgstr "Classic Plāns"
 
@@ -9043,6 +9136,7 @@ msgstr "Klienta konfigurācija"
 #: components/recurring/cancel_recurring_confirmation_modal.vue
 #: components/global_convention/event_info.vue
 #: components/reservations/details-modal.vue
+#: components/settings_page/membership-info.vue
 #: components/data_table/search-widget.vue
 #: components/price_match_guarantee/cruises.vue
 #: components/compensation/info_modal.vue
@@ -9058,6 +9152,12 @@ msgstr "Klienta konfigurācija"
 #: components/payout/redesign/inpay-withdraw/inpay-modal-shell.vue
 msgid "Close"
 msgstr "Aizver"
+
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "Return to Welcome Page"
+msgid "Close and return to Welcome Page"
+msgstr "Atgriezties sākumlapā"
 
 #: components/upgrade/modals/upgrade-plan-detail.vue
 #: components/tours/details/available-plans.vue
@@ -10014,6 +10114,8 @@ msgid "Continue Payment Below"
 msgstr "Turpini maksājumu zemāk"
 
 #: pages/tours_confirmation.vue
+#: components/upgrade/tiles/summary-card/content.vue
+#: components/upgrade/tiles/summary-card/index.vue
 msgid "Continue to checkout"
 msgstr "Turpini izrakstīšanos"
 
@@ -11439,6 +11541,7 @@ msgstr "Datumi"
 #: components/receipts/booking_receipt.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "Day"
 msgstr "Diena"
 
@@ -12525,6 +12628,10 @@ msgstr "Tikai Pazemināšana"
 msgid "Downgrade to Classic"
 msgstr "Pazemināšana uz Classic"
 
+#: components/settings_page/membership-info.vue
+msgid "Downgrade unavailable right now"
+msgstr ""
+
 #: pages/public/pricing.vue pages/public/membership.vue
 msgid "Downgradeable"
 msgstr "Pazemināms"
@@ -12950,24 +13057,25 @@ msgstr ""
 "<strong>“Aktivizē”</strong> Premium Biedru. <br /><br />Biedru un Partneru-"
 "Biedru Aktivizācija kompensēšanas nolūkos ir vienāda.<br />"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn 100 Reward Points for the $100 activation payment"
 msgstr "Pelni 100 Balvu punktus par $100 aktivizācijas maksājumu"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn 200 Reward Points for each on-time $100 membership payment"
 msgstr ""
 "pelni 200 Balvu Punktus par katru $ 100 sav-laicīgu biedra dalības maksājumu"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn 250 Reward Points for the $250 activation payment"
 msgstr "pelni 250 Balvu puntus par $250 aktivizācijas maksājumu"
 
-#: pages/upgrade.vue components/settings_page/membership-info.vue
+#: components/settings_page/membership-info.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn 50 Reward Points for each $50 membership payment"
 msgstr "Pelni 50 balvu Punktus par katru $50 biedru dalības maksājumu"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn 500 Reward Points for each on-time $250 membership payment"
 msgstr ""
 "Pelni 500 Balvu punktus par katru savlaicīgu $250 biedru dalības maksājumu"
@@ -13100,7 +13208,7 @@ msgstr ""
 msgid "Earn Cash Rewards"
 msgstr "Pelni Naudas Balvas"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn compensation by referring others to InCruises"
 msgstr "Pelni kompensāciju par citu uzaicināšanu uz inCruises"
 
@@ -13159,6 +13267,12 @@ msgstr "Pelni Vienādus Balvu Punktus par sav-laicīgu Ikmēneša Maksājumu"
 #: pages/public/index.vue
 msgid "Earn from sharing the Membership"
 msgstr "Pelni par Biedru dalības padalīšanos"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "Earn compensation by referring others to InCruises"
+msgid "Earn INcome and INcentives by referring others to inCruises."
+msgstr "Pelni kompensāciju par citu uzaicināšanu uz inCruises"
 
 #: pages/public/partnership.vue
 msgid "Earn INcome when your referrals become paying Members."
@@ -14339,7 +14453,8 @@ msgstr "Pasākuma Balvas"
 msgid "Event Type"
 msgstr "Pasākuma Veids"
 
-#: pages/upgrade.vue components/settings_page/membership-info.vue
+#: components/settings_page/membership-info.vue
+#: components/upgrade/legacy/index.vue
 msgid "Every 6 Months"
 msgstr "Ik pēc 6 mēnešiem"
 
@@ -14501,6 +14616,7 @@ msgstr "Ekskluzīva piekļuve Vienreizējai Ceļojumu Opciju Kolekcijai"
 
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "Exclusive Deals on Luxury Hotels and Resorts"
 msgstr "Ekskluzīvi darījumi par luksusa viesnīcām un kūrortiem"
 
@@ -15435,6 +15551,12 @@ msgstr "Galīgā maksājuma izpildes datums"
 msgid "Final Payment for this booking."
 msgstr "Pēdējais maksājums šai rezervācijai."
 
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "inPays Premium User"
+msgid "Final Premium Upgrade"
+msgstr "inPays Premium Lietotājs"
+
 #: components/partner_cruise_contest/tenth-anniversary-podium.vue
 msgid "Final Results Coming Soon!"
 msgstr "Drīz būs Pēdējie rezultāti!"
@@ -15809,11 +15931,11 @@ msgstr "Sīkākai inormācijai skatiet mūsu"
 msgid "For more details please review our "
 msgstr "Sīkākai informācijai skatiet mūsu "
 
-#: pages/checkout.vue
+#: pages/checkout.vue components/upgrade/redesign/upgrade-main-card.vue
 msgid "For more details, see our"
 msgstr "Sīkākai inormācijai skati mūsu"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "For more details, see our <a class=\"text-primary-500 hover:text-"
 "primary-500\" target=\"_blank\" href=\"%{Docs}\">Membership Agreement</a>."
@@ -15821,7 +15943,7 @@ msgstr ""
 "Sīkākai informācijai skatiet mūsu <a class=\"text-primary-500 hover:text-"
 "primary-500\" target=\"_blank\" href=\"%{Docs}\">Biedru Dalības Līgumu</a>."
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "For more details, see our <a class=\"text-primary-500 hover:text-"
 "primary-500\" target=\"_blank\" href=\"%{Docs}\">Partnership Agreement</a>."
@@ -16699,7 +16821,7 @@ msgstr "Vai jums jau ir konts?"
 msgid "Got an invitation?"
 msgstr "Vai jums ir uzaicinājums?"
 
-#: components/public/ReferrerBubble.vue
+#: components/public/ReferrerBubble.vue components/upgrade/redesign/index.vue
 msgid "Got it"
 msgstr "Sapratu to"
 
@@ -19071,6 +19193,12 @@ msgstr ""
 "Ja vēlaties izmantotBalvu Punktus, tie ir jāpievieno šajā momentā, vēlāk jūs "
 "nevarēsit Balvu Punktus pievienot."
 
+#: components/upgrade/tiles/summary-card/content.vue
+msgid ""
+"If you're not completely satisfied, you can receive a full refund within 14 "
+"days of any payment."
+msgstr ""
+
 #: components/tgc_content_2026/rules-section.vue
 msgid ""
 "If you've already earned a cash reward, set your sights on another one! "
@@ -21129,7 +21257,7 @@ msgstr ""
 msgid "IP Address"
 msgstr "IP Adrese"
 
-#: pages/checkout.vue
+#: pages/checkout.vue components/upgrade/redesign/upgrade-main-card.vue
 msgid "IP Address:"
 msgstr "IP Adrese:"
 
@@ -22403,7 +22531,7 @@ msgid ""
 msgstr ""
 "Saraksta dalībnieku skaits QBI rādītājam ar atlikušajām dienām un statusu"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Live and recorded training sessions"
 msgstr "Tiešraides un ierakstītas apmācības"
 
@@ -22643,6 +22771,12 @@ msgstr "Notiek laika grafika ielāde..."
 msgid "Loading transfer details..."
 msgstr "Notiek pārsūtīšanas informācijas ielāde..."
 
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Loading support page..."
+msgid "Loading upgrade page..."
+msgstr "Notiek Atbalsta lapas ielāde..."
+
 #: components/user/wallet.vue
 msgid "Loading Wallet..."
 msgstr "Notiek Maciņa ielāde..."
@@ -22684,7 +22818,7 @@ msgstr "Notiek jūsu grupas ielāde..."
 msgid "Loading your verification settings..."
 msgstr "Notiek pārbaudes iestatījumu ielāde..."
 
-#: pages/agreements_layout.vue pages/upgrade.vue pages/impossible_five.vue
+#: pages/agreements_layout.vue pages/impossible_five.vue
 #: pages/additional_info.vue pages/info_center.vue
 #: layouts/AdditionalInfoRouteLayout.vue pages/public/contact.vue
 #: components/recurring/remove_payment_method_confirmation_modal.vue
@@ -22693,6 +22827,7 @@ msgstr "Notiek pārbaudes iestatījumu ielāde..."
 #: components/settings_page/business-assistant.vue
 #: components/agreements/partner_code_of_conduct_agreement_redesign.vue
 #: components/user/departments.vue components/public/blog_category_search.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "Loading..."
 msgstr "Notiek ielāde..."
 
@@ -23644,6 +23779,7 @@ msgstr "Biedru dalības Aktivizacija"
 #: pages/reservations.vue pages/reward_points.vue
 #: components/recurring/cancel_recurring_confirmation_modal.vue
 #: components/recurring/rpm-onboarding-invoices.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
 msgid "Membership Agreement"
 msgstr "Biedru Dalības Līgums"
 
@@ -23732,6 +23868,12 @@ msgstr "Vadības info"
 msgid "Membership Invoice"
 msgstr "Biedru Dalības Rēķins"
 
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "Membership Plan Status"
+msgid "Membership Options & Partner Status"
+msgstr "Biedru Dalības Plāna Statuss"
+
 #: pages/public/payment_terms.vue
 msgid ""
 "Membership payments and Partner Program Activation fees: Membership payments "
@@ -23759,7 +23901,7 @@ msgstr "Biedru Dalības Plāna ID"
 msgid "Membership Plan Status"
 msgstr "Biedru Dalības Plāna Statuss"
 
-#: pages/upgrade.vue components/user/basic-info.vue
+#: components/user/basic-info.vue components/upgrade/legacy/index.vue
 msgid "Membership Plans"
 msgstr "Biedru dalības Plāni"
 
@@ -24037,6 +24179,12 @@ msgstr "Detalizētas informācijas modificēšana"
 msgid "Momentum Cup"
 msgstr "Momentum Cup (izaugsmes Kauss)"
 
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "Price Match Guarantee"
+msgid "Money-Back Guarantee"
+msgstr "Cenu Atbilstības Garantija"
+
 #: pages/all_in.vue pages/webinar_recordings.vue pages/invite.vue
 #: pages/communications.vue pages/facebook_marketing.vue
 #: pages/referral_links_old.vue
@@ -24159,7 +24307,8 @@ msgstr "Ikmēneša Punkti"
 msgid "Monthly Premium Activations"
 msgstr "Ikmēneša Premium Aktivizācijas"
 
-#: pages/connect.vue pages/upgrade.vue vue/tools/invoiceCheckout.js
+#: pages/connect.vue vue/tools/invoiceCheckout.js
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "Monthly price"
 msgstr "Ikmēneša Cena"
 
@@ -25332,6 +25481,7 @@ msgstr "Pieteikšanās aktivitāte nav atrasta."
 
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "No long-term contracts; cancel anytime"
 msgstr "Nav ilgtermiņa līgumu; atcelt jebkurā laikā"
 
@@ -25490,7 +25640,13 @@ msgid "No tours found for the selected destination and date range"
 msgstr ""
 "Atlasītajam galamērķim un datumu diapazonam nav atrasta neviena ekskursija"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "No Upgrades Available"
+msgid "No upgrades available"
+msgstr "Nav pieejama apgreidošana"
+
+#: components/upgrade/legacy/index.vue
 msgid "No Upgrades Available"
 msgstr "Nav pieejama apgreidošana"
 
@@ -26121,6 +26277,13 @@ msgstr "OFICIĀLAIS NEATKARĪGAIS PARTNERIS"
 msgid "Official Team Partners"
 msgstr "Oficiālie komandas partneri"
 
+#: components/settings_page/membership-info.vue
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "k"
+msgid "Ok"
+msgstr "k"
+
 #: components/install-pwa-banner.vue
 msgid "Okay"
 msgstr "Okei"
@@ -26313,9 +26476,15 @@ msgstr "Vienam vai vairākiem Biedriem ir aktīvi ceļojumi vai gaidošs rēķin
 msgid "One Shared Commitment"
 msgstr "Viena kopīga apņemšanās"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "One time payment"
 msgstr "Vienreizējs maksājums"
+
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "Premium Activation Payment"
+msgid "One-Time %{plan} Activation Payment"
+msgstr "Premium Aktivizācjas maksājums"
 
 #: components/tgc_content_2026/rules-section.vue
 msgid "one-time point bonus"
@@ -27308,6 +27477,12 @@ msgstr ""
 msgid "Partner Refund And Compress"
 msgstr "Partnera atmaksa"
 
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "Renewal every 6 months"
+msgid "Partner Renewal every 6 Months"
+msgstr "Atjaunošana ik pēc 6 mēnešiem"
+
 #: components/reports/quick_reports.vue
 msgid "Partner Renewing Next Month"
 msgstr "Partneri,kuri atjaunojas nākošajā mēnesī"
@@ -27467,12 +27642,19 @@ msgstr "Partneriem ar Brīvo Partnerību"
 msgid "Partners with New Ranks"
 msgstr "Partneri ar Jauniem Rangiem"
 
-#: Footer.vue pages/upgrade.vue pages/inviter.vue pages/referral_links.vue
-#: components/public/Header.vue components/public/webflow/Footer.vue
+#: Footer.vue pages/inviter.vue pages/referral_links.vue
+#: components/public/Header.vue components/upgrade/legacy/index.vue
+#: components/public/webflow/Footer.vue
 msgid "Partnership"
 msgstr "Partnerība"
 
-#: pages/checkout.vue
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "Membership Activation"
+msgid "Partnership Activation"
+msgstr "Biedru dalības Aktivizacija"
+
+#: pages/checkout.vue components/upgrade/redesign/upgrade-main-card.vue
 msgid "Partnership Agreement"
 msgstr "Partnerības Līgums"
 
@@ -27492,9 +27674,11 @@ msgstr "Partnerības Rēķins"
 msgid "Partnership Not Renewed"
 msgstr "Partneri, kuri nav Atjaunoti"
 
-#: pages/upgrade.vue pages/public/faq.vue pages/public/testimonials.vue
+#: pages/public/faq.vue pages/public/testimonials.vue
 #: components/settings_page/membership-info.vue
 #: components/upgrade/tiles/checkout-tile.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
+#: components/upgrade/legacy/index.vue
 msgid "Partnership Program"
 msgstr "Partnerības Programma"
 
@@ -27717,7 +27901,8 @@ msgid "Pay Here"
 msgstr "Maksā šeit"
 
 #: pages/welcome.vue pages/reward_points.vue pages/invoices.vue
-#: components/welcome/profile-card.vue
+#: components/settings_page/membership-info.vue
+#: components/welcome/profile-card.vue components/upgrade/redesign/index.vue
 msgid "Pay Invoice"
 msgstr "Nomaksāt Rēķinu"
 
@@ -27823,6 +28008,7 @@ msgstr "maksājuma vienošanās"
 #: components/recurring/set_up_recurring_footer.vue
 #: components/recurring/fallback_agreement.vue
 #: components/recurring/set_up_recurring_modal.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
 msgid "Payment Agreement"
 msgstr "Apmaksas vienošanos"
 
@@ -28348,6 +28534,10 @@ msgstr "Vietas 56 - 110"
 #: pages/tenth_anniversary_cruises.vue
 msgid "Places 91-200"
 msgstr "Vietas 91 - 200"
+
+#: vue/components/upgrade/plan-catalog.js
+msgid "plan"
+msgstr ""
 
 #: pages/compensation/member_activations.vue
 msgid "Plan"
@@ -29257,7 +29447,7 @@ msgstr "Lūdzu atlasiet apmaksāto mēnesi."
 msgid "Please select a payment method"
 msgstr "Lūdzu atlasiet maksājuma veidu"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "Please select a plan to continue."
 msgstr "Lai turpinātu,lūdzu norādiet plānu."
 
@@ -29857,12 +30047,12 @@ msgstr ""
 "Premier Sūtņu valdes Direktoru biedri pelna <strong>$155,000</strong> USD "
 "ikmēneša Līdera Bonusu!"
 
-#: pages/upgrade.vue pages/cruises.vue components/feature_card.vue
+#: pages/cruises.vue components/feature_card.vue
 #: pages/compensation/weekly_matching_bonus.vue pages/public/pricing.vue
 #: components/compensation/weekly_matching_bonus_card.vue
 #: components/compensation/qbi_members_table.vue
 #: components/contacts/contact-edit-modal.vue
-#: components/welcome/members-modal.vue
+#: components/welcome/members-modal.vue components/upgrade/legacy/index.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 #: components/compensation/member_activations/daily_activation_bonus_card.vue
 msgid "Premium"
@@ -30214,6 +30404,7 @@ msgstr ""
 
 #: pages/public/legal.vue pages/public/privacy_policy.vue
 #: components/public/FooterLinks.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
 #: components/payout/redesign/sign-partner-agreement-modal.vue
 msgid "Privacy Policy"
 msgstr "Konfidencialitātes politika"
@@ -30510,10 +30701,6 @@ msgstr "Aizsargātie Balvu Punkti"
 #: components/cruises_booking_old/protection-section.vue
 msgid "Protected Rewards Points:"
 msgstr "Aizsargātie Balvu Punktus:"
-
-#: components/upgrade/tiles/checkout-tile.vue
-msgid "protected through Repayd."
-msgstr "aizsargāti, izmantojot Repayd."
 
 #: pages/menu_page.vue
 msgid "Protection"
@@ -31243,6 +31430,24 @@ msgstr "Kvīts ir veiksmīgi pievirnota"
 msgid "Receipts"
 msgstr "Kvītis"
 
+#: vue/components/upgrade/plan-catalog.js
+#, fuzzy
+#| msgid "Receive 350 Reward Points at Activation"
+msgid "Receive %{points} Reward Points at Activation"
+msgstr "Saņem 350 Reward Points Reģistrējoties"
+
+#: vue/components/upgrade/plan-catalog.js
+#, fuzzy
+#| msgid ""
+#| "Receive 200 Reward Points for each on-time $100 monthly Membership "
+#| "payment."
+msgid ""
+"Receive %{points} Reward Points with each on-time $%{amount} monthly "
+"Membership payment"
+msgstr ""
+"Saņem 200 Reward Points par katru $ 100 sav-laicīgu mēneša biedra dalības "
+"maksājumu."
+
 #: components/settings_page/membership-info.vue
 msgid ""
 "Receive 200 Reward Points for each on-time $100 monthly Membership payment."
@@ -31917,7 +32122,7 @@ msgstr "Pārdēvēt adresātu"
 msgid "Rename recipient account"
 msgstr "Pārdēvēt adresāta kontu"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Renewal every 6 months"
 msgstr "Atjaunošana ik pēc 6 mēnešiem"
 
@@ -32349,7 +32554,7 @@ msgstr "Atgriezties pieteikšanās programmā"
 msgid "Return to search"
 msgstr "Atgriezties pie meklēšanas"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Return to Welcome Page"
 msgstr "Atgriezties sākumlapā"
 
@@ -33500,7 +33705,7 @@ msgstr "Izvēlies štatu/valsti vai apgabalu"
 msgid "Select state/province/region"
 msgstr "Izvēlies valsti /provinci/reģionu"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Select Subscription"
 msgstr "Atlasiet Abonēšanu"
 
@@ -33560,6 +33765,12 @@ msgstr "Atlasiet Savu Kajīti"
 #: pages/cruises_booking.vue
 msgid "Select your date of birth"
 msgstr "Izvēlieties savu dzimšanas datumu"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "Membership Plan"
+msgid "Select Your Membership Plan"
+msgstr "Biedru dalības Plāns"
 
 #: pages/cards.vue
 msgid "Select your name format:"
@@ -34650,6 +34861,7 @@ msgstr "Spāņu valodā runājošo globālie tirgi"
 
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "Special Access to Curated Local and Global Tours"
 msgstr "Īpaša piekļuve kurētām Vetējām un Globālām ekskursijām"
 
@@ -34851,12 +35063,12 @@ msgstr "Sākt Verifikāciju"
 msgid "Start:"
 msgstr "Sākt:"
 
-#: pages/upgrade.vue pages/cruises.vue components/feature_card.vue
+#: pages/cruises.vue components/feature_card.vue
 #: pages/compensation/weekly_matching_bonus.vue pages/public/pricing.vue
 #: components/compensation/weekly_matching_bonus_card.vue
 #: components/compensation/qbi_members_table.vue
 #: components/contacts/contact-edit-modal.vue
-#: components/welcome/members-modal.vue
+#: components/welcome/members-modal.vue components/upgrade/legacy/index.vue
 #: components/compensation/member_activations/daily_activation_bonus_card.vue
 msgid "Starter"
 msgstr "Starter"
@@ -35260,7 +35472,8 @@ msgstr "Suite (luksusa)"
 msgid "Suite of Marketing Tools"
 msgstr "Mārketinga Rīku Suite"
 
-#: pages/checkout.vue
+#: pages/checkout.vue components/upgrade/tiles/summary-card/content.vue
+#: components/upgrade/tiles/summary-card/index.vue
 msgid "Summary"
 msgstr "Kopsavilkums"
 
@@ -35846,6 +36059,7 @@ msgstr "TerminI un nosacījumi."
 
 #: pages/m3.vue pages/public/legal.vue pages/public/terms_of_service.vue
 #: components/public/FooterLinks.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
 #: components/payout/redesign/sign-partner-agreement-modal.vue
 msgid "Terms of Service"
 msgstr "Pakalpojumu nosacījumi"
@@ -37481,7 +37695,7 @@ msgstr "Šiem parametriem nav rezultātu."
 msgid "There are no tour recommendations right now. Please try again later."
 msgstr "Tūres rekomendāciju šobrīd nav. Lūdzu, vēlāk mēģiniet vēlreiz."
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "There are no upgrades available for your account at this time."
 msgstr "Patreiz nav iespējama jūsu konta apgreidošana."
 
@@ -37782,7 +37996,8 @@ msgid "There was an issue initializing your checkout. Please try again later."
 msgstr ""
 "Inicializējot izrakstīšanos, radās problēma. Lūdzu, vēlāk mēģiniet vēlreiz."
 
-#: pages/upgrade.vue pages/reward_points.vue pages/cruises_booking.vue
+#: pages/reward_points.vue pages/cruises_booking.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "There was an issue initializing your checkout. Please try again."
 msgstr "Inicializējot izrakstīšanos, radās problēma. Lūdzu, mēģiniet vēlreiz."
 
@@ -38124,7 +38339,7 @@ msgstr "Trešā Bērna Dzimšanas Datums"
 msgid "this"
 msgstr "šis"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "This $200 payment includes - a one-time $100 Activation Payment that results "
 "in 100  Reward Points and $100 first month's Membership Payment that results "
@@ -38144,7 +38359,7 @@ msgstr ""
 "dienām, iekļaujot tajā papildu telpas, līdzekļus un līdz 500 dalībniekiem "
 "vienlaikus."
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "This $50 payment includes - $50 first month's Membership Payment that "
 "results in 50  Reward Points."
@@ -38161,7 +38376,7 @@ msgstr ""
 "30 dienām, iekļaujot tajā papildu telpas, līdzekļus un līdz 1500 "
 "dalībniekiem vienlaikus."
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "This $500 payment includes - a one-time $250 Activation Payment that results "
 "in 250  Reward Points and $250 first month's Membership Payment that results "
@@ -38172,7 +38387,7 @@ msgstr ""
 "250 ASV dolāru pirmā mēneša Biedru Dalības maksājums, kura rezultātā tiek "
 "saņemti 500   Balvu Punkti."
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "This $95 payment Activates your Partner account for the initial 6 month "
 "period."
@@ -38198,9 +38413,13 @@ msgstr ""
 "procesā, šī darbība dzēsīs esošo verifikāciju."
 
 #: components/settings_page/membership-info.vue
+#, fuzzy
+#| msgid ""
+#| "This action will downgrade your account to Classic Membership. Are you "
+#| "sure you want to proceed? "
 msgid ""
-"This action will downgrade your account to Classic Membership. Are you sure "
-"you want to proceed? "
+"This action will downgrade your account to Classic Membership immediately. "
+"Are you sure you want to proceed?"
 msgstr ""
 "Veicot šo darbību, jūsu konts tiks samazināts līdz Clasic Biedru dalībai. "
 "Vai tiešām vēlaties turpināt? "
@@ -40078,6 +40297,7 @@ msgstr "Kopējais parāds Mēnesī"
 #: components/checkout/CurrencyStep.vue components/checkout/ProcessorWallet.vue
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "Total Due Now"
 msgstr "Kopējais parāds tagad"
 
@@ -41094,7 +41314,7 @@ msgstr ""
 msgid "Unlimited"
 msgstr "Bezlimita"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Unlimited email marketing system"
 msgstr "Neierobežota e-pasta mārketinga sistēma"
 
@@ -41102,10 +41322,12 @@ msgstr "Neierobežota e-pasta mārketinga sistēma"
 msgid "Unlimited INsider bookings/ year"
 msgstr "Bezlimita Insider Rezervācijas/gadā"
 
-#: pages/upgrade.vue components/upgrade-marketing-modal.vue
+#: components/upgrade-marketing-modal.vue
+#: vue/components/upgrade/plan-catalog.js
 #: components/cruises/upgrade_premium_drawer.vue
 #: components/settings_page/membership-info.vue
 #: components/hotels/upgrade_premium_drawer.vue
+#: components/upgrade/legacy/index.vue
 msgid "Unlimited INsider Pricing Bookings"
 msgstr "Bezlimita Insider Pricing Rezervācijas"
 
@@ -41133,6 +41355,10 @@ msgstr ""
 #: components/inchat/user_room_actions.vue
 msgid "Unlock Group"
 msgstr "Atbloķēt grupu"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+msgid "Unlock More Rewards"
+msgstr ""
 
 #: pages/inviter.vue
 msgid "Unlock special partner-only benefits and even free trips!"
@@ -41342,9 +41568,10 @@ msgstr ""
 msgid "Upgradable"
 msgstr "Jaunināms"
 
-#: pages/upgrade.vue pages/cruises.vue pages/info_center.vue
+#: pages/cruises.vue pages/info_center.vue
 #: components/navigation/add-upgrade-cta.vue
-#: components/welcome/profile-card.vue
+#: components/welcome/profile-card.vue components/upgrade/redesign/index.vue
+#: components/upgrade/legacy/index.vue
 msgid "Upgrade"
 msgstr "Apgreidojies"
 
@@ -41402,6 +41629,12 @@ msgstr "Apgreido uz PREMIUM"
 #: components/hotels/upgrade_premium_drawer.vue
 msgid "Upgrade Today"
 msgstr "Apgreido Šodien"
+
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "No Upgrades Available"
+msgid "Upgrade unavailable right now"
+msgstr "Nav pieejama apgreidošana"
 
 #: components/cruises_booking_old/protection-section.vue
 msgid ""
@@ -44742,7 +44975,7 @@ msgstr "Mēs tūlīt sāksim jūsu identitātes verifikācijas procesu."
 msgid "You are about to send a push notification to %{count} users."
 msgstr "Jūs gatavojaties nosūtīt paziņojumu %{count} lietotājiem."
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "You are already a partner."
 msgstr "Jūs jau esat partneris."
 
@@ -45293,6 +45526,27 @@ msgstr ""
 "Jums ir %{DueDate} dienas, līdz Balvu Punktu bilance pārvēršas par neaktīvu "
 "bilanci, ja līdz tam brīdim šis rēķins nav apmaksāts."
 
+#: components/settings_page/membership-info.vue
+msgid ""
+"You have a <strong>pending invoice on your account.</strong> Downgrading is "
+"paused until it's paid. Once your payment goes through, you'll be able to "
+"downgrade right away."
+msgstr ""
+
+#: components/upgrade/redesign/index.vue
+msgid ""
+"You have a <strong>pending invoice on your account.</strong> Upgrading is "
+"paused until it's paid. Once your payment goes through, you'll be able to "
+"upgrade right away."
+msgstr ""
+
+#: components/upgrade/redesign/index.vue
+msgid ""
+"You have a <strong>prepaid invoice on your account.</strong> Upgrading isn't "
+"available while you have a prepaid membership balance. You'll be able to "
+"upgrade once your prepaid balance has been applied."
+msgstr ""
+
 #: pages/invoices.vue
 msgid ""
 "You have a pending Bank Transfer. It can take several days for us to be "
@@ -45367,7 +45621,7 @@ msgstr ""
 "vēlaties atcelt gaidāmo pārdošanu, varat to darīt tālāk. Tas jādara tikai "
 "tad, ja gaidāmo pārdošanu vairs nepabeigsit jūs."
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid ""
 "You have a prepaid invoice, so you can't upgrade your membership at this "
 "time."
@@ -45613,7 +45867,7 @@ msgstr ""
 "ko inCruises var piešķirt vai atteikt pēc saviem ieskatiem. Lūdzu, "
 "sazinieties ar mums šādā adresē:"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "You may not become an InCruises member in your country of residence. For "
 "more information please contact support."
@@ -45621,7 +45875,7 @@ msgstr ""
 "Jūs nedrīkstat kļūt par InCruises Biedru savā mītnes zemē. Lai iegūtu "
 "papildinformāciju, sazinieties ar atbalsta dienestu."
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "You may not become an InCruises Partner in your country of residence. For "
 "more information please contact support."
@@ -45987,6 +46241,12 @@ msgstr "Jūs ar šiem potenciālajiem parametriem nesasniegsiet līmeni."
 #: pages/cruise_price_match_guarantee.vue
 msgid "You'll then have"
 msgstr "Tad jums būs"
+
+#: components/upgrade/redesign/index.vue
+msgid ""
+"You're already on our highest plan. There are no further upgrades available. "
+"Thanks for being with us."
+msgstr ""
 
 #: components/welcome/members-modal.vue
 msgid ""
@@ -61502,6 +61762,12 @@ msgstr[0] "Kurss: %{ name }"
 msgstr[1] "Kurss: %{ name }"
 msgstr[2] "Kurss: %{ name }"
 
+#~ msgid "All your payments are fully guaranteed/"
+#~ msgstr "Visi jūsu maksājumi ir pilnībā garantēti/"
+
+#~ msgid "protected through Repayd."
+#~ msgstr "aizsargāti, izmantojot Repayd."
+
 #~ msgid "$100 million in annual revenue"
 #~ msgstr "$100 miljoni gada ieņēmumos"
 
@@ -64716,9 +64982,6 @@ msgstr[2] "Kurss: %{ name }"
 
 #~ msgid "Free Registered"
 #~ msgstr "Brīvi Reģistrējušies"
-
-#~ msgid "k"
-#~ msgstr "k"
 
 #~ msgid "n"
 #~ msgstr "n"

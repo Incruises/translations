@@ -393,7 +393,7 @@ msgstr "（付款协议页面链接）"
 msgid "(Multiplier pending Builder's Base Payout)"
 msgstr "（待定基础建设者支付）"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "(One time payment)"
 msgstr "（一次性付款）"
 
@@ -416,7 +416,7 @@ msgid ""
 "(pre-filled on the next screen) and confirm they match the offer you found."
 msgstr "（将在下一个页面预填）并确认其与您找到的优惠相符。"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "(Renewal every 6 months)"
 msgstr "（每6个月续费）"
 
@@ -499,7 +499,7 @@ msgstr "{{ bankField.placeholderText }}"
 msgid "{{ box.box }}"
 msgstr "{{ box.box }}"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "{{ content }}"
 msgstr "{{ 内容 }}"
 
@@ -775,6 +775,12 @@ msgstr "/ 非会员"
 msgid "/ per passenger"
 msgstr "/每位乘客"
 
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "month"
+msgid "/month"
+msgstr "月"
+
 #: components/upgrade/modals/upgrade-plan-detail.vue
 msgid "/Month"
 msgstr "/月"
@@ -900,6 +906,12 @@ msgstr "%{Bookings} 预订"
 #: components/gls_winners_hub/image_banner.vue
 msgid "%{competitionName} Winner — Welcome to the Summit!"
 msgstr "%{competitionName} 获奖者——欢迎参加峰会！"
+
+#: vue/components/upgrade/plan-catalog.js
+#, fuzzy
+#| msgid "2 annual INsider Pricing Bookings"
+msgid "%{count} annual INsider Pricing Bookings"
+msgstr "每年2次INsider Pricing预订"
 
 #: components/reports/download_certificates_modal.vue
 msgid "%{count} certificates downloaded successfully."
@@ -1031,6 +1043,16 @@ msgstr "%{OutOfPocket}自付费用"
 msgid "%{plan} Activations"
 msgstr "%{plan}激活数"
 
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "First Month"
+msgid "%{plan} First Month"
+msgstr "第一个月"
+
+#: components/upgrade/tiles/summary-card/content.vue
+msgid "%{plan} Monthly Payment"
+msgstr ""
+
 #: components/partner_cruise_contest/partner_cruise_leader_board.vue
 msgid "%{points} Points"
 msgstr "%{points} 积分"
@@ -1157,6 +1179,18 @@ msgstr "+ 添加权限"
 #: layouts/AdminSupportLayout.vue
 msgid "+ New"
 msgstr "+ 新"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "Premium Activation Payment"
+msgid "+$%{amount} (One Time Activation Payment)"
+msgstr "Premium激活付款"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "(Renewal every 6 months)"
+msgid "+$95 (every 6 months)"
+msgstr "（每6个月续费）"
 
 #: components/tgc_content_2026/rules-section.vue
 msgid "+1 Point/$10 USD of paid volume"
@@ -1844,6 +1878,12 @@ msgstr ""
 "<strong>THE Global Convention</strong>面向全球所有现有和潜在的inCruises会员与"
 "合伙人开放。"
 
+#: components/upgrade/redesign/index.vue
+msgid ""
+"<strong>This is your final Premium upgrade.</strong> After this, you won't "
+"be able to downgrade to Classic."
+msgstr ""
+
 #: pages/public/testimonials.vue
 msgid ""
 "<strong>TRANSFORMING LIVES.</strong> <br/><br/>This has been a TOTAL "
@@ -1880,6 +1920,27 @@ msgstr ""
 "拜举办的专属俱乐部活动——有超过700位会员出席。在那里，我见到了俱乐部的创始人，"
 "他的使命是让这个世界变得对我们所有人来说更美好。<br/><br/>现在，我的使命是向"
 "他人展示：他们同样可以实现自我，去旅行，享受人生。你也可以从中受益。"
+
+#: components/settings_page/membership-info.vue
+msgid ""
+"<strong>You have one or more prepaid invoices on your account.</strong> "
+"Downgrading is paused until they've been processed. Once they clear, you'll "
+"be able to downgrade right away."
+msgstr ""
+
+#: components/settings_page/membership-info.vue
+msgid ""
+"<strong>Your account is under compliance review.</strong> Downgrading is "
+"paused until the review is complete. Once it's cleared, you'll be able to "
+"downgrade right away."
+msgstr ""
+
+#: components/upgrade/redesign/index.vue
+msgid ""
+"<strong>Your account is under compliance review.</strong> Upgrading is "
+"paused until the review is complete. Once it's cleared, you'll be able to "
+"upgrade right away."
+msgstr ""
 
 #: pages/elevate.vue
 msgid ""
@@ -2039,11 +2100,13 @@ msgstr ""
 "1.8 2.5 2.5 2.5M21 7.5c-.491.506-1.8 2.5-2.5 2.5m0 0V2\"/> </g> </svg> </"
 "template> <span>导出</span>"
 
-#: pages/upgrade.vue components/recurring/rpm-onboarding-invoices.vue
+#: components/recurring/rpm-onboarding-invoices.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "$%{amount} USD charged every six months (next charge: %{date})."
 msgstr "每六个月收取$%{amount}美元（下次收取日期：%{date}）。"
 
-#: pages/upgrade.vue components/recurring/rpm-onboarding-invoices.vue
+#: components/recurring/rpm-onboarding-invoices.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "$%{amount} USD monthly (next charge: %{date})."
 msgstr "每月收取$%{amount}美元（下次收取日期：%{date}）。"
 
@@ -2303,7 +2366,8 @@ msgstr "第一屆全球公約"
 msgid "1st Level"
 msgstr "第1级"
 
-#: pages/upgrade.vue components/settings_page/membership-info.vue
+#: components/settings_page/membership-info.vue
+#: components/upgrade/legacy/index.vue
 msgid "2 annual INsider Pricing Bookings"
 msgstr "每年2次INsider Pricing预订"
 
@@ -2552,7 +2616,8 @@ msgstr "第41-50"
 msgid "4th"
 msgstr "第四"
 
-#: pages/upgrade.vue components/settings_page/membership-info.vue
+#: components/settings_page/membership-info.vue
+#: components/upgrade/legacy/index.vue
 msgid "5 annual INsider Pricing Bookings"
 msgstr "每年5次INsider Pricing预订"
 
@@ -3046,10 +3111,11 @@ msgstr "只有通过电子邮件亲自邀请的人才能访问此页面。"
 
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "Access to Thousands of Global Cruise Itineraries"
 msgstr "获取数千个全球游轮行程的访问权限"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Access to world-class marketing tools"
 msgstr "访问世界级营销工具"
 
@@ -3291,7 +3357,7 @@ msgstr "已激活的合作伙伴"
 msgid "Activation"
 msgstr "激活"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "Activation (One time payment)"
 msgstr "激活（一次性付款）"
 
@@ -3314,11 +3380,11 @@ msgstr "激活奖金（每日和每月）"
 msgid "Activation Date"
 msgstr "启动日期"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Activation Fee"
 msgstr "激活费"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "Activation Fee (Renewal every 6 months)"
 msgstr "激活费（每6个月续费）"
 
@@ -3978,6 +4044,7 @@ msgstr "议程"
 #: pages/receipts.vue components/recurring/rpm-onboarding-invoices.vue
 #: components/recurring/fallback_agreement.vue
 #: components/compensation/account_status.vue
+#: components/upgrade/redesign/index.vue
 msgid "Agree"
 msgstr "同意"
 
@@ -4192,6 +4259,12 @@ msgstr "所有支付"
 msgid "All plans include"
 msgstr "包含所有计划"
 
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "All plans include"
+msgid "All Plans Include:"
+msgstr "包含所有计划"
+
 #: components/compensation/fast_start.vue
 #: components/compensation/team_leadership_bonus/cards_breakdown.vue
 msgid ""
@@ -4205,7 +4278,7 @@ msgstr ""
 msgid "All purchases are backed by our 14-day no risk money back guarantee."
 msgstr "所有的購買均有我們的14天無風險退款保證支持。"
 
-#: pages/checkout.vue
+#: pages/checkout.vue components/upgrade/redesign/upgrade-main-card.vue
 msgid "All purchases are subject to our"
 msgstr "所有购买均受我们的"
 
@@ -4326,9 +4399,11 @@ msgstr "所有用户权限"
 msgid "All Verified Identities"
 msgstr "所有已验证身份"
 
-#: components/upgrade/tiles/checkout-tile.vue
-msgid "All your payments are fully guaranteed/"
-msgstr "您所有的付款均为全额担保。"
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "All your payments are fully guaranteed/protected through Repayd."
+msgid "All your payments are fully guaranteed/protected through repayd."
+msgstr "您的所有付款均通过Repayd获得全面保障。"
 
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
@@ -5996,6 +6071,12 @@ msgstr "後退"
 msgid "Back to Login"
 msgstr "返回登录"
 
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "Return to Welcome Page"
+msgid "Back to Welcome Page"
+msgstr "返回歡迎頁面"
+
 #: components/compensation/team.vue
 msgid "Back to your Directs"
 msgstr "返回您的指示"
@@ -6008,6 +6089,14 @@ msgstr "回到您的请求"
 #: components/recurring/add-recurring.vue
 msgid "BACK UP"
 msgstr "備份"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid ""
+#| "Backed by award-winning tools, training, and a passionate global "
+#| "community."
+msgid "Backed by award-winning tools and a passionate global community."
+msgstr "依托屡获殊荣的工具、培训和充满热情的全球社区。"
 
 #: components/settings_page/membership-info.vue
 msgid ""
@@ -6225,7 +6314,9 @@ msgid ""
 "and opportunities."
 msgstr "成为inCruises大家庭的一员，尽享无与伦比的旅行价值与机遇。"
 
-#: pages/upgrade.vue pages/welcome.vue pages/public/partnership.vue
+#: pages/welcome.vue pages/public/partnership.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
+#: components/upgrade/legacy/index.vue
 msgid "Become a Partner"
 msgstr "成為合夥人"
 
@@ -7619,6 +7710,7 @@ msgstr "加元 (CAD)"
 #: components/hotels/GuestsDropdown.vue
 #: components/onboarding/name-birthday-avatar-step.vue
 #: components/cruises_booking_old/confirmation-step.vue
+#: components/upgrade/redesign/index.vue
 #: components/settings_page/change-password-modal/change-password-modal-shell.vue
 #: components/settings_page/display-name-modal/modal-footer.vue
 #: components/admin_operations/modals/kyc_flagged_note_modal.vue
@@ -8445,7 +8537,7 @@ msgstr "CLASSIC 会员资格"
 msgid "CLASSIC Partner-Member"
 msgstr "CLASSIC 合作伙伴-会员"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Classic Plan"
 msgstr "Classic计划"
 
@@ -8639,6 +8731,7 @@ msgstr "客戶端配置"
 #: components/recurring/cancel_recurring_confirmation_modal.vue
 #: components/global_convention/event_info.vue
 #: components/reservations/details-modal.vue
+#: components/settings_page/membership-info.vue
 #: components/data_table/search-widget.vue
 #: components/price_match_guarantee/cruises.vue
 #: components/compensation/info_modal.vue
@@ -8654,6 +8747,12 @@ msgstr "客戶端配置"
 #: components/payout/redesign/inpay-withdraw/inpay-modal-shell.vue
 msgid "Close"
 msgstr "關閉"
+
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "Return to Welcome Page"
+msgid "Close and return to Welcome Page"
+msgstr "返回歡迎頁面"
 
 #: components/upgrade/modals/upgrade-plan-detail.vue
 #: components/tours/details/available-plans.vue
@@ -9575,6 +9674,8 @@ msgid "Continue Payment Below"
 msgstr "在下方繼續付款"
 
 #: pages/tours_confirmation.vue
+#: components/upgrade/tiles/summary-card/content.vue
+#: components/upgrade/tiles/summary-card/index.vue
 msgid "Continue to checkout"
 msgstr "继续结账"
 
@@ -10933,6 +11034,7 @@ msgstr "日期"
 #: components/receipts/booking_receipt.vue
 #: components/cruises_booking_old/cabin-categories-step.vue
 #: components/cruises_booking_old/passenger-info-step.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "Day"
 msgstr "天"
 
@@ -11997,6 +12099,10 @@ msgstr "仅降级"
 msgid "Downgrade to Classic"
 msgstr "降级到CLASSIC"
 
+#: components/settings_page/membership-info.vue
+msgid "Downgrade unavailable right now"
+msgstr ""
+
 #: pages/public/pricing.vue pages/public/membership.vue
 msgid "Downgradeable"
 msgstr "可降级的"
@@ -12394,23 +12500,24 @@ msgstr ""
 "赚取<strong>$50每日激活奖金</strong>。<br /><br />激活会员和合作伙伴会员在补"
 "偿方面视为相同。<br />"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn 100 Reward Points for the $100 activation payment"
 msgstr "支付$100激活付款，赚取100奖励积分"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn 200 Reward Points for each on-time $100 membership payment"
 msgstr "每次按时支付$100会员费用，赚取200奖励积分"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn 250 Reward Points for the $250 activation payment"
 msgstr "支付$250激活付款，赚取250奖励积分"
 
-#: pages/upgrade.vue components/settings_page/membership-info.vue
+#: components/settings_page/membership-info.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn 50 Reward Points for each $50 membership payment"
 msgstr "每支付$50会员费用，赚取50奖励积分"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn 500 Reward Points for each on-time $250 membership payment"
 msgstr "每次按时支付$250会员费用，赚取500奖励积分"
 
@@ -12532,7 +12639,7 @@ msgstr ""
 msgid "Earn Cash Rewards"
 msgstr "赚取现金奖励"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Earn compensation by referring others to InCruises"
 msgstr "通过推荐他人加入InCruises赚取报酬"
 
@@ -12585,6 +12692,12 @@ msgstr "按时支付月费可赚取相等的奖励积分"
 #: pages/public/index.vue
 msgid "Earn from sharing the Membership"
 msgstr "通过分享会员资格赚取收入"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "Earn compensation by referring others to InCruises"
+msgid "Earn INcome and INcentives by referring others to inCruises."
+msgstr "通过推荐他人加入InCruises赚取报酬"
 
 #: pages/public/partnership.vue
 msgid "Earn INcome when your referrals become paying Members."
@@ -13737,7 +13850,8 @@ msgstr "活动奖励"
 msgid "Event Type"
 msgstr "活动类型"
 
-#: pages/upgrade.vue components/settings_page/membership-info.vue
+#: components/settings_page/membership-info.vue
+#: components/upgrade/legacy/index.vue
 msgid "Every 6 Months"
 msgstr "每6个月"
 
@@ -13893,6 +14007,7 @@ msgstr "专属访问无与伦比的旅行选择合集"
 
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "Exclusive Deals on Luxury Hotels and Resorts"
 msgstr "豪华酒店和度假村的独家优惠"
 
@@ -14788,6 +14903,12 @@ msgstr "最终付款到期日"
 msgid "Final Payment for this booking."
 msgstr "此次预订的最终付款"
 
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "inPays Premium User"
+msgid "Final Premium Upgrade"
+msgstr "inPays高级用户"
+
 #: components/partner_cruise_contest/tenth-anniversary-podium.vue
 msgid "Final Results Coming Soon!"
 msgstr "最终结果即将公布！"
@@ -15149,11 +15270,11 @@ msgstr "欲了解更多详情，请查看我们的"
 msgid "For more details please review our "
 msgstr "欲了解更多详情，请查看我们的 "
 
-#: pages/checkout.vue
+#: pages/checkout.vue components/upgrade/redesign/upgrade-main-card.vue
 msgid "For more details, see our"
 msgstr "如需更多详情，请查看我们的"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "For more details, see our <a class=\"text-primary-500 hover:text-"
 "primary-500\" target=\"_blank\" href=\"%{Docs}\">Membership Agreement</a>."
@@ -15161,7 +15282,7 @@ msgstr ""
 "欲了解更多详情，请参阅我们的<a class=\"text-primary-500 hover:text-"
 "primary-500\" target=\"_blank\" href=\"%{Docs}\">会员协议</a>。"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "For more details, see our <a class=\"text-primary-500 hover:text-"
 "primary-500\" target=\"_blank\" href=\"%{Docs}\">Partnership Agreement</a>."
@@ -15997,7 +16118,7 @@ msgstr "已有账户？"
 msgid "Got an invitation?"
 msgstr "收到了邀请？"
 
-#: components/public/ReferrerBubble.vue
+#: components/public/ReferrerBubble.vue components/upgrade/redesign/index.vue
 msgid "Got it"
 msgstr "明白了"
 
@@ -18157,6 +18278,12 @@ msgid ""
 msgstr ""
 "如果您想使用獎勵積分，您必須在此步驟中添加它們，您以後將無法添加獎勵積分。"
 
+#: components/upgrade/tiles/summary-card/content.vue
+msgid ""
+"If you're not completely satisfied, you can receive a full refund within 14 "
+"days of any payment."
+msgstr ""
+
 #: components/tgc_content_2026/rules-section.vue
 msgid ""
 "If you've already earned a cash reward, set your sights on another one! "
@@ -20044,7 +20171,7 @@ msgstr ""
 msgid "IP Address"
 msgstr "IP 地址"
 
-#: pages/checkout.vue
+#: pages/checkout.vue components/upgrade/redesign/upgrade-main-card.vue
 msgid "IP Address:"
 msgstr "IP地址："
 
@@ -21268,7 +21395,7 @@ msgid ""
 "Lists members counting for your QBI metric with days left to count and status"
 msgstr "列出计入您QBI指标的会员，并显示剩余计数天数及状态"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Live and recorded training sessions"
 msgstr "现场和录制的培训课程"
 
@@ -21508,6 +21635,12 @@ msgstr "正在加载时间线…"
 msgid "Loading transfer details..."
 msgstr "正在加载转账详情..."
 
+#: pages/upgrade.vue
+#, fuzzy
+#| msgid "Loading support page..."
+msgid "Loading upgrade page..."
+msgstr "正在加载支持页面..."
+
 #: components/user/wallet.vue
 msgid "Loading Wallet..."
 msgstr "正在加载钱包…"
@@ -21549,7 +21682,7 @@ msgstr "正在加载您的团队..."
 msgid "Loading your verification settings..."
 msgstr "正在加载您的验证设置..."
 
-#: pages/agreements_layout.vue pages/upgrade.vue pages/impossible_five.vue
+#: pages/agreements_layout.vue pages/impossible_five.vue
 #: pages/additional_info.vue pages/info_center.vue
 #: layouts/AdditionalInfoRouteLayout.vue pages/public/contact.vue
 #: components/recurring/remove_payment_method_confirmation_modal.vue
@@ -21558,6 +21691,7 @@ msgstr "正在加载您的验证设置..."
 #: components/settings_page/business-assistant.vue
 #: components/agreements/partner_code_of_conduct_agreement_redesign.vue
 #: components/user/departments.vue components/public/blog_category_search.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "Loading..."
 msgstr "正在加载..."
 
@@ -22480,6 +22614,7 @@ msgstr "会员激活"
 #: pages/reservations.vue pages/reward_points.vue
 #: components/recurring/cancel_recurring_confirmation_modal.vue
 #: components/recurring/rpm-onboarding-invoices.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
 msgid "Membership Agreement"
 msgstr "会员协议"
 
@@ -22568,6 +22703,12 @@ msgstr "會員資訊"
 msgid "Membership Invoice"
 msgstr "会员账单"
 
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "Membership Plan Status"
+msgid "Membership Options & Partner Status"
+msgstr "会员计划状态"
+
 #: pages/public/payment_terms.vue
 msgid ""
 "Membership payments and Partner Program Activation fees: Membership payments "
@@ -22593,7 +22734,7 @@ msgstr "会员计划ID"
 msgid "Membership Plan Status"
 msgstr "会员计划状态"
 
-#: pages/upgrade.vue components/user/basic-info.vue
+#: components/user/basic-info.vue components/upgrade/legacy/index.vue
 msgid "Membership Plans"
 msgstr "会员计划"
 
@@ -22867,6 +23008,12 @@ msgstr "修改详情"
 msgid "Momentum Cup"
 msgstr "动力杯"
 
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "Price Match Guarantee"
+msgid "Money-Back Guarantee"
+msgstr "价格匹配保证"
+
 #: pages/all_in.vue pages/webinar_recordings.vue pages/invite.vue
 #: pages/communications.vue pages/facebook_marketing.vue
 #: pages/referral_links_old.vue
@@ -22988,7 +23135,8 @@ msgstr "每月积分"
 msgid "Monthly Premium Activations"
 msgstr "每月高级激活量"
 
-#: pages/connect.vue pages/upgrade.vue vue/tools/invoiceCheckout.js
+#: pages/connect.vue vue/tools/invoiceCheckout.js
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "Monthly price"
 msgstr "每月价格"
 
@@ -24115,6 +24263,7 @@ msgstr "未发现登录活动。"
 
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "No long-term contracts; cancel anytime"
 msgstr "么有长期合同；可以随时取消"
 
@@ -24270,7 +24419,13 @@ msgstr "无标题"
 msgid "No tours found for the selected destination and date range"
 msgstr "未找到选定目的地和日期范围内的旅程"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "No Upgrades Available"
+msgid "No upgrades available"
+msgstr "沒有可用升级"
+
+#: components/upgrade/legacy/index.vue
 msgid "No Upgrades Available"
 msgstr "沒有可用升级"
 
@@ -24872,6 +25027,13 @@ msgstr "官方独立合伙人"
 msgid "Official Team Partners"
 msgstr "官方團隊合作夥伴"
 
+#: components/settings_page/membership-info.vue
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "k"
+msgid "Ok"
+msgstr "k"
+
 #: components/install-pwa-banner.vue
 msgid "Okay"
 msgstr "好的"
@@ -25046,9 +25208,15 @@ msgstr "一名或多名會員有有效的航行或待處理的發票。"
 msgid "One Shared Commitment"
 msgstr "共同的承诺"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "One time payment"
 msgstr "一次性付款"
+
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "Premium Activation Payment"
+msgid "One-Time %{plan} Activation Payment"
+msgstr "Premium激活付款"
 
 #: components/tgc_content_2026/rules-section.vue
 msgid "one-time point bonus"
@@ -25977,6 +26145,12 @@ msgstr ""
 msgid "Partner Refund And Compress"
 msgstr "合作夥伴退款和壓縮"
 
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "Renewal every 6 months"
+msgid "Partner Renewal every 6 Months"
+msgstr "每6个月续订一次"
+
 #: components/reports/quick_reports.vue
 msgid "Partner Renewing Next Month"
 msgstr "下月续费的合作伙伴"
@@ -26129,12 +26303,19 @@ msgstr "拥有免费会员资格的合作伙伴"
 msgid "Partners with New Ranks"
 msgstr "获得新等级的合作伙伴"
 
-#: Footer.vue pages/upgrade.vue pages/inviter.vue pages/referral_links.vue
-#: components/public/Header.vue components/public/webflow/Footer.vue
+#: Footer.vue pages/inviter.vue pages/referral_links.vue
+#: components/public/Header.vue components/upgrade/legacy/index.vue
+#: components/public/webflow/Footer.vue
 msgid "Partnership"
 msgstr "合作夥伴資格"
 
-#: pages/checkout.vue
+#: components/upgrade/tiles/summary-card/content.vue
+#, fuzzy
+#| msgid "Membership Activation"
+msgid "Partnership Activation"
+msgstr "会员激活"
+
+#: pages/checkout.vue components/upgrade/redesign/upgrade-main-card.vue
 msgid "Partnership Agreement"
 msgstr "合作协议"
 
@@ -26154,9 +26335,11 @@ msgstr "合作伙伴账单"
 msgid "Partnership Not Renewed"
 msgstr "合作伙伴未续费"
 
-#: pages/upgrade.vue pages/public/faq.vue pages/public/testimonials.vue
+#: pages/public/faq.vue pages/public/testimonials.vue
 #: components/settings_page/membership-info.vue
 #: components/upgrade/tiles/checkout-tile.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
+#: components/upgrade/legacy/index.vue
 msgid "Partnership Program"
 msgstr "合作伙伴计划"
 
@@ -26369,7 +26552,8 @@ msgid "Pay Here"
 msgstr "这里付款"
 
 #: pages/welcome.vue pages/reward_points.vue pages/invoices.vue
-#: components/welcome/profile-card.vue
+#: components/settings_page/membership-info.vue
+#: components/welcome/profile-card.vue components/upgrade/redesign/index.vue
 msgid "Pay Invoice"
 msgstr "支付发票"
 
@@ -26469,6 +26653,7 @@ msgstr "付款协议"
 #: components/recurring/set_up_recurring_footer.vue
 #: components/recurring/fallback_agreement.vue
 #: components/recurring/set_up_recurring_modal.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
 msgid "Payment Agreement"
 msgstr "付款协议"
 
@@ -26985,6 +27170,10 @@ msgstr "第56至110名"
 #: pages/tenth_anniversary_cruises.vue
 msgid "Places 91-200"
 msgstr "第91至200名"
+
+#: vue/components/upgrade/plan-catalog.js
+msgid "plan"
+msgstr ""
 
 #: pages/compensation/member_activations.vue
 msgid "Plan"
@@ -27855,7 +28044,7 @@ msgstr "请选择一个已付款月份。"
 msgid "Please select a payment method"
 msgstr "请选择一种支付方式"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "Please select a plan to continue."
 msgstr "请选择一个计划以继续。"
 
@@ -28432,12 +28621,12 @@ msgstr ""
 "Premier Ambassador Board of Directors会员每月可获得<strong>$155,000</strong>"
 "美元的团队领导奖金！"
 
-#: pages/upgrade.vue pages/cruises.vue components/feature_card.vue
+#: pages/cruises.vue components/feature_card.vue
 #: pages/compensation/weekly_matching_bonus.vue pages/public/pricing.vue
 #: components/compensation/weekly_matching_bonus_card.vue
 #: components/compensation/qbi_members_table.vue
 #: components/contacts/contact-edit-modal.vue
-#: components/welcome/members-modal.vue
+#: components/welcome/members-modal.vue components/upgrade/legacy/index.vue
 #: components/compensation/member_activations/monthly_activation_bonus_card.vue
 #: components/compensation/member_activations/daily_activation_bonus_card.vue
 msgid "Premium"
@@ -28781,6 +28970,7 @@ msgstr "優先登陸和離場，專用娛樂座位等等。"
 
 #: pages/public/legal.vue pages/public/privacy_policy.vue
 #: components/public/FooterLinks.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
 #: components/payout/redesign/sign-partner-agreement-modal.vue
 msgid "Privacy Policy"
 msgstr "隱私政策"
@@ -29067,10 +29257,6 @@ msgstr "受保护的奖励积分"
 #: components/cruises_booking_old/protection-section.vue
 msgid "Protected Rewards Points:"
 msgstr "受保护的奖励积分："
-
-#: components/upgrade/tiles/checkout-tile.vue
-msgid "protected through Repayd."
-msgstr "通过Repayd保护。"
 
 #: pages/menu_page.vue
 msgid "Protection"
@@ -29779,6 +29965,22 @@ msgstr "收據已成功添加"
 msgid "Receipts"
 msgstr "收據"
 
+#: vue/components/upgrade/plan-catalog.js
+#, fuzzy
+#| msgid "Receive 350 Reward Points at Activation"
+msgid "Receive %{points} Reward Points at Activation"
+msgstr "激活时获得350奖励积分"
+
+#: vue/components/upgrade/plan-catalog.js
+#, fuzzy
+#| msgid ""
+#| "Receive 200 Reward Points for each on-time $100 monthly Membership "
+#| "payment."
+msgid ""
+"Receive %{points} Reward Points with each on-time $%{amount} monthly "
+"Membership payment"
+msgstr "每次按时支付100美元月度会员费可获得200积分。"
+
 #: components/settings_page/membership-info.vue
 msgid ""
 "Receive 200 Reward Points for each on-time $100 monthly Membership payment."
@@ -30433,7 +30635,7 @@ msgstr "重命名收件人"
 msgid "Rename recipient account"
 msgstr "重命名收件人帐户"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Renewal every 6 months"
 msgstr "每6个月续订一次"
 
@@ -30856,7 +31058,7 @@ msgstr "返回登录"
 msgid "Return to search"
 msgstr "返回搜尋"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Return to Welcome Page"
 msgstr "返回歡迎頁面"
 
@@ -31989,7 +32191,7 @@ msgstr "选择州或省"
 msgid "Select state/province/region"
 msgstr "选择州/省/地区"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Select Subscription"
 msgstr "选择订阅"
 
@@ -32049,6 +32251,12 @@ msgstr "选择您的船舱"
 #: pages/cruises_booking.vue
 msgid "Select your date of birth"
 msgstr "请选择您的出生日期"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+#, fuzzy
+#| msgid "Membership Plan"
+msgid "Select Your Membership Plan"
+msgstr "会员计划"
 
 #: pages/cards.vue
 msgid "Select your name format:"
@@ -33103,6 +33311,7 @@ msgstr "西班牙语全球市场"
 
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "Special Access to Curated Local and Global Tours"
 msgstr "特别访问精选的本地和全球旅游线路"
 
@@ -33301,12 +33510,12 @@ msgstr "开始验证"
 msgid "Start:"
 msgstr "開始："
 
-#: pages/upgrade.vue pages/cruises.vue components/feature_card.vue
+#: pages/cruises.vue components/feature_card.vue
 #: pages/compensation/weekly_matching_bonus.vue pages/public/pricing.vue
 #: components/compensation/weekly_matching_bonus_card.vue
 #: components/compensation/qbi_members_table.vue
 #: components/contacts/contact-edit-modal.vue
-#: components/welcome/members-modal.vue
+#: components/welcome/members-modal.vue components/upgrade/legacy/index.vue
 #: components/compensation/member_activations/daily_activation_bonus_card.vue
 msgid "Starter"
 msgstr "Starter"
@@ -33705,7 +33914,8 @@ msgstr "套房"
 msgid "Suite of Marketing Tools"
 msgstr "营销工具套件"
 
-#: pages/checkout.vue
+#: pages/checkout.vue components/upgrade/tiles/summary-card/content.vue
+#: components/upgrade/tiles/summary-card/index.vue
 msgid "Summary"
 msgstr "总结"
 
@@ -34277,6 +34487,7 @@ msgstr "条款和条件。"
 
 #: pages/m3.vue pages/public/legal.vue pages/public/terms_of_service.vue
 #: components/public/FooterLinks.vue
+#: components/upgrade/redesign/upgrade-main-card.vue
 #: components/payout/redesign/sign-partner-agreement-modal.vue
 msgid "Terms of Service"
 msgstr "服務條款"
@@ -35725,7 +35936,7 @@ msgstr "没有符合这些参数的结果。"
 msgid "There are no tour recommendations right now. Please try again later."
 msgstr "目前没有旅游推荐。请稍后再试。"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "There are no upgrades available for your account at this time."
 msgstr "目前您的账户暂无可用升级。"
 
@@ -35999,7 +36210,8 @@ msgstr "初始化结账时出现问题。请重新加载页面并重试。"
 msgid "There was an issue initializing your checkout. Please try again later."
 msgstr "初始化您的结账时出现问题。请稍后再试。"
 
-#: pages/upgrade.vue pages/reward_points.vue pages/cruises_booking.vue
+#: pages/reward_points.vue pages/cruises_booking.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "There was an issue initializing your checkout. Please try again."
 msgstr "初始化您的结账时出现问题。请重新尝试。"
 
@@ -36304,7 +36516,7 @@ msgstr "第三个孩子的出生日期"
 msgid "this"
 msgstr "这个"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "This $200 payment includes - a one-time $100 Activation Payment that results "
 "in 100  Reward Points and $100 first month's Membership Payment that results "
@@ -36321,7 +36533,7 @@ msgstr ""
 "这笔 50 美元的付款将在接下来的 30 天内扩展您的 Connect 平台，包括额外的房间、"
 "功能以及一次最多 500 名参与者。"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "This $50 payment includes - $50 first month's Membership Payment that "
 "results in 50  Reward Points."
@@ -36335,7 +36547,7 @@ msgstr ""
 "这笔 500 美元的付款将在接下来的 30 天内扩展您的 Connect 平台，包括额外的房"
 "间、功能以及一次最多 1,500 名参与者。"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "This $500 payment includes - a one-time $250 Activation Payment that results "
 "in 250  Reward Points and $250 first month's Membership Payment that results "
@@ -36344,7 +36556,7 @@ msgstr ""
 "这笔$500的付款包括：一次性$250的激活付款，可获得250奖励积分，以及首月$250的会"
 "员付款，可获得500奖励积分。"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "This $95 payment Activates your Partner account for the initial 6 month "
 "period."
@@ -36365,9 +36577,13 @@ msgstr ""
 "新开始时才可重启。如果您的验证确实处于待处理状态，此操作将删除该验证。"
 
 #: components/settings_page/membership-info.vue
+#, fuzzy
+#| msgid ""
+#| "This action will downgrade your account to Classic Membership. Are you "
+#| "sure you want to proceed? "
 msgid ""
-"This action will downgrade your account to Classic Membership. Are you sure "
-"you want to proceed? "
+"This action will downgrade your account to Classic Membership immediately. "
+"Are you sure you want to proceed?"
 msgstr "此操作将把您的账户降级为CLASSIC会员。您确定要继续吗？ "
 
 #: pages/admin_permission.vue
@@ -38081,6 +38297,7 @@ msgstr "每月应付总额"
 #: components/checkout/CurrencyStep.vue components/checkout/ProcessorWallet.vue
 #: components/upgrade/tiles/checkout-tile.vue
 #: components/upgrade/tiles/checkout-brief-tile.vue
+#: components/upgrade/tiles/summary-card/content.vue
 msgid "Total Due Now"
 msgstr "当前应付总额"
 
@@ -39046,7 +39263,7 @@ msgstr ""
 msgid "Unlimited"
 msgstr "无限的"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid "Unlimited email marketing system"
 msgstr "无限制电子邮件营销系统"
 
@@ -39054,10 +39271,12 @@ msgstr "无限制电子邮件营销系统"
 msgid "Unlimited INsider bookings/ year"
 msgstr "不限次数INsider预订/每年"
 
-#: pages/upgrade.vue components/upgrade-marketing-modal.vue
+#: components/upgrade-marketing-modal.vue
+#: vue/components/upgrade/plan-catalog.js
 #: components/cruises/upgrade_premium_drawer.vue
 #: components/settings_page/membership-info.vue
 #: components/hotels/upgrade_premium_drawer.vue
+#: components/upgrade/legacy/index.vue
 msgid "Unlimited INsider Pricing Bookings"
 msgstr "无限制INsider Pricing预订"
 
@@ -39082,6 +39301,10 @@ msgstr "解锁inCruises会员专属旅行优惠！"
 #: components/inchat/user_room_actions.vue
 msgid "Unlock Group"
 msgstr "解锁组"
+
+#: components/upgrade/redesign/upgrade-main-card.vue
+msgid "Unlock More Rewards"
+msgstr ""
 
 #: pages/inviter.vue
 msgid "Unlock special partner-only benefits and even free trips!"
@@ -39290,9 +39513,10 @@ msgstr ""
 msgid "Upgradable"
 msgstr "可升级的"
 
-#: pages/upgrade.vue pages/cruises.vue pages/info_center.vue
+#: pages/cruises.vue pages/info_center.vue
 #: components/navigation/add-upgrade-cta.vue
-#: components/welcome/profile-card.vue
+#: components/welcome/profile-card.vue components/upgrade/redesign/index.vue
+#: components/upgrade/legacy/index.vue
 msgid "Upgrade"
 msgstr "升級"
 
@@ -39348,6 +39572,12 @@ msgstr "升级至PREMIUM"
 #: components/hotels/upgrade_premium_drawer.vue
 msgid "Upgrade Today"
 msgstr "立即升级"
+
+#: components/upgrade/redesign/index.vue
+#, fuzzy
+#| msgid "No Upgrades Available"
+msgid "Upgrade unavailable right now"
+msgstr "沒有可用升级"
 
 #: components/cruises_booking_old/protection-section.vue
 msgid ""
@@ -42440,7 +42670,7 @@ msgstr "您即将重新开始身份验证流程。"
 msgid "You are about to send a push notification to %{count} users."
 msgstr "您即将向%{count}位用户发送推送通知。"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid "You are already a partner."
 msgstr "您已经是合作伙伴了。"
 
@@ -42938,6 +43168,27 @@ msgid ""
 "Inactive Balance if this invoice is not paid by then."
 msgstr "如果在%{DueDate}天内未支付此发票，您的奖励积分余额将转换为非活跃余额。"
 
+#: components/settings_page/membership-info.vue
+msgid ""
+"You have a <strong>pending invoice on your account.</strong> Downgrading is "
+"paused until it's paid. Once your payment goes through, you'll be able to "
+"downgrade right away."
+msgstr ""
+
+#: components/upgrade/redesign/index.vue
+msgid ""
+"You have a <strong>pending invoice on your account.</strong> Upgrading is "
+"paused until it's paid. Once your payment goes through, you'll be able to "
+"upgrade right away."
+msgstr ""
+
+#: components/upgrade/redesign/index.vue
+msgid ""
+"You have a <strong>prepaid invoice on your account.</strong> Upgrading isn't "
+"available while you have a prepaid membership balance. You'll be able to "
+"upgrade once your prepaid balance has been applied."
+msgstr ""
+
 #: pages/invoices.vue
 msgid ""
 "You have a pending Bank Transfer. It can take several days for us to be "
@@ -43007,7 +43258,7 @@ msgstr ""
 "您有一笔待处理的销售。我们仍在等待付款完成。如果您希望取消这笔待处理的销售，"
 "可以在下方进行操作。仅当您确定不会完成该待处理销售时，才应执行此操作。"
 
-#: pages/upgrade.vue
+#: components/upgrade/legacy/index.vue
 msgid ""
 "You have a prepaid invoice, so you can't upgrade your membership at this "
 "time."
@@ -43220,7 +43471,7 @@ msgstr ""
 "您可以联系inCruises，申请使用相关材料的许可，inCruises有权完全自主决定授予或"
 "拒绝许可。请通过以下地址联系我们："
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "You may not become an InCruises member in your country of residence. For "
 "more information please contact support."
@@ -43228,7 +43479,7 @@ msgstr ""
 "您可能无法成为您所在国家/地区的 InCruises 会员。 有关更多信息，请联系支持人"
 "员。"
 
-#: pages/upgrade.vue
+#: components/upgrade/redesign/index.vue components/upgrade/legacy/index.vue
 msgid ""
 "You may not become an InCruises Partner in your country of residence. For "
 "more information please contact support."
@@ -43558,6 +43809,12 @@ msgstr "您將不會獲得具有這些潛在參數的排名。"
 #: pages/cruise_price_match_guarantee.vue
 msgid "You'll then have"
 msgstr "然后您将拥有"
+
+#: components/upgrade/redesign/index.vue
+msgid ""
+"You're already on our highest plan. There are no further upgrades available. "
+"Thanks for being with us."
+msgstr ""
 
 #: components/welcome/members-modal.vue
 msgid ""
@@ -57672,6 +57929,12 @@ msgid "%{ name }"
 msgid_plural "%{ name }"
 msgstr[0] "%{ name }"
 
+#~ msgid "All your payments are fully guaranteed/"
+#~ msgstr "您所有的付款均为全额担保。"
+
+#~ msgid "protected through Repayd."
+#~ msgstr "通过Repayd保护。"
+
 #~ msgid "$100 million in annual revenue"
 #~ msgstr "1亿美元的年收入"
 
@@ -60659,9 +60922,6 @@ msgstr[0] "%{ name }"
 
 #~ msgid "Free Registered"
 #~ msgstr "免费注册"
-
-#~ msgid "k"
-#~ msgstr "k"
 
 #~ msgid "n"
 #~ msgstr "n"
