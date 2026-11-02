@@ -2841,8 +2841,22 @@ msgid "Email Address"
 msgstr "電子郵件地址"
 
 #: /app/controllers/send_email_blast.js /app/controllers/old_reports.js
+#, fuzzy
+#| msgid "The inviter system is disabled at this time. Please try again later."
+msgid ""
+"Email Blast is currently disabled at this time. Please come back and try "
+"again later."
+msgstr "邀请系统当前已禁用。请稍后再试。"
+
+#: /app/controllers/send_email_blast.js /app/controllers/old_reports.js
 msgid "Email blasts are limited to 2500 recipients."
 msgstr "Email blasts限制為2500個收件人。"
+
+#: /app/components/email_blast/content_policy.js
+msgid ""
+"Email Blasts can only contain links to incruises.com. Remove any other "
+"links, website addresses or email addresses and try again."
+msgstr ""
 
 #: /app/views/emails/inviter_error.html /app/controllers/inviter_send.js
 msgid "Email Invitation Report"
@@ -5459,7 +5473,7 @@ msgid "Missing permissions."
 msgstr "缺少权限。"
 
 #: /app/controllers/contacts_tags.js /app/controllers/accounts_tags.js
-#: /app/controllers/send_email_blast.js
+#: /app/controllers/send_email_blast.js /app/controllers/old_reports.js
 #: /app/components/business_center/team_total_registrations.js
 #: /app/components/business_center/direct_active_enrollments.js
 #: /app/components/admin_favorites/index.js
@@ -5675,7 +5689,7 @@ msgstr "沒有數據發布！"
 msgid "No document specified."
 msgstr "沒有指定文件。"
 
-#: /app/controllers/old_reports.js
+#: /app/controllers/send_email_blast.js /app/controllers/old_reports.js
 msgid ""
 "No emails were sent because every recipient has unsubscribed from Email "
 "Blasts or has no email address on file."
@@ -8429,12 +8443,6 @@ msgstr "需要电子邮件选项（推荐人ID和用户审核ID），请重新�
 msgid "The email options are needed, please reload and try again"
 msgstr "需要电子邮件选项，请重新加载后重试"
 
-#: /app/controllers/send_email_blast.js /app/controllers/old_reports.js
-msgid ""
-"The email service is temporarily unavailable. Please try again in a few "
-"minutes."
-msgstr "电子邮件服务暂时不可用。请稍后再试。"
-
 #: /app/controllers/settings.js /app/controllers/primary_email_update/index.js
 msgid "The email you have entered is invalid."
 msgstr "您輸入的電子郵件無效。"
@@ -8907,13 +8915,6 @@ msgstr "出现错误"
 msgid "There is a new support ticket requesting your attention."
 msgstr "有一個新的支持請求請求您的關注。"
 
-#: /app/controllers/send_email_blast.js /app/controllers/old_reports.js
-msgid ""
-"There is a problem with your email configuration. Please review your email "
-"setup before sending Email Blasts."
-msgstr ""
-"您的电子邮件配置存在问题。请在发送电子邮件群发之前检查您的电子邮件设置。"
-
 #: /app/controllers/primary_email_update/index.js
 msgid "There is no pending email update. Please submit your new email again."
 msgstr "没有待处理的电子邮件更新。请再次提交您的新电子邮件。"
@@ -9283,6 +9284,12 @@ msgstr ""
 #: /app/controllers/user.js
 msgid "This email address is already registered on inCruises."
 msgstr "此電子郵件地址已在inCruises上註冊。"
+
+#: /app/components/email_blast/limits.js
+msgid ""
+"This Email Blast would send %s emails, but you can only send %s more right "
+"now (limit: %s per 24 hours). Remove some recipients or try again later."
+msgstr ""
 
 #: /app/controllers/settings.js /app/controllers/primary_email_update/index.js
 msgid "This email is already in use."
@@ -11746,7 +11753,8 @@ msgid ""
 "You have an active Cruise or Trips booking already booked in the future that "
 "coincides with the dates from this trip. You cannot have two reservations on "
 "the same dates."
-msgstr "您已有一个未来的邮轮或旅行预订，与此次旅行的日期重合。您不能在同一日期有两个"
+msgstr ""
+"您已有一个未来的邮轮或旅行预订，与此次旅行的日期重合。您不能在同一日期有两个"
 "预订。"
 
 #: /app/checkout/types/booking.js
@@ -11962,7 +11970,8 @@ msgstr "您必须领取您的50 Reward Points以预订酒店。我们将引导�
 msgid ""
 "You must claim your 50 Reward Points to book this trip. We will redirect you "
 "to the claim page."
-msgstr "您必须领取您的50个Reward Points以预订此行程。我们将重定向您到领取页面。"
+msgstr ""
+"您必须领取您的50个Reward Points以预订此行程。我们将重定向您到领取页面。"
 
 #: /app/controllers/email_address.js
 msgid ""
@@ -12226,6 +12235,10 @@ msgstr ""
 #: /app/cronjobs/userNewLevel.js
 msgid "You've reached a whole new level!"
 msgstr "妳已達到了壹個全新的等級！"
+
+#: /app/components/email_blast/limits.js
+msgid "You've reached the limit of %s emails per 24 hours, try again later."
+msgstr ""
 
 #: /app/controllers/upgrade.js /app/controllers/pay_bonus.js
 msgid "You’ve received an instant payment from inCruises"
@@ -12532,6 +12545,12 @@ msgstr "您的电子邮件群发正在发送中。您可以在电子邮件群发
 #: /app/controllers/email.js
 msgid "Your email has been deleted"
 msgstr "您的電子郵件已被刪除"
+
+#: /app/components/email_blast/content.js
+msgid ""
+"Your email is too large to send. Shorten the message or use fewer or smaller "
+"images, then try again."
+msgstr ""
 
 #: /app/controllers/email.js
 msgid "Your email was successfully sent."
@@ -14418,7 +14437,8 @@ msgid ""
 "Michael \"Hutch\" offers the following visualization strategies to help you "
 "stay grateful, strong, and hopeful. Close your eyes and Imagine that you are "
 "riding a bicycle uphill:"
-msgstr "Michael \"Hutch\" 提供以下可视化策略，帮助您保持感恩、坚强和充满希望。闭上眼"
+msgstr ""
+"Michael \"Hutch\" 提供以下可视化策略，帮助您保持感恩、坚强和充满希望。闭上眼"
 "睛，想象自己正在骑自行车上坡："
 
 #: Course Questions
@@ -22763,6 +22783,17 @@ msgid ""
 "Hard work and determination have led Aigul to achieve her goals and those of "
 "her team."
 msgstr "努力工作和决心使Aigul实现了她和她团队的目标。"
+
+#~ msgid ""
+#~ "The email service is temporarily unavailable. Please try again in a few "
+#~ "minutes."
+#~ msgstr "电子邮件服务暂时不可用。请稍后再试。"
+
+#~ msgid ""
+#~ "There is a problem with your email configuration. Please review your "
+#~ "email setup before sending Email Blasts."
+#~ msgstr ""
+#~ "您的电子邮件配置存在问题。请在发送电子邮件群发之前检查您的电子邮件设置。"
 
 #~ msgid "Did You Review This Important Information Yet?"
 #~ msgstr "您是否查看过这些重要信息？"
